@@ -1,0 +1,68 @@
+{
+  "reviewed_on": "2026-09-14",
+  "sources": [
+    {
+      "id": "switch",
+      "title": "Switch Transformers",
+      "url": "https://arxiv.org/abs/2101.03961",
+      "evidence_scope": "abstract reviewed; no local reproduction",
+      "revision_pin": null
+    },
+    {
+      "id": "conceptlm",
+      "title": "Next Concept Prediction in Discrete Latent Space Leads to Stronger Language Models",
+      "url": "https://arxiv.org/abs/2602.08984",
+      "evidence_scope": "abstract and v1 HTML inspected",
+      "revision_pin": null
+    },
+    {
+      "id": "conceptlm-code",
+      "title": "ConceptLM official repository",
+      "url": "https://github.com/LUMIA-Group/ConceptLM",
+      "evidence_scope": "README and tree reviewed; not executed; license not established",
+      "revision_pin": null
+    },
+    {
+      "id": "ncp-preview",
+      "title": "NCP-ArchPreview Technical Report",
+      "url": "https://arxiv.org/abs/2609.10715",
+      "evidence_scope": "abstract reviewed; full report retrieval unsuccessful",
+      "revision_pin": null
+    },
+    {
+      "id": "ncp-checkpoint",
+      "title": "NCP-ArchPreview Stage 1 model card",
+      "url": "https://huggingface.co/ArchSpace-Collection/NCP_ArchPreview_dolma3_8.9B_Stage1",
+      "evidence_scope": "model card reviewed; no weights downloaded or code executed",
+      "revision_pin": null
+    },
+    {
+      "id": "ncp-eval",
+      "title": "Official NCP evaluation repository",
+      "url": "https://github.com/LUMIA-Group/ncp_olmo_eval",
+      "evidence_scope": "README and tree reviewed; not executed",
+      "revision_pin": null
+    },
+    {
+      "id": "engram",
+      "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+      "url": "https://arxiv.org/abs/2601.07372",
+      "evidence_scope": "abstract and v1 architecture sections reviewed; later revision not fully compared",
+      "revision_pin": null
+    },
+    {
+      "id": "engram-code",
+      "title": "Engram official repository",
+      "url": "https://github.com/deepseek-ai/Engram",
+      "evidence_scope": "README and tree reviewed; demo completeness limitation noted; not executed",
+      "revision_pin": null
+    },
+    {
+      "id": "gpu",
+      "title": "NVIDIA RTX 5070 family",
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+      "evidence_scope": "product specifications; actual user device not inspected",
+      "revision_pin": null
+    }
+  ]
+}

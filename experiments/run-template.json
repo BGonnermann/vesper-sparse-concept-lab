@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "run_id": null,
+  "condition": null,
+  "git": {
+    "commit": null,
+    "dirty": null
+  },
+  "hardware": {
+    "gpu_name": null,
+    "vram_bytes": null,
+    "cpu": null,
+    "host_ram_bytes": null,
+    "os": null,
+    "driver": null
+  },
+  "runtime": {
+    "python": null,
+    "torch": null,
+    "cuda_build": null,
+    "attention_backend": null,
+    "dependency_lock": null
+  },
+  "model": {
+    "total_parameters": null,
+    "active_parameters_per_token": null,
+    "memory_table_parameters": null,
+    "concept_parameters": null,
+    "resolved_config_path": null,
+    "precision": null
+  },
+  "data": {
+    "dataset_id": null,
+    "revision": null,
+    "license": null,
+    "split_manifest_sha256": null,
+    "tokenizer_id": null,
+    "tokenizer_revision": null,
+    "token_budget": null
+  },
+  "training": {
+    "seed": null,
+    "sequence_length": null,
+    "microbatch_size": null,
+    "gradient_accumulation": null,
+    "optimizer": null,
+    "learning_rate": null,
+    "warmup_steps": null,
+    "measured_steps": null,
+    "elapsed_seconds": null,
+    "processed_nonpadding_tokens": null,
+    "tokens_per_second": null,
+    "peak_allocated_vram_bytes": null,
+    "peak_reserved_vram_bytes": null,
+    "peak_device_memory_bytes": null,
+    "peak_host_ram_bytes": null
+  },
+  "evaluation": {
+    "suite_revision": null,
+    "heldout_loss": null,
+    "bits_per_byte": null,
+    "task_scores": null,
+    "time_to_first_token_seconds": null,
+    "decode_tokens_per_second": null,
+    "context_length": null,
+    "batch_size": null
+  },
+  "artifacts": {
+    "checkpoint_uri": null,
+    "checkpoint_sha256": null,
+    "raw_metrics_uri": null,
+    "failure_log_uri": null
+  },
+  "decision": {
+    "outcome": null,
+    "reason": null,
+    "next_step": null
+  }
+}
