@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+  "revision": "a4123c6e5c6287f90be04026642ba20b94e424df",
+  "original_project": "https://github.com/karpathy/autoresearch",
+  "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+  "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored."
+}

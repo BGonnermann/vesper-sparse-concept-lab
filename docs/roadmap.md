@@ -1,5 +1,9 @@
 # Roadmap
 
+## Runnable baseline added
+
+The [autoresearch integration](autoresearch.md) now provides Windows setup, a GPU probe, a bounded dense smoke/baseline runner, and instructions for up to three candidate experiments. Runner tests are separate from GPU validation. No local GPU result or custom MoE/NCP/n-gram implementation is claimed.
+
 ## Completed in this research pass
 
 - Identified primary NCP, MoE, and Engram sources and reviewed the available implementation descriptions.
