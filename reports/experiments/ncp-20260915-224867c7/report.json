@@ -10020,7 +10020,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "2d94061ab7be725cf496be1609174870f58fb8bc",
+      "publication_commit": "8002c7a2b5f20d7d6375bd78fe149f471b6318f9",
       "status": "completed",
       "verified_remote": true
     },
@@ -10070,6 +10070,7 @@
     "normalization-green-cpu.log:\nRan 8 tests in 1.461s\nOK",
     "normalization-red.log:\nTraceback (most recent call last):\n    raise error_metas[0].to_error(msg)\nAssertionError: Tensor-likes are not close!\nRan 8 tests in 1.503s\nFAILED (failures=1)",
     "order-identity-red.log:\n    raise ValueError(\"Protocol fields are missing or unknown.\")\nValueError: Protocol fields are missing or unknown.\nTraceback (most recent call last):\nAssertionError: [102, 486, 438, 2, 458, 172, 372, 221, 246, 123, 100, 462, 222, 290, 299, 101, 51, 6, 111, 57, 321, 474, 505, 397, 467, 346, 361, 236, 251, 1, 190, 147, 267, 367, 181, 21, 243, 188, 504, 114, 378, 461, 399, 412, 227, 247, 279, 456, 509, 226, 338, 446, 162, 395, 328, 408, 159, 76, 454, 59, 174, 481, 352, 331, 230, 241, 349, 362, 255, 41, 14, 89, 136, 192, 180, 443, 403, 39, 434, 288, 374, 382, 54, 302, 430, 234, 357, 265, 91, 495, 7, 115, 317, 30, 275, 496, 425, 371, 427, 343, 286\nRan 2 tests in 1.818s\nFAILED (failures=1, errors=1)",
+    "order-preview-green.log:\nRan 2 tests in 1.776s\nOK",
     "preflight-cpu-1789473248.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 3.917s\nOK",
     "preflight-cpu-1789473331.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 3.911s\nOK",
     "preflight-cpu-1789473887.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 3.871s\nOK",
@@ -10137,9 +10138,9 @@
       "sha256": "21d3865e69220d3891ed1e431c831fe9f79edeed48ca4b23c2293848a3a3a240"
     },
     "campaign.log": {
-      "bytes": 84864,
+      "bytes": 85917,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "3dd4749d46fbe02a9a22cf8584e3850004d224e0ab75a3608de2b48f021e1c52"
+      "sha256": "ef6346de4c54bfdca1d57a161d44661ce67f4be07e8b4cdce27e89f94186652e"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -10167,9 +10168,9 @@
       "sha256": "06ff16bf72e6de93eb086c2a5614c7829a0e2f7c42bbf0ddec6a74e77d4a499f"
     },
     "confirmation-queue.log": {
-      "bytes": 12584,
+      "bytes": 13637,
       "local_path": "runs/autoresearch/ncp-20260915/confirmation-queue.log",
-      "sha256": "05d75b76d02ff549128861c6a73bf62ae40b6a6d28fdf4ba0f6d073727548c19"
+      "sha256": "92c0524efd8e3d4f665b9b48e4f85c46cc3798506c27947815d5eb7ec96265e1"
     },
     "confirmation-selection.json": {
       "bytes": 9231,
@@ -10526,6 +10527,41 @@
       "local_path": "runs/autoresearch/ncp-20260915/order-identity-red.log",
       "sha256": "a4db565b8ba35e41f816d6f5782c1b37cb6f76c3ae3280289143ce81e9b1969e"
     },
+    "order-preview-autoresearch.py": {
+      "bytes": 28851,
+      "local_path": "runs/autoresearch/ncp-20260915/order-preview-autoresearch.py",
+      "sha256": "b97fda3e32a53909f7b730382e7f7ad02c8579e0b705b32eee6fdd3ef408d3ce"
+    },
+    "order-preview-autoresearch_train.py": {
+      "bytes": 17236,
+      "local_path": "runs/autoresearch/ncp-20260915/order-preview-autoresearch_train.py",
+      "sha256": "28df670cb518c0ecdb88c70cf1d054149e8c4b09490b478044ad471807dcacab"
+    },
+    "order-preview-checks.py": {
+      "bytes": 4887,
+      "local_path": "runs/autoresearch/ncp-20260915/order-preview-checks.py",
+      "sha256": "a637e6d5cbfb7a2ac7f6934bb6a97d7febdec62f41810b0cd66081983e4c20c7"
+    },
+    "order-preview-green.log": {
+      "bytes": 405,
+      "local_path": "runs/autoresearch/ncp-20260915/order-preview-green.log",
+      "sha256": "1d9f9651bd8c40688833a0291d129e745f77a52be124261b5ef3a6a8bd3dd4ff"
+    },
+    "order-preview-ncp_audit.py": {
+      "bytes": 7592,
+      "local_path": "runs/autoresearch/ncp-20260915/order-preview-ncp_audit.py",
+      "sha256": "88db3553b9f0be523f824f4f4a350d6d39a15be4714882dad0153d632823754f"
+    },
+    "order-preview-ncp_campaign.py": {
+      "bytes": 13880,
+      "local_path": "runs/autoresearch/ncp-20260915/order-preview-ncp_campaign.py",
+      "sha256": "d63af2d375fca486d1ab7791c1da52f60fe0deb6c091320a1a160d631e0b05e4"
+    },
+    "order-preview-result.json": {
+      "bytes": 2910,
+      "local_path": "runs/autoresearch/ncp-20260915/order-preview-result.json",
+      "sha256": "b0af4efa23d57881ff6d985113aa43ddd7ef04a03a544392f344e994a7ce8bf9"
+    },
     "pending-development-result.json": {
       "bytes": 1088,
       "local_path": "runs/autoresearch/ncp-20260915/pending-development-result.json",
@@ -10694,7 +10730,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "d8eb3a3d4e6f01a051512029415c9af7961f09b058f1af0c22156f1a0a3048ee"
+      "sha256": "26b72005cf8b747fd485aa755ec82d50e0af04d5800f0d5ef728f5f4f1848040"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -10717,9 +10753,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 610491,
+      "bytes": 618177,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "334ce3bdd5725c8ff8b0897bc93fba66895aba2294b284397ebbe9349246d450"
+      "sha256": "68348507f77346335a0f82dd27cf95ae3e1181ab140bfc538b6bf62f0d8a7e0c"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -10742,9 +10778,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 32893,
+      "bytes": 33402,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "9f709e3c8c99375268586e3496ba0bd25b7bbf41500c758844aa59de4c25ec13"
+      "sha256": "f688cfd92fe0a0bafce30040630fb9591e72b38eaf6e51905cdb0a7c92eb5604"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -10856,6 +10892,26 @@
       "order-identity-red-source.py": {
         "published_path": "reports/source-snapshots/35862c275a8c85072d9fc2fcef89a21ae2c9b28f64421262770cac98c1ce2af0.py",
         "sha256": "35862c275a8c85072d9fc2fcef89a21ae2c9b28f64421262770cac98c1ce2af0"
+      },
+      "order-preview-autoresearch.py": {
+        "published_path": "reports/source-snapshots/b97fda3e32a53909f7b730382e7f7ad02c8579e0b705b32eee6fdd3ef408d3ce.py",
+        "sha256": "b97fda3e32a53909f7b730382e7f7ad02c8579e0b705b32eee6fdd3ef408d3ce"
+      },
+      "order-preview-autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/28df670cb518c0ecdb88c70cf1d054149e8c4b09490b478044ad471807dcacab.py",
+        "sha256": "28df670cb518c0ecdb88c70cf1d054149e8c4b09490b478044ad471807dcacab"
+      },
+      "order-preview-checks.py": {
+        "published_path": "reports/source-snapshots/a637e6d5cbfb7a2ac7f6934bb6a97d7febdec62f41810b0cd66081983e4c20c7.py",
+        "sha256": "a637e6d5cbfb7a2ac7f6934bb6a97d7febdec62f41810b0cd66081983e4c20c7"
+      },
+      "order-preview-ncp_audit.py": {
+        "published_path": "reports/source-snapshots/88db3553b9f0be523f824f4f4a350d6d39a15be4714882dad0153d632823754f.py",
+        "sha256": "88db3553b9f0be523f824f4f4a350d6d39a15be4714882dad0153d632823754f"
+      },
+      "order-preview-ncp_campaign.py": {
+        "published_path": "reports/source-snapshots/d63af2d375fca486d1ab7791c1da52f60fe0deb6c091320a1a160d631e0b05e4.py",
+        "sha256": "d63af2d375fca486d1ab7791c1da52f60fe0deb6c091320a1a160d631e0b05e4"
       },
       "publication-watcher.py": {
         "published_path": "reports/source-snapshots/0ab45267e47897ffce18ec0628087ca3572b8d2834b765600412d8271bb0cdd6.py",

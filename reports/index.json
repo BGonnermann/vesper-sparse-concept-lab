@@ -1661,6 +1661,25 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0069-FROZEN-NOPRED-s43",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "c982b17e666a1be87c8fecfb1b3d511fd04c353ca1641d34daa1cf7c0356d252",
+      "experiment_id": "ncp-20260915--trial-0069-FROZEN-NOPRED-s43-c32cec4d",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 30.0,
+        "num_steps": 512.0,
+        "peak_vram_mb": 653.3,
+        "total_seconds": 222.3,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 214.6,
+        "val_bpb": 0.640659
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,

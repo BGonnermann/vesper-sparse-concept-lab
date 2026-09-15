@@ -104,6 +104,10 @@ AssertionError: [102, 486, 438, 2, 458, 172, 372, 221, 246, 123, 100, 462, 222, 
 Ran 2 tests in 1.818s
 FAILED (failures=1, errors=1)
 
+order-preview-green.log:
+Ran 2 tests in 1.776s
+OK
+
 preflight-cpu-1789473248.log:
 ok
 ok
