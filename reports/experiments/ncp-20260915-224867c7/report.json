@@ -1319,6 +1319,23 @@
           }
         },
         {
+          "batch_order_seed": 42,
+          "delta_bpb": 0.0017300000000000093,
+          "initialization_seed": 45,
+          "runs": {
+            "D6": {
+              "bpb": 0.635365,
+              "result_sha256": "1b9129615854a555c3f6ba183486b77d1350b990f1e129143aee8e61d873ef2b",
+              "trial": "trial-0076-CROSS-D6-s45"
+            },
+            "NCP": {
+              "bpb": 0.637095,
+              "result_sha256": "e22d2efb5f9102b39c85d0dbe958821735632166813c41e63411c6ebec427dae",
+              "trial": "trial-0077-CROSS-NCP-s45"
+            }
+          }
+        },
+        {
           "batch_order_seed": 45,
           "delta_bpb": 0.002118999999999982,
           "initialization_seed": 45,
@@ -1337,13 +1354,17 @@
         }
       ],
       "contrast_definition": "Contrasts operate on NCP-minus-dense BPB; positive means a less favorable NCP effect.",
-      "contrasts": null,
+      "contrasts": {
+        "initialization_45_minus_42": 0.00564899999999996,
+        "interaction_difference_of_differences": 0.0018960000000000088,
+        "order_45_minus_42": -0.0005590000000000317
+      },
       "expected_cells": 4,
       "interpretation": "Two deliberately chosen seed levels diagnose the observed reversal; not four independent replications or held-out evidence. Utilization samples follow order seed.",
       "kind": "initializer_order_diagnostic",
       "new_training_runs": 4,
       "plan_sha256": "532630dcf410b70ddc84b4edac2f110bed5fb42cde3f5c400824e2a491c5671e",
-      "status": "running"
+      "status": "completed"
     },
     "dense-scale-result.json": {
       "checkpoint_sha256": "3a9f8857ba88c8d21792400d535ac67df8685b47ceb6c05a7b9ddc1899052cd5",
@@ -12637,7 +12658,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "65cd2ccf663ecfcf164111e17d98b35df6b6931a",
+      "publication_commit": "0f2d56837652aa22cd2e0021a34d050a970e994b",
       "status": "completed",
       "verified_remote": true
     },
@@ -13080,9 +13101,9 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 93836,
+      "bytes": 94805,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "f217678ac17cc9e703961c08b6d561d45e58445cb9bd160eda4c995605b665ad"
+      "sha256": "7a544909e1a02fa72b41d09684e1f8a3e54ce1e979d5778a9a15b78fc2c0a44b"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -13155,14 +13176,14 @@
       "sha256": "532630dcf410b70ddc84b4edac2f110bed5fb42cde3f5c400824e2a491c5671e"
     },
     "crossed-order-queue.log": {
-      "bytes": 2502,
+      "bytes": 3471,
       "local_path": "runs/autoresearch/ncp-20260915/crossed-order-queue.log",
-      "sha256": "a9a7b00a78455ec7801e2d8d547961c8344e5e79328cc4f2d9a257573a984742"
+      "sha256": "b42dad842c0b4fdd5af3f93875b11a82de0f718583e34bb2f3f42a5127313819"
     },
     "crossed-order-result.json": {
-      "bytes": 2191,
+      "bytes": 2917,
       "local_path": "runs/autoresearch/ncp-20260915/crossed-order-result.json",
-      "sha256": "7f6b5978526fe616d1191cc8cf6240a1f86bb9f8a9bc720c30d7f3eb67a4af9a"
+      "sha256": "aae2990b18f3c9b459ae293b9d410606a6555c125050aab943d650879b4b1cb5"
     },
     "cuda-suite1.log": {
       "bytes": 12616,
@@ -13762,7 +13783,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "a8e111186901661edb1014689d3b9be40aca2af8d62ab3a9ed17322f4e2d1ff5"
+      "sha256": "ff956ae196fcb4867cc3e0e1499d84800ffb7c33d4469b7ee108bf593110b267"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -13785,9 +13806,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 673747,
+      "bytes": 681516,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "ff3926768777edfb161bed3dbafa7ec4ed2225c0619592978e7dc51dc7c0709d"
+      "sha256": "fd4adc958d352be37176d60ceb84a0bbe4cc05abbc69612f0f7a53f0bcc35422"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -13810,9 +13831,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 37896,
+      "bytes": 38606,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "9b28d58aa5faa136f99427ae6c73e8ab18945ae77e4166c33507cb6992e7365f"
+      "sha256": "fede88f65e674ffb35831fd4ef16bc3d5c0e92a7cefcd0bbcb34d1f51161cab6"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,

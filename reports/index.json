@@ -1813,6 +1813,25 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0077-CROSS-NCP-s45",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "7d3d32c3bcb9768d1ab54e6fb23c3248a020ee29e280beda35876d9bc1809c24",
+      "experiment_id": "ncp-20260915--trial-0077-CROSS-NCP-s45-695f2d13",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 30.0,
+        "num_steps": 512.0,
+        "peak_vram_mb": 653.3,
+        "total_seconds": 221.4,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 213.8,
+        "val_bpb": 0.637095
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,
