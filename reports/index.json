@@ -391,6 +391,90 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ngram-20260915/D",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "9ca459443daacdf21b0837f24653232452c57bbb614092e51afdf080e4ee2827",
+      "experiment_id": "ngram-20260915--D-ba004b1c",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 512.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 160.7,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 151.7,
+        "val_bpb": 0.634848
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-20260915/DG",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "9ca459443daacdf21b0837f24653232452c57bbb614092e51afdf080e4ee2827",
+      "experiment_id": "ngram-20260915--DG-29c4025f",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 27.4,
+        "num_steps": 512.0,
+        "peak_vram_mb": 599.7,
+        "total_seconds": 173.1,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 166.6,
+        "val_bpb": 0.634178
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-20260915/M",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "9ca459443daacdf21b0837f24653232452c57bbb614092e51afdf080e4ee2827",
+      "experiment_id": "ngram-20260915--M-0cc0e90f",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 512.0,
+        "peak_vram_mb": 902.2,
+        "total_seconds": 295.2,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 286.2,
+        "val_bpb": 0.637217
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-20260915/MG",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "9ca459443daacdf21b0837f24653232452c57bbb614092e51afdf080e4ee2827",
+      "experiment_id": "ngram-20260915--MG-80d7039f",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 48.7,
+        "num_steps": 512.0,
+        "peak_vram_mb": 919.9,
+        "total_seconds": 318.4,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 307.8,
+        "val_bpb": 0.637723
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-20260915",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "5ad839be539e6837e6b3d854c85f9b88a4ee7ffe4571b4401832ad870d7c465b",
+      "experiment_id": "ngram-20260915-abd2e6dd",
+      "metrics": null,
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/packed-20260915T002151Z-dense-baseline",
       "budget_family": "wall_time_budget",
       "compatibility_fingerprint": "98216a105e680926d6a4da5c4b1f65c350800e2ee726708ae659b8dc3536fee4",

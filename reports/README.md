@@ -29,6 +29,11 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [equal-token-20260915](experiments/equal-token-20260915-87990217/README.md) | completed | stage_or_unknown | unknown |
 | [moe-feasibility-20260914T224538Z](experiments/moe-feasibility-20260914T224538Z-d3d2dbbe/README.md) | stopped | stage_or_unknown | unknown |
 | [moe-resume-20260914T231300Z](experiments/moe-resume-20260914T231300Z-62aecf08/README.md) | completed | stage_or_unknown | unknown |
+| [ngram-20260915/D](experiments/ngram-20260915--D-ba004b1c/README.md) | completed | fixed_updates | 0.634848 |
+| [ngram-20260915/DG](experiments/ngram-20260915--DG-29c4025f/README.md) | completed | fixed_updates | 0.634178 |
+| [ngram-20260915/M](experiments/ngram-20260915--M-0cc0e90f/README.md) | completed | fixed_updates | 0.637217 |
+| [ngram-20260915/MG](experiments/ngram-20260915--MG-80d7039f/README.md) | completed | fixed_updates | 0.637723 |
+| [ngram-20260915](experiments/ngram-20260915-abd2e6dd/README.md) | completed | fixed_updates | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |
 | [packed-20260915T002151Z-moe-baseline](experiments/packed-20260915T002151Z-moe-baseline-aa31ead4/README.md) | completed | wall_time_budget | 0.706799 |

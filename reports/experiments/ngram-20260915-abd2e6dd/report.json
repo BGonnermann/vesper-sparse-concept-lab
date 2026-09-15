@@ -1,0 +1,2523 @@
+{
+  "artifact_directory": "runs/autoresearch/ngram-20260915",
+  "budget_family": "fixed_updates",
+  "compatibility_fingerprint": "5ad839be539e6837e6b3d854c85f9b88a4ee7ffe4571b4401832ad870d7c465b",
+  "configuration": null,
+  "details": {
+    "D.json": {},
+    "DG.json": {},
+    "M.json": {},
+    "MG.json": {},
+    "boundary-and-batches.json": {
+      "batch_hash_chain": "e43fc6843aa6f6a1005aabf5cab1f85ddca025aba7eee455c55103b69421257f",
+      "bos_token_id": 8188,
+      "boundary_policy": "Captured packer prepends BOS to every document, including cropped documents; every row starts BOS; no separate boundary metadata",
+      "microbatches": 8192,
+      "packer_sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+      "tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "training_tokens": 8388608,
+      "verified": true,
+      "vocab_size": 8192
+    },
+    "comparison.json": {
+      "cloud_jobs": 0,
+      "extra_seeds": 0,
+      "limitations": [
+        "One seed and fixed condition order; preliminary only.",
+        "Equal tokens are unequal parameters/compute; added-capacity benefit not isolated.",
+        "Bitwise training reproducibility is not established; use the fresh controls, not historical BPB as a substitute.",
+        "Memory diagnostics are final-update/sampled final-model measurements, not all-update distributions.",
+        "No full-model KV-cache/resumable-training claim; only bounded lookup and CPU state fixtures."
+      ],
+      "matched_settings_and_batches": true,
+      "ngram_tape_diagnostics_sha256": "e39b9e64d27ec8d674ebf0522194c8214ced5c34f647d65558131ac0b44b1ee5",
+      "plan_revision": {
+        "authorization": "Implement frozen plan; D DG M MG seed42; exactly512updates; no additional training",
+        "git_revision": "7f2ceab77d69d2e4be70969a4cae4c34d82790a9",
+        "max_repair_iterations": 3,
+        "plan_sha256": "e8d7872c21fc7b5d5df561863ce0f7724730fb0da643724ce8053cf14e25a71a"
+      },
+      "preflight": {
+        "kind": "correctness_preflight",
+        "log": "preflight.log",
+        "log_sha256": "75d42eecc816b4f4fa173f40e59af6208fe311e7cf781936184ae285ada8779b",
+        "passed": true,
+        "plan_revision": {
+          "authorization": "Implement frozen plan; D DG M MG seed42; exactly512updates; no additional training",
+          "git_revision": "7f2ceab77d69d2e4be70969a4cae4c34d82790a9",
+          "max_repair_iterations": 3,
+          "plan_sha256": "e8d7872c21fc7b5d5df561863ce0f7724730fb0da643724ce8053cf14e25a71a"
+        },
+        "source_hashes": {
+          "autoresearch.py": "aef9066a56abc71f187faeb98478ab42c9661d42fb34f4041bc32503aba97ab8",
+          "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+          "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+          "autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+          "autoresearch_train.py": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5"
+        },
+        "status": "completed",
+        "test_hashes": {
+          "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+          "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+          "test_experiment_reports.py": "bb36a0ecfc832b124807d3650cd657c16b49209a68789bd66cbba2cf6cbee69d",
+          "test_fixed_updates.py": "ba7d2ae7b106747edc4ff6452a9d730d4fb36c5e3059db68807e528d8135fe7f",
+          "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+          "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+          "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+          "test_snapshot.py": "a4ae0a4720218705174c106efcdd5dae056f4e6c0b45758917c27037add96cc7"
+        }
+      },
+      "preliminary": true,
+      "primary_contrasts": {
+        "DG_minus_D": -0.0006699999999999484,
+        "MG_minus_M": 0.0005060000000000064,
+        "interaction": 0.0011759999999999549
+      },
+      "prior_artifacts_unchanged": 708,
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 42,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "rows": [
+        {
+          "active_parameters": 26345772,
+          "dropped_tokens": 0,
+          "expert_utilization": [],
+          "label": "D",
+          "memory_diagnostics": {
+            "enabled": false,
+            "measurement_scope": "Final update gradients/deltas and post-training inference on first32 seeded training microbatches; outside timed training"
+          },
+          "memory_table_bytes": 0,
+          "peak_allocated_mib": 581.685546875,
+          "peak_reserved_mib": 622.0,
+          "seed": 42,
+          "timed_seconds": 151.74479100009194,
+          "timed_tokens": 8208384,
+          "timed_tokens_per_second": 54093.34940528553,
+          "tokens": 8388608,
+          "total_parameters": 26345772,
+          "validation_bpb": 0.634848,
+          "wall_seconds": 165.73399999999674
+        },
+        {
+          "active_parameters": 26395437,
+          "dropped_tokens": 0,
+          "expert_utilization": [],
+          "label": "DG",
+          "memory_diagnostics": {
+            "enabled": true,
+            "final_update_gradient_norms": {
+              "E2": 0.0005107376491650939,
+              "E3": 0.00039460608968511224,
+              "Wv": 9.395061351824552e-05,
+              "bg": 7.645598998351488e-08,
+              "wg": 1.7233958260476356e-06
+            },
+            "final_update_parameter_delta_norms": {
+              "E2": 0.0004845788353122771,
+              "E3": 0.00047885035746730864,
+              "Wv": 0.00014309094694908708,
+              "bg": 0.0,
+              "wg": 5.157123723620316e-07
+            },
+            "measurement_scope": "Final update gradients/deltas and post-training inference on first32 seeded training microbatches; outside timed training",
+            "samples": [
+              {
+                "accessed_rows": [
+                  704,
+                  872
+                ],
+                "gate_max": 0.9999959468841553,
+                "gate_mean": 0.999562680721283,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997755289077759,
+                  0.9999004006385803,
+                  0.9999542236328125,
+                  0.9999959468841553
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  696,
+                  869
+                ],
+                "gate_max": 0.9999946355819702,
+                "gate_mean": 0.9994087219238281,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.999740719795227,
+                  0.9998942613601685,
+                  0.9999521970748901,
+                  0.9999946355819702
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  718,
+                  871
+                ],
+                "gate_max": 0.9999936819076538,
+                "gate_mean": 0.999363899230957,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9996960163116455,
+                  0.9998784065246582,
+                  0.999946653842926,
+                  0.9999936819076538
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  750,
+                  887
+                ],
+                "gate_max": 0.9999955892562866,
+                "gate_mean": 0.9993324279785156,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.99967360496521,
+                  0.9998708367347717,
+                  0.9999434947967529,
+                  0.9999955892562866
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  710,
+                  850
+                ],
+                "gate_max": 0.9999940395355225,
+                "gate_mean": 0.9993540048599243,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.999724805355072,
+                  0.9998947381973267,
+                  0.9999517202377319,
+                  0.9999940395355225
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.984375,
+                  0.9765625
+                ]
+              },
+              {
+                "accessed_rows": [
+                  717,
+                  880
+                ],
+                "gate_max": 0.9999946355819702,
+                "gate_mean": 0.9994506239891052,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997255802154541,
+                  0.9998805522918701,
+                  0.9999457597732544,
+                  0.9999946355819702
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9912109375,
+                  0.9873046875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  693,
+                  837
+                ],
+                "gate_max": 0.9999943971633911,
+                "gate_mean": 0.999232292175293,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9996326565742493,
+                  0.9998586773872375,
+                  0.9999414682388306,
+                  0.9999943971633911
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  758,
+                  866
+                ],
+                "gate_max": 0.999995231628418,
+                "gate_mean": 0.9993581771850586,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9996963739395142,
+                  0.9998904466629028,
+                  0.9999535083770752,
+                  0.999995231628418
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  710,
+                  851
+                ],
+                "gate_max": 0.9999934434890747,
+                "gate_mean": 0.9995180368423462,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.999764084815979,
+                  0.9998964071273804,
+                  0.9999517202377319,
+                  0.9999934434890747
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.990234375,
+                  0.986328125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  726,
+                  875
+                ],
+                "gate_max": 0.999995231628418,
+                "gate_mean": 0.9993616938591003,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9996683597564697,
+                  0.9998714327812195,
+                  0.9999468326568604,
+                  0.999995231628418
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  671,
+                  817
+                ],
+                "gate_max": 0.9999938011169434,
+                "gate_mean": 0.9995569586753845,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997842907905579,
+                  0.9999045729637146,
+                  0.9999498128890991,
+                  0.9999938011169434
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  731,
+                  886
+                ],
+                "gate_max": 0.9999938011169434,
+                "gate_mean": 0.9992655515670776,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9996547698974609,
+                  0.9998634457588196,
+                  0.9999388456344604,
+                  0.9999938011169434
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  728,
+                  884
+                ],
+                "gate_max": 0.9999942779541016,
+                "gate_mean": 0.9995032548904419,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997115135192871,
+                  0.9998732805252075,
+                  0.9999439716339111,
+                  0.9999942779541016
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  741,
+                  879
+                ],
+                "gate_max": 0.9999932050704956,
+                "gate_mean": 0.9991034269332886,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9996795654296875,
+                  0.9998772144317627,
+                  0.9999505877494812,
+                  0.9999932050704956
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  738,
+                  893
+                ],
+                "gate_max": 0.9999914169311523,
+                "gate_mean": 0.9995315074920654,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997401833534241,
+                  0.9998969435691833,
+                  0.9999548196792603,
+                  0.9999914169311523
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  717,
+                  857
+                ],
+                "gate_max": 0.9999921321868896,
+                "gate_mean": 0.9994685649871826,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997262954711914,
+                  0.9998778104782104,
+                  0.9999423027038574,
+                  0.9999921321868896
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  727,
+                  857
+                ],
+                "gate_max": 0.9999945163726807,
+                "gate_mean": 0.9994292259216309,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997401833534241,
+                  0.9998977184295654,
+                  0.9999572038650513,
+                  0.9999945163726807
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  663,
+                  834
+                ],
+                "gate_max": 0.9999951124191284,
+                "gate_mean": 0.9994324445724487,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997633695602417,
+                  0.99990314245224,
+                  0.9999548196792603,
+                  0.9999951124191284
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.986328125,
+                  0.9794921875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  745,
+                  883
+                ],
+                "gate_max": 0.9999946355819702,
+                "gate_mean": 0.9994361400604248,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997327923774719,
+                  0.9998926520347595,
+                  0.999951958656311,
+                  0.9999946355819702
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  664,
+                  842
+                ],
+                "gate_max": 0.9999960660934448,
+                "gate_mean": 0.9994432926177979,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997255206108093,
+                  0.9998955130577087,
+                  0.9999555349349976,
+                  0.9999960660934448
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  676,
+                  857
+                ],
+                "gate_max": 0.9999945163726807,
+                "gate_mean": 0.999320387840271,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9996705055236816,
+                  0.999871015548706,
+                  0.9999451637268066,
+                  0.9999945163726807
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  709,
+                  859
+                ],
+                "gate_max": 0.9999948740005493,
+                "gate_mean": 0.9992569088935852,
+                "gate_min": 0.8800174593925476,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.8800174593925476,
+                  0.9997320771217346,
+                  0.9999017119407654,
+                  0.9999602437019348,
+                  0.9999948740005493
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  721,
+                  859
+                ],
+                "gate_max": 0.9999957084655762,
+                "gate_mean": 0.9994409084320068,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.999759316444397,
+                  0.9999086856842041,
+                  0.9999587535858154,
+                  0.9999957084655762
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  747,
+                  892
+                ],
+                "gate_max": 0.9999943971633911,
+                "gate_mean": 0.9994875192642212,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.999740481376648,
+                  0.999900221824646,
+                  0.9999520778656006,
+                  0.9999943971633911
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9912109375,
+                  0.9873046875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  668,
+                  835
+                ],
+                "gate_max": 0.9999949932098389,
+                "gate_mean": 0.9994652271270752,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997530579566956,
+                  0.999890923500061,
+                  0.9999542236328125,
+                  0.9999949932098389
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.9833984375
+                ]
+              },
+              {
+                "accessed_rows": [
+                  708,
+                  851
+                ],
+                "gate_max": 0.9999934434890747,
+                "gate_mean": 0.9994314312934875,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997498393058777,
+                  0.9999043941497803,
+                  0.9999564290046692,
+                  0.9999934434890747
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  688,
+                  853
+                ],
+                "gate_max": 0.9999953508377075,
+                "gate_mean": 0.9993722438812256,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997289180755615,
+                  0.9998903870582581,
+                  0.9999538660049438,
+                  0.9999953508377075
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.984375,
+                  0.9765625
+                ]
+              },
+              {
+                "accessed_rows": [
+                  747,
+                  897
+                ],
+                "gate_max": 0.9999935626983643,
+                "gate_mean": 0.9993103742599487,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.999702513217926,
+                  0.999886155128479,
+                  0.9999524354934692,
+                  0.9999935626983643
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  688,
+                  827
+                ],
+                "gate_max": 0.9999940395355225,
+                "gate_mean": 0.999292254447937,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.999718189239502,
+                  0.9998989105224609,
+                  0.9999535083770752,
+                  0.9999940395355225
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.984375,
+                  0.9765625
+                ]
+              },
+              {
+                "accessed_rows": [
+                  684,
+                  846
+                ],
+                "gate_max": 0.9999963045120239,
+                "gate_mean": 0.9993493556976318,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997380971908569,
+                  0.9999043941497803,
+                  0.9999561309814453,
+                  0.9999963045120239
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  633,
+                  808
+                ],
+                "gate_max": 0.9999942779541016,
+                "gate_mean": 0.9995136260986328,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997061491012573,
+                  0.9998635053634644,
+                  0.9999402761459351,
+                  0.9999942779541016
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  662,
+                  830
+                ],
+                "gate_max": 0.9999947547912598,
+                "gate_mean": 0.9994020462036133,
+                "gate_min": 0.9471009969711304,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.9471009969711304,
+                  0.9997409582138062,
+                  0.9999021291732788,
+                  0.9999565482139587,
+                  0.9999947547912598
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.984375,
+                  0.9765625
+                ]
+              }
+            ]
+          },
+          "memory_summary": {
+            "final_update_gradient_norms": {
+              "E2": 0.0005107376491650939,
+              "E3": 0.00039460608968511224,
+              "Wv": 9.395061351824552e-05,
+              "bg": 7.645598998351488e-08,
+              "wg": 1.7233958260476356e-06
+            },
+            "final_update_parameter_delta_norms": {
+              "E2": 0.0004845788353122771,
+              "E3": 0.00047885035746730864,
+              "Wv": 0.00014309094694908708,
+              "bg": 0.0,
+              "wg": 5.157123723620316e-07
+            },
+            "sampled_gate_max": 0.9999963045120239,
+            "sampled_gate_mean": 0.9993986003100872,
+            "sampled_gate_min": 0.8800174593925476
+          },
+          "memory_table_bytes": 4194304,
+          "peak_allocated_mib": 599.6875,
+          "peak_reserved_mib": 624.0,
+          "seed": 42,
+          "timed_seconds": 166.64532869984396,
+          "timed_tokens": 8208384,
+          "timed_tokens_per_second": 49256.61021548746,
+          "tokens": 8388608,
+          "total_parameters": 27443885,
+          "validation_bpb": 0.634178,
+          "wall_seconds": 176.35899999999674
+        },
+        {
+          "active_parameters": 26354988,
+          "dropped_tokens": 0,
+          "expert_utilization": [
+            [
+              0.22837328910827637,
+              0.20789945125579834,
+              0.3281123638153076,
+              0.23561489582061768
+            ],
+            [
+              0.25604307651519775,
+              0.24490773677825928,
+              0.2732590436935425,
+              0.2257901430130005
+            ],
+            [
+              0.2473689317703247,
+              0.2606337070465088,
+              0.24921941757202148,
+              0.24277794361114502
+            ],
+            [
+              0.23400342464447021,
+              0.2220062017440796,
+              0.236517071723938,
+              0.3074733018875122
+            ],
+            [
+              0.2626631259918213,
+              0.2428727149963379,
+              0.2844526767730713,
+              0.21001148223876953
+            ],
+            [
+              0.26603710651397705,
+              0.2672170400619507,
+              0.16888141632080078,
+              0.2978644371032715
+            ]
+          ],
+          "label": "M",
+          "memory_diagnostics": {
+            "enabled": false,
+            "measurement_scope": "Final update gradients/deltas and post-training inference on first32 seeded training microbatches; outside timed training"
+          },
+          "memory_table_bytes": 0,
+          "peak_allocated_mib": 902.23779296875,
+          "peak_reserved_mib": 956.0,
+          "seed": 42,
+          "timed_seconds": 286.1533435001911,
+          "timed_tokens": 8208384,
+          "timed_tokens_per_second": 28685.263291339168,
+          "tokens": 8388608,
+          "total_parameters": 47588652,
+          "validation_bpb": 0.637217,
+          "wall_seconds": 298.4690000000119
+        },
+        {
+          "active_parameters": 26404653,
+          "dropped_tokens": 0,
+          "expert_utilization": [
+            [
+              0.22812235355377197,
+              0.2088179588317871,
+              0.32705914974212646,
+              0.23600053787231445
+            ],
+            [
+              0.24298667907714844,
+              0.24586009979248047,
+              0.2831082344055176,
+              0.22804498672485352
+            ],
+            [
+              0.24487948417663574,
+              0.2695821523666382,
+              0.2388010025024414,
+              0.24673736095428467
+            ],
+            [
+              0.23096299171447754,
+              0.23174405097961426,
+              0.25352323055267334,
+              0.28376972675323486
+            ],
+            [
+              0.2524759769439697,
+              0.25066351890563965,
+              0.2849597930908203,
+              0.2119007110595703
+            ],
+            [
+              0.2610630989074707,
+              0.21416175365447998,
+              0.21244359016418457,
+              0.31233155727386475
+            ]
+          ],
+          "label": "MG",
+          "memory_diagnostics": {
+            "enabled": true,
+            "final_update_gradient_norms": {
+              "E2": 0.00038958448567427695,
+              "E3": 0.0003094406274612993,
+              "Wv": 6.701692473143339e-05,
+              "bg": 1.1569639468689275e-07,
+              "wg": 2.6518448521528626e-06
+            },
+            "final_update_parameter_delta_norms": {
+              "E2": 0.0006910450756549835,
+              "E3": 0.0006871094228699803,
+              "Wv": 0.00021488408674485981,
+              "bg": 0.0,
+              "wg": 1.2604347148226225e-06
+            },
+            "measurement_scope": "Final update gradients/deltas and post-training inference on first32 seeded training microbatches; outside timed training",
+            "samples": [
+              {
+                "accessed_rows": [
+                  704,
+                  872
+                ],
+                "gate_max": 0.999995231628418,
+                "gate_mean": 0.9978898167610168,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9993985891342163,
+                  0.9998044967651367,
+                  0.9999170899391174,
+                  0.999995231628418
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  696,
+                  869
+                ],
+                "gate_max": 0.9999960660934448,
+                "gate_mean": 0.9972862601280212,
+                "gate_min": 0.7102658152580261,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7102658152580261,
+                  0.9993418455123901,
+                  0.9998098015785217,
+                  0.9999200105667114,
+                  0.9999960660934448
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  718,
+                  871
+                ],
+                "gate_max": 0.9999943971633911,
+                "gate_mean": 0.9971874356269836,
+                "gate_min": 0.6653464436531067,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.6653464436531067,
+                  0.999217689037323,
+                  0.9997596740722656,
+                  0.9999122619628906,
+                  0.9999943971633911
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  750,
+                  887
+                ],
+                "gate_max": 0.9999966621398926,
+                "gate_mean": 0.9969590306282043,
+                "gate_min": 0.6294682025909424,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.6294682025909424,
+                  0.99927818775177,
+                  0.999768078327179,
+                  0.9999088644981384,
+                  0.9999966621398926
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  710,
+                  850
+                ],
+                "gate_max": 0.9999960660934448,
+                "gate_mean": 0.9967784881591797,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9991871118545532,
+                  0.9997791647911072,
+                  0.9999254941940308,
+                  0.9999960660934448
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.984375,
+                  0.9765625
+                ]
+              },
+              {
+                "accessed_rows": [
+                  717,
+                  880
+                ],
+                "gate_max": 0.9999948740005493,
+                "gate_mean": 0.9974489212036133,
+                "gate_min": 0.690000593662262,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.690000593662262,
+                  0.9992202520370483,
+                  0.9997561573982239,
+                  0.9999114871025085,
+                  0.9999948740005493
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9912109375,
+                  0.9873046875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  693,
+                  837
+                ],
+                "gate_max": 0.9999945163726807,
+                "gate_mean": 0.9970899820327759,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9990932941436768,
+                  0.9997348785400391,
+                  0.9999204874038696,
+                  0.9999945163726807
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  758,
+                  866
+                ],
+                "gate_max": 0.9999955892562866,
+                "gate_mean": 0.9969707727432251,
+                "gate_min": 0.6090393662452698,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.6090393662452698,
+                  0.9991713166236877,
+                  0.9997683763504028,
+                  0.9999240040779114,
+                  0.9999955892562866
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  710,
+                  851
+                ],
+                "gate_max": 0.9999948740005493,
+                "gate_mean": 0.9977681636810303,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9993444681167603,
+                  0.9997735619544983,
+                  0.9999192357063293,
+                  0.9999948740005493
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.990234375,
+                  0.986328125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  726,
+                  875
+                ],
+                "gate_max": 0.9999927282333374,
+                "gate_mean": 0.9968231916427612,
+                "gate_min": 0.637922465801239,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.637922465801239,
+                  0.99910569190979,
+                  0.999723494052887,
+                  0.9998939037322998,
+                  0.9999927282333374
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  671,
+                  817
+                ],
+                "gate_max": 0.9999943971633911,
+                "gate_mean": 0.9979664087295532,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9993564486503601,
+                  0.9998061656951904,
+                  0.9999305605888367,
+                  0.9999943971633911
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  731,
+                  886
+                ],
+                "gate_max": 0.9999959468841553,
+                "gate_mean": 0.9970417022705078,
+                "gate_min": 0.6592615842819214,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.6592615842819214,
+                  0.9992547035217285,
+                  0.999751091003418,
+                  0.9999070763587952,
+                  0.9999959468841553
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  728,
+                  884
+                ],
+                "gate_max": 0.9999946355819702,
+                "gate_mean": 0.9977283477783203,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9991804361343384,
+                  0.9997244477272034,
+                  0.999889075756073,
+                  0.9999946355819702
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  741,
+                  879
+                ],
+                "gate_max": 0.9999949932098389,
+                "gate_mean": 0.9959479570388794,
+                "gate_min": 0.7213085293769836,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7213085293769836,
+                  0.999104917049408,
+                  0.9997847080230713,
+                  0.9999200105667114,
+                  0.9999949932098389
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  738,
+                  893
+                ],
+                "gate_max": 0.9999949932098389,
+                "gate_mean": 0.9978450536727905,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9993748068809509,
+                  0.9998023509979248,
+                  0.9999252557754517,
+                  0.9999949932098389
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  717,
+                  857
+                ],
+                "gate_max": 0.999995231628418,
+                "gate_mean": 0.9979282021522522,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.999374508857727,
+                  0.9997806549072266,
+                  0.9999065399169922,
+                  0.999995231628418
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  727,
+                  857
+                ],
+                "gate_max": 0.9999948740005493,
+                "gate_mean": 0.9971733093261719,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9992431402206421,
+                  0.9998007416725159,
+                  0.9999333024024963,
+                  0.9999948740005493
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  663,
+                  834
+                ],
+                "gate_max": 0.999995231628418,
+                "gate_mean": 0.9970929622650146,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9993159770965576,
+                  0.99979168176651,
+                  0.9999167919158936,
+                  0.999995231628418
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.986328125,
+                  0.9794921875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  745,
+                  883
+                ],
+                "gate_max": 0.9999958276748657,
+                "gate_mean": 0.9974719285964966,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9994233846664429,
+                  0.9998121857643127,
+                  0.9999352097511292,
+                  0.9999958276748657
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  664,
+                  842
+                ],
+                "gate_max": 0.9999954700469971,
+                "gate_mean": 0.9974983930587769,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.999298095703125,
+                  0.999801516532898,
+                  0.9999228715896606,
+                  0.9999954700469971
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  676,
+                  857
+                ],
+                "gate_max": 0.999996542930603,
+                "gate_mean": 0.9969773888587952,
+                "gate_min": 0.6170458793640137,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.6170458793640137,
+                  0.9991694688796997,
+                  0.9997585415840149,
+                  0.9999097585678101,
+                  0.999996542930603
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  709,
+                  859
+                ],
+                "gate_max": 0.9999955892562866,
+                "gate_mean": 0.9972162246704102,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.999177873134613,
+                  0.999785840511322,
+                  0.9999268651008606,
+                  0.9999955892562866
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  721,
+                  859
+                ],
+                "gate_max": 0.999996542930603,
+                "gate_mean": 0.9972600936889648,
+                "gate_min": 0.6725520491600037,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.6725520491600037,
+                  0.9993115663528442,
+                  0.9997925758361816,
+                  0.9999285936355591,
+                  0.999996542930603
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  747,
+                  892
+                ],
+                "gate_max": 0.9999942779541016,
+                "gate_mean": 0.9975258708000183,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9993497133255005,
+                  0.9997655153274536,
+                  0.9999113082885742,
+                  0.9999942779541016
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9912109375,
+                  0.9873046875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  668,
+                  835
+                ],
+                "gate_max": 0.9999948740005493,
+                "gate_mean": 0.9976812601089478,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9994164705276489,
+                  0.9998190402984619,
+                  0.9999308586120605,
+                  0.9999948740005493
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.9833984375
+                ]
+              },
+              {
+                "accessed_rows": [
+                  708,
+                  851
+                ],
+                "gate_max": 0.9999955892562866,
+                "gate_mean": 0.9972724318504333,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9991796612739563,
+                  0.9997773766517639,
+                  0.9999216198921204,
+                  0.9999955892562866
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  688,
+                  853
+                ],
+                "gate_max": 0.9999964237213135,
+                "gate_mean": 0.9966996908187866,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9991874694824219,
+                  0.999760627746582,
+                  0.999908983707428,
+                  0.9999964237213135
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.984375,
+                  0.9765625
+                ]
+              },
+              {
+                "accessed_rows": [
+                  747,
+                  897
+                ],
+                "gate_max": 0.9999955892562866,
+                "gate_mean": 0.9971867799758911,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9991407990455627,
+                  0.9997779130935669,
+                  0.9999178647994995,
+                  0.9999955892562866
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  688,
+                  827
+                ],
+                "gate_max": 0.9999946355819702,
+                "gate_mean": 0.9964714646339417,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9991519451141357,
+                  0.9997830390930176,
+                  0.9999234676361084,
+                  0.9999946355819702
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.984375,
+                  0.9765625
+                ]
+              },
+              {
+                "accessed_rows": [
+                  684,
+                  846
+                ],
+                "gate_max": 0.9999951124191284,
+                "gate_mean": 0.996943473815918,
+                "gate_min": 0.6716429591178894,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.6716429591178894,
+                  0.9992563128471375,
+                  0.9998053312301636,
+                  0.9999253153800964,
+                  0.9999951124191284
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.98828125,
+                  0.982421875
+                ]
+              },
+              {
+                "accessed_rows": [
+                  633,
+                  808
+                ],
+                "gate_max": 0.9999947547912598,
+                "gate_mean": 0.9979528188705444,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9992870092391968,
+                  0.9997456073760986,
+                  0.9998986721038818,
+                  0.9999947547912598
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.9921875,
+                  0.98828125
+                ]
+              },
+              {
+                "accessed_rows": [
+                  662,
+                  830
+                ],
+                "gate_max": 0.9999953508377075,
+                "gate_mean": 0.9967117309570312,
+                "gate_min": 0.7304727435112,
+                "gate_quantiles_0_25_50_75_100": [
+                  0.7304727435112,
+                  0.9991053938865662,
+                  0.999769926071167,
+                  0.9999215602874756,
+                  0.9999953508377075
+                ],
+                "gradient_norms": {
+                  "E2": null,
+                  "E3": null,
+                  "Wv": null,
+                  "bg": null,
+                  "wg": null
+                },
+                "hash_version": "polynomial-mod-v1",
+                "initialization_seed": 8442,
+                "scope": "explicit diagnostic batch, not all training tokens",
+                "valid_rates": [
+                  0.984375,
+                  0.9765625
+                ]
+              }
+            ]
+          },
+          "memory_summary": {
+            "final_update_gradient_norms": {
+              "E2": 0.00038958448567427695,
+              "E3": 0.0003094406274612993,
+              "Wv": 6.701692473143339e-05,
+              "bg": 1.1569639468689275e-07,
+              "wg": 2.6518448521528626e-06
+            },
+            "final_update_parameter_delta_norms": {
+              "E2": 0.0006910450756549835,
+              "E3": 0.0006871094228699803,
+              "Wv": 0.00021488408674485981,
+              "bg": 0.0,
+              "wg": 1.2604347148226225e-06
+            },
+            "sampled_gate_max": 0.9999966621398926,
+            "sampled_gate_mean": 0.9972436111420393,
+            "sampled_gate_min": 0.6090393662452698
+          },
+          "memory_table_bytes": 4194304,
+          "peak_allocated_mib": 919.89013671875,
+          "peak_reserved_mib": 992.0,
+          "seed": 42,
+          "timed_seconds": 307.8188898001099,
+          "timed_tokens": 8208384,
+          "timed_tokens_per_second": 26666.27771067047,
+          "tokens": 8388608,
+          "total_parameters": 48686765,
+          "validation_bpb": 0.637723,
+          "wall_seconds": 321.88999999998487
+        }
+      ],
+      "seeds": [
+        42
+      ],
+      "status": "completed",
+      "training_runs": 4
+    },
+    "model-D.json": {
+      "activation_checkpointing": false
+    },
+    "model-DG.json": {
+      "activation_checkpointing": false
+    },
+    "model-M.json": {
+      "activation_checkpointing": false
+    },
+    "model-MG.json": {
+      "activation_checkpointing": false
+    },
+    "plan-revision.json": {
+      "authorization": "Implement frozen plan; D DG M MG seed42; exactly512updates; no additional training",
+      "git_revision": "7f2ceab77d69d2e4be70969a4cae4c34d82790a9",
+      "max_repair_iterations": 3,
+      "plan_sha256": "e8d7872c21fc7b5d5df561863ce0f7724730fb0da643724ce8053cf14e25a71a"
+    },
+    "preflight-result.json": {
+      "kind": "correctness_preflight",
+      "log": "preflight.log",
+      "log_sha256": "75d42eecc816b4f4fa173f40e59af6208fe311e7cf781936184ae285ada8779b",
+      "passed": true,
+      "plan_revision": {
+        "authorization": "Implement frozen plan; D DG M MG seed42; exactly512updates; no additional training",
+        "git_revision": "7f2ceab77d69d2e4be70969a4cae4c34d82790a9",
+        "max_repair_iterations": 3,
+        "plan_sha256": "e8d7872c21fc7b5d5df561863ce0f7724730fb0da643724ce8053cf14e25a71a"
+      },
+      "source_hashes": {
+        "autoresearch.py": "aef9066a56abc71f187faeb98478ab42c9661d42fb34f4041bc32503aba97ab8",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+        "autoresearch_train.py": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5"
+      },
+      "status": "completed",
+      "test_hashes": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_experiment_reports.py": "bb36a0ecfc832b124807d3650cd657c16b49209a68789bd66cbba2cf6cbee69d",
+        "test_fixed_updates.py": "ba7d2ae7b106747edc4ff6452a9d730d4fb36c5e3059db68807e528d8135fe7f",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "a4ae0a4720218705174c106efcdd5dae056f4e6c0b45758917c27037add96cc7"
+      }
+    },
+    "preflight.json": {
+      "kind": "correctness_preflight",
+      "source_hashes": {
+        "autoresearch.py": "aef9066a56abc71f187faeb98478ab42c9661d42fb34f4041bc32503aba97ab8",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+        "autoresearch_train.py": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5"
+      },
+      "status": "completed"
+    },
+    "protocol.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "optimizer_updates": 512,
+      "protocol_id": "vesper-tinystories-equal-token-v1",
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "seed": 42,
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "stopping_rule": "optimizer_updates",
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    }
+  },
+  "diagnostics": [
+    "preflight.log:\nok\nok\nok\nok\nok\nRan 46 tests in 5.209s\nOK\ncuda correctness exit: 0"
+  ],
+  "evidence": {
+    "D.json": {
+      "bytes": 69,
+      "local_path": "runs/autoresearch/ngram-20260915/D.json",
+      "sha256": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7"
+    },
+    "DG.json": {
+      "bytes": 141,
+      "local_path": "runs/autoresearch/ngram-20260915/DG.json",
+      "sha256": "68cdb68e42c2ca0bc6e1f0a6c8b173977b07313d62653bcd15360803b96cf364"
+    },
+    "M.json": {
+      "bytes": 154,
+      "local_path": "runs/autoresearch/ngram-20260915/M.json",
+      "sha256": "b8d912bfc923b1d3ba17d1ddc4bef4b34ed40cc13ee3db5535c91c4db03b1dfd"
+    },
+    "MG.json": {
+      "bytes": 226,
+      "local_path": "runs/autoresearch/ngram-20260915/MG.json",
+      "sha256": "8f06334a3d9c35d8e4e7d741ba179ade02c07686fa3e91bff567acfa1e13b2fe"
+    },
+    "boundary-and-batches.json": {
+      "bytes": 549,
+      "local_path": "runs/autoresearch/ngram-20260915/boundary-and-batches.json",
+      "sha256": "cbc773480e717c5b4e9675d8a8f5e44f3dbad7d0bb90f3c240ffd93045a5edb9"
+    },
+    "comparison.json": {
+      "bytes": 71299,
+      "local_path": "runs/autoresearch/ngram-20260915/comparison.json",
+      "sha256": "542ff282bc14c2408d4f6d8307967a4d9080725373c57a1e63599e1b6e87ee34"
+    },
+    "final-report.log": {
+      "bytes": 3556,
+      "local_path": "runs/autoresearch/ngram-20260915/final-report.log",
+      "sha256": "d180895d410451715fb418ebe33e2425f0bcd8b2556c0c8d403aed699b395e31"
+    },
+    "frozen-plan.md": {
+      "bytes": 16404,
+      "local_path": "runs/autoresearch/ngram-20260915/frozen-plan.md",
+      "sha256": "e8d7872c21fc7b5d5df561863ce0f7724730fb0da643724ce8053cf14e25a71a"
+    },
+    "initialization-D.json": {
+      "bytes": 4828,
+      "local_path": "runs/autoresearch/ngram-20260915/initialization-D.json",
+      "sha256": "3cb41a47563f815674a0937b52c2da455eb0c651c402da6cc52a40a1f5bbc39f"
+    },
+    "initialization-DG.json": {
+      "bytes": 5278,
+      "local_path": "runs/autoresearch/ngram-20260915/initialization-DG.json",
+      "sha256": "45f74a24142a32c1d7a91c426c5d0599adf705ec7b6cfd5d8abf33fe74edea1b"
+    },
+    "initialization-M.json": {
+      "bytes": 9808,
+      "local_path": "runs/autoresearch/ngram-20260915/initialization-M.json",
+      "sha256": "3325837b9b53f8ce2d785125456fe8632e8863d348e62bb8ee80814c22ed982c"
+    },
+    "initialization-MG.json": {
+      "bytes": 10258,
+      "local_path": "runs/autoresearch/ngram-20260915/initialization-MG.json",
+      "sha256": "ba708fa4fd8e3c1585ce712f1b92434381523f616e5e8e91e04ea10928f9d267"
+    },
+    "model-D.json": {
+      "bytes": 749,
+      "local_path": "runs/autoresearch/ngram-20260915/model-D.json",
+      "sha256": "af99b953300ef2c48cf55aae25b97603eb84d0b1c5386adf7bf89da22aa35c7c"
+    },
+    "model-DG.json": {
+      "bytes": 767,
+      "local_path": "runs/autoresearch/ngram-20260915/model-DG.json",
+      "sha256": "06d6239070ff47e68d2c66b26ae39624e4942cb3c0b1cb4d108fa365bac729dd"
+    },
+    "model-M.json": {
+      "bytes": 768,
+      "local_path": "runs/autoresearch/ngram-20260915/model-M.json",
+      "sha256": "4c8b0720c0aa2127ee41a44168d04a176ad222b525ca30765902d909eb857afb"
+    },
+    "model-MG.json": {
+      "bytes": 786,
+      "local_path": "runs/autoresearch/ngram-20260915/model-MG.json",
+      "sha256": "c995e7d46b498eb1835fe75d58ccf384b5adbeaa42fa61a982ec782bf9d7e615"
+    },
+    "ngram-tape-diagnostics.json": {
+      "bytes": 390231,
+      "local_path": "runs/autoresearch/ngram-20260915/ngram-tape-diagnostics.json",
+      "sha256": "e39b9e64d27ec8d674ebf0522194c8214ced5c34f647d65558131ac0b44b1ee5"
+    },
+    "plan-revision.json": {
+      "bytes": 289,
+      "local_path": "runs/autoresearch/ngram-20260915/plan-revision.json",
+      "sha256": "fdfe93bf28486a654b4d6107b81c2b1bc3c47c1d9881bb0b3d695f8a6066a2ce"
+    },
+    "preflight-result.json": {
+      "bytes": 1829,
+      "local_path": "runs/autoresearch/ngram-20260915/preflight-result.json",
+      "sha256": "39778a9c1f7b9d944a54e2dcfa7d0da69833428f000bb331f5dce99a9ccfecd9"
+    },
+    "preflight.json": {
+      "bytes": 1829,
+      "local_path": "runs/autoresearch/ngram-20260915/preflight.json",
+      "sha256": "39778a9c1f7b9d944a54e2dcfa7d0da69833428f000bb331f5dce99a9ccfecd9"
+    },
+    "preflight.log": {
+      "bytes": 20923,
+      "local_path": "runs/autoresearch/ngram-20260915/preflight.log",
+      "sha256": "75d42eecc816b4f4fa173f40e59af6208fe311e7cf781936184ae285ada8779b"
+    },
+    "prior-artifacts.json": {
+      "bytes": 107148,
+      "local_path": "runs/autoresearch/ngram-20260915/prior-artifacts.json",
+      "sha256": "d2018a2723022931b2dd74234ecc55ea5dd760b0bd66e117612942bd2f961af5"
+    },
+    "protocol.json": {
+      "bytes": 929,
+      "local_path": "runs/autoresearch/ngram-20260915/protocol.json",
+      "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
+    },
+    "report.md": {
+      "bytes": 3921,
+      "local_path": "runs/autoresearch/ngram-20260915/report.md",
+      "sha256": "d0325a483c1748ba02d2ab2e12132172b516ff30c9bd63143449efec725d4478"
+    }
+  },
+  "experiment_id": "ngram-20260915-abd2e6dd",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "completed",
+  "protocol": {
+    "activation_checkpointing": false,
+    "baseline_timeout_seconds": 900,
+    "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+    "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "optimizer_updates": 512,
+    "protocol_id": "vesper-tinystories-equal-token-v1",
+    "schedule": {
+      "clock": "optimizer_step",
+      "decay_start_step": 256,
+      "final_lr_fraction": 0.0,
+      "lr_warmup_updates": 0,
+      "measurement_warmup_updates": 11,
+      "muon_momentum_warmup_updates": 300,
+      "progress": "zero_based_step / 512"
+    },
+    "seed": 42,
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "stopping_rule": "optimizer_updates",
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "6589c6a2e0eb8044537e26b6adbfd3953e21a8a8195f0b60bfe1037bcbad2343",
+  "schema_version": 1,
+  "seeds": [
+    42
+  ]
+}

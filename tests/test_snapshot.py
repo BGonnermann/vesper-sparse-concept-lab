@@ -16,7 +16,7 @@ SPEC.loader.exec_module(runner)
 
 ENTRY = '''import argparse, json
 from pathlib import Path
-import autoresearch, autoresearch_model, train, prepare
+import autoresearch, autoresearch_model, autoresearch_memory, train, prepare
 parser = argparse.ArgumentParser()
 parser.add_argument("--runtime")
 parser.add_argument("--candidate")
@@ -45,6 +45,7 @@ class SnapshotTests(unittest.TestCase):
         runtime.mkdir()
         (scripts / "autoresearch.py").write_text("VALUE = 7\n")
         (scripts / "autoresearch_model.py").write_text("VALUE = 11\n")
+        (scripts / "autoresearch_memory.py").write_text("VALUE = 19\n")
         (scripts / "autoresearch_train.py").write_text(ENTRY)
         (scripts / "autoresearch_bootstrap.py").write_bytes((ROOT / "scripts/autoresearch_bootstrap.py").read_bytes())
         (runtime / "train.py").write_text("VALUE = 13\n")
@@ -78,7 +79,7 @@ class SnapshotTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(json.loads(result.stdout), [7, 11, 13, 17, 6, 16384])
             receipt = runner.validate_execution(output, manifest)
-            self.assertEqual(len(receipt["executed_files"]), 6)
+            self.assertEqual(len(receipt["executed_files"]), 7)
             self.assertEqual(receipt["executed_files"]["source/project/autoresearch_model.py"],
                              manifest["source/project/autoresearch_model.py"])
 
