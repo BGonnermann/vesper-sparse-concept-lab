@@ -1,0 +1,2 @@
+trial,seed,depth,budget,bpb,tokens,updates,update_seconds,trial_seconds,timed_tokens_per_second,all_update_tokens_per_second,parameters,active_parameters,peak_allocated_mib,peak_reserved_mib,checkpoint_sha256,result_sha256
+trial-0001-D6-b1-s101,101,6,1,0.607345,8388608,512,160.20411170002262,167.95300000000134,52574.152483437974,52362.00189235727,73925196,73925196,1294.166015625,1374.0,61af8c88968becf7446e1f4190a6d847a13293e91a4d09ca30ec8a7216e8bc9b,9d7a170ba713694774035f5769cdd26fbbe2c3860a55815d152524c380400376

@@ -6,10 +6,13 @@ TinyStories only. Equal-token comparisons are not equal-compute comparisons. Tes
 
 [Frozen plan](PLAN.md) · [Exact measurements](measurements.csv) · [Reproducibility receipts](report.json)
 
+![Learning curves](learning-curves.png)
+
 ## Every completed run
 
 | Seed | Depth | Budget | Validation BPB | Actual tokens | Update s | Trial s | Timed tok/s | Parameters | Allocated / reserved MiB |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 101 | 6 | 1x | 0.607345 | 8,388,608 | 160.2 | 168.0 | 52574 | 73,925,196 | 1294.2 / 1374.0 |
 
 ## Equal-token paired differences
 

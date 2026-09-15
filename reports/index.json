@@ -275,6 +275,25 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/depth-long-20260915/trial-0001-D6-b1-s101",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "9fbe4ec7a1dcd86f515fa1113c6029d4907918b84b9f7620084429211fa3899a",
+      "experiment_id": "depth-long-20260915--trial-0001-D6-b1-s101-f80e0d31",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 73.9,
+        "num_steps": 512.0,
+        "peak_vram_mb": 1294.2,
+        "total_seconds": 163.1,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 156.1,
+        "val_bpb": 0.607345
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/depth-long-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,

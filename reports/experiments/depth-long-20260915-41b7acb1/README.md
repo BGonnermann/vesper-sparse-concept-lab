@@ -42,6 +42,15 @@ Traceback (most recent call last):
 ValueError: Batch tape shape/dtype does not match the exact training budget.
 Ran 3 tests in 1.388s
 FAILED (errors=2)
+
+test-dispatch-green.log:
+test_exception_restores_loader_and_train_is_rejected (__main__.SplitChecks.test_exception_restores_loader_and_train_is_rejected) ... ok
+Ran 2 tests in 0.000s
+OK
+
+test-dispatch-red.log:
+Traceback (most recent call last):
+ModuleNotFoundError: No module named 'depth_evaluation'
 ```
 
 ## Retained narrative: PLAN.md
