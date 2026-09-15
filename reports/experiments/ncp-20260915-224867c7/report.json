@@ -1145,6 +1145,933 @@
       },
       "vocabulary_range_verified": true
     },
+    "concept-baselines-plan.json": {
+      "kind": "concept_baselines_plan"
+    },
+    "concept-baselines-result.json": {
+      "kind": "concept_baselines",
+      "optimizer_updates": 0,
+      "outcomes": [
+        {
+          "absolute_bpb_difference": 4.305327394593661e-08,
+          "accounting": {
+            "batches": 64,
+            "target_bytes": 269140,
+            "tokens": 65536
+          },
+          "batch_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+          "bpb": 0.6400410430532739,
+          "comparisons_per_segment": 16256,
+          "log_path": "concept-baselines-s45.log",
+          "log_sha256": "81f3512900628c7df83a7432b214a7739a00eba692b3700f2ccf71ee48e45f46",
+          "original_bpb": 0.640041,
+          "result_path": "concept-baselines-s45-result.json",
+          "result_sha256": "8e3212cdf0de4cd2a7de5c1e70bc1298d5e150bc068f3893bbd85ff628cfcbab",
+          "scores": {
+            "learned": {
+              "accuracy_per_segment": [
+                0.6118971456692913,
+                0.6524360236220472,
+                0.6806717519685039
+              ],
+              "aggregate_accuracy": 0.6483349737532809,
+              "correct_per_segment": [
+                9947,
+                10606,
+                11065
+              ]
+            },
+            "persistence": {
+              "accuracy_per_segment": [
+                0.37850639763779526,
+                0.47373277559055116,
+                0.5260826771653543
+              ],
+              "aggregate_accuracy": 0.45944061679790027,
+              "correct_per_segment": [
+                6153,
+                7701,
+                8552
+              ]
+            },
+            "training_majority": {
+              "accuracy_per_segment": [
+                0.34375,
+                0.2920767716535433,
+                0.3433193897637795
+              ],
+              "aggregate_accuracy": 0.3263820538057743,
+              "correct_per_segment": [
+                5588,
+                4748,
+                5581
+              ]
+            }
+          },
+          "seed": 45,
+          "segments": 3,
+          "status": "completed",
+          "trial": "trial-0057-I2-37a8ad42c0-s45"
+        },
+        {
+          "absolute_bpb_difference": 2.1238391656464017e-07,
+          "accounting": {
+            "batches": 64,
+            "target_bytes": 269140,
+            "tokens": 65536
+          },
+          "batch_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+          "bpb": 0.6354212123839166,
+          "comparisons_per_segment": 16256,
+          "log_path": "concept-baselines-s46.log",
+          "log_sha256": "81f3512900628c7df83a7432b214a7739a00eba692b3700f2ccf71ee48e45f46",
+          "original_bpb": 0.635421,
+          "result_path": "concept-baselines-s46-result.json",
+          "result_sha256": "841cc11d65f47fa13ccb69e78cf89d218583b187a67e83eee092dc7d519c4e51",
+          "scores": {
+            "learned": {
+              "accuracy_per_segment": [
+                0.5662524606299213,
+                0.554195374015748,
+                0.5703125
+              ],
+              "aggregate_accuracy": 0.5635867782152231,
+              "correct_per_segment": [
+                9205,
+                9009,
+                9271
+              ]
+            },
+            "persistence": {
+              "accuracy_per_segment": [
+                0.2237327755905512,
+                0.23172982283464566,
+                0.22059547244094488
+              ],
+              "aggregate_accuracy": 0.2253526902887139,
+              "correct_per_segment": [
+                3637,
+                3767,
+                3586
+              ]
+            },
+            "training_majority": {
+              "accuracy_per_segment": [
+                0.16529281496062992,
+                0.1470841535433071,
+                0.12050935039370078
+              ],
+              "aggregate_accuracy": 0.14429543963254593,
+              "correct_per_segment": [
+                2687,
+                2391,
+                1959
+              ]
+            }
+          },
+          "seed": 46,
+          "segments": 3,
+          "status": "completed",
+          "trial": "trial-0062-I2-37a8ad42c0-s46"
+        },
+        {
+          "absolute_bpb_difference": 1.8757350850329146e-07,
+          "accounting": {
+            "batches": 64,
+            "target_bytes": 269140,
+            "tokens": 65536
+          },
+          "batch_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+          "bpb": 0.6392331875735086,
+          "comparisons_per_segment": 16256,
+          "log_path": "concept-baselines-s43.log",
+          "log_sha256": "81f3512900628c7df83a7432b214a7739a00eba692b3700f2ccf71ee48e45f46",
+          "original_bpb": 0.639233,
+          "result_path": "concept-baselines-s43-result.json",
+          "result_sha256": "b89d8412c7840fb4fe0ea1b03e73505342379117d67c3063a29e562bae5a52a1",
+          "scores": {
+            "learned": {
+              "accuracy_per_segment": [
+                0.522576279527559,
+                0.5678518700787402,
+                0.5791092519685039
+              ],
+              "aggregate_accuracy": 0.5565124671916011,
+              "correct_per_segment": [
+                8495,
+                9231,
+                9414
+              ]
+            },
+            "persistence": {
+              "accuracy_per_segment": [
+                0.24440206692913385,
+                0.2533833661417323,
+                0.29133858267716534
+              ],
+              "aggregate_accuracy": 0.26304133858267714,
+              "correct_per_segment": [
+                3973,
+                4119,
+                4736
+              ]
+            },
+            "training_majority": {
+              "accuracy_per_segment": [
+                0.16799950787401574,
+                0.1747047244094488,
+                0.1595103346456693
+              ],
+              "aggregate_accuracy": 0.1674048556430446,
+              "correct_per_segment": [
+                2731,
+                2840,
+                2593
+              ]
+            }
+          },
+          "seed": 43,
+          "segments": 3,
+          "status": "completed",
+          "trial": "trial-0066-I2-37a8ad42c0-s43"
+        },
+        {
+          "absolute_bpb_difference": 4.221110271318551e-07,
+          "accounting": {
+            "batches": 64,
+            "target_bytes": 269140,
+            "tokens": 65536
+          },
+          "batch_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+          "bpb": 0.6341984221110272,
+          "comparisons_per_segment": 16256,
+          "log_path": "concept-baselines-s44.log",
+          "log_sha256": "81f3512900628c7df83a7432b214a7739a00eba692b3700f2ccf71ee48e45f46",
+          "original_bpb": 0.634198,
+          "result_path": "concept-baselines-s44-result.json",
+          "result_sha256": "ad790267f093968342fa6168ece57f927ecf360214f5e96ff37f63a78dd8b07b",
+          "scores": {
+            "learned": {
+              "accuracy_per_segment": [
+                0.6147883858267716,
+                0.5458292322834646,
+                0.5498892716535433
+              ],
+              "aggregate_accuracy": 0.5701689632545932,
+              "correct_per_segment": [
+                9994,
+                8873,
+                8939
+              ]
+            },
+            "persistence": {
+              "accuracy_per_segment": [
+                0.3337844488188976,
+                0.2603346456692913,
+                0.2601500984251969
+              ],
+              "aggregate_accuracy": 0.28475639763779526,
+              "correct_per_segment": [
+                5426,
+                4232,
+                4229
+              ]
+            },
+            "training_majority": {
+              "accuracy_per_segment": [
+                0.18854576771653542,
+                0.19106791338582677,
+                0.15828001968503938
+              ],
+              "aggregate_accuracy": 0.1792979002624672,
+              "correct_per_segment": [
+                3065,
+                3106,
+                2573
+              ]
+            }
+          },
+          "seed": 44,
+          "segments": 3,
+          "status": "completed",
+          "trial": "trial-0070-I2-37a8ad42c0-s44"
+        }
+      ],
+      "plan_sha256": "1586f6c463847951ece656d575235a297b399dd182c534496e41133579c36054",
+      "status": "completed"
+    },
+    "concept-baselines-s43-result.json": {
+      "absolute_bpb_difference": 1.8757350850329146e-07,
+      "accounting": {
+        "batches": 64,
+        "target_bytes": 269140,
+        "tokens": 65536
+      },
+      "batch_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+      "bpb": 0.6392331875735086,
+      "checkpoint_sha256": "46c45f045fbcf86dda0eb3ff2169238dbf9501b97cb671966a04b7f1aabbb60e",
+      "comparisons_per_segment": 16256,
+      "condition_reached": "verified",
+      "entries": 16,
+      "interpretation": "Next complete chunk code identity under the trained codebook, not semantics. Persistence uses current chunk assignments; majority is fixed from saved training-health counts with lowest-index tie breaking. Validation labels enter diagnostics only after token prediction. These are the same four confirmation checkpoints and validation data, not new independent seeds or held-out evidence.",
+      "kind": "concept_baseline_probe",
+      "loaded_modules": {
+        "autoresearch_memory": {
+          "path": "source/project/autoresearch_memory.py",
+          "sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862"
+        },
+        "autoresearch_model": {
+          "path": "source/project/autoresearch_model.py",
+          "sha256": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d"
+        },
+        "autoresearch_ncp": {
+          "path": "source/project/autoresearch_ncp.py",
+          "sha256": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c"
+        },
+        "prepare": {
+          "path": "source/upstream/prepare.py",
+          "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+        },
+        "train": {
+          "path": "source/upstream/train.py",
+          "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        }
+      },
+      "optimizer_updates": 0,
+      "original_bpb": 0.639233,
+      "persistent_state_immutable": true,
+      "result_sha256": "866a19d3e8f8846b1ac41f0590eaa041eb84fa055f8b1629dc482b56b14375be",
+      "scores": {
+        "learned": {
+          "accuracy_per_segment": [
+            0.522576279527559,
+            0.5678518700787402,
+            0.5791092519685039
+          ],
+          "aggregate_accuracy": 0.5565124671916011,
+          "correct_per_segment": [
+            8495,
+            9231,
+            9414
+          ]
+        },
+        "persistence": {
+          "accuracy_per_segment": [
+            0.24440206692913385,
+            0.2533833661417323,
+            0.29133858267716534
+          ],
+          "aggregate_accuracy": 0.26304133858267714,
+          "correct_per_segment": [
+            3973,
+            4119,
+            4736
+          ]
+        },
+        "training_majority": {
+          "accuracy_per_segment": [
+            0.16799950787401574,
+            0.1747047244094488,
+            0.1595103346456693
+          ],
+          "aggregate_accuracy": 0.1674048556430446,
+          "correct_per_segment": [
+            2731,
+            2840,
+            2593
+          ]
+        }
+      },
+      "script_sha256": "55e83ae0239b5ace73845a4ae8fa863e7842cca21d1968c8c516659813ebdb56",
+      "seed": 43,
+      "segments": 3,
+      "settings_immutable": true,
+      "source_hashes": {
+        "candidate.json": "e6323d243366874353e3d98f9872ed6cee75a4bbca7a33d4155c0fd3d3b68aaf",
+        "protocol.json": "dc028113a01996d2030183ebb53dfed924575fdcc2646cb10f0d9a49d71b1c16",
+        "source/project/autoresearch.py": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "source/project/autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "source/project/autoresearch_train.py": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "state_after": "782b71b9af2924222eb5d2c67c89d643cf337446887e40f764ac843ca252a5d2",
+      "state_before": "782b71b9af2924222eb5d2c67c89d643cf337446887e40f764ac843ca252a5d2",
+      "status": "completed",
+      "training_health_sha256": "d3e49ea1e086d36ae1068824dbf8d31386db7210ff2bac89d324f86844723d7b",
+      "training_majority_indices": [
+        2,
+        12,
+        7
+      ],
+      "training_target_counts": [
+        [
+          0,
+          889,
+          1277,
+          425,
+          375,
+          315,
+          278,
+          288,
+          0,
+          446,
+          784,
+          592,
+          642,
+          222,
+          912,
+          747
+        ],
+        [
+          394,
+          0,
+          680,
+          203,
+          1038,
+          942,
+          260,
+          336,
+          165,
+          345,
+          933,
+          1,
+          1271,
+          353,
+          670,
+          601
+        ],
+        [
+          415,
+          0,
+          368,
+          441,
+          923,
+          384,
+          281,
+          1296,
+          843,
+          336,
+          884,
+          352,
+          781,
+          0,
+          888,
+          0
+        ]
+      ],
+      "trial": "trial-0066-I2-37a8ad42c0-s43"
+    },
+    "concept-baselines-s44-result.json": {
+      "absolute_bpb_difference": 4.221110271318551e-07,
+      "accounting": {
+        "batches": 64,
+        "target_bytes": 269140,
+        "tokens": 65536
+      },
+      "batch_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+      "bpb": 0.6341984221110272,
+      "checkpoint_sha256": "cc2944fa177908db5365fb63e9f945888637b0104b99d6ad17863a55b0c29c67",
+      "comparisons_per_segment": 16256,
+      "condition_reached": "verified",
+      "entries": 16,
+      "interpretation": "Next complete chunk code identity under the trained codebook, not semantics. Persistence uses current chunk assignments; majority is fixed from saved training-health counts with lowest-index tie breaking. Validation labels enter diagnostics only after token prediction. These are the same four confirmation checkpoints and validation data, not new independent seeds or held-out evidence.",
+      "kind": "concept_baseline_probe",
+      "loaded_modules": {
+        "autoresearch_memory": {
+          "path": "source/project/autoresearch_memory.py",
+          "sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862"
+        },
+        "autoresearch_model": {
+          "path": "source/project/autoresearch_model.py",
+          "sha256": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d"
+        },
+        "autoresearch_ncp": {
+          "path": "source/project/autoresearch_ncp.py",
+          "sha256": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c"
+        },
+        "prepare": {
+          "path": "source/upstream/prepare.py",
+          "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+        },
+        "train": {
+          "path": "source/upstream/train.py",
+          "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        }
+      },
+      "optimizer_updates": 0,
+      "original_bpb": 0.634198,
+      "persistent_state_immutable": true,
+      "result_sha256": "d0810da8f4df6ac71dde01749d53562183408c4e13835c748bda66e88fae1673",
+      "scores": {
+        "learned": {
+          "accuracy_per_segment": [
+            0.6147883858267716,
+            0.5458292322834646,
+            0.5498892716535433
+          ],
+          "aggregate_accuracy": 0.5701689632545932,
+          "correct_per_segment": [
+            9994,
+            8873,
+            8939
+          ]
+        },
+        "persistence": {
+          "accuracy_per_segment": [
+            0.3337844488188976,
+            0.2603346456692913,
+            0.2601500984251969
+          ],
+          "aggregate_accuracy": 0.28475639763779526,
+          "correct_per_segment": [
+            5426,
+            4232,
+            4229
+          ]
+        },
+        "training_majority": {
+          "accuracy_per_segment": [
+            0.18854576771653542,
+            0.19106791338582677,
+            0.15828001968503938
+          ],
+          "aggregate_accuracy": 0.1792979002624672,
+          "correct_per_segment": [
+            3065,
+            3106,
+            2573
+          ]
+        }
+      },
+      "script_sha256": "55e83ae0239b5ace73845a4ae8fa863e7842cca21d1968c8c516659813ebdb56",
+      "seed": 44,
+      "segments": 3,
+      "settings_immutable": true,
+      "source_hashes": {
+        "candidate.json": "e6323d243366874353e3d98f9872ed6cee75a4bbca7a33d4155c0fd3d3b68aaf",
+        "protocol.json": "e080d7a6411c22167f31d2d80e6e05fe15961110bd6b27b9c6bdd33ef6ef8fb7",
+        "source/project/autoresearch.py": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "source/project/autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "source/project/autoresearch_train.py": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "state_after": "5723487583b6705bacfa648fa1485580cdb822e98608c382754f7479edfaf8d1",
+      "state_before": "5723487583b6705bacfa648fa1485580cdb822e98608c382754f7479edfaf8d1",
+      "status": "completed",
+      "training_health_sha256": "38cc75b775dbe14e4ad608dc591926010c47885bb8c1c6c11e2ad2c3b95a676a",
+      "training_majority_indices": [
+        0,
+        10,
+        7
+      ],
+      "training_target_counts": [
+        [
+          1842,
+          0,
+          93,
+          846,
+          0,
+          1583,
+          0,
+          0,
+          796,
+          1461,
+          0,
+          215,
+          1130,
+          0,
+          0,
+          226
+        ],
+        [
+          0,
+          0,
+          1276,
+          0,
+          0,
+          575,
+          1030,
+          995,
+          692,
+          262,
+          1468,
+          0,
+          0,
+          732,
+          639,
+          523
+        ],
+        [
+          0,
+          797,
+          0,
+          442,
+          804,
+          560,
+          0,
+          1279,
+          284,
+          1252,
+          440,
+          879,
+          0,
+          363,
+          786,
+          306
+        ]
+      ],
+      "trial": "trial-0070-I2-37a8ad42c0-s44"
+    },
+    "concept-baselines-s45-result.json": {
+      "absolute_bpb_difference": 4.305327394593661e-08,
+      "accounting": {
+        "batches": 64,
+        "target_bytes": 269140,
+        "tokens": 65536
+      },
+      "batch_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+      "bpb": 0.6400410430532739,
+      "checkpoint_sha256": "9d19546c687dbe901a6da1fad9561c8a4bdad47a69efb151aad08f48d303f333",
+      "comparisons_per_segment": 16256,
+      "condition_reached": "verified",
+      "entries": 16,
+      "interpretation": "Next complete chunk code identity under the trained codebook, not semantics. Persistence uses current chunk assignments; majority is fixed from saved training-health counts with lowest-index tie breaking. Validation labels enter diagnostics only after token prediction. These are the same four confirmation checkpoints and validation data, not new independent seeds or held-out evidence.",
+      "kind": "concept_baseline_probe",
+      "loaded_modules": {
+        "autoresearch_memory": {
+          "path": "source/project/autoresearch_memory.py",
+          "sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862"
+        },
+        "autoresearch_model": {
+          "path": "source/project/autoresearch_model.py",
+          "sha256": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d"
+        },
+        "autoresearch_ncp": {
+          "path": "source/project/autoresearch_ncp.py",
+          "sha256": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c"
+        },
+        "prepare": {
+          "path": "source/upstream/prepare.py",
+          "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+        },
+        "train": {
+          "path": "source/upstream/train.py",
+          "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        }
+      },
+      "optimizer_updates": 0,
+      "original_bpb": 0.640041,
+      "persistent_state_immutable": true,
+      "result_sha256": "a0359f749f20f7a3c570367ad83c04f91599f84dc50ef958fe65d8fc68ab60c4",
+      "scores": {
+        "learned": {
+          "accuracy_per_segment": [
+            0.6118971456692913,
+            0.6524360236220472,
+            0.6806717519685039
+          ],
+          "aggregate_accuracy": 0.6483349737532809,
+          "correct_per_segment": [
+            9947,
+            10606,
+            11065
+          ]
+        },
+        "persistence": {
+          "accuracy_per_segment": [
+            0.37850639763779526,
+            0.47373277559055116,
+            0.5260826771653543
+          ],
+          "aggregate_accuracy": 0.45944061679790027,
+          "correct_per_segment": [
+            6153,
+            7701,
+            8552
+          ]
+        },
+        "training_majority": {
+          "accuracy_per_segment": [
+            0.34375,
+            0.2920767716535433,
+            0.3433193897637795
+          ],
+          "aggregate_accuracy": 0.3263820538057743,
+          "correct_per_segment": [
+            5588,
+            4748,
+            5581
+          ]
+        }
+      },
+      "script_sha256": "55e83ae0239b5ace73845a4ae8fa863e7842cca21d1968c8c516659813ebdb56",
+      "seed": 45,
+      "segments": 3,
+      "settings_immutable": true,
+      "source_hashes": {
+        "candidate.json": "e6323d243366874353e3d98f9872ed6cee75a4bbca7a33d4155c0fd3d3b68aaf",
+        "protocol.json": "eff5fbcf788f1658c79c21508943fd899489791aac7bda80e246576f232ec2d5",
+        "source/project/autoresearch.py": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "source/project/autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "source/project/autoresearch_train.py": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "state_after": "5c78588e9b5cb69be1b8c9bc0cfae9087e99733c7efae597a7aa3c5ca8606a59",
+      "state_before": "5c78588e9b5cb69be1b8c9bc0cfae9087e99733c7efae597a7aa3c5ca8606a59",
+      "status": "completed",
+      "training_health_sha256": "587148e865c6bf1b1a6de94b5943254d89f92fce4065a6a107f10621f3f9bfe8",
+      "training_majority_indices": [
+        8,
+        0,
+        14
+      ],
+      "training_target_counts": [
+        [
+          149,
+          424,
+          680,
+          1,
+          564,
+          0,
+          0,
+          0,
+          2672,
+          186,
+          0,
+          760,
+          0,
+          700,
+          274,
+          1782
+        ],
+        [
+          2120,
+          858,
+          0,
+          0,
+          788,
+          197,
+          0,
+          0,
+          0,
+          186,
+          1,
+          0,
+          898,
+          1947,
+          634,
+          563
+        ],
+        [
+          117,
+          0,
+          4,
+          2468,
+          0,
+          0,
+          0,
+          783,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1191,
+          2742,
+          887
+        ]
+      ],
+      "trial": "trial-0057-I2-37a8ad42c0-s45"
+    },
+    "concept-baselines-s46-result.json": {
+      "absolute_bpb_difference": 2.1238391656464017e-07,
+      "accounting": {
+        "batches": 64,
+        "target_bytes": 269140,
+        "tokens": 65536
+      },
+      "batch_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+      "bpb": 0.6354212123839166,
+      "checkpoint_sha256": "683090de9ed99b0ad1fa6913b36cbc5267a0f9beb531b0b0452d34535586845a",
+      "comparisons_per_segment": 16256,
+      "condition_reached": "verified",
+      "entries": 16,
+      "interpretation": "Next complete chunk code identity under the trained codebook, not semantics. Persistence uses current chunk assignments; majority is fixed from saved training-health counts with lowest-index tie breaking. Validation labels enter diagnostics only after token prediction. These are the same four confirmation checkpoints and validation data, not new independent seeds or held-out evidence.",
+      "kind": "concept_baseline_probe",
+      "loaded_modules": {
+        "autoresearch_memory": {
+          "path": "source/project/autoresearch_memory.py",
+          "sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862"
+        },
+        "autoresearch_model": {
+          "path": "source/project/autoresearch_model.py",
+          "sha256": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d"
+        },
+        "autoresearch_ncp": {
+          "path": "source/project/autoresearch_ncp.py",
+          "sha256": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c"
+        },
+        "prepare": {
+          "path": "source/upstream/prepare.py",
+          "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+        },
+        "train": {
+          "path": "source/upstream/train.py",
+          "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        }
+      },
+      "optimizer_updates": 0,
+      "original_bpb": 0.635421,
+      "persistent_state_immutable": true,
+      "result_sha256": "714b2d1a3fdf61f398ecdca79c6d2e20f71e21a2cdd94fab2c0f928bb623ca85",
+      "scores": {
+        "learned": {
+          "accuracy_per_segment": [
+            0.5662524606299213,
+            0.554195374015748,
+            0.5703125
+          ],
+          "aggregate_accuracy": 0.5635867782152231,
+          "correct_per_segment": [
+            9205,
+            9009,
+            9271
+          ]
+        },
+        "persistence": {
+          "accuracy_per_segment": [
+            0.2237327755905512,
+            0.23172982283464566,
+            0.22059547244094488
+          ],
+          "aggregate_accuracy": 0.2253526902887139,
+          "correct_per_segment": [
+            3637,
+            3767,
+            3586
+          ]
+        },
+        "training_majority": {
+          "accuracy_per_segment": [
+            0.16529281496062992,
+            0.1470841535433071,
+            0.12050935039370078
+          ],
+          "aggregate_accuracy": 0.14429543963254593,
+          "correct_per_segment": [
+            2687,
+            2391,
+            1959
+          ]
+        }
+      },
+      "script_sha256": "55e83ae0239b5ace73845a4ae8fa863e7842cca21d1968c8c516659813ebdb56",
+      "seed": 46,
+      "segments": 3,
+      "settings_immutable": true,
+      "source_hashes": {
+        "candidate.json": "e6323d243366874353e3d98f9872ed6cee75a4bbca7a33d4155c0fd3d3b68aaf",
+        "protocol.json": "eca3195804d117af41b4c634343456009439661664be5164d43eb8f5e2b1dc2e",
+        "source/project/autoresearch.py": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "source/project/autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "source/project/autoresearch_train.py": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "state_after": "51d8e09a298d02e55b31df3729c8a87dcd2d0097e07d28597fbe74dcb36d8188",
+      "state_before": "51d8e09a298d02e55b31df3729c8a87dcd2d0097e07d28597fbe74dcb36d8188",
+      "status": "completed",
+      "training_health_sha256": "f7a968587d0933346862c20973cd1c76fd34fd5973585179ffbe2c965f93e959",
+      "training_majority_indices": [
+        2,
+        6,
+        13
+      ],
+      "training_target_counts": [
+        [
+          185,
+          567,
+          869,
+          707,
+          666,
+          555,
+          748,
+          667,
+          310,
+          0,
+          0,
+          374,
+          606,
+          425,
+          659,
+          854
+        ],
+        [
+          540,
+          745,
+          605,
+          288,
+          0,
+          0,
+          1130,
+          476,
+          745,
+          638,
+          127,
+          591,
+          865,
+          0,
+          875,
+          567
+        ],
+        [
+          0,
+          377,
+          659,
+          377,
+          0,
+          704,
+          381,
+          983,
+          491,
+          586,
+          194,
+          1038,
+          671,
+          1160,
+          571,
+          0
+        ]
+      ],
+      "trial": "trial-0062-I2-37a8ad42c0-s46"
+    },
     "confirmation-selection.json": {
       "kind": "frozen_ncp_selection",
       "seeds": [
@@ -2961,6 +3888,12 @@
       "status": "completed"
     },
     "findings-result.json": {
+      "additional_evidence_hashes": {
+        "depth-grid-result.json": "898d010fb64b8c809a04cc30c81d4cc294726143a2f7bd40af76aac801429b5b",
+        "feedback-interventions-result.json": "01c8817f87a532ad2f9c008c189426f2cac362098bf18ea974c283333132bd21",
+        "module-initialization-result.json": "0cd38740634cd506a273a32a26791601d18ab13c03fe1cbbcb723528b70db189",
+        "no-future-result.json": "99056aea3973d70f8f59a1d86a2ee6db77581732065eebf37a41d486c1b877bf"
+      },
       "confirmation_selection_sha256": "fc02f7ef246636bd0285822bfbe64261dc638ec2fc0b401b71e5623c1c788ff1",
       "costs": {
         "D6": {
@@ -18517,7 +19450,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "df9c1d32842904578af2473898c48262556dd46a",
+      "publication_commit": "86635951a1bb80d59baa30a17ecdc73250401766",
       "status": "completed",
       "verified_remote": true
     },
@@ -18852,7 +19785,6 @@
   },
   "diagnostics": [
     "audit-recovered.log:\nSyntaxError: '(' was never closed",
-    "campaign.log:\n2026-09-15T17:34:20.191856+00:00 Prospective last training diagnostic: zero all future-derived objective weights, frozen architecture, seeds45/46; compare NOPRED/NCP/CAP/dense; no reselection. Both900sec timeouts plus preparation must fit before fixed75-minute final reserve18:26:32UTC. Plan recorded before new outcomes.\n2026-09-15T17:37:01.753018+00:00 Publication deferred; module evidence retained: AssertionError('Unrelated staged changes; publication deferred')",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -18967,9 +19899,74 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 106070,
+      "bytes": 107448,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "87ad1ddd3ac86d7f39e6089ffba63c7feb5ff92292928e4f801413a8da7fee99"
+      "sha256": "1efd200389c78fd0809d3044c42dfd19959629d4515529ea474622b2c31566e8"
+    },
+    "checkpoint-replay-driver.py": {
+      "bytes": 15268,
+      "local_path": "runs/autoresearch/ncp-20260915/checkpoint-replay-driver.py",
+      "sha256": "9863cdf81487dcd304c6c7a700f6128966f0bd00d17ab121030d09e1849857fa"
+    },
+    "concept-baselines-driver.py": {
+      "bytes": 15915,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-driver.py",
+      "sha256": "55e83ae0239b5ace73845a4ae8fa863e7842cca21d1968c8c516659813ebdb56"
+    },
+    "concept-baselines-plan.json": {
+      "bytes": 13233,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-plan.json",
+      "sha256": "1586f6c463847951ece656d575235a297b399dd182c534496e41133579c36054"
+    },
+    "concept-baselines-queue.log": {
+      "bytes": 1176,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-queue.log",
+      "sha256": "09cb45da29b31651269d09209971f6b3bb47f4d448b834e9b58b4b66aac85d42"
+    },
+    "concept-baselines-result.json": {
+      "bytes": 7624,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-result.json",
+      "sha256": "ec65cdbdb9165be7944daf59c41174879472d12fef55febdc70e9a2f61efc7d2"
+    },
+    "concept-baselines-s43-result.json": {
+      "bytes": 6065,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-s43-result.json",
+      "sha256": "b89d8412c7840fb4fe0ea1b03e73505342379117d67c3063a29e562bae5a52a1"
+    },
+    "concept-baselines-s43.log": {
+      "bytes": 147,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-s43.log",
+      "sha256": "81f3512900628c7df83a7432b214a7739a00eba692b3700f2ccf71ee48e45f46"
+    },
+    "concept-baselines-s44-result.json": {
+      "bytes": 6049,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-s44-result.json",
+      "sha256": "ad790267f093968342fa6168ece57f927ecf360214f5e96ff37f63a78dd8b07b"
+    },
+    "concept-baselines-s44.log": {
+      "bytes": 147,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-s44.log",
+      "sha256": "81f3512900628c7df83a7432b214a7739a00eba692b3700f2ccf71ee48e45f46"
+    },
+    "concept-baselines-s45-result.json": {
+      "bytes": 6026,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-s45-result.json",
+      "sha256": "8e3212cdf0de4cd2a7de5c1e70bc1298d5e150bc068f3893bbd85ff628cfcbab"
+    },
+    "concept-baselines-s45.log": {
+      "bytes": 147,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-s45.log",
+      "sha256": "81f3512900628c7df83a7432b214a7739a00eba692b3700f2ccf71ee48e45f46"
+    },
+    "concept-baselines-s46-result.json": {
+      "bytes": 6054,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-s46-result.json",
+      "sha256": "841cc11d65f47fa13ccb69e78cf89d218583b187a67e83eee092dc7d519c4e51"
+    },
+    "concept-baselines-s46.log": {
+      "bytes": 147,
+      "local_path": "runs/autoresearch/ncp-20260915/concept-baselines-s46.log",
+      "sha256": "81f3512900628c7df83a7432b214a7739a00eba692b3700f2ccf71ee48e45f46"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -19182,9 +20179,9 @@
       "sha256": "08e44961d4abf49312130c5f072d8895fe48eb94feae5e7f277658b310bdc38b"
     },
     "feedback-interventions-queue.log": {
-      "bytes": 1520,
+      "bytes": 1621,
       "local_path": "runs/autoresearch/ncp-20260915/feedback-interventions-queue.log",
-      "sha256": "4e7777d752e0427a753e4bdfaaccf23b626be01d585266c76ed99ca62cbce3c9"
+      "sha256": "6c4de79cf1f89bb85517db52e9bcbac767b8bd78d258f86dc1bca3845a5262ac"
     },
     "feedback-interventions-result.json": {
       "bytes": 30789,
@@ -19202,14 +20199,14 @@
       "sha256": "703bbcda86a90388ed1bdaee0567bd131acf2bdaa5313b726e850c49b9cb894c"
     },
     "findings-result.json": {
-      "bytes": 14900,
+      "bytes": 15358,
       "local_path": "runs/autoresearch/ncp-20260915/findings-result.json",
-      "sha256": "ad2b2fa452740a1e5a47b52b558336e06aea0c2bf28d6497a161128bd7f4b0d6"
+      "sha256": "1f0b490525468e6a2cab954ce63809096491adb12100d2bd807cc32b429a330e"
     },
     "findings.md": {
-      "bytes": 4115,
+      "bytes": 6217,
       "local_path": "runs/autoresearch/ncp-20260915/findings.md",
-      "sha256": "6996a2fcb6494376e1b827ae35919be3259ac63d3e58f6b743ba6b103fadd89c"
+      "sha256": "1a1483efeb1c6a7c55318772368e6cd2c417b7f7d83b34156f980eaa066bc711"
     },
     "fit-1789473262.log": {
       "bytes": 1556,
@@ -19904,7 +20901,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "7bd98ab61db400cb0225df6a9a8f882d431746b6a47c4af0d18be071cfcce97e"
+      "sha256": "590505861ca9736954b68506c6f72b51156589e2cf7e371fdbf90847ea0f6c29"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -20013,6 +21010,14 @@
   "protocol": null,
   "provenance": {
     "archived_source": {
+      "checkpoint-replay-driver.py": {
+        "published_path": "reports/source-snapshots/9863cdf81487dcd304c6c7a700f6128966f0bd00d17ab121030d09e1849857fa.py",
+        "sha256": "9863cdf81487dcd304c6c7a700f6128966f0bd00d17ab121030d09e1849857fa"
+      },
+      "concept-baselines-driver.py": {
+        "published_path": "reports/source-snapshots/55e83ae0239b5ace73845a4ae8fa863e7842cca21d1968c8c516659813ebdb56.py",
+        "sha256": "55e83ae0239b5ace73845a4ae8fa863e7842cca21d1968c8c516659813ebdb56"
+      },
       "confirmation-driver.py": {
         "published_path": "reports/source-snapshots/1684109d23d0f5533e14cf01fcd12b0541b64c61f6485616587dc211c9f2bf9a.py",
         "sha256": "1684109d23d0f5533e14cf01fcd12b0541b64c61f6485616587dc211c9f2bf9a"

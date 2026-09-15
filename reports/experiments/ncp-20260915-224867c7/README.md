@@ -12,10 +12,6 @@ Unknown fields remain null. Do not pool different budgets/schedules. Two seeds a
 audit-recovered.log:
 SyntaxError: '(' was never closed
 
-campaign.log:
-2026-09-15T17:34:20.191856+00:00 Prospective last training diagnostic: zero all future-derived objective weights, frozen architecture, seeds45/46; compare NOPRED/NCP/CAP/dense; no reselection. Both900sec timeouts plus preparation must fit before fixed75-minute final reserve18:26:32UTC. Plan recorded before new outcomes.
-2026-09-15T17:37:01.753018+00:00 Publication deferred; module evidence retained: AssertionError('Unrelated staged changes; publication deferred')
-
 controller-red.log:
 Traceback (most recent call last):
 AssertionError: False is not true : Missing campaign controller
@@ -426,6 +422,8 @@ Frozen NCP did not pass the predeclared primary two-seed consistency rule.
 
 The four-seed mean NCP-minus-dense difference is -0.002320 BPB; lower is better. 2 of four paired seeds favor NCP. These are equal-token validation results, not held-out or equal-time results.
 
+The exactly parameter-matched residual MLP averaged 0.636494 BPB versus NCP at 0.637223, with 174.8 versus 218.6 seconds of training updates. NCP did not show an advantage over this added-capacity control.
+
 ## Frozen confirmation and ablations
 
 | Seed | Role | Dense BPB | NCP BPB | NCP minus dense |
@@ -467,6 +465,29 @@ This is a small ConceptLM-inspired mechanism test: complete-chunk pooling, causa
 The mandatory native D6/D12 comparison changes both depth and width. The separate2x2 grid tests depth at fixed width and width at fixed depth under the same optimizer policy; width-dependent embedding/unembedding LR scaling remains part of that pinned policy. Matrix LR stays0.04. No optimum depth, width or training budget is established.
 
 All per-trial configurations, hashes, failures, utilization diagnostics and source corrections are in [the full campaign report](CAMPAIGN.md). The initial finite total-loss guard failures do not establish divergence; the corrected guard and exact retries are disclosed there. Collapsed candidates remain reported and excluded from selection.
+
+## Depth and width confirmation
+
+| Change | Mean BPB delta | Mean update-time ratio |
+|---|---:|---:|
+| depth at width384 | -0.016547 | 1.98 |
+| depth at width768 | -0.014130 | 1.92 |
+| width at depth12 | -0.030223 | 0.99 |
+| width at depth6 | -0.032640 | 1.02 |
+
+Both seeds favor increasing either axis. The original native-depth comparison improves by0.046771 BPB on average, with5.13 times the parameters; it changes both depth and width. Similar measured runtime across widths is specific to this runtime and microbatch setup, not a FLOPs equivalence claim.
+
+## Mechanism diagnosis
+
+Crossed initializer/order runs traced most of the observed reversal to initialization. At fixed order42, the descriptive module-initializer contrast is +0.002696 BPB and the backbone contrast is +0.002004. Only two deliberately chosen initializer levels were tested; this is not a general variance estimate.
+
+Removing all future-target objectives, including VQ, changes mean BPB by -0.000192 versus NOPRED on reused seeds45/46. It does not reveal a substantial VQ-supervision benefit in this pair. Token-only feedback still trains the latent path; it is an ablation, not an NCP candidate.
+
+Every original checkpoint score reproduced within1e-6 BPB. Zeroing feedback worsens BPB by 0.000174 to 0.000440; code-identity rotations have smaller effects. Reliance on feedback does not establish an advantage over a separately trained dense or capacity control.
+
+## Next best experiment
+
+Compare dense D6-width768 and D12-width768 at longer fixed-token budgets on new paired seeds, with one final evaluation on an untouched test split. Measure whether the depth gain persists and warrants roughly twice the update time. Keep quality-versus-time analysis separate. Do not combine NCP with other mechanisms on the strength of these mixed results. No next campaign is launched automatically.
 
 
 ## Retained narrative: method-notes.md
