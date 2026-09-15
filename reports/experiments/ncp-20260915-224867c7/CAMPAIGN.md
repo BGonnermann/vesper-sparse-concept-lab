@@ -3,6 +3,12 @@
 83 completed of 85 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
+
+## Main findings
+
+Frozen NCP failed the predeclared primary same-sign rule. Across four fresh paired seeds, its mean difference from dense is -0.002320 BPB, with 2/4 seeds favoring NCP. It did not demonstrate an advantage over the exactly parameter-matched residual MLP: mean NCP-minus-MLP +0.000729 BPB.
+Dense depth gains replicated on seeds43/44, including the separate fixed-width comparisons. NCP initialization diagnostics and ablations below are explanatory follow-ups, not candidate reselection.
+See [compact findings and measured costs](FINDINGS.md). All quality comparisons use the same token budget and validation corpus.
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
 
 ## Implementation
@@ -217,6 +223,19 @@ Only the explicit NCP initializer changes before optimizer construction. Backbon
 
 Module-initialization stage: qualified. Isolate NCP-module versus backbone initialization at fixed order42
 
+## Frozen checkpoint inference interventions
+
+No retraining. Each original checkpoint score was reproduced within1e-6 BPB before changing feedback. All conditions consumed identical validation batches and target bytes. Trainable weights remained fixed; persistent state stayed immutable during each evaluation and was restored afterward. The deterministic row rotation changes which learned code each head entry refers to while preserving the code set.
+
+| Seed | Original BPB | Feedback zero BPB | Delta | Rotated codes BPB | Delta |
+|---:|---:|---:|---:|---:|---:|
+| 45 | 0.640041 | 0.640277 | +0.000236 | 0.640083 | +0.000042 |
+| 46 | 0.635421 | 0.635595 | +0.000174 | 0.635506 | +0.000085 |
+| 43 | 0.639233 | 0.639468 | +0.000235 | 0.639256 | +0.000022 |
+| 44 | 0.634198 | 0.634639 | +0.000440 | 0.634240 | +0.000042 |
+
+Positive deltas indicate reliance on the trained feedback path or code identity. They do not establish semantic concepts or show that NCP improves over training a dense model. Instrumented probe timing includes CPU accounting and is not a throughput comparison.
+
 ## Initializer versus batch-order diagnosis
 
 Two deliberately chosen seed levels diagnose the observed reversal; not four independent replications or held-out evidence. Utilization samples follow order seed.
@@ -335,5 +354,44 @@ CPU/CUDA tests cover prefix causality, future-label isolation, VQ/encoder gradie
 
 ## Measurement limits
 
-Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. Depth changes width too. Timed throughput excludes the first11 updates; all-update time includes them. Trial wall time includes preparation, child execution and verification, excluding reporting/publication. Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. Active counts describe structural training participation, not amortized per-token compute. NCP runs at chunk rate; the capacity-control MLP runs at token rate, and auxiliary-only concepts do not feed token logits. Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. For raw-logit mixing, reported entropy describes softmax classification probabilities, not the signed reconstruction weights. Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.
+Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. The mandatory native-depth comparison also changes width; the separate grid isolates each axis. Timed throughput excludes the first11 updates; all-update time includes them. Trial wall time includes preparation, child execution and verification, excluding reporting/publication. Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. Active counts describe structural training participation, not amortized per-token compute. NCP runs at chunk rate; the capacity-control MLP runs at token rate, and auxiliary-only concepts do not feed token logits. Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. For raw-logit mixing, reported entropy describes softmax classification probabilities, not the signed reconstruction weights. Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.
 All artifacts are retained locally. No cloud, dependency upgrades, paid services or deletion.
+
+## Frozen codebook and gradient diagnostics
+
+| Seed | Target entries used per segment | Target perplexity | Argmax entries used | Concept accuracy | Injected / hidden RMS | Weighted auxiliary loss |
+|---:|---|---|---|---:|---:|---:|
+| 45 | [11, 10, 7] | 7.00/7.06/4.65 | [10, 9, 6] | 0.674 | 0.062 | 0.7153 |
+| 46 | [14, 13, 13] | 13.18/11.92/11.81 | [14, 13, 13] | 0.576 | 0.063 | 0.9833 |
+| 43 | [14, 15, 13] | 12.38/11.90/11.59 | [14, 14, 13] | 0.566 | 0.047 | 0.9615 |
+| 44 | [9, 10, 12] | 6.96/9.12/10.71 | [9, 10, 12] | 0.591 | 0.072 | 0.8381 |
+
+Utilization and concept accuracy use32 post-training training-tape microbatches. They are not held-out quality or semantic-concept evidence. The collapse gate uses target entries/perplexity; argmax usage does not describe every soft mixing weight. Auxiliary loss is never included in token BPB. Every recorded final-update NCP parameter gradient is nonzero: True; every recorded NCP parameter update is nonzero: True.
+
+## Depth and width synthesis
+
+| Change | Mean paired BPB delta | Mean update-time ratio | Parameter ratio |
+|---|---:|---:|---:|
+| depth at width384 | -0.016547 | 1.98 | 1.76 |
+| depth at width768 | -0.014130 | 1.92 | 1.83 |
+| width at depth12 | -0.030223 | 0.99 | 2.92 |
+| width at depth6 | -0.032640 | 1.02 | 2.81 |
+
+Both seeds favor greater depth at each fixed width and greater width at each fixed depth. Similar measured runtime across widths applies to this native Windows microbatch2 setup; it does not imply equal FLOPs or prove a general hardware-efficiency advantage. No profiler-based cause is claimed.
+
+## Next best experiment
+
+Compare dense D6-width768 with D12-width768 over longer fixed-token budgets on new paired seeds, keeping the optimizer policy fixed and evaluating once on an untouched test split. Record the quality-versus-time curve as a separate analysis. This tests whether the replicated depth benefit persists as training matures and whether its roughly doubled update time is worthwhile. Keep the present NCP configuration frozen for any later comparison against the residual-MLP control; these mixed results do not justify combining it with MoE or n-gram memory. No next campaign is launched automatically.
+
+## Saved-evidence audit and storage
+
+Audit measured 2026-09-15T15:49:27.058488+00:00: 53 completed trials checked; 3 noncompleted attempts retained. Committed source archives byte-verified: True.
+Campaign logical files: 6.16 GiB; new trial checkpoints: 5.31 GiB; free disk at audit: 231.75 GiB. Initial free disk was237GiB; the initial forecast was15–40GiB of new storage. Existing roughly20GiB of checkpoints remain preserved. No checkpoint copies were made solely for inference probes.
+
+batch-evidence-result.json: completed; 69 checks. CPU recomputation from the actual sealed tape, not GPU training or a new quality measurement
+
+basis-evidence-result.json: completed; 8 checks. Actual saved frozen basis buffers match initializer-matched NCP anchors; trainable codebook transforms are expected to differ after different training. Complements named-parameter initialization receipts.
+
+Latest shared gate: completed. CPU/CUDA logs, exact test/source hashes and full-context fit receipts are published in report.json.
+
+A reporting-only preflight failure from a legacy fixture missing its seed was preserved and repaired before subsequent GPU training. An isolated preview text-encoding problem was caught before integration; original and repaired preview evidence remain saved. Neither produced a training score. Temporary publication deferrals retained local evidence and were followed by verified pushes.
