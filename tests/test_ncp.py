@@ -143,6 +143,18 @@ class NCPTests(unittest.TestCase):
             invalid = copy.deepcopy(candidate); invalid['ncp'][key]=value
             with self.assertRaises(ValueError): runner.validate_candidate(invalid)
 
+    def test_rms_pool_variant_bounds_latent_scale_and_remains_causal(self):
+        model=self.model(pool_normalization='rms').eval()
+        x=torch.randn(2,20,32,device=self.device)*10
+        pooled=model.ncp.pool(x)
+        torch.testing.assert_close(pooled.square().mean(-1),torch.ones_like(pooled[:,:,0]),atol=1e-5,rtol=1e-5)
+        torch.testing.assert_close(model.ncp.pool(x*100),pooled,atol=1e-5,rtol=1e-5)
+        ids=torch.randint(0,32,(2,20),device=self.device)
+        with torch.no_grad(),self.context():
+            full=model(ids)
+            for length in (3,4,7,8,13,20):
+                torch.testing.assert_close(model(ids[:,:length]),full[:,:length],atol=2e-3 if self.device=='cuda' else 1e-6,rtol=1e-3)
+
     def test_codebook_can_fit_detached_varied_chunks_without_collapsing(self):
         model = self.model()
         self.assertIsNotNone(getattr(model, 'ncp', None), 'Missing concept mechanism')

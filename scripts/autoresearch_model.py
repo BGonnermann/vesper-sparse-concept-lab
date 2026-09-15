@@ -205,6 +205,8 @@ def model_class(upstream, candidate):
                     "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
                     "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
                     "ncp_parameters": 0 if self.ncp is None else sum(p.numel() for p in self.ncp.parameters()),
+                    "ncp_segments": 0 if self.ncp is None else self.ncp.segments,
+                    "ncp_segment_dimension": 0 if self.ncp is None else self.config.n_embd//self.ncp.segments,
                     "ncp_codebook_parameters": 0 if self.ncp is None else sum(p.numel() for p in self.ncp.codebook.parameters()),
                     "ncp_codebook_buffer_bytes": 0 if self.ncp is None else self.ncp.codebook.basis.numel()*4,
                     "ncp_effective_codebook_bytes": 0 if self.ncp is None else self.ncp.entries*self.config.n_embd*4,

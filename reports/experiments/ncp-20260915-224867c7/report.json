@@ -7,15 +7,15 @@
     "active-preflight.json": {
       "kind": "ncp_correctness",
       "source_hashes": {
-        "autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+        "autoresearch.py": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222",
         "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
         "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
-        "autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
-        "autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+        "autoresearch_model.py": "278723b78b5838e04d6040929b2165bc19ab7e5b139834c94f7a114bf780d495",
+        "autoresearch_ncp.py": "6dd730991d0f42bb90fb088450f808af8c6b3be6c962702b43cfc7ed1f37651e",
         "autoresearch_train.py": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e"
       },
       "status": "completed",
-      "wall_seconds": 30.15599999999995
+      "wall_seconds": 33.96799999999985
     },
     "archpreview-source-result.json": {
       "kind": "source_review",
@@ -62,7 +62,7 @@
             }
           },
           "checkpoint_sha256": "963934e7e5f3d8f34f0578f2b82ebc7d35a7b55a0b4390e177f58719be1b2932",
-          "conservative_trial_forecast_seconds": 279.4544255998917,
+          "conservative_trial_forecast_seconds": 296.777126400033,
           "corpus_training_tokens": 0,
           "free_bytes": 14966325248,
           "gradient_norms": {
@@ -126,9 +126,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.4391600999997536,
-            0.4136881000003996,
-            0.45791879999978846
+            0.4735011999996459,
+            0.4453037999996923,
+            0.4917522000000645
           ],
           "model": {
             "activation_checkpointing": false,
@@ -149,6 +149,8 @@
             "ncp_codebook_parameters": 98304,
             "ncp_effective_codebook_bytes": 98304,
             "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
             "num_experts": 0,
             "router_parameters": 0,
             "top_k": 0,
@@ -224,8 +226,8 @@
             "feedforward": "dense",
             "matrix_lr": 0.04
           },
-          "checkpoint_sha256": "813e99a8ab5563b971145d1c9ea6f32894e2aeac53873d3012661e48c5019203",
-          "conservative_trial_forecast_seconds": 349.8121344000101,
+          "checkpoint_sha256": "b866271b0c2e73cae9406bbcff847f6d2b889ac3270332cd3ea724b9fa34f6ac",
+          "conservative_trial_forecast_seconds": 352.3096704001073,
           "corpus_training_tokens": 0,
           "free_bytes": 13169065984,
           "gradient_norms": {
@@ -320,9 +322,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.5596635000001697,
-            0.5953362000000197,
-            0.5698080000001937
+            0.6002142000002095,
+            0.5762712000000647,
+            0.5740134000002399
           ],
           "model": {
             "activation_checkpointing": false,
@@ -343,6 +345,8 @@
             "ncp_codebook_parameters": 0,
             "ncp_effective_codebook_bytes": 0,
             "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
             "num_experts": 0,
             "router_parameters": 0,
             "top_k": 0,
@@ -435,7 +439,7 @@
             "matrix_lr": 0.04
           },
           "checkpoint_sha256": "7284178bda012fdfc17ff4160252b4a0504b17930a604d0550a4cc94ab0bce3b",
-          "conservative_trial_forecast_seconds": 218.82691840012558,
+          "conservative_trial_forecast_seconds": 228.8975488001015,
           "corpus_training_tokens": 0,
           "free_bytes": 15054405632,
           "gradient_norms": {
@@ -488,9 +492,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.33950570000024527,
-            0.33603119999997944,
-            0.33293589999993856
+            0.35917490000019825,
+            0.3317268000000695,
+            0.35465190000013536
           ],
           "model": {
             "activation_checkpointing": false,
@@ -511,6 +515,8 @@
             "ncp_codebook_parameters": 0,
             "ncp_effective_codebook_bytes": 0,
             "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
             "num_experts": 0,
             "router_parameters": 0,
             "top_k": 0,
@@ -576,6 +582,185 @@
           "synthetic_optimizer_updates": 6,
           "synthetic_update_tokens": 98304
         },
+        "N-RMS": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "pool_normalization": "rms",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "1880b8eef70681fc49ce23e6e84720b3cb1b5570ab8c0486035462632bfc1a4b",
+          "conservative_trial_forecast_seconds": 218.3680127998814,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14983102464,
+          "gradient_norms": {
+            "lm_head.weight": 0.6124578714370728,
+            "ncp.blocks.0.down.weight": 0.002211898099631071,
+            "ncp.blocks.0.fc.weight": 0.0012597404420375824,
+            "ncp.blocks.0.proj.weight": 0.0014492523623630404,
+            "ncp.blocks.0.qkv.weight": 0.0014494454953819513,
+            "ncp.blocks.1.down.weight": 0.0021492312662303448,
+            "ncp.blocks.1.fc.weight": 0.0013315164251253009,
+            "ncp.blocks.1.proj.weight": 0.0015133859124034643,
+            "ncp.blocks.1.qkv.weight": 0.0014460919192060828,
+            "ncp.codebook.first": 0.054965682327747345,
+            "ncp.codebook.second": 0.31980928778648376,
+            "ncp.head.weight": 0.010842975229024887,
+            "resid_lambdas": 0.0008198454743251204,
+            "transformer.h.0.attn.c_k.weight": 0.00024518914869986475,
+            "transformer.h.0.attn.c_proj.weight": 0.0018028655322268605,
+            "transformer.h.0.attn.c_q.weight": 0.000249604694545269,
+            "transformer.h.0.attn.c_v.weight": 0.00034677411895245314,
+            "transformer.h.0.mlp.c_fc.weight": 0.004523701500147581,
+            "transformer.h.0.mlp.c_proj.weight": 0.027840498834848404,
+            "transformer.h.1.attn.c_k.weight": 0.00021101869060657918,
+            "transformer.h.1.attn.c_proj.weight": 0.002208095509558916,
+            "transformer.h.1.attn.c_q.weight": 0.00020982229034416378,
+            "transformer.h.1.attn.c_v.weight": 0.0004266116884537041,
+            "transformer.h.1.attn.ve_gate.weight": 1.995362936213496e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004075502045452595,
+            "transformer.h.1.mlp.c_proj.weight": 0.018039178103208542,
+            "transformer.h.2.attn.c_k.weight": 0.0001888442930066958,
+            "transformer.h.2.attn.c_proj.weight": 0.001988509437069297,
+            "transformer.h.2.attn.c_q.weight": 0.00018870887288358063,
+            "transformer.h.2.attn.c_v.weight": 0.0003884279867634177,
+            "transformer.h.2.mlp.c_fc.weight": 0.003856286872178316,
+            "transformer.h.2.mlp.c_proj.weight": 0.017103055492043495,
+            "transformer.h.3.attn.c_k.weight": 0.0001805932552088052,
+            "transformer.h.3.attn.c_proj.weight": 0.0018785488791763783,
+            "transformer.h.3.attn.c_q.weight": 0.00018065344193018973,
+            "transformer.h.3.attn.c_v.weight": 0.0003652030136436224,
+            "transformer.h.3.attn.ve_gate.weight": 1.8431051103107166e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036300825886428356,
+            "transformer.h.3.mlp.c_proj.weight": 0.01601126231253147,
+            "transformer.h.4.attn.c_k.weight": 0.00016811792738735676,
+            "transformer.h.4.attn.c_proj.weight": 0.001961199101060629,
+            "transformer.h.4.attn.c_q.weight": 0.00016746505571063608,
+            "transformer.h.4.attn.c_v.weight": 0.0003837983531411737,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034678338561207056,
+            "transformer.h.4.mlp.c_proj.weight": 0.01528921164572239,
+            "transformer.h.5.attn.c_k.weight": 0.00015934320981614292,
+            "transformer.h.5.attn.c_proj.weight": 0.0018729249713942409,
+            "transformer.h.5.attn.c_q.weight": 0.0001599522802280262,
+            "transformer.h.5.attn.c_v.weight": 0.0003432547382544726,
+            "transformer.h.5.attn.ve_gate.weight": 1.38417692596704e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.00330570456571877,
+            "transformer.h.5.mlp.c_proj.weight": 0.014535483904182911,
+            "transformer.wte.weight": 0.000659439479932189,
+            "value_embeds.1.weight": 1.3160873095330317e-05,
+            "value_embeds.3.weight": 1.1046710824302863e-05,
+            "value_embeds.5.weight": 9.699705515231472e-06,
+            "x0_lambdas": 0.0007386396755464375
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.33456070000011096,
+            0.33860939999976836,
+            0.3313031000002411
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 690560000,
+          "peak_reserved_bytes": 710934528,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
         "NCP": {
           "candidate": {
             "depth": 6,
@@ -596,7 +781,7 @@
             }
           },
           "checkpoint_sha256": "4e8edb0414f31c47e477d38e1b762b0b2cf746aa5a9d82083ba35928ee698c69",
-          "conservative_trial_forecast_seconds": 279.99750400008634,
+          "conservative_trial_forecast_seconds": 299.6958847998176,
           "corpus_training_tokens": 0,
           "free_bytes": 14966325248,
           "gradient_norms": {
@@ -660,9 +845,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.45395460000008825,
-            0.42519339999989825,
-            0.4589795000001686
+            0.48714590000008684,
+            0.4974528999996437,
+            0.466059999999743
           ],
           "model": {
             "activation_checkpointing": false,
@@ -683,6 +868,8 @@
             "ncp_codebook_parameters": 98304,
             "ncp_effective_codebook_bytes": 98304,
             "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
             "num_experts": 0,
             "router_parameters": 0,
             "top_k": 0,
@@ -753,7 +940,7 @@
           "synthetic_update_tokens": 98304
         }
       },
-      "source_sha256": "6533981522bfa71237950e73d12daf42066331c9b14df1fb79565d356aba895a",
+      "source_sha256": "43936a1ec2730ff567488a93f0fed5d58c9336c813e7e90c2e8b3d08fbaee480",
       "status": "completed"
     },
     "preflight-1789473279-result.json": {
@@ -866,6 +1053,43 @@
         "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
       },
       "wall_seconds": 30.15599999999995
+    },
+    "preflight-1789474435-result.json": {
+      "cpu": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cpu-1789474401.log",
+        "sha256": "f16f2e003abec34439e2a4fc3f4cf614094a21796ea52a3771a99f1293e53715"
+      },
+      "cuda": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cuda-1789474407.log",
+        "sha256": "43e565bb50569c7316ff50e86120d26ff1de995122a2bb1dc8c568126af68bb3"
+      },
+      "fit_sha256": "0fe7d002444151998a636f9282ae019ba4dad4b2d3c06065b56891115b4b0a6d",
+      "kind": "ncp_correctness",
+      "passed": true,
+      "source_hashes": {
+        "autoresearch.py": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "278723b78b5838e04d6040929b2165bc19ab7e5b139834c94f7a114bf780d495",
+        "autoresearch_ncp.py": "6dd730991d0f42bb90fb088450f808af8c6b3be6c962702b43cfc7ed1f37651e",
+        "autoresearch_train.py": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e"
+      },
+      "status": "completed",
+      "test_hashes": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_campaign_depth_extension.py": "2ac0e71f5a913b39e4b535d67b39f055c9b11827d9d63637460ec2fc571d95ae",
+        "test_campaign_variants.py": "1679fd62f3ccb66b08de83ddabe498c9fd04767f9e15da469e66ee0674a0a70a",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_experiment_reports.py": "97a3e4dd58c06e0e896238127e8766629390268d94ccccc2dc63d6a063420985",
+        "test_fixed_updates.py": "17cdadb9ee2c275008997d5c17bcbcc09677d301e6201df982aa53f64331f094",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ncp.py": "ccb79f312a329274c66ff5ecd1f9a41b1b3d4c0a4d9c2343744ebe8029e9a7c5",
+        "test_ncp_campaign.py": "05665f8cc7c1a80c4defe545e7e3f90553172035fdd7ef2999c011742684265b",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
+      },
+      "wall_seconds": 33.96799999999985
     },
     "result.json": {
       "kind": "ncp_campaign",
@@ -988,6 +1212,612 @@
           "status": "failed",
           "trial": "trial-0003-AUX-s42",
           "wall_seconds": 82.39100000000008
+        },
+        {
+          "active_parameters": 30056748,
+          "all_update_seconds": 202.5702012999991,
+          "allocated_mib": 654.380859375,
+          "board_sampled_peak_mib": 2215.0,
+          "bpb": 0.635524,
+          "codebook_buffer_bytes": 98304,
+          "codebook_effective_bytes": 98304,
+          "configuration": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "prediction_weight": 0.1,
+              "vq_weight": 1.0
+            }
+          },
+          "error": null,
+          "hypothesis": "Both unit-weight variants diverged; reduce NCP prediction MSE coefficient tenfold while keeping codebook fitting and feedback unchanged",
+          "label": "N-prediction_weight0.1",
+          "memory_table_bytes": 0,
+          "ncp_health": {
+            "collapsed": false,
+            "final_update_gradient_norms": {
+              "blocks.0.down.weight": 0.015105942264199257,
+              "blocks.0.fc.weight": 0.031648147851228714,
+              "blocks.0.proj.weight": 0.018717145547270775,
+              "blocks.0.qkv.weight": 0.00725103635340929,
+              "blocks.1.down.weight": 0.010355250909924507,
+              "blocks.1.fc.weight": 0.015857072547078133,
+              "blocks.1.proj.weight": 0.0030129230581223965,
+              "blocks.1.qkv.weight": 0.004777516704052687,
+              "codebook.first": 0.14090800285339355,
+              "codebook.second": 0.6130989789962769,
+              "head.weight": 0.05130442976951599
+            },
+            "final_update_parameter_delta_norms": {
+              "blocks.0.down.weight": 0.001004458055831492,
+              "blocks.0.fc.weight": 0.0010380574967712164,
+              "blocks.0.proj.weight": 0.0003622067451942712,
+              "blocks.0.qkv.weight": 0.0008469587191939354,
+              "blocks.1.down.weight": 0.0011997184483334422,
+              "blocks.1.fc.weight": 0.0012431188952177763,
+              "blocks.1.proj.weight": 0.00043935177382081747,
+              "blocks.1.qkv.weight": 0.0008248169324360788,
+              "codebook.first": 0.0005431452882476151,
+              "codebook.second": 0.000531992525793612,
+              "head.weight": 0.0004404881037771702
+            },
+            "mean_feedback_rms": 5.880552038550377,
+            "mean_hidden_rms": 11.379644095897675,
+            "mean_next_concept_accuracy": 0.3727034078910947,
+            "mean_next_concept_mse": 24.558166682720184,
+            "mean_prediction_entropy": 1.6828745529055595,
+            "target_counts": [
+              [
+                143,
+                164,
+                274,
+                152,
+                175,
+                236,
+                298,
+                233,
+                188,
+                196,
+                202,
+                463,
+                0,
+                64,
+                0,
+                267,
+                183,
+                403,
+                0,
+                122,
+                0,
+                0,
+                277,
+                138,
+                0,
+                0,
+                0,
+                133,
+                0,
+                252,
+                0,
+                166,
+                0,
+                237,
+                0,
+                162,
+                18,
+                345,
+                1,
+                0,
+                1,
+                0,
+                129,
+                141,
+                73,
+                166,
+                0,
+                0,
+                170,
+                267,
+                200,
+                86,
+                217,
+                202,
+                292,
+                0,
+                0,
+                0,
+                0,
+                170,
+                348,
+                238,
+                0,
+                0
+              ],
+              [
+                0,
+                244,
+                0,
+                234,
+                192,
+                0,
+                121,
+                0,
+                199,
+                294,
+                132,
+                135,
+                137,
+                431,
+                206,
+                113,
+                0,
+                0,
+                0,
+                122,
+                0,
+                193,
+                184,
+                64,
+                163,
+                253,
+                275,
+                274,
+                0,
+                257,
+                0,
+                11,
+                141,
+                244,
+                172,
+                0,
+                0,
+                0,
+                1,
+                108,
+                260,
+                220,
+                130,
+                455,
+                133,
+                183,
+                105,
+                6,
+                0,
+                340,
+                3,
+                0,
+                83,
+                0,
+                0,
+                0,
+                0,
+                100,
+                1,
+                332,
+                140,
+                344,
+                234,
+                223
+              ],
+              [
+                318,
+                226,
+                212,
+                150,
+                133,
+                1,
+                0,
+                1,
+                157,
+                0,
+                97,
+                5,
+                279,
+                81,
+                0,
+                61,
+                180,
+                152,
+                171,
+                67,
+                158,
+                113,
+                153,
+                160,
+                177,
+                152,
+                0,
+                0,
+                242,
+                101,
+                287,
+                126,
+                93,
+                168,
+                164,
+                142,
+                121,
+                129,
+                192,
+                65,
+                106,
+                178,
+                95,
+                7,
+                0,
+                227,
+                197,
+                54,
+                117,
+                200,
+                121,
+                271,
+                114,
+                127,
+                107,
+                178,
+                151,
+                231,
+                67,
+                139,
+                220,
+                104,
+                72,
+                75
+              ]
+            ],
+            "target_perplexity": [
+              36.364612037232604,
+              36.90407942727033,
+              50.19038110317769
+            ],
+            "training_loss_means": {
+              "concept_ce": 3.5030285846441984,
+              "prediction_mse": 13.283848478240543,
+              "vq_mse": 11.62592673402105,
+              "weighted_total": 12.954311584977404
+            },
+            "used_entries": [
+              42,
+              45,
+              58
+            ]
+          },
+          "ncp_parameters": 3710976,
+          "phase": "screen",
+          "report_id": "ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9",
+          "reserved_mib": 690.0,
+          "seed": 42,
+          "source_hashes": {
+            "adapter_sha256": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "checkpoint_sha256": "e138d7d7c45c003afab1f986fd9203da95adce0a4ae8d7cafd22282ccec649e3",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+            "ncp_sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+            "orchestrator_sha256": "c8a21708ee4b6f983f767c52f9b2f10c87b8470132f4fd23bd814d12dff4ac0e",
+            "preflight_sha256": "5910c4aaf69ec426b8430d84ad9193e2fa988ac80f36eb0e6eb9991e8a885bbe",
+            "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
+          },
+          "status": "completed",
+          "timed_tokens_per_second": 41362.41885333083,
+          "total_parameters": 30056748,
+          "trial": "trial-0004-N-prediction_weight0.1-s42",
+          "wall_seconds": 210.34400000000005,
+          "width": 384
+        },
+        {
+          "active_parameters": 30056748,
+          "all_update_seconds": 203.2961177000043,
+          "allocated_mib": 654.380859375,
+          "board_sampled_peak_mib": 2610.0,
+          "bpb": 0.635888,
+          "codebook_buffer_bytes": 98304,
+          "codebook_effective_bytes": 98304,
+          "configuration": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "prediction_weight": 0.03,
+              "vq_weight": 1.0
+            }
+          },
+          "error": null,
+          "hypothesis": "Alpha0.1 completed without codebook collapse but was worse than D6 by0.000676 BPB; reduce alpha to0.03 to limit auxiliary interference",
+          "label": "N-prediction_weight0.03",
+          "memory_table_bytes": 0,
+          "ncp_health": {
+            "collapsed": false,
+            "final_update_gradient_norms": {
+              "blocks.0.down.weight": 0.005457483697682619,
+              "blocks.0.fc.weight": 0.01168042328208685,
+              "blocks.0.proj.weight": 0.006779950577765703,
+              "blocks.0.qkv.weight": 0.0025139537174254656,
+              "blocks.1.down.weight": 0.003220429876819253,
+              "blocks.1.fc.weight": 0.00496254675090313,
+              "blocks.1.proj.weight": 0.0010203563142567873,
+              "blocks.1.qkv.weight": 0.0033593319822102785,
+              "codebook.first": 0.12994970381259918,
+              "codebook.second": 0.5419890880584717,
+              "head.weight": 0.01809166744351387
+            },
+            "final_update_parameter_delta_norms": {
+              "blocks.0.down.weight": 0.0011198594002053142,
+              "blocks.0.fc.weight": 0.0011723256902769208,
+              "blocks.0.proj.weight": 0.00038977921940386295,
+              "blocks.0.qkv.weight": 0.0007991644088178873,
+              "blocks.1.down.weight": 0.0013620423851534724,
+              "blocks.1.fc.weight": 0.001382640446536243,
+              "blocks.1.proj.weight": 0.0005121058784425259,
+              "blocks.1.qkv.weight": 0.0010577538050711155,
+              "codebook.first": 0.0005257307784631848,
+              "codebook.second": 0.0005882048862986267,
+              "head.weight": 0.00038505817065015435
+            },
+            "mean_feedback_rms": 7.324178487062454,
+            "mean_hidden_rms": 12.805388033390045,
+            "mean_next_concept_accuracy": 0.34128936752676964,
+            "mean_next_concept_mse": 26.90263521671295,
+            "mean_prediction_entropy": 1.8049788177013397,
+            "target_counts": [
+              [
+                207,
+                341,
+                258,
+                281,
+                139,
+                134,
+                207,
+                347,
+                206,
+                331,
+                271,
+                0,
+                0,
+                64,
+                0,
+                322,
+                194,
+                368,
+                0,
+                122,
+                0,
+                0,
+                152,
+                165,
+                0,
+                0,
+                0,
+                131,
+                0,
+                340,
+                0,
+                100,
+                0,
+                313,
+                0,
+                263,
+                2,
+                118,
+                56,
+                0,
+                0,
+                0,
+                261,
+                138,
+                263,
+                144,
+                0,
+                0,
+                192,
+                394,
+                0,
+                117,
+                3,
+                247,
+                430,
+                0,
+                0,
+                3,
+                0,
+                1,
+                378,
+                189,
+                0,
+                0
+              ],
+              [
+                0,
+                178,
+                0,
+                375,
+                0,
+                0,
+                70,
+                0,
+                262,
+                7,
+                57,
+                134,
+                287,
+                432,
+                294,
+                85,
+                0,
+                0,
+                0,
+                283,
+                0,
+                289,
+                217,
+                81,
+                71,
+                212,
+                0,
+                209,
+                1,
+                245,
+                0,
+                204,
+                309,
+                288,
+                194,
+                0,
+                0,
+                0,
+                83,
+                138,
+                239,
+                248,
+                246,
+                485,
+                81,
+                239,
+                120,
+                0,
+                0,
+                347,
+                0,
+                0,
+                58,
+                0,
+                0,
+                0,
+                0,
+                119,
+                0,
+                155,
+                180,
+                260,
+                174,
+                236
+              ],
+              [
+                260,
+                202,
+                163,
+                114,
+                147,
+                0,
+                0,
+                0,
+                166,
+                0,
+                146,
+                130,
+                143,
+                150,
+                0,
+                81,
+                245,
+                153,
+                159,
+                7,
+                131,
+                144,
+                200,
+                175,
+                241,
+                119,
+                0,
+                0,
+                167,
+                110,
+                128,
+                245,
+                198,
+                83,
+                118,
+                206,
+                110,
+                72,
+                239,
+                64,
+                225,
+                269,
+                152,
+                0,
+                0,
+                302,
+                206,
+                50,
+                186,
+                201,
+                120,
+                239,
+                93,
+                107,
+                90,
+                118,
+                140,
+                125,
+                0,
+                154,
+                103,
+                156,
+                135,
+                5
+              ]
+            ],
+            "target_perplexity": [
+              32.83951681541265,
+              34.68559799824578,
+              49.03001607354477
+            ],
+            "training_loss_means": {
+              "concept_ce": 3.6052107315626927,
+              "prediction_mse": 13.22444844018537,
+              "vq_mse": 11.024587859326857,
+              "weighted_total": 11.421321304635057
+            },
+            "used_entries": [
+              40,
+              41,
+              54
+            ]
+          },
+          "ncp_parameters": 3710976,
+          "phase": "screen",
+          "report_id": "ncp-20260915--trial-0005-N-prediction_weight0.03-s42-cd708cd3",
+          "reserved_mib": 690.0,
+          "seed": 42,
+          "source_hashes": {
+            "adapter_sha256": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "checkpoint_sha256": "6ac88cb09136978db9c7cd6ddd3a1822020cb4022a34dca8ec49c04428ee918e",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+            "ncp_sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+            "orchestrator_sha256": "fbbc948026ae5d99fe9b3fbc729a5a554aa4ff7f6547e729b4560f09a9774598",
+            "preflight_sha256": "5910c4aaf69ec426b8430d84ad9193e2fa988ac80f36eb0e6eb9991e8a885bbe",
+            "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
+          },
+          "status": "completed",
+          "timed_tokens_per_second": 41265.129668162524,
+          "total_parameters": 30056748,
+          "trial": "trial-0005-N-prediction_weight0.03-s42",
+          "wall_seconds": 211.03099999999995,
+          "width": 384
         }
       ],
       "status": "running"
@@ -1015,19 +1845,23 @@
     }
   },
   "diagnostics": [
-    "campaign.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\n2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
+    "campaign.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\n2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')\n2026-09-15T12:12:21.662576+00:00 PROSPECTIVE AMENDMENT: add pool_normalization={none,rms} after unit-weight failures and alpha0.1 hidden RMS11.38. RMS trial starts from alpha=beta=1; check scale and causality before launching. Full rationale docs/ncp-campaign.md.",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
     "failure-receipt-red.log:\nFAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 60, in test_loss_failure_preserves_partial_state_and_accounting\n    self.assertTrue((path/'training-failure.json').exists(),'Missing partial failure receipt')\nAssertionError: False is not true : Missing partial failure receipt\nRan 4 tests in 0.990s\nFAILED (failures=1)",
     "initial-queue.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\nTraceback (most recent call last):\n    if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')\nRuntimeError: Preserved failed NCP trial; diagnose before more trials",
     "launch-AUX-s42.log:\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
+    "normalization-green-cpu.log:\nRan 8 tests in 1.461s\nOK",
+    "normalization-red.log:\nTraceback (most recent call last):\n    raise error_metas[0].to_error(msg)\nAssertionError: Tensor-likes are not close!\nRan 8 tests in 1.503s\nFAILED (failures=1)",
     "preflight-cpu-1789473248.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 3.917s\nOK",
     "preflight-cpu-1789473331.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 3.911s\nOK",
     "preflight-cpu-1789473887.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 3.871s\nOK",
+    "preflight-cpu-1789474401.log:\nok\nok\nok\nok\nok\nok\nRan 66 tests in 4.144s\nOK",
     "preflight-cuda-1789473254.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 6.129s\nOK",
     "preflight-cuda-1789473337.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 5.956s\nOK",
     "preflight-cuda-1789473893.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 5.766s\nOK",
+    "preflight-cuda-1789474407.log:\nok\nok\nok\nok\nok\nok\nRan 66 tests in 6.033s\nOK",
     "report-red.log:\nERROR: test_ncp_health_and_prospective_hypothesis_are_published (test_experiment_reports.ReportTests.test_ncp_health_and_prospective_hypothesis_are_published)\nTraceback (most recent call last):\nKeyError: 'collapsed'\nRan 8 tests in 0.229s\nFAILED (errors=1)",
     "test-ncp-green1.log:\nok\nRan 6 tests in 1.153s\nOK",
     "test-ncp-red.log:\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nRan 6 tests in 1.272s\nFAILED (failures=5, errors=1)"
@@ -1036,7 +1870,7 @@
     "active-preflight.json": {
       "bytes": 2471,
       "local_path": "runs/autoresearch/ncp-20260915/active-preflight.json",
-      "sha256": "5910c4aaf69ec426b8430d84ad9193e2fa988ac80f36eb0e6eb9991e8a885bbe"
+      "sha256": "c7e6b3e0e5eda7af10b40104b312f8ad7784596174042029e59cce1dca68a1bd"
     },
     "archpreview-source-result.json": {
       "bytes": 1149,
@@ -1044,9 +1878,9 @@
       "sha256": "73de9bddf9d8442c54cfe1545ef49e74ce662ee78579cc85bedeff494b1fee12"
     },
     "campaign.log": {
-      "bytes": 3487,
+      "bytes": 6163,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "9f9f71dd63b2330e70da0dd5603f7721d23c9e51561ef4e247c9e4d2087f4e28"
+      "sha256": "2e1cfb16ea652fd6123a4baebff3742c539a7ae2e5e905ea8dc97d9056868bcd"
     },
     "contract.json": {
       "bytes": 286,
@@ -1088,10 +1922,15 @@
       "local_path": "runs/autoresearch/ncp-20260915/fit-1789473901.log",
       "sha256": "460f1372047b48cef08819b5a63ba52f5a2f7731d2926edcc809d7c12fd71100"
     },
+    "fit-1789474416.log": {
+      "bytes": 1906,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789474416.log",
+      "sha256": "70208f2886c92e406f406a892ab9b95e6e357c16ee4349997741e44efda917a7"
+    },
     "fit-result.json": {
-      "bytes": 44659,
+      "bytes": 55526,
       "local_path": "runs/autoresearch/ncp-20260915/fit-result.json",
-      "sha256": "b5970b8b86457bc9ccacf0566e72d83a5a456c18052615a79f6d3aabd6345d83"
+      "sha256": "0fe7d002444151998a636f9282ae019ba4dad4b2d3c06065b56891115b4b0a6d"
     },
     "initial-queue.log": {
       "bytes": 953,
@@ -1113,6 +1952,41 @@
       "local_path": "runs/autoresearch/ncp-20260915/launch-D6-s42.log",
       "sha256": "adbfcdde7199241a394fb3fd2c83b7931c44e6cc1316c5ed446eca9ac5af7b3e"
     },
+    "launch-alpha003.log": {
+      "bytes": 874,
+      "local_path": "runs/autoresearch/ncp-20260915/launch-alpha003.log",
+      "sha256": "0337ef40192a749b83bbcef68d9a0d064b35a93dd5dce1f4d11c5f40c91f321f"
+    },
+    "launch-alpha01.log": {
+      "bytes": 869,
+      "local_path": "runs/autoresearch/ncp-20260915/launch-alpha01.log",
+      "sha256": "6377702d83742ed2c8b29ea5c85160cb766aab5ae742d356b1574ff9d344b09e"
+    },
+    "method-notes.md": {
+      "bytes": 1367,
+      "local_path": "runs/autoresearch/ncp-20260915/method-notes.md",
+      "sha256": "6728d69ab18a181dec9d0d4817bae72b3da2a827da0fa42bc520484c587e6343"
+    },
+    "normalization-green-cpu.log": {
+      "bytes": 159,
+      "local_path": "runs/autoresearch/ncp-20260915/normalization-green-cpu.log",
+      "sha256": "2c08edcf42b2af5ab04a6463ba812ee56ae50d50018e64106c9e2d285f42f35c"
+    },
+    "normalization-red.log": {
+      "bytes": 1231,
+      "local_path": "runs/autoresearch/ncp-20260915/normalization-red.log",
+      "sha256": "b926cce8a99f4410b723b638f8f0ad89e7f0a020667518e5f7f791c02517f6e8"
+    },
+    "normalized-queue.log": {
+      "bytes": 408,
+      "local_path": "runs/autoresearch/ncp-20260915/normalized-queue.log",
+      "sha256": "afbf631f5019abf874bf7737b4d0c37c5dea014a6971ff7eafa6c6403bdf9d25"
+    },
+    "normalized-queue.py": {
+      "bytes": 879,
+      "local_path": "runs/autoresearch/ncp-20260915/normalized-queue.py",
+      "sha256": "3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002"
+    },
     "plan.md": {
       "bytes": 8589,
       "local_path": "runs/autoresearch/ncp-20260915/plan.md",
@@ -1133,6 +2007,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-1789473917-result.json",
       "sha256": "5910c4aaf69ec426b8430d84ad9193e2fa988ac80f36eb0e6eb9991e8a885bbe"
     },
+    "preflight-1789474435-result.json": {
+      "bytes": 2471,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-1789474435-result.json",
+      "sha256": "c7e6b3e0e5eda7af10b40104b312f8ad7784596174042029e59cce1dca68a1bd"
+    },
     "preflight-cpu-1789473248.log": {
       "bytes": 13099,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473248.log",
@@ -1148,6 +2027,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473887.log",
       "sha256": "cb15936eae5ed7d0b7c991875ff5b66a27b61e92015fcc5be9c10690c6a295a7"
     },
+    "preflight-cpu-1789474401.log": {
+      "bytes": 13563,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789474401.log",
+      "sha256": "f16f2e003abec34439e2a4fc3f4cf614094a21796ea52a3771a99f1293e53715"
+    },
     "preflight-cuda-1789473254.log": {
       "bytes": 13004,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789473254.log",
@@ -1162,6 +2046,11 @@
       "bytes": 13318,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789473893.log",
       "sha256": "acbea2150688db923340ff1501c49c509440ecbc412103d6c6af32651cc6ae8c"
+    },
+    "preflight-cuda-1789474407.log": {
+      "bytes": 13468,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789474407.log",
+      "sha256": "43e565bb50569c7316ff50e86120d26ff1de995122a2bb1dc8c568126af68bb3"
     },
     "preflight-launch.log": {
       "bytes": 408,
@@ -1184,9 +2073,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 5412,
+      "bytes": 21141,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "253777cfac71495c350b73e905b8ff43573a46005d22f80e4d41f3a0ae758e8d"
+      "sha256": "4bd8cb5adcd12c2ed0c63485d6b28950aab079456d613c9bf6ae63a1badf72cc"
     },
     "sources-result.json": {
       "bytes": 1101,
@@ -1194,9 +2083,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 3148,
+      "bytes": 3926,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "ce8f602beba90802065fa43c309aecaee81767b5d5ef5d7b96986651a7df2584"
+      "sha256": "06442d2a4b1f9ba5d43f0b1335d05b3d9e7bbb7b471d2ef563461c8e9a9dbbc9"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -1223,6 +2112,10 @@
       "initial-queue.py": {
         "published_path": "reports/source-snapshots/164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853.py",
         "sha256": "164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853"
+      },
+      "normalized-queue.py": {
+        "published_path": "reports/source-snapshots/3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002.py",
+        "sha256": "3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002"
       }
     },
     "execution_receipt": null,
@@ -1234,7 +2127,7 @@
     "recorded_upstream": null,
     "snapshot_manifest": null
   },
-  "reporter_sha256": "75ee5e564174ece88083051158ec3e972ace7d478d892bc0230073defcedd805",
+  "reporter_sha256": "b7fe4f9a73689b14db57fd66dce6059fd3037f238a49833174e7bc0ba7faaad9",
   "schema_version": 1,
   "seeds": [
     42

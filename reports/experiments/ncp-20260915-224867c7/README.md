@@ -13,6 +13,7 @@ campaign.log:
 2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')
 2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.
 2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')
+2026-09-15T12:12:21.662576+00:00 PROSPECTIVE AMENDMENT: add pool_normalization={none,rms} after unit-weight failures and alpha0.1 hidden RMS11.38. RMS trial starts from alpha=beta=1; check scale and causality before launching. Full rationale docs/ncp-campaign.md.
 
 controller-red.log:
 Traceback (most recent call last):
@@ -48,6 +49,17 @@ RuntimeError: Preserved failed NCP trial; diagnose before more trials
 launch-AUX-s42.log:
 2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')
 
+normalization-green-cpu.log:
+Ran 8 tests in 1.461s
+OK
+
+normalization-red.log:
+Traceback (most recent call last):
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+Ran 8 tests in 1.503s
+FAILED (failures=1)
+
 preflight-cpu-1789473248.log:
 ok
 ok
@@ -76,6 +88,16 @@ ok
 ok
 ok
 Ran 65 tests in 3.871s
+OK
+
+preflight-cpu-1789474401.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 66 tests in 4.144s
 OK
 
 preflight-cuda-1789473254.log:
@@ -108,6 +130,16 @@ ok
 Ran 65 tests in 5.766s
 OK
 
+preflight-cuda-1789474407.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 66 tests in 6.033s
+OK
+
 report-red.log:
 ERROR: test_ncp_health_and_prospective_hypothesis_are_published (test_experiment_reports.ReportTests.test_ncp_health_and_prospective_hypothesis_are_published)
 Traceback (most recent call last):
@@ -130,6 +162,18 @@ AssertionError: unexpectedly None : Missing concept mechanism
 Ran 6 tests in 1.272s
 FAILED (failures=5, errors=1)
 ```
+
+## Retained narrative: method-notes.md
+
+# Method notes and prospective decisions
+
+- Prototype correctness/fit completed at11:56 UTC, about15 minutes into the eight-hour campaign, within the two-hour implementation allocation.
+- Unit-weight NCP feedback failed at optimizer update169; same-weight auxiliary-only failed at213. Neither has a valid fixed-budget BPB or final checkpoint. Raw logs, captured source/configuration and whole-board samples are retained.
+- These are configuration instability outcomes. Causal, target-isolation and source-execution gates passed. Lowering prediction-loss weight is inside the predeclared search.
+- Before trial4, failure handling was extended to retain partial model state, consumed-token accounting and NCP loss-component means on subsequent loss-limit failures. This changes failure reporting only; all successful training math and evaluation remain unchanged. Source hashes distinguish versions.
+- Primary and newer source reviews are separate JSON receipts. Softmax mixing is supported explicitly by ArchPreview Eq8, but released official inference code still multiplies raw logits by codebooks. This discrepancy remains a reproduction limitation.
+- Synthetic fit checkpoints are test artifacts, not training scores. Repeated preflight fit checks used the same named synthetic checkpoint files; all full research trial directories are unique and retained.
+
 
 ## Retained narrative: plan.md
 
@@ -281,7 +325,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-1 completed of 3 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+3 completed of 5 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -297,6 +341,8 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0001-D6-s42](../ncp-20260915--trial-0001-D6-s42-b009c334/README.md) | 42 | 0.634848 | 177.1 | 184.0 | 47526 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 | [trial-0002-NCP-s42](../ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | 42 | failed | | | | | | |
 | [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 | failed | | | | | | |
+| [trial-0004-N-prediction_weight0.1-s42](../ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9/README.md) | 42 | 0.635524 | 202.6 | 210.3 | 41362 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
+| [trial-0005-N-prediction_weight0.03-s42](../ncp-20260915--trial-0005-N-prediction_weight0.03-s42-cd708cd3/README.md) | 42 | 0.635888 | 203.3 | 211.0 | 41265 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -315,6 +361,8 @@ No completed pair yet.
 - trial-0001-D6-s42: Fresh depth6 matching control before NCP trials
 - trial-0002-NCP-s42: Source-inspired discrete chunk prediction plus causal predicted feedback may improve BPB at equal tokens Failure: RuntimeError('Training child exit 1')
 - trial-0003-AUX-s42: Initial feedback trial exceeded loss100 at update169; same-weight auxiliary-only condition tests whether feedback caused instability Failure: RuntimeError('Training child exit 1')
+- trial-0004-N-prediction_weight0.1-s42: Both unit-weight variants diverged; reduce NCP prediction MSE coefficient tenfold while keeping codebook fitting and feedback unchanged
+- trial-0005-N-prediction_weight0.03-s42: Alpha0.1 completed without codebook collapse but was worse than D6 by0.000676 BPB; reduce alpha to0.03 to limit auxiliary interference
 
 ## Measurement limits
 

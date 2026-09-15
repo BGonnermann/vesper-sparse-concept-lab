@@ -51,6 +51,10 @@ def validate_candidate(value):
         fields.add('ncp')
         n = value['ncp']
         expected = {'kind','chunk_size','layers','entries','after_layer','prediction_weight','vq_weight','ce_weight','lr','feedback_scale','mode'}
+        if isinstance(n,dict) and 'pool_normalization' in n:
+            expected.add('pool_normalization')
+            if n['pool_normalization'] not in ('none','rms'):
+                raise ValueError('Invalid NCP pool normalization')
         if not isinstance(n,dict) or set(n)!=expected or n['kind']!='ncp_v1':
             raise ValueError('NCP requires the complete ncp_v1 configuration.')
         if value.get('feedforward')!='dense' or 'memory' in value:

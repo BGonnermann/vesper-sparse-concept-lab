@@ -1,11 +1,24 @@
 {
-  "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42",
+  "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42",
   "budget_family": "fixed_updates",
-  "compatibility_fingerprint": "ee2bf7b43e943ce8614d6c61acf1681bccc8cdc800e2d8dcce89bf38e2f186a6",
+  "compatibility_fingerprint": "2827c3e15614e9b1ed8c72e095be33193558b7519a7e736c5b8a91e2f3d1148a",
   "configuration": {
     "depth": 6,
     "feedforward": "dense",
-    "matrix_lr": 0.04
+    "matrix_lr": 0.04,
+    "ncp": {
+      "after_layer": 0,
+      "ce_weight": 0.0,
+      "chunk_size": 4,
+      "entries": 64,
+      "feedback_scale": 1.0,
+      "kind": "ncp_v1",
+      "layers": 2,
+      "lr": 0.001,
+      "mode": "feedback",
+      "prediction_weight": 0.1,
+      "vq_weight": 1.0
+    }
   },
   "details": {
     "batches.json": {
@@ -14,7 +27,20 @@
     "candidate.json": {
       "depth": 6,
       "feedforward": "dense",
-      "matrix_lr": 0.04
+      "matrix_lr": 0.04,
+      "ncp": {
+        "after_layer": 0,
+        "ce_weight": 0.0,
+        "chunk_size": 4,
+        "entries": 64,
+        "feedback_scale": 1.0,
+        "kind": "ncp_v1",
+        "layers": 2,
+        "lr": 0.001,
+        "mode": "feedback",
+        "prediction_weight": 0.1,
+        "vq_weight": 1.0
+      }
     },
     "environment.json": {
       "bf16_supported": true,
@@ -32,16 +58,16 @@
       "total_vram_bytes": 17094475776
     },
     "evaluation-immutability.json": {
-      "after_sha256": "abdfcd329f6b20a830dbd794c2351c4e36a7e961de780b0c9faa5adfdc3f531c",
-      "before_sha256": "abdfcd329f6b20a830dbd794c2351c4e36a7e961de780b0c9faa5adfdc3f531c",
+      "after_sha256": "5031b8ee0eb0678c9af264e8cda5042db92b8446b3420be943fca07fc5877784",
+      "before_sha256": "5031b8ee0eb0678c9af264e8cda5042db92b8446b3420be943fca07fc5877784",
       "verified": true
     },
     "execution.json": {},
     "fixed-training.json": {
-      "all_update_seconds": 177.1385357999984,
+      "all_update_seconds": 202.5702012999991,
       "batch_hash_chain": "e43fc6843aa6f6a1005aabf5cab1f85ddca025aba7eee455c55103b69421257f",
       "optimizer_updates": 512,
-      "schedule_sha256": "3b63ceaf7022a693b205fd4055ef89450eb7aacac8311b1fa8f5dcf65ed16afa",
+      "schedule_sha256": "c2aa2771ada9223c050bb5d8dc982a6123593718f3ede4573d60fe491945f256",
       "seed": 42,
       "stopping_rule": "optimizer_updates"
     },
@@ -51,13 +77,13 @@
     },
     "memory.json": {
       "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
-      "peak_allocated_bytes": 609941504,
-      "peak_reserved_bytes": 652214272
+      "peak_allocated_bytes": 686168064,
+      "peak_reserved_bytes": 723517440
     },
     "model.json": {
       "activation_checkpointing": false,
       "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
-      "active_parameters": 26345772,
+      "active_parameters": 30056748,
       "depth": 6,
       "expert_dispatch": null,
       "expert_parameters": 0,
@@ -69,19 +95,265 @@
       "memory_lr": null,
       "memory_parameters": 0,
       "memory_table_bytes": 0,
-      "ncp_codebook_buffer_bytes": 0,
-      "ncp_codebook_parameters": 0,
-      "ncp_effective_codebook_bytes": 0,
-      "ncp_parameters": 0,
+      "ncp_codebook_buffer_bytes": 98304,
+      "ncp_codebook_parameters": 98304,
+      "ncp_effective_codebook_bytes": 98304,
+      "ncp_parameters": 3710976,
       "num_experts": 0,
       "router_parameters": 0,
       "top_k": 0,
-      "total_parameters": 26345772,
+      "total_parameters": 30056748,
       "width": 384
     },
-    "ncp-diagnostics.json": {
-      "enabled": false,
-      "measurement_scope": "Final update gradients and post-training first32 seeded training microbatches; diagnostics excluded from timed updates"
+    "ncp-health.json": {
+      "collapsed": false,
+      "final_update_gradient_norms": {
+        "blocks.0.down.weight": 0.015105942264199257,
+        "blocks.0.fc.weight": 0.031648147851228714,
+        "blocks.0.proj.weight": 0.018717145547270775,
+        "blocks.0.qkv.weight": 0.00725103635340929,
+        "blocks.1.down.weight": 0.010355250909924507,
+        "blocks.1.fc.weight": 0.015857072547078133,
+        "blocks.1.proj.weight": 0.0030129230581223965,
+        "blocks.1.qkv.weight": 0.004777516704052687,
+        "codebook.first": 0.14090800285339355,
+        "codebook.second": 0.6130989789962769,
+        "head.weight": 0.05130442976951599
+      },
+      "final_update_parameter_delta_norms": {
+        "blocks.0.down.weight": 0.001004458055831492,
+        "blocks.0.fc.weight": 0.0010380574967712164,
+        "blocks.0.proj.weight": 0.0003622067451942712,
+        "blocks.0.qkv.weight": 0.0008469587191939354,
+        "blocks.1.down.weight": 0.0011997184483334422,
+        "blocks.1.fc.weight": 0.0012431188952177763,
+        "blocks.1.proj.weight": 0.00043935177382081747,
+        "blocks.1.qkv.weight": 0.0008248169324360788,
+        "codebook.first": 0.0005431452882476151,
+        "codebook.second": 0.000531992525793612,
+        "head.weight": 0.0004404881037771702
+      },
+      "mean_feedback_rms": 5.880552038550377,
+      "mean_hidden_rms": 11.379644095897675,
+      "mean_next_concept_accuracy": 0.3727034078910947,
+      "mean_next_concept_mse": 24.558166682720184,
+      "mean_prediction_entropy": 1.6828745529055595,
+      "target_counts": [
+        [
+          143,
+          164,
+          274,
+          152,
+          175,
+          236,
+          298,
+          233,
+          188,
+          196,
+          202,
+          463,
+          0,
+          64,
+          0,
+          267,
+          183,
+          403,
+          0,
+          122,
+          0,
+          0,
+          277,
+          138,
+          0,
+          0,
+          0,
+          133,
+          0,
+          252,
+          0,
+          166,
+          0,
+          237,
+          0,
+          162,
+          18,
+          345,
+          1,
+          0,
+          1,
+          0,
+          129,
+          141,
+          73,
+          166,
+          0,
+          0,
+          170,
+          267,
+          200,
+          86,
+          217,
+          202,
+          292,
+          0,
+          0,
+          0,
+          0,
+          170,
+          348,
+          238,
+          0,
+          0
+        ],
+        [
+          0,
+          244,
+          0,
+          234,
+          192,
+          0,
+          121,
+          0,
+          199,
+          294,
+          132,
+          135,
+          137,
+          431,
+          206,
+          113,
+          0,
+          0,
+          0,
+          122,
+          0,
+          193,
+          184,
+          64,
+          163,
+          253,
+          275,
+          274,
+          0,
+          257,
+          0,
+          11,
+          141,
+          244,
+          172,
+          0,
+          0,
+          0,
+          1,
+          108,
+          260,
+          220,
+          130,
+          455,
+          133,
+          183,
+          105,
+          6,
+          0,
+          340,
+          3,
+          0,
+          83,
+          0,
+          0,
+          0,
+          0,
+          100,
+          1,
+          332,
+          140,
+          344,
+          234,
+          223
+        ],
+        [
+          318,
+          226,
+          212,
+          150,
+          133,
+          1,
+          0,
+          1,
+          157,
+          0,
+          97,
+          5,
+          279,
+          81,
+          0,
+          61,
+          180,
+          152,
+          171,
+          67,
+          158,
+          113,
+          153,
+          160,
+          177,
+          152,
+          0,
+          0,
+          242,
+          101,
+          287,
+          126,
+          93,
+          168,
+          164,
+          142,
+          121,
+          129,
+          192,
+          65,
+          106,
+          178,
+          95,
+          7,
+          0,
+          227,
+          197,
+          54,
+          117,
+          200,
+          121,
+          271,
+          114,
+          127,
+          107,
+          178,
+          151,
+          231,
+          67,
+          139,
+          220,
+          104,
+          72,
+          75
+        ]
+      ],
+      "target_perplexity": [
+        36.364612037232604,
+        36.90407942727033,
+        50.19038110317769
+      ],
+      "training_loss_means": {
+        "concept_ce": 3.5030285846441984,
+        "prediction_mse": 13.283848478240543,
+        "vq_mse": 11.62592673402105,
+        "weighted_total": 12.954311584977404
+      },
+      "used_entries": [
+        42,
+        45,
+        58
+      ]
     },
     "ngram-diagnostics.json": {
       "enabled": false,
@@ -119,21 +391,34 @@
       "candidate": {
         "depth": 6,
         "feedforward": "dense",
-        "matrix_lr": 0.04
+        "matrix_lr": 0.04,
+        "ncp": {
+          "after_layer": 0,
+          "ce_weight": 0.0,
+          "chunk_size": 4,
+          "entries": 64,
+          "feedback_scale": 1.0,
+          "kind": "ncp_v1",
+          "layers": 2,
+          "lr": 0.001,
+          "mode": "feedback",
+          "prediction_weight": 0.1,
+          "vq_weight": 1.0
+        }
       },
       "condition": "dense",
       "kind": "fixed_updates",
       "metrics": {
         "depth": 6.0,
         "eval_batch_size": 2.0,
-        "num_params_M": 26.3,
+        "num_params_M": 30.1,
         "num_steps": 512.0,
-        "peak_vram_mb": 581.7,
-        "total_seconds": 179.2,
+        "peak_vram_mb": 654.4,
+        "total_seconds": 205.1,
         "total_tokens_M": 8.4,
         "train_batch_size": 2.0,
-        "training_seconds": 172.7,
-        "val_bpb": 0.634848
+        "training_seconds": 198.5,
+        "val_bpb": 0.635524
       },
       "protocol": {
         "activation_checkpointing": false,
@@ -165,7 +450,7 @@
       "returncode": 0,
       "seed": 42,
       "status": "completed",
-      "wall_seconds": 184.0
+      "wall_seconds": 210.34400000000005
     },
     "routing.json": {
       "aux_loss_weight": 0.0,
@@ -186,25 +471,25 @@
         "tokens": 8388608
       },
       "training_auxiliary_loss": 0.0,
-      "training_cross_entropy": 2.218247186698136,
+      "training_cross_entropy": 2.2233883322187467,
       "weighted_training_auxiliary_loss": 0.0
     },
     "schedule.json": {},
     "selection.json": {
       "control": "D6",
-      "free_disk_bytes": 253631971328,
-      "hypothesis": "Fresh depth6 matching control before NCP trials",
-      "label": "D6",
+      "free_disk_bytes": 256637349888,
+      "hypothesis": "Both unit-weight variants diverged; reduce NCP prediction MSE coefficient tenfold while keeping codebook fitting and feedback unchanged",
+      "label": "N-prediction_weight0.1",
       "phase": "screen",
-      "remaining_seconds": 27926.286683,
+      "remaining_seconds": 27344.826662,
       "seed": 42,
-      "selected_at": "2026-09-15T11:56:05.713317+00:00"
+      "selected_at": "2026-09-15T12:05:47.173338+00:00"
     },
     "snapshot.json": {},
     "training.json": {
       "activation_checkpointing": false,
       "optimizer_updates": 512,
-      "timed_training_seconds": 172.71220189999895,
+      "timed_training_seconds": 198.4502895999999,
       "timed_training_tokens": 8208384,
       "training_tokens": 8388608,
       "warmup_updates": 11
@@ -214,111 +499,126 @@
   "evidence": {
     "batches.json": {
       "bytes": 89367,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/batches.json",
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/batches.json",
       "sha256": "fe7c955ac904cd1dc72bc792f69c7de30564891bcb910cb977617935b0e0120d"
     },
     "candidate.json": {
-      "bytes": 69,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/candidate.json",
-      "sha256": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7"
+      "bytes": 340,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/candidate.json",
+      "sha256": "02483eb2c126fe59adec5b3872df001f1ded7db56c097392d80173088588dbc0"
     },
     "environment.json": {
       "bytes": 383,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/environment.json",
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/environment.json",
       "sha256": "7162e5b54515cf5f9e6f0f8a9c48887560ffc21ea300b21537c9df31519a2ed6"
     },
     "evaluation-immutability.json": {
       "bytes": 201,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/evaluation-immutability.json",
-      "sha256": "c6a11525587ea35dbfe4ca94b7113971e836208cbd4072556b98ed0c155451b7"
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/evaluation-immutability.json",
+      "sha256": "d198a2ef4552b0bf924356f75934d80de8a2e030c71f3531383abf6174dd9b4f"
     },
     "execution.json": {
       "bytes": 2605,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/execution.json",
-      "sha256": "fce5de1d1fc3730e6e53c62e02b2e926bc060b1c3838218ad8f37c841a1f2248"
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/execution.json",
+      "sha256": "daaf37c4e13ada899ad93c6fd995845c25bfd1971b6d90b26c1f8fde1e29c7d4"
     },
     "fixed-training.json": {
       "bytes": 315,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/fixed-training.json",
-      "sha256": "596ac568b4b456e2f9b6c135dfe469a8ef95c381af10fbe7700c8591a4856fb6"
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/fixed-training.json",
+      "sha256": "687d13c77cdd173a78739b20ef020a0ca8001ad8967a2941b71de0ae856da536"
     },
     "gpu-samples.json": {
-      "bytes": 2063,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/gpu-samples.json",
-      "sha256": "38d51428a82b5234da26a4fa90a53208aaa0ea006c8756021d67313850822249"
+      "bytes": 2332,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/gpu-samples.json",
+      "sha256": "e8639ff60f1e9b62943c0d3ed8bf9714e5610429950a631c0c39b1339a6bd49f"
+    },
+    "initialization-pairing.json": {
+      "bytes": 155,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/initialization-pairing.json",
+      "sha256": "41e7960cc07946583bae0361c674b1759949b8459a0302ae9a3025ffa4f8e3bc"
     },
     "initialization.json": {
-      "bytes": 5013,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/initialization.json",
-      "sha256": "7fcfbdd647f1abec691323f5256b1c12d6c7743d58b899f11728295d2b7dfede"
+      "bytes": 6098,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/initialization.json",
+      "sha256": "5ea8d1a3cb5f6856baeb4a4fbe41c46237d12bfbd89f0ec754a3bc12b7198f45"
     },
     "memory.json": {
       "bytes": 174,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/memory.json",
-      "sha256": "baa5d615435eb09295a1f7134118eabbf3fa1685a4e2eb9e39cd8677955fa78b"
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/memory.json",
+      "sha256": "3f5e53cbaeb14cdfff2b21627fe0c2afa90fdeb113c28788424c43341bb1711c"
     },
     "model.json": {
-      "bytes": 932,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/model.json",
-      "sha256": "b732b95224742aa9f124a840ba7d3c149032f093ab73843c08ec98608497a3a2"
+      "bytes": 950,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/model.json",
+      "sha256": "e4752056cfca5793d94164cfa3f24bfa1d4e35a28046c65a03a5811d0c1ce1ef"
     },
     "ncp-diagnostics.json": {
-      "bytes": 172,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/ncp-diagnostics.json",
-      "sha256": "546b3089f8cbdb1b4223e34ee0f357c5b009f0a6082016d0fca1d4169d1fff5b"
+      "bytes": 190971,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/ncp-diagnostics.json",
+      "sha256": "e40b08e3d8dd88711204185b06a71554f48d396d724771fded07d704c210d60c"
+    },
+    "ncp-health.json": {
+      "bytes": 4019,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/ncp-health.json",
+      "sha256": "059a057238bec9829e6172ce680ed95833e3b8f4c27e746ff6e52bb7eae5f37b"
     },
     "ngram-diagnostics.json": {
       "bytes": 175,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/ngram-diagnostics.json",
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/ngram-diagnostics.json",
       "sha256": "5ac95dae8c8dd7778c006c871e33e8da96ac0f3c62d8546d437be235f11783a3"
     },
     "optimizer.json": {
-      "bytes": 3217,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/optimizer.json",
-      "sha256": "bf7f67d2db68eae55d37236981d5e5e2cf241d58b5d71aaabbb172697ca9d114"
+      "bytes": 3696,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/optimizer.json",
+      "sha256": "5c846fdfb78f291e3c5a13a2dc4fdd8359aebb2d9b2f056065985d16b4cce53d"
+    },
+    "orchestrator.py": {
+      "bytes": 11793,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/orchestrator.py",
+      "sha256": "c8a21708ee4b6f983f767c52f9b2f10c87b8470132f4fd23bd814d12dff4ac0e"
     },
     "protocol.json": {
       "bytes": 929,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/protocol.json",
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/protocol.json",
       "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
     },
     "result.json": {
-      "bytes": 14290,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/result.json",
-      "sha256": "682fc89814cde871b6bba4744c6b82b206938de2317a8b245edd7c9e39dadc6f"
+      "bytes": 19805,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/result.json",
+      "sha256": "893396bf62462c3233bed817bb670c2266272c8661b468b587a844923e15178f"
     },
     "routing.json": {
-      "bytes": 494,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/routing.json",
-      "sha256": "aefc0dc3edb312e20e0e281730a53e77b68028986bd4224836bf88f2936ebd0e"
+      "bytes": 495,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/routing.json",
+      "sha256": "04a8152a424245bd5e64525c1f804edacb68c73789d369ed3d4a68d2eaea30f3"
     },
     "run.log": {
-      "bytes": 35901,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/run.log",
-      "sha256": "b9bd60cc7699b387a2f3c58fb550167f741b3bc8d566dc524c4817d98d736705"
+      "bytes": 36178,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/run.log",
+      "sha256": "7587c47dad3c212b351ff22a04d59bbca140d6e8bfb40e94e7cdb42d79750b16"
     },
     "schedule.json": {
-      "bytes": 92702,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/schedule.json",
-      "sha256": "3b63ceaf7022a693b205fd4055ef89450eb7aacac8311b1fa8f5dcf65ed16afa"
+      "bytes": 92894,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/schedule.json",
+      "sha256": "c2aa2771ada9223c050bb5d8dc982a6123593718f3ede4573d60fe491945f256"
     },
     "selection.json": {
-      "bytes": 276,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/selection.json",
-      "sha256": "1e1961e3b276a53c939db53d5862faf8e9c20c1544da67997c0ec4afd220f9cf"
+      "bytes": 384,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/selection.json",
+      "sha256": "a738b2a05deb0614edf86fb5c8eba775021c8d4eb839437c8b248c61f0c88163"
     },
     "snapshot.json": {
       "bytes": 1354,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/snapshot.json",
-      "sha256": "364c99daa9b437373743f66abf70c3307b565d34dba504ad2d5770fd61634eed"
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/snapshot.json",
+      "sha256": "8bd5817aab8d39725b5143507406584648d99d54db6189fcccb35f8ad911fb53"
     },
     "training.json": {
-      "bytes": 214,
-      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/training.json",
-      "sha256": "facad9f27adb11222c821b14d29182e830b49b815d8f2f6e5efc1bc12fb70aa6"
+      "bytes": 213,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0004-N-prediction_weight0.1-s42/training.json",
+      "sha256": "b3545cd4eb514d65607179cf48d8abec5b3081efc8969dbc22628ca30b7fcd99"
     }
   },
-  "experiment_id": "ncp-20260915--trial-0001-D6-s42-b009c334",
+  "experiment_id": "ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9",
   "limitations": [
     "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
     "No missing measurements or provenance were filled from the current working tree.",
@@ -327,14 +627,14 @@
   "metrics": {
     "depth": 6.0,
     "eval_batch_size": 2.0,
-    "num_params_M": 26.3,
+    "num_params_M": 30.1,
     "num_steps": 512.0,
-    "peak_vram_mb": 581.7,
-    "total_seconds": 179.2,
+    "peak_vram_mb": 654.4,
+    "total_seconds": 205.1,
     "total_tokens_M": 8.4,
     "train_batch_size": 2.0,
-    "training_seconds": 172.7,
-    "val_bpb": 0.634848
+    "training_seconds": 198.5,
+    "val_bpb": 0.635524
   },
   "outcome": "completed",
   "protocol": {
@@ -366,6 +666,10 @@
   },
   "provenance": {
     "archived_source": {
+      "orchestrator.py": {
+        "published_path": "reports/source-snapshots/c8a21708ee4b6f983f767c52f9b2f10c87b8470132f4fd23bd814d12dff4ac0e.py",
+        "sha256": "c8a21708ee4b6f983f767c52f9b2f10c87b8470132f4fd23bd814d12dff4ac0e"
+      },
       "source/project/autoresearch.py": {
         "published_path": "reports/source-snapshots/180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac.py",
         "sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
@@ -387,8 +691,8 @@
         "sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834"
       },
       "source/project/autoresearch_train.py": {
-        "published_path": "reports/source-snapshots/72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e.py",
-        "sha256": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e"
+        "published_path": "reports/source-snapshots/cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e.py",
+        "sha256": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e"
       },
       "source/upstream/prepare.py": {
         "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
@@ -407,19 +711,19 @@
         "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
         "source/project/autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
         "source/project/autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
-        "source/project/autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+        "source/project/autoresearch_train.py": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
         "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
         "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
       },
       "files": {
-        "candidate.json": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7",
+        "candidate.json": "02483eb2c126fe59adec5b3872df001f1ded7db56c097392d80173088588dbc0",
         "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
         "source/project/autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
         "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
         "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
         "source/project/autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
         "source/project/autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
-        "source/project/autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+        "source/project/autoresearch_train.py": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
         "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
         "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
         "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
@@ -432,14 +736,14 @@
     },
     "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
     "recorded_code_hashes": {
-      "adapter_sha256": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+      "adapter_sha256": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
       "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
-      "checkpoint_sha256": "3a9f8857ba88c8d21792400d535ac67df8685b47ceb6c05a7b9ddc1899052cd5",
+      "checkpoint_sha256": "e138d7d7c45c003afab1f986fd9203da95adce0a4ae8d7cafd22282ccec649e3",
       "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
       "model_sha256": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
       "ncp_sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
-      "orchestrator_sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9",
-      "preflight_sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822",
+      "orchestrator_sha256": "c8a21708ee4b6f983f767c52f9b2f10c87b8470132f4fd23bd814d12dff4ac0e",
+      "preflight_sha256": "5910c4aaf69ec426b8430d84ad9193e2fa988ac80f36eb0e6eb9991e8a885bbe",
       "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
     },
     "recorded_data_hashes": {
@@ -449,8 +753,8 @@
       "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
       "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
     },
-    "recorded_git_commit": "ca7671063d44bef92dedd33c8bd25dd327c92918",
-    "recorded_git_dirty": true,
+    "recorded_git_commit": "20931281a3094eb8745c5dcd5ae524b5b5146f3c",
+    "recorded_git_dirty": false,
     "recorded_upstream": {
       "runtime_files": {
         ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
@@ -468,14 +772,14 @@
       }
     },
     "snapshot_manifest": {
-      "candidate.json": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7",
+      "candidate.json": "02483eb2c126fe59adec5b3872df001f1ded7db56c097392d80173088588dbc0",
       "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
       "source/project/autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
       "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
       "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
       "source/project/autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
       "source/project/autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
-      "source/project/autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+      "source/project/autoresearch_train.py": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
       "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
       "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
       "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",

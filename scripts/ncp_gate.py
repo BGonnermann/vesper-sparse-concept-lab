@@ -22,7 +22,7 @@ def main():
     runtime = train.detect_runtime(); train._configure_step_kernels(runtime)
     train.MAX_SEQ_LEN = 512; train.WINDOW_PATTERN = 'L'
     results = {}
-    for label in ('D6','NCP','AUX','D12'):
+    for label in ('D6','NCP','AUX','D12','N-RMS'):
         candidate = make_candidate(label)
         depth=candidate['depth']
         gc.collect(); torch.cuda.empty_cache(); torch.cuda.reset_peak_memory_stats()

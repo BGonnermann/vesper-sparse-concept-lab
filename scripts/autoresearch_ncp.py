@@ -69,7 +69,11 @@ class NextConcept(nn.Module):
     def pool(self, hidden):
         b,t,d = hidden.shape
         n = t // self.chunk_size
-        return hidden[:,:n*self.chunk_size].reshape(b,n,self.chunk_size,d).mean(2)
+        pooled=hidden[:,:n*self.chunk_size].reshape(b,n,self.chunk_size,d).mean(2)
+        if self.settings.get('pool_normalization','none')=='rms':
+            with torch.autocast(hidden.device.type,enabled=False):
+                pooled=F.rms_norm(pooled.float(),(d,),eps=1e-6).to(hidden.dtype)
+        return pooled
 
     def broadcast(self, prediction, length):
         repeated = prediction.repeat_interleave(self.chunk_size,dim=1)
@@ -143,4 +147,5 @@ class NextConcept(nn.Module):
             next_concept_accuracy=float((logits[:,:-1].argmax(-1)==indices[:,1:]).float().mean()),
             feedback_rms=float(self.broadcast(prediction,hidden.shape[1]).square().mean().sqrt()),
             hidden_rms=float(hidden.float().square().mean().sqrt()),
+            pooled_rms=float(pooled.float().square().mean().sqrt()),
             codebook_rms=float(codes.square().mean().sqrt()))

@@ -54,7 +54,7 @@ capacity control, if feasible, separates the added parameter budget.
 Start with existing dense depth6/width384 and matrix LR .04. After block0,
 mean-pool nonoverlapping complete k=4 chunks of hidden states. Process those
 continuous chunks with two small causal Transformer blocks. Segment the output
-into S=6 distributions over N=64 entries each, using independent linear heads.
+into S=backbone-head-count distributions over N=64 entries each, using independent linear heads.
 Softmax probabilities weight learned codebook entries; concatenate segment
 expectations. This is the predicted next concept, not a future lookup.
 
@@ -149,3 +149,20 @@ board VRAM separately. Unknown measurements remain unknown. Final report covers
 every attempt, failure, source differences, ablations, fresh-seed NCP/depth pairs,
 capacity limitations and next experiment. Save and verify reports/index, commit
 and push relevant code/tests/reports, verify remote HEAD. Do not start a new campaign.
+
+## Prospective scale-control amendment, 12:10 UTC
+
+Unit-weight feedback and auxiliary-only trials exceeded the existing loss100
+limit at updates169 and213. Alpha .1 completed with BPB .635524, worse than
+D6 .634848; diagnostic hidden RMS11.38 and NCP MSE24.56 suggest changing latent
+scale is a confound. Alpha .03 is tested first within the original space.
+Add exactly one normalization axis, pooled concept RMS normalization {none,rms},
+applied identically to predictor inputs and detached labels. It does not alter
+the ordinary token hidden path or use future labels in feedback. Test RMS at
+the original alpha=beta=1 first, then controlled existing coefficients if justified.
+This is another explicit difference from the source design, not a silent repair
+of earlier results. New causality/scale checks must pass before this variant runs.
+
+The runtime uses3 attention heads at width384, hence S=3 segments of128 values.
+The initial prose incorrectly said S=6; executable code always used the pinned
+backbone's head count. This correction changes no prior trial.

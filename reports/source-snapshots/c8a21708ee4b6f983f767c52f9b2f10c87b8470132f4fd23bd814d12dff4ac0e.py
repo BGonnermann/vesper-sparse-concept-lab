@@ -30,7 +30,7 @@ def log(message):
 
 
 def promising(record, control_bpb):
-    return (record['status']=='completed' and not (record.get('ncp_health') or {}).get('collapsed',False)
+    return (record['status']=='completed' and not record.get('ncp_health',{}).get('collapsed',False)
         and record['metrics']['val_bpb']<=control_bpb-.001)
 
 
@@ -185,15 +185,8 @@ def trial(label, seed, hypothesis, phase='screen', control='D6'):
         log('FAILED '+out.name+' '+repr(exc))
     finally:
         metadata['wall_seconds']=time.monotonic()-start
-        if (out/'checkpoint_failure.pt').exists():
-            metadata['partial_checkpoint_sha256']=r.digest(out/'checkpoint_failure.pt')
         r.write_json(out/'gpu-samples.json',dict(samples=gpu_samples,scope='Whole-board sampled values include desktop/other processes; not continuous peak'))
         r.write_json(out/'result.json',metadata); r.emit_compact_report(out)
-        try:
-            from ncp_report import write
-            write()
-        except Exception as exc:
-            log('Campaign summary retry required; local trial retained: '+repr(exc))
     return metadata
 
 
