@@ -295,3 +295,27 @@ conditional rule; later pair results may determine the frozen anchor instead.
 Any new collapse remains disqualifying. Previously collapsed related pairs
 remain negative evidence; the gate tests the actual new configuration. Confirmation
 seeds are excluded from all selection decisions.
+
+## Conditional frozen transfer, declared before NCP confirmation outcomes
+
+If the frozen D6 NCP passes its predeclared primary same-sign rule on45/46,
+and the remaining measured run forecasts fit before the report reserve,
+test the same mechanism at default dense depth12/width768 without tuning.
+Change only backbone depth; retain absolute insertion index, chunk size,
+concept layers, entries, normalization, losses, feedback gain and module LR.
+Segment count follows backbone heads, preserving segment dimension128.
+
+Use seeds45/46 for depth12 dense, transferred NCP, mode-only AUX, prediction-
+objective-off and a newly derived exact parameter-matched MLP. Verify full-
+context fit and actual counts before training. These reuse primary seed
+identities and the validation corpus: this is a conditional second-backbone
+test, not additional independent seeds or held-out generalization. Do not
+search depth12 hyperparameters or reselect the frozen D6 mechanism from these
+scores. Skip this stage if its entry criterion or budget forecast fails;
+retain the already planned fixed-width depth grid and final reporting.
+
+Transfer scheduling is paired by condition: dense45/46, NCP45/46, CAP45/46,
+then AUX45/46 and NOPRED45/46. Require conservative fit forecasts for the first
+three conditions to fit before the90-minute reserve. The last two are optional
+paired controls admitted by remaining time alone, never by transfer scores.
+All D6 ablations remain mandatory. Report any transfer controls omitted for time.

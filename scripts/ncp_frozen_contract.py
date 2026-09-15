@@ -14,12 +14,13 @@ def protocol(frozen,seed):
 def validate(directory,frozen,label,seed):
     record=c.read(directory/'result.json')
     assert record['status']=='completed' and (record['label'],record['seed'])==(label,seed)
-    expected=c.candidate('D6') if label=='D6' else frozen['variants'][label]
+    dense=frozen.get('dense_label','D6')
+    expected=c.candidate(dense) if label==dense else frozen['variants'][label]
     assert record['candidate']==expected,('Frozen configuration mismatch',directory)
     assert record['protocol']==protocol(frozen,seed),('Frozen protocol mismatch',directory)
     assert record['data_seal']==frozen['confirmation_data_seal'],('Frozen data identity mismatch',directory)
     assert record['upstream']==frozen['confirmation_upstream'],('Frozen upstream identity mismatch',directory)
-    reused=frozen['reused_controls'].get(str(seed)) if label=='D6' else None
+    reused=frozen['reused_controls'].get(str(seed)) if label==dense else None
     if reused:
         assert directory.name==reused['trial'] and r.digest(directory/'result.json')==reused['result_sha256']
         expected_sources=reused['source_hashes']
@@ -29,7 +30,7 @@ def validate(directory,frozen,label,seed):
     r.validate_execution(directory,record['snapshot_files'])
     r.validate_run_artifacts(directory,record)
     count=c.read(directory/'model.json')['total_parameters']
-    assert count==(frozen['dense_parameters'] if label=='D6' else frozen['expected_parameters'])
-    if label!='D6':
+    assert count==(frozen['dense_parameters'] if label==dense else frozen['expected_parameters'])
+    if label!=dense:
         assert r.digest(directory/'candidate.json')==frozen['variant_file_hashes'][label]
     return record

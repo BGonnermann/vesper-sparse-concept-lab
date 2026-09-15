@@ -13,9 +13,9 @@ SEEDS=[45,46,43,44]
 DRIVER_SOURCE=Path(__file__).read_bytes()
 
 
-def conditions(record,model):
+def conditions(record,model,prefix='FROZEN'):
     chosen=copy.deepcopy(record['candidate'])
-    assert chosen['depth']==6 and chosen['ncp']['mode']=='feedback'
+    assert chosen['depth'] in (6,12) and chosen['ncp']['mode']=='feedback'
     width=model['width']; added=model['ncp_parameters']
     assert added>0 and added%(2*width)==0
     auxiliary=copy.deepcopy(chosen); auxiliary['ncp']['mode']='auxiliary'
@@ -24,7 +24,7 @@ def conditions(record,model):
     capacity={k:v for k,v in chosen.items() if k!='ncp'}
     capacity['capacity']=dict(kind='residual_mlp_v1',hidden=added//(2*width),
         after_layer=chosen['ncp']['after_layer'],lr=chosen['ncp']['lr'])
-    return {record['label']:chosen,'FROZEN-AUX':auxiliary,'FROZEN-CAP':capacity,'FROZEN-NOPRED':unsupervised}
+    return {record['label']:chosen,prefix+'-AUX':auxiliary,prefix+'-CAP':capacity,prefix+'-NOPRED':unsupervised}
 
 
 def freeze():
