@@ -1,0 +1,328 @@
+{
+  "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42",
+  "budget_family": "fixed_updates",
+  "compatibility_fingerprint": "2a762efa66fb5de545c50cd99cd822e98b3504aabc76c0c1825f0700b8c454c3",
+  "configuration": {
+    "depth": 6,
+    "feedforward": "dense",
+    "matrix_lr": 0.04,
+    "ncp": {
+      "after_layer": 0,
+      "ce_weight": 0.0,
+      "chunk_size": 4,
+      "entries": 64,
+      "feedback_scale": 1.0,
+      "kind": "ncp_v1",
+      "layers": 2,
+      "lr": 0.001,
+      "mode": "auxiliary",
+      "prediction_weight": 1.0,
+      "vq_weight": 1.0
+    }
+  },
+  "details": {
+    "candidate.json": {
+      "depth": 6,
+      "feedforward": "dense",
+      "matrix_lr": 0.04,
+      "ncp": {
+        "after_layer": 0,
+        "ce_weight": 0.0,
+        "chunk_size": 4,
+        "entries": 64,
+        "feedback_scale": 1.0,
+        "kind": "ncp_v1",
+        "layers": 2,
+        "lr": 0.001,
+        "mode": "auxiliary",
+        "prediction_weight": 1.0,
+        "vq_weight": 1.0
+      }
+    },
+    "environment.json": {
+      "bf16_supported": true,
+      "capability": [
+        12,
+        0
+      ],
+      "cuda_available": true,
+      "cuda_build": "12.8",
+      "free_vram_bytes": 15767437312,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "os": "Windows-10-10.0.26200-SP0",
+      "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.9.1+cu128",
+      "total_vram_bytes": 17094475776
+    },
+    "initialization.json": {
+      "seed": 42
+    },
+    "protocol.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "optimizer_updates": 512,
+      "protocol_id": "vesper-tinystories-equal-token-v1",
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "seed": 42,
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "stopping_rule": "optimizer_updates",
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "result.json": {
+      "candidate": {
+        "depth": 6,
+        "feedforward": "dense",
+        "matrix_lr": 0.04,
+        "ncp": {
+          "after_layer": 0,
+          "ce_weight": 0.0,
+          "chunk_size": 4,
+          "entries": 64,
+          "feedback_scale": 1.0,
+          "kind": "ncp_v1",
+          "layers": 2,
+          "lr": 0.001,
+          "mode": "auxiliary",
+          "prediction_weight": 1.0,
+          "vq_weight": 1.0
+        }
+      },
+      "condition": "dense",
+      "kind": "fixed_updates",
+      "metrics": null,
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 42,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "seed": 42,
+      "status": "running"
+    },
+    "schedule.json": {},
+    "selection.json": {
+      "control": "D6",
+      "free_disk_bytes": 256687116288,
+      "hypothesis": "Initial feedback trial exceeded loss100 at update169; same-weight auxiliary-only condition tests whether feedback caused instability",
+      "label": "AUX",
+      "phase": "screen",
+      "remaining_seconds": 27569.679357,
+      "seed": 42,
+      "selected_at": "2026-09-15T12:02:02.320643+00:00"
+    },
+    "snapshot.json": {}
+  },
+  "diagnostics": [],
+  "evidence": {
+    "candidate.json": {
+      "bytes": 341,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/candidate.json",
+      "sha256": "0349041c37fc01b89712f804f31eef94a86fab19de3e1dbbfb73282f5b15836f"
+    },
+    "environment.json": {
+      "bytes": 383,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/environment.json",
+      "sha256": "7162e5b54515cf5f9e6f0f8a9c48887560ffc21ea300b21537c9df31519a2ed6"
+    },
+    "initialization.json": {
+      "bytes": 6098,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/initialization.json",
+      "sha256": "5ea8d1a3cb5f6856baeb4a4fbe41c46237d12bfbd89f0ec754a3bc12b7198f45"
+    },
+    "protocol.json": {
+      "bytes": 929,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/protocol.json",
+      "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
+    },
+    "result.json": {
+      "bytes": 5729,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/result.json",
+      "sha256": "437e6373cd029f83cba9e32c26ba362525be0ca0a3158f1a620a41ea18fb2689"
+    },
+    "run.log": {
+      "bytes": 2621,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/run.log",
+      "sha256": "0f3d0641227b14bb1a3740e6806a1aae1c9101ec93c4e298874a19c0f867fd17"
+    },
+    "schedule.json": {
+      "bytes": 92894,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/schedule.json",
+      "sha256": "c2aa2771ada9223c050bb5d8dc982a6123593718f3ede4573d60fe491945f256"
+    },
+    "selection.json": {
+      "bytes": 362,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/selection.json",
+      "sha256": "a6f3a7482a904b699e2cdf392a40414d15f58790c25226a1a7e11e2c171a9f1c"
+    },
+    "snapshot.json": {
+      "bytes": 1354,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/snapshot.json",
+      "sha256": "44b5598a7642fa562998cf13b1d4c8db145b7dd0c8efe1be97cd8bccc268eab9"
+    }
+  },
+  "experiment_id": "ncp-20260915--trial-0003-AUX-s42-6ac0782c",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "running",
+  "protocol": {
+    "activation_checkpointing": false,
+    "baseline_timeout_seconds": 900,
+    "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+    "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "optimizer_updates": 512,
+    "protocol_id": "vesper-tinystories-equal-token-v1",
+    "schedule": {
+      "clock": "optimizer_step",
+      "decay_start_step": 256,
+      "final_lr_fraction": 0.0,
+      "lr_warmup_updates": 0,
+      "measurement_warmup_updates": 11,
+      "muon_momentum_warmup_updates": 300,
+      "progress": "zero_based_step / 512"
+    },
+    "seed": 42,
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "stopping_rule": "optimizer_updates",
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {
+      "source/project/autoresearch.py": {
+        "published_path": "reports/source-snapshots/180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac.py",
+        "sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
+      },
+      "source/project/autoresearch_bootstrap.py": {
+        "published_path": "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py",
+        "sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6"
+      },
+      "source/project/autoresearch_memory.py": {
+        "published_path": "reports/source-snapshots/70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862.py",
+        "sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862"
+      },
+      "source/project/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde.py",
+        "sha256": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde"
+      },
+      "source/project/autoresearch_ncp.py": {
+        "published_path": "reports/source-snapshots/38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834.py",
+        "sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834"
+      },
+      "source/project/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e.py",
+        "sha256": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e"
+      },
+      "source/upstream/prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      },
+      "source/upstream/train.py": {
+        "published_path": "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py",
+        "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {
+      "adapter_sha256": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+      "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+      "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+      "model_sha256": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+      "ncp_sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+      "orchestrator_sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9",
+      "preflight_sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822",
+      "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
+    },
+    "recorded_data_hashes": {
+      "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+      "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+      "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+    },
+    "recorded_git_commit": "e10b69ae3b71b80fbb3acfd83b3e3d9aefb5b593",
+    "recorded_git_dirty": true,
+    "recorded_upstream": {
+      "runtime_files": {
+        ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "upstream": {
+        "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored.",
+        "original_project": "https://github.com/karpathy/autoresearch",
+        "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+        "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+        "revision": "a4123c6e5c6287f90be04026642ba20b94e424df"
+      }
+    },
+    "snapshot_manifest": {
+      "candidate.json": "0349041c37fc01b89712f804f31eef94a86fab19de3e1dbbfb73282f5b15836f",
+      "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
+      "source/project/autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+      "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+      "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+      "source/project/autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+      "source/project/autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+      "source/project/autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+      "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+      "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+      "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+      "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+      "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+    }
+  },
+  "reporter_sha256": "75ee5e564174ece88083051158ec3e972ace7d478d892bc0230073defcedd805",
+  "schema_version": 1,
+  "seeds": [
+    42
+  ]
+}

@@ -31,6 +31,7 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [moe-resume-20260914T231300Z](experiments/moe-resume-20260914T231300Z-62aecf08/README.md) | completed | stage_or_unknown | unknown |
 | [ncp-20260915/trial-0001-D6-s42](experiments/ncp-20260915--trial-0001-D6-s42-b009c334/README.md) | completed | fixed_updates | 0.634848 |
 | [ncp-20260915/trial-0002-NCP-s42](experiments/ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | failed | fixed_updates | unknown |
+| [ncp-20260915/trial-0003-AUX-s42](experiments/ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | running | fixed_updates | unknown |
 | [ncp-20260915](experiments/ncp-20260915-224867c7/README.md) | running | stage_or_unknown | unknown |
 | [ngram-20260915/D](experiments/ngram-20260915--D-ba004b1c/README.md) | completed | fixed_updates | 0.634848 |
 | [ngram-20260915/DG](experiments/ngram-20260915--DG-29c4025f/README.md) | completed | fixed_updates | 0.634178 |

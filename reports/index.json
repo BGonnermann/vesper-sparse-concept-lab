@@ -418,6 +418,14 @@
       "outcome": "failed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "2a762efa66fb5de545c50cd99cd822e98b3504aabc76c0c1825f0700b8c454c3",
+      "experiment_id": "ncp-20260915--trial-0003-AUX-s42-6ac0782c",
+      "metrics": null,
+      "outcome": "running"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,

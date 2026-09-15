@@ -873,7 +873,7 @@
               "vq_weight": 1.0
             }
           },
-          "error": null,
+          "error": "RuntimeError('Training child exit 1')",
           "hypothesis": "Source-inspired discrete chunk prediction plus causal predicted feedback may improve BPB at equal tokens",
           "label": "NCP",
           "phase": "screen",
@@ -889,8 +889,47 @@
             "preflight_sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822",
             "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
           },
-          "status": "running",
+          "status": "failed",
           "trial": "trial-0002-NCP-s42",
+          "wall_seconds": 80.01600000000008
+        },
+        {
+          "configuration": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "auxiliary",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "error": null,
+          "hypothesis": "Initial feedback trial exceeded loss100 at update169; same-weight auxiliary-only condition tests whether feedback caused instability",
+          "label": "AUX",
+          "phase": "screen",
+          "report_id": "ncp-20260915--trial-0003-AUX-s42-6ac0782c",
+          "seed": 42,
+          "source_hashes": {
+            "adapter_sha256": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+            "ncp_sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+            "orchestrator_sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9",
+            "preflight_sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822",
+            "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
+          },
+          "status": "running",
+          "trial": "trial-0003-AUX-s42",
           "wall_seconds": null
         }
       ],
@@ -919,9 +958,11 @@
     }
   },
   "diagnostics": [
+    "campaign.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\n2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
+    "initial-queue.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\nTraceback (most recent call last):\n    if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')\nRuntimeError: Preserved failed NCP trial; diagnose before more trials",
     "preflight-cpu-1789473248.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 3.917s\nOK",
     "preflight-cpu-1789473331.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 3.911s\nOK",
     "preflight-cuda-1789473254.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 6.129s\nOK",
@@ -937,9 +978,9 @@
       "sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822"
     },
     "campaign.log": {
-      "bytes": 1736,
+      "bytes": 2574,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "ba49a0fc2f91764918f30ba2f7332ecf66152f9b94cf52462335d7aecb98a6bf"
+      "sha256": "7cb64f789f47153bef9be9d6045838cd4953a334e63f63997eb96678c96c3de2"
     },
     "contract.json": {
       "bytes": 286,
@@ -977,14 +1018,19 @@
       "sha256": "42c52fa305136d0249b1dc4702136cb9b3fbcbcfcec78e034e9ebc1eb0d4a436"
     },
     "initial-queue.log": {
-      "bytes": 277,
+      "bytes": 953,
       "local_path": "runs/autoresearch/ncp-20260915/initial-queue.log",
-      "sha256": "5c19345cc0cebcce835b0eb68fddf49a8c5d31ee671558416b72691ec4064e81"
+      "sha256": "bbe3b0d07324666bc1271c526e49af8c0f28d2f4039c733b708bf5330949d071"
     },
     "initial-queue.py": {
       "bytes": 964,
       "local_path": "runs/autoresearch/ncp-20260915/initial-queue.py",
       "sha256": "164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853"
+    },
+    "launch-AUX-s42.log": {
+      "bytes": 305,
+      "local_path": "runs/autoresearch/ncp-20260915/launch-AUX-s42.log",
+      "sha256": "f7d96f692b8e92b9b2431123bdafa368438d71ecd26978703ea8c17577b5210c"
     },
     "launch-D6-s42.log": {
       "bytes": 540,
@@ -1042,9 +1088,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 3634,
+      "bytes": 5365,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "42d0924cb0a72585549acc66c4c337872542360e6d232a8a83e4997c99e831be"
+      "sha256": "05e9aa2f7a7da9b68796f2e6a236029d22dc8101855f2b9967c94bd7fdc4c5eb"
     },
     "sources-result.json": {
       "bytes": 1101,
@@ -1052,9 +1098,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 2791,
+      "bytes": 3102,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "445fcaeb2091405e56e442eed8e28fb469564e00b5c8a2b148a02bf70d1ed142"
+      "sha256": "2402346fc90d4fe251002aa2d788c2b393632784d71294948d973d2069c6fe28"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
