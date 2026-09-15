@@ -40,6 +40,18 @@ def rows():
                     if settings['mode']=='feedback' else 0.)
                 row['injected_feedback_rms']=injected
                 row['injected_to_hidden_rms_ratio']=injected/row['ncp_health']['mean_hidden_rms']
+        else:
+            model_path=path.parent/'model.json'
+            if model_path.exists():
+                model=read(model_path)
+                row.update(total_parameters=model['total_parameters'],active_parameters=model['active_parameters'])
+            else:
+                receipt=HERE/f'failed-counts-{"-".join(path.parent.name.split("-")[:2])}-result.json'
+                if receipt.exists():
+                    reconstructed=read(receipt)
+                    assert reconstructed['trial']==path.parent.name
+                    row.update(total_parameters=reconstructed['model']['total_parameters'],
+                        active_parameters=reconstructed['model']['active_parameters'],parameter_counts_reconstructed=True)
         output.append(row)
     return output
 
@@ -63,6 +75,15 @@ def write(final=False):
     data=rows(); complete=[x for x in data if x['status']=='completed']
     result=dict(kind='ncp_campaign',status='completed' if final else 'running',rows=data,
         depth_confirmation=pairs(data,'D12','D6',[43,44]),remaining_seconds=remaining())
+    controls=[x for x in complete if x['label']=='D6' and x['seed']==42]
+    eligible=[x for x in complete if x['seed']==42 and x['configuration'].get('ncp',{}).get('mode')=='feedback'
+        and not x['ncp_health']['collapsed']
+        and (x['configuration']['ncp']['prediction_weight']>0 or x['configuration']['ncp']['ce_weight']>0)]
+    if controls and eligible:
+        best=min(eligible,key=lambda x:x['bpb'])
+        delta=best['bpb']-controls[0]['bpb']
+        result['exploratory_best']=dict(label=best['label'],bpb=best['bpb'],delta_bpb=delta,
+            screening_threshold_met=delta<=-.001,seed=42,trial=best['trial'])
     result['ncp_ablations'] = []
     for feedback, auxiliary in [('NCP','AUX'),('N-RMS','N-RMS-AUX')]:
         result['ncp_ablations'].extend(pairs(data,feedback,auxiliary,[42]))
@@ -75,6 +96,10 @@ def write(final=False):
     text=['# NCP campaign '+('final report' if final else 'progress'),'',
         f'{len(complete)} completed of {len(data)} attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.',
         '512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.','',
+        (f'Strongest eligible selection-seed NCP: {result["exploratory_best"]["label"]}, '
+         f'{result["exploratory_best"]["bpb"]:.6f} BPB, delta {result["exploratory_best"]["delta_bpb"]:+.6f} versus D6. '
+         'This is a search result; independent confirmation is reported separately.'
+         if 'exploratory_best' in result else 'No completed eligible NCP screening result yet.'),'',
         '## Implementation','',
         'Dense encoder pools complete multi-token chunks; causal chunk Transformers predict segmented discrete-codebook weights. '
         'Only predicted concepts feed the token decoder, delayed by k-1 positions. Detached future chunks supervise NCP MSE; '
@@ -93,10 +118,13 @@ def write(final=False):
             memory_path=HERE/row['trial']/'memory.json'
             memory=read(memory_path) if memory_path.exists() else None
             peak=f'{memory["peak_allocated_bytes"]/2**20:.1f} / {memory["peak_reserved_bytes"]/2**20:.1f}' if memory else 'unavailable'
-            text.append(f'| {name} | {row["seed"]} | {row["status"]} | unavailable | {wall} | unavailable | unavailable | {peak} | unavailable |')
+            counts=(f'{row["total_parameters"]:,} / {row["active_parameters"]:,}'+(' *' if row.get('parameter_counts_reconstructed') else '')
+                if 'total_parameters' in row else 'unavailable')
+            text.append(f'| {name} | {row["seed"]} | {row["status"]} | unavailable | {wall} | unavailable | {counts} | {peak} | unavailable |')
         else:
             h=row.get('ncp_health')
             text.append(f'| {name} | {row["seed"]} | {row["bpb"]:.6f} | {row["all_update_seconds"]:.1f} | {row["wall_seconds"]:.1f} | {row["timed_tokens_per_second"]:.0f} | {row["total_parameters"]:,} / {row["active_parameters"]:,} | {row["allocated_mib"]:.1f} / {row["reserved_mib"]:.1f} | {h["collapsed"] if h else "n/a"} |')
+    text.append('\n* Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.')
     for heading,items in [('Depth6 versus depth12, reference LR .04',result['depth_confirmation']),('Frozen NCP confirmation',result.get('ncp_confirmation',[]))]:
         text.extend(['','## '+heading,'','| Seed | Candidate | Control | Candidate BPB | Control BPB | Delta BPB | Update-time ratio |','|---:|---|---|---:|---:|---:|---:|'])
         for x in items: text.append(f'| {x["seed"]} | {x["candidate"]} | {x["control"]} | {x["candidate_bpb"]:.6f} | {x["control_bpb"]:.6f} | {x["delta_bpb"]:+.6f} | {x["update_time_ratio"]:.2f} |')
@@ -128,6 +156,7 @@ def write(final=False):
         'Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, '
         'source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. '
         'Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. '
+        'For raw-logit mixing, reported entropy describes softmax classification probabilities, not the signed reconstruction weights. '
         'Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.',
         'All artifacts are retained locally. No cloud, dependency upgrades, paid services or deletion.'])
     (HERE/'summary.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
