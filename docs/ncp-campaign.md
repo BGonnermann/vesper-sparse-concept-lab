@@ -260,3 +260,24 @@ The additional seed values require a narrow protocol-validator extension and
 fresh CPU/CUDA gates after the active interaction driver exits. Do not edit
 its imported training/controller sources while it runs. Confirmation has
 priority over optional further exploration if time becomes constrained.
+
+Also include a frozen prediction-objective-off condition on these same four
+seeds: change only prediction_weight and ce_weight to zero, retaining feedback
+and VQ fitting. This tests whether future-concept supervision is needed beyond
+the added latent path. It is an ablation, never an eligible NCP candidate.
+
+## Optional fixed-width depth decomposition, after NCP confirmation preparation
+
+The required D6/D12 seeds43/44 already confirm a joint depth/width gain. If the
+remaining budget supports it without displacing frozen NCP confirmation,
+complete the dense depth{6,12} by width{384,768} grid on those same two seeds.
+Existing D6-width384 and D12-width768 are reused; only D12-width384 and
+D6-width768 are new. This separates depth changes at fixed width from width
+changes at fixed depth. Keep matrix LR .04, batch tape/order,512updates,token
+budget and evaluation fixed. No architecture selection uses these scores.
+
+Implement only a bounded explicit-width override for these two depths and
+widths, using the pinned backbone's existing configuration builder. Verify
+actual width/head shapes, parameter counts, optimizer coverage and captured
+execution. Pairing/audit keys must include width. Do not apply this harness
+extension until the current interaction process exits and fresh gates pass.
