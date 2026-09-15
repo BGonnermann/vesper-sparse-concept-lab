@@ -2347,6 +2347,32 @@
       "source_sha256": "fd6f6149da2ec5ddf5127287163230d225ac6e15624508ecb70ab101943d3cac",
       "status": "completed"
     },
+    "lock-check-1789479134011084500-result.json": {
+      "controller_sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14",
+      "cross_process_exclusion": true,
+      "exception_release": true,
+      "gpu_work": false,
+      "kind": "native_gpu_lock_check",
+      "lock_file": "<repo>\\runs\\autoresearch\\ncp-20260915\\lock-check-1789479134011084500.lock",
+      "normal_release": true,
+      "script_sha256": "2577c6380b485752588bb135595b1de5705c4e9f62cb38e1508a80b8e93b4a11",
+      "startup_source_bytes_captured": true,
+      "status": "completed"
+    },
+    "lock-check-1789479320152814700-result.json": {
+      "archived_controller_sha256": "feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279",
+      "controller_sha256": "feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279",
+      "cross_process_exclusion": true,
+      "exception_release": true,
+      "gpu_work": false,
+      "kind": "native_gpu_lock_check",
+      "lock_file": "<repo>\\runs\\autoresearch\\ncp-20260915\\lock-check-1789479320152814700.lock",
+      "normal_release": true,
+      "script_sha256": "46bbe24f22798b4fbd0cb9c679df6b59e84c8706cbd9e38fedea1475962cae89",
+      "source_archive_after_file_edit_verified": true,
+      "startup_source_bytes_captured": true,
+      "status": "completed"
+    },
     "next-selection.json": {},
     "normalized-search-space.json": {},
     "orchestrator-source-correction-result.json": {
@@ -2580,7 +2606,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "7eab3f292c0711ab0af7a2bd3dc52fd9ca536277",
+      "publication_commit": "02bd6ac27d8abd0a833c0da83e862e134c17ea6e",
       "status": "completed",
       "verified_remote": true
     },
@@ -2650,9 +2676,9 @@
       "sha256": "584428ee9b9f704f89dc7da28484181e2156eeb17b17576cedbf9087a56d1b97"
     },
     "campaign.log": {
-      "bytes": 25126,
+      "bytes": 26039,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "bf33195b9ae3ecb5b683446fae9e7a0821c905204eaa7c080ab49fc76f4ee984"
+      "sha256": "ad1b29a89832cf85e37a0a4851dd44a083cea45b4a0a541d55a80f72de611616"
     },
     "contract.json": {
       "bytes": 286,
@@ -2794,15 +2820,45 @@
       "local_path": "runs/autoresearch/ncp-20260915/launch-alpha01.log",
       "sha256": "6377702d83742ed2c8b29ea5c85160cb766aab5ae742d356b1574ff9d344b09e"
     },
+    "lock-check-1789479134011084500-result.json": {
+      "bytes": 547,
+      "local_path": "runs/autoresearch/ncp-20260915/lock-check-1789479134011084500-result.json",
+      "sha256": "95f867ff3caa81f9dc19a978abd6130fa837d8382294d1834a92145d00e45fdf"
+    },
+    "lock-check-1789479320152814700-result.json": {
+      "bytes": 700,
+      "local_path": "runs/autoresearch/ncp-20260915/lock-check-1789479320152814700-result.json",
+      "sha256": "a298143f0ed384cbcf718bb22cd7fdd9176c6a8109269270b842f4a80c174494"
+    },
+    "lock-check-2577.py": {
+      "bytes": 2159,
+      "local_path": "runs/autoresearch/ncp-20260915/lock-check-2577.py",
+      "sha256": "2577c6380b485752588bb135595b1de5705c4e9f62cb38e1508a80b8e93b4a11"
+    },
+    "lock-check-source-46bbe24f22798b4fbd0cb9c679df6b59e84c8706cbd9e38fedea1475962cae89.py": {
+      "bytes": 3048,
+      "local_path": "runs/autoresearch/ncp-20260915/lock-check-source-46bbe24f22798b4fbd0cb9c679df6b59e84c8706cbd9e38fedea1475962cae89.py",
+      "sha256": "46bbe24f22798b4fbd0cb9c679df6b59e84c8706cbd9e38fedea1475962cae89"
+    },
+    "lock-controller-feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279.py": {
+      "bytes": 13271,
+      "local_path": "runs/autoresearch/ncp-20260915/lock-controller-feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279.py",
+      "sha256": "feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279"
+    },
+    "lock-tested-controller-8632.py": {
+      "bytes": 13174,
+      "local_path": "runs/autoresearch/ncp-20260915/lock-tested-controller-8632.py",
+      "sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14"
+    },
     "method-notes.md": {
       "bytes": 2127,
       "local_path": "runs/autoresearch/ncp-20260915/method-notes.md",
       "sha256": "0b5d38542a591f81c259a4cae09dc79d72478f510c91bf70dd0f0a85d39e69f2"
     },
     "next-selection.json": {
-      "bytes": 7876,
+      "bytes": 8288,
       "local_path": "runs/autoresearch/ncp-20260915/next-selection.json",
-      "sha256": "50295c94d396a2efc17aa14c9589e228d2355a74fc965c69d2e1fb47afa5996a"
+      "sha256": "2f513b19c811a0f3fcc57c469079ccde34a29dab14d6e28d2ea673a64ae2b1a2"
     },
     "normalization-green-cpu.log": {
       "bytes": 159,
@@ -2937,7 +2993,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "fdde3cc3655fda1134ba1b1bd0bf354f6ff2e3d972544464055101ea740888f5"
+      "sha256": "6cceca92320f49b24b7f15fb11d1f040e674ad849e1d90ce25d79b1bcc0cc301"
     },
     "report-red.log": {
       "bytes": 877,
@@ -2945,14 +3001,24 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 155435,
+      "bytes": 163346,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "00089cb35df8911a43f283027a8dd1f0840f382398418b10739388deae295653"
+      "sha256": "40212cd9160a9b5373d20f8cc56191c99b2978996e5673c3456510b57c268dc9"
     },
     "scale-probe.py": {
       "bytes": 3439,
       "local_path": "runs/autoresearch/ncp-20260915/scale-probe.py",
       "sha256": "2a2936285bc19bafdb2914c23837a5d56dfc8a198080c9f85d9a22e5749491eb"
+    },
+    "source-freeze-archive-1789479320152814700.py": {
+      "bytes": 13271,
+      "local_path": "runs/autoresearch/ncp-20260915/source-freeze-archive-1789479320152814700.py",
+      "sha256": "feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279"
+    },
+    "source-freeze-fixture-1789479320152814700.py": {
+      "bytes": 13310,
+      "local_path": "runs/autoresearch/ncp-20260915/source-freeze-fixture-1789479320152814700.py",
+      "sha256": "0d3b39130f5a79353dab6e5fd04612ba065c0cfb6ab447e9be0b50944c8e1c88"
     },
     "sources-result.json": {
       "bytes": 1101,
@@ -2960,9 +3026,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 12109,
+      "bytes": 12418,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "8c85c0bbdaf6a699bb8173d604aee9baeddedaa7243c33f41af9b2a1100c44ef"
+      "sha256": "cca1c2e1dfc61679215b5bd91595745cd38c6568dffc210d2e31858f12d62cfc"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -3017,6 +3083,22 @@
         "published_path": "reports/source-snapshots/164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853.py",
         "sha256": "164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853"
       },
+      "lock-check-2577.py": {
+        "published_path": "reports/source-snapshots/2577c6380b485752588bb135595b1de5705c4e9f62cb38e1508a80b8e93b4a11.py",
+        "sha256": "2577c6380b485752588bb135595b1de5705c4e9f62cb38e1508a80b8e93b4a11"
+      },
+      "lock-check-source-46bbe24f22798b4fbd0cb9c679df6b59e84c8706cbd9e38fedea1475962cae89.py": {
+        "published_path": "reports/source-snapshots/46bbe24f22798b4fbd0cb9c679df6b59e84c8706cbd9e38fedea1475962cae89.py",
+        "sha256": "46bbe24f22798b4fbd0cb9c679df6b59e84c8706cbd9e38fedea1475962cae89"
+      },
+      "lock-controller-feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279.py": {
+        "published_path": "reports/source-snapshots/feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279.py",
+        "sha256": "feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279"
+      },
+      "lock-tested-controller-8632.py": {
+        "published_path": "reports/source-snapshots/8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14.py",
+        "sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14"
+      },
       "normalized-queue.py": {
         "published_path": "reports/source-snapshots/3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002.py",
         "sha256": "3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002"
@@ -3024,6 +3106,14 @@
       "scale-probe.py": {
         "published_path": "reports/source-snapshots/2a2936285bc19bafdb2914c23837a5d56dfc8a198080c9f85d9a22e5749491eb.py",
         "sha256": "2a2936285bc19bafdb2914c23837a5d56dfc8a198080c9f85d9a22e5749491eb"
+      },
+      "source-freeze-archive-1789479320152814700.py": {
+        "published_path": "reports/source-snapshots/feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279.py",
+        "sha256": "feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279"
+      },
+      "source-freeze-fixture-1789479320152814700.py": {
+        "published_path": "reports/source-snapshots/0d3b39130f5a79353dab6e5fd04612ba065c0cfb6ab447e9be0b50944c8e1c88.py",
+        "sha256": "0d3b39130f5a79353dab6e5fd04612ba065c0cfb6ab447e9be0b50944c8e1c88"
       }
     },
     "execution_receipt": null,
