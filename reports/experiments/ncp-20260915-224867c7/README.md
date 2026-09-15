@@ -13,7 +13,7 @@ audit-recovered.log:
 SyntaxError: '(' was never closed
 
 campaign.log:
-2026-09-15T17:07:05.699998+00:00 PREDECLARED conditional module-seed diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.
+d diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.
 
 controller-red.log:
 Traceback (most recent call last):
@@ -227,6 +227,16 @@ ok
 Ran 77 tests in 4.937s
 OK
 
+preflight-cpu-1789493423.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 81 tests in 5.074s
+OK
+
 preflight-cuda-1789473254.log:
 ok
 ok
@@ -325,6 +335,16 @@ ok
 ok
 ok
 Ran 77 tests in 7.249s
+OK
+
+preflight-cuda-1789493430.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 81 tests in 7.398s
 OK
 
 report-red.log:

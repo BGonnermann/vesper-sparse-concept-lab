@@ -15,15 +15,15 @@
     "active-preflight.json": {
       "kind": "ncp_correctness",
       "source_hashes": {
-        "autoresearch.py": "b97fda3e32a53909f7b730382e7f7ad02c8579e0b705b32eee6fdd3ef408d3ce",
+        "autoresearch.py": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b",
         "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
         "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
         "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
         "autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
-        "autoresearch_train.py": "28df670cb518c0ecdb88c70cf1d054149e8c4b09490b478044ad471807dcacab"
+        "autoresearch_train.py": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf"
       },
       "status": "completed",
-      "wall_seconds": 53.48400000000038
+      "wall_seconds": 54.26599999999962
     },
     "archpreview-source-result.json": {
       "kind": "source_review",
@@ -10308,9 +10308,8 @@
       "source_sha256": "cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3",
       "status": "completed"
     },
-    "fit-candidates.json": {},
-    "fit-result.json": {
-      "artifact_file": "fit-1789491350188730500-result.json",
+    "fit-1789493441400757800-result.json": {
+      "artifact_file": "fit-1789493441400757800-result.json",
       "gpu": "NVIDIA GeForce RTX 5070 Ti",
       "kind": "synthetic_correctness_fit",
       "results": {
@@ -10335,7 +10334,7 @@
           },
           "checkpoint_sha256": "4a20351994b75b8ddec6ca63ad675426e87cae97272b56491b8fad10fb4761e9",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 281.0394752006978,
+          "conservative_trial_forecast_seconds": 276.49834240041673,
           "corpus_training_tokens": 0,
           "free_bytes": 14966325248,
           "gradient_norms": {
@@ -10399,9 +10398,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.4168385999983002,
-            0.46101460000136285,
-            0.44066340000063065
+            0.45214520000081393,
+            0.4287101000008988,
+            0.4270070999991731
           ],
           "model": {
             "activation_checkpointing": false,
@@ -10500,9 +10499,9 @@
             "feedforward": "dense",
             "matrix_lr": 0.04
           },
-          "checkpoint_sha256": "1404b12a68d31600cacb0e823e8b79d36f3c4f1bc033e3229f6fd5b16b27768a",
+          "checkpoint_sha256": "5f757f4a6449f9e6dc9cc3c13f22db21ba2b503eff6cb90786afe523404f0a58",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 369.4843520000577,
+          "conservative_trial_forecast_seconds": 359.3847424015403,
           "corpus_training_tokens": 0,
           "free_bytes": 13169065984,
           "gradient_norms": {
@@ -10597,9 +10596,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.6337585000001127,
-            0.6016787000007753,
-            0.6222346000031393
+            0.6140327000030084,
+            0.584450399997877,
+            0.5574627000023611
           ],
           "model": {
             "activation_checkpointing": false,
@@ -10717,7 +10716,7 @@
           },
           "checkpoint_sha256": "3f3e96d6698d292e14e73af0517327df6e9d2a5cfadc76c6de11582df85ee123",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 361.8981504011899,
+          "conservative_trial_forecast_seconds": 366.565900798887,
           "corpus_training_tokens": 0,
           "free_bytes": 14679015424,
           "gradient_norms": {
@@ -10812,9 +10811,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.5060067999984312,
-            0.6189417000023241,
-            0.6108844999980647
+            0.5575958999979775,
+            0.5609341000017594,
+            0.6280583999978262
           ],
           "model": {
             "activation_checkpointing": false,
@@ -10931,7 +10930,7 @@
           },
           "checkpoint_sha256": "ec35957c5fcb42b359e537bdf87e100f98b5f3d61cbf13ec73ebbebbc3c98178",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 216.17578239925206,
+          "conservative_trial_forecast_seconds": 239.72005119919777,
           "corpus_training_tokens": 0,
           "free_bytes": 15054405632,
           "gradient_norms": {
@@ -10984,9 +10983,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.3343276999985392,
-            0.29782500000146683,
-            0.3222349999996368
+            0.38031259999843314,
+            0.32210870000199066,
+            0.3368953999997757
           ],
           "model": {
             "activation_checkpointing": false,
@@ -11082,9 +11081,9 @@
             "matrix_lr": 0.04,
             "model_width": 768
           },
-          "checkpoint_sha256": "9c083b9e420d97477fb2fa84be0877ce29860c26729aa540bb49a7fe5a8ba798",
+          "checkpoint_sha256": "d4fec2f33bbf6d389c18edaeaa14be3ccf3519e3d8ad35d8dad5a7ecd1ebc351",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 223.19832320138812,
+          "conservative_trial_forecast_seconds": 219.5588223990053,
           "corpus_training_tokens": 0,
           "free_bytes": 14232322048,
           "gradient_norms": {
@@ -11137,9 +11136,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.3480436000027112,
-            0.3343598999999813,
-            0.3071500999976706
+            0.3289550000008603,
+            0.3179619000002276,
+            0.3409351999980572
           ],
           "model": {
             "activation_checkpointing": false,
@@ -11250,7 +11249,7 @@
           },
           "checkpoint_sha256": "5f43608252d5ce7154376421c9003b01da44b63fddc7a75a95fed726d24ee1fe",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 264.35482879914343,
+          "conservative_trial_forecast_seconds": 290.05487360060215,
           "corpus_training_tokens": 0,
           "free_bytes": 14970519552,
           "gradient_norms": {
@@ -11314,9 +11313,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.428427399998327,
-            0.41313219999938156,
-            0.4136060000018915
+            0.4786228000011761,
+            0.41343179999967106,
+            0.43610400000034133
           ],
           "model": {
             "activation_checkpointing": false,
@@ -11423,7 +11422,7 @@
           },
           "checkpoint_sha256": "3519116aa9bb936234123ca54dd54895d5da7d2e5165de6a0cd556dbaaee5494",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 231.68543999828398,
+          "conservative_trial_forecast_seconds": 236.99774719960988,
           "corpus_training_tokens": 0,
           "free_bytes": 14964228096,
           "gradient_norms": {
@@ -11478,9 +11477,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.3646199999966484,
-            0.3054191000010178,
-            0.35449509999671136
+            0.37499559999923804,
+            0.3533848000006401,
+            0.36172330000044894
           ],
           "model": {
             "activation_checkpointing": false,
@@ -11595,7 +11594,7 @@
           },
           "checkpoint_sha256": "e49a3130650b199aaf147f336b85d7ecbeffc611cba8545a337bc852721f8772",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 282.37072639912367,
+          "conservative_trial_forecast_seconds": 282.155584000051,
           "corpus_training_tokens": 0,
           "free_bytes": 14972616704,
           "gradient_norms": {
@@ -11659,9 +11658,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.42861439999978757,
-            0.3551998000002641,
-            0.4636146999982884
+            0.46319450000009965,
+            0.4476418000012927,
+            0.435157200001413
           ],
           "model": {
             "activation_checkpointing": false,
@@ -11776,7 +11775,7 @@
           },
           "checkpoint_sha256": "5898cb520ccb850d1bd16d1c0cbad128d1fae745856dc0d0e05490905a2dfc5f",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 257.8136704005301,
+          "conservative_trial_forecast_seconds": 254.34865920059383,
           "corpus_training_tokens": 0,
           "free_bytes": 14972616704,
           "gradient_norms": {
@@ -11840,9 +11839,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.3841173000000708,
-            0.41565170000103535,
-            0.4048112999989826
+            0.3979399999989255,
+            0.40277050000076997,
+            0.4088841000011598
           ],
           "model": {
             "activation_checkpointing": false,
@@ -11957,7 +11956,7 @@
           },
           "checkpoint_sha256": "32dbe02af28842fef377c295c6d1daf6f52081d0fc7a33adb5b5fe1f53faa796",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 242.89250559918582,
+          "conservative_trial_forecast_seconds": 274.11641599982977,
           "corpus_training_tokens": 0,
           "free_bytes": 14983102464,
           "gradient_norms": {
@@ -12021,9 +12020,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.3673999000020558,
-            0.36922520000007353,
-            0.3865087999984098
+            0.42960979999770643,
+            0.4081241999992926,
+            0.4474929999996675
           ],
           "model": {
             "activation_checkpointing": false,
@@ -12137,7 +12136,7 @@
           },
           "checkpoint_sha256": "e71ef22790fc9a9f45556a05361b3911633c8c6550c106f58c4f6f13bc62366c",
           "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
-          "conservative_trial_forecast_seconds": 282.7164287995547,
+          "conservative_trial_forecast_seconds": 287.76147199980915,
           "corpus_training_tokens": 0,
           "free_bytes": 14966325248,
           "gradient_norms": {
@@ -12201,9 +12200,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.4642898999991303,
-            0.4112523000003421,
-            0.45152059999963967
+            0.47414349999962724,
+            0.43123259999993024,
+            0.40058639999915613
           ],
           "model": {
             "activation_checkpointing": false,
@@ -12297,7 +12296,2000 @@
           "synthetic_update_tokens": 98304
         }
       },
-      "source_file": "fit-1789491350188730500.py",
+      "source_file": "fit-1789493441400757800.py",
+      "source_sha256": "cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3",
+      "status": "completed"
+    },
+    "fit-candidates.json": {},
+    "fit-result.json": {
+      "artifact_file": "fit-1789493441400757800-result.json",
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "kind": "synthetic_correctness_fit",
+      "results": {
+        "AUX": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "auxiliary",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "4a20351994b75b8ddec6ca63ad675426e87cae97272b56491b8fad10fb4761e9",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 276.49834240041673,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14966325248,
+          "gradient_norms": {
+            "lm_head.weight": 0.6123936176300049,
+            "ncp.blocks.0.down.weight": 0.002881406107917428,
+            "ncp.blocks.0.fc.weight": 0.0015608333051204681,
+            "ncp.blocks.0.proj.weight": 0.001967246411368251,
+            "ncp.blocks.0.qkv.weight": 0.0019785806071013212,
+            "ncp.blocks.1.down.weight": 0.0027663621585816145,
+            "ncp.blocks.1.fc.weight": 0.0016680769622325897,
+            "ncp.blocks.1.proj.weight": 0.002020142739638686,
+            "ncp.blocks.1.qkv.weight": 0.0019295437959954143,
+            "ncp.codebook.first": 0.05442912504076958,
+            "ncp.codebook.second": 0.2311711609363556,
+            "ncp.head.weight": 0.009592236950993538,
+            "resid_lambdas": 0.0009372100466862321,
+            "transformer.h.0.attn.c_k.weight": 0.0002453731431160122,
+            "transformer.h.0.attn.c_proj.weight": 0.0017346005188301206,
+            "transformer.h.0.attn.c_q.weight": 0.0002493956417310983,
+            "transformer.h.0.attn.c_v.weight": 0.00033368615549989045,
+            "transformer.h.0.mlp.c_fc.weight": 0.0045226216316223145,
+            "transformer.h.0.mlp.c_proj.weight": 0.025840817019343376,
+            "transformer.h.1.attn.c_k.weight": 0.00021642928186338395,
+            "transformer.h.1.attn.c_proj.weight": 0.0017644723411649466,
+            "transformer.h.1.attn.c_q.weight": 0.00021494011161848903,
+            "transformer.h.1.attn.c_v.weight": 0.0003554504655767232,
+            "transformer.h.1.attn.ve_gate.weight": 2.047844418484601e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004113662056624889,
+            "transformer.h.1.mlp.c_proj.weight": 0.018186450004577637,
+            "transformer.h.2.attn.c_k.weight": 0.00019331116345711052,
+            "transformer.h.2.attn.c_proj.weight": 0.0018260397482663393,
+            "transformer.h.2.attn.c_q.weight": 0.0001936635235324502,
+            "transformer.h.2.attn.c_v.weight": 0.0003495095297694206,
+            "transformer.h.2.mlp.c_fc.weight": 0.003879830939695239,
+            "transformer.h.2.mlp.c_proj.weight": 0.017177289351820946,
+            "transformer.h.3.attn.c_k.weight": 0.0001837919990066439,
+            "transformer.h.3.attn.c_proj.weight": 0.0017583364387974143,
+            "transformer.h.3.attn.c_q.weight": 0.00018319758237339556,
+            "transformer.h.3.attn.c_v.weight": 0.00033901023562066257,
+            "transformer.h.3.attn.ve_gate.weight": 1.8833300146070542e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036513658706098795,
+            "transformer.h.3.mlp.c_proj.weight": 0.016103582456707954,
+            "transformer.h.4.attn.c_k.weight": 0.0001708737836452201,
+            "transformer.h.4.attn.c_proj.weight": 0.0018730669980868697,
+            "transformer.h.4.attn.c_q.weight": 0.0001697209954727441,
+            "transformer.h.4.attn.c_v.weight": 0.00036769959842786193,
+            "transformer.h.4.mlp.c_fc.weight": 0.003489541355520487,
+            "transformer.h.4.mlp.c_proj.weight": 0.015367320738732815,
+            "transformer.h.5.attn.c_k.weight": 0.00016291624342557043,
+            "transformer.h.5.attn.c_proj.weight": 0.0018353681080043316,
+            "transformer.h.5.attn.c_q.weight": 0.00016325658361893147,
+            "transformer.h.5.attn.c_v.weight": 0.00032676479895599186,
+            "transformer.h.5.attn.ve_gate.weight": 1.396996822222718e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.003328906139358878,
+            "transformer.h.5.mlp.c_proj.weight": 0.0146317845210433,
+            "transformer.wte.weight": 0.0006618315237574279,
+            "value_embeds.1.weight": 1.3333785318536684e-05,
+            "value_embeds.3.weight": 1.1107126738352235e-05,
+            "value_embeds.5.weight": 9.761963156051934e-06,
+            "x0_lambdas": 0.0008686695946380496
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.45214520000081393,
+            0.4287101000008988,
+            0.4270070999991731
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "capacity_parameters": 0,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 689248768,
+          "peak_reserved_bytes": 727711744,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "D12": {
+          "candidate": {
+            "depth": 12,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "checkpoint_sha256": "5f757f4a6449f9e6dc9cc3c13f22db21ba2b503eff6cb90786afe523404f0a58",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 359.3847424015403,
+          "corpus_training_tokens": 0,
+          "free_bytes": 13169065984,
+          "gradient_norms": {
+            "lm_head.weight": 0.8653446435928345,
+            "resid_lambdas": 0.0009674134198576212,
+            "transformer.h.0.attn.c_k.weight": 0.0007132752216421068,
+            "transformer.h.0.attn.c_proj.weight": 0.0031704590655863285,
+            "transformer.h.0.attn.c_q.weight": 0.0007116423803381622,
+            "transformer.h.0.attn.c_v.weight": 0.0008884651469998062,
+            "transformer.h.0.mlp.c_fc.weight": 0.011724094860255718,
+            "transformer.h.0.mlp.c_proj.weight": 0.03680147975683212,
+            "transformer.h.1.attn.c_k.weight": 0.0005547857144847512,
+            "transformer.h.1.attn.c_proj.weight": 0.003984494600445032,
+            "transformer.h.1.attn.c_q.weight": 0.0005549501511268318,
+            "transformer.h.1.attn.c_v.weight": 0.0011294538853690028,
+            "transformer.h.1.attn.ve_gate.weight": 2.32074421546713e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.010187847539782524,
+            "transformer.h.1.mlp.c_proj.weight": 0.03191191703081131,
+            "transformer.h.10.attn.c_k.weight": 0.00027574319392442703,
+            "transformer.h.10.attn.c_proj.weight": 0.0029583722352981567,
+            "transformer.h.10.attn.c_q.weight": 0.0002757485199254006,
+            "transformer.h.10.attn.c_v.weight": 0.000764010997954756,
+            "transformer.h.10.mlp.c_fc.weight": 0.006059193518012762,
+            "transformer.h.10.mlp.c_proj.weight": 0.019014373421669006,
+            "transformer.h.11.attn.c_k.weight": 0.0002690450637601316,
+            "transformer.h.11.attn.c_proj.weight": 0.0027366741560399532,
+            "transformer.h.11.attn.c_q.weight": 0.00027113122632727027,
+            "transformer.h.11.attn.c_v.weight": 0.000788143661338836,
+            "transformer.h.11.attn.ve_gate.weight": 1.2928807109346963e-06,
+            "transformer.h.11.mlp.c_fc.weight": 0.005811877083033323,
+            "transformer.h.11.mlp.c_proj.weight": 0.018234170973300934,
+            "transformer.h.2.attn.c_k.weight": 0.0004668551846407354,
+            "transformer.h.2.attn.c_proj.weight": 0.003884817473590374,
+            "transformer.h.2.attn.c_q.weight": 0.00046920342720113695,
+            "transformer.h.2.attn.c_v.weight": 0.0011129607446491718,
+            "transformer.h.2.mlp.c_fc.weight": 0.009173322468996048,
+            "transformer.h.2.mlp.c_proj.weight": 0.028640110045671463,
+            "transformer.h.3.attn.c_k.weight": 0.00041082038660533726,
+            "transformer.h.3.attn.c_proj.weight": 0.0039241863414645195,
+            "transformer.h.3.attn.c_q.weight": 0.0004088821297045797,
+            "transformer.h.3.attn.c_v.weight": 0.0010525245452299714,
+            "transformer.h.3.attn.ve_gate.weight": 1.992173565668054e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.008408053778111935,
+            "transformer.h.3.mlp.c_proj.weight": 0.026157502084970474,
+            "transformer.h.4.attn.c_k.weight": 0.0003759007959160954,
+            "transformer.h.4.attn.c_proj.weight": 0.003612420056015253,
+            "transformer.h.4.attn.c_q.weight": 0.0003742067201528698,
+            "transformer.h.4.attn.c_v.weight": 0.0009493661345914006,
+            "transformer.h.4.mlp.c_fc.weight": 0.007840844802558422,
+            "transformer.h.4.mlp.c_proj.weight": 0.024355225265026093,
+            "transformer.h.5.attn.c_k.weight": 0.00035000802017748356,
+            "transformer.h.5.attn.c_proj.weight": 0.003431124147027731,
+            "transformer.h.5.attn.c_q.weight": 0.00034631992457434535,
+            "transformer.h.5.attn.c_v.weight": 0.0009292490431107581,
+            "transformer.h.5.attn.ve_gate.weight": 1.5417097074532649e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.007409461308270693,
+            "transformer.h.5.mlp.c_proj.weight": 0.023168344050645828,
+            "transformer.h.6.attn.c_k.weight": 0.00032504985574632883,
+            "transformer.h.6.attn.c_proj.weight": 0.0034085537772625685,
+            "transformer.h.6.attn.c_q.weight": 0.00032366582308895886,
+            "transformer.h.6.attn.c_v.weight": 0.0009156755986623466,
+            "transformer.h.6.mlp.c_fc.weight": 0.0070090387016534805,
+            "transformer.h.6.mlp.c_proj.weight": 0.021892786026000977,
+            "transformer.h.7.attn.c_k.weight": 0.0003125427174381912,
+            "transformer.h.7.attn.c_proj.weight": 0.002948986366391182,
+            "transformer.h.7.attn.c_q.weight": 0.00031299726106226444,
+            "transformer.h.7.attn.c_v.weight": 0.0008494273060932755,
+            "transformer.h.7.attn.ve_gate.weight": 1.3154932503312011e-06,
+            "transformer.h.7.mlp.c_fc.weight": 0.006746034603565931,
+            "transformer.h.7.mlp.c_proj.weight": 0.021006066352128983,
+            "transformer.h.8.attn.c_k.weight": 0.0003001773729920387,
+            "transformer.h.8.attn.c_proj.weight": 0.002934536896646023,
+            "transformer.h.8.attn.c_q.weight": 0.0003021506709046662,
+            "transformer.h.8.attn.c_v.weight": 0.0008144929888658226,
+            "transformer.h.8.mlp.c_fc.weight": 0.00652371346950531,
+            "transformer.h.8.mlp.c_proj.weight": 0.020529720932245255,
+            "transformer.h.9.attn.c_k.weight": 0.0002836073108483106,
+            "transformer.h.9.attn.c_proj.weight": 0.0029274127446115017,
+            "transformer.h.9.attn.c_q.weight": 0.0002856814244296402,
+            "transformer.h.9.attn.c_v.weight": 0.0008108486072160304,
+            "transformer.h.9.attn.ve_gate.weight": 1.2191015912321745e-06,
+            "transformer.h.9.mlp.c_fc.weight": 0.0061646136455237865,
+            "transformer.h.9.mlp.c_proj.weight": 0.019151095300912857,
+            "transformer.wte.weight": 0.0010017643216997385,
+            "value_embeds.1.weight": 2.5080140403588302e-05,
+            "value_embeds.11.weight": 1.202490966534242e-05,
+            "value_embeds.3.weight": 1.9205896023777314e-05,
+            "value_embeds.5.weight": 1.61297430167906e-05,
+            "value_embeds.7.weight": 1.4209906112228055e-05,
+            "value_embeds.9.weight": 1.308546052314341e-05,
+            "x0_lambdas": 0.0022974456660449505
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.6140327000030084,
+            0.584450399997877,
+            0.5574627000023611
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 135267480,
+            "capacity_parameters": 0,
+            "depth": 12,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 135267480,
+            "width": 768
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.004,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.6,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.6,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 88,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 2386219008,
+          "peak_reserved_bytes": 2524971008,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "D12-W384": {
+          "candidate": {
+            "depth": 12,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "model_width": 384
+          },
+          "checkpoint_sha256": "3f3e96d6698d292e14e73af0517327df6e9d2a5cfadc76c6de11582df85ee123",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 366.565900798887,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14679015424,
+          "gradient_norms": {
+            "lm_head.weight": 0.6128271818161011,
+            "resid_lambdas": 0.0010492014698684216,
+            "transformer.h.0.attn.c_k.weight": 0.0002102489088429138,
+            "transformer.h.0.attn.c_proj.weight": 0.001341528259217739,
+            "transformer.h.0.attn.c_q.weight": 0.00021103370818309486,
+            "transformer.h.0.attn.c_v.weight": 0.0002641882747411728,
+            "transformer.h.0.mlp.c_fc.weight": 0.0038205101154744625,
+            "transformer.h.0.mlp.c_proj.weight": 0.017115246504545212,
+            "transformer.h.1.attn.c_k.weight": 0.00018471489602234215,
+            "transformer.h.1.attn.c_proj.weight": 0.0015505626797676086,
+            "transformer.h.1.attn.c_q.weight": 0.00018317917420063168,
+            "transformer.h.1.attn.c_v.weight": 0.0003120077890343964,
+            "transformer.h.1.attn.ve_gate.weight": 1.4228047575670644e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.0035262100864201784,
+            "transformer.h.1.mlp.c_proj.weight": 0.015789858996868134,
+            "transformer.h.10.attn.c_k.weight": 0.0001189766262541525,
+            "transformer.h.10.attn.c_proj.weight": 0.0013466867385432124,
+            "transformer.h.10.attn.c_q.weight": 0.00011785347305703908,
+            "transformer.h.10.attn.c_v.weight": 0.0002715204609557986,
+            "transformer.h.10.mlp.c_fc.weight": 0.002489506732672453,
+            "transformer.h.10.mlp.c_proj.weight": 0.010968483984470367,
+            "transformer.h.11.attn.c_k.weight": 0.00011540116975083947,
+            "transformer.h.11.attn.c_proj.weight": 0.0012355135986581445,
+            "transformer.h.11.attn.c_q.weight": 0.00011480304965516552,
+            "transformer.h.11.attn.c_v.weight": 0.00024333706824108958,
+            "transformer.h.11.attn.ve_gate.weight": 1.0305426485501812e-06,
+            "transformer.h.11.mlp.c_fc.weight": 0.0024320115335285664,
+            "transformer.h.11.mlp.c_proj.weight": 0.010751890949904919,
+            "transformer.h.2.attn.c_k.weight": 0.00016911439888644964,
+            "transformer.h.2.attn.c_proj.weight": 0.0015896613476797938,
+            "transformer.h.2.attn.c_q.weight": 0.0001684926828602329,
+            "transformer.h.2.attn.c_v.weight": 0.0003318987728562206,
+            "transformer.h.2.mlp.c_fc.weight": 0.0032845456153154373,
+            "transformer.h.2.mlp.c_proj.weight": 0.014502028934657574,
+            "transformer.h.3.attn.c_k.weight": 0.00015608101966790855,
+            "transformer.h.3.attn.c_proj.weight": 0.0016064338851720095,
+            "transformer.h.3.attn.c_q.weight": 0.0001547915453556925,
+            "transformer.h.3.attn.c_v.weight": 0.00031870478414930403,
+            "transformer.h.3.attn.ve_gate.weight": 1.4227454130377737e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.003086885204538703,
+            "transformer.h.3.mlp.c_proj.weight": 0.013685583136975765,
+            "transformer.h.4.attn.c_k.weight": 0.00014603356248699129,
+            "transformer.h.4.attn.c_proj.weight": 0.0015448194462805986,
+            "transformer.h.4.attn.c_q.weight": 0.0001455342717235908,
+            "transformer.h.4.attn.c_v.weight": 0.00029799394542351365,
+            "transformer.h.4.mlp.c_fc.weight": 0.0029668696224689484,
+            "transformer.h.4.mlp.c_proj.weight": 0.013211378827691078,
+            "transformer.h.5.attn.c_k.weight": 0.00014294443826656789,
+            "transformer.h.5.attn.c_proj.weight": 0.0015656284522265196,
+            "transformer.h.5.attn.c_q.weight": 0.00014380383072420955,
+            "transformer.h.5.attn.c_v.weight": 0.000306728616124019,
+            "transformer.h.5.attn.ve_gate.weight": 1.515737380941573e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.0028522582724690437,
+            "transformer.h.5.mlp.c_proj.weight": 0.01271167304366827,
+            "transformer.h.6.attn.c_k.weight": 0.00013373173715081066,
+            "transformer.h.6.attn.c_proj.weight": 0.0015251091681420803,
+            "transformer.h.6.attn.c_q.weight": 0.00013572505849879235,
+            "transformer.h.6.attn.c_v.weight": 0.0002911732590291649,
+            "transformer.h.6.mlp.c_fc.weight": 0.0027250389102846384,
+            "transformer.h.6.mlp.c_proj.weight": 0.012107349932193756,
+            "transformer.h.7.attn.c_k.weight": 0.0001302860036958009,
+            "transformer.h.7.attn.c_proj.weight": 0.0014957288512960076,
+            "transformer.h.7.attn.c_q.weight": 0.00013064878294244409,
+            "transformer.h.7.attn.c_v.weight": 0.0002656509168446064,
+            "transformer.h.7.attn.ve_gate.weight": 1.052699076353747e-06,
+            "transformer.h.7.mlp.c_fc.weight": 0.0026493121404200792,
+            "transformer.h.7.mlp.c_proj.weight": 0.011683065444231033,
+            "transformer.h.8.attn.c_k.weight": 0.00012381700798869133,
+            "transformer.h.8.attn.c_proj.weight": 0.0014531804481521249,
+            "transformer.h.8.attn.c_q.weight": 0.0001247000473085791,
+            "transformer.h.8.attn.c_v.weight": 0.00026486869319342077,
+            "transformer.h.8.mlp.c_fc.weight": 0.0025998027995228767,
+            "transformer.h.8.mlp.c_proj.weight": 0.011494011618196964,
+            "transformer.h.9.attn.c_k.weight": 0.00012342899572104216,
+            "transformer.h.9.attn.c_proj.weight": 0.0013440505135804415,
+            "transformer.h.9.attn.c_q.weight": 0.00012294504267629236,
+            "transformer.h.9.attn.c_v.weight": 0.00026924535632133484,
+            "transformer.h.9.attn.ve_gate.weight": 1.0899361768679228e-06,
+            "transformer.h.9.mlp.c_fc.weight": 0.0025421669706702232,
+            "transformer.h.9.mlp.c_proj.weight": 0.011238972656428814,
+            "transformer.wte.weight": 0.0006713536567986012,
+            "value_embeds.1.weight": 1.1389325663913041e-05,
+            "value_embeds.11.weight": 6.99879637977574e-06,
+            "value_embeds.3.weight": 9.61623572948156e-06,
+            "value_embeds.5.weight": 8.700946636963636e-06,
+            "value_embeds.7.weight": 7.905913662398234e-06,
+            "value_embeds.9.weight": 7.572795311716618e-06,
+            "x0_lambdas": 0.0009886855259537697
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.5575958999979775,
+            0.5609341000017594,
+            0.6280583999978262
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 46400088,
+            "capacity_parameters": 0,
+            "depth": 12,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 46400088,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 88,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 982478848,
+          "peak_reserved_bytes": 1015021568,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "D6": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "checkpoint_sha256": "ec35957c5fcb42b359e537bdf87e100f98b5f3d61cbf13ec73ebbebbc3c98178",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 239.72005119919777,
+          "corpus_training_tokens": 0,
+          "free_bytes": 15054405632,
+          "gradient_norms": {
+            "lm_head.weight": 0.6123936176300049,
+            "resid_lambdas": 0.0008732876740396023,
+            "transformer.h.0.attn.c_k.weight": 0.00024316951748915017,
+            "transformer.h.0.attn.c_proj.weight": 0.0015171313425526023,
+            "transformer.h.0.attn.c_q.weight": 0.0002468849706929177,
+            "transformer.h.0.attn.c_v.weight": 0.0002930074115283787,
+            "transformer.h.0.mlp.c_fc.weight": 0.004471353720873594,
+            "transformer.h.0.mlp.c_proj.weight": 0.01992177404463291,
+            "transformer.h.1.attn.c_k.weight": 0.00021642928186338395,
+            "transformer.h.1.attn.c_proj.weight": 0.0017644723411649466,
+            "transformer.h.1.attn.c_q.weight": 0.00021494011161848903,
+            "transformer.h.1.attn.c_v.weight": 0.0003554504655767232,
+            "transformer.h.1.attn.ve_gate.weight": 2.047844418484601e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004113662056624889,
+            "transformer.h.1.mlp.c_proj.weight": 0.018186450004577637,
+            "transformer.h.2.attn.c_k.weight": 0.00019331116345711052,
+            "transformer.h.2.attn.c_proj.weight": 0.0018260397482663393,
+            "transformer.h.2.attn.c_q.weight": 0.0001936635235324502,
+            "transformer.h.2.attn.c_v.weight": 0.0003495095297694206,
+            "transformer.h.2.mlp.c_fc.weight": 0.003879830939695239,
+            "transformer.h.2.mlp.c_proj.weight": 0.017177289351820946,
+            "transformer.h.3.attn.c_k.weight": 0.0001837919990066439,
+            "transformer.h.3.attn.c_proj.weight": 0.0017583364387974143,
+            "transformer.h.3.attn.c_q.weight": 0.00018319758237339556,
+            "transformer.h.3.attn.c_v.weight": 0.00033901023562066257,
+            "transformer.h.3.attn.ve_gate.weight": 1.8833300146070542e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036513658706098795,
+            "transformer.h.3.mlp.c_proj.weight": 0.016103582456707954,
+            "transformer.h.4.attn.c_k.weight": 0.0001708737836452201,
+            "transformer.h.4.attn.c_proj.weight": 0.0018730669980868697,
+            "transformer.h.4.attn.c_q.weight": 0.0001697209954727441,
+            "transformer.h.4.attn.c_v.weight": 0.00036769959842786193,
+            "transformer.h.4.mlp.c_fc.weight": 0.003489541355520487,
+            "transformer.h.4.mlp.c_proj.weight": 0.015367320738732815,
+            "transformer.h.5.attn.c_k.weight": 0.00016291624342557043,
+            "transformer.h.5.attn.c_proj.weight": 0.0018353681080043316,
+            "transformer.h.5.attn.c_q.weight": 0.00016325658361893147,
+            "transformer.h.5.attn.c_v.weight": 0.00032676479895599186,
+            "transformer.h.5.attn.ve_gate.weight": 1.396996822222718e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.003328906139358878,
+            "transformer.h.5.mlp.c_proj.weight": 0.0146317845210433,
+            "transformer.wte.weight": 0.0006583956419490278,
+            "value_embeds.1.weight": 1.3333785318536684e-05,
+            "value_embeds.3.weight": 1.1107126738352235e-05,
+            "value_embeds.5.weight": 9.761963156051934e-06,
+            "x0_lambdas": 0.000799284316599369
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.38031259999843314,
+            0.32210870000199066,
+            0.3368953999997757
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 26345772,
+            "capacity_parameters": 0,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 26345772,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 46,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 610072576,
+          "peak_reserved_bytes": 641728512,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "D6-W768": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "model_width": 768
+          },
+          "checkpoint_sha256": "d4fec2f33bbf6d389c18edaeaa14be3ccf3519e3d8ad35d8dad5a7ecd1ebc351",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 219.5588223990053,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14232322048,
+          "gradient_norms": {
+            "lm_head.weight": 0.8662087917327881,
+            "resid_lambdas": 0.0005324920057319105,
+            "transformer.h.0.attn.c_k.weight": 0.0007880479097366333,
+            "transformer.h.0.attn.c_proj.weight": 0.003413669764995575,
+            "transformer.h.0.attn.c_q.weight": 0.0007842265767976642,
+            "transformer.h.0.attn.c_v.weight": 0.0009415749227628112,
+            "transformer.h.0.mlp.c_fc.weight": 0.012883191928267479,
+            "transformer.h.0.mlp.c_proj.weight": 0.040742985904216766,
+            "transformer.h.1.attn.c_k.weight": 0.000604429398663342,
+            "transformer.h.1.attn.c_proj.weight": 0.004516609013080597,
+            "transformer.h.1.attn.c_q.weight": 0.0006076710415072739,
+            "transformer.h.1.attn.c_v.weight": 0.0012150444090366364,
+            "transformer.h.1.attn.ve_gate.weight": 2.409337184872129e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.011219192296266556,
+            "transformer.h.1.mlp.c_proj.weight": 0.035082295536994934,
+            "transformer.h.2.attn.c_k.weight": 0.0005107661127112806,
+            "transformer.h.2.attn.c_proj.weight": 0.004129040986299515,
+            "transformer.h.2.attn.c_q.weight": 0.0005099468980915844,
+            "transformer.h.2.attn.c_v.weight": 0.0011742853093892336,
+            "transformer.h.2.mlp.c_fc.weight": 0.010084575042128563,
+            "transformer.h.2.mlp.c_proj.weight": 0.031670793890953064,
+            "transformer.h.3.attn.c_k.weight": 0.0004530881706159562,
+            "transformer.h.3.attn.c_proj.weight": 0.004181169904768467,
+            "transformer.h.3.attn.c_q.weight": 0.0004509171121753752,
+            "transformer.h.3.attn.c_v.weight": 0.001155372243374586,
+            "transformer.h.3.attn.ve_gate.weight": 2.5324775378976483e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.009271476417779922,
+            "transformer.h.3.mlp.c_proj.weight": 0.029109328985214233,
+            "transformer.h.4.attn.c_k.weight": 0.0004070567374583334,
+            "transformer.h.4.attn.c_proj.weight": 0.003928056452423334,
+            "transformer.h.4.attn.c_q.weight": 0.0004072270530741662,
+            "transformer.h.4.attn.c_v.weight": 0.0011194562539458275,
+            "transformer.h.4.mlp.c_fc.weight": 0.008675649762153625,
+            "transformer.h.4.mlp.c_proj.weight": 0.027442218735814095,
+            "transformer.h.5.attn.c_k.weight": 0.00038850275450386107,
+            "transformer.h.5.attn.c_proj.weight": 0.0041419221088290215,
+            "transformer.h.5.attn.c_q.weight": 0.0003888357023242861,
+            "transformer.h.5.attn.c_v.weight": 0.0011413799365982413,
+            "transformer.h.5.attn.ve_gate.weight": 1.5849864212214015e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.008210757747292519,
+            "transformer.h.5.mlp.c_proj.weight": 0.025795770809054375,
+            "transformer.wte.weight": 0.0009782772976905107,
+            "value_embeds.1.weight": 2.7058273190050386e-05,
+            "value_embeds.3.weight": 2.089755616907496e-05,
+            "value_embeds.5.weight": 1.7475227650720626e-05,
+            "x0_lambdas": 0.00042188665247522295
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.3289550000008603,
+            0.3179619000002276,
+            0.3409351999980572
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 73925196,
+            "capacity_parameters": 0,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 73925196,
+            "width": 768
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.004,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.6,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.6,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 46,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 1355458560,
+          "peak_reserved_bytes": 1461714944,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "FROZEN-AUX": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.1,
+              "chunk_size": 4,
+              "entries": 16,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "auxiliary",
+              "pool_normalization": "rms",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "5f43608252d5ce7154376421c9003b01da44b63fddc7a75a95fed726d24ee1fe",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 290.05487360060215,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14970519552,
+          "gradient_norms": {
+            "lm_head.weight": 0.6123936176300049,
+            "ncp.blocks.0.down.weight": 0.02554343454539776,
+            "ncp.blocks.0.fc.weight": 0.016689814627170563,
+            "ncp.blocks.0.proj.weight": 0.01630255952477455,
+            "ncp.blocks.0.qkv.weight": 0.016373857855796814,
+            "ncp.blocks.1.down.weight": 0.025011541321873665,
+            "ncp.blocks.1.fc.weight": 0.01662840135395527,
+            "ncp.blocks.1.proj.weight": 0.01697155088186264,
+            "ncp.blocks.1.qkv.weight": 0.016560928896069527,
+            "ncp.codebook.first": 0.09830653667449951,
+            "ncp.codebook.second": 0.34131211042404175,
+            "ncp.head.weight": 0.13151344656944275,
+            "resid_lambdas": 0.002898707054555416,
+            "transformer.h.0.attn.c_k.weight": 0.000772585510276258,
+            "transformer.h.0.attn.c_proj.weight": 0.012196501716971397,
+            "transformer.h.0.attn.c_q.weight": 0.0007867953972890973,
+            "transformer.h.0.attn.c_v.weight": 0.002296414226293564,
+            "transformer.h.0.mlp.c_fc.weight": 0.014485428109765053,
+            "transformer.h.0.mlp.c_proj.weight": 0.22522574663162231,
+            "transformer.h.1.attn.c_k.weight": 0.00021642928186338395,
+            "transformer.h.1.attn.c_proj.weight": 0.0017644723411649466,
+            "transformer.h.1.attn.c_q.weight": 0.00021494011161848903,
+            "transformer.h.1.attn.c_v.weight": 0.0003554504655767232,
+            "transformer.h.1.attn.ve_gate.weight": 2.047844418484601e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004113662056624889,
+            "transformer.h.1.mlp.c_proj.weight": 0.018186450004577637,
+            "transformer.h.2.attn.c_k.weight": 0.00019331116345711052,
+            "transformer.h.2.attn.c_proj.weight": 0.0018260397482663393,
+            "transformer.h.2.attn.c_q.weight": 0.0001936635235324502,
+            "transformer.h.2.attn.c_v.weight": 0.0003495095297694206,
+            "transformer.h.2.mlp.c_fc.weight": 0.003879830939695239,
+            "transformer.h.2.mlp.c_proj.weight": 0.017177289351820946,
+            "transformer.h.3.attn.c_k.weight": 0.0001837919990066439,
+            "transformer.h.3.attn.c_proj.weight": 0.0017583364387974143,
+            "transformer.h.3.attn.c_q.weight": 0.00018319758237339556,
+            "transformer.h.3.attn.c_v.weight": 0.00033901023562066257,
+            "transformer.h.3.attn.ve_gate.weight": 1.8833300146070542e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036513658706098795,
+            "transformer.h.3.mlp.c_proj.weight": 0.016103582456707954,
+            "transformer.h.4.attn.c_k.weight": 0.0001708737836452201,
+            "transformer.h.4.attn.c_proj.weight": 0.0018730669980868697,
+            "transformer.h.4.attn.c_q.weight": 0.0001697209954727441,
+            "transformer.h.4.attn.c_v.weight": 0.00036769959842786193,
+            "transformer.h.4.mlp.c_fc.weight": 0.003489541355520487,
+            "transformer.h.4.mlp.c_proj.weight": 0.015367320738732815,
+            "transformer.h.5.attn.c_k.weight": 0.00016291624342557043,
+            "transformer.h.5.attn.c_proj.weight": 0.0018353681080043316,
+            "transformer.h.5.attn.c_q.weight": 0.00016325658361893147,
+            "transformer.h.5.attn.c_v.weight": 0.00032676479895599186,
+            "transformer.h.5.attn.ve_gate.weight": 1.396996822222718e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.003328906139358878,
+            "transformer.h.5.mlp.c_proj.weight": 0.0146317845210433,
+            "transformer.wte.weight": 0.0016305689932778478,
+            "value_embeds.1.weight": 1.3333785318536684e-05,
+            "value_embeds.3.weight": 1.1107126738352235e-05,
+            "value_embeds.5.weight": 9.761963156051934e-06,
+            "x0_lambdas": 0.0028772777877748013
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.4786228000011761,
+            0.41343179999967106,
+            0.43610400000034133
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30001452,
+            "capacity_parameters": 0,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 24576,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 24576,
+            "ncp_parameters": 3655680,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30001452,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 691344384,
+          "peak_reserved_bytes": 723517440,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "FROZEN-CAP": {
+          "candidate": {
+            "capacity": {
+              "after_layer": 0,
+              "hidden": 4760,
+              "kind": "residual_mlp_v1",
+              "lr": 0.001
+            },
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "checkpoint_sha256": "3519116aa9bb936234123ca54dd54895d5da7d2e5165de6a0cd556dbaaee5494",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 236.99774719960988,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14964228096,
+          "gradient_norms": {
+            "capacity.down.weight": 0.005330243613570929,
+            "capacity.up.weight": 0.00610538711771369,
+            "lm_head.weight": 0.6124499440193176,
+            "resid_lambdas": 0.0007843546336516738,
+            "transformer.h.0.attn.c_k.weight": 0.0002488276222720742,
+            "transformer.h.0.attn.c_proj.weight": 0.0015321701066568494,
+            "transformer.h.0.attn.c_q.weight": 0.0002523787843529135,
+            "transformer.h.0.attn.c_v.weight": 0.0002969391061924398,
+            "transformer.h.0.mlp.c_fc.weight": 0.004541285801678896,
+            "transformer.h.0.mlp.c_proj.weight": 0.020271936431527138,
+            "transformer.h.1.attn.c_k.weight": 0.00021218776237219572,
+            "transformer.h.1.attn.c_proj.weight": 0.001868627849034965,
+            "transformer.h.1.attn.c_q.weight": 0.0002112136280629784,
+            "transformer.h.1.attn.c_v.weight": 0.00037561581120826304,
+            "transformer.h.1.attn.ve_gate.weight": 1.930199232447194e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.00405509676784277,
+            "transformer.h.1.mlp.c_proj.weight": 0.017921200022101402,
+            "transformer.h.2.attn.c_k.weight": 0.00019088666886091232,
+            "transformer.h.2.attn.c_proj.weight": 0.0018826016457751393,
+            "transformer.h.2.attn.c_q.weight": 0.00019214757776353508,
+            "transformer.h.2.attn.c_v.weight": 0.0003550455439835787,
+            "transformer.h.2.mlp.c_fc.weight": 0.0038483887910842896,
+            "transformer.h.2.mlp.c_proj.weight": 0.017048222944140434,
+            "transformer.h.3.attn.c_k.weight": 0.0001804763451218605,
+            "transformer.h.3.attn.c_proj.weight": 0.0018193830037489533,
+            "transformer.h.3.attn.c_q.weight": 0.00018029073544312268,
+            "transformer.h.3.attn.c_v.weight": 0.0003436424885876477,
+            "transformer.h.3.attn.ve_gate.weight": 1.7840330883700517e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036251789424568415,
+            "transformer.h.3.mlp.c_proj.weight": 0.015967722982168198,
+            "transformer.h.4.attn.c_k.weight": 0.00016966808470897377,
+            "transformer.h.4.attn.c_proj.weight": 0.001848255400545895,
+            "transformer.h.4.attn.c_q.weight": 0.00016944424714893103,
+            "transformer.h.4.attn.c_v.weight": 0.0003674440085887909,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034573457669466734,
+            "transformer.h.4.mlp.c_proj.weight": 0.015211615711450577,
+            "transformer.h.5.attn.c_k.weight": 0.00016202504048123956,
+            "transformer.h.5.attn.c_proj.weight": 0.0018219840712845325,
+            "transformer.h.5.attn.c_q.weight": 0.0001629106409382075,
+            "transformer.h.5.attn.c_v.weight": 0.00032588146859779954,
+            "transformer.h.5.attn.ve_gate.weight": 1.3864906804883503e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.003309026127681136,
+            "transformer.h.5.mlp.c_proj.weight": 0.01456474233418703,
+            "transformer.wte.weight": 0.0006618139450438321,
+            "value_embeds.1.weight": 1.3053248949290719e-05,
+            "value_embeds.3.weight": 1.0945625945169013e-05,
+            "value_embeds.5.weight": 9.680485163698904e-06,
+            "x0_lambdas": 0.0008104750304482877
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.37499559999923804,
+            0.3533848000006401,
+            0.36172330000044894
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30001452,
+            "capacity_parameters": 3655680,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30001452,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 48,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 713070592,
+          "peak_reserved_bytes": 729808896,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "FROZEN-NOPRED": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 16,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "pool_normalization": "rms",
+              "prediction_weight": 0.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "e49a3130650b199aaf147f336b85d7ecbeffc611cba8545a337bc852721f8772",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 282.155584000051,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14972616704,
+          "gradient_norms": {
+            "lm_head.weight": 0.6124266982078552,
+            "ncp.blocks.0.down.weight": 8.766141399974003e-05,
+            "ncp.blocks.0.fc.weight": 0.0001009983679978177,
+            "ncp.blocks.0.proj.weight": 3.179243503836915e-05,
+            "ncp.blocks.0.qkv.weight": 3.288881271146238e-05,
+            "ncp.blocks.1.down.weight": 8.53004094096832e-05,
+            "ncp.blocks.1.fc.weight": 9.846395550994202e-05,
+            "ncp.blocks.1.proj.weight": 3.161807399010286e-05,
+            "ncp.blocks.1.qkv.weight": 3.0226396120269783e-05,
+            "ncp.codebook.first": 0.06468819826841354,
+            "ncp.codebook.second": 0.16992421448230743,
+            "ncp.head.weight": 0.0006006662733852863,
+            "resid_lambdas": 0.0007793567492626607,
+            "transformer.h.0.attn.c_k.weight": 0.00024029795895330608,
+            "transformer.h.0.attn.c_proj.weight": 0.0015028315829113126,
+            "transformer.h.0.attn.c_q.weight": 0.00024410273181274533,
+            "transformer.h.0.attn.c_v.weight": 0.0002900784893427044,
+            "transformer.h.0.mlp.c_fc.weight": 0.004417826421558857,
+            "transformer.h.0.mlp.c_proj.weight": 0.01969216577708721,
+            "transformer.h.1.attn.c_k.weight": 0.00021035686950199306,
+            "transformer.h.1.attn.c_proj.weight": 0.002198366913944483,
+            "transformer.h.1.attn.c_q.weight": 0.00020941952243447304,
+            "transformer.h.1.attn.c_v.weight": 0.0004309793293941766,
+            "transformer.h.1.attn.ve_gate.weight": 2.007570401474368e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004070861265063286,
+            "transformer.h.1.mlp.c_proj.weight": 0.018032971769571304,
+            "transformer.h.2.attn.c_k.weight": 0.00018827783060260117,
+            "transformer.h.2.attn.c_proj.weight": 0.0019787943456321955,
+            "transformer.h.2.attn.c_q.weight": 0.00018814572831615806,
+            "transformer.h.2.attn.c_v.weight": 0.00039055474917404354,
+            "transformer.h.2.mlp.c_fc.weight": 0.0038495115004479885,
+            "transformer.h.2.mlp.c_proj.weight": 0.01707947626709938,
+            "transformer.h.3.attn.c_k.weight": 0.00018011605425272137,
+            "transformer.h.3.attn.c_proj.weight": 0.001899666152894497,
+            "transformer.h.3.attn.c_q.weight": 0.00018036409164778888,
+            "transformer.h.3.attn.c_v.weight": 0.00036940028076060116,
+            "transformer.h.3.attn.ve_gate.weight": 1.831350914471841e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036264099180698395,
+            "transformer.h.3.mlp.c_proj.weight": 0.016008630394935608,
+            "transformer.h.4.attn.c_k.weight": 0.00016764036263339221,
+            "transformer.h.4.attn.c_proj.weight": 0.001962468260899186,
+            "transformer.h.4.attn.c_q.weight": 0.0001670888887019828,
+            "transformer.h.4.attn.c_v.weight": 0.00038755289278924465,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034640333615243435,
+            "transformer.h.4.mlp.c_proj.weight": 0.015267590060830116,
+            "transformer.h.5.attn.c_k.weight": 0.00015895596880000085,
+            "transformer.h.5.attn.c_proj.weight": 0.0018672328442335129,
+            "transformer.h.5.attn.c_q.weight": 0.0001599394454387948,
+            "transformer.h.5.attn.c_v.weight": 0.0003455839760135859,
+            "transformer.h.5.attn.ve_gate.weight": 1.3827458360538003e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.0033071069046854973,
+            "transformer.h.5.mlp.c_proj.weight": 0.014548901468515396,
+            "transformer.wte.weight": 0.0006510940729640424,
+            "value_embeds.1.weight": 1.3119640243530739e-05,
+            "value_embeds.3.weight": 1.1024567356798798e-05,
+            "value_embeds.5.weight": 9.684902579465415e-06,
+            "x0_lambdas": 0.000694398011546582
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.46319450000009965,
+            0.4476418000012927,
+            0.435157200001413
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30001452,
+            "capacity_parameters": 0,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 24576,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 24576,
+            "ncp_parameters": 3655680,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30001452,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 691344384,
+          "peak_reserved_bytes": 721420288,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "I2-37a8ad42c0": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.1,
+              "chunk_size": 4,
+              "entries": 16,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "pool_normalization": "rms",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "5898cb520ccb850d1bd16d1c0cbad128d1fae745856dc0d0e05490905a2dfc5f",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 254.34865920059383,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14972616704,
+          "gradient_norms": {
+            "lm_head.weight": 0.6124266982078552,
+            "ncp.blocks.0.down.weight": 0.025541894137859344,
+            "ncp.blocks.0.fc.weight": 0.01668824814260006,
+            "ncp.blocks.0.proj.weight": 0.016301371157169342,
+            "ncp.blocks.0.qkv.weight": 0.01637325808405876,
+            "ncp.blocks.1.down.weight": 0.025011517107486725,
+            "ncp.blocks.1.fc.weight": 0.016627412289381027,
+            "ncp.blocks.1.proj.weight": 0.016970815137028694,
+            "ncp.blocks.1.qkv.weight": 0.016560034826397896,
+            "ncp.codebook.first": 0.09833922982215881,
+            "ncp.codebook.second": 0.3413277268409729,
+            "ncp.head.weight": 0.1315210610628128,
+            "resid_lambdas": 0.0028063361532986164,
+            "transformer.h.0.attn.c_k.weight": 0.0007715209503658116,
+            "transformer.h.0.attn.c_proj.weight": 0.01219677459448576,
+            "transformer.h.0.attn.c_q.weight": 0.0007857519085519016,
+            "transformer.h.0.attn.c_v.weight": 0.00229546707123518,
+            "transformer.h.0.mlp.c_fc.weight": 0.01446807011961937,
+            "transformer.h.0.mlp.c_proj.weight": 0.2252112776041031,
+            "transformer.h.1.attn.c_k.weight": 0.00021035686950199306,
+            "transformer.h.1.attn.c_proj.weight": 0.002198366913944483,
+            "transformer.h.1.attn.c_q.weight": 0.00020941952243447304,
+            "transformer.h.1.attn.c_v.weight": 0.0004309793293941766,
+            "transformer.h.1.attn.ve_gate.weight": 2.007570401474368e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004070861265063286,
+            "transformer.h.1.mlp.c_proj.weight": 0.018032971769571304,
+            "transformer.h.2.attn.c_k.weight": 0.00018827783060260117,
+            "transformer.h.2.attn.c_proj.weight": 0.0019787943456321955,
+            "transformer.h.2.attn.c_q.weight": 0.00018814572831615806,
+            "transformer.h.2.attn.c_v.weight": 0.00039055474917404354,
+            "transformer.h.2.mlp.c_fc.weight": 0.0038495115004479885,
+            "transformer.h.2.mlp.c_proj.weight": 0.01707947626709938,
+            "transformer.h.3.attn.c_k.weight": 0.00018011605425272137,
+            "transformer.h.3.attn.c_proj.weight": 0.001899666152894497,
+            "transformer.h.3.attn.c_q.weight": 0.00018036409164778888,
+            "transformer.h.3.attn.c_v.weight": 0.00036940028076060116,
+            "transformer.h.3.attn.ve_gate.weight": 1.831350914471841e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036264099180698395,
+            "transformer.h.3.mlp.c_proj.weight": 0.016008630394935608,
+            "transformer.h.4.attn.c_k.weight": 0.00016764036263339221,
+            "transformer.h.4.attn.c_proj.weight": 0.001962468260899186,
+            "transformer.h.4.attn.c_q.weight": 0.0001670888887019828,
+            "transformer.h.4.attn.c_v.weight": 0.00038755289278924465,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034640333615243435,
+            "transformer.h.4.mlp.c_proj.weight": 0.015267590060830116,
+            "transformer.h.5.attn.c_k.weight": 0.00015895596880000085,
+            "transformer.h.5.attn.c_proj.weight": 0.0018672328442335129,
+            "transformer.h.5.attn.c_q.weight": 0.0001599394454387948,
+            "transformer.h.5.attn.c_v.weight": 0.0003455839760135859,
+            "transformer.h.5.attn.ve_gate.weight": 1.3827458360538003e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.0033071069046854973,
+            "transformer.h.5.mlp.c_proj.weight": 0.014548901468515396,
+            "transformer.wte.weight": 0.001627724734134972,
+            "value_embeds.1.weight": 1.3119640243530739e-05,
+            "value_embeds.3.weight": 1.1024567356798798e-05,
+            "value_embeds.5.weight": 9.684902579465415e-06,
+            "x0_lambdas": 0.002783938543871045
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.3979399999989255,
+            0.40277050000076997,
+            0.4088841000011598
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30001452,
+            "capacity_parameters": 0,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 24576,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 24576,
+            "ncp_parameters": 3655680,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30001452,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 688198656,
+          "peak_reserved_bytes": 721420288,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "N-RMS": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "pool_normalization": "rms",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "32dbe02af28842fef377c295c6d1daf6f52081d0fc7a33adb5b5fe1f53faa796",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 274.11641599982977,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14983102464,
+          "gradient_norms": {
+            "lm_head.weight": 0.6124578714370728,
+            "ncp.blocks.0.down.weight": 0.002211898099631071,
+            "ncp.blocks.0.fc.weight": 0.0012597404420375824,
+            "ncp.blocks.0.proj.weight": 0.0014492523623630404,
+            "ncp.blocks.0.qkv.weight": 0.0014494454953819513,
+            "ncp.blocks.1.down.weight": 0.0021492312662303448,
+            "ncp.blocks.1.fc.weight": 0.0013315164251253009,
+            "ncp.blocks.1.proj.weight": 0.0015133859124034643,
+            "ncp.blocks.1.qkv.weight": 0.0014460919192060828,
+            "ncp.codebook.first": 0.054965682327747345,
+            "ncp.codebook.second": 0.31980928778648376,
+            "ncp.head.weight": 0.010842975229024887,
+            "resid_lambdas": 0.0008198454743251204,
+            "transformer.h.0.attn.c_k.weight": 0.00024518914869986475,
+            "transformer.h.0.attn.c_proj.weight": 0.0018028655322268605,
+            "transformer.h.0.attn.c_q.weight": 0.000249604694545269,
+            "transformer.h.0.attn.c_v.weight": 0.00034677411895245314,
+            "transformer.h.0.mlp.c_fc.weight": 0.004523701500147581,
+            "transformer.h.0.mlp.c_proj.weight": 0.027840498834848404,
+            "transformer.h.1.attn.c_k.weight": 0.00021101869060657918,
+            "transformer.h.1.attn.c_proj.weight": 0.002208095509558916,
+            "transformer.h.1.attn.c_q.weight": 0.00020982229034416378,
+            "transformer.h.1.attn.c_v.weight": 0.0004266116884537041,
+            "transformer.h.1.attn.ve_gate.weight": 1.995362936213496e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004075502045452595,
+            "transformer.h.1.mlp.c_proj.weight": 0.018039178103208542,
+            "transformer.h.2.attn.c_k.weight": 0.0001888442930066958,
+            "transformer.h.2.attn.c_proj.weight": 0.001988509437069297,
+            "transformer.h.2.attn.c_q.weight": 0.00018870887288358063,
+            "transformer.h.2.attn.c_v.weight": 0.0003884279867634177,
+            "transformer.h.2.mlp.c_fc.weight": 0.003856286872178316,
+            "transformer.h.2.mlp.c_proj.weight": 0.017103055492043495,
+            "transformer.h.3.attn.c_k.weight": 0.0001805932552088052,
+            "transformer.h.3.attn.c_proj.weight": 0.0018785488791763783,
+            "transformer.h.3.attn.c_q.weight": 0.00018065344193018973,
+            "transformer.h.3.attn.c_v.weight": 0.0003652030136436224,
+            "transformer.h.3.attn.ve_gate.weight": 1.8431051103107166e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036300825886428356,
+            "transformer.h.3.mlp.c_proj.weight": 0.01601126231253147,
+            "transformer.h.4.attn.c_k.weight": 0.00016811792738735676,
+            "transformer.h.4.attn.c_proj.weight": 0.001961199101060629,
+            "transformer.h.4.attn.c_q.weight": 0.00016746505571063608,
+            "transformer.h.4.attn.c_v.weight": 0.0003837983531411737,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034678338561207056,
+            "transformer.h.4.mlp.c_proj.weight": 0.01528921164572239,
+            "transformer.h.5.attn.c_k.weight": 0.00015934320981614292,
+            "transformer.h.5.attn.c_proj.weight": 0.0018729249713942409,
+            "transformer.h.5.attn.c_q.weight": 0.0001599522802280262,
+            "transformer.h.5.attn.c_v.weight": 0.0003432547382544726,
+            "transformer.h.5.attn.ve_gate.weight": 1.38417692596704e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.00330570456571877,
+            "transformer.h.5.mlp.c_proj.weight": 0.014535483904182911,
+            "transformer.wte.weight": 0.000659439479932189,
+            "value_embeds.1.weight": 1.3160873095330317e-05,
+            "value_embeds.3.weight": 1.1046710824302863e-05,
+            "value_embeds.5.weight": 9.699705515231472e-06,
+            "x0_lambdas": 0.0007386396755464375
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.42960979999770643,
+            0.4081241999992926,
+            0.4474929999996675
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "capacity_parameters": 0,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 690560512,
+          "peak_reserved_bytes": 710934528,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "NCP": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "e71ef22790fc9a9f45556a05361b3911633c8c6550c106f58c4f6f13bc62366c",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 287.76147199980915,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14966325248,
+          "gradient_norms": {
+            "lm_head.weight": 0.6124461889266968,
+            "ncp.blocks.0.down.weight": 0.0028813492972403765,
+            "ncp.blocks.0.fc.weight": 0.0015620087506249547,
+            "ncp.blocks.0.proj.weight": 0.001967152114957571,
+            "ncp.blocks.0.qkv.weight": 0.001979059772565961,
+            "ncp.blocks.1.down.weight": 0.0027672576252371073,
+            "ncp.blocks.1.fc.weight": 0.00166968978010118,
+            "ncp.blocks.1.proj.weight": 0.002020275453105569,
+            "ncp.blocks.1.qkv.weight": 0.001929537276737392,
+            "ncp.codebook.first": 0.05443279817700386,
+            "ncp.codebook.second": 0.23118944466114044,
+            "ncp.head.weight": 0.009597172029316425,
+            "resid_lambdas": 0.0008372836746275425,
+            "transformer.h.0.attn.c_k.weight": 0.000242724665440619,
+            "transformer.h.0.attn.c_proj.weight": 0.0017249586526304483,
+            "transformer.h.0.attn.c_q.weight": 0.00024691494763828814,
+            "transformer.h.0.attn.c_v.weight": 0.00033222229103557765,
+            "transformer.h.0.mlp.c_fc.weight": 0.00447313254699111,
+            "transformer.h.0.mlp.c_proj.weight": 0.025662655010819435,
+            "transformer.h.1.attn.c_k.weight": 0.00021098405704833567,
+            "transformer.h.1.attn.c_proj.weight": 0.0022094575688242912,
+            "transformer.h.1.attn.c_q.weight": 0.00020981175475753844,
+            "transformer.h.1.attn.c_v.weight": 0.00042688348912633955,
+            "transformer.h.1.attn.ve_gate.weight": 1.9956858068326255e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004075183533132076,
+            "transformer.h.1.mlp.c_proj.weight": 0.018039969727396965,
+            "transformer.h.2.attn.c_k.weight": 0.0001888440892798826,
+            "transformer.h.2.attn.c_proj.weight": 0.0019890093244612217,
+            "transformer.h.2.attn.c_q.weight": 0.0001887232210719958,
+            "transformer.h.2.attn.c_v.weight": 0.0003886559570673853,
+            "transformer.h.2.mlp.c_fc.weight": 0.0038560281973332167,
+            "transformer.h.2.mlp.c_proj.weight": 0.017102986574172974,
+            "transformer.h.3.attn.c_k.weight": 0.0001805919164326042,
+            "transformer.h.3.attn.c_proj.weight": 0.0018792898626998067,
+            "transformer.h.3.attn.c_q.weight": 0.00018064577307086438,
+            "transformer.h.3.attn.c_v.weight": 0.0003654528991319239,
+            "transformer.h.3.attn.ve_gate.weight": 1.8408238702249946e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.003630012972280383,
+            "transformer.h.3.mlp.c_proj.weight": 0.016011981293559074,
+            "transformer.h.4.attn.c_k.weight": 0.00016817495634313673,
+            "transformer.h.4.attn.c_proj.weight": 0.0019623171538114548,
+            "transformer.h.4.attn.c_q.weight": 0.0001675076491665095,
+            "transformer.h.4.attn.c_v.weight": 0.00038404896622523665,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034676576033234596,
+            "transformer.h.4.mlp.c_proj.weight": 0.015288479626178741,
+            "transformer.h.5.attn.c_k.weight": 0.0001592901098774746,
+            "transformer.h.5.attn.c_proj.weight": 0.0018737473292276263,
+            "transformer.h.5.attn.c_q.weight": 0.00015993215492926538,
+            "transformer.h.5.attn.c_v.weight": 0.00034334452357143164,
+            "transformer.h.5.attn.ve_gate.weight": 1.3870231896362384e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.0033055408857762814,
+            "transformer.h.5.mlp.c_proj.weight": 0.014534170739352703,
+            "transformer.wte.weight": 0.000655180134344846,
+            "value_embeds.1.weight": 1.315811459789984e-05,
+            "value_embeds.3.weight": 1.1049305612687021e-05,
+            "value_embeds.5.weight": 9.696802408143412e-06,
+            "x0_lambdas": 0.0007589887827634811
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.47414349999962724,
+            0.43123259999993024,
+            0.40058639999915613
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "capacity_parameters": 0,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 689183232,
+          "peak_reserved_bytes": 727711744,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        }
+      },
+      "source_file": "fit-1789493441400757800.py",
       "source_sha256": "cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3",
       "status": "completed"
     },
@@ -12458,6 +14450,41 @@
       "reason": "Isolate NCP-module versus backbone initialization at fixed order42",
       "rule": "Init45 less favorable under both orders and mean initializer contrast>0.002; predeclared commit13d0225",
       "status": "qualified"
+    },
+    "module-integration-result.json": {
+      "applied_at": "2026-09-15T17:29:25.242256+00:00",
+      "changes": {
+        "autoresearch.py": {
+          "diff_file": "autoresearch.py.aligned.diff",
+          "diff_sha256": "ca0f1dad0460b95b259256e64353c68b45174b54f613c35767b2994a4067e863",
+          "modified_sha256": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b",
+          "original_sha256": "b97fda3e32a53909f7b730382e7f7ad02c8579e0b705b32eee6fdd3ef408d3ce"
+        },
+        "autoresearch_train.py": {
+          "diff_file": "autoresearch_train.py.aligned.diff",
+          "diff_sha256": "03dff5c956bbe1aca0505d4df92752817e462f6ae82ef2e154f8d33b472241c3",
+          "modified_sha256": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf",
+          "original_sha256": "28df670cb518c0ecdb88c70cf1d054149e8c4b09490b478044ad471807dcacab"
+        },
+        "ncp_audit.py": {
+          "diff_file": "ncp_audit.py.aligned.diff",
+          "diff_sha256": "c4ed76a05270b4e6373c39b5eced30c65979608d44f50a76796cba98913ce0d7",
+          "modified_sha256": "0c01a92fd476be75c81ce5cf366ee13cd7b8e0b3aff7e969b4bf61fd8d96c9cc",
+          "original_sha256": "88db3553b9f0be523f824f4f4a350d6d39a15be4714882dad0153d632823754f"
+        },
+        "ncp_campaign.py": {
+          "diff_file": "ncp_campaign.py.aligned.diff",
+          "diff_sha256": "b17a8a11283653641057e2eae8afa9dc02f622cc789adf28017eea3b0d19b0cc",
+          "modified_sha256": "71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7",
+          "original_sha256": "d63af2d375fca486d1ab7791c1da52f60fe0deb6c091320a1a160d631e0b05e4"
+        }
+      },
+      "driver_sha256": "bccf95af8357534a2d94dce87d35b39f1f256de9247da0d65f0b57468bb40c75",
+      "interpretation": "Applied after depth-grid driver exit; only explicit module initialization changes, before optimizer construction. Fresh full gates required.",
+      "kind": "module_seed_integration",
+      "preview_receipt_sha256": "773cbb2904da27d13587b2b014ad661c6deaac4e0b96c3161e4bd5d7c0f94ef1",
+      "status": "completed",
+      "test_sha256": "5b01891bc5bd21682cd5460112e9b26bd01bdb0bace1ea2c7ec3a63df1d576b1"
     },
     "module-preview-result.json": {
       "archived_files": {
@@ -12999,11 +15026,53 @@
       },
       "wall_seconds": 53.48400000000038
     },
+    "preflight-1789493476-result.json": {
+      "cpu": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cpu-1789493423.log",
+        "sha256": "93aee80b3b182fc46781c6336b8e545f2c965999c48a1100ba35fe045fe13215"
+      },
+      "cuda": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cuda-1789493430.log",
+        "sha256": "f8b7bf4a0b642131faefa5e72c02298bb7fee420add20e1828477bea66e034e8"
+      },
+      "fit_file": "fit-1789493441400757800-result.json",
+      "fit_sha256": "d5f11f8db6abd9db1f393c711e58cc988efdc42a2d6c5374a614222a8a6d0cb1",
+      "kind": "ncp_correctness",
+      "passed": true,
+      "source_hashes": {
+        "autoresearch.py": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "autoresearch_train.py": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf"
+      },
+      "status": "completed",
+      "test_hashes": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_campaign_depth_extension.py": "2ac0e71f5a913b39e4b535d67b39f055c9b11827d9d63637460ec2fc571d95ae",
+        "test_campaign_variants.py": "1679fd62f3ccb66b08de83ddabe498c9fd04767f9e15da469e66ee0674a0a70a",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_experiment_reports.py": "97a3e4dd58c06e0e896238127e8766629390268d94ccccc2dc63d6a063420985",
+        "test_fixed_updates.py": "03f5ac1c746d44a3eee3de9b5e2d4b33a1f16ab2306fcbc34d6c162e3ba6aea6",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ncp.py": "f32d983aa819a4bdfaa329a036b75ea481ba169d0a17999d7d7e2f76a0ebab3e",
+        "test_ncp_campaign.py": "05665f8cc7c1a80c4defe545e7e3f90553172035fdd7ef2999c011742684265b",
+        "test_ncp_dimensions.py": "963859056af99b041e38121930ea570a55717a15c4271dc98c41f82c2f80254d",
+        "test_ncp_extensions.py": "9388664490831fc7d875db98d663e8989ffdba9e7156532dacb69f71350993a7",
+        "test_ncp_module_seed.py": "5b01891bc5bd21682cd5460112e9b26bd01bdb0bace1ea2c7ec3a63df1d576b1",
+        "test_ncp_order.py": "a637e6d5cbfb7a2ac7f6934bb6a97d7febdec62f41810b0cd66081983e4c20c7",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
+      },
+      "wall_seconds": 54.26599999999962
+    },
     "publication-result.json": {
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "9676b9bcc60067bc7188fa5e02363de46d432c49",
+      "publication_commit": "36207ba7a17cdba3e4e356f4abd6f1712035c9c1",
       "status": "completed",
       "verified_remote": true
     },
@@ -13338,7 +15407,7 @@
   },
   "diagnostics": [
     "audit-recovered.log:\nSyntaxError: '(' was never closed",
-    "campaign.log:\n2026-09-15T17:07:05.699998+00:00 PREDECLARED conditional module-seed diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.",
+    "campaign.log:\nd diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -13367,6 +15436,7 @@
     "preflight-cpu-1789487177.log:\nok\nok\nok\nok\nok\nok\nRan 75 tests in 4.309s\nOK",
     "preflight-cpu-1789491292.log:\nok\nok\nok\nERROR: test_budget_and_schedule_fingerprints_are_distinct (test_experiment_reports.ReportTests.test_budget_and_schedule_fingerprints_are_distinct)\nTraceback (most recent call last):\nKeyError: 'seed'\nRan 77 tests in 4.926s\nFAILED (errors=1)",
     "preflight-cpu-1789491332.log:\nok\nok\nok\nok\nok\nok\nRan 77 tests in 4.937s\nOK",
+    "preflight-cpu-1789493423.log:\nok\nok\nok\nok\nok\nok\nRan 81 tests in 5.074s\nOK",
     "preflight-cuda-1789473254.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 6.129s\nOK",
     "preflight-cuda-1789473337.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 5.956s\nOK",
     "preflight-cuda-1789473893.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 5.766s\nOK",
@@ -13377,6 +15447,7 @@
     "preflight-cuda-1789485878.log:\nok\nok\nok\nok\nok\nok\nRan 75 tests in 6.621s\nOK",
     "preflight-cuda-1789487184.log:\nok\nok\nok\nok\nok\nok\nRan 75 tests in 6.673s\nOK",
     "preflight-cuda-1789491339.log:\nok\nok\nok\nok\nok\nok\nRan 77 tests in 7.249s\nOK",
+    "preflight-cuda-1789493430.log:\nok\nok\nok\nok\nok\nok\nRan 81 tests in 7.398s\nOK",
     "report-red.log:\nERROR: test_ncp_health_and_prospective_hypothesis_are_published (test_experiment_reports.ReportTests.test_ncp_health_and_prospective_hypothesis_are_published)\nTraceback (most recent call last):\nKeyError: 'collapsed'\nRan 8 tests in 0.229s\nFAILED (errors=1)",
     "test-ncp-green1.log:\nok\nRan 6 tests in 1.153s\nOK",
     "test-ncp-red.log:\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nRan 6 tests in 1.272s\nFAILED (failures=5, errors=1)",
@@ -13392,9 +15463,9 @@
       "sha256": "ff3697a6a9d8798b71e7c7dbd5a6551d3faa84bc58ab42386bbaee2b001a6913"
     },
     "active-preflight.json": {
-      "bytes": 2817,
+      "bytes": 2917,
       "local_path": "runs/autoresearch/ncp-20260915/active-preflight.json",
-      "sha256": "5162c827e3be22a72fd996aa39119db6a53abc74accc68747152f4d3d30037df"
+      "sha256": "1ebeaf076d77be06b7b64f5cab70ae535f759eb8113b86e5f454903ee699fb18"
     },
     "archpreview-source-result.json": {
       "bytes": 1149,
@@ -13447,9 +15518,9 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 98951,
+      "bytes": 99569,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "d377edb7f3f78605c99e70782002cf1e7144af77ec17d2879109d73e61fa4dfc"
+      "sha256": "fe3b2dc7a2af9df64788d1bbf84c85279fe67411b4a1502529c20a8b2d98fe72"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -13552,9 +15623,9 @@
       "sha256": "3dc49a54cf9e97305fbfd3bce71709898246b0f9f806694bbf8f605710179f9a"
     },
     "depth-grid-queue.log": {
-      "bytes": 3905,
+      "bytes": 4006,
       "local_path": "runs/autoresearch/ncp-20260915/depth-grid-queue.log",
-      "sha256": "5440ce249e51f14f7898efad8ffe0fe5768e996c2b75eb45af792a20242c5f58"
+      "sha256": "bea4595f265be37fafee9d36150523a7446c474f4b52872f0d447df4138d9b4d"
     },
     "depth-grid-result.json": {
       "bytes": 5774,
@@ -13731,15 +15802,30 @@
       "local_path": "runs/autoresearch/ncp-20260915/fit-1789491350188730500.py",
       "sha256": "cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3"
     },
+    "fit-1789493439.log": {
+      "bytes": 4014,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789493439.log",
+      "sha256": "03d9def0bd08a6957cb766160b5435470a4c70d5bc81cc99a0f150b78d98f00a"
+    },
+    "fit-1789493441400757800-result.json": {
+      "bytes": 122186,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789493441400757800-result.json",
+      "sha256": "d5f11f8db6abd9db1f393c711e58cc988efdc42a2d6c5374a614222a8a6d0cb1"
+    },
+    "fit-1789493441400757800.py": {
+      "bytes": 6724,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789493441400757800.py",
+      "sha256": "cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3"
+    },
     "fit-candidates.json": {
       "bytes": 1749,
       "local_path": "runs/autoresearch/ncp-20260915/fit-candidates.json",
       "sha256": "8a17ff1f4e1d32506316ede8611d679fe040fef0c5e0c5f160299a83e56ca4fa"
     },
     "fit-result.json": {
-      "bytes": 122184,
+      "bytes": 122186,
       "local_path": "runs/autoresearch/ncp-20260915/fit-result.json",
-      "sha256": "8fc58d26c45eb154c4bac6741564bc40953ef5cace2d901b73de453f729cc140"
+      "sha256": "d5f11f8db6abd9db1f393c711e58cc988efdc42a2d6c5374a614222a8a6d0cb1"
     },
     "frozen-preflight.log": {
       "bytes": 408,
@@ -13855,6 +15941,21 @@
       "bytes": 3521,
       "local_path": "runs/autoresearch/ncp-20260915/module-initialization-entry-result.json",
       "sha256": "5cba8c3e6ce9ce91d478f34ab34c0469e0bf0a612fba22faca8d90d41b50b22c"
+    },
+    "module-integration-driver.py": {
+      "bytes": 2210,
+      "local_path": "runs/autoresearch/ncp-20260915/module-integration-driver.py",
+      "sha256": "bccf95af8357534a2d94dce87d35b39f1f256de9247da0d65f0b57468bb40c75"
+    },
+    "module-integration-result.json": {
+      "bytes": 2037,
+      "local_path": "runs/autoresearch/ncp-20260915/module-integration-result.json",
+      "sha256": "73efd1bd109a10c1e18cdff2778c84df0cad8db2d82c4f92f91b83770c40de5b"
+    },
+    "module-preflight.log": {
+      "bytes": 408,
+      "local_path": "runs/autoresearch/ncp-20260915/module-preflight.log",
+      "sha256": "c5abfc9f14fbbf100b5f5ff6df799c791d757696eb38d57d0e792fe4be73fd29"
     },
     "module-preview-autoresearch.py": {
       "bytes": 29361,
@@ -14061,6 +16162,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-1789491385-result.json",
       "sha256": "5162c827e3be22a72fd996aa39119db6a53abc74accc68747152f4d3d30037df"
     },
+    "preflight-1789493476-result.json": {
+      "bytes": 2917,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-1789493476-result.json",
+      "sha256": "1ebeaf076d77be06b7b64f5cab70ae535f759eb8113b86e5f454903ee699fb18"
+    },
     "preflight-cpu-1789473248.log": {
       "bytes": 13099,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473248.log",
@@ -14116,6 +16222,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789491332.log",
       "sha256": "25e47491c8d5b68487420e79b86d750fcbc1dc82c0a8071046b17397950ba9bd"
     },
+    "preflight-cpu-1789493423.log": {
+      "bytes": 15792,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789493423.log",
+      "sha256": "93aee80b3b182fc46781c6336b8e545f2c965999c48a1100ba35fe045fe13215"
+    },
     "preflight-cuda-1789473254.log": {
       "bytes": 13004,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789473254.log",
@@ -14166,6 +16277,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789491339.log",
       "sha256": "e8c4e269892587a7a3594c2b0bbe5d030349b5755787475fcc77a7f50fe83b23"
     },
+    "preflight-cuda-1789493430.log": {
+      "bytes": 15697,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789493430.log",
+      "sha256": "f8b7bf4a0b642131faefa5e72c02298bb7fee420add20e1828477bea66e034e8"
+    },
     "preflight-launch.log": {
       "bytes": 408,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-launch.log",
@@ -14184,7 +16300,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "a38e406d79513de98fbb8ac0338113ac6e9660600e626fc8e0af0e17d4b49d90"
+      "sha256": "b17ea637edbb2dd67a2ba1257303da1ac9579e2303679d0ce47d23a5590b498e"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -14333,6 +16449,10 @@
         "published_path": "reports/source-snapshots/cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3.py",
         "sha256": "cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3"
       },
+      "fit-1789493441400757800.py": {
+        "published_path": "reports/source-snapshots/cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3.py",
+        "sha256": "cb4bea4320c202887fdf796e1efc969783bae4909d0768de4eeb3d7f6c208fc3"
+      },
       "guard-retry-queue.py": {
         "published_path": "reports/source-snapshots/4f89a9624e1d6119b4c1fd3d03e41ed8b8770e3e40c3d8d27034821add494c22.py",
         "sha256": "4f89a9624e1d6119b4c1fd3d03e41ed8b8770e3e40c3d8d27034821add494c22"
@@ -14356,6 +16476,10 @@
       "lock-tested-controller-8632.py": {
         "published_path": "reports/source-snapshots/8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14.py",
         "sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14"
+      },
+      "module-integration-driver.py": {
+        "published_path": "reports/source-snapshots/bccf95af8357534a2d94dce87d35b39f1f256de9247da0d65f0b57468bb40c75.py",
+        "sha256": "bccf95af8357534a2d94dce87d35b39f1f256de9247da0d65f0b57468bb40c75"
       },
       "module-preview-autoresearch.py": {
         "published_path": "reports/source-snapshots/bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b.py",
@@ -14435,7 +16559,7 @@
     "recorded_upstream": null,
     "snapshot_manifest": null
   },
-  "reporter_sha256": "f791bc43f312ace58b98d1c27d27e1faea790c2c94c42de0b0b96f44064d6eaf",
+  "reporter_sha256": "05c81021a7d64e7a9d14a84902b5168d57f611fc65f832a1ac564b08f7a9023b",
   "schema_version": 1,
   "seeds": [
     42,
