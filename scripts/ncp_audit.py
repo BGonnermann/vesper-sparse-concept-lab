@@ -28,7 +28,7 @@ def audit():
             controllers.append(dict(trial=directory.name,sha256=record['orchestrator_sha256'],
                 archive_verified=controller.exists(),archive_origin=origin if controller.exists() else 'unavailable',
                 limitation=('Recovered after execution from Git, matching original recorded SHA256' if origin=='git_recovery' and controller.exists()
-                    else None if controller.exists() else 'Early trial recorded controller hash without preserving controller bytes; training child source is separately archived and verified'))
+                    else None if controller.exists() else 'Early trial recorded controller hash without preserving controller bytes; training child source is separately archived and verified')))
         for relative,expected in record.get('snapshot_files',{}).items():
             assert r.digest(directory/relative)==expected,(directory,relative)
         if record['status']!='completed':
