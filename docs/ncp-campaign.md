@@ -223,3 +223,16 @@ constituent. This ranking is a hypothesis about additivity, not an estimated
 result. Exclude confirmation seeds, objective-off ablations and all previously
 attempted configurations. Exhaustion of this bounded space returns control for
 a new evidence-backed decision; it does not end the eight-hour campaign.
+
+## Controller archive correction, 13:30 UTC
+
+Trial25 copied a just-edited controller file while its running parent retained
+the earlier imported functions. Preserve both versions and the correction
+receipt. AST checks show unchanged trial, preflight, candidate and health bodies;
+the added wrapper only provides cross-process GPU exclusion. The loaded-version
+reference is reconstructed from the same-process import history, not a process
+memory measurement. Training-child project/upstream/configuration/data capture
+is unaffected and remains independently checked. Restore the live file for the
+remaining old-process trials; integrate the new controller only after that
+process exits. The new controller captures its own source bytes at import and
+archives those bytes, preventing later file edits from changing its receipts.

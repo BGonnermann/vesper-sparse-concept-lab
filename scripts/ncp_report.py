@@ -83,7 +83,16 @@ def write(final=False):
         best=min(eligible,key=lambda x:x['bpb'])
         delta=best['bpb']-controls[0]['bpb']
         result['exploratory_best']=dict(label=best['label'],bpb=best['bpb'],delta_bpb=delta,
-            screening_threshold_met=delta<=-.001,seed=42,trial=best['trial'])
+            screening_threshold_met=delta<=-.001,seed=42,trial=best['trial'],
+            added_parameters=best['total_parameters']-controls[0]['total_parameters'],
+            parameter_ratio=best['total_parameters']/controls[0]['total_parameters'],
+            update_time_ratio=best['all_update_seconds']/controls[0]['all_update_seconds'])
+    depth6=[x for x in complete if x['label']=='D6']
+    depth12=[x for x in complete if x['label']=='D12']
+    if depth6 and depth12:
+        result['depth_capacity_tradeoff']=dict(depth6_width=depth6[0]['width'],depth12_width=depth12[0]['width'],
+            depth6_parameters=depth6[0]['total_parameters'],depth12_parameters=depth12[0]['total_parameters'],
+            parameter_ratio=depth12[0]['total_parameters']/depth6[0]['total_parameters'])
     result['ncp_ablations'] = []
     for feedback, auxiliary in [('NCP','AUX'),('N-RMS','N-RMS-AUX')]:
         result['ncp_ablations'].extend(pairs(data,feedback,auxiliary,[42]))
@@ -98,6 +107,8 @@ def write(final=False):
         '512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.','',
         (f'Strongest eligible selection-seed NCP: {result["exploratory_best"]["label"]}, '
          f'{result["exploratory_best"]["bpb"]:.6f} BPB, delta {result["exploratory_best"]["delta_bpb"]:+.6f} versus D6. '
+         f'Adds {result["exploratory_best"]["added_parameters"]:,} parameters; measured update-time ratio '
+         f'{result["exploratory_best"]["update_time_ratio"]:.2f}. '
          'This is a search result; independent confirmation is reported separately.'
          if 'exploratory_best' in result else 'No completed eligible NCP screening result yet.'),'',
         '## Implementation','',
@@ -126,6 +137,11 @@ def write(final=False):
             text.append(f'| {name} | {row["seed"]} | {row["bpb"]:.6f} | {row["all_update_seconds"]:.1f} | {row["wall_seconds"]:.1f} | {row["timed_tokens_per_second"]:.0f} | {row["total_parameters"]:,} / {row["active_parameters"]:,} | {row["allocated_mib"]:.1f} / {row["reserved_mib"]:.1f} | {h["collapsed"] if h else "n/a"} |')
     text.append('\n* Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.')
     for heading,items in [('Depth6 versus depth12, reference LR .04',result['depth_confirmation']),('Frozen NCP confirmation',result.get('ncp_confirmation',[]))]:
+        if heading.startswith('Depth6') and 'depth_capacity_tradeoff' in result:
+            tradeoff=result['depth_capacity_tradeoff']
+            text.extend(['',f'Depth6 uses width {tradeoff["depth6_width"]} and {tradeoff["depth6_parameters"]:,} parameters; '
+                f'depth12 uses width {tradeoff["depth12_width"]} and {tradeoff["depth12_parameters"]:,} parameters '
+                f'({tradeoff["parameter_ratio"]:.2f} times as many). This comparison changes both depth and width.'])
         text.extend(['','## '+heading,'','| Seed | Candidate | Control | Candidate BPB | Control BPB | Delta BPB | Update-time ratio |','|---:|---|---|---:|---:|---:|---:|'])
         for x in items: text.append(f'| {x["seed"]} | {x["candidate"]} | {x["control"]} | {x["candidate_bpb"]:.6f} | {x["control_bpb"]:.6f} | {x["delta_bpb"]:+.6f} | {x["update_time_ratio"]:.2f} |')
         if not items: text.append('No completed pair yet.')
@@ -146,6 +162,11 @@ def write(final=False):
         'found dense hidden RMS12.54 too, so those stops do not establish NCP-specific divergence. The corrected guard checks '
         'token CE separately and still rejects nonfinite total loss. Initial failed attempts remain preserved, and their '
         'historical hypotheses using the word divergence are superseded by this diagnosis. Completed BPB runs never hit that gate.',
+        'Trial25 copied a newer controller file while its long-running parent retained an earlier imported controller. '
+        'Both versions and a correction receipt are retained. Their trial, preflight, candidate and health function bodies '
+        'are identical; the difference is a GPU lock wrapper. The loaded-controller reference is reconstructed from the '
+        'same-process import history, not direct process-memory inspection. Captured training-child sources and data are '
+        'independently verified. The next controller archives immutable startup source bytes to prevent recurrence.',
         'CPU/CUDA tests cover prefix causality, future-label isolation, VQ/encoder gradients, optimizer coverage, '
         'save/load, codebook learning and evaluation immutability. Every completed training child executes captured sources; '
         'the final evidence audit also verifies saved checkpoints and committed source-archive bytes.',
