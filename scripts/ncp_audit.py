@@ -1,5 +1,6 @@
 """Fresh verification of saved campaign evidence; never modifies trial artifacts."""
 import hashlib
+import ast
 import json
 import math
 from pathlib import Path
@@ -13,9 +14,16 @@ from ncp_campaign import HERE,read
 
 
 def audit():
-    verified=[]; failures=[]; by_seed={}; initializations={}; concept_initializations={}; capacity_initializations={}
+    verified=[]; failures=[]; by_seed={}; initializations={}; concept_initializations={}; capacity_initializations={}; controllers=[]
     for p in sorted(HERE.glob('trial-*/result.json')):
         record=read(p); directory=p.parent
+        if record.get('orchestrator_sha256'):
+            controller=directory/'orchestrator.py'
+            if controller.exists():
+                assert r.digest(controller)==record['orchestrator_sha256'],(directory,'controller archive hash')
+            controllers.append(dict(trial=directory.name,sha256=record['orchestrator_sha256'],
+                archive_verified=controller.exists(),
+                limitation=None if controller.exists() else 'Early trial recorded controller hash without preserving controller bytes; training child source is separately archived and verified'))
         for relative,expected in record.get('snapshot_files',{}).items():
             assert r.digest(directory/relative)==expected,(directory,relative)
         if record['status']!='completed':
@@ -61,15 +69,29 @@ def audit():
             evaluation_immutable=True,token_budget=True,paired_batch_order=True,matched_initialization=True))
     # Check Git's committed bytes, not only working-tree bytes, for published snapshots.
     archive_hashes={}
-    for p in HERE.glob('trial-*/source/**/*.py'):
+    archived_sources=list(HERE.glob('trial-*/source/**/*.py'))+list(HERE.glob('trial-*/*.py'))
+    for p in archived_sources:
         digest=r.digest(p); name='reports/source-snapshots/'+digest+'.py'
         local=r.ROOT/name
         assert local.exists() and r.digest(local)==digest,name
         if name not in archive_hashes:
             result=subprocess.run(['git','show','HEAD:'+name],cwd=r.ROOT,capture_output=True)
             archive_hashes[name]=bool(result.returncode==0 and hashlib.sha256(result.stdout).hexdigest()==digest)
+    correction_path=HERE/'orchestrator-source-correction-result.json'
+    controller_correction=None
+    if correction_path.exists():
+        correction=read(correction_path);directory=HERE/correction['trial']
+        reference=directory/'orchestrator-loaded-reference.py';archived=directory/'orchestrator.py'
+        assert r.digest(reference)==correction['loaded_controller_reference_sha256']
+        assert r.digest(archived)==correction['archived_file_sha256']
+        functions=lambda path:{n.name:n for n in ast.parse(path.read_text()).body if isinstance(n,ast.FunctionDef)}
+        left,right=functions(reference),functions(archived)
+        for name in ('trial','preflight','candidate','health'):
+            assert ast.dump(ast.Module(body=left[name].body,type_ignores=[]))==ast.dump(ast.Module(body=right[name].body,type_ignores=[]))
+        controller_correction=dict(verified=True,trial=correction['trial'],scope=correction['loaded_version_evidence'])
     result=dict(kind='campaign_evidence_audit',status='completed',verified_trials=verified,
         measured_at_utc=datetime.now(timezone.utc).isoformat(),free_disk_bytes=shutil.disk_usage(r.ROOT).free,
+        controller_archive_correction=controller_correction,controller_archives=controllers,
         preserved_noncompleted=failures,committed_source_snapshots=archive_hashes,
         all_sources_committed_and_byte_verified=all(archive_hashes.values()),
         measured_campaign_logical_bytes=sum(p.stat().st_size for p in HERE.rglob('*') if p.is_file()),

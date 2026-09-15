@@ -18,6 +18,23 @@ class ExtensionTests(unittest.TestCase):
     def setUp(self):
         self.helper=base.NCPTests()
 
+    def test_search_chunk_and_insertion_boundaries_remain_causal(self):
+        for chunk in (2,4,8):
+            for layer in (0,1,2):
+                with self.subTest(chunk=chunk,layer=layer):
+                    model=self.helper.model(pool_normalization='rms',chunk_size=chunk,after_layer=layer).eval()
+                    with torch.no_grad():
+                        for name,p in model.named_parameters():
+                            if name.endswith('c_proj.weight'): p.normal_(std=.03)
+                    ids=torch.randint(0,32,(2,20),device=self.helper.device)
+                    changed=ids.clone();changed[:,9:]=(changed[:,9:]+1)%32
+                    with torch.no_grad(),self.helper.context():
+                        full=model(ids)
+                        torch.testing.assert_close(model(changed)[:,:9],full[:,:9],atol=1e-6,rtol=1e-5)
+                        for length in sorted({1,chunk-1,chunk,chunk+1,2*chunk-1,19}):
+                            torch.testing.assert_close(model(ids[:,:length]),full[:,:length],
+                                atol=2e-3 if self.helper.device=='cuda' else 1e-6,rtol=1e-3)
+
     def test_raw_mixing_matches_zero_logit_behavior(self):
         raw=self.helper.model(mixing='raw_logits').ncp
         soft=self.helper.model().ncp
