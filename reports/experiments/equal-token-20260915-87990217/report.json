@@ -1,0 +1,504 @@
+{
+  "artifact_directory": "runs/autoresearch/equal-token-20260915",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "comparison.json": {
+      "additional_training_runs": 0,
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "identical_paired_batches": true,
+      "identical_schedule": true,
+      "matched_data_tokenizer_source_hashes": true,
+      "mean_paired_bpb_difference": 0.0005025000000000168,
+      "paired_differences": [
+        {
+          "moe_minus_dense_bpb": 0.004035000000000011,
+          "seed": 42
+        },
+        {
+          "moe_minus_dense_bpb": -0.003029999999999977,
+          "seed": 43
+        }
+      ],
+      "preliminary": true,
+      "preserved_prior_files": 560,
+      "rows": [
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 170.3994272001728,
+          "bpb": 0.634848,
+          "dropped_tokens": 0,
+          "eval_expert_fractions": [],
+          "model": "dense",
+          "peak_allocated_mib": 581.685546875,
+          "peak_reserved_mib": 622.0,
+          "result": "<repo>\\runs\\autoresearch\\equal-token-20260915\\dense-42\\result.json",
+          "seed": 42,
+          "timed_seconds": 166.1992159000947,
+          "timed_tokens": 8208384,
+          "timed_tokens_per_second": 49388.82506481983,
+          "total_parameters": 26345772,
+          "train_expert_fractions": [],
+          "training_tokens": 8388608,
+          "wall_seconds": 176.54699999999139,
+          "width": 384
+        },
+        {
+          "active_parameters": 26354988,
+          "all_update_seconds": 341.7923437002755,
+          "bpb": 0.638883,
+          "dropped_tokens": 0,
+          "eval_expert_fractions": [
+            [
+              0.2100830078125,
+              0.2785797119140625,
+              0.2690277099609375,
+              0.2423095703125
+            ],
+            [
+              0.2501373291015625,
+              0.2384490966796875,
+              0.268463134765625,
+              0.242950439453125
+            ],
+            [
+              0.2209625244140625,
+              0.2399749755859375,
+              0.2850799560546875,
+              0.2539825439453125
+            ],
+            [
+              0.310516357421875,
+              0.205169677734375,
+              0.21820068359375,
+              0.26611328125
+            ],
+            [
+              0.28607177734375,
+              0.1633758544921875,
+              0.27752685546875,
+              0.2730255126953125
+            ],
+            [
+              0.297119140625,
+              0.260345458984375,
+              0.164031982421875,
+              0.27850341796875
+            ]
+          ],
+          "model": "moe",
+          "peak_allocated_mib": 902.06982421875,
+          "peak_reserved_mib": 956.0,
+          "result": "<repo>\\runs\\autoresearch\\equal-token-20260915\\moe-42\\result.json",
+          "seed": 42,
+          "timed_seconds": 333.1434302002017,
+          "timed_tokens": 8208384,
+          "timed_tokens_per_second": 24639.189177667988,
+          "total_parameters": 47588652,
+          "train_expert_fractions": [
+            [
+              0.22484838962554932,
+              0.20990514755249023,
+              0.3299607038497925,
+              0.23528575897216797
+            ],
+            [
+              0.26029443740844727,
+              0.2462162971496582,
+              0.27045297622680664,
+              0.2230362892150879
+            ],
+            [
+              0.2476280927658081,
+              0.2587398290634155,
+              0.24596655368804932,
+              0.24766552448272705
+            ],
+            [
+              0.23514068126678467,
+              0.2246953248977661,
+              0.24122357368469238,
+              0.29894042015075684
+            ],
+            [
+              0.26610445976257324,
+              0.24160683155059814,
+              0.28229212760925293,
+              0.20999658107757568
+            ],
+            [
+              0.26594090461730957,
+              0.2665156126022339,
+              0.17160439491271973,
+              0.2959390878677368
+            ]
+          ],
+          "training_tokens": 8388608,
+          "wall_seconds": 349.6570000000065,
+          "width": 384
+        },
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 169.78597579995403,
+          "bpb": 0.637774,
+          "dropped_tokens": 0,
+          "eval_expert_fractions": [],
+          "model": "dense",
+          "peak_allocated_mib": 581.685546875,
+          "peak_reserved_mib": 622.0,
+          "result": "<repo>\\runs\\autoresearch\\equal-token-20260915\\dense-43\\result.json",
+          "seed": 43,
+          "timed_seconds": 165.81921759995748,
+          "timed_tokens": 8208384,
+          "timed_tokens_per_second": 49502.00657563653,
+          "total_parameters": 26345772,
+          "train_expert_fractions": [],
+          "training_tokens": 8388608,
+          "wall_seconds": 175.82800000000861,
+          "width": 384
+        },
+        {
+          "active_parameters": 26354988,
+          "all_update_seconds": 336.6736934003129,
+          "bpb": 0.634744,
+          "dropped_tokens": 0,
+          "eval_expert_fractions": [
+            [
+              0.228271484375,
+              0.22027587890625,
+              0.266998291015625,
+              0.284454345703125
+            ],
+            [
+              0.2415771484375,
+              0.28033447265625,
+              0.2535400390625,
+              0.22454833984375
+            ],
+            [
+              0.2349700927734375,
+              0.306488037109375,
+              0.205169677734375,
+              0.2533721923828125
+            ],
+            [
+              0.3294677734375,
+              0.171295166015625,
+              0.2853240966796875,
+              0.2139129638671875
+            ],
+            [
+              0.2093505859375,
+              0.248291015625,
+              0.2759552001953125,
+              0.2664031982421875
+            ],
+            [
+              0.1864776611328125,
+              0.197021484375,
+              0.2979736328125,
+              0.3185272216796875
+            ]
+          ],
+          "model": "moe",
+          "peak_allocated_mib": 904.44677734375,
+          "peak_reserved_mib": 956.0,
+          "result": "<repo>\\runs\\autoresearch\\equal-token-20260915\\moe-43\\result.json",
+          "seed": 43,
+          "timed_seconds": 328.39505070028827,
+          "timed_tokens": 8208384,
+          "timed_tokens_per_second": 24995.455876987107,
+          "total_parameters": 47588652,
+          "train_expert_fractions": [
+            [
+              0.2528195381164551,
+              0.24565577507019043,
+              0.24473488330841064,
+              0.25678980350494385
+            ],
+            [
+              0.24618470668792725,
+              0.22835230827331543,
+              0.26016366481781006,
+              0.26529932022094727
+            ],
+            [
+              0.26057541370391846,
+              0.25156867504119873,
+              0.23018324375152588,
+              0.25767266750335693
+            ],
+            [
+              0.25829625129699707,
+              0.22551608085632324,
+              0.30535244941711426,
+              0.21083521842956543
+            ],
+            [
+              0.2599996328353882,
+              0.24223947525024414,
+              0.24776458740234375,
+              0.24999630451202393
+            ],
+            [
+              0.2222808599472046,
+              0.13376879692077637,
+              0.30092501640319824,
+              0.3430253267288208
+            ]
+          ],
+          "training_tokens": 8388608,
+          "wall_seconds": 344.1720000000205,
+          "width": 384
+        }
+      ],
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "status": "completed",
+      "training_runs": 4
+    },
+    "contract.json": {
+      "runs": 4,
+      "seeds": [
+        42,
+        43
+      ]
+    },
+    "preflight.json": {
+      "source_hashes": {
+        "autoresearch.py": "1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_model.py": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+        "autoresearch_train.py": "f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523"
+      }
+    },
+    "protocol-42.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "optimizer_updates": 512,
+      "protocol_id": "vesper-tinystories-equal-token-v1",
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "seed": 42,
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "stopping_rule": "optimizer_updates",
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "protocol-43.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "optimizer_updates": 512,
+      "protocol_id": "vesper-tinystories-equal-token-v1",
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "seed": 43,
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "stopping_rule": "optimizer_updates",
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    }
+  },
+  "diagnostics": [
+    "preflight.log:\ntest_failed_process_is_not_promoted_by_valid_looking_output (test_autoresearch.ResultsTests.test_failed_process_is_not_promoted_by_valid_looking_output) ... ok\ntest_protocol_rejects_partial_batches_and_unbounded_timeouts (test_autoresearch.ResultsTests.test_protocol_rejects_partial_batches_and_unbounded_timeouts) ... ok\ntest_timeout_terminates_child_and_preserves_partial_output (test_autoresearch.ResultsTests.test_timeout_terminates_child_and_preserves_partial_output) ... ok\ntest_windows_taskkill_timeout_still_kills_owned_child (test_autoresearch.ResultsTests.test_windows_taskkill_timeout_still_kills_owned_child) ... ok\nok\nRan 30 tests in 5.162s\nOK\ncuda correctness exit: 0"
+  ],
+  "evidence": {
+    "comparison.json": {
+      "bytes": 7398,
+      "local_path": "runs/autoresearch/equal-token-20260915/comparison.json",
+      "sha256": "20f1580a92b5c7cf2d67239577ac730ee8236d9c4c05a003cd74f633e6d0b272"
+    },
+    "contract.json": {
+      "bytes": 397,
+      "local_path": "runs/autoresearch/equal-token-20260915/contract.json",
+      "sha256": "4eab80e8839524a07533b373ab831504e81d535593166a3ba2bcd1058d3da8e8"
+    },
+    "driver.py": {
+      "bytes": 5517,
+      "local_path": "runs/autoresearch/equal-token-20260915/driver.py",
+      "sha256": "024c9a6443e188c6df6d86ec07e992e679c28014ae417eff1fa94269dd893ca1"
+    },
+    "expected-schedule.json": {
+      "bytes": 83096,
+      "local_path": "runs/autoresearch/equal-token-20260915/expected-schedule.json",
+      "sha256": "2a0e2fa1d64d8f900cf9a723b86aabdf0ffe50f034ceb78e29dbb5c75d7b27e4"
+    },
+    "initialization-dense-42.json": {
+      "bytes": 4828,
+      "local_path": "runs/autoresearch/equal-token-20260915/initialization-dense-42.json",
+      "sha256": "3cb41a47563f815674a0937b52c2da455eb0c651c402da6cc52a40a1f5bbc39f"
+    },
+    "initialization-dense-43.json": {
+      "bytes": 4828,
+      "local_path": "runs/autoresearch/equal-token-20260915/initialization-dense-43.json",
+      "sha256": "da25d89c8cbb016625984067dde93b0d51a904158f00a8bbedb92917c349f0ee"
+    },
+    "initialization-moe-42.json": {
+      "bytes": 9808,
+      "local_path": "runs/autoresearch/equal-token-20260915/initialization-moe-42.json",
+      "sha256": "3325837b9b53f8ce2d785125456fe8632e8863d348e62bb8ee80814c22ed982c"
+    },
+    "initialization-moe-43.json": {
+      "bytes": 9808,
+      "local_path": "runs/autoresearch/equal-token-20260915/initialization-moe-43.json",
+      "sha256": "e7543caae37870abc7a5e9bb887afff4ce69b7b6554fc799a24ee54e5e67d9f3"
+    },
+    "order-42.json": {
+      "bytes": 89119,
+      "local_path": "runs/autoresearch/equal-token-20260915/order-42.json",
+      "sha256": "0dcd75ceb1791dafa39d8ab5aafa8d8663a33afda8056587ba1e32be0350495b"
+    },
+    "order-43.json": {
+      "bytes": 89119,
+      "local_path": "runs/autoresearch/equal-token-20260915/order-43.json",
+      "sha256": "053dc53c398b50077ed234df6fde1195982e20166985730247c5c085327e9d97"
+    },
+    "preflight.json": {
+      "bytes": 526,
+      "local_path": "runs/autoresearch/equal-token-20260915/preflight.json",
+      "sha256": "444e89e6e2ebe2c1d68aca8baaeca5366dcfda126e708ec28d0c0a83d7d622fe"
+    },
+    "preflight.log": {
+      "bytes": 10226,
+      "local_path": "runs/autoresearch/equal-token-20260915/preflight.log",
+      "sha256": "b89b116176b82e5a2a6c28468979f86e4720f669e7edc2be794021c9009436c2"
+    },
+    "prepare_batches.py": {
+      "bytes": 3653,
+      "local_path": "runs/autoresearch/equal-token-20260915/prepare_batches.py",
+      "sha256": "3f846846e0af526becf74ca16707d6e91146b681c46a4dfc34ebe5fa6bb3152e"
+    },
+    "prior-artifacts.json": {
+      "bytes": 85242,
+      "local_path": "runs/autoresearch/equal-token-20260915/prior-artifacts.json",
+      "sha256": "461f3d8e5e1ee5a6224498ce7e5d7e49061d6be86ce5e71a34416b169655e972"
+    },
+    "prior-autoresearch.py": {
+      "bytes": 22034,
+      "local_path": "runs/autoresearch/equal-token-20260915/prior-autoresearch.py",
+      "sha256": "a48bb0be37fb6e366cd2e82122b2d08124ed07350b6d657a09bd5042b06bce65"
+    },
+    "prior-autoresearch_model.py": {
+      "bytes": 13486,
+      "local_path": "runs/autoresearch/equal-token-20260915/prior-autoresearch_model.py",
+      "sha256": "b636fceaa598764d9cc0e21c053f918f6985b75db6daac2966e384482a3377eb"
+    },
+    "prior-autoresearch_train.py": {
+      "bytes": 6183,
+      "local_path": "runs/autoresearch/equal-token-20260915/prior-autoresearch_train.py",
+      "sha256": "d6ddd3c3f022788347836208fe0c0c52d5d1144acf97892a258be6dc4f055fb2"
+    },
+    "protocol-42.json": {
+      "bytes": 929,
+      "local_path": "runs/autoresearch/equal-token-20260915/protocol-42.json",
+      "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
+    },
+    "protocol-43.json": {
+      "bytes": 929,
+      "local_path": "runs/autoresearch/equal-token-20260915/protocol-43.json",
+      "sha256": "dc028113a01996d2030183ebb53dfed924575fdcc2646cb10f0d9a49d71b1c16"
+    },
+    "report.log": {
+      "bytes": 7398,
+      "local_path": "runs/autoresearch/equal-token-20260915/report.log",
+      "sha256": "20f1580a92b5c7cf2d67239577ac730ee8236d9c4c05a003cd74f633e6d0b272"
+    },
+    "report.md": {
+      "bytes": 4013,
+      "local_path": "runs/autoresearch/equal-token-20260915/report.md",
+      "sha256": "e098c91421f26952e54766ca37d14097ed36df47997238c5523815da4d52f5b4"
+    },
+    "report.py": {
+      "bytes": 7442,
+      "local_path": "runs/autoresearch/equal-token-20260915/report.py",
+      "sha256": "b1ee57028827fbbe4b5309ac15b686840490cd3fbfe0bffa3c185f209e1bdc2a"
+    }
+  },
+  "experiment_id": "equal-token-20260915-87990217",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "completed",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {
+      "driver.py": {
+        "published_path": "reports/source-snapshots/024c9a6443e188c6df6d86ec07e992e679c28014ae417eff1fa94269dd893ca1.py",
+        "sha256": "024c9a6443e188c6df6d86ec07e992e679c28014ae417eff1fa94269dd893ca1"
+      },
+      "prepare_batches.py": {
+        "published_path": "reports/source-snapshots/3f846846e0af526becf74ca16707d6e91146b681c46a4dfc34ebe5fa6bb3152e.py",
+        "sha256": "3f846846e0af526becf74ca16707d6e91146b681c46a4dfc34ebe5fa6bb3152e"
+      },
+      "prior-autoresearch.py": {
+        "published_path": "reports/source-snapshots/a48bb0be37fb6e366cd2e82122b2d08124ed07350b6d657a09bd5042b06bce65.py",
+        "sha256": "a48bb0be37fb6e366cd2e82122b2d08124ed07350b6d657a09bd5042b06bce65"
+      },
+      "prior-autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/b636fceaa598764d9cc0e21c053f918f6985b75db6daac2966e384482a3377eb.py",
+        "sha256": "b636fceaa598764d9cc0e21c053f918f6985b75db6daac2966e384482a3377eb"
+      },
+      "prior-autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/d6ddd3c3f022788347836208fe0c0c52d5d1144acf97892a258be6dc4f055fb2.py",
+        "sha256": "d6ddd3c3f022788347836208fe0c0c52d5d1144acf97892a258be6dc4f055fb2"
+      },
+      "report.py": {
+        "published_path": "reports/source-snapshots/b1ee57028827fbbe4b5309ac15b686840490cd3fbfe0bffa3c185f209e1bdc2a.py",
+        "sha256": "b1ee57028827fbbe4b5309ac15b686840490cd3fbfe0bffa3c185f209e1bdc2a"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": [
+    42,
+    43
+  ]
+}

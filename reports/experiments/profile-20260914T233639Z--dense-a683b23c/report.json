@@ -1,0 +1,94 @@
+{
+  "artifact_directory": "runs/autoresearch/profile-20260914T233639Z/dense",
+  "budget_family": "wall_time_budget",
+  "compatibility_fingerprint": "e65007798a178d7fda447c5cf3efa7c868856c75dd39216f4541587b81aaee29",
+  "configuration": null,
+  "details": {
+    "candidate.json": {
+      "depth": 6,
+      "feedforward": "dense",
+      "matrix_lr": 0.04
+    },
+    "protocol.json": {
+      "baseline_timeout_seconds": 900,
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "protocol_id": "vesper-dense-tinystories-v1",
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    }
+  },
+  "diagnostics": [
+    "profile.log:\nTraceback (most recent call last):\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type dtype is not JSON serializable"
+  ],
+  "evidence": {
+    "candidate.json": {
+      "bytes": 69,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/dense/candidate.json",
+      "sha256": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7"
+    },
+    "expert-rows.json": {
+      "bytes": 4,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/dense/expert-rows.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    "operators.json": {
+      "bytes": 224056,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/dense/operators.json",
+      "sha256": "a5a3fcfc63618c47c2665bf07b96052607f307cb9cd36026c117edb6f89e1c8a"
+    },
+    "profile.log": {
+      "bytes": 2620,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/dense/profile.log",
+      "sha256": "8d1395c28353bdabadd4e6f84d2d44cd87d5a6551aabcdb7ec96a3dd1b7c1b39"
+    },
+    "protocol.json": {
+      "bytes": 314,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/dense/protocol.json",
+      "sha256": "55ca797022f1f47e7c1970767577320f1cac09ce4ac00b96f0c95cb190445b45"
+    },
+    "trace.json": {
+      "bytes": 9555746,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/dense/trace.json",
+      "sha256": "851244f47cbe6a908959daa41e4fcb3cc77cd84b79528aed1e5ba0906accff37"
+    }
+  },
+  "experiment_id": "profile-20260914T233639Z--dense-a683b23c",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stage_evidence_only",
+  "protocol": {
+    "baseline_timeout_seconds": 900,
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "protocol_id": "vesper-dense-tinystories-v1",
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}

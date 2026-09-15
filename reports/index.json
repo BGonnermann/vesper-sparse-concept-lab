@@ -1,0 +1,543 @@
+{
+  "experiments": [
+    {
+      "artifact_directory": "runs/autoresearch/20260914T220045Z-0c8b28f2",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "939e3982a315eb37023e0dc3cd899accd2eb09c6a3b5dfd38646a58830702d15",
+      "experiment_id": "20260914T220045Z-0c8b28f2-8bacd15f",
+      "metrics": {
+        "depth": 4.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 11.5,
+        "num_steps": 3.0,
+        "peak_vram_mb": 272.0,
+        "total_seconds": 2.8,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 2.237952
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T220112Z-d2949ab5",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "eed4e054ed2bbe77e02a89dc5e14fec905535e6dde164265dd35eeb64803e90c",
+      "experiment_id": "20260914T220112Z-d2949ab5-52b942ca",
+      "metrics": {
+        "depth": 4.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 11.5,
+        "num_steps": 804.0,
+        "peak_vram_mb": 272.0,
+        "total_seconds": 306.4,
+        "total_tokens_M": 13.2,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.3,
+        "val_bpb": 0.630201
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T221250Z-d8128dbb",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "939e3982a315eb37023e0dc3cd899accd2eb09c6a3b5dfd38646a58830702d15",
+      "experiment_id": "20260914T221250Z-d8128dbb-992f6acd",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 3.0,
+        "peak_vram_mb": 434.9,
+        "total_seconds": 3.6,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 2.672052
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T221311Z-2b4d0181",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "eed4e054ed2bbe77e02a89dc5e14fec905535e6dde164265dd35eeb64803e90c",
+      "experiment_id": "20260914T221311Z-2b4d0181-6e6802d6",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 556.0,
+        "peak_vram_mb": 434.9,
+        "total_seconds": 309.0,
+        "total_tokens_M": 9.1,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.2,
+        "val_bpb": 0.626839
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T222401Z-ed834945",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "939e3982a315eb37023e0dc3cd899accd2eb09c6a3b5dfd38646a58830702d15",
+      "experiment_id": "20260914T222401Z-ed834945-9ebcf794",
+      "metrics": {
+        "depth": 8.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 50.3,
+        "num_steps": 3.0,
+        "peak_vram_mb": 722.8,
+        "total_seconds": 5.2,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 2.663813
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T222428Z-25defc6f",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "eed4e054ed2bbe77e02a89dc5e14fec905535e6dde164265dd35eeb64803e90c",
+      "experiment_id": "20260914T222428Z-25defc6f-91e1deaa",
+      "metrics": {
+        "depth": 8.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 50.3,
+        "num_steps": 446.0,
+        "peak_vram_mb": 722.8,
+        "total_seconds": 311.0,
+        "total_tokens_M": 7.3,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.3,
+        "val_bpb": 0.630906
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T231448Z-edc7928a",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "d137f8c617a357c40c42be253b15bfbf5e3a3ff29d1a73267475a61d4fddfd6a",
+      "experiment_id": "20260914T231448Z-edc7928a-3236b56c",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 3.0,
+        "peak_vram_mb": 434.9,
+        "total_seconds": 4.0,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 2.672052
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T231516Z-5599ce3e",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "d137f8c617a357c40c42be253b15bfbf5e3a3ff29d1a73267475a61d4fddfd6a",
+      "experiment_id": "20260914T231516Z-5599ce3e-9f9bbd6c",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 3.0,
+        "peak_vram_mb": 724.1,
+        "total_seconds": 7.8,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 3.031074
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T231604Z-061092d4",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "fb1ffe059a232c28c735ca6e3d40c6c85de9dd2be855fcd1e9e372e2e87033a9",
+      "experiment_id": "20260914T231604Z-061092d4-7f5eea30",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 546.0,
+        "peak_vram_mb": 434.9,
+        "total_seconds": 308.7,
+        "total_tokens_M": 8.9,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.1,
+        "val_bpb": 0.628327
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/20260914T232147Z-ff9e4e60",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "fb1ffe059a232c28c735ca6e3d40c6c85de9dd2be855fcd1e9e372e2e87033a9",
+      "experiment_id": "20260914T232147Z-ff9e4e60-dab09d9c",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 235.0,
+        "peak_vram_mb": 729.3,
+        "total_seconds": 318.6,
+        "total_tokens_M": 3.9,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.2,
+        "val_bpb": 0.742139
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/checkpoint-20260915T010035Z",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "checkpoint-20260915T010035Z-8b47a499",
+      "metrics": null,
+      "outcome": "complete"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/checkpoint-20260915T010035Z-dense-baseline",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "a3ba685bd0c967f6919c027b01b9f86550f29d0ef6bef2459914e0f794563b52",
+      "experiment_id": "checkpoint-20260915T010035Z-dense-baseline-71446cab",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 884.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 306.4,
+        "total_tokens_M": 14.5,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.1,
+        "val_bpb": 0.584336
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/checkpoint-20260915T010035Z-dense-smoke",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "f8878d47c596cde7a9ade8900caf7a4bf3afd6db265781e5dc019978ef4daf5a",
+      "experiment_id": "checkpoint-20260915T010035Z-dense-smoke-5558d161",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 3.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 3.0,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 2.672052
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/checkpoint-20260915T010035Z-moe-baseline",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "a3ba685bd0c967f6919c027b01b9f86550f29d0ef6bef2459914e0f794563b52",
+      "experiment_id": "checkpoint-20260915T010035Z-moe-baseline-fd08ef92",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 477.0,
+        "peak_vram_mb": 902.8,
+        "total_seconds": 319.9,
+        "total_tokens_M": 7.8,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.4,
+        "val_bpb": 0.650426
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/checkpoint-20260915T010035Z-moe-smoke",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "f8878d47c596cde7a9ade8900caf7a4bf3afd6db265781e5dc019978ef4daf5a",
+      "experiment_id": "checkpoint-20260915T010035Z-moe-smoke-37ca7502",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 3.0,
+        "peak_vram_mb": 897.4,
+        "total_seconds": 4.0,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 3.031074
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/depth6-20260914T221238Z",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "depth6-20260914T221238Z-9f83cf06",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/depth8-20260914T222337Z",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "depth8-20260914T222337Z-1f65b29f",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/equal-token-20260915/dense-42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "30954ea7cda0ceed314c8761ec7b643dafd5d46de0d605fc94979e0f9e43bdc1",
+      "experiment_id": "equal-token-20260915--dense-42-7de9dd08",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 512.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 172.8,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 166.2,
+        "val_bpb": 0.634848
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/equal-token-20260915/dense-43",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "c45e4fa41470a2b8a94568795245e8a1f8437073cd42690ac1d91d39e4fe14f6",
+      "experiment_id": "equal-token-20260915--dense-43-6c16aa71",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 512.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 172.1,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 165.8,
+        "val_bpb": 0.637774
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/equal-token-20260915/moe-42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "30954ea7cda0ceed314c8761ec7b643dafd5d46de0d605fc94979e0f9e43bdc1",
+      "experiment_id": "equal-token-20260915--moe-42-ee5d3349",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 512.0,
+        "peak_vram_mb": 902.1,
+        "total_seconds": 345.5,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 333.1,
+        "val_bpb": 0.638883
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/equal-token-20260915/moe-43",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "c45e4fa41470a2b8a94568795245e8a1f8437073cd42690ac1d91d39e4fe14f6",
+      "experiment_id": "equal-token-20260915--moe-43-37c9e4d5",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 512.0,
+        "peak_vram_mb": 904.4,
+        "total_seconds": 340.0,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 328.4,
+        "val_bpb": 0.634744
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/equal-token-20260915",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "equal-token-20260915-87990217",
+      "metrics": null,
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/moe-feasibility-20260914T224538Z",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "moe-feasibility-20260914T224538Z-d3d2dbbe",
+      "metrics": null,
+      "outcome": "stopped"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/moe-resume-20260914T231300Z",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "moe-resume-20260914T231300Z-62aecf08",
+      "metrics": null,
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/packed-20260915T002151Z-dense-baseline",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "98216a105e680926d6a4da5c4b1f65c350800e2ee726708ae659b8dc3536fee4",
+      "experiment_id": "packed-20260915T002151Z-dense-baseline-0fa9c907",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 541.0,
+        "peak_vram_mb": 434.9,
+        "total_seconds": 309.2,
+        "total_tokens_M": 8.9,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.5,
+        "val_bpb": 0.630091
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/packed-20260915T002151Z-dense-smoke",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "f5a3baeac901e763323fbd9bffcb93102b8722a02be70fe145a1090a80028013",
+      "experiment_id": "packed-20260915T002151Z-dense-smoke-0ad94d98",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 3.0,
+        "peak_vram_mb": 434.9,
+        "total_seconds": 3.4,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 2.672052
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/packed-20260915T002151Z-moe-baseline",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "98216a105e680926d6a4da5c4b1f65c350800e2ee726708ae659b8dc3536fee4",
+      "experiment_id": "packed-20260915T002151Z-moe-baseline-aa31ead4",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 295.0,
+        "peak_vram_mb": 729.4,
+        "total_seconds": 315.8,
+        "total_tokens_M": 4.8,
+        "train_batch_size": 2.0,
+        "training_seconds": 301.0,
+        "val_bpb": 0.706799
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/packed-20260915T002151Z-moe-smoke",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "f5a3baeac901e763323fbd9bffcb93102b8722a02be70fe145a1090a80028013",
+      "experiment_id": "packed-20260915T002151Z-moe-smoke-51082a6a",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 3.0,
+        "peak_vram_mb": 724.1,
+        "total_seconds": 5.3,
+        "total_tokens_M": 0.0,
+        "train_batch_size": 2.0,
+        "training_seconds": 0.0,
+        "val_bpb": 3.031074
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/packed-dispatch-20260915T002151Z",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "e65007798a178d7fda447c5cf3efa7c868856c75dd39216f4541587b81aaee29",
+      "experiment_id": "packed-dispatch-20260915T002151Z-4c52ac61",
+      "metrics": null,
+      "outcome": "complete"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/profile-20260914T233639Z/dense",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "e65007798a178d7fda447c5cf3efa7c868856c75dd39216f4541587b81aaee29",
+      "experiment_id": "profile-20260914T233639Z--dense-a683b23c",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/profile-20260914T233639Z/moe",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "e65007798a178d7fda447c5cf3efa7c868856c75dd39216f4541587b81aaee29",
+      "experiment_id": "profile-20260914T233639Z--moe-7b14abc0",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/profile-20260914T233639Z/retry/dense",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "74825d0be2ea6d9d2ebbef6fc3f746e50e64354b1360f602360c8f6234466baa",
+      "experiment_id": "profile-20260914T233639Z--retry--dense-4452f4ee",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/profile-20260914T233639Z/retry/moe",
+      "budget_family": "wall_time_budget",
+      "compatibility_fingerprint": "b9d30399af8605edbef4f66e847e6644c3e1cd851ad8fe75b8da5743addfc608",
+      "experiment_id": "profile-20260914T233639Z--retry--moe-b2ef3751",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/profile-20260914T233639Z/retry",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "profile-20260914T233639Z--retry-7bb767a0",
+      "metrics": null,
+      "outcome": "complete"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/profile-20260914T233639Z",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "profile-20260914T233639Z-aed04b08",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/profile-20260914T234148Z",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "profile-20260914T234148Z-ff759ac7",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/stages-20260914T215602Z",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "stages-20260914T215602Z-60b356fc",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    }
+  ],
+  "schema_version": 1
+}

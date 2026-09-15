@@ -1,0 +1,1658 @@
+{
+  "artifact_directory": "runs/autoresearch/checkpoint-20260915T010035Z",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "comparison.json": {
+      "cpu_tests_passed": 27,
+      "cuda_tests_passed": 27,
+      "limitations": [
+        "Three short paired measurements, one saved checkpoint per model",
+        "No profiler in throughput; standalone memory passes are separate",
+        "Replay omits CPU packing; actual baselines include it",
+        "Background GPU allocations/clocks were not controlled",
+        "One seed and unequal dense/MoE parameter budgets; quality comparison preliminary",
+        "No fresh checkpoint-on training controls; previous on baselines are historical"
+      ],
+      "matched_fields": [
+        "protocol",
+        "upstream",
+        "data_seal",
+        "seed",
+        "runner_sha256",
+        "adapter_sha256",
+        "model_sha256",
+        "bootstrap_sha256",
+        "record_version",
+        "orchestrator_sha256",
+        "checkpoint_probe_hashes"
+      ],
+      "preserved_prior_files": 402,
+      "probes": {
+        "dense": {
+          "batch_sha256": "37593e7fc43e4931e717ab2894183b7a02500298f53ffb3a2e20fecc2f55be11",
+          "checkpoint_sha256": "7aa8e3d17f7dcfa9fa0e959f1a12629006afc25faa0eec593d9c84fd4c83936c",
+          "comfortable_memory": true,
+          "correctness_passed": true,
+          "gate_passed": true,
+          "gpu": "NVIDIA GeForce RTX 5070 Ti",
+          "limitations": "Three short pairs; same saved weights, fresh warmed optimizer; no profiler; replay omits CPU packing; background GPU load/clocks uncontrolled. Free VRAM sampled at update boundaries.",
+          "max_gradient_error": 0.0,
+          "memory": {
+            "off": {
+              "minimum_free_bytes_at_update_boundaries": 13614739456,
+              "peak_allocated_bytes": 609810944,
+              "peak_reserved_bytes": 648019968,
+              "physical_bytes": 17094475776,
+              "scope": "Single model and warmed optimizer; unused cache released before this condition; memory pass excluded from throughput"
+            },
+            "on": {
+              "minimum_free_bytes_at_update_boundaries": 13919260672,
+              "peak_allocated_bytes": 456279040,
+              "peak_reserved_bytes": 507510784,
+              "physical_bytes": 17094475776,
+              "scope": "Single model and warmed optimizer; unused cache released before this condition; memory pass excluded from throughput"
+            }
+          },
+          "modes": {
+            "off": {
+              "protocol": {
+                "activation_checkpointing": false,
+                "baseline_timeout_seconds": 900,
+                "eval_batch_size": 2,
+                "eval_tokens": 65536,
+                "microbatch_size": 2,
+                "protocol_id": "vesper-dense-tinystories-v1",
+                "sequence_length": 512,
+                "smoke_eval_tokens": 8192,
+                "smoke_timeout_seconds": 180,
+                "tokens_per_update": 16384,
+                "training_seconds": 300
+              },
+              "timed_routing_counts": [],
+              "timed_seconds": 2.0710917000251357,
+              "timed_tokens": 98304,
+              "tokens_per_second": 47464.82253721887,
+              "update_seconds": {
+                "max": 0.36239840000052936,
+                "mean": 0.3451819500041893,
+                "min": 0.3301686000195332,
+                "samples": [
+                  0.340790799993556,
+                  0.34378450000076555,
+                  0.3400395000062417,
+                  0.35390990000450984,
+                  0.3301686000195332,
+                  0.36239840000052936
+                ]
+              }
+            },
+            "on": {
+              "protocol": {
+                "activation_checkpointing": true,
+                "baseline_timeout_seconds": 900,
+                "eval_batch_size": 2,
+                "eval_tokens": 65536,
+                "microbatch_size": 2,
+                "protocol_id": "vesper-dense-tinystories-v1",
+                "sequence_length": 512,
+                "smoke_eval_tokens": 8192,
+                "smoke_timeout_seconds": 180,
+                "tokens_per_update": 16384,
+                "training_seconds": 300
+              },
+              "timed_routing_counts": [],
+              "timed_seconds": 3.313526800076943,
+              "timed_tokens": 98304,
+              "tokens_per_second": 29667.48299658156,
+              "update_seconds": {
+                "max": 0.567317400011234,
+                "mean": 0.5522544666794905,
+                "min": 0.5392836000246461,
+                "samples": [
+                  0.544498700008262,
+                  0.5392836000246461,
+                  0.567317400011234,
+                  0.5539795000222512,
+                  0.5567757000098936,
+                  0.551671900000656
+                ]
+              }
+            }
+          },
+          "nonzero_lr_updates": 0,
+          "off_throughput_gain": 0.5998938144731729,
+          "pairs": [
+            {
+              "off_throughput_gain": 0.583145491871965,
+              "order": [
+                "on",
+                "off"
+              ],
+              "pair": 0,
+              "seconds": {
+                "off": 0.6845752999943215,
+                "on": 1.083782300032908
+              }
+            },
+            {
+              "off_throughput_gain": 0.6158193955007563,
+              "order": [
+                "off",
+                "on"
+              ],
+              "pair": 1,
+              "seconds": {
+                "off": 0.6939494000107516,
+                "on": 1.1212969000334851
+              }
+            },
+            {
+              "off_throughput_gain": 0.600491504761907,
+              "order": [
+                "on",
+                "off"
+              ],
+              "pair": 2,
+              "seconds": {
+                "off": 0.6925670000200626,
+                "on": 1.1084476000105496
+              }
+            }
+          ],
+          "precision": "torch.bfloat16",
+          "routing": {
+            "aux_loss_weight": 0.0,
+            "eval": {
+              "counts": [],
+              "dropped_tokens": 0,
+              "fractions": [],
+              "tokens": 0
+            },
+            "feedforward": "dense",
+            "num_experts": 0,
+            "router_gradient_max_abs": [],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [],
+              "dropped_tokens": 0,
+              "fractions": [],
+              "tokens": 460800
+            },
+            "training_auxiliary_loss": 0.0,
+            "training_cross_entropy": 1.7917115147908529,
+            "weighted_training_auxiliary_loss": 0.0
+          },
+          "torch": "2.9.1+cu128",
+          "variant": "dense",
+          "weights_unchanged": true
+        },
+        "moe": {
+          "batch_sha256": "37593e7fc43e4931e717ab2894183b7a02500298f53ffb3a2e20fecc2f55be11",
+          "checkpoint_sha256": "39fe7bba80e93aabdc3cb576d6f4e47fd42255a4f731af7d2566264a56d6f3f1",
+          "comfortable_memory": true,
+          "correctness_passed": true,
+          "gate_passed": true,
+          "gpu": "NVIDIA GeForce RTX 5070 Ti",
+          "limitations": "Three short pairs; same saved weights, fresh warmed optimizer; no profiler; replay omits CPU packing; background GPU load/clocks uncontrolled. Free VRAM sampled at update boundaries.",
+          "max_gradient_error": 0.0,
+          "memory": {
+            "off": {
+              "minimum_free_bytes_at_update_boundaries": 14702084096,
+              "peak_allocated_bytes": 940101120,
+              "peak_reserved_bytes": 994050048,
+              "physical_bytes": 17094475776,
+              "scope": "Single model and warmed optimizer; unused cache released before this condition; memory pass excluded from throughput"
+            },
+            "on": {
+              "minimum_free_bytes_at_update_boundaries": 13299085312,
+              "peak_allocated_bytes": 759058944,
+              "peak_reserved_bytes": 834666496,
+              "physical_bytes": 17094475776,
+              "scope": "Single model and warmed optimizer; unused cache released before this condition; memory pass excluded from throughput"
+            }
+          },
+          "modes": {
+            "off": {
+              "protocol": {
+                "activation_checkpointing": false,
+                "baseline_timeout_seconds": 900,
+                "eval_batch_size": 2,
+                "eval_tokens": 65536,
+                "microbatch_size": 2,
+                "protocol_id": "vesper-dense-tinystories-v1",
+                "sequence_length": 512,
+                "smoke_eval_tokens": 8192,
+                "smoke_timeout_seconds": 180,
+                "tokens_per_update": 16384,
+                "training_seconds": 300
+              },
+              "timed_routing_counts": [
+                [
+                  31792,
+                  30123,
+                  21024,
+                  15365
+                ],
+                [
+                  19293,
+                  27926,
+                  23662,
+                  27423
+                ],
+                [
+                  31407,
+                  26146,
+                  20662,
+                  20089
+                ],
+                [
+                  19479,
+                  25438,
+                  25165,
+                  28222
+                ],
+                [
+                  32227,
+                  20843,
+                  23619,
+                  21615
+                ],
+                [
+                  36332,
+                  17141,
+                  15908,
+                  28923
+                ]
+              ],
+              "timed_seconds": 4.494339399941964,
+              "timed_tokens": 98304,
+              "tokens_per_second": 21872.84743143106,
+              "update_seconds": {
+                "max": 0.7677794999908656,
+                "mean": 0.749056566656994,
+                "min": 0.7325042999873403,
+                "samples": [
+                  0.7370578999980353,
+                  0.7564667999977246,
+                  0.7677794999908656,
+                  0.7373928999877535,
+                  0.7631379999802448,
+                  0.7325042999873403
+                ]
+              }
+            },
+            "on": {
+              "protocol": {
+                "activation_checkpointing": true,
+                "baseline_timeout_seconds": 900,
+                "eval_batch_size": 2,
+                "eval_tokens": 65536,
+                "microbatch_size": 2,
+                "protocol_id": "vesper-dense-tinystories-v1",
+                "sequence_length": 512,
+                "smoke_eval_tokens": 8192,
+                "smoke_timeout_seconds": 180,
+                "tokens_per_update": 16384,
+                "training_seconds": 300
+              },
+              "timed_routing_counts": [
+                [
+                  31792,
+                  30123,
+                  21024,
+                  15365
+                ],
+                [
+                  19293,
+                  27926,
+                  23662,
+                  27423
+                ],
+                [
+                  31407,
+                  26146,
+                  20662,
+                  20089
+                ],
+                [
+                  19479,
+                  25438,
+                  25165,
+                  28222
+                ],
+                [
+                  32227,
+                  20843,
+                  23619,
+                  21615
+                ],
+                [
+                  36332,
+                  17141,
+                  15908,
+                  28923
+                ]
+              ],
+              "timed_seconds": 7.961742699990282,
+              "timed_tokens": 98304,
+              "tokens_per_second": 12347.04557836565,
+              "update_seconds": {
+                "max": 1.3903784999856725,
+                "mean": 1.326957116665047,
+                "min": 1.2662652999861166,
+                "samples": [
+                  1.3455398000078276,
+                  1.3184125999978278,
+                  1.3081381999945734,
+                  1.2662652999861166,
+                  1.333008300018264,
+                  1.3903784999856725
+                ]
+              }
+            }
+          },
+          "nonzero_lr_updates": 0,
+          "off_throughput_gain": 0.771504550834121,
+          "pairs": [
+            {
+              "off_throughput_gain": 0.7836681241449963,
+              "order": [
+                "on",
+                "off"
+              ],
+              "pair": 0,
+              "seconds": {
+                "off": 1.4935246999957599,
+                "on": 2.6639524000056554
+              }
+            },
+            {
+              "off_throughput_gain": 0.710371184069851,
+              "order": [
+                "off",
+                "on"
+              ],
+              "pair": 1,
+              "seconds": {
+                "off": 1.505172399978619,
+                "on": 2.57440349998069
+              }
+            },
+            {
+              "off_throughput_gain": 0.8208811024286757,
+              "order": [
+                "on",
+                "off"
+              ],
+              "pair": 2,
+              "seconds": {
+                "off": 1.4956422999675851,
+                "on": 2.7233868000039365
+              }
+            }
+          ],
+          "precision": "torch.bfloat16",
+          "routing": {
+            "aux_loss_weight": 0.01,
+            "eval": {
+              "counts": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "tokens": 0
+            },
+            "feedforward": "moe",
+            "num_experts": 4,
+            "router_gradient_max_abs": [
+              0.01630173809826374,
+              0.007238909602165222,
+              0.00781017541885376,
+              0.008199446834623814,
+              0.007852597162127495,
+              0.007632611319422722
+            ],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [
+                [
+                  148942,
+                  141180,
+                  98594,
+                  72084
+                ],
+                [
+                  90552,
+                  131066,
+                  110786,
+                  128396
+                ],
+                [
+                  148670,
+                  122296,
+                  96504,
+                  93330
+                ],
+                [
+                  90946,
+                  119052,
+                  117438,
+                  133364
+                ],
+                [
+                  151788,
+                  97344,
+                  110784,
+                  100884
+                ],
+                [
+                  170534,
+                  80060,
+                  74916,
+                  135290
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.3232248263888889,
+                  0.30638020833333335,
+                  0.2139626736111111,
+                  0.15643229166666667
+                ],
+                [
+                  0.19651041666666666,
+                  0.2844314236111111,
+                  0.24042100694444443,
+                  0.2786371527777778
+                ],
+                [
+                  0.3226345486111111,
+                  0.2653993055555556,
+                  0.20942708333333335,
+                  0.2025390625
+                ],
+                [
+                  0.1973654513888889,
+                  0.258359375,
+                  0.25485677083333336,
+                  0.28941840277777775
+                ],
+                [
+                  0.32940104166666667,
+                  0.21125,
+                  0.24041666666666667,
+                  0.21893229166666667
+                ],
+                [
+                  0.3700824652777778,
+                  0.17374131944444443,
+                  0.162578125,
+                  0.2935980902777778
+                ]
+              ],
+              "tokens": 460800
+            },
+            "training_auxiliary_loss": 1.032973976665073,
+            "training_cross_entropy": 2.0061686171425714,
+            "weighted_training_auxiliary_loss": 0.01032973976665073
+          },
+          "torch": "2.9.1+cu128",
+          "variant": "moe",
+          "weights_unchanged": true
+        }
+      },
+      "review": "No concrete correctness/configuration findings in independent read-only review",
+      "status": "complete",
+      "stopped_after": "Two off smoke gates and exactly one 300-second checkpoint-off baseline per model",
+      "training": {
+        "dense": {
+          "allocated_mib": 581.685546875,
+          "memory": {
+            "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+            "peak_allocated_bytes": 609941504,
+            "peak_reserved_bytes": 652214272
+          },
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 26345772,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory_table_bytes": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 26345772,
+            "width": 384
+          },
+          "path": "runs\\autoresearch\\checkpoint-20260915T010035Z-dense-baseline",
+          "reserved_mib": 622.0,
+          "routing": {
+            "aux_loss_weight": 0.0,
+            "eval": {
+              "counts": [],
+              "dropped_tokens": 0,
+              "fractions": [],
+              "tokens": 65536
+            },
+            "feedforward": "dense",
+            "num_experts": 0,
+            "router_gradient_max_abs": [],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [],
+              "dropped_tokens": 0,
+              "fractions": [],
+              "tokens": 14483456
+            },
+            "training_auxiliary_loss": 0.0,
+            "training_cross_entropy": 2.0358967350214314,
+            "weighted_training_auxiliary_loss": 0.0
+          },
+          "timed_seconds": 300.11923575401306,
+          "timed_tokens": 14303232,
+          "timed_tokens_per_second": 47658.498010182084,
+          "training_tokens": 14483456,
+          "updates": 884,
+          "validation_bpb": 0.584336,
+          "wall_seconds": 309.625
+        },
+        "moe": {
+          "allocated_mib": 902.82763671875,
+          "memory": {
+            "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+            "peak_allocated_bytes": 946683392,
+            "peak_reserved_bytes": 1002438656
+          },
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 26354988,
+            "depth": 6,
+            "expert_dispatch": "packed_stable",
+            "expert_parameters": 28311552,
+            "feedforward": "moe",
+            "memory_table_bytes": 0,
+            "num_experts": 4,
+            "router_parameters": 9216,
+            "top_k": 1,
+            "total_parameters": 47588652,
+            "width": 384
+          },
+          "path": "runs\\autoresearch\\checkpoint-20260915T010035Z-moe-baseline",
+          "reserved_mib": 956.0,
+          "routing": {
+            "aux_loss_weight": 0.01,
+            "eval": {
+              "counts": [
+                [
+                  18146,
+                  16696,
+                  13803,
+                  16891
+                ],
+                [
+                  14184,
+                  18335,
+                  15840,
+                  17177
+                ],
+                [
+                  17931,
+                  15006,
+                  16685,
+                  15914
+                ],
+                [
+                  10804,
+                  19919,
+                  15569,
+                  19244
+                ],
+                [
+                  18647,
+                  12468,
+                  16467,
+                  17954
+                ],
+                [
+                  21527,
+                  12664,
+                  10654,
+                  20691
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.276885986328125,
+                  0.2547607421875,
+                  0.2106170654296875,
+                  0.2577362060546875
+                ],
+                [
+                  0.2164306640625,
+                  0.2797698974609375,
+                  0.24169921875,
+                  0.2621002197265625
+                ],
+                [
+                  0.2736053466796875,
+                  0.228973388671875,
+                  0.2545928955078125,
+                  0.242828369140625
+                ],
+                [
+                  0.16485595703125,
+                  0.3039398193359375,
+                  0.2375640869140625,
+                  0.29364013671875
+                ],
+                [
+                  0.2845306396484375,
+                  0.19024658203125,
+                  0.2512664794921875,
+                  0.273956298828125
+                ],
+                [
+                  0.3284759521484375,
+                  0.1932373046875,
+                  0.162567138671875,
+                  0.3157196044921875
+                ]
+              ],
+              "tokens": 65536
+            },
+            "feedforward": "moe",
+            "num_experts": 4,
+            "router_gradient_max_abs": [
+              0.0033769519068300724,
+              0.001599924056790769,
+              0.003001368371769786,
+              0.0017161922296509147,
+              0.0017666674684733152,
+              0.0031808719504624605
+            ],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [
+                [
+                  2431451,
+                  2405818,
+                  1609667,
+                  1368232
+                ],
+                [
+                  1545910,
+                  2299707,
+                  1768799,
+                  2200752
+                ],
+                [
+                  1934290,
+                  1884537,
+                  1963525,
+                  2032816
+                ],
+                [
+                  1686657,
+                  1740838,
+                  2466643,
+                  1921030
+                ],
+                [
+                  1847095,
+                  2055306,
+                  1763664,
+                  2149103
+                ],
+                [
+                  2592011,
+                  1835939,
+                  1064515,
+                  2322703
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.31111947945328877,
+                  0.30783957555359015,
+                  0.20596703743284853,
+                  0.17507390756027252
+                ],
+                [
+                  0.1978089274600367,
+                  0.294262004348467,
+                  0.2263289797481001,
+                  0.28160008844339623
+                ],
+                [
+                  0.2475045961903826,
+                  0.24113838627653303,
+                  0.2512453986913653,
+                  0.26011161884171907
+                ],
+                [
+                  0.21581839315546383,
+                  0.2227511935763889,
+                  0.31562251764773325,
+                  0.24580789562041405
+                ],
+                [
+                  0.23634744640166405,
+                  0.2629893560829403,
+                  0.22567192413522014,
+                  0.2749912733801756
+                ],
+                [
+                  0.3316641433683831,
+                  0.23491996589196804,
+                  0.13621140326094078,
+                  0.2972044874787081
+                ]
+              ],
+              "tokens": 7815168
+            },
+            "training_auxiliary_loss": 1.0420843233477395,
+            "training_cross_entropy": 2.3180431670800195,
+            "weighted_training_auxiliary_loss": 0.010420843233477394
+          },
+          "timed_seconds": 300.435031414032,
+          "timed_tokens": 7634944,
+          "timed_tokens_per_second": 25412.961877532256,
+          "training_tokens": 7815168,
+          "updates": 477,
+          "validation_bpb": 0.650426,
+          "wall_seconds": 323.75
+        }
+      }
+    },
+    "completion.json": {
+      "status": "complete"
+    },
+    "dense-probe-result.json": {
+      "batch_sha256": "37593e7fc43e4931e717ab2894183b7a02500298f53ffb3a2e20fecc2f55be11",
+      "checkpoint_sha256": "7aa8e3d17f7dcfa9fa0e959f1a12629006afc25faa0eec593d9c84fd4c83936c",
+      "comfortable_memory": true,
+      "correctness_passed": true,
+      "gate_passed": true,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "limitations": "Three short pairs; same saved weights, fresh warmed optimizer; no profiler; replay omits CPU packing; background GPU load/clocks uncontrolled. Free VRAM sampled at update boundaries.",
+      "max_gradient_error": 0.0,
+      "memory": {
+        "off": {
+          "minimum_free_bytes_at_update_boundaries": 13614739456,
+          "peak_allocated_bytes": 609810944,
+          "peak_reserved_bytes": 648019968,
+          "physical_bytes": 17094475776,
+          "scope": "Single model and warmed optimizer; unused cache released before this condition; memory pass excluded from throughput"
+        },
+        "on": {
+          "minimum_free_bytes_at_update_boundaries": 13919260672,
+          "peak_allocated_bytes": 456279040,
+          "peak_reserved_bytes": 507510784,
+          "physical_bytes": 17094475776,
+          "scope": "Single model and warmed optimizer; unused cache released before this condition; memory pass excluded from throughput"
+        }
+      },
+      "modes": {
+        "off": {
+          "protocol": {
+            "activation_checkpointing": false,
+            "baseline_timeout_seconds": 900,
+            "eval_batch_size": 2,
+            "eval_tokens": 65536,
+            "microbatch_size": 2,
+            "protocol_id": "vesper-dense-tinystories-v1",
+            "sequence_length": 512,
+            "smoke_eval_tokens": 8192,
+            "smoke_timeout_seconds": 180,
+            "tokens_per_update": 16384,
+            "training_seconds": 300
+          },
+          "timed_routing_counts": [],
+          "timed_seconds": 2.0710917000251357,
+          "timed_tokens": 98304,
+          "tokens_per_second": 47464.82253721887,
+          "update_seconds": {
+            "max": 0.36239840000052936,
+            "mean": 0.3451819500041893,
+            "min": 0.3301686000195332,
+            "samples": [
+              0.340790799993556,
+              0.34378450000076555,
+              0.3400395000062417,
+              0.35390990000450984,
+              0.3301686000195332,
+              0.36239840000052936
+            ]
+          }
+        },
+        "on": {
+          "protocol": {
+            "activation_checkpointing": true,
+            "baseline_timeout_seconds": 900,
+            "eval_batch_size": 2,
+            "eval_tokens": 65536,
+            "microbatch_size": 2,
+            "protocol_id": "vesper-dense-tinystories-v1",
+            "sequence_length": 512,
+            "smoke_eval_tokens": 8192,
+            "smoke_timeout_seconds": 180,
+            "tokens_per_update": 16384,
+            "training_seconds": 300
+          },
+          "timed_routing_counts": [],
+          "timed_seconds": 3.313526800076943,
+          "timed_tokens": 98304,
+          "tokens_per_second": 29667.48299658156,
+          "update_seconds": {
+            "max": 0.567317400011234,
+            "mean": 0.5522544666794905,
+            "min": 0.5392836000246461,
+            "samples": [
+              0.544498700008262,
+              0.5392836000246461,
+              0.567317400011234,
+              0.5539795000222512,
+              0.5567757000098936,
+              0.551671900000656
+            ]
+          }
+        }
+      },
+      "nonzero_lr_updates": 0,
+      "off_throughput_gain": 0.5998938144731729,
+      "pairs": [
+        {
+          "off_throughput_gain": 0.583145491871965,
+          "order": [
+            "on",
+            "off"
+          ],
+          "pair": 0,
+          "seconds": {
+            "off": 0.6845752999943215,
+            "on": 1.083782300032908
+          }
+        },
+        {
+          "off_throughput_gain": 0.6158193955007563,
+          "order": [
+            "off",
+            "on"
+          ],
+          "pair": 1,
+          "seconds": {
+            "off": 0.6939494000107516,
+            "on": 1.1212969000334851
+          }
+        },
+        {
+          "off_throughput_gain": 0.600491504761907,
+          "order": [
+            "on",
+            "off"
+          ],
+          "pair": 2,
+          "seconds": {
+            "off": 0.6925670000200626,
+            "on": 1.1084476000105496
+          }
+        }
+      ],
+      "precision": "torch.bfloat16",
+      "routing": {
+        "aux_loss_weight": 0.0,
+        "eval": {
+          "counts": [],
+          "dropped_tokens": 0,
+          "fractions": [],
+          "tokens": 0
+        },
+        "feedforward": "dense",
+        "num_experts": 0,
+        "router_gradient_max_abs": [],
+        "router_gradients_finite": true,
+        "train": {
+          "counts": [],
+          "dropped_tokens": 0,
+          "fractions": [],
+          "tokens": 460800
+        },
+        "training_auxiliary_loss": 0.0,
+        "training_cross_entropy": 1.7917115147908529,
+        "weighted_training_auxiliary_loss": 0.0
+      },
+      "torch": "2.9.1+cu128",
+      "variant": "dense",
+      "weights_unchanged": true
+    },
+    "dense.json": {
+      "depth": 6,
+      "feedforward": "dense",
+      "matrix_lr": 0.04
+    },
+    "moe-probe-result.json": {
+      "batch_sha256": "37593e7fc43e4931e717ab2894183b7a02500298f53ffb3a2e20fecc2f55be11",
+      "checkpoint_sha256": "39fe7bba80e93aabdc3cb576d6f4e47fd42255a4f731af7d2566264a56d6f3f1",
+      "comfortable_memory": true,
+      "correctness_passed": true,
+      "gate_passed": true,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "limitations": "Three short pairs; same saved weights, fresh warmed optimizer; no profiler; replay omits CPU packing; background GPU load/clocks uncontrolled. Free VRAM sampled at update boundaries.",
+      "max_gradient_error": 0.0,
+      "memory": {
+        "off": {
+          "minimum_free_bytes_at_update_boundaries": 14702084096,
+          "peak_allocated_bytes": 940101120,
+          "peak_reserved_bytes": 994050048,
+          "physical_bytes": 17094475776,
+          "scope": "Single model and warmed optimizer; unused cache released before this condition; memory pass excluded from throughput"
+        },
+        "on": {
+          "minimum_free_bytes_at_update_boundaries": 13299085312,
+          "peak_allocated_bytes": 759058944,
+          "peak_reserved_bytes": 834666496,
+          "physical_bytes": 17094475776,
+          "scope": "Single model and warmed optimizer; unused cache released before this condition; memory pass excluded from throughput"
+        }
+      },
+      "modes": {
+        "off": {
+          "protocol": {
+            "activation_checkpointing": false,
+            "baseline_timeout_seconds": 900,
+            "eval_batch_size": 2,
+            "eval_tokens": 65536,
+            "microbatch_size": 2,
+            "protocol_id": "vesper-dense-tinystories-v1",
+            "sequence_length": 512,
+            "smoke_eval_tokens": 8192,
+            "smoke_timeout_seconds": 180,
+            "tokens_per_update": 16384,
+            "training_seconds": 300
+          },
+          "timed_routing_counts": [
+            [
+              31792,
+              30123,
+              21024,
+              15365
+            ],
+            [
+              19293,
+              27926,
+              23662,
+              27423
+            ],
+            [
+              31407,
+              26146,
+              20662,
+              20089
+            ],
+            [
+              19479,
+              25438,
+              25165,
+              28222
+            ],
+            [
+              32227,
+              20843,
+              23619,
+              21615
+            ],
+            [
+              36332,
+              17141,
+              15908,
+              28923
+            ]
+          ],
+          "timed_seconds": 4.494339399941964,
+          "timed_tokens": 98304,
+          "tokens_per_second": 21872.84743143106,
+          "update_seconds": {
+            "max": 0.7677794999908656,
+            "mean": 0.749056566656994,
+            "min": 0.7325042999873403,
+            "samples": [
+              0.7370578999980353,
+              0.7564667999977246,
+              0.7677794999908656,
+              0.7373928999877535,
+              0.7631379999802448,
+              0.7325042999873403
+            ]
+          }
+        },
+        "on": {
+          "protocol": {
+            "activation_checkpointing": true,
+            "baseline_timeout_seconds": 900,
+            "eval_batch_size": 2,
+            "eval_tokens": 65536,
+            "microbatch_size": 2,
+            "protocol_id": "vesper-dense-tinystories-v1",
+            "sequence_length": 512,
+            "smoke_eval_tokens": 8192,
+            "smoke_timeout_seconds": 180,
+            "tokens_per_update": 16384,
+            "training_seconds": 300
+          },
+          "timed_routing_counts": [
+            [
+              31792,
+              30123,
+              21024,
+              15365
+            ],
+            [
+              19293,
+              27926,
+              23662,
+              27423
+            ],
+            [
+              31407,
+              26146,
+              20662,
+              20089
+            ],
+            [
+              19479,
+              25438,
+              25165,
+              28222
+            ],
+            [
+              32227,
+              20843,
+              23619,
+              21615
+            ],
+            [
+              36332,
+              17141,
+              15908,
+              28923
+            ]
+          ],
+          "timed_seconds": 7.961742699990282,
+          "timed_tokens": 98304,
+          "tokens_per_second": 12347.04557836565,
+          "update_seconds": {
+            "max": 1.3903784999856725,
+            "mean": 1.326957116665047,
+            "min": 1.2662652999861166,
+            "samples": [
+              1.3455398000078276,
+              1.3184125999978278,
+              1.3081381999945734,
+              1.2662652999861166,
+              1.333008300018264,
+              1.3903784999856725
+            ]
+          }
+        }
+      },
+      "nonzero_lr_updates": 0,
+      "off_throughput_gain": 0.771504550834121,
+      "pairs": [
+        {
+          "off_throughput_gain": 0.7836681241449963,
+          "order": [
+            "on",
+            "off"
+          ],
+          "pair": 0,
+          "seconds": {
+            "off": 1.4935246999957599,
+            "on": 2.6639524000056554
+          }
+        },
+        {
+          "off_throughput_gain": 0.710371184069851,
+          "order": [
+            "off",
+            "on"
+          ],
+          "pair": 1,
+          "seconds": {
+            "off": 1.505172399978619,
+            "on": 2.57440349998069
+          }
+        },
+        {
+          "off_throughput_gain": 0.8208811024286757,
+          "order": [
+            "on",
+            "off"
+          ],
+          "pair": 2,
+          "seconds": {
+            "off": 1.4956422999675851,
+            "on": 2.7233868000039365
+          }
+        }
+      ],
+      "precision": "torch.bfloat16",
+      "routing": {
+        "aux_loss_weight": 0.01,
+        "eval": {
+          "counts": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "dropped_tokens": 0,
+          "fractions": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "tokens": 0
+        },
+        "feedforward": "moe",
+        "num_experts": 4,
+        "router_gradient_max_abs": [
+          0.01630173809826374,
+          0.007238909602165222,
+          0.00781017541885376,
+          0.008199446834623814,
+          0.007852597162127495,
+          0.007632611319422722
+        ],
+        "router_gradients_finite": true,
+        "train": {
+          "counts": [
+            [
+              148942,
+              141180,
+              98594,
+              72084
+            ],
+            [
+              90552,
+              131066,
+              110786,
+              128396
+            ],
+            [
+              148670,
+              122296,
+              96504,
+              93330
+            ],
+            [
+              90946,
+              119052,
+              117438,
+              133364
+            ],
+            [
+              151788,
+              97344,
+              110784,
+              100884
+            ],
+            [
+              170534,
+              80060,
+              74916,
+              135290
+            ]
+          ],
+          "dropped_tokens": 0,
+          "fractions": [
+            [
+              0.3232248263888889,
+              0.30638020833333335,
+              0.2139626736111111,
+              0.15643229166666667
+            ],
+            [
+              0.19651041666666666,
+              0.2844314236111111,
+              0.24042100694444443,
+              0.2786371527777778
+            ],
+            [
+              0.3226345486111111,
+              0.2653993055555556,
+              0.20942708333333335,
+              0.2025390625
+            ],
+            [
+              0.1973654513888889,
+              0.258359375,
+              0.25485677083333336,
+              0.28941840277777775
+            ],
+            [
+              0.32940104166666667,
+              0.21125,
+              0.24041666666666667,
+              0.21893229166666667
+            ],
+            [
+              0.3700824652777778,
+              0.17374131944444443,
+              0.162578125,
+              0.2935980902777778
+            ]
+          ],
+          "tokens": 460800
+        },
+        "training_auxiliary_loss": 1.032973976665073,
+        "training_cross_entropy": 2.0061686171425714,
+        "weighted_training_auxiliary_loss": 0.01032973976665073
+      },
+      "torch": "2.9.1+cu128",
+      "variant": "moe",
+      "weights_unchanged": true
+    },
+    "moe.json": {
+      "aux_loss_weight": 0.01,
+      "depth": 6,
+      "feedforward": "moe",
+      "matrix_lr": 0.04,
+      "num_experts": 4,
+      "router_lr": 0.001,
+      "top_k": 1
+    },
+    "probe-manifest.json": {},
+    "protocol-off.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "protocol_id": "vesper-dense-tinystories-v1",
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "protocol-on.json": {
+      "activation_checkpointing": true,
+      "baseline_timeout_seconds": 900,
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "protocol_id": "vesper-dense-tinystories-v1",
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    }
+  },
+  "diagnostics": [
+    "report-checks.log:\nProfile summary: [{'variant': 'dense', 'gain': 0.5998938144731729, 'on_tps': 29667.48299658156, 'off_tps': 47464.82253721887, 'max_gradient_error': 0.0}, {'variant': 'moe', 'gain': 0.771504550834121, 'on_tps': 12347.04557836565, 'off_tps': 21872.84743143106, 'max_gradient_error': 0.0}]",
+    "tests-cpu-run.log:\ntest_failed_process_is_not_promoted_by_valid_looking_output (test_autoresearch.ResultsTests.test_failed_process_is_not_promoted_by_valid_looking_output) ... ok\ntest_protocol_rejects_partial_batches_and_unbounded_timeouts (test_autoresearch.ResultsTests.test_protocol_rejects_partial_batches_and_unbounded_timeouts) ... ok\ntest_timeout_terminates_child_and_preserves_partial_output (test_autoresearch.ResultsTests.test_timeout_terminates_child_and_preserves_partial_output) ... ok\ntest_windows_taskkill_timeout_still_kills_owned_child (test_autoresearch.ResultsTests.test_windows_taskkill_timeout_still_kills_owned_child) ... ok\nRan 27 tests in 3.931s\nOK",
+    "tests-cuda-run.log:\ntest_failed_process_is_not_promoted_by_valid_looking_output (test_autoresearch.ResultsTests.test_failed_process_is_not_promoted_by_valid_looking_output) ... ok\ntest_protocol_rejects_partial_batches_and_unbounded_timeouts (test_autoresearch.ResultsTests.test_protocol_rejects_partial_batches_and_unbounded_timeouts) ... ok\ntest_timeout_terminates_child_and_preserves_partial_output (test_autoresearch.ResultsTests.test_timeout_terminates_child_and_preserves_partial_output) ... ok\ntest_windows_taskkill_timeout_still_kills_owned_child (test_autoresearch.ResultsTests.test_windows_taskkill_timeout_still_kills_owned_child) ... ok\nRan 27 tests in 5.270s\nOK",
+    "tests-red-retry.log:\nValueError: Protocol fields are missing or unknown.\nDuring handling of the above exception, another exception occurred:\nTraceback (most recent call last):\nAssertionError: Explicit checkpoint boolean must be supported: Protocol fields are missing or unknown.\nTraceback (most recent call last):\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\nFAILED (failures=3)"
+  ],
+  "evidence": {
+    "arm_probe.py": {
+      "bytes": 936,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/arm_probe.py",
+      "sha256": "1e73034d03f95e987d54bcc4220a112c92c666d6b5367a256806231090db123e"
+    },
+    "arm_report.py": {
+      "bytes": 769,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/arm_report.py",
+      "sha256": "82a595f75c7a0a6d6c08aee458130d71041c3a1fc3186c75cabb7343bdb8ec4e"
+    },
+    "checkpoint_probe.py": {
+      "bytes": 8810,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/checkpoint_probe.py",
+      "sha256": "716f842dadf8746874ba9ecf2ee36dd8c7e04934112d294e2cedcdfb813259a1"
+    },
+    "comparison.json": {
+      "bytes": 25255,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/comparison.json",
+      "sha256": "f151a42e32b9612963a2cc9d42fbc7a5690fb5e53fd700b2c172d069bf13926f"
+    },
+    "completion.json": {
+      "bytes": 190,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/completion.json",
+      "sha256": "cbf70af1d9d9a91686c29d5a0dc0ca5ae5fa733e7552a92f7edb2162d2462b7a"
+    },
+    "dense-probe-result.json": {
+      "bytes": 5240,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/dense-probe-result.json",
+      "sha256": "6a3fd805c1f389200730246cd36b15f0164e498da71a7bd96b152894059dbad3"
+    },
+    "dense-probe.log": {
+      "bytes": 1540,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/dense-probe.log",
+      "sha256": "68c7718c61c813b08c8de8d55c4ef29730edbb74421d0e1d39fe187ea177101a"
+    },
+    "dense.json": {
+      "bytes": 64,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/dense.json",
+      "sha256": "888e6e73fc2a7a241dc72dd1cb84f416f87afd348c2661d390cd99f4859eb1e8"
+    },
+    "final_report.py": {
+      "bytes": 14119,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/final_report.py",
+      "sha256": "3f4798523ae321146168e838c66823c20327d33faf8daf631dfe23161d61ae7e"
+    },
+    "gated_trial.py": {
+      "bytes": 5717,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/gated_trial.py",
+      "sha256": "c5326ddac6be8480429ae8d0d9c459bd5593b0a21a61286d3ff3bb2a3b17919d"
+    },
+    "moe-probe-result.json": {
+      "bytes": 9047,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/moe-probe-result.json",
+      "sha256": "e814813aedcd010446af3ba1133dc83d11331dafd6873d5cef783e72033d39c6"
+    },
+    "moe-probe.log": {
+      "bytes": 1535,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/moe-probe.log",
+      "sha256": "f60d972b62f48d0c668804ec3610b21b72497c04be73b6268fbc5fb64bb77246"
+    },
+    "moe.json": {
+      "bytes": 145,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/moe.json",
+      "sha256": "8080cb7930edd86e28414798604ca0884b523fb3c21adb37b40b4716149cac06"
+    },
+    "plan.md": {
+      "bytes": 1139,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/plan.md",
+      "sha256": "6998cd26973a44d08cad2f37b18d0f99fd2dd05fc594cb6bb904bb4c2a763717"
+    },
+    "prior-preservation.json": {
+      "bytes": 95417,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/prior-preservation.json",
+      "sha256": "0060ea3989b4333852d5b8f13df91e1c6353547f059d1cbf2d88616447da9b75"
+    },
+    "prior-protocol.json": {
+      "bytes": 302,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/prior-protocol.json",
+      "sha256": "f42d420605d44397f46f3cbbbd79c98b4848d8a74c2c33c2fe83cf7382bb26c8"
+    },
+    "probe-manifest.json": {
+      "bytes": 2057,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/probe-manifest.json",
+      "sha256": "5507126b2eb874c21bc597e0da1155610eb39c3b6da35bf469ef11d2a0bb419f"
+    },
+    "protocol-off.json": {
+      "bytes": 339,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/protocol-off.json",
+      "sha256": "306132f07741e11f8b2755af38b4482745342a5e7ec77b85712d531fae4a4fae"
+    },
+    "protocol-on.json": {
+      "bytes": 338,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/protocol-on.json",
+      "sha256": "8300225a314ddda6da8e4b14b86926460c247d7d60df163bf90b901753f03805"
+    },
+    "report-checks.log": {
+      "bytes": 1211,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/report-checks.log",
+      "sha256": "f4429d2cddc911ead8a10b58f6234dfbd9219246cec0c2482d195cb7d4e6ed24"
+    },
+    "report.md": {
+      "bytes": 8266,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/report.md",
+      "sha256": "4a8c2aed23f81d64547643067d569a5793ed7c542db4546c6582acaed345292c"
+    },
+    "run_tests.py": {
+      "bytes": 1174,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/run_tests.py",
+      "sha256": "4939b745104e19d515a875c21f8de9dee1a4249dc0877572ca6dd8a04d63dff6"
+    },
+    "tests-cpu-run.log": {
+      "bytes": 4356,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/tests-cpu-run.log",
+      "sha256": "752d4950d368bcd837f187779d152826b1d7b5dd1089c3038f1d65505d0e731d"
+    },
+    "tests-cpu.log": {
+      "bytes": 0,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/tests-cpu.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests-cuda-run.log": {
+      "bytes": 4356,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/tests-cuda-run.log",
+      "sha256": "0f9b2ba94e8ad868ada3661e575c9cebb9b0c679e68005b1cdc5620a47258ac3"
+    },
+    "tests-cuda.log": {
+      "bytes": 0,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/tests-cuda.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests-red-retry.log": {
+      "bytes": 3832,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/tests-red-retry.log",
+      "sha256": "b40402b2c100ae48ddde0f3f011bc8462d1b6a1f8530f879ea0fe6c4e2980c17"
+    },
+    "tests-red.log": {
+      "bytes": 0,
+      "local_path": "runs/autoresearch/checkpoint-20260915T010035Z/tests-red.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "experiment_id": "checkpoint-20260915T010035Z-8b47a499",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "complete",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {
+      "arm_probe.py": {
+        "published_path": "reports/source-snapshots/1e73034d03f95e987d54bcc4220a112c92c666d6b5367a256806231090db123e.py",
+        "sha256": "1e73034d03f95e987d54bcc4220a112c92c666d6b5367a256806231090db123e"
+      },
+      "arm_report.py": {
+        "published_path": "reports/source-snapshots/82a595f75c7a0a6d6c08aee458130d71041c3a1fc3186c75cabb7343bdb8ec4e.py",
+        "sha256": "82a595f75c7a0a6d6c08aee458130d71041c3a1fc3186c75cabb7343bdb8ec4e"
+      },
+      "checkpoint_probe.py": {
+        "published_path": "reports/source-snapshots/716f842dadf8746874ba9ecf2ee36dd8c7e04934112d294e2cedcdfb813259a1.py",
+        "sha256": "716f842dadf8746874ba9ecf2ee36dd8c7e04934112d294e2cedcdfb813259a1"
+      },
+      "final_report.py": {
+        "published_path": "reports/source-snapshots/3f4798523ae321146168e838c66823c20327d33faf8daf631dfe23161d61ae7e.py",
+        "sha256": "3f4798523ae321146168e838c66823c20327d33faf8daf631dfe23161d61ae7e"
+      },
+      "gated_trial.py": {
+        "published_path": "reports/source-snapshots/c5326ddac6be8480429ae8d0d9c459bd5593b0a21a61286d3ff3bb2a3b17919d.py",
+        "sha256": "c5326ddac6be8480429ae8d0d9c459bd5593b0a21a61286d3ff3bb2a3b17919d"
+      },
+      "run_tests.py": {
+        "published_path": "reports/source-snapshots/4939b745104e19d515a875c21f8de9dee1a4249dc0877572ca6dd8a04d63dff6.py",
+        "sha256": "4939b745104e19d515a875c21f8de9dee1a4249dc0877572ca6dd8a04d63dff6"
+      },
+      "source/project/autoresearch.py": {
+        "published_path": "reports/source-snapshots/a48bb0be37fb6e366cd2e82122b2d08124ed07350b6d657a09bd5042b06bce65.py",
+        "sha256": "a48bb0be37fb6e366cd2e82122b2d08124ed07350b6d657a09bd5042b06bce65"
+      },
+      "source/project/autoresearch_bootstrap.py": {
+        "published_path": "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py",
+        "sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6"
+      },
+      "source/project/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/b636fceaa598764d9cc0e21c053f918f6985b75db6daac2966e384482a3377eb.py",
+        "sha256": "b636fceaa598764d9cc0e21c053f918f6985b75db6daac2966e384482a3377eb"
+      },
+      "source/project/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/d6ddd3c3f022788347836208fe0c0c52d5d1144acf97892a258be6dc4f055fb2.py",
+        "sha256": "d6ddd3c3f022788347836208fe0c0c52d5d1144acf97892a258be6dc4f055fb2"
+      },
+      "source/upstream/prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      },
+      "source/upstream/train.py": {
+        "published_path": "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py",
+        "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}

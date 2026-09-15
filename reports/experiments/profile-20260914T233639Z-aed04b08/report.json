@@ -1,0 +1,148 @@
+{
+  "artifact_directory": "runs/autoresearch/profile-20260914T233639Z",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "manifest.json": {
+      "activation_checkpointing": true,
+      "bank_sha256": "37593e7fc43e4931e717ab2894183b7a02500298f53ffb3a2e20fecc2f55be11",
+      "checkpoint_hashes": {
+        "dense": "2f1a784e180945949de19b8d53d617dda462a69ddfd627f9b7dabda8e1b5de95",
+        "moe": "1f7c874786cbccd36f719a3196900a54a9bd3851b74e923d1c92bae6331d6a4c"
+      },
+      "data_hashes": {
+        "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+        "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+        "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+        "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+        "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+      },
+      "executed_original_sources": {
+        "source/project/autoresearch.py": "d63924f90cc821d4907a95fffa970d3b464b751a59645ffb6f66ca4575c9200b",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_model.py": "357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0",
+        "source/project/autoresearch_train.py": "63c057ac73dbb11c8b3ad7a09ba58e471194b9266be5111a5b7f4d80693c5a5d",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      },
+      "precision": "BF16 CUDA autocast, FP32 router softmax and matrix parameters",
+      "protocol": {
+        "baseline_timeout_seconds": 900,
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "protocol_id": "vesper-dense-tinystories-v1",
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "source_hashes": {
+        "source/project/__pycache__/autoresearch.cpython-311.pyc": "d90a856c26b91e5cbfe68d6890fe9a625b21dfd48aa3ddf5151448d98cddc509",
+        "source/project/__pycache__/autoresearch_model.cpython-311.pyc": "858fbc0bc4ce9bc3315829723b3b2dce4b2ae91834a1749d6423b4c2631d8ee4",
+        "source/project/autoresearch.py": "d63924f90cc821d4907a95fffa970d3b464b751a59645ffb6f66ca4575c9200b",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_model.py": "357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0",
+        "source/project/autoresearch_train.py": "63c057ac73dbb11c8b3ad7a09ba58e471194b9266be5111a5b7f4d80693c5a5d",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/__pycache__/prepare.cpython-311.pyc": "19b4f158f8011f02559b57b6f01d9c18d093d591dc0183cdca3152ad0e2ab0e6",
+        "source/upstream/__pycache__/train.cpython-311.pyc": "b58c443ab35ca40af529216389e923bea5b983a30dab0dedd0bb1f5690df601f",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      }
+    },
+    "preservation-result.json": {
+      "changed": [
+        null
+      ],
+      "status": "profiling paused on result serialization error; MoE not launched",
+      "verified_unchanged": 198
+    }
+  },
+  "diagnostics": [
+    "probe.log:\nTraceback (most recent call last):\n    assert result.returncode == 0, f\"{variant} failed; see {HERE / variant / 'profile.log'}\"\nAssertionError: dense failed; see <repo>\\runs\\autoresearch\\profile-20260914T233639Z\\dense\\profile.log"
+  ],
+  "evidence": {
+    "manifest.json": {
+      "bytes": 6696,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/manifest.json",
+      "sha256": "061f6560347746d1e61060ea1cbdbcf15aa2ffd2b79aa34b089a8c90c10cf569"
+    },
+    "preservation-result.json": {
+      "bytes": 148,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/preservation-result.json",
+      "sha256": "db1c53310ba06bc20b6258ba3c2352af043b97e1a131f7d19806a21e162d403b"
+    },
+    "prior-preservation.json": {
+      "bytes": 46071,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/prior-preservation.json",
+      "sha256": "181712de66d524f64621cd0213dc99be5d42a10bc4a7c0888567f2c5553aa166"
+    },
+    "probe.log": {
+      "bytes": 840,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/probe.log",
+      "sha256": "2b52a01323fcd9e9ae9197ad069ca71e1ae67f7c0b376db5b35f0f5b6c04807f"
+    },
+    "profile_probe.py": {
+      "bytes": 16218,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/profile_probe.py",
+      "sha256": "78a333f90dea1062c7076dace2f50803b4b3aea684bd1d25aa74913f1e14a883"
+    }
+  },
+  "experiment_id": "profile-20260914T233639Z-aed04b08",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stage_evidence_only",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {
+      "profile_probe.py": {
+        "published_path": "reports/source-snapshots/78a333f90dea1062c7076dace2f50803b4b3aea684bd1d25aa74913f1e14a883.py",
+        "sha256": "78a333f90dea1062c7076dace2f50803b4b3aea684bd1d25aa74913f1e14a883"
+      },
+      "source/project/autoresearch.py": {
+        "published_path": "reports/source-snapshots/d63924f90cc821d4907a95fffa970d3b464b751a59645ffb6f66ca4575c9200b.py",
+        "sha256": "d63924f90cc821d4907a95fffa970d3b464b751a59645ffb6f66ca4575c9200b"
+      },
+      "source/project/autoresearch_bootstrap.py": {
+        "published_path": "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py",
+        "sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6"
+      },
+      "source/project/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0.py",
+        "sha256": "357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0"
+      },
+      "source/project/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/63c057ac73dbb11c8b3ad7a09ba58e471194b9266be5111a5b7f4d80693c5a5d.py",
+        "sha256": "63c057ac73dbb11c8b3ad7a09ba58e471194b9266be5111a5b7f4d80693c5a5d"
+      },
+      "source/upstream/prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      },
+      "source/upstream/train.py": {
+        "published_path": "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py",
+        "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}

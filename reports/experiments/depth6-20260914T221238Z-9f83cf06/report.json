@@ -1,0 +1,148 @@
+{
+  "artifact_directory": "runs/autoresearch/depth6-20260914T221238Z",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "comparison.json": {
+      "architecture_note": "Depth also increases width 256 to 384, heads 2 to 3, and derived width-dependent AdamW LR scaling; configured matrix_lr remains 0.04",
+      "bpb_relative_change_percent": -0.5334805879393945,
+      "depth4_artifacts_unchanged": true,
+      "depth6_smoke": "runs/autoresearch/20260914T221250Z-d8128dbb",
+      "limitation": "Single seeded runs with equal timed training budget and unequal token counts; no claim of statistically established superiority",
+      "matching_protocol_runtime_data_seed_and_adapters": true,
+      "only_candidate_setting_changed": "depth: 4 to 6",
+      "parameter_ratio": 2.284089986953889,
+      "runs": [
+        {
+          "active_parameter_note": "Not separately measured",
+          "active_parameters": null,
+          "artifacts": "runs/autoresearch/20260914T220112Z-d2949ab5",
+          "checkpoint_bytes": 33568395,
+          "depth": 4,
+          "environment": {
+            "bf16_supported": true,
+            "capability": [
+              12,
+              0
+            ],
+            "cuda_available": true,
+            "cuda_build": "12.8",
+            "free_vram_bytes": 15767437312,
+            "gpu": "NVIDIA GeForce RTX 5070 Ti",
+            "os": "Windows-10-10.0.26200-SP0",
+            "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+            "torch": "2.9.1+cu128",
+            "total_vram_bytes": 17094475776
+          },
+          "matrix_lr": 0.04,
+          "memory_scope": "PyTorch allocator; excludes other processes and driver allocations",
+          "optimizer_updates": 804,
+          "peak_allocated_bytes": 285164032,
+          "peak_allocated_mib": 271.95361328125,
+          "peak_reserved_bytes": 306184192,
+          "peak_reserved_mib": 292,
+          "post_warmup_tokens_per_second": 43249.409971072775,
+          "sparse_memory_table_bytes": 0,
+          "sparse_memory_table_note": "No sparse memory component implemented",
+          "throughput_note": "Derived from rounded per-step durations after excluding first 11 updates",
+          "timed_training_seconds": 300.3,
+          "total_parameters": 11534472,
+          "training_tokens_including_warmup": 13172736,
+          "training_tokens_note": "Completed logged optimizer updates times tokens_per_update",
+          "validation_bpb": 0.630201,
+          "wall_seconds": 309.4219999999914,
+          "width": 256
+        },
+        {
+          "active_parameter_note": "Not separately measured",
+          "active_parameters": null,
+          "artifacts": "runs/autoresearch/20260914T221311Z-2b4d0181",
+          "checkpoint_bytes": 80236361,
+          "depth": 6,
+          "environment": {
+            "bf16_supported": true,
+            "capability": [
+              12,
+              0
+            ],
+            "cuda_available": true,
+            "cuda_build": "12.8",
+            "free_vram_bytes": 15767437312,
+            "gpu": "NVIDIA GeForce RTX 5070 Ti",
+            "os": "Windows-10-10.0.26200-SP0",
+            "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+            "torch": "2.9.1+cu128",
+            "total_vram_bytes": 17094475776
+          },
+          "matrix_lr": 0.04,
+          "memory_scope": "PyTorch allocator; excludes other processes and driver allocations",
+          "optimizer_updates": 556,
+          "peak_allocated_bytes": 456014336,
+          "peak_allocated_mib": 434.88916015625,
+          "peak_reserved_bytes": 557842432,
+          "peak_reserved_mib": 532,
+          "post_warmup_tokens_per_second": 29745.42789566608,
+          "sparse_memory_table_bytes": 0,
+          "sparse_memory_table_note": "No sparse memory component implemented",
+          "throughput_note": "Derived from rounded per-step durations after excluding first 11 updates",
+          "timed_training_seconds": 300.2,
+          "total_parameters": 26345772,
+          "training_tokens_including_warmup": 9109504,
+          "training_tokens_note": "Completed logged optimizer updates times tokens_per_update",
+          "validation_bpb": 0.626839,
+          "wall_seconds": 312.625,
+          "width": 384
+        }
+      ],
+      "scope": "One depth-6 smoke and one depth-6 baseline; no further experiments or cloud jobs",
+      "training_tokens_change_percent": -30.84577114427861
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "baseline.log": {
+      "bytes": 412,
+      "local_path": "runs/autoresearch/depth6-20260914T221238Z/baseline.log",
+      "sha256": "9a4ea4130fcb489d1728612aba8660a495b1a832de38d46e073c889fabe7ead8"
+    },
+    "comparison.json": {
+      "bytes": 4052,
+      "local_path": "runs/autoresearch/depth6-20260914T221238Z/comparison.json",
+      "sha256": "10fbcaefddc531408c4f42bd2bc45cd717ab9444131d5cdc957d17957ebd30f9"
+    },
+    "depth4-preservation.json": {
+      "bytes": 1562,
+      "local_path": "runs/autoresearch/depth6-20260914T221238Z/depth4-preservation.json",
+      "sha256": "34d3253f1c07d49cfec5dc088072407e5c2ed25989477870885c1cecc95fc6d8"
+    },
+    "smoke.log": {
+      "bytes": 407,
+      "local_path": "runs/autoresearch/depth6-20260914T221238Z/smoke.log",
+      "sha256": "46fc37a52b91c1812ae39e26d0fe3bb252eca6707cf5035a97e251b84c36dc9b"
+    }
+  },
+  "experiment_id": "depth6-20260914T221238Z-9f83cf06",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stage_evidence_only",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}

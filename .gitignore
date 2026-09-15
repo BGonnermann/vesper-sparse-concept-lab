@@ -17,3 +17,10 @@ runs/
 .DS_Store
 Thumbs.db
 .autoresearch/
+*.trace.json
+*-trace.json
+*-operators.json
+*.parquet
+*.npy
+*.npz
+reports/**/*.tmp

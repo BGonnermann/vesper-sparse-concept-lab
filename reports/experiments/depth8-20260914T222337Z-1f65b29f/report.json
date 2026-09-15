@@ -1,0 +1,247 @@
+{
+  "artifact_directory": "runs/autoresearch/depth8-20260914T222337Z",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "comparison.json": {
+      "architecture_note": "Depth changes layers, width, attention heads, and the derived width-dependent AdamW LR scaling. Configured matrix_lr remains 0.04",
+      "common_candidate_matrix_lr": 0.04,
+      "depth8_smoke": "runs/autoresearch/20260914T222401Z-ed834945",
+      "depth8_vs_depth4_bpb_change_percent": 0.11186907034421711,
+      "depth8_vs_depth6_bpb_change_percent": 0.6488109386939778,
+      "depth8_vs_depth6_parameter_ratio": 1.9104460480414087,
+      "depth8_vs_depth6_training_tokens_change_percent": -19.784172661870503,
+      "limitation": "Single seeded runs, equal timed training budget, unequal token counts. All quality differences provisional. GPU background activity not controlled; starting free VRAM differed",
+      "matching_comparison_fields": [
+        "condition",
+        "protocol",
+        "upstream",
+        "data_seal",
+        "seed",
+        "runner_sha256",
+        "adapter_sha256",
+        "git_commit"
+      ],
+      "matching_environment_fields": [
+        "python",
+        "os",
+        "torch",
+        "cuda_build",
+        "cuda_available",
+        "gpu",
+        "capability",
+        "total_vram_bytes",
+        "bf16_supported"
+      ],
+      "only_candidate_setting_changed": "depth: 6 to 8",
+      "outcome": "Depth 6 has the lowest observed BPB. Depth 8 showed no validation improvement and used more memory with lower token throughput",
+      "prior_artifacts_unchanged": true,
+      "prior_artifacts_verified": 39,
+      "protocol": {
+        "baseline_timeout_seconds": 900,
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "protocol_id": "vesper-dense-tinystories-v1",
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "runs": [
+        {
+          "active_parameter_note": "Not separately measured",
+          "active_parameters": null,
+          "artifacts": "runs/autoresearch/20260914T220112Z-d2949ab5",
+          "checkpoint_bytes": 33568395,
+          "depth": 4,
+          "environment": {
+            "bf16_supported": true,
+            "capability": [
+              12,
+              0
+            ],
+            "cuda_available": true,
+            "cuda_build": "12.8",
+            "free_vram_bytes": 15767437312,
+            "gpu": "NVIDIA GeForce RTX 5070 Ti",
+            "os": "Windows-10-10.0.26200-SP0",
+            "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+            "torch": "2.9.1+cu128",
+            "total_vram_bytes": 17094475776
+          },
+          "matrix_lr": 0.04,
+          "memory_scope": "PyTorch allocator; excludes other processes and driver allocations",
+          "model_config_log": "Model config: {'sequence_len': 512, 'vocab_size': 8192, 'n_layer': 4, 'n_head': 2, 'n_kv_head': 2, 'n_embd': 256, 'window_pattern': 'L', 'attention_backend': 'sdpa', 'use_activation_checkpointing': True, 'compute_dtype': torch.bfloat16}",
+          "optimizer_updates": 804,
+          "peak_allocated_bytes": 285164032,
+          "peak_allocated_mib": 271.95361328125,
+          "peak_reserved_bytes": 306184192,
+          "peak_reserved_mib": 292,
+          "post_warmup_tokens_per_second": 43249.409971072775,
+          "sparse_memory_table_bytes": 0,
+          "sparse_memory_table_note": "No sparse memory component implemented",
+          "throughput_note": "Derived from rounded per-step durations after excluding first 11 updates",
+          "timed_training_seconds": 300.3,
+          "total_parameters": 11534472,
+          "training_tokens_including_warmup": 13172736,
+          "training_tokens_note": "Completed logged optimizer updates times tokens_per_update",
+          "validation_bpb": 0.630201,
+          "wall_seconds": 309.4219999999914,
+          "width": 256
+        },
+        {
+          "active_parameter_note": "Not separately measured",
+          "active_parameters": null,
+          "artifacts": "runs/autoresearch/20260914T221311Z-2b4d0181",
+          "checkpoint_bytes": 80236361,
+          "depth": 6,
+          "environment": {
+            "bf16_supported": true,
+            "capability": [
+              12,
+              0
+            ],
+            "cuda_available": true,
+            "cuda_build": "12.8",
+            "free_vram_bytes": 15767437312,
+            "gpu": "NVIDIA GeForce RTX 5070 Ti",
+            "os": "Windows-10-10.0.26200-SP0",
+            "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+            "torch": "2.9.1+cu128",
+            "total_vram_bytes": 17094475776
+          },
+          "matrix_lr": 0.04,
+          "memory_scope": "PyTorch allocator; excludes other processes and driver allocations",
+          "model_config_log": "Model config: {'sequence_len': 512, 'vocab_size': 8192, 'n_layer': 6, 'n_head': 3, 'n_kv_head': 3, 'n_embd': 384, 'window_pattern': 'L', 'attention_backend': 'sdpa', 'use_activation_checkpointing': True, 'compute_dtype': torch.bfloat16}",
+          "optimizer_updates": 556,
+          "peak_allocated_bytes": 456014336,
+          "peak_allocated_mib": 434.88916015625,
+          "peak_reserved_bytes": 557842432,
+          "peak_reserved_mib": 532,
+          "post_warmup_tokens_per_second": 29745.42789566608,
+          "sparse_memory_table_bytes": 0,
+          "sparse_memory_table_note": "No sparse memory component implemented",
+          "throughput_note": "Derived from rounded per-step durations after excluding first 11 updates",
+          "timed_training_seconds": 300.2,
+          "total_parameters": 26345772,
+          "training_tokens_including_warmup": 9109504,
+          "training_tokens_note": "Completed logged optimizer updates times tokens_per_update",
+          "validation_bpb": 0.626839,
+          "wall_seconds": 312.625,
+          "width": 384
+        },
+        {
+          "active_parameter_note": "Not separately measured",
+          "active_parameters": null,
+          "artifacts": "runs/autoresearch/20260914T222428Z-25defc6f",
+          "checkpoint_bytes": 159410375,
+          "depth": 8,
+          "environment": {
+            "bf16_supported": true,
+            "capability": [
+              12,
+              0
+            ],
+            "cuda_available": true,
+            "cuda_build": "12.8",
+            "free_vram_bytes": 15097430016,
+            "gpu": "NVIDIA GeForce RTX 5070 Ti",
+            "os": "Windows-10-10.0.26200-SP0",
+            "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+            "torch": "2.9.1+cu128",
+            "total_vram_bytes": 17094475776
+          },
+          "matrix_lr": 0.04,
+          "memory_scope": "PyTorch allocator; excludes other processes and driver allocations",
+          "model_config_log": "Model config: {'sequence_len': 512, 'vocab_size': 8192, 'n_layer': 8, 'n_head': 4, 'n_kv_head': 4, 'n_embd': 512, 'window_pattern': 'L', 'attention_backend': 'sdpa', 'use_activation_checkpointing': True, 'compute_dtype': torch.bfloat16}",
+          "optimizer_updates": 446,
+          "peak_allocated_bytes": 757953536,
+          "peak_allocated_mib": 722.8408203125,
+          "peak_reserved_bytes": 843055104,
+          "peak_reserved_mib": 804,
+          "post_warmup_tokens_per_second": 23736.30765439171,
+          "sparse_memory_table_bytes": 0,
+          "sparse_memory_table_note": "No sparse memory component implemented",
+          "throughput_note": "Derived from rounded per-step durations after excluding first 11 updates",
+          "timed_training_seconds": 300.3,
+          "total_parameters": 50332176,
+          "training_tokens_including_warmup": 7307264,
+          "training_tokens_note": "Completed logged optimizer updates times tokens_per_update",
+          "validation_bpb": 0.630906,
+          "wall_seconds": 315.0460000000021,
+          "width": 512
+        }
+      ],
+      "scope": "One depth-8 smoke and one depth-8 baseline; stopped after comparison; no additional experiments or cloud jobs",
+      "seed": 42,
+      "upstream": {
+        "runtime_files": {
+          ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+          "prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+          "train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+          "uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+        },
+        "upstream": {
+          "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored.",
+          "original_project": "https://github.com/karpathy/autoresearch",
+          "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+          "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+          "revision": "a4123c6e5c6287f90be04026642ba20b94e424df"
+        }
+      },
+      "warnings": "Nonfatal uv warning about ignored dangling temporary pip directory; left unchanged"
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "baseline.log": {
+      "bytes": 412,
+      "local_path": "runs/autoresearch/depth8-20260914T222337Z/baseline.log",
+      "sha256": "e82cd4d5e2424718872de57339ed6dc1b0f3b165fd061f32b07e5775d902c08d"
+    },
+    "comparison.json": {
+      "bytes": 9240,
+      "local_path": "runs/autoresearch/depth8-20260914T222337Z/comparison.json",
+      "sha256": "a25632ca0cc196de377b798fbd485d9a294e781029a6fcb04530aa3a1743cb3a"
+    },
+    "prior-preservation.json": {
+      "bytes": 8647,
+      "local_path": "runs/autoresearch/depth8-20260914T222337Z/prior-preservation.json",
+      "sha256": "6e4ce9e1229d73767b8e5b7fd1051dd6c618f9d4c359558e42e5468cbb8469e8"
+    },
+    "smoke.log": {
+      "bytes": 408,
+      "local_path": "runs/autoresearch/depth8-20260914T222337Z/smoke.log",
+      "sha256": "ff51ea70e010e8582868ac39e7dbd6171ae307014f22b0f67bbad53565f18376"
+    }
+  },
+  "experiment_id": "depth8-20260914T222337Z-1f65b29f",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stage_evidence_only",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": [
+    42
+  ]
+}

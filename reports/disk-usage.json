@@ -1,0 +1,27 @@
+{
+  "deleted_files": 0,
+  "files": 21925,
+  "measured_utc": "2026-09-15T02:14:36.861075+00:00",
+  "run_artifact_category_bytes": {
+    "checkpoints": 2510134166,
+    "profiler_traces_and_operators": 83967601,
+    "replay_tapes": 138419917
+  },
+  "scope": "Repository tree, logical file sizes; hardlinks may be counted more than once",
+  "top_level_bytes": {
+    ".autoresearch": 5483351048,
+    ".git": 62754,
+    ".github": 725,
+    "docs": 57011,
+    "experiments": 3164,
+    "references": 2480,
+    "reports": 1118950,
+    "root_files": 18261,
+    "runs": 2749143642,
+    "scripts": 154348,
+    "tests": 94495
+  },
+  "total_bytes": 8234006878,
+  "volume_free_bytes": 280382222336,
+  "volume_total_bytes": 999088451584
+}

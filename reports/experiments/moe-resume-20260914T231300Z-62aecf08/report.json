@@ -1,0 +1,408 @@
+{
+  "artifact_directory": "runs/autoresearch/moe-resume-20260914T231300Z",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "comparison.json": {
+      "bpb_relative_change_percent": 18.113498226242065,
+      "cpu_tests_passed": 22,
+      "cuda_tests_passed": 6,
+      "data_hashes": {
+        "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+        "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+        "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+        "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+        "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+      },
+      "interpretation": "Preliminary feasibility comparison; unequal total parameter budgets and one seed. No efficiency gain established.",
+      "isolation_fix": "Captured project/upstream modules/configs executed using -I; hashes verified before/after and actual imported sources recorded",
+      "limits": [
+        "Active counts are structural and include full shared embedding tables",
+        "Tokens include warmup; throughput excludes warmup",
+        "BPB excludes auxiliary loss",
+        "VRAM is PyTorch allocator only",
+        "GPU background load not controlled",
+        "Weights-only checkpoints, not resumable training state"
+      ],
+      "matched_comparison_fields": [
+        "protocol",
+        "upstream",
+        "data_seal",
+        "seed",
+        "runner_sha256",
+        "adapter_sha256",
+        "model_sha256",
+        "bootstrap_sha256",
+        "record_version"
+      ],
+      "precision_fix": "FP32 router softmax and vector weights, then input-dtype cast; tightened test tolerance to atol=1e-6, rtol=1e-5; finite/nonzero task gradients asserted",
+      "prior_files_verified_unchanged": 77,
+      "protocol": {
+        "baseline_timeout_seconds": 900,
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "protocol_id": "vesper-dense-tinystories-v1",
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "review": "No remaining concrete findings in isolation fix or revised CUDA assertions",
+      "runs": {
+        "dense": {
+          "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+          "active_parameters": 26345772,
+          "artifacts": "runs\\autoresearch\\20260914T231604Z-061092d4",
+          "depth": 6,
+          "host_ram_peak": null,
+          "memory_scope": "PyTorch allocator; excludes other processes and driver allocations",
+          "memory_table_bytes": 0,
+          "optimizer_updates": 546,
+          "peak_allocated_bytes": 456016384,
+          "peak_allocated_mib": 434.89111328125,
+          "peak_reserved_bytes": 555745280,
+          "peak_reserved_mib": 530.0,
+          "routing": {
+            "aux_loss_weight": 0.0,
+            "eval": {
+              "counts": [],
+              "dropped_tokens": 0,
+              "fractions": [],
+              "tokens": 65536
+            },
+            "feedforward": "dense",
+            "num_experts": 0,
+            "router_gradient_max_abs": [],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [],
+              "dropped_tokens": 0,
+              "fractions": [],
+              "tokens": 8945664
+            },
+            "training_auxiliary_loss": 0.0,
+            "training_cross_entropy": 2.2219151865568136,
+            "weighted_training_auxiliary_loss": 0.0
+          },
+          "timed_tokens_per_second": 29204.910052287873,
+          "timed_training_seconds": 300.13583278656006,
+          "total_parameters": 26345772,
+          "training_tokens": 8945664,
+          "validation_bpb": 0.628327,
+          "wall_seconds": 312.875,
+          "width": 384
+        },
+        "moe": {
+          "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+          "active_parameters": 26354988,
+          "artifacts": "runs\\autoresearch\\20260914T232147Z-ff9e4e60",
+          "depth": 6,
+          "host_ram_peak": null,
+          "memory_scope": "PyTorch allocator; excludes other processes and driver allocations",
+          "memory_table_bytes": 0,
+          "optimizer_updates": 235,
+          "peak_allocated_bytes": 764774912,
+          "peak_allocated_mib": 729.34619140625,
+          "peak_reserved_bytes": 836763648,
+          "peak_reserved_mib": 798.0,
+          "routing": {
+            "aux_loss_weight": 0.01,
+            "eval": {
+              "counts": [
+                [
+                  19582,
+                  19827,
+                  15455,
+                  10672
+                ],
+                [
+                  12291,
+                  20602,
+                  16136,
+                  16507
+                ],
+                [
+                  19442,
+                  16525,
+                  15649,
+                  13920
+                ],
+                [
+                  14657,
+                  16072,
+                  17224,
+                  17583
+                ],
+                [
+                  21737,
+                  14940,
+                  14170,
+                  14689
+                ],
+                [
+                  23997,
+                  12231,
+                  9678,
+                  19630
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.298797607421875,
+                  0.3025360107421875,
+                  0.2358245849609375,
+                  0.162841796875
+                ],
+                [
+                  0.1875457763671875,
+                  0.314361572265625,
+                  0.2462158203125,
+                  0.2518768310546875
+                ],
+                [
+                  0.296661376953125,
+                  0.2521514892578125,
+                  0.2387847900390625,
+                  0.21240234375
+                ],
+                [
+                  0.2236480712890625,
+                  0.2452392578125,
+                  0.2628173828125,
+                  0.2682952880859375
+                ],
+                [
+                  0.3316802978515625,
+                  0.22796630859375,
+                  0.216217041015625,
+                  0.2241363525390625
+                ],
+                [
+                  0.3661651611328125,
+                  0.1866302490234375,
+                  0.147674560546875,
+                  0.299530029296875
+                ]
+              ],
+              "tokens": 65536
+            },
+            "feedforward": "moe",
+            "num_experts": 4,
+            "router_gradient_max_abs": [
+              0.0025034742429852486,
+              0.0013287723995745182,
+              0.003001368371769786,
+              0.0017161922296509147,
+              0.0022127008996903896,
+              0.0018771442119032145
+            ],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [
+                [
+                  1220369,
+                  1208033,
+                  871873,
+                  549965
+                ],
+                [
+                  769315,
+                  1168319,
+                  796338,
+                  1116268
+                ],
+                [
+                  895988,
+                  927481,
+                  1110082,
+                  916689
+                ],
+                [
+                  921393,
+                  709731,
+                  1380927,
+                  838189
+                ],
+                [
+                  933446,
+                  1120945,
+                  770240,
+                  1025609
+                ],
+                [
+                  1445855,
+                  958879,
+                  489291,
+                  956215
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.3169592025432181,
+                  0.3137552464261968,
+                  0.22644640334109042,
+                  0.14283914768949468
+                ],
+                [
+                  0.19980962225731383,
+                  0.303440564744016,
+                  0.20682814577792552,
+                  0.2899216672207447
+                ],
+                [
+                  0.232709649268617,
+                  0.24088913937832446,
+                  0.28831501412898936,
+                  0.23808619722406915
+                ],
+                [
+                  0.23930793924534574,
+                  0.1843342233211436,
+                  0.35865997963763296,
+                  0.21769785779587766
+                ],
+                [
+                  0.24243839345079787,
+                  0.29113639669215424,
+                  0.20004986702127658,
+                  0.2663753428357713
+                ],
+                [
+                  0.3755233439993351,
+                  0.24904395570146276,
+                  0.12708064951795212,
+                  0.24835205078125
+                ]
+              ],
+              "tokens": 3850240
+            },
+            "training_auxiliary_loss": 1.0631078777795142,
+            "training_cross_entropy": 2.7274551990184377,
+            "weighted_training_auxiliary_loss": 0.010631078777795143
+          },
+          "timed_tokens_per_second": 12223.57485506615,
+          "timed_training_seconds": 300.24080872535706,
+          "total_parameters": 47588652,
+          "training_tokens": 3850240,
+          "validation_bpb": 0.742139,
+          "wall_seconds": 321.81299999999464,
+          "width": 384
+        }
+      },
+      "smokes": {
+        "dense": "runs\\autoresearch\\20260914T231448Z-edc7928a",
+        "moe": "runs\\autoresearch\\20260914T231516Z-5599ce3e"
+      },
+      "status": "completed",
+      "stopped_after": "Two fresh smoke tests and exactly one five-minute timed baseline per variant; no further experiments or cloud jobs",
+      "total_parameter_ratio": 1.8063107810999048,
+      "training_tokens_relative_change_percent": -56.959706959706956
+    },
+    "smoke-control-check.json": {},
+    "verification-source-manifest.json": {}
+  },
+  "diagnostics": [
+    "tests-cpu.log:\ntest_failed_process_is_not_promoted_by_valid_looking_output (test_autoresearch.ResultsTests.test_failed_process_is_not_promoted_by_valid_looking_output) ... ok\ntest_protocol_rejects_partial_batches_and_unbounded_timeouts (test_autoresearch.ResultsTests.test_protocol_rejects_partial_batches_and_unbounded_timeouts) ... ok\ntest_timeout_terminates_child_and_preserves_partial_output (test_autoresearch.ResultsTests.test_timeout_terminates_child_and_preserves_partial_output) ... ok\ntest_windows_taskkill_timeout_still_kills_owned_child (test_autoresearch.ResultsTests.test_windows_taskkill_timeout_still_kills_owned_child) ... ok\nRan 22 tests in 3.478s\nOK",
+    "tests-cuda.log:\nRan 6 tests in 3.246s\nOK"
+  ],
+  "evidence": {
+    "compare.py": {
+      "bytes": 12024,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/compare.py",
+      "sha256": "3f6011637f67ea6cd0f9828badb87e28429593ea413bf85148a1da618c7a375c"
+    },
+    "comparison-verification.log": {
+      "bytes": 2227,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/comparison-verification.log",
+      "sha256": "f63c259926d56a1a208c85c848fb33ee12d6a09451736687c4fa002e6ea8dcff"
+    },
+    "comparison.json": {
+      "bytes": 9624,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/comparison.json",
+      "sha256": "601860479085948d87b155ad074fec23f855d5b2fae763ac099915880f93e716"
+    },
+    "comparison.md": {
+      "bytes": 2905,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/comparison.md",
+      "sha256": "f3a6793652518a354da540393e95b90db3021e86205a82bc84562b5416344b3d"
+    },
+    "dense-baseline.log": {
+      "bytes": 412,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/dense-baseline.log",
+      "sha256": "201daa2301a6b3c70457994aa2461db67081c8222dec00c511b2b0977ccc3c77"
+    },
+    "dense-smoke.log": {
+      "bytes": 407,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/dense-smoke.log",
+      "sha256": "3f62cfb6c99f56c082617928e3782d299d1cd2a5bf7d0dc6c622a4ab581add6c"
+    },
+    "moe-baseline.log": {
+      "bytes": 412,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/moe-baseline.log",
+      "sha256": "dbcacccb02c1b51b05fd304657ee57a5112f283c33196c9803cbf8d1d35dad2d"
+    },
+    "moe-smoke.log": {
+      "bytes": 408,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/moe-smoke.log",
+      "sha256": "5d865f855485e83f8a060e21e28cbc4980d09ea8407ca8111eaac67cb9363f29"
+    },
+    "prior-preservation.json": {
+      "bytes": 17570,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/prior-preservation.json",
+      "sha256": "581e46a0d4ff34cf21221f90edd56326e7a521a2b795fceaae6120cd178450b3"
+    },
+    "smoke-control-check.json": {
+      "bytes": 106,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/smoke-control-check.json",
+      "sha256": "062c3764e0dbb5cc08854815dd7728963cd7eac34feb10179c74cada1e7a447d"
+    },
+    "tests-cpu.log": {
+      "bytes": 3584,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/tests-cpu.log",
+      "sha256": "e488271f4808a23366b1f9f29a5b672ab04d7a7dd95a7250ee80f37b227f720d"
+    },
+    "tests-cuda.log": {
+      "bytes": 1135,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/tests-cuda.log",
+      "sha256": "f5e1452e93a595ff024f019e48154a673c3998bfea40f3ef672f26f4d3a809aa"
+    },
+    "verification-source-manifest.json": {
+      "bytes": 393,
+      "local_path": "runs/autoresearch/moe-resume-20260914T231300Z/verification-source-manifest.json",
+      "sha256": "a8975b22737ea4d9be906d03c3b097c1b5d5eceb526a1a5ca210ae4720c13996"
+    }
+  },
+  "experiment_id": "moe-resume-20260914T231300Z-62aecf08",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "completed",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {
+      "compare.py": {
+        "published_path": "reports/source-snapshots/3f6011637f67ea6cd0f9828badb87e28429593ea413bf85148a1da618c7a375c.py",
+        "sha256": "3f6011637f67ea6cd0f9828badb87e28429593ea413bf85148a1da618c7a375c"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}

@@ -1,0 +1,107 @@
+{
+  "artifact_directory": "runs/autoresearch/moe-feasibility-20260914T224538Z",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "preservation-check.json": {}
+  },
+  "diagnostics": [
+    "cuda-dtype-diagnostic-retry1.log:\n  \"note\": \"Diagnosis only; no trial or optimizer update. Correctness suite remains failed.\"",
+    "cuda-dtype-diagnostic.log:\nTraceback (most recent call last):\nRuntimeError: Float did not match BFloat16",
+    "tests-cpu.log:\ntest_failed_process_is_not_promoted_by_valid_looking_output (test_autoresearch.ResultsTests.test_failed_process_is_not_promoted_by_valid_looking_output) ... ok\ntest_protocol_rejects_partial_batches_and_unbounded_timeouts (test_autoresearch.ResultsTests.test_protocol_rejects_partial_batches_and_unbounded_timeouts) ... ok\ntest_timeout_terminates_child_and_preserves_partial_output (test_autoresearch.ResultsTests.test_timeout_terminates_child_and_preserves_partial_output) ... ok\ntest_windows_taskkill_timeout_still_kills_owned_child (test_autoresearch.ResultsTests.test_windows_taskkill_timeout_still_kills_owned_child) ... ok\nRan 18 tests in 2.822s\nOK",
+    "tests-cuda.log:\nTraceback (most recent call last):\n    raise error_metas[0].to_error(msg)\nAssertionError: The values for attribute 'dtype' do not match: torch.float32 != torch.bfloat16.\nRan 6 tests in 2.989s\nFAILED (failures=1)",
+    "tests-red.log:\nTraceback (most recent call last):\n    raise AssertionError(\"MoE model adapter has not been implemented\")\nAssertionError: MoE model adapter has not been implemented\nERROR: test_selectable_variants_and_unknown_options_are_rejected (__main__.VariantConfigTests.test_selectable_variants_and_unknown_options_are_rejected)\nTraceback (most recent call last):\n    raise ValueError(\"Candidate must contain only depth and matrix_lr.\")\nValueError: Candidate must contain only depth and matrix_lr.\nFAILED (errors=2)"
+  ],
+  "evidence": {
+    "cuda-dtype-diagnostic-retry1.log": {
+      "bytes": 467,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/cuda-dtype-diagnostic-retry1.log",
+      "sha256": "d42ffed16846950611feac28a88fd4866de78ceb241c52022f913c4f9bf13c85"
+    },
+    "cuda-dtype-diagnostic.log": {
+      "bytes": 121,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/cuda-dtype-diagnostic.log",
+      "sha256": "bb93ebd6530be3e16ad89d1e86972120e9cbba0d3226168c3e22e3ed06709823"
+    },
+    "preservation-check.json": {
+      "bytes": 62,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/preservation-check.json",
+      "sha256": "f34a762aebc037dca9b0698e78a25e8a4f7ccffa659a487c73d9e7968883cf77"
+    },
+    "prior-preservation.json": {
+      "bytes": 12648,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/prior-preservation.json",
+      "sha256": "167b242a466dd13b2dfc8c8fc141dc37d85eb27e6ea949bc931fc49b67ffcd20"
+    },
+    "source-manifest.json": {
+      "bytes": 2810,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/source-manifest.json",
+      "sha256": "b2dc7076998e16f31ec3615fa4f7649ec53ab84ef7bfbf5df99c841c95ea2911"
+    },
+    "stopped.md": {
+      "bytes": 2823,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/stopped.md",
+      "sha256": "73e1954d07cdc88a88eab5cdb8f5acb452fb42fbb2d39716fd9e3ec0beb4f74b"
+    },
+    "tests-cpu.log": {
+      "bytes": 2950,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/tests-cpu.log",
+      "sha256": "e9e1e9c47a7b44d3186edb2cc2b5962549063f1d3987b585a9f22a405655b694"
+    },
+    "tests-cuda.log": {
+      "bytes": 2052,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/tests-cuda.log",
+      "sha256": "d9a6a79d092a2be4a65e5003cd00b407d7ea13a8575763fb5650ca28f7294b63"
+    },
+    "tests-red.log": {
+      "bytes": 1628,
+      "local_path": "runs/autoresearch/moe-feasibility-20260914T224538Z/tests-red.log",
+      "sha256": "62160257f8a7a49a1b7ce1bab9c8b0390751919578241aafc7cfd331d8f72874"
+    }
+  },
+  "experiment_id": "moe-feasibility-20260914T224538Z-d3d2dbbe",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stopped",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {
+      "source/scripts/autoresearch.py": {
+        "published_path": "reports/source-snapshots/982fd500f586a30baf4b13325ace5c46757266e4ff21c24c6750540a0f2e7956.py",
+        "sha256": "982fd500f586a30baf4b13325ace5c46757266e4ff21c24c6750540a0f2e7956"
+      },
+      "source/scripts/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0.py",
+        "sha256": "357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0"
+      },
+      "source/scripts/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/63c057ac73dbb11c8b3ad7a09ba58e471194b9266be5111a5b7f4d80693c5a5d.py",
+        "sha256": "63c057ac73dbb11c8b3ad7a09ba58e471194b9266be5111a5b7f4d80693c5a5d"
+      },
+      "source/tests/test_autoresearch.py": {
+        "published_path": "reports/source-snapshots/dde7a6fc36d8efbe17ae96584113a28763d222cd10dc52bd355f7d772ed16f4a.py",
+        "sha256": "dde7a6fc36d8efbe17ae96584113a28763d222cd10dc52bd355f7d772ed16f4a"
+      },
+      "source/tests/test_moe.py": {
+        "published_path": "reports/source-snapshots/926407ff8fe57cea8024c2d5f637c115597e9fcd90009a126d45461db3d67e69.py",
+        "sha256": "926407ff8fe57cea8024c2d5f637c115597e9fcd90009a126d45461db3d67e69"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}

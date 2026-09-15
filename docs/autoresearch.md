@@ -1,6 +1,6 @@
 # Run the first local training tests
 
-This integration runs a **dense TinyStories baseline** through a pinned Windows autoresearch fork. It does not yet implement MoE, NCP, or n-gram memory. Establishing a working training baseline is the first stage of those experiments.
+This integration runs dense or four-expert top-1 MoE TinyStories models through a pinned Windows autoresearch fork and a local model adapter. It does not implement NCP or n-gram memory. The first MoE design and correctness contract are in [moe-feasibility.md](moe-feasibility.md).
 
 ## Windows quick start
 
@@ -43,7 +43,16 @@ A nonzero exit, timeout, missing summary, or nonfinite score is recorded as fail
 
 The profile uses context 512, 16,384 tokens per optimizer update, microbatch 2, full causal attention, activation checkpointing, and no autotuning. Evaluation batch is fixed at 2, with 8,192 smoke tokens and 65,536 baseline tokens. The candidate starts at depth 4 and matrix learning rate 0.04; the runtime prints the actual parameter count.
 
-Only `experiments/autoresearch/candidate.json` is editable during the initial agent search. It exposes depth 2–8 and matrix learning rate in `(0, 0.1]`. `protocol.json` defines the comparison; changing it starts a new protocol, invalidates the smoke gate, and prevents treating earlier scores as directly comparable.
+Candidate files select `feedforward: dense` or `feedforward: moe`, depth 2–8 and matrix learning rate in `(0, 0.1]`. MoE additionally requires `num_experts: 4`, `top_k: 1`, a positive `aux_loss_weight`, and a positive `router_lr`. `protocol.json` defines the comparison; changing it starts a new protocol and invalidates the smoke gate. Variant, candidate, data, runtime, seed, runner, adapter and local model hashes all participate in the gate. Old dense smoke runs cannot authorize trials with the new adapter.
+
+The fixed comparison candidates are `experiments/autoresearch/dense-depth6.json` and `experiments/autoresearch/moe-depth6.json`. Select one explicitly for both smoke and baseline, for example:
+
+```powershell
+uv run --no-project --python 3.11 scripts/autoresearch.py smoke --candidate experiments/autoresearch/moe-depth6.json
+uv run --no-project --python 3.11 scripts/autoresearch.py baseline --candidate experiments/autoresearch/moe-depth6.json
+```
+
+Version-2 records also require `model.json`, `optimizer.json`, `routing.json`, and `training.json`, and preserve local runner/adapter/model source snapshots. They record exact total/structural active parameters, optimizer membership, exact processed tokens, router gradients, zero dropped tokens, auxiliary loss and per-layer train/eval utilization. BPB excludes the routing loss. The displayed training `loss` includes the configured auxiliary term. These candidates differ in parameter budget and cannot establish an efficiency gain.
 
 The upstream code resets seed 42 internally. `baseline --repeat 3` measures repeated execution of the same seeded candidate, not three independent seeds. We must add independent seed handling before making multi-seed research claims.
 
@@ -56,6 +65,14 @@ After one successful baseline, point the agent at [program.md](../program.md). T
 TinyStories measures basic training behavior. A lower score here does not establish better Python, security, quant, tool use, or NCP performance. The next implementation stages are MoE, NCP, and memory individually, followed by the controlled combinations in [experiments.md](experiments.md). They need architecture-specific correctness tests and new candidate interfaces.
 
 ## Reproducibility and limitations
+
+Checkpointing is an explicit boolean `activation_checkpointing` in each captured
+protocol. The default `protocol.json` keeps it on. Use
+`--protocol experiments/autoresearch/protocol-no-checkpoint.json` to select off
+without changing microbatch, context or any other budget. Pass the same protocol
+to smoke and baseline. Protocol hashes isolate smoke gates, and model/training
+receipts must confirm the captured checkpoint setting actually executed.
+
 
 The fork is pinned to [`a4123c6`](https://github.com/jsegov/autoresearch-win-rtx/tree/a4123c6e5c6287f90be04026642ba20b94e424df). Its README lists native Windows/5070 Ti support, but its reported hardware test is an RTX 3080. Our GPU tests still need to run on the user's PC. The original idea and research loop come from [Karpathy's autoresearch](https://github.com/karpathy/autoresearch).
 

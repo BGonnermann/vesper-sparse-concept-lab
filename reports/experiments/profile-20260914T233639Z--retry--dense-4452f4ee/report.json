@@ -1,0 +1,617 @@
+{
+  "artifact_directory": "runs/autoresearch/profile-20260914T233639Z/retry/dense",
+  "budget_family": "wall_time_budget",
+  "compatibility_fingerprint": "74825d0be2ea6d9d2ebbef6fc3f746e50e64354b1360f602360c8f6234466baa",
+  "configuration": null,
+  "details": {
+    "candidate.json": {
+      "depth": 6,
+      "feedforward": "dense",
+      "matrix_lr": 0.04
+    },
+    "protocol.json": {
+      "baseline_timeout_seconds": 900,
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "protocol_id": "vesper-dense-tinystories-v1",
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "result.json": {
+      "amp_dtype": "torch.bfloat16",
+      "attention_backend": "sdpa",
+      "batch_sha256": "37593e7fc43e4931e717ab2894183b7a02500298f53ffb3a2e20fecc2f55be11",
+      "checkpoint_sha256": "2f1a784e180945949de19b8d53d617dda462a69ddfd627f9b7dabda8e1b5de95",
+      "config": {
+        "attention_backend": "sdpa",
+        "compute_dtype": "torch.bfloat16",
+        "n_embd": 384,
+        "n_head": 3,
+        "n_kv_head": 3,
+        "n_layer": 6,
+        "sequence_len": 512,
+        "use_activation_checkpointing": true,
+        "vocab_size": 8192,
+        "window_pattern": "L"
+      },
+      "cuda": "12.8",
+      "executed_files": {
+        "source/project/autoresearch_model.py": "357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      },
+      "frozen_weights_verified": true,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "nonzero_lr_updates": 0,
+      "optimizer_groups": [
+        {
+          "category": "shared",
+          "elements": 3145728,
+          "kind": "adamw",
+          "names": [
+            "lm_head.weight"
+          ],
+          "shapes": [
+            [
+              8192,
+              384
+            ]
+          ],
+          "tensors": 1
+        },
+        {
+          "category": "shared",
+          "elements": 3145728,
+          "kind": "adamw",
+          "names": [
+            "transformer.wte.weight"
+          ],
+          "shapes": [
+            [
+              8192,
+              384
+            ]
+          ],
+          "tensors": 1
+        },
+        {
+          "category": "shared",
+          "elements": 9437184,
+          "kind": "adamw",
+          "names": [
+            "value_embeds.1.weight",
+            "value_embeds.3.weight",
+            "value_embeds.5.weight"
+          ],
+          "shapes": [
+            [
+              8192,
+              384
+            ],
+            [
+              8192,
+              384
+            ],
+            [
+              8192,
+              384
+            ]
+          ],
+          "tensors": 3
+        },
+        {
+          "category": "shared",
+          "elements": 6,
+          "kind": "adamw",
+          "names": [
+            "resid_lambdas"
+          ],
+          "shapes": [
+            [
+              6
+            ]
+          ],
+          "tensors": 1
+        },
+        {
+          "category": "shared",
+          "elements": 6,
+          "kind": "adamw",
+          "names": [
+            "x0_lambdas"
+          ],
+          "shapes": [
+            [
+              6
+            ]
+          ],
+          "tensors": 1
+        },
+        {
+          "category": "shared",
+          "elements": 288,
+          "kind": "muon",
+          "names": [
+            "transformer.h.1.attn.ve_gate.weight",
+            "transformer.h.3.attn.ve_gate.weight",
+            "transformer.h.5.attn.ve_gate.weight"
+          ],
+          "shapes": [
+            [
+              3,
+              32
+            ],
+            [
+              3,
+              32
+            ],
+            [
+              3,
+              32
+            ]
+          ],
+          "tensors": 3
+        },
+        {
+          "category": "shared",
+          "elements": 1179648,
+          "kind": "muon",
+          "names": [
+            "transformer.h.0.attn.c_q.weight",
+            "transformer.h.0.attn.c_k.weight",
+            "transformer.h.0.attn.c_v.weight",
+            "transformer.h.0.attn.c_proj.weight",
+            "transformer.h.1.attn.c_q.weight",
+            "transformer.h.1.attn.c_k.weight",
+            "transformer.h.1.attn.c_v.weight",
+            "transformer.h.1.attn.c_proj.weight"
+          ],
+          "shapes": [
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ]
+          ],
+          "tensors": 8
+        },
+        {
+          "category": "shared",
+          "elements": 1179648,
+          "kind": "muon",
+          "names": [
+            "transformer.h.2.attn.c_q.weight",
+            "transformer.h.2.attn.c_k.weight",
+            "transformer.h.2.attn.c_v.weight",
+            "transformer.h.2.attn.c_proj.weight",
+            "transformer.h.3.attn.c_q.weight",
+            "transformer.h.3.attn.c_k.weight",
+            "transformer.h.3.attn.c_v.weight",
+            "transformer.h.3.attn.c_proj.weight"
+          ],
+          "shapes": [
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ]
+          ],
+          "tensors": 8
+        },
+        {
+          "category": "shared",
+          "elements": 1179648,
+          "kind": "muon",
+          "names": [
+            "transformer.h.4.attn.c_q.weight",
+            "transformer.h.4.attn.c_k.weight",
+            "transformer.h.4.attn.c_v.weight",
+            "transformer.h.4.attn.c_proj.weight",
+            "transformer.h.5.attn.c_q.weight",
+            "transformer.h.5.attn.c_k.weight",
+            "transformer.h.5.attn.c_v.weight",
+            "transformer.h.5.attn.c_proj.weight"
+          ],
+          "shapes": [
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ],
+            [
+              384,
+              384
+            ]
+          ],
+          "tensors": 8
+        },
+        {
+          "category": "dense_ffn",
+          "elements": 3538944,
+          "kind": "muon",
+          "names": [
+            "transformer.h.0.mlp.c_proj.weight",
+            "transformer.h.1.mlp.c_proj.weight",
+            "transformer.h.2.mlp.c_proj.weight",
+            "transformer.h.3.mlp.c_proj.weight",
+            "transformer.h.4.mlp.c_proj.weight",
+            "transformer.h.5.mlp.c_proj.weight"
+          ],
+          "shapes": [
+            [
+              384,
+              1536
+            ],
+            [
+              384,
+              1536
+            ],
+            [
+              384,
+              1536
+            ],
+            [
+              384,
+              1536
+            ],
+            [
+              384,
+              1536
+            ],
+            [
+              384,
+              1536
+            ]
+          ],
+          "tensors": 6
+        },
+        {
+          "category": "dense_ffn",
+          "elements": 3538944,
+          "kind": "muon",
+          "names": [
+            "transformer.h.0.mlp.c_fc.weight",
+            "transformer.h.1.mlp.c_fc.weight",
+            "transformer.h.2.mlp.c_fc.weight",
+            "transformer.h.3.mlp.c_fc.weight",
+            "transformer.h.4.mlp.c_fc.weight",
+            "transformer.h.5.mlp.c_fc.weight"
+          ],
+          "shapes": [
+            [
+              1536,
+              384
+            ],
+            [
+              1536,
+              384
+            ],
+            [
+              1536,
+              384
+            ],
+            [
+              1536,
+              384
+            ],
+            [
+              1536,
+              384
+            ],
+            [
+              1536,
+              384
+            ]
+          ],
+          "tensors": 6
+        }
+      ],
+      "phases_seconds_per_update": {
+        "backward": {
+          "max": 0.3847492999630049,
+          "mean": 0.3509978666843381,
+          "median": 0.35767280001891777,
+          "min": 0.3105715000710916,
+          "samples": [
+            0.35767280001891777,
+            0.3105715000710916,
+            0.3847492999630049
+          ]
+        },
+        "data_h2d": {
+          "max": 0.0010960000508930534,
+          "mean": 0.0010526999831199646,
+          "median": 0.001054099906468764,
+          "min": 0.0010079999919980764,
+          "samples": [
+            0.001054099906468764,
+            0.0010960000508930534,
+            0.0010079999919980764
+          ]
+        },
+        "forward": {
+          "max": 0.2057366000371985,
+          "mean": 0.18045913332995647,
+          "median": 0.17453179997392,
+          "min": 0.16110899997875094,
+          "samples": [
+            0.17453179997392,
+            0.16110899997875094,
+            0.2057366000371985
+          ]
+        },
+        "optimizer": {
+          "max": 0.01625489999423735,
+          "mean": 0.011477266661434745,
+          "median": 0.009163099981378764,
+          "min": 0.009013800008688122,
+          "samples": [
+            0.009013800008688122,
+            0.01625489999423735,
+            0.009163099981378764
+          ]
+        },
+        "zero_grad": {
+          "max": 0.00014340001507662237,
+          "mean": 0.00011940000695176423,
+          "median": 0.00013000000035390258,
+          "min": 8.480000542476773e-05,
+          "samples": [
+            0.00013000000035390258,
+            8.480000542476773e-05,
+            0.00014340001507662237
+          ]
+        }
+      },
+      "platform": "Windows-10-10.0.26200-SP0",
+      "primary": {
+        "seconds": 3.1036661999532953,
+        "tokens": 98304,
+        "tokens_per_second": 31673.50921999257,
+        "update_seconds": {
+          "max": 0.5374899999878835,
+          "mean": 0.5172776999922158,
+          "median": 0.5195867499860469,
+          "min": 0.4865834999945946,
+          "samples": [
+            0.5035156999947503,
+            0.5115016999770887,
+            0.5374899999878835,
+            0.5276717999950051,
+            0.536903500003973,
+            0.4865834999945946
+          ]
+        }
+      },
+      "primary_peak_bytes": {
+        "allocated": 456016896,
+        "reserved": 555745280
+      },
+      "routing": {
+        "aux_loss_weight": 0.0,
+        "eval": {
+          "counts": [],
+          "dropped_tokens": 0,
+          "fractions": [],
+          "tokens": 0
+        },
+        "feedforward": "dense",
+        "num_experts": 0,
+        "router_gradient_max_abs": [],
+        "router_gradients_finite": true,
+        "train": {
+          "counts": [],
+          "dropped_tokens": 0,
+          "fractions": [],
+          "tokens": 198656
+        },
+        "training_auxiliary_loss": 0.0,
+        "training_cross_entropy": 1.7790719221547706,
+        "weighted_training_auxiliary_loss": 0.0
+      },
+      "stock_cuda_loader_seconds_per_microbatch": {
+        "cold_first": 0.08249130001058802,
+        "matches_replay_bank": true,
+        "steady": {
+          "max": 0.005028299987316132,
+          "mean": 0.000444103222933688,
+          "median": 0.00027249997947365046,
+          "min": 0.00022990000434219837,
+          "samples": [
+            0.0003912000101990998,
+            0.0003153000143356621,
+            0.0003161999920848757,
+            0.0003065000055357814,
+            0.00037429999792948365,
+            0.005028299987316132,
+            0.0003467000206001103,
+            0.0003958999877795577,
+            0.0003386999887879938,
+            0.00032970000756904483,
+            0.0003319999959785491,
+            0.00039969998761080205,
+            0.0003274999908171594,
+            0.0003311999898869544,
+            0.00027150000096298754,
+            0.00022990000434219837,
+            0.00027249997947365046,
+            0.00024009999469853938,
+            0.00023780000628903508,
+            0.00024170000688172877,
+            0.00023389997659251094,
+            0.0003395999956410378,
+            0.00025010001263581216,
+            0.0002418000076431781,
+            0.00023780000628903508,
+            0.00024140000459738076,
+            0.00023509998572990298,
+            0.0002629999944474548,
+            0.00023579999106004834,
+            0.00023169998894445598,
+            0.00023029997828416526
+          ]
+        }
+      },
+      "torch": "2.9.1+cu128",
+      "trace_forward_rows_per_layer": {},
+      "trace_note": "Two microbatches plus one optimizer; diagnostic overhead excluded from primary throughput",
+      "variant": "dense"
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "candidate.json": {
+      "bytes": 69,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/retry/dense/candidate.json",
+      "sha256": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7"
+    },
+    "expert-rows.json": {
+      "bytes": 4,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/retry/dense/expert-rows.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    "operators.json": {
+      "bytes": 224226,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/retry/dense/operators.json",
+      "sha256": "daa8a255e4ceaf6b76bd62c32725e3555bcc3103a9f1f01e976ad71005303daf"
+    },
+    "profile.log": {
+      "bytes": 787,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/retry/dense/profile.log",
+      "sha256": "ae399f2604f97a894cd0976977f6db584cea7e187f6c406c582f223c338b302c"
+    },
+    "protocol.json": {
+      "bytes": 314,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/retry/dense/protocol.json",
+      "sha256": "55ca797022f1f47e7c1970767577320f1cac09ce4ac00b96f0c95cb190445b45"
+    },
+    "result.json": {
+      "bytes": 12031,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/retry/dense/result.json",
+      "sha256": "40eca69fd69c04520a0d62e2910145a31d385f297f96be90286132682e3a4cbc"
+    },
+    "trace.json": {
+      "bytes": 9550550,
+      "local_path": "runs/autoresearch/profile-20260914T233639Z/retry/dense/trace.json",
+      "sha256": "0b5a5f673d1d12c89aa511f54a7b1978fab7f62c9a898506ff3d2c184f5546bb"
+    }
+  },
+  "experiment_id": "profile-20260914T233639Z--retry--dense-4452f4ee",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stage_evidence_only",
+  "protocol": {
+    "baseline_timeout_seconds": 900,
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "protocol_id": "vesper-dense-tinystories-v1",
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {
+      "batch_sha256": "37593e7fc43e4931e717ab2894183b7a02500298f53ffb3a2e20fecc2f55be11",
+      "checkpoint_sha256": "2f1a784e180945949de19b8d53d617dda462a69ddfd627f9b7dabda8e1b5de95"
+    },
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}

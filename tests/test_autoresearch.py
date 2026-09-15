@@ -91,7 +91,7 @@ class ResultsTests(unittest.TestCase):
                 runner.validate_candidate(candidate)
 
     def test_protocol_rejects_partial_batches_and_unbounded_timeouts(self):
-        protocol = {"protocol_id": "test", "sequence_length": 512, "tokens_per_update": 16384,
+        protocol = {"protocol_id": "test", "activation_checkpointing": True, "sequence_length": 512, "tokens_per_update": 16384,
                     "microbatch_size": 2, "eval_batch_size": 2, "eval_tokens": 65536,
                     "smoke_eval_tokens": 8192, "training_seconds": 300,
                     "smoke_timeout_seconds": 180, "baseline_timeout_seconds": 900}

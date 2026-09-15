@@ -1,0 +1,70 @@
+{
+  "artifact_directory": "runs/autoresearch/stages-20260914T215602Z",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {},
+  "diagnostics": [
+    "setup.log:\nerror: Failed to initialize cache at `C:\\Users\\bgonn\\AppData\\Local\\uv\\cache`\n  Caused by: failed to open file `C:\\Users\\bgonn\\AppData\\Local\\uv\\cache\\sdists-v9\\.git`: Access is denied. (os error 5)"
+  ],
+  "evidence": {
+    "baseline.log": {
+      "bytes": 412,
+      "local_path": "runs/autoresearch/stages-20260914T215602Z/baseline.log",
+      "sha256": "8669c5e0d7ceac4d38a018a9b00f73dd6e1d409dc2ed0e698fb5b9717162b371"
+    },
+    "doctor.log": {
+      "bytes": 557,
+      "local_path": "runs/autoresearch/stages-20260914T215602Z/doctor.log",
+      "sha256": "dbffa227a2cf4e638b01b39061e17fb75dcc4e245294d178919d1e38f03cd657"
+    },
+    "prepare.log": {
+      "bytes": 1005,
+      "local_path": "runs/autoresearch/stages-20260914T215602Z/prepare.log",
+      "sha256": "766dc385e7c84d552eb60fc5f298d3542bf29564cf3c2afc67e47455c5b44709"
+    },
+    "setup-retry1.log": {
+      "bytes": 1747,
+      "local_path": "runs/autoresearch/stages-20260914T215602Z/setup-retry1.log",
+      "sha256": "d3b673a8832622ee5dfc26079b8329a7708a2b22cb3c56a94902723f34e8620b"
+    },
+    "setup.log": {
+      "bytes": 199,
+      "local_path": "runs/autoresearch/stages-20260914T215602Z/setup.log",
+      "sha256": "01341bac095fd69d663c1b128cd065600aa04dc0d5066f5ea0ca30faa15b1fd4"
+    },
+    "smoke.log": {
+      "bytes": 407,
+      "local_path": "runs/autoresearch/stages-20260914T215602Z/smoke.log",
+      "sha256": "00c497e16551592f4e9e561290189fe0fb8d385ed2d991ac0bbb5b39f3b34ed9"
+    },
+    "summary.md": {
+      "bytes": 2769,
+      "local_path": "runs/autoresearch/stages-20260914T215602Z/summary.md",
+      "sha256": "265880b6b9b06e2859e0cc64661c88336b556806e294e6ccc8884a28403a95fe"
+    }
+  },
+  "experiment_id": "stages-20260914T215602Z-60b356fc",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stage_evidence_only",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}

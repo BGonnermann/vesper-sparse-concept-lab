@@ -1,0 +1,187 @@
+{
+  "artifact_directory": "runs/autoresearch/20260914T222428Z-25defc6f",
+  "budget_family": "wall_time_budget",
+  "compatibility_fingerprint": "eed4e054ed2bbe77e02a89dc5e14fec905535e6dde164265dd35eeb64803e90c",
+  "configuration": {
+    "depth": 8,
+    "matrix_lr": 0.04
+  },
+  "details": {
+    "candidate.json": {
+      "depth": 8,
+      "matrix_lr": 0.04
+    },
+    "environment.json": {
+      "bf16_supported": true,
+      "capability": [
+        12,
+        0
+      ],
+      "cuda_available": true,
+      "cuda_build": "12.8",
+      "free_vram_bytes": 15097430016,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "os": "Windows-10-10.0.26200-SP0",
+      "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.9.1+cu128",
+      "total_vram_bytes": 17094475776
+    },
+    "memory.json": {
+      "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+      "peak_allocated_bytes": 757953536,
+      "peak_reserved_bytes": 843055104
+    },
+    "protocol.json": {
+      "baseline_timeout_seconds": 900,
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "protocol_id": "vesper-dense-tinystories-v1",
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "result.json": {
+      "candidate": {
+        "depth": 8,
+        "matrix_lr": 0.04
+      },
+      "condition": "dense",
+      "kind": "baseline",
+      "metrics": {
+        "depth": 8.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 50.3,
+        "num_steps": 446.0,
+        "peak_vram_mb": 722.8,
+        "total_seconds": 311.0,
+        "total_tokens_M": 7.3,
+        "train_batch_size": 2.0,
+        "training_seconds": 300.3,
+        "val_bpb": 0.630906
+      },
+      "protocol": {
+        "baseline_timeout_seconds": 900,
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "protocol_id": "vesper-dense-tinystories-v1",
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "returncode": 0,
+      "seed": 42,
+      "status": "completed",
+      "wall_seconds": 315.0460000000021
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "candidate.json": {
+      "bytes": 42,
+      "local_path": "runs/autoresearch/20260914T222428Z-25defc6f/candidate.json",
+      "sha256": "22b78cef61292b2db7a624968903783c1fa8228aa1423c031c5cc70e1666911d"
+    },
+    "environment.json": {
+      "bytes": 383,
+      "local_path": "runs/autoresearch/20260914T222428Z-25defc6f/environment.json",
+      "sha256": "c8eec8cc7709d7514063291aff828792eeb789d2809a3f427fa117ec883b2289"
+    },
+    "memory.json": {
+      "bytes": 174,
+      "local_path": "runs/autoresearch/20260914T222428Z-25defc6f/memory.json",
+      "sha256": "65518c6ae6ef48020a369ec76951e58a264403a6a6d98b2d14ecd4326f2390af"
+    },
+    "protocol.json": {
+      "bytes": 314,
+      "local_path": "runs/autoresearch/20260914T222428Z-25defc6f/protocol.json",
+      "sha256": "55ca797022f1f47e7c1970767577320f1cac09ce4ac00b96f0c95cb190445b45"
+    },
+    "result.json": {
+      "bytes": 3424,
+      "local_path": "runs/autoresearch/20260914T222428Z-25defc6f/result.json",
+      "sha256": "56dc2f6d5e440b83e08353d274149f039168eb7f19ebd19dd31ea900d39caec8"
+    },
+    "run.log": {
+      "bytes": 56085,
+      "local_path": "runs/autoresearch/20260914T222428Z-25defc6f/run.log",
+      "sha256": "30c11528983c42fe034b9a99d20bf7dc879caf30bffa434bcb2ab63e452b9c00"
+    }
+  },
+  "experiment_id": "20260914T222428Z-25defc6f-91e1deaa",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": {
+    "depth": 8.0,
+    "eval_batch_size": 2.0,
+    "num_params_M": 50.3,
+    "num_steps": 446.0,
+    "peak_vram_mb": 722.8,
+    "total_seconds": 311.0,
+    "total_tokens_M": 7.3,
+    "train_batch_size": 2.0,
+    "training_seconds": 300.3,
+    "val_bpb": 0.630906
+  },
+  "outcome": "completed",
+  "protocol": {
+    "baseline_timeout_seconds": 900,
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "protocol_id": "vesper-dense-tinystories-v1",
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {
+      "adapter_sha256": "b462096e64f9159b63208cf5a651ccb5a60904480a27eb4c3c4a9f77e2f6c02a",
+      "runner_sha256": "0f9f48d538a0c9267a75d6febe7c016c6045230be45ff0666cc88839389b07f6"
+    },
+    "recorded_data_hashes": {
+      "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+      "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+      "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+    },
+    "recorded_git_commit": "1919da4362fbd20d781e72f34bf0d0e2d9ccea5f",
+    "recorded_git_dirty": true,
+    "recorded_upstream": {
+      "runtime_files": {
+        ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "upstream": {
+        "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored.",
+        "original_project": "https://github.com/karpathy/autoresearch",
+        "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+        "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+        "revision": "a4123c6e5c6287f90be04026642ba20b94e424df"
+      }
+    },
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": [
+    42
+  ]
+}

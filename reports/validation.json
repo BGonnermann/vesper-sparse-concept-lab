@@ -1,0 +1,12 @@
+{
+  "backfill_reports": 37,
+  "device": "CPU",
+  "idempotent_backfill_verified": true,
+  "prior_artifacts_verified": 560,
+  "publication_commit_is_training_provenance": false,
+  "read_only_review": "no blocking findings",
+  "source_archive_hashes_verified": true,
+  "test_log_sha256": "7b50f47d0a3c3da2cad500767b9f2a81a41edd97c5af043a032eed18b8861a32",
+  "tests_passed": 37,
+  "training_runs_started": 0
+}

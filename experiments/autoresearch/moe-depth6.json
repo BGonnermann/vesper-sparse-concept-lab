@@ -1,0 +1,9 @@
+{
+  "depth": 6,
+  "matrix_lr": 0.04,
+  "feedforward": "moe",
+  "num_experts": 4,
+  "top_k": 1,
+  "aux_loss_weight": 0.01,
+  "router_lr": 0.001
+}

@@ -1,0 +1,415 @@
+{
+  "artifact_directory": "runs/autoresearch/equal-token-20260915/dense-43",
+  "budget_family": "fixed_updates",
+  "compatibility_fingerprint": "c45e4fa41470a2b8a94568795245e8a1f8437073cd42690ac1d91d39e4fe14f6",
+  "configuration": {
+    "depth": 6,
+    "feedforward": "dense",
+    "matrix_lr": 0.04
+  },
+  "details": {
+    "batches.json": {
+      "seed": 43
+    },
+    "candidate.json": {
+      "depth": 6,
+      "feedforward": "dense",
+      "matrix_lr": 0.04
+    },
+    "environment.json": {
+      "bf16_supported": true,
+      "capability": [
+        12,
+        0
+      ],
+      "cuda_available": true,
+      "cuda_build": "12.8",
+      "free_vram_bytes": 15767437312,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "os": "Windows-10-10.0.26200-SP0",
+      "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.9.1+cu128",
+      "total_vram_bytes": 17094475776
+    },
+    "execution.json": {},
+    "fixed-training.json": {
+      "all_update_seconds": 169.78597579995403,
+      "batch_hash_chain": "3ad6730fe41b4b1235cd7ebfd54556f9f6516a9d32daff0e7137ecb6fb492369",
+      "optimizer_updates": 512,
+      "schedule_sha256": "3b63ceaf7022a693b205fd4055ef89450eb7aacac8311b1fa8f5dcf65ed16afa",
+      "seed": 43,
+      "stopping_rule": "optimizer_updates"
+    },
+    "initialization.json": {
+      "seed": 43
+    },
+    "memory.json": {
+      "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+      "peak_allocated_bytes": 609941504,
+      "peak_reserved_bytes": 652214272
+    },
+    "model.json": {
+      "activation_checkpointing": false,
+      "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+      "active_parameters": 26345772,
+      "depth": 6,
+      "expert_dispatch": null,
+      "expert_parameters": 0,
+      "feedforward": "dense",
+      "memory_table_bytes": 0,
+      "num_experts": 0,
+      "router_parameters": 0,
+      "top_k": 0,
+      "total_parameters": 26345772,
+      "width": 384
+    },
+    "optimizer.json": {},
+    "protocol.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "optimizer_updates": 512,
+      "protocol_id": "vesper-tinystories-equal-token-v1",
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "seed": 43,
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "stopping_rule": "optimizer_updates",
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "result.json": {
+      "candidate": {
+        "depth": 6,
+        "feedforward": "dense",
+        "matrix_lr": 0.04
+      },
+      "condition": "dense",
+      "kind": "fixed_updates",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 512.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 172.1,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 165.8,
+        "val_bpb": 0.637774
+      },
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 43,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "returncode": 0,
+      "seed": 43,
+      "status": "completed",
+      "wall_seconds": 175.82800000000861
+    },
+    "routing.json": {
+      "aux_loss_weight": 0.0,
+      "eval": {
+        "counts": [],
+        "dropped_tokens": 0,
+        "fractions": [],
+        "tokens": 65536
+      },
+      "feedforward": "dense",
+      "num_experts": 0,
+      "router_gradient_max_abs": [],
+      "router_gradients_finite": true,
+      "train": {
+        "counts": [],
+        "dropped_tokens": 0,
+        "fractions": [],
+        "tokens": 8388608
+      },
+      "training_auxiliary_loss": 0.0,
+      "training_cross_entropy": 2.213766436500009,
+      "weighted_training_auxiliary_loss": 0.0
+    },
+    "schedule.json": {},
+    "snapshot.json": {},
+    "training.json": {
+      "activation_checkpointing": false,
+      "optimizer_updates": 512,
+      "timed_training_seconds": 165.81921759995748,
+      "timed_training_tokens": 8208384,
+      "training_tokens": 8388608,
+      "warmup_updates": 11
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "batches.json": {
+      "bytes": 89367,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/batches.json",
+      "sha256": "d204d6e1d11da3a36244deb2bc72675d71f60b3f2e52144b05f36e38c09fc90c"
+    },
+    "candidate.json": {
+      "bytes": 69,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/candidate.json",
+      "sha256": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7"
+    },
+    "environment.json": {
+      "bytes": 383,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/environment.json",
+      "sha256": "7162e5b54515cf5f9e6f0f8a9c48887560ffc21ea300b21537c9df31519a2ed6"
+    },
+    "execution.json": {
+      "bytes": 2155,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/execution.json",
+      "sha256": "3c279e16d4d68a4a2c64d61486e6a6359ad49a5947dbc1615507a371878eb345"
+    },
+    "fixed-training.json": {
+      "bytes": 316,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/fixed-training.json",
+      "sha256": "b744973c227758c68b13c140abea05d541d1407c60ad468e893d42d764b4500f"
+    },
+    "initialization.json": {
+      "bytes": 4989,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/initialization.json",
+      "sha256": "544bb9b2e1f21e807e0dde6457a31ced6274d9fc2d42f01ce37dce424b065e22"
+    },
+    "memory.json": {
+      "bytes": 174,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/memory.json",
+      "sha256": "baa5d615435eb09295a1f7134118eabbf3fa1685a4e2eb9e39cd8677955fa78b"
+    },
+    "model.json": {
+      "bytes": 497,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/model.json",
+      "sha256": "b9d94ed5775d2aafc88be19a7a97da96d2b49009085f72cf3ace4369cad899c7"
+    },
+    "optimizer.json": {
+      "bytes": 3217,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/optimizer.json",
+      "sha256": "bf7f67d2db68eae55d37236981d5e5e2cf241d58b5d71aaabbb172697ca9d114"
+    },
+    "protocol.json": {
+      "bytes": 929,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/protocol.json",
+      "sha256": "dc028113a01996d2030183ebb53dfed924575fdcc2646cb10f0d9a49d71b1c16"
+    },
+    "result.json": {
+      "bytes": 13308,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/result.json",
+      "sha256": "31e8805df0a5fab359c323fa55b7fb61767ce944eb83f94c4e0f1a7d531022ff"
+    },
+    "routing.json": {
+      "bytes": 494,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/routing.json",
+      "sha256": "647871b676d94e661f438f1c5d538d77142f4b92f70c81fe3c5a501eb303b52c"
+    },
+    "run.log": {
+      "bytes": 35901,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/run.log",
+      "sha256": "cd8a7696a2edb4f813721522e72552cc270f13b2a755ed9ee18f6ca7c5656e2b"
+    },
+    "schedule.json": {
+      "bytes": 92702,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/schedule.json",
+      "sha256": "3b63ceaf7022a693b205fd4055ef89450eb7aacac8311b1fa8f5dcf65ed16afa"
+    },
+    "snapshot.json": {
+      "bytes": 1133,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/snapshot.json",
+      "sha256": "c3752ed4c991dfcafd72c4ea9628bdc5d2ec0c8bd57fa7e454eaa7a879f2583b"
+    },
+    "training.json": {
+      "bytes": 214,
+      "local_path": "runs/autoresearch/equal-token-20260915/dense-43/training.json",
+      "sha256": "ace38ab18b789f7beac44e262681a49ff855618d46d5bcec055aae070eb958e8"
+    }
+  },
+  "experiment_id": "equal-token-20260915--dense-43-6c16aa71",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": {
+    "depth": 6.0,
+    "eval_batch_size": 2.0,
+    "num_params_M": 26.3,
+    "num_steps": 512.0,
+    "peak_vram_mb": 581.7,
+    "total_seconds": 172.1,
+    "total_tokens_M": 8.4,
+    "train_batch_size": 2.0,
+    "training_seconds": 165.8,
+    "val_bpb": 0.637774
+  },
+  "outcome": "completed",
+  "protocol": {
+    "activation_checkpointing": false,
+    "baseline_timeout_seconds": 900,
+    "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+    "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "optimizer_updates": 512,
+    "protocol_id": "vesper-tinystories-equal-token-v1",
+    "schedule": {
+      "clock": "optimizer_step",
+      "decay_start_step": 256,
+      "final_lr_fraction": 0.0,
+      "lr_warmup_updates": 0,
+      "measurement_warmup_updates": 11,
+      "muon_momentum_warmup_updates": 300,
+      "progress": "zero_based_step / 512"
+    },
+    "seed": 43,
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "stopping_rule": "optimizer_updates",
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {
+      "source/project/autoresearch.py": {
+        "published_path": "reports/source-snapshots/1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091.py",
+        "sha256": "1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091"
+      },
+      "source/project/autoresearch_bootstrap.py": {
+        "published_path": "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py",
+        "sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6"
+      },
+      "source/project/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30.py",
+        "sha256": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30"
+      },
+      "source/project/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523.py",
+        "sha256": "f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523"
+      },
+      "source/upstream/prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      },
+      "source/upstream/train.py": {
+        "published_path": "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py",
+        "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      }
+    },
+    "execution_receipt": {
+      "dependency_scope": "Project/upstream Python sources and configs captured; installed packages remain in the recorded runtime venv",
+      "executed_files": {
+        "source/project/autoresearch.py": "1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_model.py": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+        "source/project/autoresearch_train.py": "f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      },
+      "files": {
+        "candidate.json": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7",
+        "protocol.json": "dc028113a01996d2030183ebb53dfed924575fdcc2646cb10f0d9a49d71b1c16",
+        "source/project/autoresearch.py": "1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_model.py": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+        "source/project/autoresearch_train.py": "f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "isolated": true,
+      "python": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\.autoresearch\\upstream\\.venv\\Scripts\\python.exe",
+      "verified": true
+    },
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {
+      "adapter_sha256": "f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523",
+      "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+      "model_sha256": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+      "orchestrator_sha256": "024c9a6443e188c6df6d86ec07e992e679c28014ae417eff1fa94269dd893ca1",
+      "preflight_sha256": "444e89e6e2ebe2c1d68aca8baaeca5366dcfda126e708ec28d0c0a83d7d622fe",
+      "runner_sha256": "1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091"
+    },
+    "recorded_data_hashes": {
+      "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+      "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+      "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+    },
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": {
+      "runtime_files": {
+        ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "upstream": {
+        "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored.",
+        "original_project": "https://github.com/karpathy/autoresearch",
+        "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+        "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+        "revision": "a4123c6e5c6287f90be04026642ba20b94e424df"
+      }
+    },
+    "snapshot_manifest": {
+      "candidate.json": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7",
+      "protocol.json": "dc028113a01996d2030183ebb53dfed924575fdcc2646cb10f0d9a49d71b1c16",
+      "source/project/autoresearch.py": "1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091",
+      "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+      "source/project/autoresearch_model.py": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+      "source/project/autoresearch_train.py": "f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523",
+      "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+      "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+      "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+      "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+      "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+    }
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": [
+    43
+  ]
+}

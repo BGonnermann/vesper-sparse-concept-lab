@@ -1,0 +1,1751 @@
+{
+  "artifact_directory": "runs/autoresearch/packed-dispatch-20260915T002151Z",
+  "budget_family": "wall_time_budget",
+  "compatibility_fingerprint": "e65007798a178d7fda447c5cf3efa7c868856c75dd39216f4541587b81aaee29",
+  "configuration": null,
+  "details": {
+    "baseline-matching.json": {
+      "data_hashes": {
+        "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+        "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+        "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+        "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+        "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+      },
+      "matched_fields": [
+        "protocol",
+        "upstream",
+        "data_seal",
+        "seed",
+        "runner_sha256",
+        "adapter_sha256",
+        "model_sha256",
+        "bootstrap_sha256",
+        "record_version",
+        "orchestrator_sha256",
+        "packed_probe_sha256"
+      ],
+      "protocol": {
+        "baseline_timeout_seconds": 900,
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "protocol_id": "vesper-dense-tinystories-v1",
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      }
+    },
+    "comparison.json": {
+      "cpu_tests_passed": 24,
+      "cuda_tests_passed": 8,
+      "gradient_max_absolute_error_depth6_checkpoint": 0.0,
+      "limits": [
+        "Short paired profiling, unchanged checkpoint weights, no BPB in probe",
+        "One seed per fresh baseline; unequal dense/MoE parameter budgets",
+        "Timed throughput excludes 11 warmup updates; total tokens include them",
+        "Profiler/phase decomposition excluded from replay throughput",
+        "Both models resident for replay; its memory is joint, not standalone",
+        "Background GPU load/clocks not controlled",
+        "BPB contains cross-entropy only, excludes routing auxiliary loss"
+      ],
+      "matched_training_fields": [
+        "protocol",
+        "upstream",
+        "data_seal",
+        "seed",
+        "runner_sha256",
+        "adapter_sha256",
+        "model_sha256",
+        "bootstrap_sha256",
+        "record_version",
+        "orchestrator_sha256",
+        "packed_probe_sha256"
+      ],
+      "preserved_prior_files": 263,
+      "profile": {
+        "all_six_pairs_improved": true,
+        "original_tps": 12298.924596559296,
+        "original_trace": {
+          "kernel_count": 6416,
+          "kernel_sum_ms": 30.6182369999999,
+          "operator_counts": {
+            "aten::_efficient_attention_backward": 12,
+            "aten::_efficient_attention_forward": 24,
+            "aten::_foreach_copy_": 10,
+            "aten::_fused_rms_norm": 100,
+            "aten::_fused_rms_norm_backward": 52,
+            "aten::_index_put_impl_": 48,
+            "aten::_local_scalar_dense": 24,
+            "aten::_log_softmax": 2,
+            "aten::_log_softmax_backward_data": 2,
+            "aten::_reshape_alias": 62,
+            "aten::_scaled_dot_product_efficient_attention": 24,
+            "aten::_scaled_dot_product_efficient_attention_backward": 12,
+            "aten::_softmax": 24,
+            "aten::_softmax_backward_data": 12,
+            "aten::_to_copy": 1195,
+            "aten::_unsafe_view": 260,
+            "aten::abs": 48,
+            "aten::add": 297,
+            "aten::add_": 357,
+            "aten::alias": 4,
+            "aten::all": 12,
+            "aten::arange": 96,
+            "aten::argmax": 24,
+            "aten::as_strided": 3447,
+            "aten::bincount": 24,
+            "aten::bmm": 150,
+            "aten::cat": 72,
+            "aten::clamp_min": 116,
+            "aten::copy_": 1467,
+            "aten::cross_entropy_loss": 2,
+            "aten::detach": 854,
+            "aten::div": 105,
+            "aten::div_": 48,
+            "aten::divide_": 48,
+            "aten::embedding": 8,
+            "aten::embedding_backward": 8,
+            "aten::embedding_dense_backward": 8,
+            "aten::empty": 1138,
+            "aten::empty_like": 122,
+            "aten::empty_strided": 1221,
+            "aten::eq": 108,
+            "aten::expand": 598,
+            "aten::expand_as": 48,
+            "aten::fill_": 460,
+            "aten::gather": 152,
+            "aten::ge": 10,
+            "aten::index": 96,
+            "aten::index_add": 96,
+            "aten::index_add_": 48,
+            "aten::index_select": 152,
+            "aten::index_select_backward": 48,
+            "aten::isfinite": 12,
+            "aten::item": 24,
+            "aten::lerp_": 56,
+            "aten::linalg_vector_norm": 10,
+            "aten::linear": 628,
+            "aten::log_softmax": 2,
+            "aten::logical_and": 12,
+            "aten::logical_and_": 12,
+            "aten::mT": 50,
+            "aten::matmul": 476,
+            "aten::max": 36,
+            "aten::maximum": 12,
+            "aten::mean": 38,
+            "aten::min": 24,
+            "aten::mm": 654,
+            "aten::mul": 1132,
+            "aten::mul_": 13,
+            "aten::narrow": 48,
+            "aten::ne": 12,
+            "aten::neg": 61,
+            "aten::new_empty": 96,
+            "aten::new_zeros": 96,
+            "aten::nll_loss": 2,
+            "aten::nll_loss_backward": 2,
+            "aten::nll_loss_forward": 2,
+            "aten::nll_loss_nd": 2,
+            "aten::nonzero": 96,
+            "aten::nonzero_numpy": 96,
+            "aten::ones_like": 2,
+            "aten::pow": 299,
+            "aten::relu": 96,
+            "aten::remainder": 48,
+            "aten::reshape": 794,
+            "aten::reshape_as": 12,
+            "aten::resize_": 346,
+            "aten::result_type": 177,
+            "aten::rms_norm": 100,
+            "aten::rsqrt": 10,
+            "aten::rsub": 85,
+            "aten::scalar_tensor": 48,
+            "aten::scaled_dot_product_attention": 24,
+            "aten::select": 417,
+            "aten::select_backward": 72,
+            "aten::set_": 96,
+            "aten::sigmoid": 12,
+            "aten::sigmoid_backward": 6,
+            "aten::slice": 210,
+            "aten::slice_backward": 54,
+            "aten::softmax": 24,
+            "aten::sqrt": 33,
+            "aten::square": 129,
+            "aten::squeeze": 54,
+            "aten::stack": 24,
+            "aten::sub": 85,
+            "aten::sub_": 10,
+            "aten::sum": 122,
+            "aten::t": 1078,
+            "aten::tanh": 2,
+            "aten::tanh_backward": 2,
+            "aten::threshold_backward": 48,
+            "aten::to": 1502,
+            "aten::transpose": 1464,
+            "aten::unbind": 106,
+            "aten::unsqueeze": 132,
+            "aten::view": 1130,
+            "aten::where": 144,
+            "aten::zero_": 292,
+            "aten::zeros": 158,
+            "aten::zeros_like": 24
+          },
+          "stream_sync_count": 144,
+          "stream_sync_ms": 5.124599999999999
+        },
+        "packed_tps": 16614.45298547679,
+        "packed_trace": {
+          "kernel_count": 4988,
+          "kernel_sum_ms": 38.10663699999994,
+          "operator_counts": {
+            "aten::_efficient_attention_backward": 12,
+            "aten::_efficient_attention_forward": 24,
+            "aten::_foreach_copy_": 10,
+            "aten::_fused_rms_norm": 100,
+            "aten::_fused_rms_norm_backward": 52,
+            "aten::_log_softmax": 2,
+            "aten::_log_softmax_backward_data": 2,
+            "aten::_reshape_alias": 62,
+            "aten::_scaled_dot_product_efficient_attention": 24,
+            "aten::_scaled_dot_product_efficient_attention_backward": 12,
+            "aten::_softmax": 24,
+            "aten::_softmax_backward_data": 12,
+            "aten::_to_copy": 1051,
+            "aten::_unsafe_view": 260,
+            "aten::abs": 48,
+            "aten::add": 297,
+            "aten::add_": 285,
+            "aten::alias": 4,
+            "aten::all": 12,
+            "aten::arange": 48,
+            "aten::argmax": 24,
+            "aten::argsort": 24,
+            "aten::as_strided": 2799,
+            "aten::bmm": 150,
+            "aten::cat": 108,
+            "aten::clamp_min": 116,
+            "aten::copy_": 1263,
+            "aten::cross_entropy_loss": 2,
+            "aten::detach": 758,
+            "aten::div": 105,
+            "aten::embedding": 8,
+            "aten::embedding_backward": 8,
+            "aten::embedding_dense_backward": 8,
+            "aten::empty": 778,
+            "aten::empty_like": 50,
+            "aten::empty_strided": 1101,
+            "aten::eq": 12,
+            "aten::expand": 430,
+            "aten::expand_as": 12,
+            "aten::fill_": 352,
+            "aten::gather": 92,
+            "aten::gather_backward": 12,
+            "aten::ge": 10,
+            "aten::index_add_": 24,
+            "aten::index_copy_": 24,
+            "aten::index_select": 68,
+            "aten::index_select_backward": 24,
+            "aten::isfinite": 12,
+            "aten::lerp_": 56,
+            "aten::linalg_vector_norm": 10,
+            "aten::linear": 628,
+            "aten::log_softmax": 2,
+            "aten::logical_and": 12,
+            "aten::logical_and_": 12,
+            "aten::mT": 50,
+            "aten::matmul": 476,
+            "aten::max": 12,
+            "aten::maximum": 12,
+            "aten::mean": 38,
+            "aten::mm": 654,
+            "aten::mul": 940,
+            "aten::mul_": 13,
+            "aten::narrow": 96,
+            "aten::ne": 12,
+            "aten::neg": 61,
+            "aten::new_empty": 36,
+            "aten::new_zeros": 36,
+            "aten::nll_loss": 2,
+            "aten::nll_loss_backward": 2,
+            "aten::nll_loss_forward": 2,
+            "aten::nll_loss_nd": 2,
+            "aten::ones_like": 26,
+            "aten::pow": 299,
+            "aten::relu": 96,
+            "aten::reshape": 650,
+            "aten::reshape_as": 12,
+            "aten::resize_": 142,
+            "aten::resolve_conj": 24,
+            "aten::resolve_neg": 24,
+            "aten::result_type": 177,
+            "aten::rms_norm": 100,
+            "aten::rsqrt": 10,
+            "aten::rsub": 85,
+            "aten::scalar_tensor": 48,
+            "aten::scaled_dot_product_attention": 24,
+            "aten::scatter_add_": 36,
+            "aten::select": 177,
+            "aten::select_backward": 24,
+            "aten::sigmoid": 12,
+            "aten::sigmoid_backward": 6,
+            "aten::slice": 258,
+            "aten::slice_backward": 54,
+            "aten::softmax": 24,
+            "aten::sort": 24,
+            "aten::split_with_sizes": 24,
+            "aten::sqrt": 33,
+            "aten::square": 129,
+            "aten::squeeze": 6,
+            "aten::stack": 24,
+            "aten::sub": 85,
+            "aten::sub_": 10,
+            "aten::sum": 86,
+            "aten::t": 982,
+            "aten::tanh": 2,
+            "aten::tanh_backward": 2,
+            "aten::threshold_backward": 48,
+            "aten::to": 1310,
+            "aten::transpose": 1368,
+            "aten::unbind": 10,
+            "aten::unsqueeze": 60,
+            "aten::view": 926,
+            "aten::where": 48,
+            "aten::zero_": 160,
+            "aten::zeros": 110
+          },
+          "stream_sync_count": 24,
+          "stream_sync_ms": 0.122
+        },
+        "paired_gain": 0.35088664500998656
+      },
+      "review": "Independent read-only review: no concrete correctness findings; residual host boundary transfer and small per-expert GEMMs noted.",
+      "status": "complete",
+      "stopped_after": "One dense baseline and one optimized MoE baseline following correctness, paired timing and smoke gates; no cloud or additional features",
+      "test_first_expected_failure": "Original dispatch made four allocations, not one",
+      "training": {
+        "dense": {
+          "allocated_mib": 434.89111328125,
+          "memory": {
+            "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+            "peak_allocated_bytes": 456016384,
+            "peak_reserved_bytes": 555745280
+          },
+          "optimizer_updates": 541,
+          "path": "runs\\autoresearch\\packed-20260915T002151Z-dense-baseline",
+          "reserved_mib": 530.0,
+          "routing": {
+            "aux_loss_weight": 0.0,
+            "eval": {
+              "counts": [],
+              "dropped_tokens": 0,
+              "fractions": [],
+              "tokens": 65536
+            },
+            "feedforward": "dense",
+            "num_experts": 0,
+            "router_gradient_max_abs": [],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [],
+              "dropped_tokens": 0,
+              "fractions": [],
+              "tokens": 8863744
+            },
+            "training_auxiliary_loss": 0.0,
+            "training_cross_entropy": 2.2247003980821027,
+            "weighted_training_auxiliary_loss": 0.0
+          },
+          "timed_seconds": 300.49696683883667,
+          "timed_tokens": 8683520,
+          "timed_tokens_per_second": 28897.196838120395,
+          "training_tokens": 8863744,
+          "validation_bpb": 0.630091,
+          "wall_seconds": 312.7969999999914
+        },
+        "moe": {
+          "allocated_mib": 729.39306640625,
+          "memory": {
+            "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+            "peak_allocated_bytes": 764824064,
+            "peak_reserved_bytes": 836763648
+          },
+          "optimizer_updates": 295,
+          "path": "runs\\autoresearch\\packed-20260915T002151Z-moe-baseline",
+          "reserved_mib": 798.0,
+          "routing": {
+            "aux_loss_weight": 0.01,
+            "eval": {
+              "counts": [
+                [
+                  21116,
+                  20177,
+                  13735,
+                  10508
+                ],
+                [
+                  13371,
+                  18016,
+                  16448,
+                  17701
+                ],
+                [
+                  20622,
+                  17266,
+                  13554,
+                  14094
+                ],
+                [
+                  13931,
+                  17822,
+                  16455,
+                  17328
+                ],
+                [
+                  20280,
+                  14774,
+                  15261,
+                  15221
+                ],
+                [
+                  23779,
+                  11860,
+                  10559,
+                  19338
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.32220458984375,
+                  0.3078765869140625,
+                  0.2095794677734375,
+                  0.16033935546875
+                ],
+                [
+                  0.2040252685546875,
+                  0.27490234375,
+                  0.2509765625,
+                  0.2700958251953125
+                ],
+                [
+                  0.314666748046875,
+                  0.263458251953125,
+                  0.206817626953125,
+                  0.215057373046875
+                ],
+                [
+                  0.2125701904296875,
+                  0.271942138671875,
+                  0.2510833740234375,
+                  0.264404296875
+                ],
+                [
+                  0.3094482421875,
+                  0.225433349609375,
+                  0.2328643798828125,
+                  0.2322540283203125
+                ],
+                [
+                  0.3628387451171875,
+                  0.18096923828125,
+                  0.1611175537109375,
+                  0.295074462890625
+                ]
+              ],
+              "tokens": 65536
+            },
+            "feedforward": "moe",
+            "num_experts": 4,
+            "router_gradient_max_abs": [
+              0.003643112489953637,
+              0.001816903124563396,
+              0.003001368371769786,
+              0.0017161922296509147,
+              0.0014704966451972723,
+              0.001797033241018653
+            ],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [
+                [
+                  1602847,
+                  1513786,
+                  1030130,
+                  686517
+                ],
+                [
+                  999882,
+                  1410608,
+                  1047571,
+                  1375219
+                ],
+                [
+                  1145729,
+                  1213109,
+                  1291717,
+                  1182725
+                ],
+                [
+                  1186685,
+                  919487,
+                  1637252,
+                  1089856
+                ],
+                [
+                  1147901,
+                  1358024,
+                  1047072,
+                  1280283
+                ],
+                [
+                  1763461,
+                  1177083,
+                  617889,
+                  1274847
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.33162717657574153,
+                  0.31320055945444913,
+                  0.21313269663665255,
+                  0.14203956733315679
+                ],
+                [
+                  0.2068744206832627,
+                  0.29185315148305085,
+                  0.21674121921345338,
+                  0.28453120862023307
+                ],
+                [
+                  0.23704999503442797,
+                  0.25099083851959747,
+                  0.26725474212129235,
+                  0.2447044243246822
+                ],
+                [
+                  0.2455237437102754,
+                  0.19024078886387713,
+                  0.3387455309851695,
+                  0.22548993644067797
+                ],
+                [
+                  0.23749937930349577,
+                  0.28097358315677967,
+                  0.21663797669491525,
+                  0.26488906084480934
+                ],
+                [
+                  0.36485802601959744,
+                  0.2435371010990466,
+                  0.12784051410222458,
+                  0.26376435877913135
+                ]
+              ],
+              "tokens": 4833280
+            },
+            "training_auxiliary_loss": 1.056939738812083,
+            "training_cross_entropy": 2.579863609272545,
+            "weighted_training_auxiliary_loss": 0.01056939738812083
+          },
+          "timed_seconds": 300.96937012672424,
+          "timed_tokens": 4653056,
+          "timed_tokens_per_second": 15460.231046238407,
+          "training_tokens": 4833280,
+          "validation_bpb": 0.706799,
+          "wall_seconds": 319.0309999999881
+        }
+      }
+    },
+    "completion.json": {
+      "status": "complete"
+    },
+    "dense.json": {
+      "depth": 6,
+      "feedforward": "dense",
+      "matrix_lr": 0.04
+    },
+    "moe.json": {
+      "aux_loss_weight": 0.01,
+      "depth": 6,
+      "feedforward": "moe",
+      "matrix_lr": 0.04,
+      "num_experts": 4,
+      "router_lr": 0.001,
+      "top_k": 1
+    },
+    "probe-manifest.json": {},
+    "probe-result.json": {
+      "aggregate_throughput_gain": 0.35088664500998656,
+      "config": {
+        "attention_backend": "sdpa",
+        "compute_dtype": "torch.bfloat16",
+        "n_embd": 384,
+        "n_head": 3,
+        "n_kv_head": 3,
+        "n_layer": 6,
+        "sequence_len": 512,
+        "use_activation_checkpointing": true,
+        "vocab_size": 8192,
+        "window_pattern": "L"
+      },
+      "correctness_passed": true,
+      "full_checkpoint_max_gradient_error": 0.0,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "limitations": "Both models/optimizer states resident; joint allocator peaks are not standalone VRAM. Phase/trace overhead excluded from throughput. Sequential short samples, uncontrolled GPU background load.",
+      "nonzero_lr_updates": 0,
+      "paired_blocks": [
+        {
+          "index": 0,
+          "order": [
+            "original",
+            "packed"
+          ],
+          "seconds": {
+            "original": 2.7317126000125427,
+            "packed": 2.0137187999789603
+          },
+          "throughput_gain": 0.35655117290511673
+        },
+        {
+          "index": 1,
+          "order": [
+            "packed",
+            "original"
+          ],
+          "seconds": {
+            "original": 2.6018642999988515,
+            "packed": 2.0032776999869384
+          },
+          "throughput_gain": 0.29880360571867604
+        },
+        {
+          "index": 2,
+          "order": [
+            "original",
+            "packed"
+          ],
+          "seconds": {
+            "original": 2.7411010000214446,
+            "packed": 1.9324224999872968
+          },
+          "throughput_gain": 0.41847913695864336
+        },
+        {
+          "index": 3,
+          "order": [
+            "packed",
+            "original"
+          ],
+          "seconds": {
+            "original": 2.5445502000220586,
+            "packed": 1.9141678999876603
+          },
+          "throughput_gain": 0.3293244547870968
+        },
+        {
+          "index": 4,
+          "order": [
+            "original",
+            "packed"
+          ],
+          "seconds": {
+            "original": 2.7077138000167906,
+            "packed": 2.0110972999827936
+          },
+          "throughput_gain": 0.3463862738217376
+        },
+        {
+          "index": 5,
+          "order": [
+            "packed",
+            "original"
+          ],
+          "seconds": {
+            "original": 2.6588460000348277,
+            "packed": 1.958868200017605
+          },
+          "throughput_gain": 0.35733787500911585
+        }
+      ],
+      "performance_gate_passed": true,
+      "settings": "BF16, checkpoint on, same saved weights and inputs, 16 accumulation, lr zero",
+      "torch": "2.9.1+cu128",
+      "variants": {
+        "original": {
+          "memory_joint_resident_scope": [
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 377196032,
+              "peak_joint_allocated_bytes": 1136501760,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 376487424,
+              "peak_joint_allocated_bytes": 1135793152,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 377196032,
+              "peak_joint_allocated_bytes": 1136501760,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 376487424,
+              "peak_joint_allocated_bytes": 1135793152,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 377196032,
+              "peak_joint_allocated_bytes": 1136501760,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 376487424,
+              "peak_joint_allocated_bytes": 1135793152,
+              "peak_joint_reserved_bytes": 1214251008
+            }
+          ],
+          "phases": {
+            "backward": {
+              "max": 0.9011055000300985,
+              "mean": 0.8742695333591352,
+              "median": 0.8865149000193924,
+              "min": 0.8351882000279147,
+              "samples": [
+                0.8865149000193924,
+                0.9011055000300985,
+                0.8351882000279147
+              ]
+            },
+            "data": {
+              "max": 0.0011509000323712826,
+              "mean": 0.0010874333578006674,
+              "median": 0.0011181000445503742,
+              "min": 0.0009932999964803457,
+              "samples": [
+                0.0009932999964803457,
+                0.0011181000445503742,
+                0.0011509000323712826
+              ]
+            },
+            "forward": {
+              "max": 0.4717851998866536,
+              "mean": 0.4408109999300602,
+              "median": 0.4434366999194026,
+              "min": 0.4072110999841243,
+              "samples": [
+                0.4434366999194026,
+                0.4717851998866536,
+                0.4072110999841243
+              ]
+            },
+            "optimizer": {
+              "max": 0.020541300007607788,
+              "mean": 0.019098100000216316,
+              "median": 0.02019889999064617,
+              "min": 0.01655410000239499,
+              "samples": [
+                0.01655410000239499,
+                0.02019889999064617,
+                0.020541300007607788
+              ]
+            },
+            "zero_grad": {
+              "max": 0.0003823000006377697,
+              "mean": 0.0002643000043462962,
+              "median": 0.00022990000434219837,
+              "min": 0.0001807000080589205,
+              "samples": [
+                0.00022990000434219837,
+                0.0001807000080589205,
+                0.0003823000006377697
+              ]
+            }
+          },
+          "routing": {
+            "aux_loss_weight": 0.01,
+            "eval": {
+              "counts": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "tokens": 0
+            },
+            "feedforward": "moe",
+            "num_experts": 4,
+            "router_gradient_max_abs": [
+              0.01052173599600792,
+              0.007008802145719528,
+              0.006645923014730215,
+              0.009858199395239353,
+              0.007445810362696648,
+              0.007257253862917423
+            ],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [
+                [
+                  89637,
+                  90720,
+                  69817,
+                  47810
+                ],
+                [
+                  54350,
+                  97790,
+                  70713,
+                  75131
+                ],
+                [
+                  87825,
+                  75330,
+                  70547,
+                  64282
+                ],
+                [
+                  62247,
+                  68092,
+                  80066,
+                  87579
+                ],
+                [
+                  104977,
+                  63779,
+                  66102,
+                  63126
+                ],
+                [
+                  111128,
+                  52628,
+                  44615,
+                  89613
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.30081145296391754,
+                  0.30444587628865977,
+                  0.23429781464776633,
+                  0.16044485609965636
+                ],
+                [
+                  0.18239234321305842,
+                  0.32817198238831613,
+                  0.2373046875,
+                  0.25213098689862545
+                ],
+                [
+                  0.29473058956185566,
+                  0.25279880798969073,
+                  0.23674761060996563,
+                  0.21572299183848798
+                ],
+                [
+                  0.20889376610824742,
+                  0.22850891323024056,
+                  0.26869227878006874,
+                  0.2939050418814433
+                ],
+                [
+                  0.35229072701890035,
+                  0.21403498174398625,
+                  0.22183070231958762,
+                  0.21184358891752578
+                ],
+                [
+                  0.3729327749140893,
+                  0.17661350945017182,
+                  0.14972280390893472,
+                  0.3007309117268041
+                ]
+              ],
+              "tokens": 297984
+            },
+            "training_auxiliary_loss": 1.0364403691898096,
+            "training_cross_entropy": 2.1019312520207407,
+            "weighted_training_auxiliary_loss": 0.010364403691898097
+          },
+          "seconds": 15.985787900106516,
+          "timed_tokens": 196608,
+          "tokens_per_second": 12298.924596559296,
+          "trace": {
+            "kernel_count": 6416,
+            "kernel_sum_ms": 30.6182369999999,
+            "operator_counts": {
+              "aten::_efficient_attention_backward": 12,
+              "aten::_efficient_attention_forward": 24,
+              "aten::_foreach_copy_": 10,
+              "aten::_fused_rms_norm": 100,
+              "aten::_fused_rms_norm_backward": 52,
+              "aten::_index_put_impl_": 48,
+              "aten::_local_scalar_dense": 24,
+              "aten::_log_softmax": 2,
+              "aten::_log_softmax_backward_data": 2,
+              "aten::_reshape_alias": 62,
+              "aten::_scaled_dot_product_efficient_attention": 24,
+              "aten::_scaled_dot_product_efficient_attention_backward": 12,
+              "aten::_softmax": 24,
+              "aten::_softmax_backward_data": 12,
+              "aten::_to_copy": 1195,
+              "aten::_unsafe_view": 260,
+              "aten::abs": 48,
+              "aten::add": 297,
+              "aten::add_": 357,
+              "aten::alias": 4,
+              "aten::all": 12,
+              "aten::arange": 96,
+              "aten::argmax": 24,
+              "aten::as_strided": 3447,
+              "aten::bincount": 24,
+              "aten::bmm": 150,
+              "aten::cat": 72,
+              "aten::clamp_min": 116,
+              "aten::copy_": 1467,
+              "aten::cross_entropy_loss": 2,
+              "aten::detach": 854,
+              "aten::div": 105,
+              "aten::div_": 48,
+              "aten::divide_": 48,
+              "aten::embedding": 8,
+              "aten::embedding_backward": 8,
+              "aten::embedding_dense_backward": 8,
+              "aten::empty": 1138,
+              "aten::empty_like": 122,
+              "aten::empty_strided": 1221,
+              "aten::eq": 108,
+              "aten::expand": 598,
+              "aten::expand_as": 48,
+              "aten::fill_": 460,
+              "aten::gather": 152,
+              "aten::ge": 10,
+              "aten::index": 96,
+              "aten::index_add": 96,
+              "aten::index_add_": 48,
+              "aten::index_select": 152,
+              "aten::index_select_backward": 48,
+              "aten::isfinite": 12,
+              "aten::item": 24,
+              "aten::lerp_": 56,
+              "aten::linalg_vector_norm": 10,
+              "aten::linear": 628,
+              "aten::log_softmax": 2,
+              "aten::logical_and": 12,
+              "aten::logical_and_": 12,
+              "aten::mT": 50,
+              "aten::matmul": 476,
+              "aten::max": 36,
+              "aten::maximum": 12,
+              "aten::mean": 38,
+              "aten::min": 24,
+              "aten::mm": 654,
+              "aten::mul": 1132,
+              "aten::mul_": 13,
+              "aten::narrow": 48,
+              "aten::ne": 12,
+              "aten::neg": 61,
+              "aten::new_empty": 96,
+              "aten::new_zeros": 96,
+              "aten::nll_loss": 2,
+              "aten::nll_loss_backward": 2,
+              "aten::nll_loss_forward": 2,
+              "aten::nll_loss_nd": 2,
+              "aten::nonzero": 96,
+              "aten::nonzero_numpy": 96,
+              "aten::ones_like": 2,
+              "aten::pow": 299,
+              "aten::relu": 96,
+              "aten::remainder": 48,
+              "aten::reshape": 794,
+              "aten::reshape_as": 12,
+              "aten::resize_": 346,
+              "aten::result_type": 177,
+              "aten::rms_norm": 100,
+              "aten::rsqrt": 10,
+              "aten::rsub": 85,
+              "aten::scalar_tensor": 48,
+              "aten::scaled_dot_product_attention": 24,
+              "aten::select": 417,
+              "aten::select_backward": 72,
+              "aten::set_": 96,
+              "aten::sigmoid": 12,
+              "aten::sigmoid_backward": 6,
+              "aten::slice": 210,
+              "aten::slice_backward": 54,
+              "aten::softmax": 24,
+              "aten::sqrt": 33,
+              "aten::square": 129,
+              "aten::squeeze": 54,
+              "aten::stack": 24,
+              "aten::sub": 85,
+              "aten::sub_": 10,
+              "aten::sum": 122,
+              "aten::t": 1078,
+              "aten::tanh": 2,
+              "aten::tanh_backward": 2,
+              "aten::threshold_backward": 48,
+              "aten::to": 1502,
+              "aten::transpose": 1464,
+              "aten::unbind": 106,
+              "aten::unsqueeze": 132,
+              "aten::view": 1130,
+              "aten::where": 144,
+              "aten::zero_": 292,
+              "aten::zeros": 158,
+              "aten::zeros_like": 24
+            },
+            "stream_sync_count": 144,
+            "stream_sync_ms": 5.124599999999999
+          },
+          "updates_seconds": {
+            "max": 1.4089854000194464,
+            "mean": 1.332148991675543,
+            "median": 1.3328387000074144,
+            "min": 1.2699250000005122,
+            "samples": [
+              1.3925219000084326,
+              1.3391907000041101,
+              1.2739480000163894,
+              1.327916299982462,
+              1.4089854000194464,
+              1.3321156000019982,
+              1.2699250000005122,
+              1.2746252000215463,
+              1.3734226000087801,
+              1.3342912000080105,
+              1.325284200021997,
+              1.3335618000128306
+            ]
+          },
+          "weights_unchanged": true
+        },
+        "packed": {
+          "memory_joint_resident_scope": [
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 377196032,
+              "peak_joint_allocated_bytes": 1136501760,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 376487424,
+              "peak_joint_allocated_bytes": 1135793152,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 377196032,
+              "peak_joint_allocated_bytes": 1136501760,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 376487424,
+              "peak_joint_allocated_bytes": 1135793152,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 377196032,
+              "peak_joint_allocated_bytes": 1136501760,
+              "peak_joint_reserved_bytes": 1214251008
+            },
+            {
+              "idle_joint_bytes": 759305728,
+              "increment_above_joint_idle_bytes": 376487424,
+              "peak_joint_allocated_bytes": 1135793152,
+              "peak_joint_reserved_bytes": 1214251008
+            }
+          ],
+          "phases": {
+            "backward": {
+              "max": 0.6769954999326728,
+              "mean": 0.6514178333357753,
+              "median": 0.6521142000274267,
+              "min": 0.6251438000472263,
+              "samples": [
+                0.6521142000274267,
+                0.6251438000472263,
+                0.6769954999326728
+              ]
+            },
+            "data": {
+              "max": 0.0013140000228304416,
+              "mean": 0.0011813000116186838,
+              "median": 0.0012258999922778457,
+              "min": 0.0010040000197477639,
+              "samples": [
+                0.0013140000228304416,
+                0.0012258999922778457,
+                0.0010040000197477639
+              ]
+            },
+            "forward": {
+              "max": 0.3021741999546066,
+              "mean": 0.29929553331263986,
+              "median": 0.3006759000127204,
+              "min": 0.29503649997059256,
+              "samples": [
+                0.3021741999546066,
+                0.29503649997059256,
+                0.3006759000127204
+              ]
+            },
+            "optimizer": {
+              "max": 0.024620799988042563,
+              "mean": 0.019783833316372085,
+              "median": 0.01778199998079799,
+              "min": 0.016948699980275705,
+              "samples": [
+                0.01778199998079799,
+                0.016948699980275705,
+                0.024620799988042563
+              ]
+            },
+            "zero_grad": {
+              "max": 0.0002691000117920339,
+              "mean": 0.00023723333530748883,
+              "median": 0.0002489000034984201,
+              "min": 0.0001936999906320125,
+              "samples": [
+                0.0002691000117920339,
+                0.0002489000034984201,
+                0.0001936999906320125
+              ]
+            }
+          },
+          "routing": {
+            "aux_loss_weight": 0.01,
+            "eval": {
+              "counts": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              ],
+              "tokens": 0
+            },
+            "feedforward": "moe",
+            "num_experts": 4,
+            "router_gradient_max_abs": [
+              0.01052173599600792,
+              0.007008802145719528,
+              0.006645923014730215,
+              0.009858199395239353,
+              0.007445810362696648,
+              0.007257253862917423
+            ],
+            "router_gradients_finite": true,
+            "train": {
+              "counts": [
+                [
+                  89637,
+                  90720,
+                  69817,
+                  47810
+                ],
+                [
+                  54350,
+                  97790,
+                  70713,
+                  75131
+                ],
+                [
+                  87825,
+                  75330,
+                  70547,
+                  64282
+                ],
+                [
+                  62247,
+                  68092,
+                  80066,
+                  87579
+                ],
+                [
+                  104977,
+                  63779,
+                  66102,
+                  63126
+                ],
+                [
+                  111128,
+                  52628,
+                  44615,
+                  89613
+                ]
+              ],
+              "dropped_tokens": 0,
+              "fractions": [
+                [
+                  0.30081145296391754,
+                  0.30444587628865977,
+                  0.23429781464776633,
+                  0.16044485609965636
+                ],
+                [
+                  0.18239234321305842,
+                  0.32817198238831613,
+                  0.2373046875,
+                  0.25213098689862545
+                ],
+                [
+                  0.29473058956185566,
+                  0.25279880798969073,
+                  0.23674761060996563,
+                  0.21572299183848798
+                ],
+                [
+                  0.20889376610824742,
+                  0.22850891323024056,
+                  0.26869227878006874,
+                  0.2939050418814433
+                ],
+                [
+                  0.35229072701890035,
+                  0.21403498174398625,
+                  0.22183070231958762,
+                  0.21184358891752578
+                ],
+                [
+                  0.3729327749140893,
+                  0.17661350945017182,
+                  0.14972280390893472,
+                  0.3007309117268041
+                ]
+              ],
+              "tokens": 297984
+            },
+            "training_auxiliary_loss": 1.0364403691898096,
+            "training_cross_entropy": 2.1019312520207407,
+            "weighted_training_auxiliary_loss": 0.010364403691898097
+          },
+          "seconds": 11.833552399941254,
+          "timed_tokens": 196608,
+          "tokens_per_second": 16614.45298547679,
+          "trace": {
+            "kernel_count": 4988,
+            "kernel_sum_ms": 38.10663699999994,
+            "operator_counts": {
+              "aten::_efficient_attention_backward": 12,
+              "aten::_efficient_attention_forward": 24,
+              "aten::_foreach_copy_": 10,
+              "aten::_fused_rms_norm": 100,
+              "aten::_fused_rms_norm_backward": 52,
+              "aten::_log_softmax": 2,
+              "aten::_log_softmax_backward_data": 2,
+              "aten::_reshape_alias": 62,
+              "aten::_scaled_dot_product_efficient_attention": 24,
+              "aten::_scaled_dot_product_efficient_attention_backward": 12,
+              "aten::_softmax": 24,
+              "aten::_softmax_backward_data": 12,
+              "aten::_to_copy": 1051,
+              "aten::_unsafe_view": 260,
+              "aten::abs": 48,
+              "aten::add": 297,
+              "aten::add_": 285,
+              "aten::alias": 4,
+              "aten::all": 12,
+              "aten::arange": 48,
+              "aten::argmax": 24,
+              "aten::argsort": 24,
+              "aten::as_strided": 2799,
+              "aten::bmm": 150,
+              "aten::cat": 108,
+              "aten::clamp_min": 116,
+              "aten::copy_": 1263,
+              "aten::cross_entropy_loss": 2,
+              "aten::detach": 758,
+              "aten::div": 105,
+              "aten::embedding": 8,
+              "aten::embedding_backward": 8,
+              "aten::embedding_dense_backward": 8,
+              "aten::empty": 778,
+              "aten::empty_like": 50,
+              "aten::empty_strided": 1101,
+              "aten::eq": 12,
+              "aten::expand": 430,
+              "aten::expand_as": 12,
+              "aten::fill_": 352,
+              "aten::gather": 92,
+              "aten::gather_backward": 12,
+              "aten::ge": 10,
+              "aten::index_add_": 24,
+              "aten::index_copy_": 24,
+              "aten::index_select": 68,
+              "aten::index_select_backward": 24,
+              "aten::isfinite": 12,
+              "aten::lerp_": 56,
+              "aten::linalg_vector_norm": 10,
+              "aten::linear": 628,
+              "aten::log_softmax": 2,
+              "aten::logical_and": 12,
+              "aten::logical_and_": 12,
+              "aten::mT": 50,
+              "aten::matmul": 476,
+              "aten::max": 12,
+              "aten::maximum": 12,
+              "aten::mean": 38,
+              "aten::mm": 654,
+              "aten::mul": 940,
+              "aten::mul_": 13,
+              "aten::narrow": 96,
+              "aten::ne": 12,
+              "aten::neg": 61,
+              "aten::new_empty": 36,
+              "aten::new_zeros": 36,
+              "aten::nll_loss": 2,
+              "aten::nll_loss_backward": 2,
+              "aten::nll_loss_forward": 2,
+              "aten::nll_loss_nd": 2,
+              "aten::ones_like": 26,
+              "aten::pow": 299,
+              "aten::relu": 96,
+              "aten::reshape": 650,
+              "aten::reshape_as": 12,
+              "aten::resize_": 142,
+              "aten::resolve_conj": 24,
+              "aten::resolve_neg": 24,
+              "aten::result_type": 177,
+              "aten::rms_norm": 100,
+              "aten::rsqrt": 10,
+              "aten::rsub": 85,
+              "aten::scalar_tensor": 48,
+              "aten::scaled_dot_product_attention": 24,
+              "aten::scatter_add_": 36,
+              "aten::select": 177,
+              "aten::select_backward": 24,
+              "aten::sigmoid": 12,
+              "aten::sigmoid_backward": 6,
+              "aten::slice": 258,
+              "aten::slice_backward": 54,
+              "aten::softmax": 24,
+              "aten::sort": 24,
+              "aten::split_with_sizes": 24,
+              "aten::sqrt": 33,
+              "aten::square": 129,
+              "aten::squeeze": 6,
+              "aten::stack": 24,
+              "aten::sub": 85,
+              "aten::sub_": 10,
+              "aten::sum": 86,
+              "aten::t": 982,
+              "aten::tanh": 2,
+              "aten::tanh_backward": 2,
+              "aten::threshold_backward": 48,
+              "aten::to": 1310,
+              "aten::transpose": 1368,
+              "aten::unbind": 10,
+              "aten::unsqueeze": 60,
+              "aten::view": 926,
+              "aten::where": 48,
+              "aten::zero_": 160,
+              "aten::zeros": 110
+            },
+            "stream_sync_count": 24,
+            "stream_sync_ms": 0.122
+          },
+          "updates_seconds": {
+            "max": 1.0268572999921162,
+            "mean": 0.9861293666617712,
+            "median": 0.9835846999922069,
+            "min": 0.9426806000119541,
+            "samples": [
+              1.0235735999885947,
+              0.9901451999903657,
+              0.9829293999937363,
+              1.020348299993202,
+              0.9530155999818817,
+              0.9794069000054151,
+              0.9714872999757063,
+              0.9426806000119541,
+              1.0268572999921162,
+              0.9842399999906775,
+              0.9572362000180874,
+              1.0016319999995176
+            ]
+          },
+          "weights_unchanged": true
+        }
+      }
+    },
+    "protocol.json": {
+      "baseline_timeout_seconds": 900,
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "protocol_id": "vesper-dense-tinystories-v1",
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    }
+  },
+  "diagnostics": [
+    "tests-cpu.log:\ntest_failed_process_is_not_promoted_by_valid_looking_output (test_autoresearch.ResultsTests.test_failed_process_is_not_promoted_by_valid_looking_output) ... ok\ntest_protocol_rejects_partial_batches_and_unbounded_timeouts (test_autoresearch.ResultsTests.test_protocol_rejects_partial_batches_and_unbounded_timeouts) ... ok\ntest_timeout_terminates_child_and_preserves_partial_output (test_autoresearch.ResultsTests.test_timeout_terminates_child_and_preserves_partial_output) ... ok\ntest_windows_taskkill_timeout_still_kills_owned_child (test_autoresearch.ResultsTests.test_windows_taskkill_timeout_still_kills_owned_child) ... ok\nRan 24 tests in 2.649s\nOK",
+    "tests-cuda.log:\nRan 8 tests in 2.343s\nOK",
+    "tests-red.log:\nTraceback (most recent call last):\nAssertionError: 4 != 1 : Experts must receive slices of one packed allocation\nFAILED (failures=1)"
+  ],
+  "evidence": {
+    "baseline-matching.json": {
+      "bytes": 1255,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/baseline-matching.json",
+      "sha256": "cbb725f0bbdfa4e56ac9968d6b6030eb018235b97def9bf17796be19cdbdcd05"
+    },
+    "comparison.json": {
+      "bytes": 17149,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/comparison.json",
+      "sha256": "e457070f46df20a3798c52d3ebae94f55666edc145d10b757fbc66b39b73b582"
+    },
+    "completion.json": {
+      "bytes": 216,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/completion.json",
+      "sha256": "49b91728f7c2719a8f3006d5e8d23c09e6092c0c3d9759d84104f587d101a537"
+    },
+    "dense.json": {
+      "bytes": 64,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/dense.json",
+      "sha256": "888e6e73fc2a7a241dc72dd1cb84f416f87afd348c2661d390cd99f4859eb1e8"
+    },
+    "final_report.py": {
+      "bytes": 15541,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/final_report.py",
+      "sha256": "6dd3a8ff232d2ffe32a35fab5ab1b3586a87a81b06d7519e0845304c70251769"
+    },
+    "gated_trial.py": {
+      "bytes": 5906,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/gated_trial.py",
+      "sha256": "9bae5de9e548780f73db71686cc2619701a081daf1fd8756eeb90e0de26a01ea"
+    },
+    "moe.json": {
+      "bytes": 145,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/moe.json",
+      "sha256": "8080cb7930edd86e28414798604ca0884b523fb3c21adb37b40b4716149cac06"
+    },
+    "original-operators.json": {
+      "bytes": 1222957,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/original-operators.json",
+      "sha256": "d27cce53067a05e3bc2b77568ca7fe4ffc4102620add49ebb85eec4a780ff702"
+    },
+    "original-trace.json": {
+      "bytes": 21797063,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/original-trace.json",
+      "sha256": "555a91675a26232946a52383de7a658f4ddd759f75b9b326ab10d37008be571f"
+    },
+    "original_model.py": {
+      "bytes": 12846,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/original_model.py",
+      "sha256": "357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0"
+    },
+    "packed-operators.json": {
+      "bytes": 661145,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/packed-operators.json",
+      "sha256": "dfb790f76927876b000fcb2220853d50fdaacd6d604c715924681a10fd42a552"
+    },
+    "packed-trace.json": {
+      "bytes": 17435196,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/packed-trace.json",
+      "sha256": "3dec4c69004a51f9fa53385eca3e94c0ae73df41bef84fb02126a2f08c092d49"
+    },
+    "paired_probe.py": {
+      "bytes": 11853,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/paired_probe.py",
+      "sha256": "ad290faf7eb4b825a12a0ec8f639aa171c4c1e3ac94adca9ed24a47fe730fee5"
+    },
+    "plan.md": {
+      "bytes": 1117,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/plan.md",
+      "sha256": "c8595cbdcfb59c1b58641819334fa4a93af1e723611a167f9cd669d0453100d7"
+    },
+    "prior-preservation.json": {
+      "bytes": 61574,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/prior-preservation.json",
+      "sha256": "ce54a3618190219f51e50c86d90f613b3677688012a43984338408eeb553d5fb"
+    },
+    "probe-manifest.json": {
+      "bytes": 1876,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/probe-manifest.json",
+      "sha256": "2374de65e4f95ba0ee241529c667e6313a49a24318d75e8279d09e6265a4d2cc"
+    },
+    "probe-result.json": {
+      "bytes": 27770,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/probe-result.json",
+      "sha256": "f57f6f247507383b52a84a1c2c68bfbdc3cce3c851800431ee72eabba0ce264f"
+    },
+    "probe.log": {
+      "bytes": 1693,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/probe.log",
+      "sha256": "4730a9c4c542d755c16bdc32a7970532422c76ee7870ca301251fc23475ed25c"
+    },
+    "protocol.json": {
+      "bytes": 302,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/protocol.json",
+      "sha256": "f42d420605d44397f46f3cbbbd79c98b4848d8a74c2c33c2fe83cf7382bb26c8"
+    },
+    "report-checks.log": {
+      "bytes": 1429,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/report-checks.log",
+      "sha256": "457c8963c48335100a4c008c0b109d36a5543675072fb684c7c3e76ba9b3bf60"
+    },
+    "report.md": {
+      "bytes": 8651,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/report.md",
+      "sha256": "8d40c6e7819d9396428af12e703bc219aa4231cb7a037f926060a384a9e4daf6"
+    },
+    "test_packed_moe.py": {
+      "bytes": 7472,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/test_packed_moe.py",
+      "sha256": "8ec0d2defc5ef22d493813886770cc25b3472668e62b4ee22bd78b12a210ae83"
+    },
+    "tests-cpu.log": {
+      "bytes": 3906,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/tests-cpu.log",
+      "sha256": "594019178b6c460d034508089c17e5efe6fbf6782b80fd2de23f5d85658be52f"
+    },
+    "tests-cuda.log": {
+      "bytes": 1457,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/tests-cuda.log",
+      "sha256": "f3934a829f7eb076f21b3768eef3bbd8994f52ec2bd66e5e6fbcb36c491156c0"
+    },
+    "tests-red.log": {
+      "bytes": 891,
+      "local_path": "runs/autoresearch/packed-dispatch-20260915T002151Z/tests-red.log",
+      "sha256": "078a927d5d3f36a9c31e14a1aeadef5c8d7231dce2c45718c08d510d5d261f5a"
+    }
+  },
+  "experiment_id": "packed-dispatch-20260915T002151Z-4c52ac61",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "complete",
+  "protocol": {
+    "baseline_timeout_seconds": 900,
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "protocol_id": "vesper-dense-tinystories-v1",
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {
+      "final_report.py": {
+        "published_path": "reports/source-snapshots/6dd3a8ff232d2ffe32a35fab5ab1b3586a87a81b06d7519e0845304c70251769.py",
+        "sha256": "6dd3a8ff232d2ffe32a35fab5ab1b3586a87a81b06d7519e0845304c70251769"
+      },
+      "gated_trial.py": {
+        "published_path": "reports/source-snapshots/9bae5de9e548780f73db71686cc2619701a081daf1fd8756eeb90e0de26a01ea.py",
+        "sha256": "9bae5de9e548780f73db71686cc2619701a081daf1fd8756eeb90e0de26a01ea"
+      },
+      "original_model.py": {
+        "published_path": "reports/source-snapshots/357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0.py",
+        "sha256": "357aa7bd0f780a11d19801cb57148981303e16fd0c6df0b817bb9e19e6b021e0"
+      },
+      "paired_probe.py": {
+        "published_path": "reports/source-snapshots/ad290faf7eb4b825a12a0ec8f639aa171c4c1e3ac94adca9ed24a47fe730fee5.py",
+        "sha256": "ad290faf7eb4b825a12a0ec8f639aa171c4c1e3ac94adca9ed24a47fe730fee5"
+      },
+      "source/project/autoresearch.py": {
+        "published_path": "reports/source-snapshots/d63924f90cc821d4907a95fffa970d3b464b751a59645ffb6f66ca4575c9200b.py",
+        "sha256": "d63924f90cc821d4907a95fffa970d3b464b751a59645ffb6f66ca4575c9200b"
+      },
+      "source/project/autoresearch_bootstrap.py": {
+        "published_path": "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py",
+        "sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6"
+      },
+      "source/project/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/e1c43959faabf57e9d1ab804a62f468d4d447ca58faefb707d816cacff1a36d5.py",
+        "sha256": "e1c43959faabf57e9d1ab804a62f468d4d447ca58faefb707d816cacff1a36d5"
+      },
+      "source/project/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/63c057ac73dbb11c8b3ad7a09ba58e471194b9266be5111a5b7f4d80693c5a5d.py",
+        "sha256": "63c057ac73dbb11c8b3ad7a09ba58e471194b9266be5111a5b7f4d80693c5a5d"
+      },
+      "source/upstream/prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      },
+      "source/upstream/train.py": {
+        "published_path": "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py",
+        "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      },
+      "test_packed_moe.py": {
+        "published_path": "reports/source-snapshots/8ec0d2defc5ef22d493813886770cc25b3472668e62b4ee22bd78b12a210ae83.py",
+        "sha256": "8ec0d2defc5ef22d493813886770cc25b3472668e62b4ee22bd78b12a210ae83"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "b54f7f05dfe842d49a7b6c804f67e7d1c836643da70b20c6892457c3c91f5dc4",
+  "schema_version": 1,
+  "seeds": null
+}
