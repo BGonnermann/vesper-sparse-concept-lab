@@ -10020,7 +10020,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "7b83a0e3d9300bb45d424a618abb6c5d69b59353",
+      "publication_commit": "66b12e47e8bed13e773cec857127a471e364e838",
       "status": "completed",
       "verified_remote": true
     },
@@ -10068,6 +10068,7 @@
     "mechanism-queue.log:\n2026-09-15T14:14:52.246985+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
     "normalization-green-cpu.log:\nRan 8 tests in 1.461s\nOK",
     "normalization-red.log:\nTraceback (most recent call last):\n    raise error_metas[0].to_error(msg)\nAssertionError: Tensor-likes are not close!\nRan 8 tests in 1.503s\nFAILED (failures=1)",
+    "order-identity-red.log:\n    raise ValueError(\"Protocol fields are missing or unknown.\")\nValueError: Protocol fields are missing or unknown.\nTraceback (most recent call last):\nAssertionError: [102, 486, 438, 2, 458, 172, 372, 221, 246, 123, 100, 462, 222, 290, 299, 101, 51, 6, 111, 57, 321, 474, 505, 397, 467, 346, 361, 236, 251, 1, 190, 147, 267, 367, 181, 21, 243, 188, 504, 114, 378, 461, 399, 412, 227, 247, 279, 456, 509, 226, 338, 446, 162, 395, 328, 408, 159, 76, 454, 59, 174, 481, 352, 331, 230, 241, 349, 362, 255, 41, 14, 89, 136, 192, 180, 443, 403, 39, 434, 288, 374, 382, 54, 302, 430, 234, 357, 265, 91, 495, 7, 115, 317, 30, 275, 496, 425, 371, 427, 343, 286\nRan 2 tests in 1.818s\nFAILED (failures=1, errors=1)",
     "preflight-cpu-1789473248.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 3.917s\nOK",
     "preflight-cpu-1789473331.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 3.911s\nOK",
     "preflight-cpu-1789473887.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 3.871s\nOK",
@@ -10135,9 +10136,9 @@
       "sha256": "21d3865e69220d3891ed1e431c831fe9f79edeed48ca4b23c2293848a3a3a240"
     },
     "campaign.log": {
-      "bytes": 77527,
+      "bytes": 78580,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "f1ab4e94a40a4ce0e82a60a5cce0ec5530bebedc2f1bee2231b1c2e304468035"
+      "sha256": "494840fb3d48f5eb0c36ebd9a4c7e7eee819b387c0bbd77fcf5b167a9af3ec84"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -10165,9 +10166,9 @@
       "sha256": "06ff16bf72e6de93eb086c2a5614c7829a0e2f7c42bbf0ddec6a74e77d4a499f"
     },
     "confirmation-queue.log": {
-      "bytes": 5593,
+      "bytes": 6646,
       "local_path": "runs/autoresearch/ncp-20260915/confirmation-queue.log",
-      "sha256": "6f7010c6cb228132fa3d72d5071be824a84c9a2a81f347aeb3b3d882541c25b3"
+      "sha256": "5c98f7c17b188103ab2fbd3e9b64a8e280f9dcc460085624c6d326fa387380c3"
     },
     "confirmation-selection.json": {
       "bytes": 9231,
@@ -10514,6 +10515,16 @@
       "local_path": "runs/autoresearch/ncp-20260915/orchestrator-source-correction-result.json",
       "sha256": "9e3abcf22a10c9e8db1cce05779c222db38099c1bf07af7e1ccefbfd91776510"
     },
+    "order-identity-red-source.py": {
+      "bytes": 4586,
+      "local_path": "runs/autoresearch/ncp-20260915/order-identity-red-source.py",
+      "sha256": "35862c275a8c85072d9fc2fcef89a21ae2c9b28f64421262770cac98c1ce2af0"
+    },
+    "order-identity-red.log": {
+      "bytes": 6825,
+      "local_path": "runs/autoresearch/ncp-20260915/order-identity-red.log",
+      "sha256": "a4db565b8ba35e41f816d6f5782c1b37cb6f76c3ae3280289143ce81e9b1969e"
+    },
     "pending-development-result.json": {
       "bytes": 1088,
       "local_path": "runs/autoresearch/ncp-20260915/pending-development-result.json",
@@ -10682,7 +10693,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "6e881fd05ff9aea770a89378a2261e0bfe6523291aa002d252242f1eab0562b0"
+      "sha256": "75922bd80e144c9829c35c2c95ed8da27b53bccf6b9fc711bd2af649a6def7c1"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -10705,9 +10716,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 564771,
+      "bytes": 573168,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "ce41f5fc877298d46cd544820a05bbca4eff88d938b291cff8be5aade015f3b2"
+      "sha256": "901e032008c34ebc4f5f7529706c78e35d014449536e7f26c69266c2b0a266e2"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -10730,9 +10741,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 29406,
+      "bytes": 29914,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "c2105f427d1bd0ce4733aa4eeada541ba48708cd29f240d4fc51e45221e7b341"
+      "sha256": "f2c161cb5d719be294165bf8914922a7ab13036d96eccb5508a2340ba1732cf8"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -10840,6 +10851,10 @@
       "normalized-queue.py": {
         "published_path": "reports/source-snapshots/3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002.py",
         "sha256": "3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002"
+      },
+      "order-identity-red-source.py": {
+        "published_path": "reports/source-snapshots/35862c275a8c85072d9fc2fcef89a21ae2c9b28f64421262770cac98c1ce2af0.py",
+        "sha256": "35862c275a8c85072d9fc2fcef89a21ae2c9b28f64421262770cac98c1ce2af0"
       },
       "publication-watcher.py": {
         "published_path": "reports/source-snapshots/0ab45267e47897ffce18ec0628087ca3572b8d2834b765600412d8271bb0cdd6.py",
