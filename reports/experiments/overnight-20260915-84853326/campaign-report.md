@@ -1,6 +1,6 @@
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 81. No candidate-count cap.
+Status: completed. Completed full trials: 87. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
@@ -87,6 +87,12 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0079-D-depth12-s44 | confirmation / 44 | 0.592870 | 26749.5 | 314.0 | 320.8 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 | trial-0080-D12-lr0.03-s44 | confirmation / 44 | 0.594356 | 26841.3 | 313.0 | 319.7 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 | trial-0081-D-depth12-s43 | confirmation / 43 | 0.595008 | 26782.7 | 313.8 | 320.5 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0082-D12-lr0.03-s43 | confirmation / 43 | 0.591692 | 26815.9 | 313.3 | 320.0 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0083-D-depth12-s44 | confirmation / 44 | 0.593817 | 26905.8 | 312.2 | 318.8 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0084-D12-lr0.03-s44 | confirmation / 44 | 0.594179 | 27578.7 | 304.5 | 311.2 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0085-D-depth12-s43 | confirmation / 43 | 0.593623 | 26832.2 | 313.0 | 319.8 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0086-D12-lr0.03-s43 | confirmation / 43 | 0.590801 | 26809.9 | 313.4 | 320.1 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0087-D-depth12-s44 | confirmation / 44 | 0.593000 | 26991.7 | 311.3 | 318.0 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 
 Timed throughput excludes the first11 updates; synchronized all-update wall time includes them and CPU dispatch/optimizer orchestration. It is not GPU kernel-busy time. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 
@@ -103,19 +109,19 @@ Timed throughput excludes the first11 updates; synchronized all-update wall time
   },
   {
     "seed": 43,
-    "candidate_mean_bpb": 0.591839,
-    "control_mean_bpb": 0.5946400000000001,
-    "candidate_repeats": 1,
-    "control_repeats": 2,
-    "difference": -0.0028010000000000534
+    "candidate_mean_bpb": 0.591444,
+    "control_mean_bpb": 0.594301,
+    "candidate_repeats": 3,
+    "control_repeats": 3,
+    "difference": -0.0028569999999999984
   },
   {
     "seed": 44,
-    "candidate_mean_bpb": 0.594356,
-    "control_mean_bpb": 0.59287,
-    "candidate_repeats": 1,
-    "control_repeats": 1,
-    "difference": 0.0014859999999999873
+    "candidate_mean_bpb": 0.5942675,
+    "control_mean_bpb": 0.593229,
+    "candidate_repeats": 2,
+    "control_repeats": 3,
+    "difference": 0.0010384999999999422
   }
 ]
 
@@ -128,11 +134,11 @@ No NCP, dependency changes, cloud jobs, paid services or deletion. Depth12 LR fo
 ## Campaign clock
 
 {
-  "report_generated_at": "2026-09-15T10:15:30.587383+00:00",
+  "report_generated_at": "2026-09-15T10:50:15.609075+00:00",
   "started_at": "2026-09-14T23:30:00-04:00",
   "deadline": "2026-09-15T07:30:00-04:00",
-  "elapsed_seconds": 24330.587383,
-  "remaining_seconds": 4469.412617,
+  "elapsed_seconds": 26415.609075,
+  "remaining_seconds": 2384.390925,
   "note": "Includes implementation, correctness, orchestration and prior publication; final publication completion has a separate receipt."
 }
 
@@ -142,4 +148,7 @@ None.
 
 ## Preservation
 
-Full preservation verification reserved for final report.
+{
+  "checked_files": 1005,
+  "changed_or_missing": []
+}

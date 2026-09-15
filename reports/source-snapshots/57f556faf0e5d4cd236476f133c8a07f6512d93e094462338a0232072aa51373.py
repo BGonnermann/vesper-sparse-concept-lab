@@ -168,7 +168,7 @@ def select(records, choices):
             if shaped:
                 return shaped[0], 42, 'screen', 'After observing dense LR outcome, test the independent depth/width cost axis', dict(D=d, M=m, DG=dg, last_trial=records[-1]['label'])
         label = min(pending, key=lambda x: family_order.index(choices[x]['family']))
-        return label, 42, 'screen', f'After {last["label"]} BPB {last["metrics"]["val_bpb"]}, prefer {favored}; next available family is {choices[label]["family"]}. Continue improvement or explore a less-tested family; use the recorded matching control and explicitly labeled follow-up hypothesis', dict(D=d, M=m, DG=dg, ranking=ranked)
+        return label, 42, 'screen', f'After {last["label"]} BPB {last["metrics"]["val_bpb"]}, prefer {favored}; next available family is {choices[label]["family"]}. Continue improvement or explore a less-tested family; no combined winners', dict(D=d, M=m, DG=dg, ranking=ranked)
     # No count stop: acquire repeatability evidence on the strongest candidates.
     # Post-screen targets and allocation were recorded before further outcomes.
     top = read(HERE / 'replication-policy.json')['targets']

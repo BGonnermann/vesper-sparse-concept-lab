@@ -123,7 +123,13 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [overnight-20260915/trial-0079-D-depth12-s44](experiments/overnight-20260915--trial-0079-D-depth12-s44-e637aa50/README.md) | completed | fixed_updates | 0.59287 |
 | [overnight-20260915/trial-0080-D12-lr0.03-s44](experiments/overnight-20260915--trial-0080-D12-lr0.03-s44-db73d6c5/README.md) | completed | fixed_updates | 0.594356 |
 | [overnight-20260915/trial-0081-D-depth12-s43](experiments/overnight-20260915--trial-0081-D-depth12-s43-ac3ce2fe/README.md) | completed | fixed_updates | 0.595008 |
-| [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | running | stage_or_unknown | unknown |
+| [overnight-20260915/trial-0082-D12-lr0.03-s43](experiments/overnight-20260915--trial-0082-D12-lr0.03-s43-e20ecdd4/README.md) | completed | fixed_updates | 0.591692 |
+| [overnight-20260915/trial-0083-D-depth12-s44](experiments/overnight-20260915--trial-0083-D-depth12-s44-46d0e805/README.md) | completed | fixed_updates | 0.593817 |
+| [overnight-20260915/trial-0084-D12-lr0.03-s44](experiments/overnight-20260915--trial-0084-D12-lr0.03-s44-f7f7c879/README.md) | completed | fixed_updates | 0.594179 |
+| [overnight-20260915/trial-0085-D-depth12-s43](experiments/overnight-20260915--trial-0085-D-depth12-s43-4822021d/README.md) | completed | fixed_updates | 0.593623 |
+| [overnight-20260915/trial-0086-D12-lr0.03-s43](experiments/overnight-20260915--trial-0086-D12-lr0.03-s43-3a28a25e/README.md) | completed | fixed_updates | 0.590801 |
+| [overnight-20260915/trial-0087-D-depth12-s44](experiments/overnight-20260915--trial-0087-D-depth12-s44-71e30408/README.md) | completed | fixed_updates | 0.593 |
+| [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | completed | stage_or_unknown | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |
 | [packed-20260915T002151Z-moe-baseline](experiments/packed-20260915T002151Z-moe-baseline-aa31ead4/README.md) | completed | wall_time_budget | 0.706799 |
