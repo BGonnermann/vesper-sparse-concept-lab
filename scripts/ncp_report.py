@@ -34,6 +34,12 @@ def rows():
                 timed_tokens_per_second=training['timed_training_tokens']/training['timed_training_seconds'],
                 allocated_mib=memory['peak_allocated_bytes']/2**20,reserved_mib=memory['peak_reserved_bytes']/2**20,
                 board_sampled_peak_mib=max(board) if board else None,ncp_health=record.get('ncp_health'))
+            if row['ncp_health']:
+                settings=record['candidate']['ncp']
+                injected=(settings['feedback_scale']*row['ncp_health']['mean_feedback_rms']
+                    if settings['mode']=='feedback' else 0.)
+                row['injected_feedback_rms']=injected
+                row['injected_to_hidden_rms_ratio']=injected/row['ncp_health']['mean_hidden_rms']
         output.append(row)
     return output
 
@@ -121,6 +127,7 @@ def write(final=False):
         'Trial wall time includes preparation, child execution and verification, excluding reporting/publication. '
         'Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, '
         'source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. '
+        'Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. '
         'Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.',
         'All artifacts are retained locally. No cloud, dependency upgrades, paid services or deletion.'])
     (HERE/'summary.md').write_text('\n'.join(text)+'\n',encoding='utf-8')

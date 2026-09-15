@@ -11,7 +11,7 @@ from ncp_campaign import HERE,read
 
 
 def audit():
-    verified=[]; failures=[]; by_seed={}
+    verified=[]; failures=[]; by_seed={}; initializations={}; concept_initializations={}
     for p in sorted(HERE.glob('trial-*/result.json')):
         record=read(p); directory=p.parent
         for relative,expected in record.get('snapshot_files',{}).items():
@@ -35,8 +35,22 @@ def audit():
         if seed in by_seed:
             assert batches==by_seed[seed],(directory,'batch ordering differs')
         else: by_seed[seed]=batches
+        parameters=read(directory/'initialization.json')['parameters']
+        backbone={name:value for name,value in parameters.items() if not name.startswith('ncp.')}
+        backbone_key=(seed,record['candidate']['depth'])
+        if backbone_key in initializations:
+            assert backbone==initializations[backbone_key],(directory,'backbone initialization differs')
+        else: initializations[backbone_key]=backbone
+        settings=record['candidate'].get('ncp')
+        if settings:
+            # These settings determine parameter shapes and initialization RNG use.
+            concept_key=(*backbone_key,settings['layers'],settings['entries'])
+            concept={name:value for name,value in parameters.items() if name.startswith('ncp.')}
+            if concept_key in concept_initializations:
+                assert concept==concept_initializations[concept_key],(directory,'matched NCP initialization differs')
+            else: concept_initializations[concept_key]=concept
         verified.append(dict(trial=directory.name,source_execution=True,checkpoint=True,
-            evaluation_immutable=True,token_budget=True,paired_batch_order=True))
+            evaluation_immutable=True,token_budget=True,paired_batch_order=True,matched_initialization=True))
     # Check Git's committed bytes, not only working-tree bytes, for published snapshots.
     archive_hashes={}
     for p in HERE.glob('trial-*/source/**/*.py'):
