@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-73 completed of 75 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+74 completed of 76 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -90,6 +90,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0073-FROZEN-NOPRED-s44](../ncp-20260915--trial-0073-FROZEN-NOPRED-s44-bdbd4373/README.md) | 44 / 44 | 0.637281 | 219.9 | 225.7 | 38224 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 | [trial-0074-CROSS-D6-s42](../ncp-20260915--trial-0074-CROSS-D6-s42-4f6c1484/README.md) | 42 / 45 | 0.640354 | 168.1 | 174.8 | 49995 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 | [trial-0075-CROSS-NCP-s42](../ncp-20260915--trial-0075-CROSS-NCP-s42-bfea33ae/README.md) | 42 / 45 | 0.635876 | 218.3 | 224.1 | 38516 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0076-CROSS-D6-s45](../ncp-20260915--trial-0076-CROSS-D6-s45-13536966/README.md) | 45 / 42 | 0.635365 | 169.8 | 175.1 | 49514 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -242,6 +243,7 @@ The optional order-seed field changes only the tape permutation; the architectur
 - trial-0073-FROZEN-NOPRED-s44: Frozen four-seed confirmation: FROZEN-NOPRED, seed44; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 - trial-0074-CROSS-D6-s42: Separate initialization and training-order sensitivity of the already frozen NCP-minus-dense difference; no reselection; initializer 42, batch order 45
 - trial-0075-CROSS-NCP-s42: Separate initialization and training-order sensitivity of the already frozen NCP-minus-dense difference; no reselection; initializer 42, batch order 45
+- trial-0076-CROSS-D6-s45: Separate initialization and training-order sensitivity of the already frozen NCP-minus-dense difference; no reselection; initializer 45, batch order 42
 
 ## Correctness and diagnosis
 

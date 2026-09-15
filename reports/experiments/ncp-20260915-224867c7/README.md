@@ -14,6 +14,7 @@ SyntaxError: '(' was never closed
 
 campaign.log:
 2026-09-15T16:56:40.286744+00:00 Conditional depth12 transfer not entered: D6 primary replication rule failed
+2026-09-15T17:07:05.699998+00:00 PREDECLARED conditional module-seed diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.
 
 controller-red.log:
 Traceback (most recent call last):
