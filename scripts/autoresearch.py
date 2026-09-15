@@ -224,7 +224,12 @@ def validate_run_artifacts(directory, record):
 
 def validate_protocol(value):
     fixed = value.get("stopping_rule") == "optimizer_updates"
+    longer = value.get('protocol_id') == 'vesper-tinystories-depth-long-v1'
     extra = {"stopping_rule", "optimizer_updates", "seed", "schedule", "batch_tape", "batch_tape_sha256"} if fixed else set()
+    if longer:
+        if not fixed or value.get('tape_microbatches') != 32768 or type(value.get('tape_microbatches')) is not int:
+            raise ValueError('Long-budget protocol requires the complete32768-microbatch tape.')
+        extra.add('tape_microbatches')
     if "batch_order_seed" in value:
         if (not fixed or type(value["batch_order_seed"]) is not int
                 or value["batch_order_seed"] not in (42,45)
@@ -257,11 +262,13 @@ def validate_protocol(value):
     if value["smoke_timeout_seconds"] > 600:
         raise ValueError("Smoke deadline must be at most 600 seconds.")
     if fixed:
-        if type(value["optimizer_updates"]) is not int or value["optimizer_updates"] != 512:
-            raise ValueError("Fixed comparison requires exactly 512 updates.")
-        if type(value["seed"]) is not int or value["seed"] not in (42, 43, 44, 45, 46):
+        allowed_updates=(512,1024,2048) if longer else (512,)
+        if type(value["optimizer_updates"]) is not int or value["optimizer_updates"] not in allowed_updates:
+            raise ValueError("Unexpected fixed update budget.")
+        if type(value["seed"]) is not int or (not 101 <= value['seed'] < 2**31 if longer else value["seed"] not in (42, 43, 44, 45, 46)):
             raise ValueError("Fixed comparison requires a declared seed from42 through46.")
-        if value["schedule"] != {"clock": "optimizer_step", "progress": "zero_based_step / 512", "lr_warmup_updates": 0, "decay_start_step": 256, "final_lr_fraction": 0.0, "measurement_warmup_updates": 11, "muon_momentum_warmup_updates": 300}:
+        updates=value['optimizer_updates']
+        if value["schedule"] != {"clock": "optimizer_step", "progress": f"zero_based_step / {updates}", "lr_warmup_updates": 0, "decay_start_step": updates//2, "final_lr_fraction": 0.0, "measurement_warmup_updates": 11, "muon_momentum_warmup_updates": 300}:
             raise ValueError("Unexpected fixed-step schedule.")
         if value["activation_checkpointing"] or value["tokens_per_update"] != 16384:
             raise ValueError("Fixed comparison requires checkpointing off and 16384 tokens/update.")

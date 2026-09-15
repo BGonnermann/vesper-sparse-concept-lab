@@ -71,16 +71,17 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
     tape = torch.load(tape_path, map_location="cpu", weights_only=True)
     accumulation = protocol["tokens_per_update"] // (device_batch_size * protocol["sequence_length"])
     count = protocol["optimizer_updates"] * accumulation
-    if tuple(tape.shape) != (count, 2, device_batch_size, protocol["sequence_length"]) or tape.dtype != torch.int64:
+    tape_count = protocol.get('tape_microbatches',count)
+    if count > tape_count or tuple(tape.shape) != (tape_count, 2, device_batch_size, protocol["sequence_length"]) or tape.dtype != torch.int64:
         raise ValueError("Batch tape shape/dtype does not match the exact training budget.")
     order_seed = protocol.get("batch_order_seed", seed)
-    order = batch_order(count, order_seed)
+    order = batch_order(tape_count, order_seed)[:count]
     schedule = fixed_schedule(protocol["optimizer_updates"])
     write_json(Path("schedule.json"), {"definition": protocol["schedule"], "updates": schedule,
                                       "initial_optimizer_groups": [{k:v for k,v in g.items() if k != "params"} for g in optimizer.param_groups]})
     consumed = hashlib.sha256()
     # Hash the CPU tensors handed to the transfer path, outside timed GPU updates.
-    batch_hashes = [hashlib.sha256(tape[i].numpy().tobytes()).hexdigest() for i in range(count)]
+    batch_hashes = [hashlib.sha256(tape[i].numpy().tobytes()).hexdigest() for i in range(tape_count)]
     device_buffer = torch.empty(tape.shape[1:], dtype=tape.dtype, device=runtime.device)
     tape = tape.pin_memory()
     model.train()
@@ -110,7 +111,7 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
                 group["momentum"] = item["muon_momentum"]
                 group["weight_decay"] = item["muon_weight_decay"]
         prefix_elapsed = 0.0
-        if (memory is not None or ncp is not None) and step == 511:
+        if (memory is not None or ncp is not None) and step == len(schedule)-1:
             torch.cuda.synchronize()
             prefix_elapsed = time.perf_counter() - start
             module = memory if memory is not None else ncp
@@ -138,12 +139,12 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
             raise RuntimeError(f"Invalid training loss at step {step}: {value}")
         torch.cuda.synchronize()
         elapsed = prefix_elapsed + time.perf_counter() - start
-        if (memory is not None or ncp is not None) and step == 511:
+        if (memory is not None or ncp is not None) and step == len(schedule)-1:
             current_diagnostic["final_update_parameter_delta_norms"] = {n:float((p.detach()-old_parameters[n]).float().norm()) for n,p in module.named_parameters()}
         all_seconds += elapsed
         if step >= 11:
             timed += elapsed
-        print(f"step {step + 1}/512 | loss: {value:.6f} | token_ce: {token_ce:.6f} | lr_mult: {item['lr_multiplier']:.8f} | dt: {elapsed:.4f}s", flush=True)
+        print(f"step {step + 1}/{len(schedule)} | loss: {value:.6f} | token_ce: {token_ce:.6f} | lr_mult: {item['lr_multiplier']:.8f} | dt: {elapsed:.4f}s", flush=True)
     if len(consumed_indices) != count or len(set(consumed_indices)) != count:
         raise RuntimeError("Fixed-update batch coverage failed.")
     order_metadata = {"batch_order_seed": order_seed} if "batch_order_seed" in protocol else {}
