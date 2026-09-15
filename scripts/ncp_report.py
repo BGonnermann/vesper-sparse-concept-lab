@@ -118,6 +118,7 @@ def write(final=False):
     freeze=HERE/'confirmation-selection.json'
     if freeze.exists():
         chosen=read(freeze)
+        assert result['exploratory_best']['trial']==chosen['selection_trial'],'Diagnostic changed frozen selection'
         result['frozen_selection']=chosen
         from ncp_frozen_pairs import collect
         result['frozen_comparisons']=collect(chosen)
@@ -243,7 +244,7 @@ def write(final=False):
         'the final evidence audit also verifies saved checkpoints and committed source-archive bytes.',
         '', '## Measurement limits','',
         'Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. '
-        'Depth changes width too. Timed throughput excludes the first11 updates; all-update time includes them. '
+        'The mandatory native-depth comparison also changes width; the separate grid isolates each axis. Timed throughput excludes the first11 updates; all-update time includes them. '
         'Trial wall time includes preparation, child execution and verification, excluding reporting/publication. '
         'Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, '
         'source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. '
@@ -253,6 +254,9 @@ def write(final=False):
         'For raw-logit mixing, reported entropy describes softmax classification probabilities, not the signed reconstruction weights. '
         'Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.',
         'All artifacts are retained locally. No cloud, dependency upgrades, paid services or deletion.'])
+    from ncp_closing_sections import opening,append as append_closing
+    text[5:5]=opening(result)
+    append_closing(text,result)
     (HERE/'summary.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
     for path in HERE.glob('trial-*/result.json'): reports.emit(path.parent)
     reports.emit(HERE); reports.index()

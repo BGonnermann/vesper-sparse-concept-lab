@@ -10,13 +10,31 @@ def gather(result):
                       ('module-initialization-entry-result.json', 'module_initialization_entry'),
                       ('module-initialization-budget-result.json', 'module_initialization_budget'),
                       ('no-future-result.json','no_future_diagnostic'),
-                      ('no-future-budget-result.json','no_future_budget')]:
+                      ('no-future-budget-result.json','no_future_budget'),
+                      ('checkpoint-replay-result.json','checkpoint_replay')]:
         path = c.HERE / name
         if path.exists():
             result[key] = c.read(path)
+    if 'feedback_interventions' not in result:
+        partial=[dict(file=p.name,**c.read(p)) for p in c.HERE.glob('feedback-intervention-s*-result.json')]
+        if partial: result['feedback_interventions_partial']=partial
 
 
 def append(text, result):
+    if 'checkpoint_replay' in result:
+        replay=result['checkpoint_replay']
+        text.extend(['', '## Independent saved-checkpoint evaluation replay', '',
+            f'Status: {replay["status"]}; {replay["completed_checkpoints"]}/{replay["expected_checkpoints"]} checkpoints reproduced. '
+            f'Maximum absolute BPB difference: {replay["max_absolute_bpb_difference"]}. No training updates.',
+            'Each replay loads its own captured source and saved checkpoint, verifies the original persistent-state hash, '
+            'and reconstructs evaluation order and byte accounting from the sealed data. Historical evaluation-batch hashes '
+            'were not recorded; this is independent execution of the same protocol, not independent data or training.'])
+        for row in replay['outcomes']:
+            if row['status']!='completed': text.append('\nReplay '+row['trial']+': '+row['status']+'. '+row.get('reason',row.get('error','')))
+    if 'feedback_interventions_partial' in result:
+        text.extend(['', '## Incomplete feedback intervention evidence', ''])
+        for row in result['feedback_interventions_partial']:
+            text.append(f'- {row["file"]}: {row["status"]}; '+row.get('error','No completed aggregate yet.'))
     if 'no_future_diagnostic' in result:
         evidence=result['no_future_diagnostic']
         text.extend(['', '## Token-only latent feedback: all future losses off', '', evidence['interpretation'], '',
