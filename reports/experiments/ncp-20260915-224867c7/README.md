@@ -478,7 +478,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-53 completed of 55 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+54 completed of 56 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -548,6 +548,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0053-I3-81772591c9-s42](../ncp-20260915--trial-0053-I3-81772591c9-s42-c8449081/README.md) | 42 | 0.632797 | 210.8 | 216.6 | 39918 | 30,001,452 / 30,001,452 | 670.2 / 694.0 | False |
 | [trial-0054-I3-8fc5ce9693-s42](../ncp-20260915--trial-0054-I3-8fc5ce9693-s42-a8e4c2bf/README.md) | 42 | 0.633706 | 214.8 | 220.4 | 39141 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 | [trial-0055-I3-da7015e3e7-s42](../ncp-20260915--trial-0055-I3-da7015e3e7-s42-802a8bdb/README.md) | 42 | 0.633584 | 219.1 | 224.9 | 38376 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | True |
+| [trial-0056-D6-s45](../ncp-20260915--trial-0056-D6-s45-b6df3f4a/README.md) | 45 | 0.637922 | 169.7 | 176.5 | 49521 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -641,6 +642,7 @@ Seeds45/46 are the predeclared primary pairs;43/44 are sensitivity pairs. Each r
 - trial-0053-I3-81772591c9-s42: Frozen third-factor stage: add chunk_size=2 from healthy individual R-chunk_size2 (0.634780 BPB) to qualifying pair I2-37a8ad42c0 (0.631877); test incremental benefit, not assumed additivity; enforce utilization gate
 - trial-0054-I3-8fc5ce9693-s42: Frozen third-factor stage: add feedback_scale=0.1 from healthy individual R-feedback_scale0.1 (0.633732 BPB) to qualifying pair I2-37a8ad42c0 (0.631877); test incremental benefit, not assumed additivity; enforce utilization gate
 - trial-0055-I3-da7015e3e7-s42: Frozen third-factor stage: add lr=0.0003 from healthy individual R-lr0.0003 (0.634800 BPB) to qualifying pair I2-37a8ad42c0 (0.631877); test incremental benefit, not assumed additivity; enforce utilization gate
+- trial-0056-D6-s45: Frozen four-seed confirmation: D6, seed45; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 
 ## Correctness and diagnosis
 
