@@ -368,7 +368,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-27 completed of 29 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+28 completed of 30 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -410,6 +410,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0027-R-vq_weight0.1-s42](../ncp-20260915--trial-0027-R-vq_weight0.1-s42-0864ad97/README.md) | 42 | 0.635949 | 220.5 | 226.4 | 38137 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0028-R-ce_weight0.1-s42](../ncp-20260915--trial-0028-R-ce_weight0.1-s42-5fc605e8/README.md) | 42 | 0.633991 | 220.2 | 225.9 | 38171 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0029-R-ce_weight1.0-s42](../ncp-20260915--trial-0029-R-ce_weight1.0-s42-cca8c2df/README.md) | 42 | 0.642264 | 218.4 | 224.0 | 38489 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0030-R-prediction_weight0.03-s42](../ncp-20260915--trial-0030-R-prediction_weight0.03-s42-40596925/README.md) | 42 | 0.635307 | 220.7 | 226.6 | 38110 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -466,6 +467,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0027-R-vq_weight0.1-s42: Change only vq_weight to 0.1 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0028-R-ce_weight0.1-s42: Change only ce_weight to 0.1 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0029-R-ce_weight1.0-s42: Change only ce_weight to 1.0 on normalized NCP to test quality versus its stable unit-weight control
+- trial-0030-R-prediction_weight0.03-s42: Change only prediction_weight to 0.03 on normalized NCP to test quality versus its stable unit-weight control
 
 ## Correctness and diagnosis
 

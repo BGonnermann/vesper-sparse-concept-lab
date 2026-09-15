@@ -58,6 +58,7 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [ncp-20260915/trial-0027-R-vq_weight0.1-s42](experiments/ncp-20260915--trial-0027-R-vq_weight0.1-s42-0864ad97/README.md) | completed | fixed_updates | 0.635949 |
 | [ncp-20260915/trial-0028-R-ce_weight0.1-s42](experiments/ncp-20260915--trial-0028-R-ce_weight0.1-s42-5fc605e8/README.md) | completed | fixed_updates | 0.633991 |
 | [ncp-20260915/trial-0029-R-ce_weight1.0-s42](experiments/ncp-20260915--trial-0029-R-ce_weight1.0-s42-cca8c2df/README.md) | completed | fixed_updates | 0.642264 |
+| [ncp-20260915/trial-0030-R-prediction_weight0.03-s42](experiments/ncp-20260915--trial-0030-R-prediction_weight0.03-s42-40596925/README.md) | completed | fixed_updates | 0.635307 |
 | [ncp-20260915](experiments/ncp-20260915-224867c7/README.md) | running | stage_or_unknown | unknown |
 | [ngram-20260915/D](experiments/ngram-20260915--D-ba004b1c/README.md) | completed | fixed_updates | 0.634848 |
 | [ngram-20260915/DG](experiments/ngram-20260915--DG-29c4025f/README.md) | completed | fixed_updates | 0.634178 |
