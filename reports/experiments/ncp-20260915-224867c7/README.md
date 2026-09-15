@@ -101,6 +101,11 @@ AssertionError: [102, 486, 438, 2, 458, 172, 372, 221, 246, 123, 100, 462, 222, 
 Ran 2 tests in 1.818s
 FAILED (failures=1, errors=1)
 
+order-preflight.log:
+Traceback (most recent call last):
+    if result.returncode: raise RuntimeError('Correctness failed: '+str(path))
+RuntimeError: Correctness failed: <repo>\runs\autoresearch\ncp-20260915\preflight-cpu-1789491292.log
+
 order-preview-green.log:
 Ran 2 tests in 1.776s
 OK
@@ -195,6 +200,26 @@ ok
 Ran 75 tests in 4.309s
 OK
 
+preflight-cpu-1789491292.log:
+ok
+ok
+ok
+ERROR: test_budget_and_schedule_fingerprints_are_distinct (test_experiment_reports.ReportTests.test_budget_and_schedule_fingerprints_are_distinct)
+Traceback (most recent call last):
+KeyError: 'seed'
+Ran 77 tests in 4.926s
+FAILED (errors=1)
+
+preflight-cpu-1789491332.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 77 tests in 4.937s
+OK
+
 preflight-cuda-1789473254.log:
 ok
 ok
@@ -283,6 +308,16 @@ ok
 ok
 ok
 Ran 75 tests in 6.673s
+OK
+
+preflight-cuda-1789491339.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 77 tests in 7.249s
 OK
 
 report-red.log:
