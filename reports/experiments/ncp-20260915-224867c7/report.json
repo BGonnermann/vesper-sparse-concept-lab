@@ -1681,13 +1681,21 @@
       "status": "prepared"
     },
     "deadline-closeout-result.json": {
+      "committed_progress_index_completed": true,
+      "committed_report_hashes": {
+        "CAMPAIGN.md": "5b22855d4ea1949da8eba792f48248ab8e6bbc75b260f6dd1418e88cbeee7588",
+        "FINDINGS.md": "d7ad87df8c01269285cbdee3a5cbe84243f1e6b278e4ea1f6ad07e7490ceab53"
+      },
+      "completed_at": "2026-09-15T19:35:25.007459+00:00",
       "deadline": "2026-09-15T19:41:32+00:00",
+      "interpretation": "Final report and completed progress index are committed and remotely verified. Scientific work is complete; stop at the existing deadline, with no subsequent campaign.",
       "kind": "deadline_closeout",
       "local_final_report_saved": true,
       "plan_sha256": "9d579505dc11446487a2b0fa92a66d9a34e96c49b9e47bb0c00c790597757037",
+      "publication_commit": "a4116802150320488922c4d3187919221465cb79",
       "script_sha256": "41753e0703e23c747bf1af8337fdd6ec5f44dab0407628166a306aa2c8516ace",
       "started_at": "2026-09-15T19:35:00.000316+00:00",
-      "status": "running",
+      "status": "completed",
       "steps": {
         "audit": {
           "log": "deadline-audit.log",
@@ -1699,13 +1707,19 @@
           "returncode": 0,
           "sha256": "ed1199386678e7b3fb822c9ced6ab9532bda02c54fde7fb63b11d88cfddda692"
         },
+        "publication": {
+          "log": "deadline-publication.log",
+          "returncode": 0,
+          "sha256": "a6261d7fc7638b2cf63a998bcb1602b6a51eb9b45327454c4b8322ff14575135"
+        },
         "report": {
           "log": "deadline-report.log",
           "returncode": 0,
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         }
       },
-      "training_updates": 0
+      "training_updates": 0,
+      "verified_remote": true
     },
     "dense-scale-result.json": {
       "checkpoint_sha256": "3a9f8857ba88c8d21792400d535ac67df8685b47ceb6c05a7b9ddc1899052cd5",
@@ -18974,7 +18988,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "55fceaf06777c17ee0d0095447447700b106d3fc",
+      "publication_commit": "a4116802150320488922c4d3187919221465cb79",
       "status": "completed",
       "verified_remote": true
     },
@@ -19492,9 +19506,9 @@
       "sha256": "bdc15165188e73fa6723070c44dcfe721b92e92f3541e4bbab54a7d96ae74c8c"
     },
     "campaign.log": {
-      "bytes": 136980,
+      "bytes": 137211,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "900bbf03792523e7e0859c2565e5d71beee5046a333f41af761786ecb2b2d61c"
+      "sha256": "09a01748bff6650b2837419c10bc5f5b5064d1175aba996b13fba6d3a9a77aef"
     },
     "checkpoint-replay-driver.py": {
       "bytes": 15268,
@@ -19682,14 +19696,14 @@
       "sha256": "874d8f05fb3a6762f5e9fb93f68d87ee672dd13db03225aaebcfbe2b1afee518"
     },
     "deadline-closeout-queue.log": {
-      "bytes": 2108,
+      "bytes": 2238,
       "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-queue.log",
-      "sha256": "018b0fcf1e1280a7cd9d7037d362cbd6a68b6f000bba949695ed47860a3fff9e"
+      "sha256": "b0503f1f2a666f61e57b2aadafaf288b7d742fc4d1e164acdf6a67a8d8e57b60"
     },
     "deadline-closeout-result.json": {
-      "bytes": 926,
+      "bytes": 1712,
       "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-result.json",
-      "sha256": "295869643722f777bfe48a11fd9859a67f3e6bd086557bc903fc463d29010277"
+      "sha256": "87df27d0c2961e7706fc99eda971f65f5dd3d790c0162abb7e3828f4c4fd580f"
     },
     "deadline-closeout-v2-driver.py": {
       "bytes": 5554,
@@ -19702,9 +19716,9 @@
       "sha256": "ed1199386678e7b3fb822c9ced6ab9532bda02c54fde7fb63b11d88cfddda692"
     },
     "deadline-publication.log": {
-      "bytes": 0,
+      "bytes": 101,
       "local_path": "runs/autoresearch/ncp-20260915/deadline-publication.log",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "sha256": "a6261d7fc7638b2cf63a998bcb1602b6a51eb9b45327454c4b8322ff14575135"
     },
     "deadline-report.log": {
       "bytes": 0,
@@ -20589,7 +20603,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "26364f3913a39670be21b556aac297b62d026a63365e595270a1267045a32b79"
+      "sha256": "c1b76b2aeaa00480f8327ab6c97001fc884396c3652f2d265b288fff3c1ebe44"
     },
     "publication-watch-result.json": {
       "bytes": 113,
