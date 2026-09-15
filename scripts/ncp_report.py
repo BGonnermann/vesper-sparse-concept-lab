@@ -80,7 +80,11 @@ def write(final=False):
     for row in data:
         name=f'[{row["trial"]}](../{row["report_id"]}/README.md)'
         if row['status']!='completed':
-            text.append(f'| {name} | {row["seed"]} | {row["status"]} | | | | | | |')
+            wall=f'{row["wall_seconds"]:.1f}' if row.get('wall_seconds') is not None else 'unavailable'
+            memory_path=HERE/row['trial']/'memory.json'
+            memory=read(memory_path) if memory_path.exists() else None
+            peak=f'{memory["peak_allocated_bytes"]/2**20:.1f} / {memory["peak_reserved_bytes"]/2**20:.1f}' if memory else 'unavailable'
+            text.append(f'| {name} | {row["seed"]} | {row["status"]} | unavailable | {wall} | unavailable | unavailable | {peak} | unavailable |')
         else:
             h=row.get('ncp_health')
             text.append(f'| {name} | {row["seed"]} | {row["bpb"]:.6f} | {row["all_update_seconds"]:.1f} | {row["wall_seconds"]:.1f} | {row["timed_tokens_per_second"]:.0f} | {row["total_parameters"]:,} / {row["active_parameters"]:,} | {row["allocated_mib"]:.1f} / {row["reserved_mib"]:.1f} | {h["collapsed"] if h else "n/a"} |')
