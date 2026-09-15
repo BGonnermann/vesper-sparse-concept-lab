@@ -13,6 +13,7 @@ def rows():
     output=[]
     for path in sorted(HERE.glob('trial-*/result.json')):
         record=read(path); row=dict(trial=path.parent.name,label=record['label'],seed=record['seed'],
+            batch_order_seed=record.get('protocol',{}).get('batch_order_seed',record['seed']),
             phase=record['phase'],status=record['status'],hypothesis=record['selection']['hypothesis'],
             error=record.get('error'),configuration=record.get('candidate'),wall_seconds=record.get('wall_seconds'),
             source_hashes={k:v for k,v in record.items() if k.endswith('_sha256')},
@@ -88,7 +89,7 @@ def write(final=False):
     result=dict(kind='ncp_campaign',status='completed' if final else 'running',rows=data,
         depth_confirmation=pairs(data,'D12','D6',[43,44]),remaining_seconds=remaining())
     controls=[x for x in complete if x['label']=='D6' and x['seed']==42]
-    eligible=[x for x in complete if x['seed']==42 and x['configuration'].get('ncp',{}).get('mode')=='feedback'
+    eligible=[x for x in complete if x['seed']==42 and x['phase']!='initializer_order_diagnostic' and x['configuration'].get('ncp',{}).get('mode')=='feedback'
         and not x['ncp_health']['collapsed']
         and (x['configuration']['ncp']['prediction_weight']>0 or x['configuration']['ncp']['ce_weight']>0)]
     if controls and eligible:
@@ -125,6 +126,8 @@ def write(final=False):
         result['transfer_comparisons']=collect(result['transfer_selection'])
         if (HERE/'transfer-pairs-result.json').exists():
             result['transfer_omitted_by_budget']=read(HERE/'transfer-pairs-result.json').get('omitted_by_budget',[])
+    from ncp_extra_sections import gather,append
+    gather(result)
     r.write_json(HERE/'result.json',result)
     text=['# NCP campaign '+('final report' if final else 'progress'),'',
         f'{len(complete)} completed of {len(data)} attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.',
@@ -144,10 +147,11 @@ def write(final=False):
         'and the small TinyStories fixed-token experiment also differ. Official revision: a0ab281286f5c0337c35de3181cc992c562eacaa.',
         'See [campaign plan](../../../docs/ncp-campaign.md) and the published source receipt for exact references.','',
         '## Every attempted trial','',
-        '| Trial | Seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | Target-code collapse |',
+        '| Trial | Init / order seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | Target-code collapse |',
         '|---|---:|---:|---:|---:|---:|---|---|---|']
     for row in data:
         name=f'[{row["trial"]}](../{row["report_id"]}/README.md)'
+        seed_label=f'{row["seed"]} / {row["batch_order_seed"]}'
         if row['status']!='completed':
             wall=f'{row["wall_seconds"]:.1f}' if row.get('wall_seconds') is not None else 'unavailable'
             memory_path=HERE/row['trial']/'memory.json'
@@ -155,10 +159,10 @@ def write(final=False):
             peak=f'{memory["peak_allocated_bytes"]/2**20:.1f} / {memory["peak_reserved_bytes"]/2**20:.1f}' if memory else 'unavailable'
             counts=(f'{row["total_parameters"]:,} / {row["active_parameters"]:,}'+(' *' if row.get('parameter_counts_reconstructed') else '')
                 if 'total_parameters' in row else 'unavailable')
-            text.append(f'| {name} | {row["seed"]} | {row["status"]} | unavailable | {wall} | unavailable | {counts} | {peak} | unavailable |')
+            text.append(f'| {name} | {seed_label} | {row["status"]} | unavailable | {wall} | unavailable | {counts} | {peak} | unavailable |')
         else:
             h=row.get('ncp_health')
-            text.append(f'| {name} | {row["seed"]} | {row["bpb"]:.6f} | {row["all_update_seconds"]:.1f} | {row["wall_seconds"]:.1f} | {row["timed_tokens_per_second"]:.0f} | {row["total_parameters"]:,} / {row["active_parameters"]:,} | {row["allocated_mib"]:.1f} / {row["reserved_mib"]:.1f} | {h["collapsed"] if h else "n/a"} |')
+            text.append(f'| {name} | {seed_label} | {row["bpb"]:.6f} | {row["all_update_seconds"]:.1f} | {row["wall_seconds"]:.1f} | {row["timed_tokens_per_second"]:.0f} | {row["total_parameters"]:,} / {row["active_parameters"]:,} | {row["allocated_mib"]:.1f} / {row["reserved_mib"]:.1f} | {h["collapsed"] if h else "n/a"} |')
     text.append('\n* Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.')
     for heading,items in [('Depth6 versus depth12, reference LR .04',result['depth_confirmation']),('Frozen NCP confirmation',result.get('ncp_confirmation',[]))]:
         if heading.startswith('Depth6') and 'depth_capacity_tradeoff' in result:
@@ -211,6 +215,7 @@ def write(final=False):
         if result.get('transfer_omitted_by_budget'): text.append('\nOptional controls omitted for time: '+', '.join(result['transfer_omitted_by_budget']))
     if 'transfer_entry' in result:
         text.extend(['','Transfer entry status: '+result['transfer_entry']['status']+'. '+result['transfer_entry'].get('reason','')])
+    append(text,result)
     text.extend(['','## Attempts, decisions and failures',''])
     for row in data:
         text.append(f'- {row["trial"]}: {row["hypothesis"]}'+(f' Failure: {row["error"]}' if row.get('error') else ''))

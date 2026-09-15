@@ -63,7 +63,8 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
     count = protocol["optimizer_updates"] * accumulation
     if tuple(tape.shape) != (count, 2, device_batch_size, protocol["sequence_length"]) or tape.dtype != torch.int64:
         raise ValueError("Batch tape shape/dtype does not match the exact training budget.")
-    order = batch_order(count, seed)
+    order_seed = protocol.get("batch_order_seed", seed)
+    order = batch_order(count, order_seed)
     schedule = fixed_schedule(protocol["optimizer_updates"])
     write_json(Path("schedule.json"), {"definition": protocol["schedule"], "updates": schedule,
                                       "initial_optimizer_groups": [{k:v for k,v in g.items() if k != "params"} for g in optimizer.param_groups]})
@@ -135,11 +136,12 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
         print(f"step {step + 1}/512 | loss: {value:.6f} | token_ce: {token_ce:.6f} | lr_mult: {item['lr_multiplier']:.8f} | dt: {elapsed:.4f}s", flush=True)
     if len(consumed_indices) != count or len(set(consumed_indices)) != count:
         raise RuntimeError("Fixed-update batch coverage failed.")
-    write_json(Path("batches.json"), {"seed": seed, "policy": "seeded permutation of fixed prepacked microbatches",
+    order_metadata = {"batch_order_seed": order_seed} if "batch_order_seed" in protocol else {}
+    write_json(Path("batches.json"), {"seed": seed, **order_metadata, "policy": "seeded permutation of fixed prepacked microbatches",
         "batch_tape_sha256": protocol["batch_tape_sha256"], "consumed_indices": consumed_indices,
         "consumed_batch_hash_chain": consumed.hexdigest(), "microbatches": count,
         "training_tokens": count * device_batch_size * protocol["sequence_length"]})
-    write_json(Path("fixed-training.json"), {"seed": seed, "stopping_rule": "optimizer_updates",
+    write_json(Path("fixed-training.json"), {"seed": seed, **order_metadata, "stopping_rule": "optimizer_updates",
         "optimizer_updates": len(schedule), "all_update_seconds": all_seconds,
         "schedule_sha256": digest(Path("schedule.json")), "batch_hash_chain": consumed.hexdigest()})
     if memory is not None:

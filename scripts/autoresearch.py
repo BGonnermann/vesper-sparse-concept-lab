@@ -225,6 +225,12 @@ def validate_run_artifacts(directory, record):
 def validate_protocol(value):
     fixed = value.get("stopping_rule") == "optimizer_updates"
     extra = {"stopping_rule", "optimizer_updates", "seed", "schedule", "batch_tape", "batch_tape_sha256"} if fixed else set()
+    if "batch_order_seed" in value:
+        if (not fixed or type(value["batch_order_seed"]) is not int
+                or value["batch_order_seed"] not in (42,45)
+                or type(value.get("seed")) is not int or value["seed"] not in (42,45)):
+            raise ValueError("Explicit order seeds require fixed updates and initializer/order levels42 or45.")
+        extra.add("batch_order_seed")
     numeric = {"sequence_length", "tokens_per_update", "microbatch_size", "eval_batch_size",
                "eval_tokens", "smoke_eval_tokens", "training_seconds", "smoke_timeout_seconds",
                "baseline_timeout_seconds"}

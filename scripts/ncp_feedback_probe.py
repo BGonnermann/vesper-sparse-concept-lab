@@ -43,6 +43,7 @@ def main():
     train.WINDOW_PATTERN = 'L'
     runtime = train.detect_runtime()
     assert runtime.device_type == 'cuda'
+    assert runtime.amp_dtype == torch.bfloat16, 'Probe precision differs from the campaign BF16 protocol'
     train._configure_step_kernels(runtime)
     state = torch.load(checkpoint, map_location='cpu', weights_only=True)
     config = train.build_model_config(record['candidate']['depth'], state['transformer.wte.weight'].shape[0], runtime, False)

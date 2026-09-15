@@ -152,11 +152,16 @@ def emit(source, root=ROOT):
             'Two paired seeds are preliminary; opposite signs do not establish equivalence.'],
         'reporter_sha256':sha(Path(__file__))}
     destination = root/'reports/experiments'/experiment_id
+    if budget=='fixed_updates':
+        report['randomness']={'initialization_seed':protocol.get('seed'),
+            'batch_order_seed':protocol.get('batch_order_seed',protocol.get('seed'))}
     save(destination/'report.json',canonical(report))
     lines = [f'# {relative}', '', f'Outcome: **{status}**. Budget family: **{budget}**.',
         '', 'Full compact configuration, metrics, seeds, hashes and diagnostics: [report.json](report.json).',
         '', 'Provenance: historical recorded commits/hashes only. This publication does not retroactively identify training source.',
         'Unknown fields remain null. Do not pool different budgets/schedules. Two seeds are not proof of equivalence.']
+    if budget=='fixed_updates':
+        lines += ['',f'Initialization seed: {report["randomness"]["initialization_seed"]}; batch-order seed: {report["randomness"]["batch_order_seed"]}.']
     if record.get('metrics'): lines += ['', '```json',canonical(record['metrics']).strip(),'```']
     if diagnostics: lines += ['', '## Diagnostics', '```text','\n\n'.join(clean(d,root) for d in diagnostics),'```']
     for name, excerpt in excerpts.items(): lines += ['', f'## Retained narrative: {name}', '', excerpt]

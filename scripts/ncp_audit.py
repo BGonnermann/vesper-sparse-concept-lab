@@ -42,14 +42,17 @@ def audit():
         before=read(directory/'evaluation-immutability.json')
         assert before['verified'] and before['before_sha256']==before['after_sha256']
         batches=read(directory/'batches.json'); seed=record['seed']
+        order_seed=record['protocol'].get('batch_order_seed',seed)
+        assert batches.get('batch_order_seed',batches['seed'])==order_seed
         assert batches['training_tokens']==8388608
-        assert batches['consumed_indices']==batch_order(8192,seed)
+        assert batches['consumed_indices']==batch_order(8192,order_seed)
         assert read(directory/'schedule.json')['updates']==fixed_schedule()
         assert artifacts['training']['optimizer_updates']==512
         assert artifacts['training']['timed_training_tokens']==8208384
-        if seed in by_seed:
-            assert batches==by_seed[seed],(directory,'batch ordering differs')
-        else: by_seed[seed]=batches
+        batch_payload={k:v for k,v in batches.items() if k not in ('seed','batch_order_seed')}
+        if order_seed in by_seed:
+            assert batch_payload==by_seed[order_seed],(directory,'batch ordering differs')
+        else: by_seed[order_seed]=batch_payload
         parameters=read(directory/'initialization.json')['parameters']
         backbone={name:value for name,value in parameters.items() if not name.startswith(('ncp.','capacity.'))}
         backbone_key=(seed,record['candidate']['depth'],read(directory/'model.json')['width'])
