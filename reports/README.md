@@ -20,6 +20,7 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [checkpoint-20260915T010035Z-dense-smoke](experiments/checkpoint-20260915T010035Z-dense-smoke-5558d161/README.md) | completed | wall_time_budget | 2.672052 |
 | [checkpoint-20260915T010035Z-moe-baseline](experiments/checkpoint-20260915T010035Z-moe-baseline-fd08ef92/README.md) | completed | wall_time_budget | 0.650426 |
 | [checkpoint-20260915T010035Z-moe-smoke](experiments/checkpoint-20260915T010035Z-moe-smoke-37ca7502/README.md) | completed | wall_time_budget | 3.031074 |
+| [depth-long-20260915](experiments/depth-long-20260915-41b7acb1/README.md) | running | stage_or_unknown | unknown |
 | [depth6-20260914T221238Z](experiments/depth6-20260914T221238Z-9f83cf06/README.md) | stage_evidence_only | stage_or_unknown | unknown |
 | [depth8-20260914T222337Z](experiments/depth8-20260914T222337Z-1f65b29f/README.md) | stage_evidence_only | stage_or_unknown | unknown |
 | [equal-token-20260915/dense-42](experiments/equal-token-20260915--dense-42-7de9dd08/README.md) | completed | fixed_updates | 0.634848 |

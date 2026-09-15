@@ -1,0 +1,227 @@
+{
+  "artifact_directory": "runs/autoresearch/depth-long-20260915",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "analysis.json": {
+      "approximately_time_matched_contrasts": [
+        {
+          "d12_budget": 1,
+          "d6_budget": 2,
+          "mean_delta": null,
+          "pairs": []
+        },
+        {
+          "d12_budget": 2,
+          "d6_budget": 4,
+          "mean_delta": null,
+          "pairs": []
+        }
+      ],
+      "complete_seeds": [],
+      "recommendation": "inconclusive",
+      "rows": [],
+      "scope": "Frozen validation rule for the overlapping measured time range; no extrapolation to D6@8x or held-out selection",
+      "status": "running"
+    },
+    "matrix-plan.json": {
+      "kind": "depth_long_matrix",
+      "source_hashes": {
+        "autoresearch.py": "392dfbfd39cbe20ba68d51a2efbdae0fea7edbbc868c42d116fc83ccd234d69e",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "autoresearch_train.py": "a0529a84eb1cdcdb9288c80c4edf980c385ed2bcab522370cf6200d760310e5f"
+      },
+      "status": "frozen"
+    },
+    "preflight-result.json": {
+      "logs": {
+        "cpu": "b22ba6d06112b7c7f7f12cf20a8e4ea6a44079f336a6c68d3f21af7efe1efdd6",
+        "cuda": "6229dccd72dfcf45c449b9586baa21368641183f8c3731f0ba6a24d3485cfd7c"
+      },
+      "source_hashes": {
+        "autoresearch.py": "392dfbfd39cbe20ba68d51a2efbdae0fea7edbbc868c42d116fc83ccd234d69e",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "autoresearch_train.py": "a0529a84eb1cdcdb9288c80c4edf980c385ed2bcab522370cf6200d760310e5f"
+      },
+      "status": "completed",
+      "tests": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_campaign_depth_extension.py": "2ac0e71f5a913b39e4b535d67b39f055c9b11827d9d63637460ec2fc571d95ae",
+        "test_campaign_variants.py": "1679fd62f3ccb66b08de83ddabe498c9fd04767f9e15da469e66ee0674a0a70a",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_depth_long.py": "6b4c1871724c8c1c9ffb18b2878027588c068688dfa30d1110f3b84095e82dae",
+        "test_experiment_reports.py": "97a3e4dd58c06e0e896238127e8766629390268d94ccccc2dc63d6a063420985",
+        "test_fixed_updates.py": "03f5ac1c746d44a3eee3de9b5e2d4b33a1f16ab2306fcbc34d6c162e3ba6aea6",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ncp.py": "f32d983aa819a4bdfaa329a036b75ea481ba169d0a17999d7d7e2f76a0ebab3e",
+        "test_ncp_campaign.py": "05665f8cc7c1a80c4defe545e7e3f90553172035fdd7ef2999c011742684265b",
+        "test_ncp_dimensions.py": "963859056af99b041e38121930ea570a55717a15c4271dc98c41f82c2f80254d",
+        "test_ncp_extensions.py": "9388664490831fc7d875db98d663e8989ffdba9e7156532dacb69f71350993a7",
+        "test_ncp_final_gate.py": "eec2814c1c02d2a0a06d2408d9ad8dd3beffa4d186bb56e73349c6af68c09c1c",
+        "test_ncp_module_seed.py": "5b01891bc5bd21682cd5460112e9b26bd01bdb0bace1ea2c7ec3a63df1d576b1",
+        "test_ncp_no_future.py": "f9eeb3902ae072b1b41347d5dc44bdf67686410fdcd3e1dbdde853551959bb1c",
+        "test_ncp_order.py": "a637e6d5cbfb7a2ac7f6934bb6a97d7febdec62f41810b0cd66081983e4c20c7",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
+      }
+    },
+    "result.json": {
+      "kind": "depth_long_campaign",
+      "status": "running"
+    },
+    "stream-result.json": {
+      "batch_hashes_sha256": "c8093069c42bbab8a57eb9064f3576d0e8d8c822d620a5aa3ad92c0a92ce3254",
+      "duplicate_microbatches": 0,
+      "epochs": [
+        1
+      ],
+      "first8192_match_previous_tape": true,
+      "interpretation": "One loader epoch, no replayed indices. Independent runs reuse the same tape; content repetition below batch granularity is not excluded.",
+      "kind": "training_stream",
+      "microbatches": 32768,
+      "previous_tape_matching_microbatches": 8192,
+      "shape": [
+        32768,
+        2,
+        2,
+        512
+      ],
+      "source_sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+      "status": "completed",
+      "tape_sha256": "372180711c544cd8be19d8a8ff59d2f8f030174b8ef9519f9e8a7ee02246c954",
+      "training_tokens": 33554432,
+      "verified_reconstruction_microbatches": 32768,
+      "wall_seconds": 41.71900000000096
+    }
+  },
+  "diagnostics": [
+    "green-tests.log:\nRan 3 tests in 1.138s\nOK",
+    "preflight-cpu.log:\nok\nok\nok\nok\nok\nok\nRan 88 tests in 5.895s\nOK",
+    "preflight-cuda.log:\nok\nok\nok\nok\nok\nok\nRan 88 tests in 8.802s\nOK",
+    "red-tests.log:\n    raise ValueError(\"Protocol fields are missing or unknown.\")\nValueError: Protocol fields are missing or unknown.\nERROR: test_real_loop_uses_nested_prefix_of_larger_tape (test_depth_long.LongerBudgetTests.test_real_loop_uses_nested_prefix_of_larger_tape)\nTraceback (most recent call last):\n    raise ValueError(\"Batch tape shape/dtype does not match the exact training budget.\")\nValueError: Batch tape shape/dtype does not match the exact training budget.\nRan 3 tests in 1.388s\nFAILED (errors=2)"
+  ],
+  "evidence": {
+    "PLAN.md": {
+      "bytes": 6353,
+      "local_path": "runs/autoresearch/depth-long-20260915/PLAN.md",
+      "sha256": "e510594f64048ca107d076e8e139cd1096eaab61eb4bb6c78e89b3d4dc0f3ecb"
+    },
+    "analysis.json": {
+      "bytes": 499,
+      "local_path": "runs/autoresearch/depth-long-20260915/analysis.json",
+      "sha256": "c54f796971f68e3b0596b04f2c91ac3fa1cf0a15ca1a68f56a8030104b936d1d"
+    },
+    "batch-hashes.json": {
+      "bytes": 2392089,
+      "local_path": "runs/autoresearch/depth-long-20260915/batch-hashes.json",
+      "sha256": "c8093069c42bbab8a57eb9064f3576d0e8d8c822d620a5aa3ad92c0a92ce3254"
+    },
+    "campaign.log": {
+      "bytes": 609,
+      "local_path": "runs/autoresearch/depth-long-20260915/campaign.log",
+      "sha256": "b1c322affdae9089232ddccb0a8028134281eb18e92214c1d832b61958c11612"
+    },
+    "controller.py": {
+      "bytes": 15625,
+      "local_path": "runs/autoresearch/depth-long-20260915/controller.py",
+      "sha256": "fcc7c72dbc88c12f691cda4336db714812934ab26ec2234ef54d47a19352c749"
+    },
+    "green-tests.log": {
+      "bytes": 557,
+      "local_path": "runs/autoresearch/depth-long-20260915/green-tests.log",
+      "sha256": "ec91ca37396e80423b2d2b117d5d1a73edd72e94a22cff89e140494dc8676308"
+    },
+    "matrix-plan.json": {
+      "bytes": 6533,
+      "local_path": "runs/autoresearch/depth-long-20260915/matrix-plan.json",
+      "sha256": "ca3df2755225acb142e1ac176c2cb3908447d4220ca298c2794f848fb99ba5a4"
+    },
+    "preflight-cpu.log": {
+      "bytes": 17307,
+      "local_path": "runs/autoresearch/depth-long-20260915/preflight-cpu.log",
+      "sha256": "b22ba6d06112b7c7f7f12cf20a8e4ea6a44079f336a6c68d3f21af7efe1efdd6"
+    },
+    "preflight-cuda.log": {
+      "bytes": 17212,
+      "local_path": "runs/autoresearch/depth-long-20260915/preflight-cuda.log",
+      "sha256": "6229dccd72dfcf45c449b9586baa21368641183f8c3731f0ba6a24d3485cfd7c"
+    },
+    "preflight-driver.log": {
+      "bytes": 65,
+      "local_path": "runs/autoresearch/depth-long-20260915/preflight-driver.log",
+      "sha256": "55f5c671940d06b77e35d2a8db81a9914183d04dcb650ee3f89cfb0d1407faf6"
+    },
+    "preflight-result.json": {
+      "bytes": 2690,
+      "local_path": "runs/autoresearch/depth-long-20260915/preflight-result.json",
+      "sha256": "f517854084f37c9c48031edadc9ddc869e931adc62d430a90bfabf22cdbed9bf"
+    },
+    "red-tests.log": {
+      "bytes": 2294,
+      "local_path": "runs/autoresearch/depth-long-20260915/red-tests.log",
+      "sha256": "66c77a787f2a96bb976af348bdabf14fbbe77b68af126bbac739ce50941777a8"
+    },
+    "result.json": {
+      "bytes": 149,
+      "local_path": "runs/autoresearch/depth-long-20260915/result.json",
+      "sha256": "78416c07a1b6b594e4c3caf4594402d195b58b8ea63474eba9a7b42c4262b3ac"
+    },
+    "stream-prepare.log": {
+      "bytes": 371,
+      "local_path": "runs/autoresearch/depth-long-20260915/stream-prepare.log",
+      "sha256": "c83a5ecee094583d87b6b840c6e9db42320b7ce826c9438885969dc08a77e0ac"
+    },
+    "stream-prepare.py": {
+      "bytes": 20099,
+      "local_path": "runs/autoresearch/depth-long-20260915/stream-prepare.py",
+      "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+    },
+    "stream-result.json": {
+      "bytes": 1456,
+      "local_path": "runs/autoresearch/depth-long-20260915/stream-result.json",
+      "sha256": "51b4bb52fd23216ec9ff627a9a251672f46c137a52838d56ac93edd55522e733"
+    }
+  },
+  "experiment_id": "depth-long-20260915-41b7acb1",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "running",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {
+      "controller.py": {
+        "published_path": "reports/source-snapshots/fcc7c72dbc88c12f691cda4336db714812934ab26ec2234ef54d47a19352c749.py",
+        "sha256": "fcc7c72dbc88c12f691cda4336db714812934ab26ec2234ef54d47a19352c749"
+      },
+      "stream-prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {
+      "plan_sha256": "ca3df2755225acb142e1ac176c2cb3908447d4220ca298c2794f848fb99ba5a4"
+    },
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "05c81021a7d64e7a9d14a84902b5168d57f611fc65f832a1ac564b08f7a9023b",
+  "schema_version": 1,
+  "seeds": null
+}

@@ -275,6 +275,14 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/depth-long-20260915",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "depth-long-20260915-41b7acb1",
+      "metrics": null,
+      "outcome": "running"
+    },
+    {
       "artifact_directory": "runs/autoresearch/depth6-20260914T221238Z",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,
