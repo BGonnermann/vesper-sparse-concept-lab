@@ -236,3 +236,27 @@ is unaffected and remains independently checked. Restore the live file for the
 remaining old-process trials; integrate the new controller only after that
 process exits. The new controller captures its own source bytes at import and
 archives those bytes, preventing later file edits from changing its receipts.
+
+## Prospective confirmation allocation, 14:27 UTC
+
+Before any NCP confirmation outcome is available, allocate four paired seeds:
+43,44,45,46. Seeds45/46 are the primary fresh pairs; neither condition has run
+on them. Seeds43/44 add sensitivity evidence using this campaign's already
+completed matching dense controls. Report all four, without reselection or
+extending the seed count in response to their signs. Preserve the original
+same-sign rule on the two primary pairs for preliminary replication; the full
+four-seed result and any mixed signs must appear alongside that conclusion.
+
+After the declared interaction search and any separately justified bounded
+extension, freeze one eligible seed42 configuration and its exact hash, source
+hashes and selection-trial identity. Compare frozen feedback, AUX changing only
+mode, and an exact parameter-matched residual MLP on every allocated seed.
+Derive MLP hidden size from actual NCP parameter count divided by twice backbone
+width; retain insertion and added-module LR. This is one capacity control, not
+compute matching or universal exclusion of capacity effects. Bind report pairs
+to exact trial identities and configuration/protocol hashes, not label averages.
+
+The additional seed values require a narrow protocol-validator extension and
+fresh CPU/CUDA gates after the active interaction driver exits. Do not edit
+its imported training/controller sources while it runs. Confirmation has
+priority over optional further exploration if time becomes constrained.
