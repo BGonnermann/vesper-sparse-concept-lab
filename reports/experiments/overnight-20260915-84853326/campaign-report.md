@@ -1,6 +1,6 @@
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 18. No candidate-count cap.
+Status: running. Completed full trials: 24. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
@@ -24,6 +24,12 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0016-D-lr0.03-s42 | screen / 42 | 0.634627 | 48740.4 | 172.4 | 178.6 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
 | trial-0017-D-depth4-s42 | screen / 42 | 0.671612 | 68345.5 | 123.0 | 129.0 | 330.6 / 350.0 | 11,534,472 / 11,534,472 |
 | trial-0018-DG-layer5-s42 | screen / 42 | 0.635327 | 43671.9 | 192.4 | 199.0 | 603.1 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0019-D-lr0.05-s42 | screen / 42 | 0.637371 | 48768.5 | 172.3 | 178.5 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
+| trial-0020-D-lr0.08-s42 | screen / 42 | 0.643495 | 48374.3 | 173.7 | 179.8 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
+| trial-0021-D-depth8-s42 | screen / 42 | 0.617737 | 37777.0 | 222.3 | 228.5 | 943.1 / 964.0 | 50,332,176 / 50,332,176 |
+| trial-0022-D-depth7-s42 | screen / 42 | 0.625398 | 41734.3 | 201.4 | 207.5 | 873.1 / 904.0 | 47,186,446 / 47,186,446 |
+| trial-0023-D-depth5-s42 | screen / 42 | 0.643525 | 56091.6 | 149.8 | 155.8 | 531.8 / 578.0 | 24,576,298 / 24,576,298 |
+| trial-0024-D-depth2-s42 | screen / 42 | 0.786799 | 123867.0 | 68.0 | 73.7 | 200.0 / 204.0 | 3,538,980 / 3,538,980 |
 
 Timed throughput excludes the first11 updates; all-update GPU time includes them. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 

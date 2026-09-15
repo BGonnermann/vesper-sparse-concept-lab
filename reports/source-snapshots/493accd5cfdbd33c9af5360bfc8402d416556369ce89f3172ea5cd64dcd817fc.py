@@ -149,19 +149,13 @@ def select(records, choices):
             else:
                 favored = last_choice['family']
         family_order = [favored] + [x for x in ['dense', 'moe', 'memory'] if x != favored]
-        if favored == 'dense' and last['label'].startswith('D-depth'):
-            shaped = [x for x in pending if x.startswith('D-depth')]
-            if shaped:
-                depth = last_choice['candidate']['depth']
-                label = min(shaped, key=lambda x: abs(choices[x]['candidate']['depth'] - depth))
-                return label, 42, 'screen', 'A depth change improved matched-control quality; prioritize its nearest untested depth before distant shape bounds', dict(last_trial=last['label'], last_bpb=last['metrics']['val_bpb'], ranking=ranked)
         # Alternate LR direction and shape after observing each completed result.
         if favored == 'dense' and records[-1]['label'].startswith('D-lr'):
             shaped = [x for x in pending if x.startswith('D-depth')]
             if shaped:
                 return shaped[0], 42, 'screen', 'After observing dense LR outcome, test the independent depth/width cost axis', dict(D=d, M=m, DG=dg, last_trial=records[-1]['label'])
         label = min(pending, key=lambda x: family_order.index(choices[x]['family']))
-        return label, 42, 'screen', f'After {last["label"]} BPB {last["metrics"]["val_bpb"]}, prefer {favored}; next available family is {choices[label]["family"]}. Continue improvement or explore a less-tested family; no combined winners', dict(D=d, M=m, DG=dg, ranking=ranked)
+        return label, 42, 'screen', f'After {last["label"]} BPB {last["metrics"]["val_bpb"]}, prioritize {favored}: continue an improving family or explore a less-tested family after no improvement; no combined winners', dict(D=d, M=m, DG=dg, ranking=ranked)
     # No count stop: acquire repeatability evidence on the strongest candidates.
     top = [x for x in ranked if x['qualifies'] and x['on_measured_quality_time_frontier']][:3] or ranked[:1]
     target = min(top, key=lambda x: aggregate(records, x['label'])['repeats'])

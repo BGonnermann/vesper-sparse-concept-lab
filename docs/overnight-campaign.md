@@ -101,6 +101,10 @@ family. This avoids exhausting memory placements after repeated negative results
 The candidate space and training/evaluation protocol remain unchanged. Earlier
 controller revisions are preserved locally and archived by the reporter.
 
+After the strong depth-8 result, successful shape changes prioritize their nearest
+untested depth before distant size bounds. This uses the same documented depths,
+not a new architecture or combined candidate.
+
 Confirmation selects the strongest measured candidate/control tradeoff: prefer
 BPB improvement without more than 10% extra all-update GPU time; otherwise
 consider at least 10% time saving with no more than .001 BPB degradation. If none
