@@ -13,11 +13,15 @@ TinyStories only. Equal-token comparisons are not equal-compute comparisons. Tes
 | Seed | Depth | Budget | Validation BPB | Actual tokens | Update s | Trial s | Timed tok/s | Parameters | Allocated / reserved MiB |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | 101 | 6 | 1x | 0.607345 | 8,388,608 | 160.2 | 168.0 | 52574 | 73,925,196 | 1294.2 / 1374.0 |
+| 101 | 12 | 1x | 0.589157 | 8,388,608 | 314.8 | 322.4 | 26735 | 135,267,480 | 2277.2 / 2408.0 |
 
 ## Equal-token paired differences
 
 | Seed | Budget | D12 minus D6 BPB | D12 / D6 update time |
 |---:|---:|---:|---:|
+| 101 | 1x | -0.018188 | 1.965 |
+
+1x: mean paired delta -0.018188; SD unavailable; 1/1 favor D12.
 
 ## Approximately time-matched comparisons
 

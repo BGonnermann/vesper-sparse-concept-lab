@@ -39,6 +39,24 @@
           "trial_seconds": 167.95300000000134,
           "update_seconds": 160.20411170002262,
           "updates": 512
+        },
+        {
+          "active_parameters": 135267480,
+          "all_update_tokens_per_second": 26643.511724034423,
+          "bpb": 0.589157,
+          "budget": 1,
+          "checkpoint_sha256": "d40d0f9df59820d64700037894915523bc9d85f10ebbf556dd84c93e26e49abc",
+          "depth": 12,
+          "peak_allocated_mib": 2277.17578125,
+          "peak_reserved_mib": 2408.0,
+          "result_sha256": "f344e9e13b8f9a3817a62c70e61da6d190bd3ee3592d7a9eb848ac059a1461ce",
+          "seed": 101,
+          "timed_tokens_per_second": 26735.24744580932,
+          "tokens": 8388608,
+          "trial": "trial-0002-D12-b1-s101",
+          "trial_seconds": 322.3600000000006,
+          "update_seconds": 314.8461841999924,
+          "updates": 512
         }
       ],
       "scope": "Frozen validation rule for the overlapping measured time range; no extrapolation to D6@8x or held-out selection",
@@ -108,7 +126,7 @@
     "publication-result.json": {
       "branch": "research/overnight-20260915",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "1f008b80b374e0bdd91ff59fee9d2c0ba3af017d",
+      "publication_commit": "9d77ec70338a93ce679ab6da2dfdf3a5aa862514",
       "status": "completed",
       "verified_remote": true
     },
@@ -159,9 +177,9 @@
       "sha256": "e510594f64048ca107d076e8e139cd1096eaab61eb4bb6c78e89b3d4dc0f3ecb"
     },
     "analysis.json": {
-      "bytes": 1228,
+      "bytes": 1955,
       "local_path": "runs/autoresearch/depth-long-20260915/analysis.json",
-      "sha256": "557f67014371aa0e1042b9fa0533195c4240784b13baecae9b6005f047d72207"
+      "sha256": "5531e6ea650fc835c119b8c91c1fb7a516034fb22c874344bf11a23342f2d1c8"
     },
     "batch-hashes.json": {
       "bytes": 2392089,
@@ -169,9 +187,9 @@
       "sha256": "c8093069c42bbab8a57eb9064f3576d0e8d8c822d620a5aa3ad92c0a92ce3254"
     },
     "campaign.log": {
-      "bytes": 1396,
+      "bytes": 2459,
       "local_path": "runs/autoresearch/depth-long-20260915/campaign.log",
-      "sha256": "dafc8e6f7e3f2d5afeb24deaa3bdc9e253dc8697727d7e697c79a6a64bf8e415"
+      "sha256": "7c82d4d15f4c585fb81048e6491165dc8be8375bcecf2effd22cea22b7239f3a"
     },
     "controller.py": {
       "bytes": 16492,
@@ -226,12 +244,12 @@
     "publication-result.json": {
       "bytes": 247,
       "local_path": "runs/autoresearch/depth-long-20260915/publication-result.json",
-      "sha256": "c205f862aeaa8601b22d63cd1c337289855a5030b9be48bb0ba1624edf86bd91"
+      "sha256": "9ee1f2635c2213125c52070d95d3b9ee58cdc8a50233c0bbf9879a9c2070b7fa"
     },
     "queue.log": {
-      "bytes": 542,
+      "bytes": 1605,
       "local_path": "runs/autoresearch/depth-long-20260915/queue.log",
-      "sha256": "76d66d7a313d66fa251761a42f183e599435cf13bbf3f9201908df3efeccfc8d"
+      "sha256": "64d9f72218ec561e41d249b2114c75e63a279354e5bdd3a0291e33700edc1d1d"
     },
     "red-tests.log": {
       "bytes": 2294,
