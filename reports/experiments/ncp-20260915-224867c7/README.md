@@ -478,7 +478,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-55 completed of 57 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+56 completed of 58 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -550,6 +550,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0055-I3-da7015e3e7-s42](../ncp-20260915--trial-0055-I3-da7015e3e7-s42-802a8bdb/README.md) | 42 | 0.633584 | 219.1 | 224.9 | 38376 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | True |
 | [trial-0056-D6-s45](../ncp-20260915--trial-0056-D6-s45-b6df3f4a/README.md) | 45 | 0.637922 | 169.7 | 176.5 | 49521 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 | [trial-0057-I2-37a8ad42c0-s45](../ncp-20260915--trial-0057-I2-37a8ad42c0-s45-142a64df/README.md) | 45 | 0.640041 | 217.8 | 223.4 | 38577 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0058-FROZEN-AUX-s45](../ncp-20260915--trial-0058-FROZEN-AUX-s45-b6e43569/README.md) | 45 | 0.638363 | 216.1 | 221.9 | 38905 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -587,8 +588,11 @@ Seeds45/46 are the predeclared primary pairs;43/44 are sensitivity pairs. Each r
 
 | Seed | Role | Control | NCP BPB | Control BPB | Delta |
 |---:|---|---|---:|---:|---:|
+| 45 | primary | FROZEN-AUX | 0.640041 | 0.638363 | +0.001678 |
 
 D6: 1/4 pairs; mean delta +0.002119; 0 negative signs. Primary same-sign improvement: None.
+
+FROZEN-AUX: 1/4 pairs; mean delta +0.001678; 0 negative signs. Primary same-sign improvement: None.
 
 ## Attempts, decisions and failures
 
@@ -649,6 +653,7 @@ D6: 1/4 pairs; mean delta +0.002119; 0 negative signs. Primary same-sign improve
 - trial-0055-I3-da7015e3e7-s42: Frozen third-factor stage: add lr=0.0003 from healthy individual R-lr0.0003 (0.634800 BPB) to qualifying pair I2-37a8ad42c0 (0.631877); test incremental benefit, not assumed additivity; enforce utilization gate
 - trial-0056-D6-s45: Frozen four-seed confirmation: D6, seed45; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 - trial-0057-I2-37a8ad42c0-s45: Frozen four-seed confirmation: I2-37a8ad42c0, seed45; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
+- trial-0058-FROZEN-AUX-s45: Frozen four-seed confirmation: FROZEN-AUX, seed45; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 
 ## Correctness and diagnosis
 
