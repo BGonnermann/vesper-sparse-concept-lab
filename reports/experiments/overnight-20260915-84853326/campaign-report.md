@@ -1,10 +1,10 @@
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 45. No candidate-count cap.
+Status: running. Completed full trials: 51. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
-| Run / label | Phase / seed | BPB | Timed tok/s | GPU update s | Child wall s | Alloc / reserved MiB | Total / active params |
+| Run / label | Phase / seed | BPB | Timed tok/s | Update wall s | Child wall s | Alloc / reserved MiB | Total / active params |
 |---|---|---:|---:|---:|---:|---|---|
 | trial-0001-D-s42 | screen / 42 | 0.634848 | 50706.4 | 181.4 | 188.3 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
 | trial-0002-M-s42 | screen / 42 | 0.637217 | 27487.7 | 306.0 | 312.6 | 902.2 / 956.0 | 47,588,652 / 26,354,988 |
@@ -51,18 +51,35 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0043-D12-lr0.03-s42 | screen / 42 | 0.588734 | 26948.8 | 311.8 | 318.5 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 | trial-0044-D12-lr0.05-s42 | screen / 42 | 0.593565 | 26957.8 | 311.6 | 318.3 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 | trial-0045-D12-lr0.02-s42 | screen / 42 | 0.595419 | 26733.5 | 314.4 | 321.2 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0046-D12-lr0.06-s42 | screen / 42 | 0.595186 | 26892.9 | 312.6 | 319.3 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0047-D12-lr0.03-s42 | replication / 42 | 0.588334 | 26849.4 | 313.0 | 319.7 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0048-D12-lr0.03-s42 | replication / 42 | 0.588130 | 26901.4 | 312.3 | 319.0 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0049-D12-lr0.03-s42 | replication / 42 | 0.589347 | 26919.5 | 312.1 | 318.9 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0050-D-s42 | replication / 42 | 0.634848 | 48804.3 | 172.2 | 178.2 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
+| trial-0051-DG-s42 | replication / 42 | 0.634178 | 44102.6 | 190.8 | 197.3 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
 
-Timed throughput excludes the first11 updates; all-update GPU time includes them. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
+Timed throughput excludes the first11 updates; synchronized all-update wall time includes them and CPU dispatch/optimizer orchestration. It is not GPU kernel-busy time. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 
 ## Confirmation
 
 Confirmation pending or no frozen comparison.
 
-Averaging repeats within a seed does not create new independent seeds. Three paired seeds, when complete, remain preliminary; repeated validation-guided selection is not an untouched test.
+Seed42 was used for adaptive selection; seeds43/44 are the independent confirmation seeds. Averaging repeats within a seed does not create new independent seeds. Evidence remains preliminary; repeated validation-guided selection is not an untouched test. The depth12 LR pair has equal parameters; cross-depth and dense/MoE comparisons do not.
 
 ## Boundaries and provenance
 
-No NCP, architecture combinations, dependency changes, cloud jobs, paid services or deletion. Each training child executes captured source/configuration; publishing commits are not retrospective execution provenance. Failed/invalid trials are retained and excluded from quality rankings. Hypotheses were saved before process launch.
+No NCP, dependency changes, cloud jobs, paid services or deletion. Depth12 LR follow-ups combine previously screened shape and optimizer axes versus original D6, but change only LR versus their depth12 control. Each training child executes captured source/configuration; publishing commits are not retrospective execution provenance. Failed/invalid trials are retained and excluded from quality rankings. Hypotheses were saved before process launch.
+
+## Campaign clock
+
+{
+  "report_generated_at": "2026-09-15T07:54:46.266539+00:00",
+  "started_at": "2026-09-14T23:30:00-04:00",
+  "deadline": "2026-09-15T07:30:00-04:00",
+  "elapsed_seconds": 15886.266539,
+  "remaining_seconds": 12913.733461,
+  "note": "Includes implementation, correctness, orchestration and prior publication; final publication completion has a separate receipt."
+}
 
 ## Failures
 
