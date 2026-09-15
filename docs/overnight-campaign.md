@@ -95,6 +95,12 @@ first outcome before choosing the other direction or shape. The next invocation
 records actual completed evidence and a concrete reason in selection.json before
 creating its child process. No candidate is selected from outside this table.
 
+Outcome-driven refinement after trial 6: continue an improving family; after a
+candidate fails to improve matched-control BPB, prioritize the less-tested other
+family. This avoids exhausting memory placements after repeated negative results.
+The candidate space and training/evaluation protocol remain unchanged. Earlier
+controller revisions are preserved locally and archived by the reporter.
+
 Confirmation selects the strongest measured candidate/control tradeoff: prefer
 BPB improvement without more than 10% extra all-update GPU time; otherwise
 consider at least 10% time saving with no more than .001 BPB degradation. If none

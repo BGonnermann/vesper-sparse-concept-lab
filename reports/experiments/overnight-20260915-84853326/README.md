@@ -24,7 +24,7 @@ cuda correctness exit: 0
 
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 3. No candidate-count cap.
+Status: running. Completed full trials: 6. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
@@ -33,6 +33,9 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0001-D-s42 | screen / 42 | 0.634848 | 50706.4 | 181.4 | 188.3 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
 | trial-0002-M-s42 | screen / 42 | 0.637217 | 27487.7 | 306.0 | 312.6 | 902.2 / 956.0 | 47,588,652 / 26,354,988 |
 | trial-0003-DG-s42 | screen / 42 | 0.634178 | 44050.3 | 190.9 | 197.4 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0004-DG-layer3-s42 | screen / 42 | 0.634633 | 43597.1 | 192.9 | 199.5 | 602.2 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0005-DG-layer0-s42 | screen / 42 | 0.634020 | 43803.4 | 192.0 | 198.6 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0006-DG-layer2-s42 | screen / 42 | 0.634624 | 43845.9 | 191.8 | 198.3 | 600.7 / 624.0 | 27,443,885 / 26,395,437 |
 
 Timed throughput excludes the first11 updates; all-update GPU time includes them. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 

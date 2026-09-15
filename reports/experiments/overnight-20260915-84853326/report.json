@@ -5,14 +5,14 @@
   "configuration": null,
   "details": {
     "comparison.json": {
-      "child_wall_seconds": 698.3900000000431,
-      "disk_free_bytes": 280354570240,
+      "child_wall_seconds": 1294.8270000000484,
+      "disk_free_bytes": 280099770368,
       "failures": [],
       "frozen_confirmation": null,
-      "gpu_seconds": 678.2323161002132,
+      "gpu_seconds": 1254.855154700781,
       "in_progress": [
         {
-          "run": "trial-0004-DG-layer3-s42",
+          "run": "trial-0007-D-lr0.02-s42",
           "status": "running"
         }
       ],
@@ -36,6 +36,60 @@
           "qualifies": true,
           "quality": true,
           "time_ratio": 1.0519858582360213
+        },
+        {
+          "control": "DG",
+          "delta_bpb": -0.00015799999999999148,
+          "label": "DG-layer0",
+          "observed_candidate": {
+            "bpb": 0.63402,
+            "repeats": 1,
+            "seconds": 191.97795440012123
+          },
+          "observed_control": {
+            "bpb": 0.634178,
+            "repeats": 1,
+            "seconds": 190.85551990030217
+          },
+          "qualifies": true,
+          "quality": true,
+          "time_ratio": 1.0058810690956457
+        },
+        {
+          "control": "DG",
+          "delta_bpb": 0.00044599999999994644,
+          "label": "DG-layer2",
+          "observed_candidate": {
+            "bpb": 0.634624,
+            "repeats": 1,
+            "seconds": 191.7522769003408
+          },
+          "observed_control": {
+            "bpb": 0.634178,
+            "repeats": 1,
+            "seconds": 190.85551990030217
+          },
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 1.004698617050778
+        },
+        {
+          "control": "DG",
+          "delta_bpb": 0.0004549999999999832,
+          "label": "DG-layer3",
+          "observed_candidate": {
+            "bpb": 0.634633,
+            "repeats": 1,
+            "seconds": 192.89260730010574
+          },
+          "observed_control": {
+            "bpb": 0.634178,
+            "repeats": 1,
+            "seconds": 190.85551990030217
+          },
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 1.0106734528866008
         }
       ]
     },
@@ -77,7 +131,7 @@
         "NCP deferred; no combined architecture candidates executed."
       ],
       "paired_differences": [],
-      "runs": 3,
+      "runs": 6,
       "seeds": [
         42
       ],
@@ -187,6 +241,60 @@
           "total_parameters": 27443885,
           "wall_seconds": 197.4220000000205,
           "width": 384
+        },
+        {
+          "active_parameters": 26395437,
+          "all_update_seconds": 192.89260730010574,
+          "allocated_mib": 602.1875,
+          "bpb": 0.634633,
+          "expert_utilization": [],
+          "label": "DG-layer3",
+          "memory_table_bytes": 4194304,
+          "phase": "screen",
+          "reserved_mib": 624.0,
+          "run": "trial-0004-DG-layer3-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 43597.142089043824,
+          "tokens": 8388608,
+          "total_parameters": 27443885,
+          "wall_seconds": 199.5,
+          "width": 384
+        },
+        {
+          "active_parameters": 26395437,
+          "all_update_seconds": 191.97795440012123,
+          "allocated_mib": 599.6875,
+          "bpb": 0.63402,
+          "expert_utilization": [],
+          "label": "DG-layer0",
+          "memory_table_bytes": 4194304,
+          "phase": "screen",
+          "reserved_mib": 624.0,
+          "run": "trial-0005-DG-layer0-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 43803.40671491559,
+          "tokens": 8388608,
+          "total_parameters": 27443885,
+          "wall_seconds": 198.60899999999674,
+          "width": 384
+        },
+        {
+          "active_parameters": 26395437,
+          "all_update_seconds": 191.7522769003408,
+          "allocated_mib": 600.6875,
+          "bpb": 0.634624,
+          "expert_utilization": [],
+          "label": "DG-layer2",
+          "memory_table_bytes": 4194304,
+          "phase": "screen",
+          "reserved_mib": 624.0,
+          "run": "trial-0006-DG-layer2-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 43845.8949506827,
+          "tokens": 8388608,
+          "total_parameters": 27443885,
+          "wall_seconds": 198.32800000000861,
+          "width": 384
         }
       ]
     },
@@ -197,14 +305,14 @@
   ],
   "evidence": {
     "campaign-report.md": {
-      "bytes": 1938,
+      "bytes": 2307,
       "local_path": "runs/autoresearch/overnight-20260915/campaign-report.md",
-      "sha256": "ef578f8a73ff0f2b55701ad64a4cd740ff12f1b97b8b10310c620fcd4c208dc2"
+      "sha256": "cde7da384346420897ff483c3ce3247cd53c663f4c0c9656c4b91c9710371235"
     },
     "comparison.json": {
-      "bytes": 807,
+      "bytes": 2182,
       "local_path": "runs/autoresearch/overnight-20260915/comparison.json",
-      "sha256": "e1a29fdfe9b7515ef52dffe8945c39c843223a4594d43b6ccecf33cdfbdfbf06"
+      "sha256": "2a78372ee2d12c23f3c4eecfc9b29fbd078c30a8c26c5b01dbe79dfd35305e56"
     },
     "contract-v1.json": {
       "bytes": 353,
@@ -230,6 +338,11 @@
       "bytes": 14937,
       "local_path": "runs/autoresearch/overnight-20260915/orchestrator-v1.py",
       "sha256": "f9cd18c6fbb8e1f8f84e5d85c17ba842d29985ddc0d59ab8503550d59206f0ab"
+    },
+    "orchestrator-v2.py": {
+      "bytes": 16194,
+      "local_path": "runs/autoresearch/overnight-20260915/orchestrator-v2.py",
+      "sha256": "676ce60157c544d0969fd2fd78039e206eff5a69a6a816fe8ec55e12cf98065b"
     },
     "preflight-result.json": {
       "bytes": 1671,
@@ -261,6 +374,16 @@
       "local_path": "runs/autoresearch/overnight-20260915/progress-003.log",
       "sha256": "fc50edb77b4a95497e68cbfb0957eaad8b3257fdc264a0c214f2038bf316a90d"
     },
+    "progress-006.log": {
+      "bytes": 124,
+      "local_path": "runs/autoresearch/overnight-20260915/progress-006.log",
+      "sha256": "df152260c4a8a7c2ace71af32f5dddbea54a12214feedecaa00e7c7c3631c46a"
+    },
+    "publication-controls.log": {
+      "bytes": 223,
+      "local_path": "runs/autoresearch/overnight-20260915/publication-controls.log",
+      "sha256": "1261833d879001eb59ab4b0e74775282515c4e7e1e03f899f7d326e35f3a660d"
+    },
     "publication-preflight.log": {
       "bytes": 223,
       "local_path": "runs/autoresearch/overnight-20260915/publication-preflight.log",
@@ -269,12 +392,12 @@
     "result.json": {
       "bytes": 1115,
       "local_path": "runs/autoresearch/overnight-20260915/result.json",
-      "sha256": "a124de52a69772cdcbda24f9899dae6a9fc2101c6ca0568f5656e5a47aadd91b"
+      "sha256": "03dfadecdb47caf45f068db88d1d8bbfd15b3b8169b2d50e742afc22c9f09a7c"
     },
     "rows-000-result.json": {
-      "bytes": 2537,
+      "bytes": 4190,
       "local_path": "runs/autoresearch/overnight-20260915/rows-000-result.json",
-      "sha256": "662a24db4034962052e555a76751041414e5cdcded8e21b50bd828aa5951c281"
+      "sha256": "c1d25eb4bd72fd38089ca698ff68f4ff46d3d66c34cd2b770853cd0bd87561da"
     },
     "search-space.json": {
       "bytes": 9145,
@@ -296,6 +419,10 @@
       "orchestrator-v1.py": {
         "published_path": "reports/source-snapshots/f9cd18c6fbb8e1f8f84e5d85c17ba842d29985ddc0d59ab8503550d59206f0ab.py",
         "sha256": "f9cd18c6fbb8e1f8f84e5d85c17ba842d29985ddc0d59ab8503550d59206f0ab"
+      },
+      "orchestrator-v2.py": {
+        "published_path": "reports/source-snapshots/676ce60157c544d0969fd2fd78039e206eff5a69a6a816fe8ec55e12cf98065b.py",
+        "sha256": "676ce60157c544d0969fd2fd78039e206eff5a69a6a816fe8ec55e12cf98065b"
       }
     },
     "execution_receipt": null,
