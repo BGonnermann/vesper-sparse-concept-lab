@@ -44,4 +44,4 @@ Pending. Exact candidate/reference checkpoint identities will be frozen before t
 
 ## Reproducibility
 
-Frozen matrix SHA256: ca3df2755225acb142e1ac176c2cb3908447d4220ca298c2794f848fb99ba5a4. Every trial retains its checkpoint, source snapshot, data/config hashes, consumed-order hash chain, optimizer coverage, schedule and immutable-evaluation receipt. See the progress index for individual trial reports. Existing artifacts and production baseline remain unchanged.
+Frozen matrix SHA256: 60efa95661ac8f9e28c0399bb65329e79171c2984b9743653ef7b48397d27736. Every trial retains its checkpoint, source snapshot, data/config hashes, consumed-order hash chain, optimizer coverage, schedule and immutable-evaluation receipt. See the progress index for individual trial reports. Existing artifacts and production baseline remain unchanged.

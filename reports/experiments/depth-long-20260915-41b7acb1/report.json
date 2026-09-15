@@ -73,6 +73,26 @@
         "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
       }
     },
+    "pretraining-correction.json": {},
+    "pretraining-v1-matrix-plan.json": {
+      "kind": "depth_long_matrix",
+      "source_hashes": {
+        "autoresearch.py": "392dfbfd39cbe20ba68d51a2efbdae0fea7edbbc868c42d116fc83ccd234d69e",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "autoresearch_train.py": "a0529a84eb1cdcdb9288c80c4edf980c385ed2bcab522370cf6200d760310e5f"
+      },
+      "status": "frozen"
+    },
+    "publication-result.json": {
+      "branch": "research/overnight-20260915",
+      "note": "Publication commit is not retrospective training provenance.",
+      "publication_commit": "9449a1b96b269d5a5cc962cbc99ae842d80a4da7",
+      "status": "completed",
+      "verified_remote": true
+    },
     "result.json": {
       "kind": "depth_long_campaign",
       "status": "running"
@@ -125,14 +145,14 @@
       "sha256": "c8093069c42bbab8a57eb9064f3576d0e8d8c822d620a5aa3ad92c0a92ce3254"
     },
     "campaign.log": {
-      "bytes": 609,
+      "bytes": 769,
       "local_path": "runs/autoresearch/depth-long-20260915/campaign.log",
-      "sha256": "b1c322affdae9089232ddccb0a8028134281eb18e92214c1d832b61958c11612"
+      "sha256": "caf231b5d45457d02c3fe548312c81951b3e1b3ae7840333b0a4593895cc32e2"
     },
     "controller.py": {
-      "bytes": 15625,
+      "bytes": 16492,
       "local_path": "runs/autoresearch/depth-long-20260915/controller.py",
-      "sha256": "fcc7c72dbc88c12f691cda4336db714812934ab26ec2234ef54d47a19352c749"
+      "sha256": "031564596fd898358de9aa5a2fda824cfc5c2286e329ba0306f6f31ab911378b"
     },
     "green-tests.log": {
       "bytes": 557,
@@ -140,9 +160,9 @@
       "sha256": "ec91ca37396e80423b2d2b117d5d1a73edd72e94a22cff89e140494dc8676308"
     },
     "matrix-plan.json": {
-      "bytes": 6533,
+      "bytes": 6630,
       "local_path": "runs/autoresearch/depth-long-20260915/matrix-plan.json",
-      "sha256": "ca3df2755225acb142e1ac176c2cb3908447d4220ca298c2794f848fb99ba5a4"
+      "sha256": "60efa95661ac8f9e28c0399bb65329e79171c2984b9743653ef7b48397d27736"
     },
     "preflight-cpu.log": {
       "bytes": 17307,
@@ -164,6 +184,26 @@
       "local_path": "runs/autoresearch/depth-long-20260915/preflight-result.json",
       "sha256": "f517854084f37c9c48031edadc9ddc869e931adc62d430a90bfabf22cdbed9bf"
     },
+    "pretraining-correction.json": {
+      "bytes": 214,
+      "local_path": "runs/autoresearch/depth-long-20260915/pretraining-correction.json",
+      "sha256": "d17e2c31337f062f3d8ae526a1efad169f4470b29e8f91be472e9eb4ddb28d24"
+    },
+    "pretraining-v1-controller.py": {
+      "bytes": 15625,
+      "local_path": "runs/autoresearch/depth-long-20260915/pretraining-v1-controller.py",
+      "sha256": "fcc7c72dbc88c12f691cda4336db714812934ab26ec2234ef54d47a19352c749"
+    },
+    "pretraining-v1-matrix-plan.json": {
+      "bytes": 6533,
+      "local_path": "runs/autoresearch/depth-long-20260915/pretraining-v1-matrix-plan.json",
+      "sha256": "ca3df2755225acb142e1ac176c2cb3908447d4220ca298c2794f848fb99ba5a4"
+    },
+    "publication-result.json": {
+      "bytes": 247,
+      "local_path": "runs/autoresearch/depth-long-20260915/publication-result.json",
+      "sha256": "78d61335522117896fa6408bf5ad7b50bf941f393811ee3ceb4fad25d90d6763"
+    },
     "red-tests.log": {
       "bytes": 2294,
       "local_path": "runs/autoresearch/depth-long-20260915/red-tests.log",
@@ -172,7 +212,7 @@
     "result.json": {
       "bytes": 149,
       "local_path": "runs/autoresearch/depth-long-20260915/result.json",
-      "sha256": "78416c07a1b6b594e4c3caf4594402d195b58b8ea63474eba9a7b42c4262b3ac"
+      "sha256": "1d9f9046b817152f7f04d372885c6e59b2bd3e2995693035844864b110fb0132"
     },
     "stream-prepare.log": {
       "bytes": 371,
@@ -202,6 +242,10 @@
   "provenance": {
     "archived_source": {
       "controller.py": {
+        "published_path": "reports/source-snapshots/031564596fd898358de9aa5a2fda824cfc5c2286e329ba0306f6f31ab911378b.py",
+        "sha256": "031564596fd898358de9aa5a2fda824cfc5c2286e329ba0306f6f31ab911378b"
+      },
+      "pretraining-v1-controller.py": {
         "published_path": "reports/source-snapshots/fcc7c72dbc88c12f691cda4336db714812934ab26ec2234ef54d47a19352c749.py",
         "sha256": "fcc7c72dbc88c12f691cda4336db714812934ab26ec2234ef54d47a19352c749"
       },
@@ -213,7 +257,7 @@
     "execution_receipt": null,
     "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
     "recorded_code_hashes": {
-      "plan_sha256": "ca3df2755225acb142e1ac176c2cb3908447d4220ca298c2794f848fb99ba5a4"
+      "plan_sha256": "60efa95661ac8f9e28c0399bb65329e79171c2984b9743653ef7b48397d27736"
     },
     "recorded_data_hashes": null,
     "recorded_git_commit": null,
