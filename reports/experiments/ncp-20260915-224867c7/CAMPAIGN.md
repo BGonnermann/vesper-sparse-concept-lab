@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-10 completed of 12 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+12 completed of 14 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -25,6 +25,8 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0010-D6-s44](../ncp-20260915--trial-0010-D6-s44-8211e6c7/README.md) | 44 | 0.643075 | 158.5 | 165.5 | 52909 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 | [trial-0011-D12-s44](../ncp-20260915--trial-0011-D12-s44-afbc92ee/README.md) | 44 | 0.592813 | 323.0 | 331.3 | 26022 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
 | [trial-0012-NCP-s42](../ncp-20260915--trial-0012-NCP-s42-bf446fb5/README.md) | 42 | 0.649647 | 220.4 | 227.8 | 38159 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
+| [trial-0013-AUX-s42](../ncp-20260915--trial-0013-AUX-s42-bb8c5a76/README.md) | 42 | 0.652928 | 217.4 | 224.8 | 38680 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
+| [trial-0014-R-prediction_weight0.1-s42](../ncp-20260915--trial-0014-R-prediction_weight0.1-s42-06b4af48/README.md) | 42 | 0.636121 | 220.2 | 227.7 | 38211 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -33,11 +35,22 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | 43 | D12 | D6 | 0.594495 | 0.637774 | -0.043279 | 1.88 |
 | 44 | D12 | D6 | 0.592813 | 0.643075 | -0.050262 | 2.04 |
 
+Mean paired delta: -0.046770 BPB. Mean update-time ratio: 1.96.
+
 ## Frozen NCP confirmation
 
 | Seed | Candidate | Control | Candidate BPB | Control BPB | Delta BPB | Update-time ratio |
 |---:|---|---|---:|---:|---:|---:|
 No completed pair yet.
+
+## Feedback versus auxiliary-only ablations
+
+Negative delta favors predicted-concept feedback. These selection-seed comparisons are exploratory.
+
+| Feedback configuration | Auxiliary-only configuration | Seed | Feedback BPB | Auxiliary BPB | Delta |
+|---|---|---:|---:|---:|---:|
+| NCP | AUX | 42 | 0.649647 | 0.652928 | -0.003281 |
+| N-RMS | N-RMS-AUX | 42 | 0.635927 | 0.635215 | +0.000712 |
 
 ## Attempts, decisions and failures
 
@@ -53,6 +66,8 @@ No completed pair yet.
 - trial-0010-D6-s44: Fresh seed44 control for mandatory independent depth comparison at reference LR0.04
 - trial-0011-D12-s44: Independent seed44 depth12 versus depth6; fixed tokens and LR0.04, report extra width/parameters/time
 - trial-0012-NCP-s42: Retry original unit-weight NCP after distinguishing finite auxiliary MSE from token CE in the stopping guard; same training objective and update budget
+- trial-0013-AUX-s42: Retry original unit-weight AUX after distinguishing finite auxiliary MSE from token CE in the stopping guard; same training objective and update budget
+- trial-0014-R-prediction_weight0.1-s42: Change only prediction_weight to 0.1 on normalized NCP to test quality versus its stable unit-weight control
 
 ## Correctness and diagnosis
 
@@ -61,5 +76,5 @@ CPU/CUDA tests cover prefix causality, future-label isolation, VQ/encoder gradie
 
 ## Measurement limits
 
-Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. Depth changes width too. Timed throughput excludes the first11 updates; all-update time includes them. Trial wall time includes preparation, child execution and verification, excluding reporting/publication. Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.
+Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. Depth changes width too. Timed throughput excludes the first11 updates; all-update time includes them. Trial wall time includes preparation, child execution and verification, excluding reporting/publication. Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.
 All artifacts are retained locally. No cloud, dependency upgrades, paid services or deletion.
