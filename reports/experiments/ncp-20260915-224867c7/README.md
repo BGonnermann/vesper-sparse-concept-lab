@@ -12,9 +12,6 @@ Unknown fields remain null. Do not pool different budgets/schedules. Two seeds a
 audit-recovered.log:
 SyntaxError: '(' was never closed
 
-campaign.log:
-2026-09-15T16:18:05.716910+00:00 DECISION primary NCP seeds45/46 mixed: delta +0.002119 and -0.003980 BPB; same-sign rule failed. Finish all frozen controls/sensitivity seeds; no candidate replacement. Prospective initializer/order crossing and checkpoint interventions recorded in docs/ncp-campaign.md. Conditional D12 transfer will not enter.
-
 controller-red.log:
 Traceback (most recent call last):
 AssertionError: False is not true : Missing campaign controller

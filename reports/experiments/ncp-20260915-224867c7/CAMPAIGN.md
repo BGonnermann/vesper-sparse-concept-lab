@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-67 completed of 69 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+68 completed of 70 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -84,6 +84,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0067-FROZEN-AUX-s43](../ncp-20260915--trial-0067-FROZEN-AUX-s43-0c6af3a5/README.md) | 43 | 0.637646 | 212.9 | 218.6 | 39421 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
 | [trial-0068-FROZEN-CAP-s43](../ncp-20260915--trial-0068-FROZEN-CAP-s43-4d62a0b4/README.md) | 43 | 0.637069 | 175.5 | 180.8 | 47794 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
 | [trial-0069-FROZEN-NOPRED-s43](../ncp-20260915--trial-0069-FROZEN-NOPRED-s43-c32cec4d/README.md) | 43 | 0.640659 | 219.7 | 225.5 | 38242 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0070-I2-37a8ad42c0-s44](../ncp-20260915--trial-0070-I2-37a8ad42c0-s44-f0eb8e58/README.md) | 44 | 0.634198 | 217.9 | 223.6 | 38578 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -105,8 +106,9 @@ Mean paired delta: -0.046770 BPB. Mean update-time ratio: 1.96.
 | 45 | I2-37a8ad42c0 | D6 | 0.640041 | 0.637922 | +0.002119 | 1.28 |
 | 46 | I2-37a8ad42c0 | D6 | 0.635421 | 0.639401 | -0.003980 | 1.30 |
 | 43 | I2-37a8ad42c0 | D6 | 0.639233 | 0.637774 | +0.001459 | 1.36 |
+| 44 | I2-37a8ad42c0 | D6 | 0.634198 | 0.643075 | -0.008877 | 1.37 |
 
-Mean paired delta: -0.000134 BPB. Mean update-time ratio: 1.32.
+Mean paired delta: -0.002320 BPB. Mean update-time ratio: 1.33.
 
 ## Feedback versus auxiliary-only ablations
 
@@ -133,7 +135,7 @@ Seeds45/46 are the predeclared primary pairs;43/44 are sensitivity pairs. Each r
 | 43 | sensitivity | FROZEN-CAP | 0.639233 | 0.637069 | +0.002164 |
 | 43 | sensitivity | FROZEN-NOPRED | 0.639233 | 0.640659 | -0.001426 |
 
-D6: 3/4 pairs; mean delta -0.000134; 1 negative signs. Primary same-sign improvement: False.
+D6: 4/4 pairs; mean delta -0.002320; 2 negative signs. Primary same-sign improvement: False.
 
 FROZEN-AUX: 3/4 pairs; mean delta +0.000264; 1 negative signs. Primary same-sign improvement: False.
 
@@ -212,6 +214,7 @@ FROZEN-NOPRED: 3/4 pairs; mean delta -0.001195; 2 negative signs. Primary same-s
 - trial-0067-FROZEN-AUX-s43: Frozen four-seed confirmation: FROZEN-AUX, seed43; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 - trial-0068-FROZEN-CAP-s43: Frozen four-seed confirmation: FROZEN-CAP, seed43; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 - trial-0069-FROZEN-NOPRED-s43: Frozen four-seed confirmation: FROZEN-NOPRED, seed43; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
+- trial-0070-I2-37a8ad42c0-s44: Frozen four-seed confirmation: I2-37a8ad42c0, seed44; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 
 ## Correctness and diagnosis
 
