@@ -5,14 +5,14 @@
   "configuration": null,
   "details": {
     "comparison.json": {
-      "child_wall_seconds": 2893.7020000000193,
-      "disk_free_bytes": 279327526912,
+      "child_wall_seconds": 4071.4530000000086,
+      "disk_free_bytes": 270983647232,
       "failures": [],
       "frozen_confirmation": null,
-      "gpu_seconds": 2815.225021801889,
+      "gpu_seconds": 3954.077558801975,
       "in_progress": [
         {
-          "run": "trial-0013-M-aux_loss_weight0.03-s42",
+          "run": "trial-0019-D-lr0.05-s42",
           "status": "running"
         }
       ],
@@ -58,6 +58,25 @@
           "time_ratio": 1.0519858582360213
         },
         {
+          "control": "D",
+          "delta_bpb": -0.0002209999999999157,
+          "label": "D-lr0.03",
+          "observed_candidate": {
+            "bpb": 0.634627,
+            "repeats": 1,
+            "seconds": 172.4145655001048
+          },
+          "observed_control": {
+            "bpb": 0.634848,
+            "repeats": 1,
+            "seconds": 181.42403569980524
+          },
+          "on_measured_quality_time_frontier": true,
+          "qualifies": true,
+          "quality": true,
+          "time_ratio": 0.9503402613388667
+        },
+        {
           "control": "DG",
           "delta_bpb": -0.00015799999999999148,
           "label": "DG-layer0",
@@ -78,12 +97,12 @@
         },
         {
           "control": "D",
-          "delta_bpb": 0.0007970000000000477,
-          "label": "D-lr0.02",
+          "delta_bpb": 0.00956900000000005,
+          "label": "D-lr0.01",
           "observed_candidate": {
-            "bpb": 0.635645,
+            "bpb": 0.644417,
             "repeats": 1,
-            "seconds": 173.1849920999084
+            "seconds": 160.51268519970472
           },
           "observed_control": {
             "bpb": 0.634848,
@@ -93,7 +112,26 @@
           "on_measured_quality_time_frontier": true,
           "qualifies": false,
           "quality": false,
-          "time_ratio": 0.9545868133286946
+          "time_ratio": 0.8847377062281777
+        },
+        {
+          "control": "D",
+          "delta_bpb": 0.03676400000000002,
+          "label": "D-depth4",
+          "observed_candidate": {
+            "bpb": 0.671612,
+            "repeats": 1,
+            "seconds": 122.98384349996923
+          },
+          "observed_control": {
+            "bpb": 0.634848,
+            "repeats": 1,
+            "seconds": 181.42403569980524
+          },
+          "on_measured_quality_time_frontier": true,
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 0.6778806514009281
         },
         {
           "control": "M",
@@ -172,6 +210,63 @@
           "time_ratio": 1.0106734528866008
         },
         {
+          "control": "D",
+          "delta_bpb": 0.0007970000000000477,
+          "label": "D-lr0.02",
+          "observed_candidate": {
+            "bpb": 0.635645,
+            "repeats": 1,
+            "seconds": 173.1849920999084
+          },
+          "observed_control": {
+            "bpb": 0.634848,
+            "repeats": 1,
+            "seconds": 181.42403569980524
+          },
+          "on_measured_quality_time_frontier": false,
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 0.9545868133286946
+        },
+        {
+          "control": "DG",
+          "delta_bpb": 0.0009270000000000111,
+          "label": "DG-layer4",
+          "observed_candidate": {
+            "bpb": 0.635105,
+            "repeats": 1,
+            "seconds": 176.53776550010662
+          },
+          "observed_control": {
+            "bpb": 0.634178,
+            "repeats": 1,
+            "seconds": 190.85551990030217
+          },
+          "on_measured_quality_time_frontier": false,
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 0.9249811878237801
+        },
+        {
+          "control": "DG",
+          "delta_bpb": 0.0011489999999999556,
+          "label": "DG-layer5",
+          "observed_candidate": {
+            "bpb": 0.635327,
+            "repeats": 1,
+            "seconds": 192.3963287002116
+          },
+          "observed_control": {
+            "bpb": 0.634178,
+            "repeats": 1,
+            "seconds": 190.85551990030217
+          },
+          "on_measured_quality_time_frontier": false,
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 1.0080731686498472
+        },
+        {
           "control": "M",
           "delta_bpb": 0.001298999999999939,
           "label": "M-router_lr0.0003",
@@ -208,6 +303,25 @@
           "qualifies": false,
           "quality": false,
           "time_ratio": 0.9624042488461924
+        },
+        {
+          "control": "M",
+          "delta_bpb": 0.005332999999999921,
+          "label": "M-aux_loss_weight0.03",
+          "observed_candidate": {
+            "bpb": 0.64255,
+            "repeats": 1,
+            "seconds": 314.0073485999892
+          },
+          "observed_control": {
+            "bpb": 0.637217,
+            "repeats": 1,
+            "seconds": 305.9527605001058
+          },
+          "on_measured_quality_time_frontier": false,
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 1.026326247511928
         }
       ]
     },
@@ -249,7 +363,7 @@
         "NCP deferred; no combined architecture candidates executed."
       ],
       "paired_differences": [],
-      "runs": 12,
+      "runs": 18,
       "seeds": [
         42
       ],
@@ -657,6 +771,151 @@
           "total_parameters": 47588652,
           "wall_seconds": 321.9219999999914,
           "width": 384
+        },
+        {
+          "active_parameters": 26354988,
+          "all_update_seconds": 314.0073485999892,
+          "allocated_mib": 900.85693359375,
+          "bpb": 0.64255,
+          "expert_utilization": [
+            [
+              0.24708163738250732,
+              0.25779032707214355,
+              0.24682676792144775,
+              0.24830126762390137
+            ],
+            [
+              0.23891997337341309,
+              0.252860426902771,
+              0.25411081314086914,
+              0.2541087865829468
+            ],
+            [
+              0.2518434524536133,
+              0.2534979581832886,
+              0.24628078937530518,
+              0.24837779998779297
+            ],
+            [
+              0.25043249130249023,
+              0.24258291721343994,
+              0.24261832237243652,
+              0.2643662691116333
+            ],
+            [
+              0.24505650997161865,
+              0.2382444143295288,
+              0.2665877342224121,
+              0.25011134147644043
+            ],
+            [
+              0.25934648513793945,
+              0.20538711547851562,
+              0.2209155559539795,
+              0.31435084342956543
+            ]
+          ],
+          "label": "M-aux_loss_weight0.03",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 958.0,
+          "run": "trial-0013-M-aux_loss_weight0.03-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 26780.437860273843,
+          "tokens": 8388608,
+          "total_parameters": 47588652,
+          "wall_seconds": 320.6719999999914,
+          "width": 384
+        },
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 160.51268519970472,
+          "allocated_mib": 581.685546875,
+          "bpb": 0.644417,
+          "expert_utilization": [],
+          "label": "D-lr0.01",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 622.0,
+          "run": "trial-0014-D-lr0.01-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 52354.798096025836,
+          "tokens": 8388608,
+          "total_parameters": 26345772,
+          "wall_seconds": 167.125,
+          "width": 384
+        },
+        {
+          "active_parameters": 26395437,
+          "all_update_seconds": 176.53776550010662,
+          "allocated_mib": 599.6875,
+          "bpb": 0.635105,
+          "expert_utilization": [],
+          "label": "DG-layer4",
+          "memory_table_bytes": 4194304,
+          "phase": "screen",
+          "reserved_mib": 624.0,
+          "run": "trial-0015-DG-layer4-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 47639.61976535977,
+          "tokens": 8388608,
+          "total_parameters": 27443885,
+          "wall_seconds": 183.43700000000536,
+          "width": 384
+        },
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 172.4145655001048,
+          "allocated_mib": 581.685546875,
+          "bpb": 0.634627,
+          "expert_utilization": [],
+          "label": "D-lr0.03",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 622.0,
+          "run": "trial-0016-D-lr0.03-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 48740.3554768171,
+          "tokens": 8388608,
+          "total_parameters": 26345772,
+          "wall_seconds": 178.56299999999464,
+          "width": 384
+        },
+        {
+          "active_parameters": 11534472,
+          "all_update_seconds": 122.98384349996923,
+          "allocated_mib": 330.59716796875,
+          "bpb": 0.671612,
+          "expert_utilization": [],
+          "label": "D-depth4",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 350.0,
+          "run": "trial-0017-D-depth4-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 68345.54711369974,
+          "tokens": 8388608,
+          "total_parameters": 11534472,
+          "wall_seconds": 128.96900000001187,
+          "width": 256
+        },
+        {
+          "active_parameters": 26395437,
+          "all_update_seconds": 192.3963287002116,
+          "allocated_mib": 603.0625,
+          "bpb": 0.635327,
+          "expert_utilization": [],
+          "label": "DG-layer5",
+          "memory_table_bytes": 4194304,
+          "phase": "screen",
+          "reserved_mib": 624.0,
+          "run": "trial-0018-DG-layer5-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 43671.92536107582,
+          "tokens": 8388608,
+          "total_parameters": 27443885,
+          "wall_seconds": 198.98499999998603,
+          "width": 384
         }
       ]
     },
@@ -667,14 +926,14 @@
   ],
   "evidence": {
     "campaign-report.md": {
-      "bytes": 3073,
+      "bytes": 3820,
       "local_path": "runs/autoresearch/overnight-20260915/campaign-report.md",
-      "sha256": "f1765fac5b4f504398a595488b954372301ad9a7b2eec2c5d91333c9765e17e5"
+      "sha256": "8cc223fef1d89f077008e547b401091901a7c0dc17f2309c6cd25a32a0d0754c"
     },
     "comparison.json": {
-      "bytes": 5462,
+      "bytes": 8500,
       "local_path": "runs/autoresearch/overnight-20260915/comparison.json",
-      "sha256": "05463ddb233374050c25b391bf4785653a9beaba8abbe469d2f2a7f5a92fe143"
+      "sha256": "2c4ef125e9f98645fa3a2ab0bbe8cd7522ff4fbbd9d56119576ec8b0dd1ed5e7"
     },
     "contract-v1.json": {
       "bytes": 353,
@@ -756,10 +1015,20 @@
       "local_path": "runs/autoresearch/overnight-20260915/progress-012.log",
       "sha256": "fbd0790f020cd848e841118cf2c28f54845a3947f3d28f518680ed477f5f3d54"
     },
+    "progress-018.log": {
+      "bytes": 125,
+      "local_path": "runs/autoresearch/overnight-20260915/progress-018.log",
+      "sha256": "3074b485109211f6f76324939b196e9f102cc18c57be7ea09a247fd4a6b9973c"
+    },
     "publication-006.log": {
       "bytes": 223,
       "local_path": "runs/autoresearch/overnight-20260915/publication-006.log",
       "sha256": "a7ff9bed9018ced8a02b925e3774a4cf704c0f017f7e6eb2eb1f6d6ed57cad89"
+    },
+    "publication-012.log": {
+      "bytes": 223,
+      "local_path": "runs/autoresearch/overnight-20260915/publication-012.log",
+      "sha256": "8659103d2c6d837983e85396fa2afb4191da249d29c23518e9aa458a64f28423"
     },
     "publication-controls.log": {
       "bytes": 223,
@@ -774,12 +1043,12 @@
     "result.json": {
       "bytes": 1116,
       "local_path": "runs/autoresearch/overnight-20260915/result.json",
-      "sha256": "51467808ec748e04fc0df980624802df6cbc8e86afd88b6a17f65730d4003b67"
+      "sha256": "34b5dfda9f890c7a8c31b961bbaae71abc4d6efd86e941c42e532292c84b981f"
     },
     "rows-000-result.json": {
-      "bytes": 10775,
+      "bytes": 15012,
       "local_path": "runs/autoresearch/overnight-20260915/rows-000-result.json",
-      "sha256": "0ed20fb1a7d12e7882559fa244445486a51fecc86f8f21072f61e452caae00a9"
+      "sha256": "2727642aec79c6511b4b933ab3ec118d4b8766bd0a1b295a4b31ac7c8a9975a8"
     },
     "search-space.json": {
       "bytes": 9145,

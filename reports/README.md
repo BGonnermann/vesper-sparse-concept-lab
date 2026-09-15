@@ -54,6 +54,12 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [overnight-20260915/trial-0010-D-lr0.06-s42](experiments/overnight-20260915--trial-0010-D-lr0.06-s42-ce80053b/README.md) | completed | fixed_updates | 0.640004 |
 | [overnight-20260915/trial-0011-M-router_lr0.003-s42](experiments/overnight-20260915--trial-0011-M-router_lr0.003-s42-526a3d8b/README.md) | completed | fixed_updates | 0.633858 |
 | [overnight-20260915/trial-0012-M-aux_loss_weight0.003-s42](experiments/overnight-20260915--trial-0012-M-aux_loss_weight0.003-s42-c85f4b2d/README.md) | completed | fixed_updates | 0.633895 |
+| [overnight-20260915/trial-0013-M-aux_loss_weight0.03-s42](experiments/overnight-20260915--trial-0013-M-aux_loss_weight0.03-s42-bac93f70/README.md) | completed | fixed_updates | 0.64255 |
+| [overnight-20260915/trial-0014-D-lr0.01-s42](experiments/overnight-20260915--trial-0014-D-lr0.01-s42-276bf0a7/README.md) | completed | fixed_updates | 0.644417 |
+| [overnight-20260915/trial-0015-DG-layer4-s42](experiments/overnight-20260915--trial-0015-DG-layer4-s42-450e0488/README.md) | completed | fixed_updates | 0.635105 |
+| [overnight-20260915/trial-0016-D-lr0.03-s42](experiments/overnight-20260915--trial-0016-D-lr0.03-s42-2de733aa/README.md) | completed | fixed_updates | 0.634627 |
+| [overnight-20260915/trial-0017-D-depth4-s42](experiments/overnight-20260915--trial-0017-D-depth4-s42-45f5f5e6/README.md) | completed | fixed_updates | 0.671612 |
+| [overnight-20260915/trial-0018-DG-layer5-s42](experiments/overnight-20260915--trial-0018-DG-layer5-s42-eed079d0/README.md) | completed | fixed_updates | 0.635327 |
 | [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | running | stage_or_unknown | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |
