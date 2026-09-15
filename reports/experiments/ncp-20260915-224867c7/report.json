@@ -2349,6 +2349,27 @@
     },
     "next-selection.json": {},
     "normalized-search-space.json": {},
+    "orchestrator-source-correction-result.json": {
+      "archived_file_sha256": "c2cd181b1b6f3d6dff9a55eab6d5b415cae174d522ca87afa2603eb9cea67bbc",
+      "diagnosis": "The long-running search imported ncp_campaign before an on-disk controller edit. Trial25 copied the newer file through Path(__file__) although the process retained its earlier imported functions. The working file was restored before subsequent trial starts. Both versions are preserved.",
+      "driver_sha256": "77da4922c40840687d98322d5ed34d1523dca7714a99c6f3d63a8bec1a0c972b",
+      "kind": "controller_archive_correction",
+      "loaded_controller_reference_sha256": "18aec1d1674cb15f56268d8d02724b599fd0e56f36fa26e88226e2e3c80395cc",
+      "loaded_version_evidence": "Earlier same-process trial controller snapshots and driver import-once behavior; reconstructed import provenance, not direct process-memory inspection",
+      "new_lock_file_present": false,
+      "recorded_at": "2026-09-15T13:30:30.530536+00:00",
+      "reference_file": "<repo>\\runs\\autoresearch\\ncp-20260915\\trial-0025-R-lr0.0003-s42\\orchestrator-loaded-reference.py",
+      "repair": "Pending next controller captures its source bytes at module import and archives those immutable bytes for every trial; integrate after current search exits",
+      "scope": "Only controller file archiving and a not-yet-loaded GPU lock wrapper differ. All captured training child project/upstream modules, candidate, protocol, data seals and execution receipts remain unchanged and independently verified.",
+      "status": "completed",
+      "trial": "trial-0025-R-lr0.0003-s42",
+      "unchanged_function_body_ast_checks": {
+        "candidate": true,
+        "health": true,
+        "preflight": true,
+        "trial": true
+      }
+    },
     "pending-development-result.json": {
       "cpu_tests": 35,
       "created_at": "2026-09-15T12:58:55.034634+00:00",
@@ -2559,7 +2580,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "d9d13c6ae381a6c2c53be834c9dfa52d2c4f2235",
+      "publication_commit": "7eab3f292c0711ab0af7a2bd3dc52fd9ca536277",
       "status": "completed",
       "verified_remote": true
     },
@@ -2629,9 +2650,9 @@
       "sha256": "584428ee9b9f704f89dc7da28484181e2156eeb17b17576cedbf9087a56d1b97"
     },
     "campaign.log": {
-      "bytes": 23975,
+      "bytes": 25126,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "34f6f6e3a49730297f43f676ecbfe2aaedb5e2001edf95a0a90ac057aaf8c810"
+      "sha256": "bf33195b9ae3ecb5b683446fae9e7a0821c905204eaa7c080ab49fc76f4ee984"
     },
     "contract.json": {
       "bytes": 286,
@@ -2779,9 +2800,9 @@
       "sha256": "0b5d38542a591f81c259a4cae09dc79d72478f510c91bf70dd0f0a85d39e69f2"
     },
     "next-selection.json": {
-      "bytes": 7463,
+      "bytes": 7876,
       "local_path": "runs/autoresearch/ncp-20260915/next-selection.json",
-      "sha256": "591c98d3032d2b24f907ba4ee0515d711990b492c96f75af385925edf1e0c335"
+      "sha256": "50295c94d396a2efc17aa14c9589e228d2355a74fc965c69d2e1fb47afa5996a"
     },
     "normalization-green-cpu.log": {
       "bytes": 159,
@@ -2807,6 +2828,11 @@
       "bytes": 12035,
       "local_path": "runs/autoresearch/ncp-20260915/normalized-search-space.json",
       "sha256": "ef29bbe9515087462b981e02cea74144cd41f93886fd704bb0643c4b2596e378"
+    },
+    "orchestrator-source-correction-result.json": {
+      "bytes": 1714,
+      "local_path": "runs/autoresearch/ncp-20260915/orchestrator-source-correction-result.json",
+      "sha256": "9e3abcf22a10c9e8db1cce05779c222db38099c1bf07af7e1ccefbfd91776510"
     },
     "pending-development-result.json": {
       "bytes": 1088,
@@ -2911,7 +2937,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "c2e189ba79eacf633e6919a58f059ef0bff80222eae6c9382c6e5663a2e6c840"
+      "sha256": "fdde3cc3655fda1134ba1b1bd0bf354f6ff2e3d972544464055101ea740888f5"
     },
     "report-red.log": {
       "bytes": 877,
@@ -2919,9 +2945,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 147652,
+      "bytes": 155435,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "9b389a5a0a9640e4aba05df04ad148711cf1e5a7b18cac49756cdc06c1816d2d"
+      "sha256": "00089cb35df8911a43f283027a8dd1f0840f382398418b10739388deae295653"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -2934,9 +2960,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 11796,
+      "bytes": 12109,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "a21f116f3329ff000c2dc831daf1c447bb6b33c0da0c9e710b760668c5d55d4f"
+      "sha256": "8c85c0bbdaf6a699bb8173d604aee9baeddedaa7243c33f41af9b2a1100c44ef"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
