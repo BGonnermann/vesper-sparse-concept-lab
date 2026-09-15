@@ -1,6 +1,6 @@
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 69. No candidate-count cap.
+Status: running. Completed full trials: 75. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
@@ -75,6 +75,12 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0067-D12-lr0.03-s42 | replication / 42 | 0.589460 | 26917.5 | 312.2 | 318.9 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 | trial-0068-D-depth8-s42 | replication / 42 | 0.617737 | 37720.2 | 222.7 | 228.9 | 943.1 / 964.0 | 50,332,176 / 50,332,176 |
 | trial-0069-D-depth12-s42 | replication / 42 | 0.590270 | 26947.7 | 311.6 | 318.3 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0070-D-s42 | replication / 42 | 0.634848 | 49181.9 | 170.8 | 176.8 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
+| trial-0071-DG-s42 | replication / 42 | 0.634178 | 44153.2 | 190.4 | 196.9 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0072-D12-lr0.03-s42 | replication / 42 | 0.588973 | 26835.4 | 312.9 | 319.6 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0073-D-depth8-s42 | replication / 42 | 0.617737 | 37762.8 | 222.4 | 228.6 | 943.1 / 964.0 | 50,332,176 / 50,332,176 |
+| trial-0074-D-depth12-s42 | replication / 42 | 0.589898 | 26921.4 | 312.1 | 318.8 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0075-D-s42 | replication / 42 | 0.634848 | 49074.3 | 171.3 | 177.3 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
 
 Timed throughput excludes the first11 updates; synchronized all-update wall time includes them and CPU dispatch/optimizer orchestration. It is not GPU kernel-busy time. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 
@@ -91,11 +97,11 @@ No NCP, dependency changes, cloud jobs, paid services or deletion. Depth12 LR fo
 ## Campaign clock
 
 {
-  "report_generated_at": "2026-09-15T09:16:40.914506+00:00",
+  "report_generated_at": "2026-09-15T09:42:54.577665+00:00",
   "started_at": "2026-09-14T23:30:00-04:00",
   "deadline": "2026-09-15T07:30:00-04:00",
-  "elapsed_seconds": 20800.914506,
-  "remaining_seconds": 7999.085494,
+  "elapsed_seconds": 22374.577665,
+  "remaining_seconds": 6425.422335,
   "note": "Includes implementation, correctness, orchestration and prior publication; final publication completion has a separate receipt."
 }
 

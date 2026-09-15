@@ -111,6 +111,12 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [overnight-20260915/trial-0067-D12-lr0.03-s42](experiments/overnight-20260915--trial-0067-D12-lr0.03-s42-6a68b1f7/README.md) | completed | fixed_updates | 0.58946 |
 | [overnight-20260915/trial-0068-D-depth8-s42](experiments/overnight-20260915--trial-0068-D-depth8-s42-73d09eef/README.md) | completed | fixed_updates | 0.617737 |
 | [overnight-20260915/trial-0069-D-depth12-s42](experiments/overnight-20260915--trial-0069-D-depth12-s42-47690e81/README.md) | completed | fixed_updates | 0.59027 |
+| [overnight-20260915/trial-0070-D-s42](experiments/overnight-20260915--trial-0070-D-s42-7ec7a94f/README.md) | completed | fixed_updates | 0.634848 |
+| [overnight-20260915/trial-0071-DG-s42](experiments/overnight-20260915--trial-0071-DG-s42-fef318c8/README.md) | completed | fixed_updates | 0.634178 |
+| [overnight-20260915/trial-0072-D12-lr0.03-s42](experiments/overnight-20260915--trial-0072-D12-lr0.03-s42-cee79247/README.md) | completed | fixed_updates | 0.588973 |
+| [overnight-20260915/trial-0073-D-depth8-s42](experiments/overnight-20260915--trial-0073-D-depth8-s42-20039631/README.md) | completed | fixed_updates | 0.617737 |
+| [overnight-20260915/trial-0074-D-depth12-s42](experiments/overnight-20260915--trial-0074-D-depth12-s42-51fd5b49/README.md) | completed | fixed_updates | 0.589898 |
+| [overnight-20260915/trial-0075-D-s42](experiments/overnight-20260915--trial-0075-D-s42-2a82fd83/README.md) | completed | fixed_updates | 0.634848 |
 | [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | running | stage_or_unknown | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |
