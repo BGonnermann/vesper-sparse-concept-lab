@@ -13,7 +13,7 @@ Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002
 
 ## Implementation
 
-Dense encoder pools complete multi-token chunks; causal chunk Transformers predict segmented discrete-codebook weights. Only predicted concepts feed the token decoder, delayed by k-1 positions. Detached future chunks supervise NCP MSE; VQ MSE fits a transformed frozen random codebook basis. Token BPB excludes both auxiliary losses.
+Dense encoder pools complete multi-token chunks; causal chunk Transformers predict segmented discrete-codebook weights. Only predicted concepts feed the token decoder, delayed by k-1 positions. Detached future chunks supervise NCP MSE; VQ MSE fits a transformed frozen random codebook basis. Token BPB excludes all auxiliary losses.
 This is a simplified ConceptLM-inspired prototype, not a paper reproduction. Initial softmax feedback differs from the official GPT2/Pythia raw-logit multiplication; raw-logit variants are separately labeled. Native SDPA, initialization, positional features, codebook transforms and the small TinyStories fixed-token experiment also differ. Official revision: a0ab281286f5c0337c35de3181cc992c562eacaa.
 See [campaign plan](../../../docs/ncp-campaign.md) and the published source receipt for exact references.
 
@@ -391,6 +391,20 @@ All artifacts are retained locally. No cloud, dependency upgrades, paid services
 
 The paper describes probability-weighted codes, while the inspected released model sources use raw logits. That source discrepancy is preserved explicitly; this campaign tests a simplified inspired mechanism, not a faithful paper reproduction. No official model weights were downloaded. Official NCP model code was inspected rather than copied or imported; the separately pinned autoresearch backbone was reused.
 The original source-review hashes identify inspected Windows checkout bytes. official-source-byte-audit-result.json separately records raw pinned Git-blob hashes: all four reviewed files match exactly after CRLF-to-LF normalization. This newline distinction does not affect the separately captured, byte-verified training-source archives.
+
+### Plan freezing and publication timing
+
+The primary frozen selection hash was published before confirmation outcomes. Some later diagnostic plans were frozen locally before execution, but their exact hashes first appeared in Git reports after results. Earlier progress messages describing every freeze-only/publish-only call as publication of the new plan were too strong. The publisher now refreshes campaign evidence before staging. No result or local frozen plan was changed.
+
+| Plan | First matching report commit | Commit time with offset |
+|---|---|---|
+| confirmation-selection.json | 6ecb7212639cb2eb05be0ca5817c4e347c06401e | 2026-09-15T11:48:34-04:00 |
+| crossed-order-plan.json | aec925ea2ac4021ef7b402cc9d242c4ad3b3f93e | 2026-09-15T13:00:21-04:00 |
+| depth-grid-plan.json | 93dd92b962234ed0e0aad009f8b9fae05db34d08 | 2026-09-15T13:17:19-04:00 |
+| module-initialization-plan.json | d1ba674def64dcede6fbc4554de68d61652dc715 | 2026-09-15T13:40:51-04:00 |
+| no-future-plan.json | 5d2d7d265b04f7faec7c99897439b4df773ee6d9 | 2026-09-15T13:49:30-04:00 |
+| feedback-interventions-plan.json | 7f20e6f0a0e4960aa4087518c8d69aced9e821b0 | 2026-09-15T13:55:41-04:00 |
+| concept-baselines-plan.json | 535eb180498566d13210ed9b53da5441fe576154 | 2026-09-15T13:59:13-04:00 |
 
 ## Frozen codebook and gradient diagnostics
 

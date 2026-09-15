@@ -1666,6 +1666,16 @@
       "plan_sha256": "532630dcf410b70ddc84b4edac2f110bed5fb42cde3f5c400824e2a491c5671e",
       "status": "completed"
     },
+    "deadline-closeout-plan-v2.json": {
+      "interpretation": "One campaign only. No training or automatic subsequent campaign. Final report is saved before the deadline; publication failure preserves local results.",
+      "kind": "deadline_closeout_plan",
+      "status": "prepared"
+    },
+    "deadline-closeout-plan.json": {
+      "interpretation": "One campaign only. No training or automatic subsequent campaign. Final report is saved before the deadline; publication failure preserves local results.",
+      "kind": "deadline_closeout_plan",
+      "status": "prepared"
+    },
     "dense-scale-result.json": {
       "checkpoint_sha256": "3a9f8857ba88c8d21792400d535ac67df8685b47ceb6c05a7b9ddc1899052cd5",
       "data_hashes": {
@@ -18918,11 +18928,22 @@
       },
       "wall_seconds": 53.98399999999674
     },
+    "publication-refresh-check-result.json": {
+      "committed_sha256": "7a888f7a4a2828c8b772e59f8e3115e1b69f7735ecdc00ccfa51cfed051ac758",
+      "expected_sha256": "7a888f7a4a2828c8b772e59f8e3115e1b69f7735ecdc00ccfa51cfed051ac758",
+      "interpretation": "Before fix the already-rendered report lacked this newly created audit; publish-only now refreshed and committed its exact hash while preserving running state. Verified against Git committed bytes and push receipt.",
+      "kind": "publication_refresh_check",
+      "new_evidence": "plan-publication-audit-result.json",
+      "preserved_campaign_state": "running",
+      "publication_commit": "070bf321c163b5c9c4ff58a7cc4989d2661aaae7",
+      "status": "completed",
+      "verified_remote": true
+    },
     "publication-result.json": {
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "22da3e89ccaf802b339afc634138070a91522d7d",
+      "publication_commit": "070bf321c163b5c9c4ff58a7cc4989d2661aaae7",
       "status": "completed",
       "verified_remote": true
     },
@@ -19440,9 +19461,9 @@
       "sha256": "bdc15165188e73fa6723070c44dcfe721b92e92f3541e4bbab54a7d96ae74c8c"
     },
     "campaign.log": {
-      "bytes": 134670,
+      "bytes": 134771,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "d699a4a8952ef9e6713c20fbdf5d1a4690fdc72ace388db9964fece5553236f0"
+      "sha256": "7f73a3ed2e8f52601d0127cd5f4cd7be32b9b21297a8842b83c769b425f8b2d7"
     },
     "checkpoint-replay-driver.py": {
       "bytes": 15268,
@@ -19608,6 +19629,26 @@
       "bytes": 12616,
       "local_path": "runs/autoresearch/ncp-20260915/cuda-suite1.log",
       "sha256": "10bfb6ff3cc5c6783987d4747c76b32f70767ecb57bbe3f3704c7ebe00a6a3ea"
+    },
+    "deadline-closeout-driver.py": {
+      "bytes": 5199,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-driver.py",
+      "sha256": "71b0423e2fa1303b00af32bb5c37b6127c1f3f9cf25cc30c1fbffb76ecaaf4d3"
+    },
+    "deadline-closeout-plan-v2.json": {
+      "bytes": 677,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-plan-v2.json",
+      "sha256": "9d579505dc11446487a2b0fa92a66d9a34e96c49b9e47bb0c00c790597757037"
+    },
+    "deadline-closeout-plan.json": {
+      "bytes": 613,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-plan.json",
+      "sha256": "874d8f05fb3a6762f5e9fb93f68d87ee672dd13db03225aaebcfbe2b1afee518"
+    },
+    "deadline-closeout-v2-driver.py": {
+      "bytes": 5554,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-v2-driver.py",
+      "sha256": "41753e0703e23c747bf1af8337fdd6ec5f44dab0407628166a306aa2c8516ace"
     },
     "dense-scale-result.json": {
       "bytes": 5242,
@@ -20479,10 +20520,15 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-launch3.log",
       "sha256": "7c8d77d7ee094703dc664be8573d879615ba6dbf0b91f82494488a7e8c044767"
     },
+    "publication-refresh-check-result.json": {
+      "bytes": 687,
+      "local_path": "runs/autoresearch/ncp-20260915/publication-refresh-check-result.json",
+      "sha256": "010949f544c85a5d9ca4a5e524bde117200da3578affba1b40fb60bdd2d3761c"
+    },
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "66ac90715186ed818dd0cd0a7b4afff440eaf5508481f2c66aad168d69bf3d01"
+      "sha256": "7b79fa8b59ee33296258ab7113d2fb75f2fdb9a6c529c07754814f643e3efdeb"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -20507,7 +20553,7 @@
     "result.json": {
       "bytes": 841903,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "aa314cc07888e52a040f90e3aa6a192444ebdef190f33cdb578a8f26867c5cf6"
+      "sha256": "c0bf35b830d7204928c07cedc9f303cfaa31b4168646f7205c3bab35f103cae2"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -20540,9 +20586,9 @@
       "sha256": "37cbe68de3bd4b2178a0f08bf51cea7d8f9ed0dffcee3df2301a94b46b114bd1"
     },
     "summary.md": {
-      "bytes": 54809,
+      "bytes": 56096,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "43cbe6ca0bb7329269441fa5932a0dd399749c49384028be305f85fd74a06219"
+      "sha256": "6f9990c2e7207bc13197b36b030c6f1e0e95b5da452e03e2f31fe4cfe40c5014"
     },
     "tape-origin-audit-result.json": {
       "bytes": 1531,
@@ -20626,6 +20672,14 @@
       "crossed-order-driver.py": {
         "published_path": "reports/source-snapshots/68c1e1e21c2f44c4dfba4be3033e77a1585d9fa850a2770cdc1e055f9b71d99e.py",
         "sha256": "68c1e1e21c2f44c4dfba4be3033e77a1585d9fa850a2770cdc1e055f9b71d99e"
+      },
+      "deadline-closeout-driver.py": {
+        "published_path": "reports/source-snapshots/71b0423e2fa1303b00af32bb5c37b6127c1f3f9cf25cc30c1fbffb76ecaaf4d3.py",
+        "sha256": "71b0423e2fa1303b00af32bb5c37b6127c1f3f9cf25cc30c1fbffb76ecaaf4d3"
+      },
+      "deadline-closeout-v2-driver.py": {
+        "published_path": "reports/source-snapshots/41753e0703e23c747bf1af8337fdd6ec5f44dab0407628166a306aa2c8516ace.py",
+        "sha256": "41753e0703e23c747bf1af8337fdd6ec5f44dab0407628166a306aa2c8516ace"
       },
       "depth-queue.py": {
         "published_path": "reports/source-snapshots/37b387890559604e9f7f27e001d5cef00e39f197799a9d1d425a2510ccc8147d.py",
