@@ -38,7 +38,7 @@ AssertionError: Comparison data/protocol identity mismatch
 
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 75. No candidate-count cap.
+Status: running. Completed full trials: 81. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
@@ -119,12 +119,43 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0073-D-depth8-s42 | replication / 42 | 0.617737 | 37762.8 | 222.4 | 228.6 | 943.1 / 964.0 | 50,332,176 / 50,332,176 |
 | trial-0074-D-depth12-s42 | replication / 42 | 0.589898 | 26921.4 | 312.1 | 318.8 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 | trial-0075-D-s42 | replication / 42 | 0.634848 | 49074.3 | 171.3 | 177.3 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
+| trial-0076-DG-s42 | replication / 42 | 0.634178 | 43952.1 | 191.3 | 197.8 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0077-D-depth12-s43 | confirmation / 43 | 0.594272 | 26921.2 | 312.2 | 318.9 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0078-D12-lr0.03-s43 | confirmation / 43 | 0.591839 | 27434.1 | 305.9 | 312.7 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0079-D-depth12-s44 | confirmation / 44 | 0.592870 | 26749.5 | 314.0 | 320.8 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0080-D12-lr0.03-s44 | confirmation / 44 | 0.594356 | 26841.3 | 313.0 | 319.7 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0081-D-depth12-s43 | confirmation / 43 | 0.595008 | 26782.7 | 313.8 | 320.5 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 
 Timed throughput excludes the first11 updates; synchronized all-update wall time includes them and CPU dispatch/optimizer orchestration. It is not GPU kernel-busy time. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 
 ## Confirmation
 
-Confirmation pending or no frozen comparison.
+[
+  {
+    "seed": 42,
+    "candidate_mean_bpb": 0.5887233333333334,
+    "control_mean_bpb": 0.5903035555555556,
+    "candidate_repeats": 9,
+    "control_repeats": 9,
+    "difference": -0.001580222222222205
+  },
+  {
+    "seed": 43,
+    "candidate_mean_bpb": 0.591839,
+    "control_mean_bpb": 0.5946400000000001,
+    "candidate_repeats": 1,
+    "control_repeats": 2,
+    "difference": -0.0028010000000000534
+  },
+  {
+    "seed": 44,
+    "candidate_mean_bpb": 0.594356,
+    "control_mean_bpb": 0.59287,
+    "candidate_repeats": 1,
+    "control_repeats": 1,
+    "difference": 0.0014859999999999873
+  }
+]
 
 Seed42 was used for adaptive selection; seeds43/44 are the independent confirmation seeds. Averaging repeats within a seed does not create new independent seeds. Evidence remains preliminary; repeated validation-guided selection is not an untouched test. The depth12 LR pair has equal parameters; cross-depth and dense/MoE comparisons do not.
 
@@ -135,11 +166,11 @@ No NCP, dependency changes, cloud jobs, paid services or deletion. Depth12 LR fo
 ## Campaign clock
 
 {
-  "report_generated_at": "2026-09-15T09:42:54.577665+00:00",
+  "report_generated_at": "2026-09-15T10:15:30.587383+00:00",
   "started_at": "2026-09-14T23:30:00-04:00",
   "deadline": "2026-09-15T07:30:00-04:00",
-  "elapsed_seconds": 22374.577665,
-  "remaining_seconds": 6425.422335,
+  "elapsed_seconds": 24330.587383,
+  "remaining_seconds": 4469.412617,
   "note": "Includes implementation, correctness, orchestration and prior publication; final publication completion has a separate receipt."
 }
 
