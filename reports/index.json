@@ -1376,6 +1376,25 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0054-I3-8fc5ce9693-s42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "50e004c0710f444ae0642b5570bf08805145f27edbc2dad2088ec06317fd5c5b",
+      "experiment_id": "ncp-20260915--trial-0054-I3-8fc5ce9693-s42-a8e4c2bf",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 30.0,
+        "num_steps": 512.0,
+        "peak_vram_mb": 653.3,
+        "total_seconds": 217.2,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 209.7,
+        "val_bpb": 0.633706
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,
