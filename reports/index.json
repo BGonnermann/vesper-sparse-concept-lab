@@ -551,6 +551,14 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/overnight-20260915",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "overnight-20260915-84853326",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
       "artifact_directory": "runs/autoresearch/packed-20260915T002151Z-dense-baseline",
       "budget_family": "wall_time_budget",
       "compatibility_fingerprint": "98216a105e680926d6a4da5c4b1f65c350800e2ee726708ae659b8dc3536fee4",

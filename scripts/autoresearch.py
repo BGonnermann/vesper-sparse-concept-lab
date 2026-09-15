@@ -50,10 +50,18 @@ def validate_candidate(value):
     if "memory" in value:
         fields.add("memory")
         memory = value["memory"]
-        if (not isinstance(memory, dict) or set(memory) != {"kind", "bos_token_id"}
+        if (not isinstance(memory, dict) or not {"kind", "bos_token_id"} <= set(memory)
+                or not set(memory) <= {"kind", "bos_token_id", "after_layer", "lr"}
                 or memory["kind"] != "ngram_v1" or type(memory["bos_token_id"]) is not int
                 or memory["bos_token_id"] < 0):
             raise ValueError("Memory must select frozen ngram_v1 with an explicit BOS token ID.")
+        layer = memory.get("after_layer", 1)
+        if (type(layer) is not int or type(value.get("depth")) is not int
+                or not 0 <= layer < value["depth"]):
+            raise ValueError("Memory after_layer must identify an existing zero-based block.")
+        memory_lr = memory.get("lr", .001)
+        if type(memory_lr) not in (int, float) or not math.isfinite(memory_lr) or not 0 < memory_lr <= .01:
+            raise ValueError("Memory lr must be finite and in (0, .01].")
     if value.get("feedforward") == "moe":
         fields |= {"num_experts", "top_k", "aux_loss_weight", "router_lr"}
     if set(value) != fields or value.get("feedforward") not in ("dense", "moe"):
@@ -64,8 +72,8 @@ def validate_candidate(value):
     if type(lr) not in (int, float) or not math.isfinite(lr) or not 0 < lr <= 0.1:
         raise ValueError("matrix_lr must be finite and in (0, 0.1].")
     if value["feedforward"] == "moe":
-        if type(value["num_experts"]) is not int or value["num_experts"] != 4 or type(value["top_k"]) is not int or value["top_k"] != 1:
-            raise ValueError("The first MoE variant requires four experts and top-1 routing.")
+        if type(value["num_experts"]) is not int or value["num_experts"] not in (2, 4) or type(value["top_k"]) is not int or value["top_k"] != 1:
+            raise ValueError("Packed MoE requires two or four experts and top-1 routing.")
         for key in ("aux_loss_weight", "router_lr"):
             number = value[key]
             if type(number) not in (int, float) or not math.isfinite(number) or not 0 < number <= 0.1:
@@ -152,7 +160,7 @@ def validate_run_artifacts(directory, record):
             raise ValueError("Routing dropped tokens.")
         if candidate["feedforward"] == "moe":
             counts = routing[phase]["counts"]
-            if len(counts) != candidate["depth"] or any(len(layer) != 4 or sum(layer) != routing[phase]["tokens"]
+            if len(counts) != candidate["depth"] or any(len(layer) != candidate["num_experts"] or sum(layer) != routing[phase]["tokens"]
                     or any(type(n) is not int or n < 0 for n in layer) for layer in counts):
                 raise ValueError("Expert routing counts do not cover every token exactly once per layer.")
     if candidate["feedforward"] == "moe":
@@ -188,8 +196,8 @@ def validate_protocol(value):
     if fixed:
         if type(value["optimizer_updates"]) is not int or value["optimizer_updates"] != 512:
             raise ValueError("Fixed comparison requires exactly 512 updates.")
-        if type(value["seed"]) is not int or value["seed"] not in (42, 43):
-            raise ValueError("Fixed comparison requires seed 42 or 43.")
+        if type(value["seed"]) is not int or value["seed"] not in (42, 43, 44):
+            raise ValueError("Fixed comparison requires seed 42, 43 or 44.")
         if value["schedule"] != {"clock": "optimizer_step", "progress": "zero_based_step / 512", "lr_warmup_updates": 0, "decay_start_step": 256, "final_lr_fraction": 0.0, "measurement_warmup_updates": 11, "muon_momentum_warmup_updates": 300}:
             raise ValueError("Unexpected fixed-step schedule.")
         if value["activation_checkpointing"] or value["tokens_per_update"] != 16384:

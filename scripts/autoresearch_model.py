@@ -157,8 +157,9 @@ def model_class(upstream, candidate):
                         return grad
                     parameter.register_hook(record_gradient)
             if memory is not None:
+                memory_lr = candidate["memory"].get("lr", .001)
                 optimizer.add_param_group(dict(kind="adamw", params=list(memory.parameters()),
-                                               lr=.001, initial_lr=.001, betas=(.9, .999),
+                                               lr=memory_lr, initial_lr=memory_lr, betas=(.9, .999),
                                                eps=1e-8, weight_decay=0.0))
             self.optimizer_report = optimizer_coverage(self, optimizer)
             return optimizer
@@ -187,6 +188,8 @@ def model_class(upstream, candidate):
                     "expert_parameters": expert_parameters, "router_parameters": router_parameters,
                     "memory": None if self.ngram_memory is None else "ngram_v1",
                     "memory_parameters": memory_parameters,
+                    "memory_after_layer": None if self.ngram_memory is None else candidate["memory"].get("after_layer", 1),
+                    "memory_lr": None if self.ngram_memory is None else candidate["memory"].get("lr", .001),
                     "memory_initialization_seed": None if self.ngram_memory is None else self.ngram_memory.initialization_seed,
                     "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
                     "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
@@ -231,7 +234,7 @@ def model_class(upstream, candidate):
                         layer_counts.append(count)
                     else:
                         x = result
-                    if index == 1 and self.ngram_memory is not None:
+                    if self.ngram_memory is not None and index == candidate["memory"].get("after_layer", 1):
                         if self.config.use_activation_checkpointing:
                             x = checkpoint(self.ngram_memory, x, idx, use_reentrant=False)
                         else:

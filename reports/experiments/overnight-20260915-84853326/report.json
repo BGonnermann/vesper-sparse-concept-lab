@@ -1,0 +1,104 @@
+{
+  "artifact_directory": "runs/autoresearch/overnight-20260915",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "contract-v1.json": {},
+    "contract.json": {},
+    "preflight-result.json": {
+      "kind": "correctness_preflight",
+      "log_sha256": "2746f5a97479f6915820023739b490a28fc2ed55516ec38cbfd509b5b711664c",
+      "passed": true,
+      "search_sha256": "77d41ed7366a8dca1fa99084515705805ad353c839cd600208264a08117f24b0",
+      "source_hashes": {
+        "autoresearch.py": "fa551f3871f67b85f4e079df9cfeba4cec9eaa2a524d76d63507ab03bbbd3b94",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "65eda337f451c44a06b1bd29026a1105135edcaa2aa8b31836a0b9b18ac7dd1f",
+        "autoresearch_train.py": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5"
+      },
+      "status": "completed",
+      "test_hashes": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_campaign_variants.py": "1679fd62f3ccb66b08de83ddabe498c9fd04767f9e15da469e66ee0674a0a70a",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_experiment_reports.py": "bb36a0ecfc832b124807d3650cd657c16b49209a68789bd66cbba2cf6cbee69d",
+        "test_fixed_updates.py": "ba7d2ae7b106747edc4ff6452a9d730d4fb36c5e3059db68807e528d8135fe7f",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "a4ae0a4720218705174c106efcdd5dae056f4e6c0b45758917c27037add96cc7"
+      }
+    },
+    "search-space.json": {}
+  },
+  "diagnostics": [
+    "preflight.log:\nok\nok\nok\nok\nok\nRan 52 tests in 6.444s\nOK\ncuda correctness exit: 0"
+  ],
+  "evidence": {
+    "contract-v1.json": {
+      "bytes": 353,
+      "local_path": "runs/autoresearch/overnight-20260915/contract-v1.json",
+      "sha256": "63e970e98bfbe6ae3211300c867a7d7270da47ee608d934d36e94f91f0b412fe"
+    },
+    "contract.json": {
+      "bytes": 414,
+      "local_path": "runs/autoresearch/overnight-20260915/contract.json",
+      "sha256": "2f90fe3301978f678e2cda2f69011942292755ec0f576ed780003dfc114cc9a2"
+    },
+    "frozen-plan-v2.md": {
+      "bytes": 7205,
+      "local_path": "runs/autoresearch/overnight-20260915/frozen-plan-v2.md",
+      "sha256": "4dd0e0a648ea087f7db5fecf1917ec4771aad70d9baf670fa5154e845b1fff00"
+    },
+    "frozen-plan.md": {
+      "bytes": 6452,
+      "local_path": "runs/autoresearch/overnight-20260915/frozen-plan.md",
+      "sha256": "15775627697675c16e2a5244fffa7f2cd16a6b145f62d3d946e748f91e9bf7a1"
+    },
+    "preflight-result.json": {
+      "bytes": 1671,
+      "local_path": "runs/autoresearch/overnight-20260915/preflight-result.json",
+      "sha256": "257620d9aff413630b467de432a240e1014ece0c43958b6f673f08bbae66353a"
+    },
+    "preflight.log": {
+      "bytes": 22990,
+      "local_path": "runs/autoresearch/overnight-20260915/preflight.log",
+      "sha256": "2746f5a97479f6915820023739b490a28fc2ed55516ec38cbfd509b5b711664c"
+    },
+    "prior-artifacts.json": {
+      "bytes": 150521,
+      "local_path": "runs/autoresearch/overnight-20260915/prior-artifacts.json",
+      "sha256": "318473fd4d0e7c090bd00afa082b94f047efa00694746a80e15cce807b138047"
+    },
+    "search-space.json": {
+      "bytes": 9145,
+      "local_path": "runs/autoresearch/overnight-20260915/search-space.json",
+      "sha256": "77d41ed7366a8dca1fa99084515705805ad353c839cd600208264a08117f24b0"
+    }
+  },
+  "experiment_id": "overnight-20260915-84853326",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stage_evidence_only",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "6589c6a2e0eb8044537e26b6adbfd3953e21a8a8195f0b60bfe1037bcbad2343",
+  "schema_version": 1,
+  "seeds": null
+}
