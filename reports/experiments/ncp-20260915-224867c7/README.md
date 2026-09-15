@@ -478,7 +478,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-58 completed of 60 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+59 completed of 61 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -553,6 +553,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0058-FROZEN-AUX-s45](../ncp-20260915--trial-0058-FROZEN-AUX-s45-b6e43569/README.md) | 45 | 0.638363 | 216.1 | 221.9 | 38905 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
 | [trial-0059-FROZEN-CAP-s45](../ncp-20260915--trial-0059-FROZEN-CAP-s45-3d706092/README.md) | 45 | 0.638105 | 176.9 | 182.2 | 47499 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
 | [trial-0060-FROZEN-NOPRED-s45](../ncp-20260915--trial-0060-FROZEN-NOPRED-s45-45761a66/README.md) | 45 | 0.639167 | 218.1 | 223.8 | 38565 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0061-D6-s46](../ncp-20260915--trial-0061-D6-s46-444edc46/README.md) | 46 | 0.639401 | 165.8 | 171.1 | 50721 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -664,6 +665,7 @@ FROZEN-NOPRED: 1/4 pairs; mean delta +0.000874; 0 negative signs. Primary same-s
 - trial-0058-FROZEN-AUX-s45: Frozen four-seed confirmation: FROZEN-AUX, seed45; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 - trial-0059-FROZEN-CAP-s45: Frozen four-seed confirmation: FROZEN-CAP, seed45; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 - trial-0060-FROZEN-NOPRED-s45: Frozen four-seed confirmation: FROZEN-NOPRED, seed45; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
+- trial-0061-D6-s46: Frozen four-seed confirmation: D6, seed46; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 
 ## Correctness and diagnosis
 
