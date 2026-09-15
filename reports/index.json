@@ -1699,6 +1699,25 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0071-FROZEN-AUX-s44",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "b6cd284e4f60bf9e279529ffa12e610966e55fcad21d74521cf44af993425134",
+      "experiment_id": "ncp-20260915--trial-0071-FROZEN-AUX-s44-c5dc09aa",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 30.0,
+        "num_steps": 512.0,
+        "peak_vram_mb": 653.3,
+        "total_seconds": 219.5,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 212.1,
+        "val_bpb": 0.642949
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,
