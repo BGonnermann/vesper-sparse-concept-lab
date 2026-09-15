@@ -1525,6 +1525,93 @@
       },
       "status": "completed"
     },
+    "depth-grid-plan.json": {
+      "kind": "depth_width_grid_plan",
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 42,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "seeds": [
+        43,
+        44
+      ],
+      "source_hashes": {
+        "autoresearch.py": "b97fda3e32a53909f7b730382e7f7ad02c8579e0b705b32eee6fdd3ef408d3ce",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "autoresearch_train.py": "28df670cb518c0ecdb88c70cf1d054149e8c4b09490b478044ad471807dcacab"
+      }
+    },
+    "depth-grid-result.json": {
+      "comparisons": [
+        {
+          "axis": "depth_at_width384",
+          "candidate": "D12-W384",
+          "candidate_bpb": 0.622336,
+          "candidate_parameters": 46400088,
+          "candidate_result_sha256": "0985cef2ad7e2d076106507522848c0cf3921bf5cce2ad864bdaac81fafa67c8",
+          "candidate_trial": "trial-0078-D12-W384-s43",
+          "control": "D6",
+          "control_bpb": 0.637774,
+          "control_parameters": 26345772,
+          "control_result_sha256": "d13e8c8b00606ec8dbf62e65f72f4a8c47e3bdcbbcaa3644aef2f09e4c0d1603",
+          "control_trial": "trial-0008-D6-s43",
+          "delta_bpb": -0.015437999999999952,
+          "seed": 43,
+          "update_time_ratio": 1.93995367593412
+        },
+        {
+          "axis": "width_at_depth12",
+          "candidate": "D12",
+          "candidate_bpb": 0.594495,
+          "candidate_parameters": 135267480,
+          "candidate_result_sha256": "40515694b02dad2122a67c0148de488c32a12272b3680e56484bcc1c8e32c692",
+          "candidate_trial": "trial-0009-D12-s43",
+          "control": "D12-W384",
+          "control_bpb": 0.622336,
+          "control_parameters": 46400088,
+          "control_result_sha256": "0985cef2ad7e2d076106507522848c0cf3921bf5cce2ad864bdaac81fafa67c8",
+          "control_trial": "trial-0078-D12-W384-s43",
+          "delta_bpb": -0.027841000000000005,
+          "seed": 43,
+          "update_time_ratio": 0.9715842805870841
+        }
+      ],
+      "complete_conditions": 5,
+      "expected_conditions": 8,
+      "kind": "dense_depth_width_grid",
+      "mean_deltas": {
+        "depth_at_width384": -0.015437999999999952,
+        "width_at_depth12": -0.027841000000000005
+      },
+      "scope": "Predeclared depth6/12 by width384/768, seeds43/44, matrixLR .04, fixed tokens; no configuration selection",
+      "status": "running"
+    },
     "failed-counts-trial-0002-result.json": {
       "interpretation": "Exact structural parameter counts reconstructed on meta device from captured source and logged model configuration; no training, allocation peak, throughput or BPB was reconstructed",
       "kind": "failed_trial_structural_reconstruction",
@@ -12182,6 +12269,98 @@
       "status": "completed"
     },
     "mechanism-search-space.json": {},
+    "module-initialization-entry-result.json": {
+      "crossed_result_sha256": "aae2990b18f3c9b459ae293b9d410606a6555c125050aab943d650879b4b1cb5",
+      "evidence": {
+        "cells": [
+          {
+            "batch_order_seed": 42,
+            "delta_bpb": -0.002970999999999946,
+            "initialization_seed": 42,
+            "runs": {
+              "D6": {
+                "bpb": 0.634848,
+                "result_sha256": "682fc89814cde871b6bba4744c6b82b206938de2317a8b245edd7c9e39dadc6f",
+                "trial": "trial-0001-D6-s42"
+              },
+              "NCP": {
+                "bpb": 0.631877,
+                "result_sha256": "7af8b2a5569a9fd7e38048a8eb4ae915b098e9784b4fc5e8a15d5400cf84fcc3",
+                "trial": "trial-0039-I2-37a8ad42c0-s42"
+              }
+            }
+          },
+          {
+            "batch_order_seed": 45,
+            "delta_bpb": -0.004477999999999982,
+            "initialization_seed": 42,
+            "runs": {
+              "D6": {
+                "bpb": 0.640354,
+                "result_sha256": "0395ad7cb14b76b2c691e0600683fec2dabd497d21dbfb6cb690fe305aedad4d",
+                "trial": "trial-0074-CROSS-D6-s42"
+              },
+              "NCP": {
+                "bpb": 0.635876,
+                "result_sha256": "787da3e507a505eb385ecf07f570f13d31ce32c5fa8579c52a3cd3788b6567a5",
+                "trial": "trial-0075-CROSS-NCP-s42"
+              }
+            }
+          },
+          {
+            "batch_order_seed": 42,
+            "delta_bpb": 0.0017300000000000093,
+            "initialization_seed": 45,
+            "runs": {
+              "D6": {
+                "bpb": 0.635365,
+                "result_sha256": "1b9129615854a555c3f6ba183486b77d1350b990f1e129143aee8e61d873ef2b",
+                "trial": "trial-0076-CROSS-D6-s45"
+              },
+              "NCP": {
+                "bpb": 0.637095,
+                "result_sha256": "e22d2efb5f9102b39c85d0dbe958821735632166813c41e63411c6ebec427dae",
+                "trial": "trial-0077-CROSS-NCP-s45"
+              }
+            }
+          },
+          {
+            "batch_order_seed": 45,
+            "delta_bpb": 0.002118999999999982,
+            "initialization_seed": 45,
+            "runs": {
+              "D6": {
+                "bpb": 0.637922,
+                "result_sha256": "bddac55c0a38f93bf52c180370f4d6e149b89958903ab8ce82416c8db698d5ae",
+                "trial": "trial-0056-D6-s45"
+              },
+              "NCP": {
+                "bpb": 0.640041,
+                "result_sha256": "a0359f749f20f7a3c570367ad83c04f91599f84dc50ef958fe65d8fc68ab60c4",
+                "trial": "trial-0057-I2-37a8ad42c0-s45"
+              }
+            }
+          }
+        ],
+        "contrast_definition": "Contrasts operate on NCP-minus-dense BPB; positive means a less favorable NCP effect.",
+        "contrasts": {
+          "initialization_45_minus_42": 0.00564899999999996,
+          "interaction_difference_of_differences": 0.0018960000000000088,
+          "order_45_minus_42": -0.0005590000000000317
+        },
+        "expected_cells": 4,
+        "interpretation": "Two deliberately chosen seed levels diagnose the observed reversal; not four independent replications or held-out evidence. Utilization samples follow order seed.",
+        "kind": "initializer_order_diagnostic",
+        "new_training_runs": 4,
+        "plan_sha256": "532630dcf410b70ddc84b4edac2f110bed5fb42cde3f5c400824e2a491c5671e",
+        "status": "completed"
+      },
+      "kind": "module_initialization_entry",
+      "measured_at": "2026-09-15T17:15:05.155832+00:00",
+      "reason": "Isolate NCP-module versus backbone initialization at fixed order42",
+      "rule": "Init45 less favorable under both orders and mean initializer contrast>0.002; predeclared commit13d0225",
+      "status": "qualified"
+    },
     "next-selection.json": {},
     "normalized-search-space.json": {},
     "orchestrator-source-correction-result.json": {
@@ -12658,7 +12837,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "0f2d56837652aa22cd2e0021a34d050a970e994b",
+      "publication_commit": "8e7649453f0a48b61b2f64294a94c52948a63cc9",
       "status": "completed",
       "verified_remote": true
     },
@@ -13101,9 +13280,9 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 94805,
+      "bytes": 96166,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "7a544909e1a02fa72b41d09684e1f8a3e54ce1e979d5778a9a15b78fc2c0a44b"
+      "sha256": "a9782a42f524c247f10671381ed5a47fe9c243dbabf99faa4c48854c72ee4312"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -13176,9 +13355,9 @@
       "sha256": "532630dcf410b70ddc84b4edac2f110bed5fb42cde3f5c400824e2a491c5671e"
     },
     "crossed-order-queue.log": {
-      "bytes": 3471,
+      "bytes": 3572,
       "local_path": "runs/autoresearch/ncp-20260915/crossed-order-queue.log",
-      "sha256": "b42dad842c0b4fdd5af3f93875b11a82de0f718583e34bb2f3f42a5127313819"
+      "sha256": "bda06157753d4026b672a0a9637c863013dd241203fb810febf4b9a476d6d51d"
     },
     "crossed-order-result.json": {
       "bytes": 2917,
@@ -13199,6 +13378,21 @@
       "bytes": 641,
       "local_path": "runs/autoresearch/ncp-20260915/dense-scale.log",
       "sha256": "30e9f0cebce843fe3c9c9282131ab809b46d0d64bf7291a6de100d42cd9a5446"
+    },
+    "depth-grid-plan.json": {
+      "bytes": 7361,
+      "local_path": "runs/autoresearch/ncp-20260915/depth-grid-plan.json",
+      "sha256": "3dc49a54cf9e97305fbfd3bce71709898246b0f9f806694bbf8f605710179f9a"
+    },
+    "depth-grid-queue.log": {
+      "bytes": 1120,
+      "local_path": "runs/autoresearch/ncp-20260915/depth-grid-queue.log",
+      "sha256": "f16b69b9cab9e3a5340c8c9219f5d28d145f916c44d7f49cde5dc6c659790606"
+    },
+    "depth-grid-result.json": {
+      "bytes": 1716,
+      "local_path": "runs/autoresearch/ncp-20260915/depth-grid-result.json",
+      "sha256": "29376f52ee81d669b312ad6ff64f5226cfe9967446798c8af942192e49056f44"
     },
     "depth-queue.log": {
       "bytes": 3809,
@@ -13489,6 +13683,11 @@
       "bytes": 2127,
       "local_path": "runs/autoresearch/ncp-20260915/method-notes.md",
       "sha256": "0b5d38542a591f81c259a4cae09dc79d72478f510c91bf70dd0f0a85d39e69f2"
+    },
+    "module-initialization-entry-result.json": {
+      "bytes": 3521,
+      "local_path": "runs/autoresearch/ncp-20260915/module-initialization-entry-result.json",
+      "sha256": "5cba8c3e6ce9ce91d478f34ab34c0469e0bf0a612fba22faca8d90d41b50b22c"
     },
     "next-selection.json": {
       "bytes": 10418,
@@ -13783,7 +13982,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "ff956ae196fcb4867cc3e0e1499d84800ffb7c33d4469b7ee108bf593110b267"
+      "sha256": "2695b433ad01514762e3c32d3f202a31aa8fe4db0b3d3db2207749488a4fd4b8"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -13806,9 +14005,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 681516,
+      "bytes": 685366,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "fd4adc958d352be37176d60ceb84a0bbe4cc05abbc69612f0f7a53f0bcc35422"
+      "sha256": "0f769a7a5b16011a2b2eb3394af0b353f5068f4d655fb4cd36724c6a7241bfc9"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -13831,9 +14030,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 38606,
+      "bytes": 39404,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "fede88f65e674ffb35831fd4ef16bc3d5c0e92a7cefcd0bbcb34d1f51161cab6"
+      "sha256": "fcefa75436dad01f60e6cdd74de60d64cfe25d86c2ee56af0e437a05cff7e1a5"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
