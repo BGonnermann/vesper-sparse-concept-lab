@@ -1650,6 +1650,38 @@
           "update_time_ratio": 2.0138586048823797
         },
         {
+          "axis": "depth_at_width768",
+          "candidate": "D12",
+          "candidate_bpb": 0.592813,
+          "candidate_parameters": 135267480,
+          "candidate_result_sha256": "9b0aba116973fd437ef6d8f40ddffa00b0b41d00e971f6ded42931ea12763acc",
+          "candidate_trial": "trial-0011-D12-s44",
+          "control": "D6-W768",
+          "control_bpb": 0.607575,
+          "control_parameters": 73925196,
+          "control_result_sha256": "68dcd76fee412e0fc8d96171e59e825bbd6636d6533bd29d3ff77d1c380c672f",
+          "control_trial": "trial-0081-D6-W768-s44",
+          "delta_bpb": -0.014761999999999942,
+          "seed": 44,
+          "update_time_ratio": 1.9563588125845026
+        },
+        {
+          "axis": "width_at_depth6",
+          "candidate": "D6-W768",
+          "candidate_bpb": 0.607575,
+          "candidate_parameters": 73925196,
+          "candidate_result_sha256": "68dcd76fee412e0fc8d96171e59e825bbd6636d6533bd29d3ff77d1c380c672f",
+          "candidate_trial": "trial-0081-D6-W768-s44",
+          "control": "D6",
+          "control_bpb": 0.643075,
+          "control_parameters": 26345772,
+          "control_result_sha256": "691c6d431176ac663280d6adef7b42e174e580f734ccfa2cdc7260664bcca0bd",
+          "control_trial": "trial-0010-D6-s44",
+          "delta_bpb": -0.035499999999999976,
+          "seed": 44,
+          "update_time_ratio": 1.0414203229674355
+        },
+        {
           "axis": "width_at_depth12",
           "candidate": "D12",
           "candidate_bpb": 0.592813,
@@ -1666,17 +1698,17 @@
           "update_time_ratio": 1.0116856374635776
         }
       ],
-      "complete_conditions": 7,
+      "complete_conditions": 8,
       "expected_conditions": 8,
       "kind": "dense_depth_width_grid",
       "mean_deltas": {
         "depth_at_width384": -0.01654699999999998,
-        "depth_at_width768": -0.01349800000000001,
+        "depth_at_width768": -0.014129999999999976,
         "width_at_depth12": -0.03022349999999996,
-        "width_at_depth6": -0.029780999999999946
+        "width_at_depth6": -0.03264049999999996
       },
       "scope": "Predeclared depth6/12 by width384/768, seeds43/44, matrixLR .04, fixed tokens; no configuration selection",
-      "status": "running"
+      "status": "completed"
     },
     "failed-counts-trial-0002-result.json": {
       "interpretation": "Exact structural parameter counts reconstructed on meta device from captured source and logged model configuration; no training, allocation peak, throughput or BPB was reconstructed",
@@ -12971,7 +13003,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "69dd5ae3e8f33deaa77d9fef97b04a1f57b4576e",
+      "publication_commit": "9676b9bcc60067bc7188fa5e02363de46d432c49",
       "status": "completed",
       "verified_remote": true
     },
@@ -13415,9 +13447,9 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 98169,
+      "bytes": 98951,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "0f02443a703dfaaf1e04ffb40ff30bd7a37c4b88ddd1830739cf8bb1f7c7d1f7"
+      "sha256": "d377edb7f3f78605c99e70782002cf1e7144af77ec17d2879109d73e61fa4dfc"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -13520,14 +13552,14 @@
       "sha256": "3dc49a54cf9e97305fbfd3bce71709898246b0f9f806694bbf8f605710179f9a"
     },
     "depth-grid-queue.log": {
-      "bytes": 3123,
+      "bytes": 3905,
       "local_path": "runs/autoresearch/ncp-20260915/depth-grid-queue.log",
-      "sha256": "eab8bf5bdecb826a4d8e8189fdd496bd2a08b009aa1505d51d501da30dbf8920"
+      "sha256": "5440ce249e51f14f7898efad8ffe0fe5768e996c2b75eb45af792a20242c5f58"
     },
     "depth-grid-result.json": {
-      "bytes": 4451,
+      "bytes": 5774,
       "local_path": "runs/autoresearch/ncp-20260915/depth-grid-result.json",
-      "sha256": "5f34c70e413d393ad2386b97a6ba296bf5f73de7dd07eb1bd0362cc7aff60a52"
+      "sha256": "898d010fb64b8c809a04cc30c81d4cc294726143a2f7bd40af76aac801429b5b"
     },
     "depth-queue.log": {
       "bytes": 3809,
@@ -14152,7 +14184,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "cf54598e08f49a7a3dd7ea44b2ca1ef63e6bee16e36bbec70bec4c841aa72f62"
+      "sha256": "a38e406d79513de98fbb8ac0338113ac6e9660600e626fc8e0af0e17d4b49d90"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -14175,9 +14207,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 692277,
+      "bytes": 695682,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "2f0dd4d78da018a19d7c863ddd71914628e25f5b5f9e1d0f37c17209e2edae41"
+      "sha256": "36fea9a4d0365c82d4e765b1edb73eda517195c9a877839d9707b6972c43680c"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -14200,9 +14232,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 40374,
+      "bytes": 40858,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "eb7aa07664d1cf189129936fd092c3e9212c71f9824a9e64b6e761c3425b68dd"
+      "sha256": "f0ce21cb1d5dc35b3f11431200aca12649153ad62f4443a467e43f8c455ba881"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
