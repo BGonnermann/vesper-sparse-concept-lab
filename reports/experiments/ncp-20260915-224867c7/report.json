@@ -14451,6 +14451,130 @@
       "rule": "Init45 less favorable under both orders and mean initializer contrast>0.002; predeclared commit13d0225",
       "status": "qualified"
     },
+    "module-initialization-plan.json": {
+      "candidate": {
+        "depth": 6,
+        "feedforward": "dense",
+        "matrix_lr": 0.04,
+        "ncp": {
+          "after_layer": 0,
+          "ce_weight": 0.1,
+          "chunk_size": 4,
+          "entries": 16,
+          "feedback_scale": 1.0,
+          "kind": "ncp_v1",
+          "layers": 2,
+          "lr": 0.001,
+          "mode": "feedback",
+          "pool_normalization": "rms",
+          "prediction_weight": 1.0,
+          "vq_weight": 1.0
+        }
+      },
+      "interpretation": "Two initializer levels and one order level; descriptive mechanism diagnosis, not independent replication or held-out evidence",
+      "kind": "module_initialization_plan",
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 42,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "source_hashes": {
+        "autoresearch.py": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "autoresearch_train.py": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf"
+      }
+    },
+    "module-initialization-result.json": {
+      "cells": [
+        {
+          "backbone_seed": 42,
+          "batch_order_seed": 42,
+          "bpb": 0.631877,
+          "collapsed": false,
+          "delta_bpb": -0.002970999999999946,
+          "dense_bpb": 0.634848,
+          "dense_trial": "trial-0001-D6-s42",
+          "ncp_initialization_seed": 42,
+          "result_sha256": "7af8b2a5569a9fd7e38048a8eb4ae915b098e9784b4fc5e8a15d5400cf84fcc3",
+          "reused": true,
+          "trial": "trial-0039-I2-37a8ad42c0-s42"
+        },
+        {
+          "backbone_seed": 42,
+          "batch_order_seed": 42,
+          "bpb": 0.635104,
+          "collapsed": false,
+          "delta_bpb": 0.000256000000000034,
+          "dense_bpb": 0.634848,
+          "dense_trial": "trial-0001-D6-s42",
+          "ncp_initialization_seed": 45,
+          "result_sha256": "9df892e1a6a83bf74d6b87e355032d6dc4ea60956a3eda9eb50d20bd5e0904bf",
+          "reused": false,
+          "trial": "trial-0082-MODULE-NCP-s42"
+        },
+        {
+          "backbone_seed": 45,
+          "batch_order_seed": 42,
+          "bpb": 0.634929,
+          "collapsed": false,
+          "delta_bpb": -0.00043599999999999195,
+          "dense_bpb": 0.635365,
+          "dense_trial": "trial-0076-CROSS-D6-s45",
+          "ncp_initialization_seed": 42,
+          "result_sha256": "4ce4a813a3f63fc26f808ad7be2e66f9ce0cb0375f51ac9c0ef1df39f7d266d6",
+          "reused": false,
+          "trial": "trial-0083-MODULE-NCP-s45"
+        },
+        {
+          "backbone_seed": 45,
+          "batch_order_seed": 42,
+          "bpb": 0.637095,
+          "collapsed": false,
+          "delta_bpb": 0.0017300000000000093,
+          "dense_bpb": 0.635365,
+          "dense_trial": "trial-0076-CROSS-D6-s45",
+          "ncp_initialization_seed": 45,
+          "result_sha256": "e22d2efb5f9102b39c85d0dbe958821735632166813c41e63411c6ebec427dae",
+          "reused": true,
+          "trial": "trial-0077-CROSS-NCP-s45"
+        }
+      ],
+      "contrasts": {
+        "backbone_45_minus_42": 0.0020044999999999646,
+        "interaction_difference_of_differences": -0.0010609999999999786,
+        "module_45_minus_42": 0.0026964999999999906
+      },
+      "expected_cells": 4,
+      "interpretation": "Two initializer levels and one order level; descriptive mechanism diagnosis, not independent replication or held-out evidence",
+      "kind": "module_initialization_diagnostic",
+      "plan_sha256": "07e62a0f64207742f48a580f25626385da03de6ee7889bed0104cce2ae93a51c",
+      "status": "completed"
+    },
     "module-integration-result.json": {
       "applied_at": "2026-09-15T17:29:25.242256+00:00",
       "changes": {
@@ -15072,7 +15196,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "36207ba7a17cdba3e4e356f4abd6f1712035c9c1",
+      "publication_commit": "a4c3bf5f27589e97f5609ea8fc099656524562cd",
       "status": "completed",
       "verified_remote": true
     },
@@ -15407,7 +15531,7 @@
   },
   "diagnostics": [
     "audit-recovered.log:\nSyntaxError: '(' was never closed",
-    "campaign.log:\nd diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.",
+    "campaign.log:\n2026-09-15T17:34:20.191856+00:00 Prospective last training diagnostic: zero all future-derived objective weights, frozen architecture, seeds45/46; compare NOPRED/NCP/CAP/dense; no reselection. Both900sec timeouts plus preparation must fit before fixed75-minute final reserve18:26:32UTC. Plan recorded before new outcomes.\n2026-09-15T17:37:01.753018+00:00 Publication deferred; module evidence retained: AssertionError('Unrelated staged changes; publication deferred')",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -15420,6 +15544,8 @@
     "launch-AUX-s42.log:\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
     "mechanism-queue.log:\n2026-09-15T14:14:52.246985+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
     "module-preview-green.log:\nRan 4 tests in 0.618s\nOK",
+    "module-seeds-queue.log:\n2026-09-15T17:37:01.753018+00:00 Publication deferred; module evidence retained: AssertionError('Unrelated staged changes; publication deferred')",
+    "no-future-checks-cpu.log:\nok\nRan 2 tests in 1.243s\nOK",
     "normalization-green-cpu.log:\nRan 8 tests in 1.461s\nOK",
     "normalization-red.log:\nTraceback (most recent call last):\n    raise error_metas[0].to_error(msg)\nAssertionError: Tensor-likes are not close!\nRan 8 tests in 1.503s\nFAILED (failures=1)",
     "order-identity-red.log:\n    raise ValueError(\"Protocol fields are missing or unknown.\")\nValueError: Protocol fields are missing or unknown.\nTraceback (most recent call last):\nAssertionError: [102, 486, 438, 2, 458, 172, 372, 221, 246, 123, 100, 462, 222, 290, 299, 101, 51, 6, 111, 57, 321, 474, 505, 397, 467, 346, 361, 236, 251, 1, 190, 147, 267, 367, 181, 21, 243, 188, 504, 114, 378, 461, 399, 412, 227, 247, 279, 456, 509, 226, 338, 446, 162, 395, 328, 408, 159, 76, 454, 59, 174, 481, 352, 331, 230, 241, 349, 362, 255, 41, 14, 89, 136, 192, 180, 443, 403, 39, 434, 288, 374, 382, 54, 302, 430, 234, 357, 265, 91, 495, 7, 115, 317, 30, 275, 496, 425, 371, 427, 343, 286\nRan 2 tests in 1.818s\nFAILED (failures=1, errors=1)",
@@ -15518,9 +15644,9 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 99569,
+      "bytes": 101934,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "fe3b2dc7a2af9df64788d1bbf84c85279fe67411b4a1502529c20a8b2d98fe72"
+      "sha256": "ba08407d5604d1026620a30b3a5ca779fb68e6b5e88ed20b97418fb5f0a91c60"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -15937,10 +16063,25 @@
       "local_path": "runs/autoresearch/ncp-20260915/method-notes.md",
       "sha256": "0b5d38542a591f81c259a4cae09dc79d72478f510c91bf70dd0f0a85d39e69f2"
     },
+    "module-initialization-driver.py": {
+      "bytes": 11035,
+      "local_path": "runs/autoresearch/ncp-20260915/module-initialization-driver.py",
+      "sha256": "b307dbd49bbe72cd61f364fe09607df5f4107b5dcefec515da59006ce769c771"
+    },
     "module-initialization-entry-result.json": {
       "bytes": 3521,
       "local_path": "runs/autoresearch/ncp-20260915/module-initialization-entry-result.json",
       "sha256": "5cba8c3e6ce9ce91d478f34ab34c0469e0bf0a612fba22faca8d90d41b50b22c"
+    },
+    "module-initialization-plan.json": {
+      "bytes": 15920,
+      "local_path": "runs/autoresearch/ncp-20260915/module-initialization-plan.json",
+      "sha256": "07e62a0f64207742f48a580f25626385da03de6ee7889bed0104cce2ae93a51c"
+    },
+    "module-initialization-result.json": {
+      "bytes": 2321,
+      "local_path": "runs/autoresearch/ncp-20260915/module-initialization-result.json",
+      "sha256": "0cd38740634cd506a273a32a26791601d18ab13c03fe1cbbcb723528b70db189"
     },
     "module-integration-driver.py": {
       "bytes": 2210,
@@ -15992,10 +16133,20 @@
       "local_path": "runs/autoresearch/ncp-20260915/module-preview-result.json",
       "sha256": "9c9d39c14fcebd44bbab5187fc6f9ab85f5f35898b434dea888af44329b9b783"
     },
+    "module-seeds-queue.log": {
+      "bytes": 1941,
+      "local_path": "runs/autoresearch/ncp-20260915/module-seeds-queue.log",
+      "sha256": "5de8bd923937fdc84d697b4fcfe5f8c5a300b7d9c2efc497e60f529336a32715"
+    },
     "next-selection.json": {
       "bytes": 10418,
       "local_path": "runs/autoresearch/ncp-20260915/next-selection.json",
       "sha256": "3a9ea1ab25a217c90f23b6ab52c2506d1461d4feacbbc8a321c24c3dd5b6ac39"
+    },
+    "no-future-checks-cpu.log": {
+      "bytes": 848,
+      "local_path": "runs/autoresearch/ncp-20260915/no-future-checks-cpu.log",
+      "sha256": "978f75a39bd131dc3e8a904ed9a4037337c5206b5c5d57ed94b82a5ad3a92a28"
     },
     "normalization-green-cpu.log": {
       "bytes": 159,
@@ -16300,7 +16451,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "b17ea637edbb2dd67a2ba1257303da1ac9579e2303679d0ce47d23a5590b498e"
+      "sha256": "e67e62a283fbdb35fc3e46095700aa44bb0de4bdd463fc54d3a7066a5e676318"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -16323,9 +16474,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 695682,
+      "bytes": 719176,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "36fea9a4d0365c82d4e765b1edb73eda517195c9a877839d9707b6972c43680c"
+      "sha256": "81c98e2dc5a014102caeb74ae9da37c5c72ee44dce9c3e774c79aa2445b06c22"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -16348,9 +16499,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 40858,
+      "bytes": 42843,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "f0ce21cb1d5dc35b3f11431200aca12649153ad62f4443a467e43f8c455ba881"
+      "sha256": "8ad216aeadd845cefbd4e35d0d59513198025b8a7c747ea2c8aa69c52ad800e0"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -16476,6 +16627,10 @@
       "lock-tested-controller-8632.py": {
         "published_path": "reports/source-snapshots/8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14.py",
         "sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14"
+      },
+      "module-initialization-driver.py": {
+        "published_path": "reports/source-snapshots/b307dbd49bbe72cd61f364fe09607df5f4107b5dcefec515da59006ce769c771.py",
+        "sha256": "b307dbd49bbe72cd61f364fe09607df5f4107b5dcefec515da59006ce769c771"
       },
       "module-integration-driver.py": {
         "published_path": "reports/source-snapshots/bccf95af8357534a2d94dce87d35b39f1f256de9247da0d65f0b57468bb40c75.py",

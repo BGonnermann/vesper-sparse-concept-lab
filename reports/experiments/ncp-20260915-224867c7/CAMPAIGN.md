@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-79 completed of 81 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+81 completed of 83 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -96,6 +96,8 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0079-D6-W768-s43](../ncp-20260915--trial-0079-D6-W768-s43-cd9ff6f0/README.md) | 43 / 43 | 0.607993 | 164.2 | 169.8 | 51168 | 73,925,196 / 73,925,196 | 1294.2 / 1374.0 | n/a |
 | [trial-0080-D12-W384-s44](../ncp-20260915--trial-0080-D12-W384-s44-5dce61ff/README.md) | 44 / 44 | 0.625419 | 319.3 | 325.0 | 26318 | 46,400,088 / 46,400,088 | 942.8 / 992.0 | n/a |
 | [trial-0081-D6-W768-s44](../ncp-20260915--trial-0081-D6-W768-s44-e353908a/README.md) | 44 / 44 | 0.607575 | 165.1 | 170.9 | 50894 | 73,925,196 / 73,925,196 | 1294.2 / 1374.0 | n/a |
+| [trial-0082-MODULE-NCP-s42](../ncp-20260915--trial-0082-MODULE-NCP-s42-246292ab/README.md) | 42 / 42 | 0.635104 | 216.1 | 223.3 | 38909 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0083-MODULE-NCP-s45](../ncp-20260915--trial-0083-MODULE-NCP-s45-8c343fb0/README.md) | 45 / 42 | 0.634929 | 216.4 | 222.3 | 38845 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -174,6 +176,27 @@ Predeclared depth6/12 by width384/768, seeds43/44, matrixLR .04, fixed tokens; n
 | width_at_depth12 | 44 | 0.592813 | 0.625419 | -0.032606 | 2.92 | 1.01 |
 
 Transfer entry status: not_entered. Frozen D6 mechanism did not pass the predeclared primary same-sign rule
+
+## Backbone versus NCP module initialization
+
+Two initializer levels and one order level; descriptive mechanism diagnosis, not independent replication or held-out evidence
+
+| Backbone seed | NCP module seed | Order seed | NCP BPB | Dense BPB | Delta | Collapsed | Reused |
+|---:|---:|---:|---:|---:|---:|---|---|
+| 42 | 42 | 42 | 0.631877 | 0.634848 | -0.002971 | False | True |
+| 42 | 45 | 42 | 0.635104 | 0.634848 | +0.000256 | False | False |
+| 45 | 42 | 42 | 0.634929 | 0.635365 | -0.000436 | False | False |
+| 45 | 45 | 42 | 0.637095 | 0.635365 | +0.001730 | False | True |
+
+| Descriptive contrast in NCP minus dense | BPB |
+|---|---:|
+| module 45 minus 42 | +0.002696 |
+| backbone 45 minus 42 | +0.002004 |
+| interaction difference of differences | -0.001061 |
+
+Only the explicit NCP initializer changes before optimizer construction. Backbone parameters and batch order match their controls; NCP parameters and the frozen codebook basis match their module-seed anchors. These cells cannot reselect the candidate or count as independent confirmation seeds.
+
+Module-initialization stage: qualified. Isolate NCP-module versus backbone initialization at fixed order42
 
 ## Initializer versus batch-order diagnosis
 
@@ -279,6 +302,8 @@ The optional order-seed field changes only the tape permutation; the architectur
 - trial-0079-D6-W768-s43: Separate the already confirmed joint depth/width gain into fixed-width depth and fixed-depth width comparisons; no tuning
 - trial-0080-D12-W384-s44: Separate the already confirmed joint depth/width gain into fixed-width depth and fixed-depth width comparisons; no tuning
 - trial-0081-D6-W768-s44: Separate the already confirmed joint depth/width gain into fixed-width depth and fixed-depth width comparisons; no tuning
+- trial-0082-MODULE-NCP-s42: Swap only the NCP module initializer to separate module from backbone initialization at fixed order42; frozen architecture/objectives; no seed selection; backbone42, module45
+- trial-0083-MODULE-NCP-s45: Swap only the NCP module initializer to separate module from backbone initialization at fixed order42; frozen architecture/objectives; no seed selection; backbone45, module42
 
 ## Correctness and diagnosis
 

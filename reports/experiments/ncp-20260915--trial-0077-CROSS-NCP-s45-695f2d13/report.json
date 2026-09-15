@@ -4566,9 +4566,10 @@
   },
   "randomness": {
     "batch_order_seed": 42,
-    "initialization_seed": 45
+    "initialization_seed": 45,
+    "ncp_initialization_seed": 45
   },
-  "reporter_sha256": "f791bc43f312ace58b98d1c27d27e1faea790c2c94c42de0b0b96f44064d6eaf",
+  "reporter_sha256": "05c81021a7d64e7a9d14a84902b5168d57f611fc65f832a1ac564b08f7a9023b",
   "schema_version": 1,
   "seeds": [
     45

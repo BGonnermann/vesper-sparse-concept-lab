@@ -13,7 +13,8 @@ audit-recovered.log:
 SyntaxError: '(' was never closed
 
 campaign.log:
-d diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.
+2026-09-15T17:34:20.191856+00:00 Prospective last training diagnostic: zero all future-derived objective weights, frozen architecture, seeds45/46; compare NOPRED/NCP/CAP/dense; no reselection. Both900sec timeouts plus preparation must fit before fixed75-minute final reserve18:26:32UTC. Plan recorded before new outcomes.
+2026-09-15T17:37:01.753018+00:00 Publication deferred; module evidence retained: AssertionError('Unrelated staged changes; publication deferred')
 
 controller-red.log:
 Traceback (most recent call last):
@@ -87,6 +88,14 @@ mechanism-queue.log:
 
 module-preview-green.log:
 Ran 4 tests in 0.618s
+OK
+
+module-seeds-queue.log:
+2026-09-15T17:37:01.753018+00:00 Publication deferred; module evidence retained: AssertionError('Unrelated staged changes; publication deferred')
+
+no-future-checks-cpu.log:
+ok
+Ran 2 tests in 1.243s
 OK
 
 normalization-green-cpu.log:
