@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-50 completed of 52 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+51 completed of 53 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -67,6 +67,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0050-I2-8e935c3aca-s42](../ncp-20260915--trial-0050-I2-8e935c3aca-s42-560d02c3/README.md) | 42 | 0.635248 | 218.6 | 224.3 | 38455 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
 | [trial-0051-I2-2ceac4edb4-s42](../ncp-20260915--trial-0051-I2-2ceac4edb4-s42-1ccc71c7/README.md) | 42 | 0.635224 | 218.4 | 224.1 | 38497 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
 | [trial-0052-I3-36eb3a7c14-s42](../ncp-20260915--trial-0052-I3-36eb3a7c14-s42-dd7b51fd/README.md) | 42 | 0.635110 | 218.6 | 225.9 | 38446 | 30,001,452 / 30,001,452 | 656.3 / 688.0 | False |
+| [trial-0053-I3-81772591c9-s42](../ncp-20260915--trial-0053-I3-81772591c9-s42-c8449081/README.md) | 42 | 0.632797 | 210.8 | 216.6 | 39918 | 30,001,452 / 30,001,452 | 670.2 / 694.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -150,6 +151,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0050-I2-8e935c3aca-s42: Test interaction of after_layer=1 and lr=0.0003; individual BPB 0.634774 and 0.634800 versus normalized anchor 0.635927; compare against stronger individual R-after_layer1
 - trial-0051-I2-2ceac4edb4-s42: Test interaction of chunk_size=2 and lr=0.0003; individual BPB 0.634780 and 0.634800 versus normalized anchor 0.635927; compare against stronger individual R-chunk_size2
 - trial-0052-I3-36eb3a7c14-s42: Frozen third-factor stage: add after_layer=1 from healthy individual R-after_layer1 (0.634774 BPB) to qualifying pair I2-37a8ad42c0 (0.631877); test incremental benefit, not assumed additivity; enforce utilization gate
+- trial-0053-I3-81772591c9-s42: Frozen third-factor stage: add chunk_size=2 from healthy individual R-chunk_size2 (0.634780 BPB) to qualifying pair I2-37a8ad42c0 (0.631877); test incremental benefit, not assumed additivity; enforce utilization gate
 
 ## Correctness and diagnosis
 
