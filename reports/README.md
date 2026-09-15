@@ -73,6 +73,7 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [ncp-20260915/trial-0042-I2-491f8344d3-s42](experiments/ncp-20260915--trial-0042-I2-491f8344d3-s42-0a3774ac/README.md) | completed | fixed_updates | 0.635269 |
 | [ncp-20260915/trial-0043-I2-2fd4eaacd2-s42](experiments/ncp-20260915--trial-0043-I2-2fd4eaacd2-s42-3aab367f/README.md) | completed | fixed_updates | 0.634902 |
 | [ncp-20260915/trial-0044-I2-ae91a9e332-s42](experiments/ncp-20260915--trial-0044-I2-ae91a9e332-s42-7f8617c8/README.md) | completed | fixed_updates | 0.632972 |
+| [ncp-20260915/trial-0045-I2-e4d0b728f2-s42](experiments/ncp-20260915--trial-0045-I2-e4d0b728f2-s42-bf33b8c4/README.md) | completed | fixed_updates | 0.634788 |
 | [ncp-20260915](experiments/ncp-20260915-224867c7/README.md) | running | stage_or_unknown | unknown |
 | [ngram-20260915/D](experiments/ngram-20260915--D-ba004b1c/README.md) | completed | fixed_updates | 0.634848 |
 | [ngram-20260915/DG](experiments/ngram-20260915--DG-29c4025f/README.md) | completed | fixed_updates | 0.634178 |
