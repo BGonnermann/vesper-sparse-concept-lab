@@ -74,7 +74,7 @@ def audit():
             evaluation_immutable=True,token_budget=True,paired_batch_order=True,matched_initialization=True))
     # Check Git's committed bytes, not only working-tree bytes, for published snapshots.
     archive_hashes={}
-    archived_sources=list(HERE.glob('trial-*/source/**/*.py'))+list(HERE.glob('trial-*/*.py'))
+    archived_sources=list(HERE.glob('trial-*/source/**/*.py'))+list(HERE.glob('trial-*/*.py'))+list(HERE.glob('*.py'))
     for p in archived_sources:
         digest=r.digest(p); name='reports/source-snapshots/'+digest+'.py'
         local=r.ROOT/name

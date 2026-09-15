@@ -70,6 +70,12 @@ def prepare():
 def main(publish=False):
     plan=prepare()
     if plan is None: return
+    prior=c.read(c.HERE/'fit-result.json')['results']['D12']['conservative_trial_forecast_seconds']
+    if 6*prior+800>c.remaining()-RESERVE:
+        c.log('Conditional transfer deferred: minimum paired work plus preflight allowance does not fit before report reserve')
+        r.write_json(c.HERE/'transfer-entry-result.json',dict(kind='transfer_entry',status='not_entered',
+            reason='Preflight budget gate',minimum_planning_seconds=6*prior+800,remaining_seconds=c.remaining()))
+        return
     r.write_json(c.HERE/'fit-candidates.json',plan['variants'])
     c.preflight()
     fit=c.read(c.HERE/'fit-result.json')['results']

@@ -115,6 +115,16 @@ def write(final=False):
         from ncp_frozen_pairs import collect
         result['frozen_comparisons']=collect(chosen)
         result['ncp_confirmation']=[x for x in result['frozen_comparisons']['pairs'] if x['control']=='D6']
+    if (HERE/'depth-grid-plan.json').exists():
+        from ncp_depth_grid import summary
+        result['depth_width_grid']=summary()
+    if (HERE/'transfer-entry-result.json').exists(): result['transfer_entry']=read(HERE/'transfer-entry-result.json')
+    if (HERE/'transfer-selection.json').exists():
+        from ncp_frozen_pairs import collect
+        result['transfer_selection']=read(HERE/'transfer-selection.json')
+        result['transfer_comparisons']=collect(result['transfer_selection'])
+        if (HERE/'transfer-pairs-result.json').exists():
+            result['transfer_omitted_by_budget']=read(HERE/'transfer-pairs-result.json').get('omitted_by_budget',[])
     r.write_json(HERE/'result.json',result)
     text=['# NCP campaign '+('final report' if final else 'progress'),'',
         f'{len(complete)} completed of {len(data)} attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.',
@@ -183,6 +193,24 @@ def write(final=False):
                 text.append(f'\n{control}: {summary["completed_pairs"]}/{summary["expected_pairs"]} pairs; '
                     f'mean delta {summary["mean_delta_bpb"]:+.6f}; {summary["negative_signs"]} negative signs. '
                     f'Primary same-sign improvement: {summary["primary_same_sign_improvement"]}.')
+    if 'depth_width_grid' in result:
+        grid=result['depth_width_grid']
+        text.extend(['','## Fixed-width depth decomposition','',grid['scope'],
+            f'{grid["complete_conditions"]}/{grid["expected_conditions"]} conditions completed.','',
+            '| Comparison | Seed | Candidate BPB | Control BPB | Delta | Parameter ratio | Update-time ratio |',
+            '|---|---:|---:|---:|---:|---:|---:|'])
+        for x in grid['comparisons']:
+            text.append(f'| {x["axis"]} | {x["seed"]} | {x["candidate_bpb"]:.6f} | {x["control_bpb"]:.6f} | '
+                f'{x["delta_bpb"]:+.6f} | {x["candidate_parameters"]/x["control_parameters"]:.2f} | {x["update_time_ratio"]:.2f} |')
+    if 'transfer_comparisons' in result:
+        text.extend(['','## Conditional depth12 transfer','',result['transfer_comparisons']['interpretation'],'',
+            '| Seed | Control | NCP BPB | Control BPB | Delta | Update-time ratio |','|---:|---|---:|---:|---:|---:|'])
+        for x in result['transfer_comparisons']['pairs']:
+            text.append(f'| {x["seed"]} | {x["control"]} | {x["candidate_bpb"]:.6f} | {x["control_bpb"]:.6f} | '
+                f'{x["delta_bpb"]:+.6f} | {x["update_time_ratio"]:.2f} |')
+        if result.get('transfer_omitted_by_budget'): text.append('\nOptional controls omitted for time: '+', '.join(result['transfer_omitted_by_budget']))
+    if 'transfer_entry' in result:
+        text.extend(['','Transfer entry status: '+result['transfer_entry']['status']+'. '+result['transfer_entry'].get('reason','')])
     text.extend(['','## Attempts, decisions and failures',''])
     for row in data:
         text.append(f'- {row["trial"]}: {row["hypothesis"]}'+(f' Failure: {row["error"]}' if row.get('error') else ''))
