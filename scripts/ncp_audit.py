@@ -32,7 +32,12 @@ def audit():
         for relative,expected in record.get('snapshot_files',{}).items():
             assert r.digest(directory/relative)==expected,(directory,relative)
         if record['status']!='completed':
+            failure_execution=None
+            if (directory/'execution.json').exists():
+                r.validate_execution(directory,record['snapshot_files'])
+                failure_execution=True
             failures.append(dict(trial=directory.name,status=record['status'],error=record.get('error'),
+                captured_execution_verified=failure_execution,
                 partial_checkpoint_verified=(r.digest(directory/'checkpoint_failure.pt')==record['partial_checkpoint_sha256']) if record.get('partial_checkpoint_sha256') else None))
             continue
         r.validate_execution(directory,record['snapshot_files'])

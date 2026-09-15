@@ -11,7 +11,8 @@ def gather(result):
                       ('module-initialization-budget-result.json', 'module_initialization_budget'),
                       ('no-future-result.json','no_future_diagnostic'),
                       ('no-future-budget-result.json','no_future_budget'),
-                      ('checkpoint-replay-result.json','checkpoint_replay')]:
+                      ('checkpoint-replay-result.json','checkpoint_replay'),
+                      ('concept-baselines-result.json','concept_baselines')]:
         path = c.HERE / name
         if path.exists():
             result[key] = c.read(path)
@@ -21,6 +22,23 @@ def gather(result):
 
 
 def append(text, result):
+    if 'concept_baselines' in result:
+        baseline=result['concept_baselines']
+        text.extend(['', '## Next-concept prediction baselines', '',
+            'The majority code is fixed from each checkpoint\'s saved training diagnostic counts; it is never fitted on validation. '
+            'Persistence predicts the current chunk\'s quantized code for the next chunk. Future codes are labels only, '
+            'computed after ordinary causal token prediction. Original token BPB and persistent state reproduce unchanged.', '',
+            '| Seed | Learned accuracy | Persistence accuracy | Training-majority accuracy | Comparisons per segment |',
+            '|---:|---:|---:|---:|---:|'])
+        for row in baseline['outcomes']:
+            if row['status']=='completed':
+                values=row['scores']
+                text.append(f'| {row["seed"]} | {values["learned"]["aggregate_accuracy"]:.4f} | '
+                    f'{values["persistence"]["aggregate_accuracy"]:.4f} | {values["training_majority"]["aggregate_accuracy"]:.4f} | '
+                    f'{row["comparisons_per_segment"]:,} |')
+            else: text.append('\nBaseline probe '+str(row['seed'])+': '+row['status']+'. '+row.get('reason',row.get('error','')))
+        text.append('\nThese are code-label prediction accuracies on the same validation corpus, not semantic-concept evidence '
+            'or additional independent seeds. Better auxiliary prediction does not establish better token modeling.')
     if 'checkpoint_replay' in result:
         replay=result['checkpoint_replay']
         text.extend(['', '## Independent saved-checkpoint evaluation replay', '',

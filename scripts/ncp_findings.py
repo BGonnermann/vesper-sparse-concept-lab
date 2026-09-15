@@ -87,6 +87,64 @@ def main():
         'All per-trial configurations, hashes, failures, utilization diagnostics and source corrections are in '
         '[the full campaign report](CAMPAIGN.md). The initial finite total-loss guard failures do not establish divergence; '
         'the corrected guard and exact retries are disclosed there. Collapsed candidates remain reported and excluded from selection.'])
+    findings['additional_evidence_hashes']={}
+    grid=c.read(c.HERE/'depth-grid-result.json')
+    assert grid['status']=='completed'
+    text.extend(['', '## Depth and width confirmation', '',
+        '| Change | Mean BPB delta | Mean update-time ratio |', '|---|---:|---:|'])
+    for axis in sorted({x['axis'] for x in grid['comparisons']}):
+        group=[x for x in grid['comparisons'] if x['axis']==axis]
+        text.append(f'| {axis.replace("_"," ")} | {statistics.mean(x["delta_bpb"] for x in group):+.6f} | '
+            f'{statistics.mean(x["update_time_ratio"] for x in group):.2f} |')
+    text.append('\nBoth seeds favor increasing either axis. The original native-depth comparison improves by0.046771 BPB on average, '
+        'with5.13 times the parameters; it changes both depth and width. Similar measured runtime across widths is specific '
+        'to this runtime and microbatch setup, not a FLOPs equivalence claim.')
+    module=c.read(c.HERE/'module-initialization-result.json')
+    assert module['status']=='completed'
+    text.extend(['', '## Mechanism diagnosis', '',
+        f'Crossed initializer/order runs traced most of the observed reversal to initialization. At fixed order42, '
+        f'the descriptive module-initializer contrast is {module["contrasts"]["module_45_minus_42"]:+.6f} BPB and '
+        f'the backbone contrast is {module["contrasts"]["backbone_45_minus_42"]:+.6f}. '
+        'Only two deliberately chosen initializer levels were tested; this is not a general variance estimate.'])
+    optional=c.HERE/'no-future-result.json'
+    if optional.exists() and c.read(optional)['status']=='completed':
+        no_future=c.read(optional)
+        delta=statistics.mean(x['comparisons']['FROZEN-NOPRED']['delta_bpb'] for x in no_future['rows'])
+        text.append(f'\nRemoving all future-target objectives, including VQ, changes mean BPB by {delta:+.6f} '
+            'versus NOPRED on reused seeds45/46. It does not reveal a substantial VQ-supervision benefit in this pair. '
+            'Token-only feedback still trains the latent path; it is an ablation, not an NCP candidate.')
+    probe=c.HERE/'feedback-interventions-result.json'
+    if probe.exists() and c.read(probe)['status']=='completed':
+        outputs=c.read(probe)['probes']
+        zero=[next(x['delta_from_original_bpb'] for x in p['outcomes'] if x['condition']=='feedback_zero') for p in outputs]
+        text.append(f'\nEvery original checkpoint score reproduced within1e-6 BPB. Zeroing feedback worsens BPB by '
+            f'{min(zero):.6f} to {max(zero):.6f}; code-identity rotations have smaller effects. '
+            'Reliance on feedback does not establish an advantage over a separately trained dense or capacity control.')
+    baseline=c.HERE/'concept-baselines-result.json'
+    if baseline.exists() and c.read(baseline)['status']=='completed':
+        evidence=c.read(baseline)['outcomes']
+        learned=[x['scores']['learned']['aggregate_accuracy'] for x in evidence]
+        persistence=[x['scores']['persistence']['aggregate_accuracy'] for x in evidence]
+        majority=[x['scores']['training_majority']['aggregate_accuracy'] for x in evidence]
+        text.append(f'\nOn the same validation batches, learned next-code accuracy is {min(learned):.1%}–{max(learned):.1%}, '
+            f'versus {min(persistence):.1%}–{max(persistence):.1%} for repeating the current code and '
+            f'{min(majority):.1%}–{max(majority):.1%} for a training-derived majority code. '
+            'Learned predictions beat both baselines on every checkpoint. This supports code-label prediction learning, '
+            'not semantic concepts or a reliable token-quality benefit.')
+    replay=c.HERE/'checkpoint-replay-result.json'
+    if replay.exists() and c.read(replay)['status']=='completed':
+        evidence=c.read(replay)
+        text.append(f'\nAll {evidence["completed_checkpoints"]} completed checkpoints independently replayed their original '
+            f'BPB within1e-6 (largest difference {evidence["max_absolute_bpb_difference"]:.3g}), using captured source '
+            'and unchanged saved weights. This confirms reproducibility of these scores, not generalization.')
+    text.extend(['', '## Next best experiment', '',
+        'Compare dense D6-width768 and D12-width768 at longer fixed-token budgets on new paired seeds, '
+        'with one final evaluation on an untouched test split. Measure whether the depth gain persists and warrants '
+        'roughly twice the update time. Keep quality-versus-time analysis separate. Do not combine NCP with other mechanisms '
+        'on the strength of these mixed results. No next campaign is launched automatically.'])
+    for name in ('depth-grid-result.json','module-initialization-result.json','no-future-result.json','feedback-interventions-result.json','concept-baselines-result.json','checkpoint-replay-result.json'):
+        path=c.HERE/name
+        if path.exists(): findings['additional_evidence_hashes'][name]=r.digest(path)
     r.write_json(c.HERE / 'findings-result.json', findings)
     (c.HERE / 'findings.md').write_text('\n'.join(text) + '\n', encoding='utf-8')
     destination = r.ROOT / 'reports/experiments' / reports.identity(c.HERE, r.ROOT)[0]

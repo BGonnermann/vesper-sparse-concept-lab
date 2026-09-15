@@ -39,5 +39,33 @@ def ready(rows):
             assert c.read(c.HERE/'no-future-budget-result.json')['status']=='skipped'
         assert c.read(c.HERE/'batch-evidence-result.json')['status']=='completed'
         assert c.read(c.HERE/'basis-evidence-result.json')['status']=='completed'
+        for name in ('tape-origin-audit-result.json','split-audit-result.json','official-source-byte-audit-result.json'):
+            assert c.read(c.HERE/name)['status']=='completed',name
+        replay=c.read(c.HERE/'checkpoint-replay-result.json')
+        assert replay['status']=='completed'
+        complete={row['trial'] for row in rows if row['status']=='completed'}
+        assert {row['trial'] for row in replay['outcomes']}==complete
+        assert len(replay['outcomes'])==len(complete)==replay['completed_checkpoints']==replay['expected_checkpoints']
+        baseline=c.read(c.HERE/'concept-baselines-result.json')
+        assert baseline['status']=='completed' and {row['seed'] for row in baseline['outcomes']}=={43,44,45,46}
+        for aggregate,plan_path,driver_path in (
+            (replay,c.HERE/'checkpoint-replay/plan.json',c.HERE/'checkpoint-replay-driver.py'),
+            (baseline,c.HERE/'concept-baselines-plan.json',c.HERE/'concept-baselines-driver.py')):
+            assert r.digest(plan_path)==aggregate['plan_sha256']
+            plan=c.read(plan_path)
+            assert r.digest(driver_path)==plan['script_sha256']
+            for row in aggregate['outcomes']:
+                path=c.HERE/row['result_path']
+                assert r.digest(path)==row['result_sha256'],'Probe receipt changed'
+                child=c.read(path)
+                assert child['status']=='completed' and child['result_sha256']==hashes[row['trial']]
+                assert child['script_sha256']==plan['script_sha256'] and child['settings_immutable']
+                original=c.read(c.HERE/row['trial']/'result.json')
+                assert child['checkpoint_sha256']==original['checkpoint_sha256']
+                assert child['source_hashes']==original['snapshot_files']
+                assert abs(child['bpb']-original['metrics']['val_bpb'])<=1e-6
+                assert child['persistent_state_immutable'] and child['state_before']==child['state_after']
+                assert child['accounting']['tokens']==65536 and child['accounting']['batches']==64
+                assert r.digest(c.HERE/row['log_path'])==row['log_sha256']
     return dict(audit_sha256=r.digest(c.HERE/'audit-result.json'),audit_age_seconds=age,
         attempted_trials=len(rows),verified_completed_trials=len(audit['verified_trials']))

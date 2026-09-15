@@ -20,6 +20,30 @@ def opening(result):
 
 
 def append(text,result):
+    text.extend(['', '## Sources and precise mechanism scope', '',
+        '[ConceptLM paper v1](https://arxiv.org/html/2602.08984v1) and '
+        '[official implementation at a0ab281](https://github.com/LUMIA-Group/ConceptLM/tree/a0ab281286f5c0337c35de3181cc992c562eacaa) '
+        'were inspected before implementation. The later '
+        '[ArchPreview paper v1](https://arxiv.org/pdf/2609.10715v1), '
+        '[evaluation repository at e9e4ff4](https://github.com/LUMIA-Group/ncp_olmo_eval/tree/e9e4ff4b443bb3c321030a9a437be216dc7d6722), and '
+        '[released source at d642693](https://huggingface.co/ArchSpace-Collection/NCP_ArchPreview_dolma3_8.9B_Stage1/tree/d642693c0efaca7329e544076397105238bda3bf) '
+        'were also checked. Exact revisions and inspected-file SHA256 values are in sources-result.json and archpreview-source-result.json.', '',
+        '| Design element | This prototype |', '|---|---|',
+        '| Multi-token target | Complete nonoverlapping chunks; detached encoder means. Selected chunk length4. |',
+        '| Discrete concepts | Nearest transformed code per segment gives the training label. Selected3 segments,16 entries each. |',
+        '| Predictor | Two causal concept Transformer blocks after dense block0; predicts the next chunk\'s pooled features and code identity. |',
+        '| Feedback | Softmax-weighted predicted codes, never ground-truth future codes. Raw-logit mixing was a separately reported unsuccessful screen. |',
+        '| Codebook learning | Frozen random basis plus trainable two-layer transforms; VQ fitting and permitted prediction/token gradients update transforms through the optimizer. No forward-time codebook update. |',
+        '| Inference | Only complete known chunks are pooled. Chunkj first affects token logit(j+1)k−1, which predicts the first token of the next chunk. No future inputs or labels are needed. |',
+        '| Reproduction limits | Small dense backbone, native SDPA, distinct initialization/normalization/position features and TinyStories protocol. Large ArchPreview16/8/16 hierarchy and hierarchical residuals are omitted. Official training code was unavailable. |', '',
+        'The paper describes probability-weighted codes, while the inspected released model sources use raw logits. '
+        'That source discrepancy is preserved explicitly; this campaign tests a simplified inspired mechanism, not a faithful paper reproduction. '
+        'No official model weights were downloaded. Official NCP model code was inspected rather than copied or imported; '
+        'the separately pinned autoresearch backbone was reused.',
+        'The original source-review hashes identify inspected Windows checkout bytes. '
+        'official-source-byte-audit-result.json separately records raw pinned Git-blob hashes: all four reviewed files '
+        'match exactly after CRLF-to-LF normalization. This newline distinction does not affect the separately captured, '
+        'byte-verified training-source archives.'])
     frozen=result.get('frozen_selection')
     if frozen:
         rows=[x for x in result['rows'] if x['status']=='completed' and x['label']==frozen['label'] and x['seed'] in frozen['seeds']]
@@ -76,6 +100,19 @@ def append(text,result):
         if path.exists():
             receipt=c.read(path)
             text.append(f'\n{filename}: {receipt["status"]}; {len(receipt[key])} checks. '+receipt['interpretation'])
+    tape=c.HERE/'tape-origin-audit-result.json'
+    if tape.exists():
+        receipt=c.read(tape)
+        text.append(f'\nTrain-tape origin: {receipt["status"]}; {receipt["verified_microbatches"]:,}/8,192 '
+            'saved microbatches match a fresh execution of the captured train loader, with no duplicate tape saved.')
+    split=c.HERE/'split-audit-result.json'
+    if split.exists():
+        receipt=c.read(split)
+        text.append(f'\nThe sealed split audit compares {receipt["counts"]["validation_rows"]:,} validation documents '
+            f'with {receipt["counts"]["training_rows"]:,} training documents. '
+            f'Exact overlap: {receipt["checks"]["exact"]["overlapping_validation_rows"]} validation rows; '
+            f'whitespace-normalized overlap: {receipt["checks"]["whitespace_normalized"]["overlapping_validation_rows"]}. '
+            'Test rows were excluded. This does not rule out near-duplicates, shared phrases or dataset-generation leakage.')
     gate=c.HERE/'active-preflight.json'
     if gate.exists():
         receipt=c.read(gate)
