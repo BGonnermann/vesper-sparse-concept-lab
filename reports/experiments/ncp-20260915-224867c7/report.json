@@ -69,6 +69,7 @@
         "reports/source-snapshots/37b387890559604e9f7f27e001d5cef00e39f197799a9d1d425a2510ccc8147d.py": true,
         "reports/source-snapshots/38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834.py": true,
         "reports/source-snapshots/3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002.py": true,
+        "reports/source-snapshots/41753e0703e23c747bf1af8337fdd6ec5f44dab0407628166a306aa2c8516ace.py": true,
         "reports/source-snapshots/46bbe24f22798b4fbd0cb9c679df6b59e84c8706cbd9e38fedea1475962cae89.py": true,
         "reports/source-snapshots/4b28bbef40a5bd2132dcac27e3f8559a5a47b36b80a940c44c09079874349f9d.py": true,
         "reports/source-snapshots/4f89a9624e1d6119b4c1fd3d03e41ed8b8770e3e40c3d8d27034821add494c22.py": true,
@@ -83,6 +84,7 @@
         "reports/source-snapshots/6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222.py": true,
         "reports/source-snapshots/70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862.py": true,
         "reports/source-snapshots/71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7.py": true,
+        "reports/source-snapshots/71b0423e2fa1303b00af32bb5c37b6127c1f3f9cf25cc30c1fbffb76ecaaf4d3.py": true,
         "reports/source-snapshots/72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e.py": true,
         "reports/source-snapshots/72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016.py": true,
         "reports/source-snapshots/8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14.py": true,
@@ -123,19 +125,21 @@
         "note": "Full values remain in the hashed local artifact.",
         "omitted_items": 85
       },
-      "free_disk_bytes": 245372841984,
+      "free_disk_bytes": 230156210176,
       "kind": "campaign_evidence_audit",
-      "measured_at_utc": "2026-09-15T18:02:34.710423+00:00",
-      "measured_campaign_logical_bytes": 9829174453,
+      "measured_at_utc": "2026-09-15T19:35:13.709286+00:00",
+      "measured_campaign_logical_bytes": 9829759016,
       "measured_checkpoint_bytes": 8887947061,
       "preserved_noncompleted": [
         {
+          "captured_execution_verified": true,
           "error": "RuntimeError('Training child exit 1')",
           "partial_checkpoint_verified": null,
           "status": "failed",
           "trial": "trial-0002-NCP-s42"
         },
         {
+          "captured_execution_verified": true,
           "error": "RuntimeError('Training child exit 1')",
           "partial_checkpoint_verified": null,
           "status": "failed",
@@ -1675,6 +1679,33 @@
       "interpretation": "One campaign only. No training or automatic subsequent campaign. Final report is saved before the deadline; publication failure preserves local results.",
       "kind": "deadline_closeout_plan",
       "status": "prepared"
+    },
+    "deadline-closeout-result.json": {
+      "deadline": "2026-09-15T19:41:32+00:00",
+      "kind": "deadline_closeout",
+      "local_final_report_saved": true,
+      "plan_sha256": "9d579505dc11446487a2b0fa92a66d9a34e96c49b9e47bb0c00c790597757037",
+      "script_sha256": "41753e0703e23c747bf1af8337fdd6ec5f44dab0407628166a306aa2c8516ace",
+      "started_at": "2026-09-15T19:35:00.000316+00:00",
+      "status": "running",
+      "steps": {
+        "audit": {
+          "log": "deadline-audit.log",
+          "returncode": 0,
+          "sha256": "ad8d923f2e3be3cae372370b89c11d820f3e4e1755f3ae9e9342352914a59df1"
+        },
+        "findings": {
+          "log": "deadline-findings.log",
+          "returncode": 0,
+          "sha256": "ed1199386678e7b3fb822c9ced6ab9532bda02c54fde7fb63b11d88cfddda692"
+        },
+        "report": {
+          "log": "deadline-report.log",
+          "returncode": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "training_updates": 0
     },
     "dense-scale-result.json": {
       "checkpoint_sha256": "3a9f8857ba88c8d21792400d535ac67df8685b47ceb6c05a7b9ddc1899052cd5",
@@ -18943,7 +18974,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "070bf321c163b5c9c4ff58a7cc4989d2661aaae7",
+      "publication_commit": "55fceaf06777c17ee0d0095447447700b106d3fc",
       "status": "completed",
       "verified_remote": true
     },
@@ -19426,9 +19457,9 @@
       "sha256": "48169b7f645467b0dc08a240fd95c6c6daf3d84369fe5ebeff090f8beb184405"
     },
     "audit-result.json": {
-      "bytes": 59628,
+      "bytes": 59930,
       "local_path": "runs/autoresearch/ncp-20260915/audit-result.json",
-      "sha256": "d4a0c7009927e55be3e7c2bb1325718a5d87a6806ddd069fe05cda01275d1008"
+      "sha256": "c77d1ec1b5a2a41230e11d585aa38c9fcc7d8f18ad2dd9b5efcd3bfc2aea7509"
     },
     "basis-evidence-final.log": {
       "bytes": 46,
@@ -19461,9 +19492,9 @@
       "sha256": "bdc15165188e73fa6723070c44dcfe721b92e92f3541e4bbab54a7d96ae74c8c"
     },
     "campaign.log": {
-      "bytes": 134771,
+      "bytes": 136980,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "7f73a3ed2e8f52601d0127cd5f4cd7be32b9b21297a8842b83c769b425f8b2d7"
+      "sha256": "900bbf03792523e7e0859c2565e5d71beee5046a333f41af761786ecb2b2d61c"
     },
     "checkpoint-replay-driver.py": {
       "bytes": 15268,
@@ -19630,6 +19661,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/cuda-suite1.log",
       "sha256": "10bfb6ff3cc5c6783987d4747c76b32f70767ecb57bbe3f3704c7ebe00a6a3ea"
     },
+    "deadline-audit.log": {
+      "bytes": 30608,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-audit.log",
+      "sha256": "ad8d923f2e3be3cae372370b89c11d820f3e4e1755f3ae9e9342352914a59df1"
+    },
     "deadline-closeout-driver.py": {
       "bytes": 5199,
       "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-driver.py",
@@ -19645,10 +19681,35 @@
       "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-plan.json",
       "sha256": "874d8f05fb3a6762f5e9fb93f68d87ee672dd13db03225aaebcfbe2b1afee518"
     },
+    "deadline-closeout-queue.log": {
+      "bytes": 2108,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-queue.log",
+      "sha256": "018b0fcf1e1280a7cd9d7037d362cbd6a68b6f000bba949695ed47860a3fff9e"
+    },
+    "deadline-closeout-result.json": {
+      "bytes": 926,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-result.json",
+      "sha256": "295869643722f777bfe48a11fd9859a67f3e6bd086557bc903fc463d29010277"
+    },
     "deadline-closeout-v2-driver.py": {
       "bytes": 5554,
       "local_path": "runs/autoresearch/ncp-20260915/deadline-closeout-v2-driver.py",
       "sha256": "41753e0703e23c747bf1af8337fdd6ec5f44dab0407628166a306aa2c8516ace"
+    },
+    "deadline-findings.log": {
+      "bytes": 81,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-findings.log",
+      "sha256": "ed1199386678e7b3fb822c9ced6ab9532bda02c54fde7fb63b11d88cfddda692"
+    },
+    "deadline-publication.log": {
+      "bytes": 0,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-publication.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "deadline-report.log": {
+      "bytes": 0,
+      "local_path": "runs/autoresearch/ncp-20260915/deadline-report.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "dense-scale-result.json": {
       "bytes": 5242,
@@ -20528,7 +20589,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "7b79fa8b59ee33296258ab7113d2fb75f2fdb9a6c529c07754814f643e3efdeb"
+      "sha256": "26364f3913a39670be21b556aac297b62d026a63365e595270a1267045a32b79"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -20551,9 +20612,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 841903,
+      "bytes": 842123,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "c0bf35b830d7204928c07cedc9f303cfaa31b4168646f7205c3bab35f103cae2"
+      "sha256": "e24c9927205e7e526ec5fbb42086dab821975aaad90bcffc1c2b93da969ffee1"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -20586,9 +20647,9 @@
       "sha256": "37cbe68de3bd4b2178a0f08bf51cea7d8f9ed0dffcee3df2301a94b46b114bd1"
     },
     "summary.md": {
-      "bytes": 56096,
+      "bytes": 56100,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "6f9990c2e7207bc13197b36b030c6f1e0e95b5da452e03e2f31fe4cfe40c5014"
+      "sha256": "b6990d088fa47921139a6b3817f6d8a9125e4ab07e432b1233d8b41ba38f655d"
     },
     "tape-origin-audit-result.json": {
       "bytes": 1531,
@@ -20653,7 +20714,7 @@
     "Two paired seeds are preliminary; opposite signs do not establish equivalence."
   ],
   "metrics": null,
-  "outcome": "running",
+  "outcome": "completed",
   "protocol": null,
   "provenance": {
     "archived_source": {

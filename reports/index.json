@@ -1997,7 +1997,7 @@
       "compatibility_fingerprint": null,
       "experiment_id": "ncp-20260915-224867c7",
       "metrics": null,
-      "outcome": "running"
+      "outcome": "completed"
     },
     {
       "artifact_directory": "runs/autoresearch/ngram-20260915/D",

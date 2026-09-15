@@ -1,4 +1,4 @@
-# NCP campaign progress
+# NCP campaign final report
 
 83 completed of 85 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
@@ -434,8 +434,8 @@ Compare dense D6-width768 with D12-width768 over longer fixed-token budgets on n
 
 ## Saved-evidence audit and storage
 
-Audit measured 2026-09-15T18:02:34.710423+00:00: 83 completed trials checked; 2 noncompleted attempts retained. Committed source archives byte-verified: True.
-Campaign logical files: 9.15 GiB; new trial checkpoints: 8.28 GiB; free disk at audit: 228.52 GiB. Initial free disk was237GiB; the initial forecast was15–40GiB of new storage. Existing roughly20GiB of checkpoints remain preserved. No checkpoint copies were made solely for inference probes.
+Audit measured 2026-09-15T19:35:13.709286+00:00: 83 completed trials checked; 2 noncompleted attempts retained. Committed source archives byte-verified: True.
+Campaign logical files: 9.15 GiB; new trial checkpoints: 8.28 GiB; free disk at audit: 214.35 GiB. Initial free disk was237GiB; the initial forecast was15–40GiB of new storage. Existing roughly20GiB of checkpoints remain preserved. No checkpoint copies were made solely for inference probes.
 
 batch-evidence-result.json: completed; 83 checks. CPU recomputation from the actual sealed tape, not GPU training or a new quality measurement
 

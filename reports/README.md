@@ -115,7 +115,7 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [ncp-20260915/trial-0083-MODULE-NCP-s45](experiments/ncp-20260915--trial-0083-MODULE-NCP-s45-8c343fb0/README.md) | completed | fixed_updates | 0.634929 |
 | [ncp-20260915/trial-0084-FROZEN-NOFUTURE-s45](experiments/ncp-20260915--trial-0084-FROZEN-NOFUTURE-s45-0c47bdef/README.md) | completed | fixed_updates | 0.639124 |
 | [ncp-20260915/trial-0085-FROZEN-NOFUTURE-s46](experiments/ncp-20260915--trial-0085-FROZEN-NOFUTURE-s46-127b5495/README.md) | completed | fixed_updates | 0.638114 |
-| [ncp-20260915](experiments/ncp-20260915-224867c7/README.md) | running | stage_or_unknown | unknown |
+| [ncp-20260915](experiments/ncp-20260915-224867c7/README.md) | completed | stage_or_unknown | unknown |
 | [ngram-20260915/D](experiments/ngram-20260915--D-ba004b1c/README.md) | completed | fixed_updates | 0.634848 |
 | [ngram-20260915/DG](experiments/ngram-20260915--DG-29c4025f/README.md) | completed | fixed_updates | 0.634178 |
 | [ngram-20260915/M](experiments/ngram-20260915--M-0cc0e90f/README.md) | completed | fixed_updates | 0.637217 |
