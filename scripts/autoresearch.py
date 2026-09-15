@@ -231,6 +231,13 @@ def validate_protocol(value):
                 or type(value.get("seed")) is not int or value["seed"] not in (42,45)):
             raise ValueError("Explicit order seeds require fixed updates and initializer/order levels42 or45.")
         extra.add("batch_order_seed")
+    if "ncp_initialization_seed" in value:
+        if (not fixed or type(value["ncp_initialization_seed"]) is not int
+                or value["ncp_initialization_seed"] not in (42,45)
+                or type(value.get("seed")) is not int or value["seed"] not in (42,45)
+                or value.get("batch_order_seed",value["seed"]) != 42):
+            raise ValueError("Module initializer requires fixed updates, initializer/module42or45 and effective order42.")
+        extra.add("ncp_initialization_seed")
     numeric = {"sequence_length", "tokens_per_update", "microbatch_size", "eval_batch_size",
                "eval_tokens", "smoke_eval_tokens", "training_seconds", "smoke_timeout_seconds",
                "baseline_timeout_seconds"}

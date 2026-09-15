@@ -14,6 +14,7 @@ def rows():
     for path in sorted(HERE.glob('trial-*/result.json')):
         record=read(path); row=dict(trial=path.parent.name,label=record['label'],seed=record['seed'],
             batch_order_seed=record.get('protocol',{}).get('batch_order_seed',record['seed']),
+            ncp_initialization_seed=(record.get('protocol',{}).get('ncp_initialization_seed',record['seed']) if record.get('candidate',{}).get('ncp') else None),
             phase=record['phase'],status=record['status'],hypothesis=record['selection']['hypothesis'],
             error=record.get('error'),configuration=record.get('candidate'),wall_seconds=record.get('wall_seconds'),
             source_hashes={k:v for k,v in record.items() if k.endswith('_sha256')},
@@ -89,7 +90,7 @@ def write(final=False):
     result=dict(kind='ncp_campaign',status='completed' if final else 'running',rows=data,
         depth_confirmation=pairs(data,'D12','D6',[43,44]),remaining_seconds=remaining())
     controls=[x for x in complete if x['label']=='D6' and x['seed']==42]
-    eligible=[x for x in complete if x['seed']==42 and x['phase']!='initializer_order_diagnostic' and x['configuration'].get('ncp',{}).get('mode')=='feedback'
+    eligible=[x for x in complete if x['seed']==42 and x['phase'] not in ('initializer_order_diagnostic','module_initialization_diagnostic') and x['configuration'].get('ncp',{}).get('mode')=='feedback'
         and not x['ncp_health']['collapsed']
         and (x['configuration']['ncp']['prediction_weight']>0 or x['configuration']['ncp']['ce_weight']>0)]
     if controls and eligible:

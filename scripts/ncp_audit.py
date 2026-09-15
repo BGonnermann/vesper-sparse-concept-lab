@@ -62,7 +62,13 @@ def audit():
         settings=record['candidate'].get('ncp')
         if settings:
             # These settings determine parameter shapes and initialization RNG use.
-            concept_key=(*backbone_key,settings['layers'],settings['entries'])
+            module_seed=record['protocol'].get('ncp_initialization_seed',seed)
+            concept_key=(module_seed,*backbone_key[1:],settings['layers'],settings['entries'])
+            if 'ncp_initialization_seed' in record['protocol']:
+                receipt=read(directory/'ncp-initialization.json')
+                assert receipt['ncp_initialization_seed']==module_seed
+                assert receipt['effective_seed']==12600+module_seed
+                assert receipt['backbone_initialization_seed']==seed
             concept={name:value for name,value in parameters.items() if name.startswith('ncp.')}
             if concept_key in concept_initializations:
                 assert concept==concept_initializations[concept_key],(directory,'matched NCP initialization differs')

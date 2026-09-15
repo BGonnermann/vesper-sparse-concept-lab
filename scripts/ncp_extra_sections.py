@@ -5,13 +5,35 @@ import ncp_campaign as c
 def gather(result):
     for name, key in [('feedback-interventions-result.json', 'feedback_interventions'),
                       ('crossed-order-result.json', 'initializer_order_diagnostic'),
-                      ('crossed-order-entry-result.json', 'initializer_order_entry')]:
+                      ('crossed-order-entry-result.json', 'initializer_order_entry'),
+                      ('module-initialization-result.json', 'module_initialization_diagnostic'),
+                      ('module-initialization-entry-result.json', 'module_initialization_entry'),
+                      ('module-initialization-budget-result.json', 'module_initialization_budget')]:
         path = c.HERE / name
         if path.exists():
             result[key] = c.read(path)
 
 
 def append(text, result):
+    if 'module_initialization_diagnostic' in result:
+        evidence=result['module_initialization_diagnostic']
+        text.extend(['', '## Backbone versus NCP module initialization', '', evidence['interpretation'], '',
+            '| Backbone seed | NCP module seed | Order seed | NCP BPB | Dense BPB | Delta | Collapsed | Reused |',
+            '|---:|---:|---:|---:|---:|---:|---|---|'])
+        for cell in evidence['cells']:
+            text.append(f'| {cell["backbone_seed"]} | {cell["ncp_initialization_seed"]} | {cell["batch_order_seed"]} | '
+                f'{cell["bpb"]:.6f} | {cell["dense_bpb"]:.6f} | {cell["delta_bpb"]:+.6f} | {cell["collapsed"]} | {cell["reused"]} |')
+        if evidence['contrasts']:
+            text.extend(['', '| Descriptive contrast in NCP minus dense | BPB |', '|---|---:|'])
+            for key,value in evidence['contrasts'].items():
+                text.append(f'| {key.replace("_", " ")} | {value:+.6f} |')
+        text.append('\nOnly the explicit NCP initializer changes before optimizer construction. Backbone parameters and '
+            'batch order match their controls; NCP parameters and the frozen codebook basis match their module-seed anchors. '
+            'These cells cannot reselect the candidate or count as independent confirmation seeds.')
+    for key in ('module_initialization_entry','module_initialization_budget'):
+        if key in result:
+            entry=result[key]
+            text.append('\nModule-initialization stage: '+entry['status']+'. '+entry.get('reason',''))
     if 'feedback_interventions' in result:
         evidence = result['feedback_interventions']
         assert evidence['status'] == 'completed'

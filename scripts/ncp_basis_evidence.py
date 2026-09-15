@@ -24,16 +24,16 @@ def main():
         anchors[seed] = (path.name, state['ncp.codebook.basis'].clone())
         del state
     for path, record in records:
-        if record['status']!='completed' or record['label'] not in ('FROZEN-AUX','FROZEN-NOPRED','CROSS-NCP'):
+        if record['status']!='completed' or record['label'] not in ('FROZEN-AUX','FROZEN-NOPRED','CROSS-NCP','MODULE-NCP'):
             continue
-        seed = record['seed']
+        seed = record['protocol'].get('ncp_initialization_seed',record['seed'])
         checkpoint = path / 'checkpoint_pre_eval.pt'
         assert r.digest(checkpoint)==record['checkpoint_sha256']
         state = torch.load(checkpoint, map_location='cpu', weights_only=True)
         basis = state['ncp.codebook.basis']
         assert torch.equal(basis, anchors[seed][1]), ('Frozen basis differs for the same initializer', path)
-        checks.append(dict(trial=path.name, initialization_seed=seed,
-            batch_order_seed=record['protocol'].get('batch_order_seed',seed), anchor_trial=anchors[seed][0],
+        checks.append(dict(trial=path.name, initialization_seed=record['seed'],ncp_initialization_seed=seed,
+            batch_order_seed=record['protocol'].get('batch_order_seed',record['seed']), anchor_trial=anchors[seed][0],
             checkpoint_sha256=record['checkpoint_sha256'], basis_shape=list(basis.shape),
             basis_sha256=hashlib.sha256(basis.contiguous().view(torch.uint8).numpy().tobytes()).hexdigest(), verified=True))
         del state

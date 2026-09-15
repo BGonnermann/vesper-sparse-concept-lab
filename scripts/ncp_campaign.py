@@ -139,7 +139,7 @@ def preflight():
 
 
 @exclusive_gpu
-def trial(label, seed, hypothesis, phase='screen', control='D6', *, batch_order_seed=None):
+def trial(label, seed, hypothesis, phase='screen', control='D6', *, batch_order_seed=None, ncp_initialization_seed=None):
     if not can_launch(remaining()):
         log('Report reserve reached; no new child'); return None
     gate=read(HERE/'active-preflight.json')
@@ -154,6 +154,7 @@ def trial(label, seed, hypothesis, phase='screen', control='D6', *, batch_order_
     order_seed=seed if batch_order_seed is None else batch_order_seed
     selection=dict(label=label,seed=seed,batch_order_seed=order_seed,phase=phase,hypothesis=hypothesis,control=control,
         selected_at=datetime.now(timezone.utc).isoformat(),remaining_seconds=remaining(),free_disk_bytes=free)
+    if ncp_initialization_seed is not None: selection['ncp_initialization_seed']=ncp_initialization_seed
     r.write_json(out/'selection.json',selection)
     log(f'START {out.name}: {hypothesis}; log={out / "run.log"}')
     metadata=dict(kind='fixed_updates',status='prepared',metrics=None,label=label,seed=seed,phase=phase,selection=selection)
@@ -164,6 +165,7 @@ def trial(label, seed, hypothesis, phase='screen', control='D6', *, batch_order_
         config=candidate(label)
         protocol=read(ROOT/'runs/autoresearch/equal-token-20260915/protocol-42.json'); protocol['seed']=seed
         if batch_order_seed is not None: protocol['batch_order_seed']=batch_order_seed
+        if ncp_initialization_seed is not None: protocol['ncp_initialization_seed']=ncp_initialization_seed
         r.validate_protocol(protocol)
         metadata.update(condition='dense',candidate=config,protocol=protocol,upstream=setup,data_seal=seal,
             record_version=7,git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
@@ -208,7 +210,8 @@ def trial(label, seed, hypothesis, phase='screen', control='D6', *, batch_order_
             peer=read(p)
             if peer['status']!='completed': continue
             without_seeds=lambda values:{k:v for k,v in values.items() if k not in ('seed','batch_order_seed')}
-            assert without_seeds(protocol)==without_seeds(peer['protocol']),'Paired protocol mismatch'
+            protocol_payload=lambda values:{k:v for k,v in values.items() if k not in ('seed','batch_order_seed','ncp_initialization_seed')}
+            assert protocol_payload(protocol)==protocol_payload(peer['protocol']),'Paired protocol mismatch'
             peer_order=peer['protocol'].get('batch_order_seed',peer['seed'])
             if peer_order==order_seed:
                 assert without_seeds(batches)==without_seeds(read(p.parent/'batches.json')),'Paired data order mismatch'

@@ -85,7 +85,7 @@ def emit(source, root=ROOT):
             if path.name.startswith(('prior-', 'initialization-', 'order-')): continue
             value = load(path, diagnostics)
             if isinstance(value, dict):
-                if path.name in {'training-failure.json','ncp-health.json','ncp-diagnostics.json','selection.json','evaluation-immutability.json','sources-result.json','model.json','memory.json','training.json','routing.json','environment.json','candidate.json','protocol.json','fixed-training.json','comparison.json','analysis.json','dense.json','moe.json','ngram-diagnostics.json','ngram-tape-diagnostics.json','plan-revision.json','boundary-and-batches.json'} or path.name.startswith('protocol-') or path.name.endswith('-result.json') or (path.name=='result.json' and 'kind' not in value):
+                if path.name in {'ncp-initialization.json','training-failure.json','ncp-health.json','ncp-diagnostics.json','selection.json','evaluation-immutability.json','sources-result.json','model.json','memory.json','training.json','routing.json','environment.json','candidate.json','protocol.json','fixed-training.json','comparison.json','analysis.json','dense.json','moe.json','ngram-diagnostics.json','ngram-tape-diagnostics.json','plan-revision.json','boundary-and-batches.json'} or path.name.startswith('protocol-') or path.name.endswith('-result.json') or (path.name=='result.json' and 'kind' not in value):
                     details[path.name] = compact(value, root)
                 else:
                     details[path.name] = compact({k:v for k,v in value.items() if k in DETAILS}, root)
@@ -154,7 +154,8 @@ def emit(source, root=ROOT):
     destination = root/'reports/experiments'/experiment_id
     if budget=='fixed_updates':
         report['randomness']={'initialization_seed':protocol.get('seed'),
-            'batch_order_seed':protocol.get('batch_order_seed',protocol.get('seed'))}
+            'batch_order_seed':protocol.get('batch_order_seed',protocol.get('seed')),
+            'ncp_initialization_seed':(protocol.get('ncp_initialization_seed',protocol.get('seed')) if record.get('candidate',{}).get('ncp') else None)}
     save(destination/'report.json',canonical(report))
     lines = [f'# {relative}', '', f'Outcome: **{status}**. Budget family: **{budget}**.',
         '', 'Full compact configuration, metrics, seeds, hashes and diagnostics: [report.json](report.json).',

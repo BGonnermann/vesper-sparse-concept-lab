@@ -43,6 +43,16 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
     model.init_weights(embed_dtype=runtime.amp_dtype)
     memory = getattr(model, "ngram_memory", None)
     ncp = getattr(model, 'ncp', None)
+    if 'ncp_initialization_seed' in protocol:
+        if ncp is None:
+            raise ValueError('Explicit NCP initializer requires an NCP model.')
+        module_seed = protocol['ncp_initialization_seed']
+        ncp.initialize(12600 + module_seed)
+        basis = ncp.codebook.basis.detach().cpu().contiguous()
+        write_json(Path('ncp-initialization.json'), dict(
+            ncp_initialization_seed=module_seed, effective_seed=12600 + module_seed,
+            backbone_initialization_seed=seed,
+            basis_sha256=hashlib.sha256(basis.reshape(-1).view(torch.uint8).numpy().tobytes()).hexdigest()))
     if memory is not None and memory.bos_token_id != tokenizer.get_bos_token_id():
         raise ValueError("Captured memory BOS differs from the sealed tokenizer.")
     initial = {name: hashlib.sha256(p.detach().cpu().contiguous().reshape(-1).view(torch.uint8).numpy().tobytes()).hexdigest()
