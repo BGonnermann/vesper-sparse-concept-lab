@@ -1,0 +1,717 @@
+{
+  "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "analysis.json": {
+      "checks": {
+        "complete_training_tape_permutation": true,
+        "cross_source_bpb_exact": true,
+        "enabled_reproduction": true,
+        "fixed_validation_hash": true,
+        "prior_artifacts_unchanged": 869,
+        "repeat_bpb_exact": true
+      },
+      "collisions": {
+        "definitions": {
+          "any_collision": "P(a training occurrence maps to a bucket containing another distinct observed suffix)",
+          "global_pair": "Probability two independent training occurrences share a bucket but have distinct suffix identities",
+          "non_dominant": "1 - sum_b max_i f_i / total occurrences; counts suffixes other than one most frequent suffix in each bucket",
+          "other_ngram_mass": "sum_i f_i*(1-f_i/F_bucket(i))/N; frequency-weighted competing suffix mass conditional on the accessed bucket"
+        },
+        "limitation": "Address sharing is measured; harmful gradient interference or insufficient capacity is not established.",
+        "orders": {
+          "2": {
+            "buckets_with_multiple_ngrams": 8192,
+            "distinct_ngrams": 361176,
+            "distinct_per_bucket_quantiles": [
+              20.0,
+              40.0,
+              44.0,
+              48.0,
+              68.0
+            ],
+            "extra_distinct_colliders": 352984,
+            "frequency_weighted_any_collision_exposure": 1.0,
+            "frequency_weighted_other_ngram_bucket_mass": 0.46049472216929555,
+            "global_pair_same_bucket_different_ngram_probability": 0.000122327558517566,
+            "non_dominant_occurrence_fraction": 0.337452328988859,
+            "occupied_buckets": 8192,
+            "valid_occurrences": 8291989
+          },
+          "3": {
+            "buckets_with_multiple_ngrams": 8192,
+            "distinct_ngrams": 1593279,
+            "distinct_per_bucket_quantiles": [
+              146.0,
+              185.0,
+              194.0,
+              204.0,
+              251.0
+            ],
+            "extra_distinct_colliders": 1585087,
+            "frequency_weighted_any_collision_exposure": 1.0,
+            "frequency_weighted_other_ngram_bucket_mass": 0.7815698331517513,
+            "global_pair_same_bucket_different_ngram_probability": 0.00011910164134372879,
+            "non_dominant_occurrence_fraction": 0.637415398693248,
+            "occupied_buckets": 8192,
+            "valid_occurrences": 8244258
+          }
+        },
+        "training_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689"
+      },
+      "comparison": {
+        "checkpoint_hashes": {
+          "DG-retry1": "db04704770186a60300ffefb92e17e4d96a211772bfbe85e0b0f3130be659337",
+          "M-new": "385adf195be9f65abe59042b54ef8da602e617aa96ad6220cc02971460510371",
+          "M-new-old-source": "385adf195be9f65abe59042b54ef8da602e617aa96ad6220cc02971460510371",
+          "M-old": "3630e40c69559eeffdde61e1232043b579d56febf700b66bfd61769c00ddf495",
+          "M-old-new-source": "3630e40c69559eeffdde61e1232043b579d56febf700b66bfd61769c00ddf495",
+          "MG": "c4ff5141c1d4f0ad59d4475230f46510125c5bfd71557f9d3c47cf083f411541"
+        },
+        "data_hashes": {
+          "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+          "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+          "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+          "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+          "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+        },
+        "interpretation": "Inference ablation of jointly trained models; not independently trained controls. Preliminary single-seed evidence.",
+        "kind": "inference_diagnostic_comparison",
+        "rows": [
+          {
+            "condition": "DG",
+            "disabled_bpb": 0.6342744595402013,
+            "disabled_minus_enabled_bpb": 9.636921636990703e-05,
+            "enabled_bpb": 0.6341780903238314
+          },
+          {
+            "condition": "MG",
+            "disabled_bpb": 0.6378603515640556,
+            "disabled_minus_enabled_bpb": 0.00013743586687220422,
+            "enabled_bpb": 0.6377229156971834
+          }
+        ],
+        "seed": 42,
+        "settings": {
+          "absolute_bpb_tolerance": 2e-06,
+          "activation_checkpointing": false,
+          "batch_size": 2,
+          "evaluation_tokens": 65536,
+          "precision": "BF16 AMP, FP32 gate, high matmul precision",
+          "sequence_length": 512,
+          "validation_tape_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+          "window_pattern": "L"
+        },
+        "source_hashes": {
+          "DG-retry1": {
+            "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+            "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+            "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+          },
+          "M-new": {
+            "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+            "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+            "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+          },
+          "M-new-old-source": {
+            "source/project/autoresearch_model.py": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+            "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+            "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+          },
+          "M-old": {
+            "source/project/autoresearch_model.py": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+            "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+            "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+          },
+          "M-old-new-source": {
+            "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+            "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+            "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+          },
+          "MG": {
+            "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+            "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+            "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+          }
+        },
+        "status": "completed",
+        "training": {
+          "new_training_tokens": 0,
+          "new_updates": 0
+        }
+      },
+      "reconciliation": {
+        "batch_tape_current_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "batch_tape_matches_both": true,
+        "checkpoint_comparison": {
+          "different_tensors": 88,
+          "new_sha256": "385adf195be9f65abe59042b54ef8da602e617aa96ad6220cc02971460510371",
+          "old_sha256": "3630e40c69559eeffdde61e1232043b579d56febf700b66bfd61769c00ddf495",
+          "tensor_count": 88,
+          "top_max_absolute_differences": [
+            {
+              "dtype": "torch.bfloat16",
+              "equal": false,
+              "max_abs": 50.8125,
+              "name": "value_embeds.1.weight",
+              "rms_difference": 7.2348809242248535,
+              "shape": [
+                8192,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.bfloat16",
+              "equal": false,
+              "max_abs": 40.625,
+              "name": "value_embeds.3.weight",
+              "rms_difference": 6.180121898651123,
+              "shape": [
+                8192,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.bfloat16",
+              "equal": false,
+              "max_abs": 39.375,
+              "name": "transformer.wte.weight",
+              "rms_difference": 5.487282752990723,
+              "shape": [
+                8192,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.bfloat16",
+              "equal": false,
+              "max_abs": 38.6796875,
+              "name": "value_embeds.5.weight",
+              "rms_difference": 5.593623638153076,
+              "shape": [
+                8192,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "equal": false,
+              "max_abs": 0.9614851474761963,
+              "name": "transformer.h.0.mlp.experts.3.c_fc.weight",
+              "rms_difference": 0.14620457589626312,
+              "shape": [
+                1536,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "equal": false,
+              "max_abs": 0.8603981733322144,
+              "name": "transformer.h.0.mlp.experts.1.c_fc.weight",
+              "rms_difference": 0.15779685974121094,
+              "shape": [
+                1536,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "equal": false,
+              "max_abs": 0.8436827063560486,
+              "name": "transformer.h.2.mlp.experts.3.c_fc.weight",
+              "rms_difference": 0.13993047177791595,
+              "shape": [
+                1536,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "equal": false,
+              "max_abs": 0.8385663628578186,
+              "name": "transformer.h.1.mlp.experts.0.c_fc.weight",
+              "rms_difference": 0.13815097510814667,
+              "shape": [
+                1536,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "equal": false,
+              "max_abs": 0.8312012553215027,
+              "name": "transformer.h.0.mlp.experts.0.c_fc.weight",
+              "rms_difference": 0.14941617846488953,
+              "shape": [
+                1536,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "equal": false,
+              "max_abs": 0.8165383338928223,
+              "name": "transformer.h.1.mlp.experts.3.c_fc.weight",
+              "rms_difference": 0.13950052857398987,
+              "shape": [
+                1536,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "equal": false,
+              "max_abs": 0.7665643095970154,
+              "name": "transformer.h.2.mlp.experts.0.c_fc.weight",
+              "rms_difference": 0.13712218403816223,
+              "shape": [
+                1536,
+                384
+              ]
+            },
+            {
+              "dtype": "torch.float32",
+              "equal": false,
+              "max_abs": 0.752187192440033,
+              "name": "transformer.h.4.mlp.experts.0.c_fc.weight",
+              "rms_difference": 0.12859083712100983,
+              "shape": [
+                1536,
+                384
+              ]
+            }
+          ]
+        },
+        "data_seals_equal": true,
+        "environment_differences": {
+          "free_vram_bytes": {
+            "new": 15767437312,
+            "old": 15150714880
+          }
+        },
+        "equality": {
+          "batches.json": {
+            "json_equal": true,
+            "new_sha256": "fe7c955ac904cd1dc72bc792f69c7de30564891bcb910cb977617935b0e0120d",
+            "old_sha256": "fe7c955ac904cd1dc72bc792f69c7de30564891bcb910cb977617935b0e0120d"
+          },
+          "candidate.json": {
+            "json_equal": true,
+            "new_sha256": "b8d912bfc923b1d3ba17d1ddc4bef4b34ed40cc13ee3db5535c91c4db03b1dfd",
+            "old_sha256": "b8d912bfc923b1d3ba17d1ddc4bef4b34ed40cc13ee3db5535c91c4db03b1dfd"
+          },
+          "optimizer.json": {
+            "json_equal": true,
+            "new_sha256": "77cf9f06eb919b41e4321ae42346586036f835602ce7b8b109f0c5c112b7ad32",
+            "old_sha256": "77cf9f06eb919b41e4321ae42346586036f835602ce7b8b109f0c5c112b7ad32"
+          },
+          "protocol.json": {
+            "json_equal": true,
+            "new_sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
+            "old_sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
+          },
+          "schedule.json": {
+            "json_equal": true,
+            "new_sha256": "dc870363f5581d91b841758324bbf3334f87cb8b321df2387eb5df98b9881e8c",
+            "old_sha256": "dc870363f5581d91b841758324bbf3334f87cb8b321df2387eb5df98b9881e8c"
+          }
+        },
+        "initialization": {
+          "all_parameter_hashes_equal": true,
+          "extra_expert_seed_new": 4242,
+          "extra_expert_seed_old": 4242,
+          "metadata_difference": "New adds memory_seed:null; old omits this field.",
+          "parameter_tensors": 88,
+          "seed_new": 42,
+          "seed_old": 42
+        },
+        "limitations": [
+          "No backward, optimizer step or training performed in this diagnosis.",
+          "Historical determinism flags, cuBLAS workspace setting, selected SDPA kernel, GPU driver version and hardware load are not fully recorded.",
+          "Seed equality is not a guarantee of numerical determinism."
+        ],
+        "new_run": "runs/autoresearch/ngram-20260915/M",
+        "nondeterminism_assessment": {
+          "causal_conclusion": "Historical discrepancy remains unexplained beyond ruling out the recorded initialization/data/schedule/optimizer differences. Cross-source checkpoint inference can test forward/evaluation drift but cannot identify historical backward divergence.",
+          "not_established": "No controlled replay with deterministic algorithms and no per-step weights/gradients saved. CUDA reduction-order sensitivity, SDPA/backward or changed execution ordering remain hypotheses, not demonstrated causes.",
+          "observed": "Same recorded init/data/schedule but printed trajectories and final checkpoint tensors diverge. Both logs report BF16 AMP/Muon, TF32 enabled, PyTorch SDPA, compilation disabled."
+        },
+        "old_run": "runs/autoresearch/equal-token-20260915/moe-42",
+        "printed_loss_comparison": {
+          "differing_updates": 496,
+          "first_difference": {
+            "difference": -7.899999999994023e-05,
+            "new": 3.994706,
+            "old": 3.994785,
+            "update": 17
+          },
+          "first_ten_differences": [
+            {
+              "difference": -7.899999999994023e-05,
+              "new": 3.994706,
+              "old": 3.994785,
+              "update": 17
+            },
+            {
+              "difference": -9.999999999621423e-06,
+              "new": 4.7077,
+              "old": 4.70771,
+              "update": 18
+            },
+            {
+              "difference": -0.00038399999999993994,
+              "new": 3.74472,
+              "old": 3.745104,
+              "update": 19
+            },
+            {
+              "difference": -9.999999999976694e-05,
+              "new": 3.568026,
+              "old": 3.568126,
+              "update": 20
+            },
+            {
+              "difference": 0.0003270000000004103,
+              "new": 4.464572,
+              "old": 4.464245,
+              "update": 21
+            },
+            {
+              "difference": 6.699999999959516e-05,
+              "new": 3.288775,
+              "old": 3.288708,
+              "update": 22
+            },
+            {
+              "difference": 0.0001660000000001105,
+              "new": 3.545989,
+              "old": 3.545823,
+              "update": 23
+            },
+            {
+              "difference": 0.0009910000000004082,
+              "new": 3.788241,
+              "old": 3.78725,
+              "update": 24
+            },
+            {
+              "difference": -0.0006390000000000562,
+              "new": 3.718291,
+              "old": 3.71893,
+              "update": 25
+            },
+            {
+              "difference": 7.799999999980045e-05,
+              "new": 3.956409,
+              "old": 3.956331,
+              "update": 26
+            }
+          ],
+          "max_absolute_difference": 0.055590999999999724,
+          "new_count": 512,
+          "old_count": 512,
+          "scope": "Printed last microbatch loss, including routing auxiliary, rounded to 6 decimals; not a full-update loss or proof of earlier bitwise equality."
+        },
+        "recorded_bpb": {
+          "new": 0.637217,
+          "new_minus_old": -0.0016659999999999453,
+          "old": 0.638883
+        },
+        "source_change_assessment": [
+          "Upstream train.py, prepare.py and bootstrap byte-identical. Project adapter/model/runner changed and memory module added; publication commit is not executed-source provenance.",
+          "Model M uses memory=None. Packed dispatch, expert/router tensor arithmetic, routing weights and auxiliary-loss code unchanged in inspected diff. Forward now assigns block result then unpacks it; memory branch is not taken.",
+          "Optimizer temporarily unregisters memory=None then restores it; recorded group order and all parameter names/LRs identical.",
+          "Adapter adds optional-memory diagnostics, not executed for M; initialization hash tensor reshape and elapsed-time prefix zero do not intentionally change model arithmetic.",
+          "No intentional M math or training-design change identified. Python control-flow and object lifetime changed, so source identity is not established."
+        ],
+        "source_hashes": {
+          "source/project/autoresearch.py": {
+            "equal": false,
+            "new": "aef9066a56abc71f187faeb98478ab42c9661d42fb34f4041bc32503aba97ab8",
+            "new_file_matches_receipt": true,
+            "old": "1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091",
+            "old_file_matches_receipt": true
+          },
+          "source/project/autoresearch_bootstrap.py": {
+            "equal": true,
+            "new": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "new_file_matches_receipt": true,
+            "old": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "old_file_matches_receipt": true
+          },
+          "source/project/autoresearch_memory.py": {
+            "equal": false,
+            "new": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "new_file_matches_receipt": true,
+            "old": null,
+            "old_file_matches_receipt": null
+          },
+          "source/project/autoresearch_model.py": {
+            "equal": false,
+            "new": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+            "new_file_matches_receipt": true,
+            "old": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+            "old_file_matches_receipt": true
+          },
+          "source/project/autoresearch_train.py": {
+            "equal": false,
+            "new": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5",
+            "new_file_matches_receipt": true,
+            "old": "f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523",
+            "old_file_matches_receipt": true
+          },
+          "source/upstream/prepare.py": {
+            "equal": true,
+            "new": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+            "new_file_matches_receipt": true,
+            "old": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+            "old_file_matches_receipt": true
+          },
+          "source/upstream/train.py": {
+            "equal": true,
+            "new": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+            "new_file_matches_receipt": true,
+            "old": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+            "old_file_matches_receipt": true
+          }
+        }
+      }
+    },
+    "collisions.json": {},
+    "contract.json": {},
+    "preservation.json": {},
+    "reconciliation.json": {
+      "limitations": [
+        "No backward, optimizer step or training performed in this diagnosis.",
+        "Historical determinism flags, cuBLAS workspace setting, selected SDPA kernel, GPU driver version and hardware load are not fully recorded.",
+        "Seed equality is not a guarantee of numerical determinism."
+      ],
+      "source_hashes": {
+        "source/project/autoresearch.py": {
+          "equal": false,
+          "new": "aef9066a56abc71f187faeb98478ab42c9661d42fb34f4041bc32503aba97ab8",
+          "new_file_matches_receipt": true,
+          "old": "1d86da9a32d03d14ba9f3f494a405f9a252ff4f5a5663da36bc9e094f3a9e091",
+          "old_file_matches_receipt": true
+        },
+        "source/project/autoresearch_bootstrap.py": {
+          "equal": true,
+          "new": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+          "new_file_matches_receipt": true,
+          "old": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+          "old_file_matches_receipt": true
+        },
+        "source/project/autoresearch_memory.py": {
+          "equal": false,
+          "new": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+          "new_file_matches_receipt": true,
+          "old": null,
+          "old_file_matches_receipt": null
+        },
+        "source/project/autoresearch_model.py": {
+          "equal": false,
+          "new": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+          "new_file_matches_receipt": true,
+          "old": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+          "old_file_matches_receipt": true
+        },
+        "source/project/autoresearch_train.py": {
+          "equal": false,
+          "new": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5",
+          "new_file_matches_receipt": true,
+          "old": "f858424b7c246f9e15f507c982c686a7e57917f1a316d3ff88dd2f3242e63523",
+          "old_file_matches_receipt": true
+        },
+        "source/upstream/prepare.py": {
+          "equal": true,
+          "new": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "new_file_matches_receipt": true,
+          "old": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "old_file_matches_receipt": true
+        },
+        "source/upstream/train.py": {
+          "equal": true,
+          "new": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+          "new_file_matches_receipt": true,
+          "old": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+          "old_file_matches_receipt": true
+        }
+      }
+    },
+    "result.json": {
+      "checkpoint_hashes": {
+        "DG-retry1": "db04704770186a60300ffefb92e17e4d96a211772bfbe85e0b0f3130be659337",
+        "M-new": "385adf195be9f65abe59042b54ef8da602e617aa96ad6220cc02971460510371",
+        "M-new-old-source": "385adf195be9f65abe59042b54ef8da602e617aa96ad6220cc02971460510371",
+        "M-old": "3630e40c69559eeffdde61e1232043b579d56febf700b66bfd61769c00ddf495",
+        "M-old-new-source": "3630e40c69559eeffdde61e1232043b579d56febf700b66bfd61769c00ddf495",
+        "MG": "c4ff5141c1d4f0ad59d4475230f46510125c5bfd71557f9d3c47cf083f411541"
+      },
+      "data_hashes": {
+        "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+        "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+        "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+        "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+        "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+      },
+      "interpretation": "Inference ablation of jointly trained models; not independently trained controls. Preliminary single-seed evidence.",
+      "kind": "inference_diagnostic_comparison",
+      "rows": [
+        {
+          "condition": "DG",
+          "disabled_bpb": 0.6342744595402013,
+          "disabled_minus_enabled_bpb": 9.636921636990703e-05,
+          "enabled_bpb": 0.6341780903238314
+        },
+        {
+          "condition": "MG",
+          "disabled_bpb": 0.6378603515640556,
+          "disabled_minus_enabled_bpb": 0.00013743586687220422,
+          "enabled_bpb": 0.6377229156971834
+        }
+      ],
+      "seed": 42,
+      "settings": {
+        "absolute_bpb_tolerance": 2e-06,
+        "activation_checkpointing": false,
+        "batch_size": 2,
+        "evaluation_tokens": 65536,
+        "precision": "BF16 AMP, FP32 gate, high matmul precision",
+        "sequence_length": 512,
+        "validation_tape_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+        "window_pattern": "L"
+      },
+      "source_hashes": {
+        "DG-retry1": {
+          "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+          "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+          "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        },
+        "M-new": {
+          "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+          "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+          "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        },
+        "M-new-old-source": {
+          "source/project/autoresearch_model.py": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+          "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        },
+        "M-old": {
+          "source/project/autoresearch_model.py": "e16259d4f0ac8b15ed0b754b728db310b47835e615ce9805e0c7d4d8563bcc30",
+          "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        },
+        "M-old-new-source": {
+          "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+          "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+          "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        },
+        "MG": {
+          "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+          "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+          "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+        }
+      },
+      "status": "completed",
+      "training": {
+        "new_training_tokens": 0,
+        "new_updates": 0
+      }
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "analysis.json": {
+      "bytes": 20503,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/analysis.json",
+      "sha256": "8d4b270653f921811dd1314388679c4f5cac3793b8f53a2ca51315cd0ec178a4"
+    },
+    "collisions.json": {
+      "bytes": 2008,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/collisions.json",
+      "sha256": "c4e5094fc19cb78376339d50988e70768293677934093528b7515c16c8bf3f9a"
+    },
+    "collisions.log": {
+      "bytes": 1169,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/collisions.log",
+      "sha256": "aef4841c70982edc6f3fbed0875c5ee49906473c05d8ed128bbf8603d2cec4e2"
+    },
+    "contract.json": {
+      "bytes": 471,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/contract.json",
+      "sha256": "a71c3a3cd64fe507bedd0ba502fe00fc2b332cd60221807d1e1fa0d8946ce799"
+    },
+    "diagnostic-report.md": {
+      "bytes": 10869,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/diagnostic-report.md",
+      "sha256": "b36432a9fa3a0386286832502fd0fb096d06344b6054d0eafc1552471a1171b7"
+    },
+    "preservation.json": {
+      "bytes": 59,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/preservation.json",
+      "sha256": "aed9615cae13e5a5c053cc7c639464d4934022dcb5e22ac753faaf3e6231aab9"
+    },
+    "prior-artifacts.json": {
+      "bytes": 129437,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/prior-artifacts.json",
+      "sha256": "d894a91af52b7161c8933881938f940136bce14a5a572e81ef9d22a1473c98e3"
+    },
+    "reconciliation.json": {
+      "bytes": 12417,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/reconciliation.json",
+      "sha256": "2584d2d30dda88dbae358b4c44b7d4535080cc41665d81d73e0630231150babe"
+    },
+    "reconciliation.md": {
+      "bytes": 2015,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/reconciliation.md",
+      "sha256": "baedb53efce090dc34f710f820a8f7db412890816dacfcbc42e8d083785eab82"
+    },
+    "report.log": {
+      "bytes": 480,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/report.log",
+      "sha256": "7bb2eb1226209043af46f8219ed40a2bf6a79a5cdb40a396d06c842be2251cf9"
+    },
+    "result.json": {
+      "bytes": 4823,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/result.json",
+      "sha256": "59e6d5fa177f390c21c44020285271f5bbafb8fddfb6aa354f4e58d48f86af69"
+    }
+  },
+  "experiment_id": "ngram-diagnostics-20260915-bd486df7",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "completed",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {},
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "6589c6a2e0eb8044537e26b6adbfd3953e21a8a8195f0b60bfe1037bcbad2343",
+  "schema_version": 1,
+  "seeds": [
+    42
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source",
+  "budget_family": "fixed_updates",
+  "compatibility_fingerprint": "347ea7e07a781586a2601aaf59befea02ce9bbf69f07bb8f01662de5fc857956",
+  "configuration": {
+    "aux_loss_weight": 0.01,
+    "depth": 6,
+    "feedforward": "moe",
+    "matrix_lr": 0.04,
+    "num_experts": 4,
+    "router_lr": 0.001,
+    "top_k": 1
+  },
+  "details": {
+    "analysis.json": {
+      "ablation_interpretation": "Inference residual removal from a jointly trained model; not a separately trained memory-free control.",
+      "absolute_tolerance": 2e-06,
+      "checkpoint_sha256": "3630e40c69559eeffdde61e1232043b579d56febf700b66bfd61769c00ddf495",
+      "cuda": "12.8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false,
+      "deterministic_algorithms_enabled": false,
+      "diagnostic_code_sha256": "0f26f74a407c5a04ebff8c1ceb514c3ab271e20520801ce66b4144fdb72ce90f",
+      "enabled_absolute_error": 5.612122067066849e-08,
+      "evaluations": {
+        "final_enabled": {
+          "bpb": 0.6388829438787793,
+          "parameter_immutability_verified": true,
+          "residual_disabled": false,
+          "validation_tape_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+          "validation_tokens": 65536
+        },
+        "final_enabled_repeat": {
+          "bpb": 0.6388829438787793,
+          "parameter_immutability_verified": true,
+          "residual_disabled": false,
+          "validation_tape_sha256": "37459ade77cb37de966dbd5f42b34a4d001a6a69deea4e76f9f2906dbeb1c31b",
+          "validation_tokens": 65536
+        }
+      },
+      "executed_source_hashes": {
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      },
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "matmul_precision": "high",
+      "recorded_bpb": 0.638883,
+      "reproduction_passed": true,
+      "torch": "2.9.1+cu128",
+      "training_updates": 0
+    },
+    "candidate.json": {
+      "aux_loss_weight": 0.01,
+      "depth": 6,
+      "feedforward": "moe",
+      "matrix_lr": 0.04,
+      "num_experts": 4,
+      "router_lr": 0.001,
+      "top_k": 1
+    },
+    "diagnostic-config.json": {},
+    "protocol.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "optimizer_updates": 512,
+      "protocol_id": "vesper-tinystories-equal-token-v1",
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "seed": 42,
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "stopping_rule": "optimizer_updates",
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "result.json": {
+      "candidate": {
+        "aux_loss_weight": 0.01,
+        "depth": 6,
+        "feedforward": "moe",
+        "matrix_lr": 0.04,
+        "num_experts": 4,
+        "router_lr": 0.001,
+        "top_k": 1
+      },
+      "kind": "inference_diagnostic",
+      "metrics": {
+        "val_bpb": 0.6388829438787793
+      },
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 42,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "seed": 42,
+      "status": "completed",
+      "wall_seconds": 6.73499999998603
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "analysis.json": {
+      "bytes": 1793,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source/analysis.json",
+      "sha256": "f60b689c9ca903349434498e8077c12199504403641e37c2837b2feb2573dca5"
+    },
+    "candidate.json": {
+      "bytes": 154,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source/candidate.json",
+      "sha256": "b8d912bfc923b1d3ba17d1ddc4bef4b34ed40cc13ee3db5535c91c4db03b1dfd"
+    },
+    "diagnostic-config.json": {
+      "bytes": 12871,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source/diagnostic-config.json",
+      "sha256": "ed7e8aac86064d22286245695870d94df5cd60246ba78a724394430bbda06f03"
+    },
+    "evaluate.py": {
+      "bytes": 14548,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source/evaluate.py",
+      "sha256": "0f26f74a407c5a04ebff8c1ceb514c3ab271e20520801ce66b4144fdb72ce90f"
+    },
+    "protocol.json": {
+      "bytes": 929,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source/protocol.json",
+      "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
+    },
+    "result.json": {
+      "bytes": 15122,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source/result.json",
+      "sha256": "1c7a039697ce76008f6d44c3342d73ee3a21e47a52b91fdbbf5e051c4d104ed4"
+    },
+    "run.log": {
+      "bytes": 230,
+      "local_path": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source/run.log",
+      "sha256": "77b3eb191cdaee4083f1e369784e1f68e3df9316061b04d640d04df70a7d8fff"
+    }
+  },
+  "experiment_id": "ngram-diagnostics-20260915--M-old-new-source-fc1ec60a",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": {
+    "val_bpb": 0.6388829438787793
+  },
+  "outcome": "completed",
+  "protocol": {
+    "activation_checkpointing": false,
+    "baseline_timeout_seconds": 900,
+    "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+    "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "optimizer_updates": 512,
+    "protocol_id": "vesper-tinystories-equal-token-v1",
+    "schedule": {
+      "clock": "optimizer_step",
+      "decay_start_step": 256,
+      "final_lr_fraction": 0.0,
+      "lr_warmup_updates": 0,
+      "measurement_warmup_updates": 11,
+      "muon_momentum_warmup_updates": 300,
+      "progress": "zero_based_step / 512"
+    },
+    "seed": 42,
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "stopping_rule": "optimizer_updates",
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {
+      "evaluate.py": {
+        "published_path": "reports/source-snapshots/0f26f74a407c5a04ebff8c1ceb514c3ab271e20520801ce66b4144fdb72ce90f.py",
+        "sha256": "0f26f74a407c5a04ebff8c1ceb514c3ab271e20520801ce66b4144fdb72ce90f"
+      },
+      "source/project/autoresearch.py": {
+        "published_path": "reports/source-snapshots/aef9066a56abc71f187faeb98478ab42c9661d42fb34f4041bc32503aba97ab8.py",
+        "sha256": "aef9066a56abc71f187faeb98478ab42c9661d42fb34f4041bc32503aba97ab8"
+      },
+      "source/project/autoresearch_bootstrap.py": {
+        "published_path": "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py",
+        "sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6"
+      },
+      "source/project/autoresearch_memory.py": {
+        "published_path": "reports/source-snapshots/70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862.py",
+        "sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862"
+      },
+      "source/project/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68.py",
+        "sha256": "7133ba774a23c425bdfc32b14b7136f6fe5ff5ce5a83cd4d73518510aca1da68"
+      },
+      "source/project/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5.py",
+        "sha256": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5"
+      },
+      "source/upstream/prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      },
+      "source/upstream/train.py": {
+        "published_path": "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py",
+        "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": {
+      "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+      "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+      "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+    },
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "6589c6a2e0eb8044537e26b6adbfd3953e21a8a8195f0b60bfe1037bcbad2343",
+  "schema_version": 1,
+  "seeds": [
+    42
+  ]
+}

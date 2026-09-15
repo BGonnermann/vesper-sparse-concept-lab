@@ -475,6 +475,82 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915/DG",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "347ea7e07a781586a2601aaf59befea02ce9bbf69f07bb8f01662de5fc857956",
+      "experiment_id": "ngram-diagnostics-20260915--DG-f6ea0955",
+      "metrics": null,
+      "outcome": "failed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915/DG-retry1",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "347ea7e07a781586a2601aaf59befea02ce9bbf69f07bb8f01662de5fc857956",
+      "experiment_id": "ngram-diagnostics-20260915--DG-retry1-c4727406",
+      "metrics": {
+        "val_bpb": 0.6341780903238314
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915/M-new",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "347ea7e07a781586a2601aaf59befea02ce9bbf69f07bb8f01662de5fc857956",
+      "experiment_id": "ngram-diagnostics-20260915--M-new-e0167c45",
+      "metrics": {
+        "val_bpb": 0.6372169936698499
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915/M-new-old-source",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "347ea7e07a781586a2601aaf59befea02ce9bbf69f07bb8f01662de5fc857956",
+      "experiment_id": "ngram-diagnostics-20260915--M-new-old-source-0f2d2923",
+      "metrics": {
+        "val_bpb": 0.6372169936698499
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915/M-old",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "347ea7e07a781586a2601aaf59befea02ce9bbf69f07bb8f01662de5fc857956",
+      "experiment_id": "ngram-diagnostics-20260915--M-old-1da8b977",
+      "metrics": {
+        "val_bpb": 0.6388829438787793
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915/M-old-new-source",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "347ea7e07a781586a2601aaf59befea02ce9bbf69f07bb8f01662de5fc857956",
+      "experiment_id": "ngram-diagnostics-20260915--M-old-new-source-fc1ec60a",
+      "metrics": {
+        "val_bpb": 0.6388829438787793
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915/MG",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "347ea7e07a781586a2601aaf59befea02ce9bbf69f07bb8f01662de5fc857956",
+      "experiment_id": "ngram-diagnostics-20260915--MG-efab1ca5",
+      "metrics": {
+        "val_bpb": 0.6377229156971834
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ngram-diagnostics-20260915",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "ngram-diagnostics-20260915-bd486df7",
+      "metrics": null,
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/packed-20260915T002151Z-dense-baseline",
       "budget_family": "wall_time_budget",
       "compatibility_fingerprint": "98216a105e680926d6a4da5c4b1f65c350800e2ee726708ae659b8dc3536fee4",

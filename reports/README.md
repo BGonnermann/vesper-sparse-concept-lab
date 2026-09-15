@@ -34,6 +34,14 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [ngram-20260915/M](experiments/ngram-20260915--M-0cc0e90f/README.md) | completed | fixed_updates | 0.637217 |
 | [ngram-20260915/MG](experiments/ngram-20260915--MG-80d7039f/README.md) | completed | fixed_updates | 0.637723 |
 | [ngram-20260915](experiments/ngram-20260915-abd2e6dd/README.md) | completed | fixed_updates | unknown |
+| [ngram-diagnostics-20260915/DG](experiments/ngram-diagnostics-20260915--DG-f6ea0955/README.md) | failed | fixed_updates | unknown |
+| [ngram-diagnostics-20260915/DG-retry1](experiments/ngram-diagnostics-20260915--DG-retry1-c4727406/README.md) | completed | fixed_updates | 0.6341780903238314 |
+| [ngram-diagnostics-20260915/M-new](experiments/ngram-diagnostics-20260915--M-new-e0167c45/README.md) | completed | fixed_updates | 0.6372169936698499 |
+| [ngram-diagnostics-20260915/M-new-old-source](experiments/ngram-diagnostics-20260915--M-new-old-source-0f2d2923/README.md) | completed | fixed_updates | 0.6372169936698499 |
+| [ngram-diagnostics-20260915/M-old](experiments/ngram-diagnostics-20260915--M-old-1da8b977/README.md) | completed | fixed_updates | 0.6388829438787793 |
+| [ngram-diagnostics-20260915/M-old-new-source](experiments/ngram-diagnostics-20260915--M-old-new-source-fc1ec60a/README.md) | completed | fixed_updates | 0.6388829438787793 |
+| [ngram-diagnostics-20260915/MG](experiments/ngram-diagnostics-20260915--MG-efab1ca5/README.md) | completed | fixed_updates | 0.6377229156971834 |
+| [ngram-diagnostics-20260915](experiments/ngram-diagnostics-20260915-bd486df7/README.md) | completed | stage_or_unknown | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |
 | [packed-20260915T002151Z-moe-baseline](experiments/packed-20260915T002151Z-moe-baseline-aa31ead4/README.md) | completed | wall_time_budget | 0.706799 |
