@@ -506,6 +506,18 @@
       "plan_sha256": "1c2baae76468562b3e5c8e78343f9bc15ffd9eac946500202ef0f065af178fb4",
       "status": "completed"
     },
+    "closure-readiness-result.json": {
+      "checks": {
+        "attempted_trials": 85,
+        "audit_age_seconds": 789.332693,
+        "audit_sha256": "d4a0c7009927e55be3e7c2bb1325718a5d87a6806ddd069fe05cda01275d1008",
+        "verified_completed_trials": 83
+      },
+      "interpretation": "Evidence gate passes now; campaign remains open until its deadline and final audit will be refreshed then.",
+      "kind": "closure_readiness",
+      "measured_at": "2026-09-15T18:15:44.279704+00:00",
+      "status": "completed"
+    },
     "concept-baselines-plan.json": {
       "kind": "concept_baselines_plan"
     },
@@ -18377,6 +18389,57 @@
       "kind": "prepared_integration",
       "status": "prepared"
     },
+    "plan-publication-audit-result.json": {
+      "interpretation": "Git evidence identifies the first committed report containing each exact current plan-file hash. Local freeze timestamps and first publication are distinct. Some diagnostic plans were frozen locally before execution but first included in Git reporting after results. Earlier progress messages describing every freeze-only/publish-only call as publication of the new plan were too strong. Existing hypotheses and implementation commits may predate these plan-hash publications; no training or inference result is changed.",
+      "kind": "plan_publication_audit",
+      "measured_at": "2026-09-15T18:21:00.934366+00:00",
+      "plans": {
+        "concept-baselines-plan.json": {
+          "commit_time": "2026-09-15T13:59:13-04:00",
+          "first_matching_publication_commit": "535eb180498566d13210ed9b53da5441fe576154",
+          "local_recorded_freeze_time": "2026-09-15T17:57:10.538401+00:00",
+          "sha256": "1586f6c463847951ece656d575235a297b399dd182c534496e41133579c36054"
+        },
+        "confirmation-selection.json": {
+          "commit_time": "2026-09-15T11:48:34-04:00",
+          "first_matching_publication_commit": "6ecb7212639cb2eb05be0ca5817c4e347c06401e",
+          "local_recorded_freeze_time": "2026-09-15T15:45:35.707292+00:00",
+          "sha256": "fc02f7ef246636bd0285822bfbe64261dc638ec2fc0b401b71e5623c1c788ff1"
+        },
+        "crossed-order-plan.json": {
+          "commit_time": "2026-09-15T13:00:21-04:00",
+          "first_matching_publication_commit": "aec925ea2ac4021ef7b402cc9d242c4ad3b3f93e",
+          "local_recorded_freeze_time": "2026-09-15T16:56:43.018951+00:00",
+          "sha256": "532630dcf410b70ddc84b4edac2f110bed5fb42cde3f5c400824e2a491c5671e"
+        },
+        "depth-grid-plan.json": {
+          "commit_time": "2026-09-15T13:17:19-04:00",
+          "first_matching_publication_commit": "93dd92b962234ed0e0aad009f8b9fae05db34d08",
+          "local_recorded_freeze_time": null,
+          "sha256": "3dc49a54cf9e97305fbfd3bce71709898246b0f9f806694bbf8f605710179f9a"
+        },
+        "feedback-interventions-plan.json": {
+          "commit_time": "2026-09-15T13:55:41-04:00",
+          "first_matching_publication_commit": "7f20e6f0a0e4960aa4087518c8d69aced9e821b0",
+          "local_recorded_freeze_time": null,
+          "sha256": "08e44961d4abf49312130c5f072d8895fe48eb94feae5e7f277658b310bdc38b"
+        },
+        "module-initialization-plan.json": {
+          "commit_time": "2026-09-15T13:40:51-04:00",
+          "first_matching_publication_commit": "d1ba674def64dcede6fbc4554de68d61652dc715",
+          "local_recorded_freeze_time": "2026-09-15T17:32:23.949259+00:00",
+          "sha256": "07e62a0f64207742f48a580f25626385da03de6ee7889bed0104cce2ae93a51c"
+        },
+        "no-future-plan.json": {
+          "commit_time": "2026-09-15T13:49:30-04:00",
+          "first_matching_publication_commit": "5d2d7d265b04f7faec7c99897439b4df773ee6d9",
+          "local_recorded_freeze_time": "2026-09-15T17:45:02.974216+00:00",
+          "sha256": "98c87b9b13bd9becd3a0809e1f204f47cca2d172c5f793682227e78b177a278c"
+        }
+      },
+      "script_sha256": "855cdc59e3344651f8a88c9eab45c903970ad7a173d1af6fd087576bbacba359",
+      "status": "completed"
+    },
     "preflight-1789473279-result.json": {
       "cpu": {
         "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cpu-1789473248.log",
@@ -18859,7 +18922,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "937d636d4b918e63222322b65a898762e4cdf8d0",
+      "publication_commit": "22da3e89ccaf802b339afc634138070a91522d7d",
       "status": "completed",
       "verified_remote": true
     },
@@ -19377,9 +19440,9 @@
       "sha256": "bdc15165188e73fa6723070c44dcfe721b92e92f3541e4bbab54a7d96ae74c8c"
     },
     "campaign.log": {
-      "bytes": 134569,
+      "bytes": 134670,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "1cd267fc84b506c18de1a8dae31bf68e5063692e28d7e15bcf9194fede4d3d77"
+      "sha256": "d699a4a8952ef9e6713c20fbdf5d1a4690fdc72ace388db9964fece5553236f0"
     },
     "checkpoint-replay-driver.py": {
       "bytes": 15268,
@@ -19395,6 +19458,11 @@
       "bytes": 63344,
       "local_path": "runs/autoresearch/ncp-20260915/checkpoint-replay-result.json",
       "sha256": "99547788538515edc7e8de09140417d8f126ec8f36a6a06d3c6ec2495c8fd015"
+    },
+    "closure-readiness-result.json": {
+      "bytes": 462,
+      "local_path": "runs/autoresearch/ncp-20260915/closure-readiness-result.json",
+      "sha256": "286e2327fa2353100798da5b300afa4e73c674c2697b93c23ab0783ec553ecb3"
     },
     "concept-baselines-driver.py": {
       "bytes": 15915,
@@ -20191,6 +20259,16 @@
       "local_path": "runs/autoresearch/ncp-20260915/pending-integration-result.json",
       "sha256": "c03fc43dbf62639f6eb70fbd24d24877eec3a59fd5262ab2b0c15768cd2f7532"
     },
+    "plan-publication-audit-result.json": {
+      "bytes": 3098,
+      "local_path": "runs/autoresearch/ncp-20260915/plan-publication-audit-result.json",
+      "sha256": "7a888f7a4a2828c8b772e59f8e3115e1b69f7735ecdc00ccfa51cfed051ac758"
+    },
+    "plan-publication-audit.log": {
+      "bytes": 438,
+      "local_path": "runs/autoresearch/ncp-20260915/plan-publication-audit.log",
+      "sha256": "816a0aae90f340bdfacd32de981f4af17cbb0cd614ec88f789a7aeec18ab2ebd"
+    },
     "plan.md": {
       "bytes": 8589,
       "local_path": "runs/autoresearch/ncp-20260915/plan.md",
@@ -20404,7 +20482,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "ae54f8688016e6ce7305593c529406e966539eb1d4e74bc16352ba45625b5670"
+      "sha256": "66ac90715186ed818dd0cd0a7b4afff440eaf5508481f2c66aad168d69bf3d01"
     },
     "publication-watch-result.json": {
       "bytes": 113,
