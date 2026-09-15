@@ -5,20 +5,39 @@
   "configuration": null,
   "details": {
     "comparison.json": {
-      "child_wall_seconds": 1294.8270000000484,
-      "disk_free_bytes": 280099770368,
+      "child_wall_seconds": 2893.7020000000193,
+      "disk_free_bytes": 279327526912,
       "failures": [],
       "frozen_confirmation": null,
-      "gpu_seconds": 1254.855154700781,
+      "gpu_seconds": 2815.225021801889,
       "in_progress": [
         {
-          "run": "trial-0007-D-lr0.02-s42",
+          "run": "trial-0013-M-aux_loss_weight0.03-s42",
           "status": "running"
         }
       ],
       "paired_differences": [],
       "preservation": null,
       "ranking": [
+        {
+          "control": "M",
+          "delta_bpb": -0.003359000000000001,
+          "label": "M-router_lr0.003",
+          "observed_candidate": {
+            "bpb": 0.633858,
+            "repeats": 1,
+            "seconds": 314.35460610027076
+          },
+          "observed_control": {
+            "bpb": 0.637217,
+            "repeats": 1,
+            "seconds": 305.9527605001058
+          },
+          "on_measured_quality_time_frontier": true,
+          "qualifies": true,
+          "quality": true,
+          "time_ratio": 1.0274612511631909
+        },
         {
           "control": "D",
           "delta_bpb": -0.0006699999999999484,
@@ -33,6 +52,7 @@
             "repeats": 1,
             "seconds": 181.42403569980524
           },
+          "on_measured_quality_time_frontier": true,
           "qualifies": true,
           "quality": true,
           "time_ratio": 1.0519858582360213
@@ -51,9 +71,67 @@
             "repeats": 1,
             "seconds": 190.85551990030217
           },
+          "on_measured_quality_time_frontier": true,
           "qualifies": true,
           "quality": true,
           "time_ratio": 1.0058810690956457
+        },
+        {
+          "control": "D",
+          "delta_bpb": 0.0007970000000000477,
+          "label": "D-lr0.02",
+          "observed_candidate": {
+            "bpb": 0.635645,
+            "repeats": 1,
+            "seconds": 173.1849920999084
+          },
+          "observed_control": {
+            "bpb": 0.634848,
+            "repeats": 1,
+            "seconds": 181.42403569980524
+          },
+          "on_measured_quality_time_frontier": true,
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 0.9545868133286946
+        },
+        {
+          "control": "M",
+          "delta_bpb": -0.003322000000000047,
+          "label": "M-aux_loss_weight0.003",
+          "observed_candidate": {
+            "bpb": 0.633895,
+            "repeats": 1,
+            "seconds": 315.3551442002354
+          },
+          "observed_control": {
+            "bpb": 0.637217,
+            "repeats": 1,
+            "seconds": 305.9527605001058
+          },
+          "on_measured_quality_time_frontier": false,
+          "qualifies": true,
+          "quality": true,
+          "time_ratio": 1.0307314883668988
+        },
+        {
+          "control": "M",
+          "delta_bpb": -0.0028719999999999857,
+          "label": "M-experts2",
+          "observed_candidate": {
+            "bpb": 0.634345,
+            "repeats": 1,
+            "seconds": 267.1873133998306
+          },
+          "observed_control": {
+            "bpb": 0.637217,
+            "repeats": 1,
+            "seconds": 305.9527605001058
+          },
+          "on_measured_quality_time_frontier": false,
+          "qualifies": true,
+          "quality": true,
+          "time_ratio": 0.8732959721072306
         },
         {
           "control": "DG",
@@ -69,6 +147,7 @@
             "repeats": 1,
             "seconds": 190.85551990030217
           },
+          "on_measured_quality_time_frontier": false,
           "qualifies": false,
           "quality": false,
           "time_ratio": 1.004698617050778
@@ -87,9 +166,48 @@
             "repeats": 1,
             "seconds": 190.85551990030217
           },
+          "on_measured_quality_time_frontier": false,
           "qualifies": false,
           "quality": false,
           "time_ratio": 1.0106734528866008
+        },
+        {
+          "control": "M",
+          "delta_bpb": 0.001298999999999939,
+          "label": "M-router_lr0.0003",
+          "observed_candidate": {
+            "bpb": 0.638516,
+            "repeats": 1,
+            "seconds": 315.68454850054695
+          },
+          "observed_control": {
+            "bpb": 0.637217,
+            "repeats": 1,
+            "seconds": 305.9527605001058
+          },
+          "on_measured_quality_time_frontier": false,
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 1.0318081392190537
+        },
+        {
+          "control": "D",
+          "delta_bpb": 0.005156000000000049,
+          "label": "D-lr0.06",
+          "observed_candidate": {
+            "bpb": 0.640004,
+            "repeats": 1,
+            "seconds": 174.60326280031586
+          },
+          "observed_control": {
+            "bpb": 0.634848,
+            "repeats": 1,
+            "seconds": 181.42403569980524
+          },
+          "on_measured_quality_time_frontier": false,
+          "qualifies": false,
+          "quality": false,
+          "time_ratio": 0.9624042488461924
         }
       ]
     },
@@ -131,7 +249,7 @@
         "NCP deferred; no combined architecture candidates executed."
       ],
       "paired_differences": [],
-      "runs": 6,
+      "runs": 12,
       "seeds": [
         42
       ],
@@ -295,6 +413,250 @@
           "total_parameters": 27443885,
           "wall_seconds": 198.32800000000861,
           "width": 384
+        },
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 173.1849920999084,
+          "allocated_mib": 581.685546875,
+          "bpb": 0.635645,
+          "expert_utilization": [],
+          "label": "D-lr0.02",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 622.0,
+          "run": "trial-0007-D-lr0.02-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 48507.569875929716,
+          "tokens": 8388608,
+          "total_parameters": 26345772,
+          "wall_seconds": 179.31200000000536,
+          "width": 384
+        },
+        {
+          "active_parameters": 26350380,
+          "all_update_seconds": 267.1873133998306,
+          "allocated_mib": 703.77294921875,
+          "bpb": 0.634345,
+          "expert_utilization": [
+            [
+              0.4810824394226074,
+              0.5189175605773926
+            ],
+            [
+              0.499184250831604,
+              0.500815749168396
+            ],
+            [
+              0.5129079818725586,
+              0.4870920181274414
+            ],
+            [
+              0.5021402835845947,
+              0.4978597164154053
+            ],
+            [
+              0.507604718208313,
+              0.492395281791687
+            ],
+            [
+              0.6903804540634155,
+              0.3096195459365845
+            ]
+          ],
+          "label": "M-experts2",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 756.0,
+          "run": "trial-0008-M-experts2-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 31489.15123873177,
+          "tokens": 8388608,
+          "total_parameters": 33428268,
+          "wall_seconds": 273.64100000000326,
+          "width": 384
+        },
+        {
+          "active_parameters": 26354988,
+          "all_update_seconds": 315.68454850054695,
+          "allocated_mib": 900.42333984375,
+          "bpb": 0.638516,
+          "expert_utilization": [
+            [
+              0.24270498752593994,
+              0.2219538688659668,
+              0.28314411640167236,
+              0.2521970272064209
+            ],
+            [
+              0.22173559665679932,
+              0.2678149938583374,
+              0.2766907215118408,
+              0.23375868797302246
+            ],
+            [
+              0.28645968437194824,
+              0.22850251197814941,
+              0.24249327182769775,
+              0.2425445318222046
+            ],
+            [
+              0.22851014137268066,
+              0.2429356575012207,
+              0.22098159790039062,
+              0.307572603225708
+            ],
+            [
+              0.23873841762542725,
+              0.24908888339996338,
+              0.27043986320495605,
+              0.24173283576965332
+            ],
+            [
+              0.3348073959350586,
+              0.17649352550506592,
+              0.15014970302581787,
+              0.3385493755340576
+            ]
+          ],
+          "label": "M-router_lr0.0003",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 954.0,
+          "run": "trial-0009-M-router_lr0.0003-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 26640.302992663885,
+          "tokens": 8388608,
+          "total_parameters": 47588652,
+          "wall_seconds": 322.34399999998277,
+          "width": 384
+        },
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 174.60326280031586,
+          "allocated_mib": 581.685546875,
+          "bpb": 0.640004,
+          "expert_utilization": [],
+          "label": "D-lr0.06",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 622.0,
+          "run": "trial-0010-D-lr0.06-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 48117.77205124699,
+          "tokens": 8388608,
+          "total_parameters": 26345772,
+          "wall_seconds": 180.81299999999464,
+          "width": 384
+        },
+        {
+          "active_parameters": 26354988,
+          "all_update_seconds": 314.35460610027076,
+          "allocated_mib": 901.61865234375,
+          "bpb": 0.633858,
+          "expert_utilization": [
+            [
+              0.22513461112976074,
+              0.19031774997711182,
+              0.3605308532714844,
+              0.22401678562164307
+            ],
+            [
+              0.2950371503829956,
+              0.21093511581420898,
+              0.27920079231262207,
+              0.21482694149017334
+            ],
+            [
+              0.2550203800201416,
+              0.23389899730682373,
+              0.26950764656066895,
+              0.24157297611236572
+            ],
+            [
+              0.2854081392288208,
+              0.15442955493927002,
+              0.28423357009887695,
+              0.2759287357330322
+            ],
+            [
+              0.23369693756103516,
+              0.2296990156173706,
+              0.26476728916168213,
+              0.2718367576599121
+            ],
+            [
+              0.21910536289215088,
+              0.2580893039703369,
+              0.2319103479385376,
+              0.2908949851989746
+            ]
+          ],
+          "label": "M-router_lr0.003",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 956.0,
+          "run": "trial-0011-M-router_lr0.003-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 26756.493566528017,
+          "tokens": 8388608,
+          "total_parameters": 47588652,
+          "wall_seconds": 320.8429999999935,
+          "width": 384
+        },
+        {
+          "active_parameters": 26354988,
+          "all_update_seconds": 315.3551442002354,
+          "allocated_mib": 902.01123046875,
+          "bpb": 0.633895,
+          "expert_utilization": [
+            [
+              0.20822572708129883,
+              0.19519758224487305,
+              0.3521451950073242,
+              0.2444314956665039
+            ],
+            [
+              0.28594303131103516,
+              0.20809245109558105,
+              0.3081706762313843,
+              0.1977938413619995
+            ],
+            [
+              0.2371920347213745,
+              0.304712176322937,
+              0.2203580141067505,
+              0.237737774848938
+            ],
+            [
+              0.21017682552337646,
+              0.10764288902282715,
+              0.2563343048095703,
+              0.4258459806442261
+            ],
+            [
+              0.16049551963806152,
+              0.18358063697814941,
+              0.3233755826950073,
+              0.33254826068878174
+            ],
+            [
+              0.47546184062957764,
+              0.12722671031951904,
+              0.11571013927459717,
+              0.28160130977630615
+            ]
+          ],
+          "label": "M-aux_loss_weight0.003",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 952.0,
+          "run": "trial-0012-M-aux_loss_weight0.003-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 26673.53345438657,
+          "tokens": 8388608,
+          "total_parameters": 47588652,
+          "wall_seconds": 321.9219999999914,
+          "width": 384
         }
       ]
     },
@@ -305,14 +667,14 @@
   ],
   "evidence": {
     "campaign-report.md": {
-      "bytes": 2307,
+      "bytes": 3073,
       "local_path": "runs/autoresearch/overnight-20260915/campaign-report.md",
-      "sha256": "cde7da384346420897ff483c3ce3247cd53c663f4c0c9656c4b91c9710371235"
+      "sha256": "f1765fac5b4f504398a595488b954372301ad9a7b2eec2c5d91333c9765e17e5"
     },
     "comparison.json": {
-      "bytes": 2182,
+      "bytes": 5462,
       "local_path": "runs/autoresearch/overnight-20260915/comparison.json",
-      "sha256": "2a78372ee2d12c23f3c4eecfc9b29fbd078c30a8c26c5b01dbe79dfd35305e56"
+      "sha256": "05463ddb233374050c25b391bf4785653a9beaba8abbe469d2f2a7f5a92fe143"
     },
     "contract-v1.json": {
       "bytes": 353,
@@ -343,6 +705,11 @@
       "bytes": 16194,
       "local_path": "runs/autoresearch/overnight-20260915/orchestrator-v2.py",
       "sha256": "676ce60157c544d0969fd2fd78039e206eff5a69a6a816fe8ec55e12cf98065b"
+    },
+    "orchestrator-v3.py": {
+      "bytes": 16784,
+      "local_path": "runs/autoresearch/overnight-20260915/orchestrator-v3.py",
+      "sha256": "b67c44faff639ccfb9c1d615c3bab1e5acd5b9b5ee7b864cad2cff14dbd8f52a"
     },
     "preflight-result.json": {
       "bytes": 1671,
@@ -379,6 +746,21 @@
       "local_path": "runs/autoresearch/overnight-20260915/progress-006.log",
       "sha256": "df152260c4a8a7c2ace71af32f5dddbea54a12214feedecaa00e7c7c3631c46a"
     },
+    "progress-009.log": {
+      "bytes": 124,
+      "local_path": "runs/autoresearch/overnight-20260915/progress-009.log",
+      "sha256": "062cf2b00ea43e042d44b63aed003f46146a4c2b253d19f3ac62b2c52cbc7a6f"
+    },
+    "progress-012.log": {
+      "bytes": 125,
+      "local_path": "runs/autoresearch/overnight-20260915/progress-012.log",
+      "sha256": "fbd0790f020cd848e841118cf2c28f54845a3947f3d28f518680ed477f5f3d54"
+    },
+    "publication-006.log": {
+      "bytes": 223,
+      "local_path": "runs/autoresearch/overnight-20260915/publication-006.log",
+      "sha256": "a7ff9bed9018ced8a02b925e3774a4cf704c0f017f7e6eb2eb1f6d6ed57cad89"
+    },
     "publication-controls.log": {
       "bytes": 223,
       "local_path": "runs/autoresearch/overnight-20260915/publication-controls.log",
@@ -390,14 +772,14 @@
       "sha256": "5c624e7905e952c5ceb8ed2c85dfb1c463d1c59b67d14264c5db599e0cb5d258"
     },
     "result.json": {
-      "bytes": 1115,
+      "bytes": 1116,
       "local_path": "runs/autoresearch/overnight-20260915/result.json",
-      "sha256": "03dfadecdb47caf45f068db88d1d8bbfd15b3b8169b2d50e742afc22c9f09a7c"
+      "sha256": "51467808ec748e04fc0df980624802df6cbc8e86afd88b6a17f65730d4003b67"
     },
     "rows-000-result.json": {
-      "bytes": 4190,
+      "bytes": 10775,
       "local_path": "runs/autoresearch/overnight-20260915/rows-000-result.json",
-      "sha256": "c1d25eb4bd72fd38089ca698ff68f4ff46d3d66c34cd2b770853cd0bd87561da"
+      "sha256": "0ed20fb1a7d12e7882559fa244445486a51fecc86f8f21072f61e452caae00a9"
     },
     "search-space.json": {
       "bytes": 9145,
@@ -423,6 +805,10 @@
       "orchestrator-v2.py": {
         "published_path": "reports/source-snapshots/676ce60157c544d0969fd2fd78039e206eff5a69a6a816fe8ec55e12cf98065b.py",
         "sha256": "676ce60157c544d0969fd2fd78039e206eff5a69a6a816fe8ec55e12cf98065b"
+      },
+      "orchestrator-v3.py": {
+        "published_path": "reports/source-snapshots/b67c44faff639ccfb9c1d615c3bab1e5acd5b9b5ee7b864cad2cff14dbd8f52a.py",
+        "sha256": "b67c44faff639ccfb9c1d615c3bab1e5acd5b9b5ee7b864cad2cff14dbd8f52a"
       }
     },
     "execution_receipt": null,

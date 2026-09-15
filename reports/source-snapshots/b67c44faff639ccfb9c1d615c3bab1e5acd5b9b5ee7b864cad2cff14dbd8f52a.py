@@ -104,17 +104,10 @@ def rank(records, choices):
         ratio = candidate['seconds'] / reference['seconds']
         quality = delta < 0 and ratio <= 1.10
         faster = ratio <= .90 and delta <= .001
-        frontier = not any(
-            aggregate(records, other)['bpb'] <= candidate['bpb']
-            and aggregate(records, other)['seconds'] <= candidate['seconds']
-            and (aggregate(records, other)['bpb'] < candidate['bpb']
-                 or aggregate(records, other)['seconds'] < candidate['seconds'])
-            for other in available if other != label)
         options.append(dict(label=label, control=control, delta_bpb=delta, time_ratio=ratio,
-                            on_measured_quality_time_frontier=frontier,
                             qualifies=quality or faster, quality=quality,
                             observed_candidate=candidate, observed_control=reference))
-    return sorted(options, key=lambda x: (not x['on_measured_quality_time_frontier'], not x['qualifies'], not x['quality'], x['delta_bpb'], x['time_ratio'], x['label']))
+    return sorted(options, key=lambda x: (not x['qualifies'], not x['quality'], x['delta_bpb'], x['time_ratio'], x['label']))
 
 
 def select(records, choices):
@@ -157,7 +150,7 @@ def select(records, choices):
         label = min(pending, key=lambda x: family_order.index(choices[x]['family']))
         return label, 42, 'screen', f'After {last["label"]} BPB {last["metrics"]["val_bpb"]}, prioritize {favored}: continue an improving family or explore a less-tested family after no improvement; no combined winners', dict(D=d, M=m, DG=dg, ranking=ranked)
     # No count stop: acquire repeatability evidence on the strongest candidates.
-    top = [x for x in ranked if x['qualifies'] and x['on_measured_quality_time_frontier']][:3] or ranked[:1]
+    top = [x for x in ranked if x['qualifies']][:3] or ranked[:1]
     target = min(top, key=lambda x: aggregate(records, x['label'])['repeats'])
     label = target['control'] if aggregate(records, target['control'])['repeats'] < aggregate(records, target['label'])['repeats'] else target['label']
     return label, 42, 'replication', 'Search space screened; adaptive repeat of a promising tradeoff or its control to estimate execution noise', target

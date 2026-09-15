@@ -48,6 +48,12 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [overnight-20260915/trial-0004-DG-layer3-s42](experiments/overnight-20260915--trial-0004-DG-layer3-s42-50f4837d/README.md) | completed | fixed_updates | 0.634633 |
 | [overnight-20260915/trial-0005-DG-layer0-s42](experiments/overnight-20260915--trial-0005-DG-layer0-s42-391381bf/README.md) | completed | fixed_updates | 0.63402 |
 | [overnight-20260915/trial-0006-DG-layer2-s42](experiments/overnight-20260915--trial-0006-DG-layer2-s42-5c4d0d9c/README.md) | completed | fixed_updates | 0.634624 |
+| [overnight-20260915/trial-0007-D-lr0.02-s42](experiments/overnight-20260915--trial-0007-D-lr0.02-s42-cc56ffb5/README.md) | completed | fixed_updates | 0.635645 |
+| [overnight-20260915/trial-0008-M-experts2-s42](experiments/overnight-20260915--trial-0008-M-experts2-s42-fd667df4/README.md) | completed | fixed_updates | 0.634345 |
+| [overnight-20260915/trial-0009-M-router_lr0.0003-s42](experiments/overnight-20260915--trial-0009-M-router_lr0.0003-s42-e6256c94/README.md) | completed | fixed_updates | 0.638516 |
+| [overnight-20260915/trial-0010-D-lr0.06-s42](experiments/overnight-20260915--trial-0010-D-lr0.06-s42-ce80053b/README.md) | completed | fixed_updates | 0.640004 |
+| [overnight-20260915/trial-0011-M-router_lr0.003-s42](experiments/overnight-20260915--trial-0011-M-router_lr0.003-s42-526a3d8b/README.md) | completed | fixed_updates | 0.633858 |
+| [overnight-20260915/trial-0012-M-aux_loss_weight0.003-s42](experiments/overnight-20260915--trial-0012-M-aux_loss_weight0.003-s42-c85f4b2d/README.md) | completed | fixed_updates | 0.633895 |
 | [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | running | stage_or_unknown | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |

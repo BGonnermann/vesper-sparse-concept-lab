@@ -107,6 +107,11 @@ consider at least 10% time saving with no more than .001 BPB degradation. If non
 qualifies, report that no candidate qualified; do not invent a winner. Confirmed
 means measured over three seeds, not statistically established superiority.
 
+Selection also prioritizes the overall measured BPB/all-update-time Pareto
+frontier. A large gain against a weak matching control does not outrank an
+alternative that is already both faster and better. Frontier membership is
+provisional and computed from seed-42 means, not from confirmation outcomes.
+
 These are **equal-token** comparisons with measured time as a second axis. Do
 not divide BPB by seconds, rank different training budgets on one leaderboard,
 or claim an equal-time quality gain. No equal-time runs are planned. Selection

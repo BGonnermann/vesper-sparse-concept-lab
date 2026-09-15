@@ -24,7 +24,7 @@ cuda correctness exit: 0
 
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 6. No candidate-count cap.
+Status: running. Completed full trials: 12. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
@@ -36,6 +36,12 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0004-DG-layer3-s42 | screen / 42 | 0.634633 | 43597.1 | 192.9 | 199.5 | 602.2 / 624.0 | 27,443,885 / 26,395,437 |
 | trial-0005-DG-layer0-s42 | screen / 42 | 0.634020 | 43803.4 | 192.0 | 198.6 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
 | trial-0006-DG-layer2-s42 | screen / 42 | 0.634624 | 43845.9 | 191.8 | 198.3 | 600.7 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0007-D-lr0.02-s42 | screen / 42 | 0.635645 | 48507.6 | 173.2 | 179.3 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
+| trial-0008-M-experts2-s42 | screen / 42 | 0.634345 | 31489.2 | 267.2 | 273.6 | 703.8 / 756.0 | 33,428,268 / 26,350,380 |
+| trial-0009-M-router_lr0.0003-s42 | screen / 42 | 0.638516 | 26640.3 | 315.7 | 322.3 | 900.4 / 954.0 | 47,588,652 / 26,354,988 |
+| trial-0010-D-lr0.06-s42 | screen / 42 | 0.640004 | 48117.8 | 174.6 | 180.8 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
+| trial-0011-M-router_lr0.003-s42 | screen / 42 | 0.633858 | 26756.5 | 314.4 | 320.8 | 901.6 / 956.0 | 47,588,652 / 26,354,988 |
+| trial-0012-M-aux_loss_weight0.003-s42 | screen / 42 | 0.633895 | 26673.5 | 315.4 | 321.9 | 902.0 / 952.0 | 47,588,652 / 26,354,988 |
 
 Timed throughput excludes the first11 updates; all-update GPU time includes them. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 
