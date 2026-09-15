@@ -939,6 +939,25 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0031-R-prediction_weight0.3-s42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "fcfa65bb5eb48334f2b16f1c5cbfb70594bce42af329ca3df986073a3e400e09",
+      "experiment_id": "ncp-20260915--trial-0031-R-prediction_weight0.3-s42-15ed2fdd",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 30.1,
+        "num_steps": 512.0,
+        "peak_vram_mb": 654.8,
+        "total_seconds": 220.3,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 212.6,
+        "val_bpb": 0.636698
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,

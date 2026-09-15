@@ -2416,6 +2416,43 @@
       "review": "No implementation blockers; actual selected count equality and integrated CUDA/captured execution remain required",
       "status": "completed"
     },
+    "pending-integration-result.json": {
+      "condition": "Apply only after current normalized search process exits; then fresh CPU/CUDA and synthetic fit gates precede training",
+      "files": [
+        {
+          "destination": "<repo>\\scripts\\autoresearch.py",
+          "existing_sha256": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222",
+          "source": "<repo>\\runs\\autoresearch\\ncp-20260915\\pending-mechanism\\autoresearch.py",
+          "source_sha256": "ec5936e9508826602b4e77cf36fbad2bc2fe400e2b3076c190a426339b43dbd4"
+        },
+        {
+          "destination": "<repo>\\scripts\\autoresearch_model.py",
+          "existing_sha256": "8fd983d0c03da40ec16d9e1c78df2fec08b1d9dfc5d26e32cabb03995c3cae15",
+          "source": "<repo>\\runs\\autoresearch\\ncp-20260915\\pending-mechanism\\autoresearch_model.py",
+          "source_sha256": "8b7a85b6e7e6ee07bb94e8580cc4290efc9ded5ed229d255ad19c5b384d3c2c2"
+        },
+        {
+          "destination": "<repo>\\scripts\\autoresearch_ncp.py",
+          "existing_sha256": "8de45dc3cbd38e73f3ff2acaf66972be6744d9c2d4e8869748aca6413b8e8f1d",
+          "source": "<repo>\\runs\\autoresearch\\ncp-20260915\\pending-mechanism\\autoresearch_ncp.py",
+          "source_sha256": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c"
+        },
+        {
+          "destination": "<repo>\\scripts\\ncp_campaign.py",
+          "existing_sha256": "18aec1d1674cb15f56268d8d02724b599fd0e56f36fa26e88226e2e3c80395cc",
+          "source": "<repo>\\runs\\autoresearch\\ncp-20260915\\pending-mechanism\\ncp_campaign.py",
+          "source_sha256": "feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279"
+        },
+        {
+          "destination": "<repo>\\tests\\test_ncp_extensions.py",
+          "existing_sha256": null,
+          "source": "<repo>\\runs\\autoresearch\\ncp-20260915\\pending-mechanism\\test_ncp_extensions.py",
+          "source_sha256": "4fca0c40faedc36425d2415308c08d25ad95f84d2311ff796bfe0ea6666231c5"
+        }
+      ],
+      "kind": "prepared_integration",
+      "status": "prepared"
+    },
     "preflight-1789473279-result.json": {
       "cpu": {
         "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cpu-1789473248.log",
@@ -2606,7 +2643,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "517942cd6fd2fb196c49d996b0a4d232f83cf25a",
+      "publication_commit": "8ef1e04deb24b144fb9a9bde2a2f4c9d825c2842",
       "status": "completed",
       "verified_remote": true
     },
@@ -2676,9 +2713,9 @@
       "sha256": "584428ee9b9f704f89dc7da28484181e2156eeb17b17576cedbf9087a56d1b97"
     },
     "campaign.log": {
-      "bytes": 29894,
+      "bytes": 30898,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "43333f7204dde21fd5a16ae40447198315b575a9787ad187a340d78894c250ca"
+      "sha256": "89b718e31ef170657d188309f6a8ff448324a07cd48437ef2b4b8a1d64041a21"
     },
     "contract.json": {
       "bytes": 286,
@@ -2856,9 +2893,9 @@
       "sha256": "0b5d38542a591f81c259a4cae09dc79d72478f510c91bf70dd0f0a85d39e69f2"
     },
     "next-selection.json": {
-      "bytes": 9991,
+      "bytes": 10418,
       "local_path": "runs/autoresearch/ncp-20260915/next-selection.json",
-      "sha256": "518288d7f37317b28fa7ff1f3fab7edea5369bb04ce910b1d6cd90396614714c"
+      "sha256": "3a9ea1ab25a217c90f23b6ab52c2506d1461d4feacbbc8a321c24c3dd5b6ac39"
     },
     "normalization-green-cpu.log": {
       "bytes": 159,
@@ -2894,6 +2931,11 @@
       "bytes": 1088,
       "local_path": "runs/autoresearch/ncp-20260915/pending-development-result.json",
       "sha256": "42bc0b87200061ab8e0253a06fa8a83d52d00487c718fa824ebc9f3c168feb14"
+    },
+    "pending-integration-result.json": {
+      "bytes": 2427,
+      "local_path": "runs/autoresearch/ncp-20260915/pending-integration-result.json",
+      "sha256": "c03fc43dbf62639f6eb70fbd24d24877eec3a59fd5262ab2b0c15768cd2f7532"
     },
     "plan.md": {
       "bytes": 8589,
@@ -2993,7 +3035,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "4043e6a246e4da5cb24373aacad23e66428affe91fcb8b5e0ec6f002528f1b07"
+      "sha256": "0fd1bb6fbe41c1057c369e3c661d7cead91bafcb1a4c2d77b7581f82e2cc375a"
     },
     "report-red.log": {
       "bytes": 877,
@@ -3001,9 +3043,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 195007,
+      "bytes": 203028,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "a93d2cb35053f2de861f567100ebb8b3f0f73230cb7f684b2a32e8b06d7d2da0"
+      "sha256": "08263d38df7b9603db23b77182b9695fbf2c6f9538891466dd97ae0b110267b8"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -3026,9 +3068,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 13770,
+      "bytes": 14131,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "7917ac6b340350322d5ddd448357fdc3a56ab25ffb3ff5a9afc6f7fb511f8f42"
+      "sha256": "008e1760539409aa6ddd3477d363a6c04628e6a80cab4577d826fdc36e893eca"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
