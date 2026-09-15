@@ -10020,7 +10020,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "8ff85ad5df66bd8594327bc5297136237c993c78",
+      "publication_commit": "a6b64c7cc46661e9c08a4597b142e4a9f1f935c6",
       "status": "completed",
       "verified_remote": true
     },
@@ -10055,6 +10055,7 @@
   },
   "diagnostics": [
     "audit-recovered.log:\nSyntaxError: '(' was never closed",
+    "campaign.log:\n2026-09-15T16:18:05.716910+00:00 DECISION primary NCP seeds45/46 mixed: delta +0.002119 and -0.003980 BPB; same-sign rule failed. Finish all frozen controls/sensitivity seeds; no candidate replacement. Prospective initializer/order crossing and checkpoint interventions recorded in docs/ncp-campaign.md. Conditional D12 transfer will not enter.",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -10136,9 +10137,9 @@
       "sha256": "21d3865e69220d3891ed1e431c831fe9f79edeed48ca4b23c2293848a3a3a240"
     },
     "campaign.log": {
-      "bytes": 79612,
+      "bytes": 80842,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "2bb3739612e6b2a61d9c53d878efa8d34e2c164dce3f447c40bc6d4912b4ac81"
+      "sha256": "b186d284d430fa798dab78dca2c7059e09d782f4bba02ed57b47a129b05a1380"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -10166,9 +10167,9 @@
       "sha256": "06ff16bf72e6de93eb086c2a5614c7829a0e2f7c42bbf0ddec6a74e77d4a499f"
     },
     "confirmation-queue.log": {
-      "bytes": 7678,
+      "bytes": 8562,
       "local_path": "runs/autoresearch/ncp-20260915/confirmation-queue.log",
-      "sha256": "dbcc04a52ded06dad6d87af10f2c3ded30e8ae865fde23d19746014cd9f1748f"
+      "sha256": "cf992931bd73ced6ab7ba7d4f8b23130da322f3b2e2f5c2c04909ec903e7bc5d"
     },
     "confirmation-selection.json": {
       "bytes": 9231,
@@ -10693,7 +10694,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "9e5fc3d1ccc49ed04410674cf49fd2b0fe09efa45b9ddcbf732d39755fc882c5"
+      "sha256": "2fea54a7db12dc1c30a431e2da52387caeb7890bdcf537edf34313e306e4741c"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -10716,9 +10717,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 580868,
+      "bytes": 583775,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "3a4c78dc34c7903eeb078bf119fce3be51dd45ed3c208eb5a9873e3cdf34f857"
+      "sha256": "238a7cf4704836ff19a5ab9793cd874f72118b7c4ad8bcb6ded12e606af596d9"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -10741,9 +10742,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 30405,
+      "bytes": 30894,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "8c2fa9ac907218737d7079adb0c2266ce77d2336569340c09b33a6618bbad326"
+      "sha256": "a8724df6b766ede4d7bc867f660c355f98f2cbc87d95ed538ad573e1f3b6429c"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
