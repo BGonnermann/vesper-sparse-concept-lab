@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-13 completed of 15 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+14 completed of 16 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -28,6 +28,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0013-AUX-s42](../ncp-20260915--trial-0013-AUX-s42-bb8c5a76/README.md) | 42 | 0.652928 | 217.4 | 224.8 | 38680 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
 | [trial-0014-R-prediction_weight0.1-s42](../ncp-20260915--trial-0014-R-prediction_weight0.1-s42-06b4af48/README.md) | 42 | 0.636121 | 220.2 | 227.7 | 38211 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0015-R-feedback_scale0.1-s42](../ncp-20260915--trial-0015-R-feedback_scale0.1-s42-23081d16/README.md) | 42 | 0.633732 | 220.0 | 226.0 | 38226 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0016-R-feedback_scale0.3-s42](../ncp-20260915--trial-0016-R-feedback_scale0.3-s42-866e46eb/README.md) | 42 | 0.634247 | 222.0 | 228.0 | 37882 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -70,6 +71,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0013-AUX-s42: Retry original unit-weight AUX after distinguishing finite auxiliary MSE from token CE in the stopping guard; same training objective and update budget
 - trial-0014-R-prediction_weight0.1-s42: Change only prediction_weight to 0.1 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0015-R-feedback_scale0.1-s42: Change only feedback_scale to 0.1 on normalized NCP to test quality versus its stable unit-weight control
+- trial-0016-R-feedback_scale0.3-s42: Change only feedback_scale to 0.3 on normalized NCP to test quality versus its stable unit-weight control
 
 ## Correctness and diagnosis
 
