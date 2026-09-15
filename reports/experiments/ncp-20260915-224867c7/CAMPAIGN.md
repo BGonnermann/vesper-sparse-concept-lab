@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-77 completed of 79 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+78 completed of 80 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -94,6 +94,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0077-CROSS-NCP-s45](../ncp-20260915--trial-0077-CROSS-NCP-s45-695f2d13/README.md) | 45 / 42 | 0.637095 | 218.9 | 224.7 | 38390 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 | [trial-0078-D12-W384-s43](../ncp-20260915--trial-0078-D12-W384-s43-d2aa9dbf/README.md) | 43 / 43 | 0.622336 | 317.5 | 324.6 | 26471 | 46,400,088 / 46,400,088 | 942.8 / 992.0 | n/a |
 | [trial-0079-D6-W768-s43](../ncp-20260915--trial-0079-D6-W768-s43-cd9ff6f0/README.md) | 43 / 43 | 0.607993 | 164.2 | 169.8 | 51168 | 73,925,196 / 73,925,196 | 1294.2 / 1374.0 | n/a |
+| [trial-0080-D12-W384-s44](../ncp-20260915--trial-0080-D12-W384-s44-5dce61ff/README.md) | 44 / 44 | 0.625419 | 319.3 | 325.0 | 26318 | 46,400,088 / 46,400,088 | 942.8 / 992.0 | n/a |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -158,7 +159,7 @@ FROZEN-NOPRED: 4/4 pairs; mean delta -0.001667; 3 negative signs. Primary same-s
 ## Fixed-width depth decomposition
 
 Predeclared depth6/12 by width384/768, seeds43/44, matrixLR .04, fixed tokens; no configuration selection
-6/8 conditions completed.
+7/8 conditions completed.
 
 | Comparison | Seed | Candidate BPB | Control BPB | Delta | Parameter ratio | Update-time ratio |
 |---|---:|---:|---:|---:|---:|---:|
@@ -166,6 +167,8 @@ Predeclared depth6/12 by width384/768, seeds43/44, matrixLR .04, fixed tokens; n
 | depth_at_width768 | 43 | 0.594495 | 0.607993 | -0.013498 | 1.83 | 1.88 |
 | width_at_depth6 | 43 | 0.607993 | 0.637774 | -0.029781 | 2.81 | 1.00 |
 | width_at_depth12 | 43 | 0.594495 | 0.622336 | -0.027841 | 2.92 | 0.97 |
+| depth_at_width384 | 44 | 0.625419 | 0.643075 | -0.017656 | 1.76 | 2.01 |
+| width_at_depth12 | 44 | 0.592813 | 0.625419 | -0.032606 | 2.92 | 1.01 |
 
 Transfer entry status: not_entered. Frozen D6 mechanism did not pass the predeclared primary same-sign rule
 
@@ -271,6 +274,7 @@ The optional order-seed field changes only the tape permutation; the architectur
 - trial-0077-CROSS-NCP-s45: Separate initialization and training-order sensitivity of the already frozen NCP-minus-dense difference; no reselection; initializer 45, batch order 42
 - trial-0078-D12-W384-s43: Separate the already confirmed joint depth/width gain into fixed-width depth and fixed-depth width comparisons; no tuning
 - trial-0079-D6-W768-s43: Separate the already confirmed joint depth/width gain into fixed-width depth and fixed-depth width comparisons; no tuning
+- trial-0080-D12-W384-s44: Separate the already confirmed joint depth/width gain into fixed-width depth and fixed-depth width comparisons; no tuning
 
 ## Correctness and diagnosis
 

@@ -1632,15 +1632,47 @@
           "delta_bpb": -0.027841000000000005,
           "seed": 43,
           "update_time_ratio": 0.9715842805870841
+        },
+        {
+          "axis": "depth_at_width384",
+          "candidate": "D12-W384",
+          "candidate_bpb": 0.625419,
+          "candidate_parameters": 46400088,
+          "candidate_result_sha256": "e0c5801f4dba835cf3c6714b57f724bec2f35457573e29700b3cd879835ad5b0",
+          "candidate_trial": "trial-0080-D12-W384-s44",
+          "control": "D6",
+          "control_bpb": 0.643075,
+          "control_parameters": 26345772,
+          "control_result_sha256": "691c6d431176ac663280d6adef7b42e174e580f734ccfa2cdc7260664bcca0bd",
+          "control_trial": "trial-0010-D6-s44",
+          "delta_bpb": -0.017656000000000005,
+          "seed": 44,
+          "update_time_ratio": 2.0138586048823797
+        },
+        {
+          "axis": "width_at_depth12",
+          "candidate": "D12",
+          "candidate_bpb": 0.592813,
+          "candidate_parameters": 135267480,
+          "candidate_result_sha256": "9b0aba116973fd437ef6d8f40ddffa00b0b41d00e971f6ded42931ea12763acc",
+          "candidate_trial": "trial-0011-D12-s44",
+          "control": "D12-W384",
+          "control_bpb": 0.625419,
+          "control_parameters": 46400088,
+          "control_result_sha256": "e0c5801f4dba835cf3c6714b57f724bec2f35457573e29700b3cd879835ad5b0",
+          "control_trial": "trial-0080-D12-W384-s44",
+          "delta_bpb": -0.03260599999999991,
+          "seed": 44,
+          "update_time_ratio": 1.0116856374635776
         }
       ],
-      "complete_conditions": 6,
+      "complete_conditions": 7,
       "expected_conditions": 8,
       "kind": "dense_depth_width_grid",
       "mean_deltas": {
-        "depth_at_width384": -0.015437999999999952,
+        "depth_at_width384": -0.01654699999999998,
         "depth_at_width768": -0.01349800000000001,
-        "width_at_depth12": -0.027841000000000005,
+        "width_at_depth12": -0.03022349999999996,
         "width_at_depth6": -0.029780999999999946
       },
       "scope": "Predeclared depth6/12 by width384/768, seeds43/44, matrixLR .04, fixed tokens; no configuration selection",
@@ -12939,7 +12971,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "93dd92b962234ed0e0aad009f8b9fae05db34d08",
+      "publication_commit": "69dd5ae3e8f33deaa77d9fef97b04a1f57b4576e",
       "status": "completed",
       "verified_remote": true
     },
@@ -13274,7 +13306,7 @@
   },
   "diagnostics": [
     "audit-recovered.log:\nSyntaxError: '(' was never closed",
-    "campaign.log:\ntered: D6 primary replication rule failed\n2026-09-15T17:07:05.699998+00:00 PREDECLARED conditional module-seed diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.",
+    "campaign.log:\n2026-09-15T17:07:05.699998+00:00 PREDECLARED conditional module-seed diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -13383,9 +13415,9 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 96948,
+      "bytes": 98169,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "53a15c374d64f2b5efa39c2b8ad8358805e1796d53a2fe2512e6577cdc03033c"
+      "sha256": "0f02443a703dfaaf1e04ffb40ff30bd7a37c4b88ddd1830739cf8bb1f7c7d1f7"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -13488,14 +13520,14 @@
       "sha256": "3dc49a54cf9e97305fbfd3bce71709898246b0f9f806694bbf8f605710179f9a"
     },
     "depth-grid-queue.log": {
-      "bytes": 1902,
+      "bytes": 3123,
       "local_path": "runs/autoresearch/ncp-20260915/depth-grid-queue.log",
-      "sha256": "5b75dc5279cc90db5902d3061e01169cfb614030572060a37ad92366282473e8"
+      "sha256": "eab8bf5bdecb826a4d8e8189fdd496bd2a08b009aa1505d51d501da30dbf8920"
     },
     "depth-grid-result.json": {
-      "bytes": 3128,
+      "bytes": 4451,
       "local_path": "runs/autoresearch/ncp-20260915/depth-grid-result.json",
-      "sha256": "21db4925ace1e9040313f4fdcc246ff7f31d52fc3a8746300e4c787f6b76d38f"
+      "sha256": "5f34c70e413d393ad2386b97a6ba296bf5f73de7dd07eb1bd0362cc7aff60a52"
     },
     "depth-queue.log": {
       "bytes": 3809,
@@ -14120,7 +14152,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "48258e1be73636b8166a6fc5012e89cffbdcdeb9ace805cd80b1d9db4fabfbbd"
+      "sha256": "cf54598e08f49a7a3dd7ea44b2ca1ef63e6bee16e36bbec70bec4c841aa72f62"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -14143,9 +14175,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 688868,
+      "bytes": 692277,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "1a903e7d0c04f70c5680bf29fcfe9d9a66a1abfe344d9c63277f46fbd5572b8c"
+      "sha256": "2f0dd4d78da018a19d7c863ddd71914628e25f5b5f9e1d0f37c17209e2edae41"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -14168,9 +14200,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 39888,
+      "bytes": 40374,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "d2d08287d75749fc8c73cdae281e3c974f3e3a5ddc09ddc0b380238dd4766d20"
+      "sha256": "eb7aa07664d1cf189129936fd092c3e9212c71f9824a9e64b6e761c3425b68dd"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
