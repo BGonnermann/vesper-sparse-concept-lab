@@ -494,7 +494,11 @@
       "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
     }
   },
-  "reporter_sha256": "b7fe4f9a73689b14db57fd66dce6059fd3037f238a49833174e7bc0ba7faaad9",
+  "randomness": {
+    "batch_order_seed": 43,
+    "initialization_seed": 43
+  },
+  "reporter_sha256": "f791bc43f312ace58b98d1c27d27e1faea790c2c94c42de0b0b96f44064d6eaf",
   "schema_version": 1,
   "seeds": [
     43

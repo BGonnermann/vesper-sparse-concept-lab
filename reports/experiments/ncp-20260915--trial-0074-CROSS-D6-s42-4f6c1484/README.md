@@ -1,4 +1,4 @@
-# ncp-20260915/trial-0043-I2-2fd4eaacd2-s42
+# ncp-20260915/trial-0074-CROSS-D6-s42
 
 Outcome: **completed**. Budget family: **fixed_updates**.
 
@@ -7,19 +7,19 @@ Full compact configuration, metrics, seeds, hashes and diagnostics: [report.json
 Provenance: historical recorded commits/hashes only. This publication does not retroactively identify training source.
 Unknown fields remain null. Do not pool different budgets/schedules. Two seeds are not proof of equivalence.
 
-Initialization seed: 42; batch-order seed: 42.
+Initialization seed: 42; batch-order seed: 45.
 
 ```json
 {
   "depth": 6.0,
   "eval_batch_size": 2.0,
-  "num_params_M": 30.0,
+  "num_params_M": 26.3,
   "num_steps": 512.0,
-  "peak_vram_mb": 670.2,
-  "total_seconds": 222.7,
+  "peak_vram_mb": 581.7,
+  "total_seconds": 170.1,
   "total_tokens_M": 8.4,
   "train_batch_size": 2.0,
-  "training_seconds": 214.9,
-  "val_bpb": 0.634902
+  "training_seconds": 164.2,
+  "val_bpb": 0.640354
 }
 ```

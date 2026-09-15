@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-71 completed of 73 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+72 completed of 74 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -13,81 +13,82 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 
 ## Every attempted trial
 
-| Trial | Seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | Target-code collapse |
+| Trial | Init / order seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | Target-code collapse |
 |---|---:|---:|---:|---:|---:|---|---|---|
-| [trial-0001-D6-s42](../ncp-20260915--trial-0001-D6-s42-b009c334/README.md) | 42 | 0.634848 | 177.1 | 184.0 | 47526 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
-| [trial-0002-NCP-s42](../ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | 42 | failed | unavailable | 80.0 | unavailable | 30,056,748 / 30,056,748 * | 654.4 / 690.0 | unavailable |
-| [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 | failed | unavailable | 82.4 | unavailable | 30,056,748 / 30,056,748 * | 654.4 / 690.0 | unavailable |
-| [trial-0004-N-prediction_weight0.1-s42](../ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9/README.md) | 42 | 0.635524 | 202.6 | 210.3 | 41362 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
-| [trial-0005-N-prediction_weight0.03-s42](../ncp-20260915--trial-0005-N-prediction_weight0.03-s42-cd708cd3/README.md) | 42 | 0.635888 | 203.3 | 211.0 | 41265 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
-| [trial-0006-N-RMS-s42](../ncp-20260915--trial-0006-N-RMS-s42-d3652f3a/README.md) | 42 | 0.635927 | 214.2 | 221.8 | 39314 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0007-N-RMS-AUX-s42](../ncp-20260915--trial-0007-N-RMS-AUX-s42-d5def34d/README.md) | 42 | 0.635215 | 204.9 | 212.4 | 41139 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0008-D6-s43](../ncp-20260915--trial-0008-D6-s43-6ae7cb75/README.md) | 43 | 0.637774 | 163.7 | 170.5 | 51373 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
-| [trial-0009-D12-s43](../ncp-20260915--trial-0009-D12-s43-3e98bde0/README.md) | 43 | 0.594495 | 308.5 | 316.9 | 27244 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
-| [trial-0010-D6-s44](../ncp-20260915--trial-0010-D6-s44-8211e6c7/README.md) | 44 | 0.643075 | 158.5 | 165.5 | 52909 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
-| [trial-0011-D12-s44](../ncp-20260915--trial-0011-D12-s44-afbc92ee/README.md) | 44 | 0.592813 | 323.0 | 331.3 | 26022 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
-| [trial-0012-NCP-s42](../ncp-20260915--trial-0012-NCP-s42-bf446fb5/README.md) | 42 | 0.649647 | 220.4 | 227.8 | 38159 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
-| [trial-0013-AUX-s42](../ncp-20260915--trial-0013-AUX-s42-bb8c5a76/README.md) | 42 | 0.652928 | 217.4 | 224.8 | 38680 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
-| [trial-0014-R-prediction_weight0.1-s42](../ncp-20260915--trial-0014-R-prediction_weight0.1-s42-06b4af48/README.md) | 42 | 0.636121 | 220.2 | 227.7 | 38211 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0015-R-feedback_scale0.1-s42](../ncp-20260915--trial-0015-R-feedback_scale0.1-s42-23081d16/README.md) | 42 | 0.633732 | 220.0 | 226.0 | 38226 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0016-R-feedback_scale0.3-s42](../ncp-20260915--trial-0016-R-feedback_scale0.3-s42-866e46eb/README.md) | 42 | 0.634247 | 222.0 | 228.0 | 37882 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0017-R-layers1-s42](../ncp-20260915--trial-0017-R-layers1-s42-341c3f13/README.md) | 42 | 0.638393 | 207.8 | 214.1 | 40394 | 28,287,276 / 28,287,276 | 625.4 / 664.0 | False |
-| [trial-0018-R-after_layer1-s42](../ncp-20260915--trial-0018-R-after_layer1-s42-93561fc2/README.md) | 42 | 0.634774 | 221.0 | 226.9 | 38057 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
-| [trial-0019-R-after_layer2-s42](../ncp-20260915--trial-0019-R-after_layer2-s42-bbb25dff/README.md) | 42 | 0.635594 | 217.0 | 223.7 | 38695 | 30,056,748 / 30,056,748 | 655.8 / 688.0 | False |
-| [trial-0020-R-chunk_size2-s42](../ncp-20260915--trial-0020-R-chunk_size2-s42-94b10b74/README.md) | 42 | 0.634780 | 219.5 | 226.8 | 38242 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
-| [trial-0021-R-chunk_size8-s42](../ncp-20260915--trial-0021-R-chunk_size8-s42-4e711e4f/README.md) | 42 | 0.637063 | 218.2 | 224.3 | 38464 | 30,056,748 / 30,056,748 | 652.1 / 686.0 | False |
-| [trial-0022-R-entries16-s42](../ncp-20260915--trial-0022-R-entries16-s42-2bda239a/README.md) | 42 | 0.633742 | 218.3 | 227.1 | 38544 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0023-R-entries32-s42](../ncp-20260915--trial-0023-R-entries32-s42-0c3fc7ea/README.md) | 42 | 0.634643 | 220.8 | 226.9 | 38057 | 30,019,884 / 30,019,884 | 653.8 / 690.0 | False |
-| [trial-0024-R-entries128-s42](../ncp-20260915--trial-0024-R-entries128-s42-c922a0b0/README.md) | 42 | 0.634150 | 220.0 | 226.4 | 38188 | 30,130,476 / 30,130,476 | 656.7 / 694.0 | False |
-| [trial-0025-R-lr0.0003-s42](../ncp-20260915--trial-0025-R-lr0.0003-s42-df807d5a/README.md) | 42 | 0.634800 | 221.2 | 227.3 | 37996 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0026-R-lr0.003-s42](../ncp-20260915--trial-0026-R-lr0.003-s42-45bd7ff8/README.md) | 42 | 0.635624 | 222.5 | 228.8 | 37721 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0027-R-vq_weight0.1-s42](../ncp-20260915--trial-0027-R-vq_weight0.1-s42-0864ad97/README.md) | 42 | 0.635949 | 220.5 | 226.4 | 38137 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0028-R-ce_weight0.1-s42](../ncp-20260915--trial-0028-R-ce_weight0.1-s42-5fc605e8/README.md) | 42 | 0.633991 | 220.2 | 225.9 | 38171 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0029-R-ce_weight1.0-s42](../ncp-20260915--trial-0029-R-ce_weight1.0-s42-cca8c2df/README.md) | 42 | 0.642264 | 218.4 | 224.0 | 38489 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0030-R-prediction_weight0.03-s42](../ncp-20260915--trial-0030-R-prediction_weight0.03-s42-40596925/README.md) | 42 | 0.635307 | 220.7 | 226.6 | 38110 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0031-R-prediction_weight0.3-s42](../ncp-20260915--trial-0031-R-prediction_weight0.3-s42-15ed2fdd/README.md) | 42 | 0.636698 | 217.8 | 223.6 | 38601 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0032-R-raw-s42](../ncp-20260915--trial-0032-R-raw-s42-d6f49d44/README.md) | 42 | 0.638488 | 218.4 | 225.6 | 38487 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0033-R-no_prediction-s42](../ncp-20260915--trial-0033-R-no_prediction-s42-6bdf165e/README.md) | 42 | 0.636180 | 218.6 | 224.3 | 38442 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0034-R-gain4-s42](../ncp-20260915--trial-0034-R-gain4-s42-4dc85cf9/README.md) | 42 | 0.637500 | 219.4 | 225.2 | 38248 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0035-R-gain8-s42](../ncp-20260915--trial-0035-R-gain8-s42-694ab183/README.md) | 42 | 0.635120 | 219.6 | 225.4 | 38221 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0036-CAP-L2-K64-s42](../ncp-20260915--trial-0036-CAP-L2-K64-s42-0d439659/README.md) | 42 | 0.635008 | 176.4 | 181.7 | 47592 | 30,056,748 / 30,056,748 | 683.0 / 716.0 | n/a |
-| [trial-0037-I2-169ef2cc79-s42](../ncp-20260915--trial-0037-I2-169ef2cc79-s42-bd04fe9b/README.md) | 42 | 0.636130 | 214.6 | 221.8 | 39202 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0038-I2-0f670cafec-s42](../ncp-20260915--trial-0038-I2-0f670cafec-s42-9cd421a4/README.md) | 42 | 0.639392 | 218.3 | 224.0 | 38534 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0039-I2-37a8ad42c0-s42](../ncp-20260915--trial-0039-I2-37a8ad42c0-s42-ee3d34bd/README.md) | 42 | 0.631877 | 218.0 | 223.7 | 38576 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0040-I2-1c8a278808-s42](../ncp-20260915--trial-0040-I2-1c8a278808-s42-4e5a0c79/README.md) | 42 | 0.632987 | 220.7 | 226.5 | 38086 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
-| [trial-0041-I2-253cd0d9c9-s42](../ncp-20260915--trial-0041-I2-253cd0d9c9-s42-811588a4/README.md) | 42 | 0.633320 | 218.3 | 224.0 | 38509 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
-| [trial-0042-I2-491f8344d3-s42](../ncp-20260915--trial-0042-I2-491f8344d3-s42-0a3774ac/README.md) | 42 | 0.635269 | 218.4 | 224.1 | 38492 | 30,001,452 / 30,001,452 | 656.3 / 688.0 | False |
-| [trial-0043-I2-2fd4eaacd2-s42](../ncp-20260915--trial-0043-I2-2fd4eaacd2-s42-3aab367f/README.md) | 42 | 0.634902 | 220.1 | 225.9 | 38201 | 30,001,452 / 30,001,452 | 670.2 / 694.0 | False |
-| [trial-0044-I2-ae91a9e332-s42](../ncp-20260915--trial-0044-I2-ae91a9e332-s42-7f8617c8/README.md) | 42 | 0.632972 | 218.7 | 224.5 | 38454 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0045-I2-e4d0b728f2-s42](../ncp-20260915--trial-0045-I2-e4d0b728f2-s42-bf33b8c4/README.md) | 42 | 0.634788 | 214.4 | 220.2 | 39242 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | True |
-| [trial-0046-I2-4919c50f43-s42](../ncp-20260915--trial-0046-I2-4919c50f43-s42-1f63b17c/README.md) | 42 | 0.632179 | 219.5 | 225.3 | 38285 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
-| [trial-0047-I2-1736a5fa37-s42](../ncp-20260915--trial-0047-I2-1736a5fa37-s42-a4b9cecf/README.md) | 42 | 0.633942 | 218.8 | 224.6 | 38356 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
-| [trial-0048-I2-b248268b0f-s42](../ncp-20260915--trial-0048-I2-b248268b0f-s42-df31e309/README.md) | 42 | 0.633824 | 219.4 | 225.2 | 38336 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
-| [trial-0049-I2-9178a17b2b-s42](../ncp-20260915--trial-0049-I2-9178a17b2b-s42-a90c14b8/README.md) | 42 | 0.634048 | 218.5 | 224.2 | 38467 | 30,056,748 / 30,056,748 | 674.8 / 712.0 | False |
-| [trial-0050-I2-8e935c3aca-s42](../ncp-20260915--trial-0050-I2-8e935c3aca-s42-560d02c3/README.md) | 42 | 0.635248 | 218.6 | 224.3 | 38455 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
-| [trial-0051-I2-2ceac4edb4-s42](../ncp-20260915--trial-0051-I2-2ceac4edb4-s42-1ccc71c7/README.md) | 42 | 0.635224 | 218.4 | 224.1 | 38497 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
-| [trial-0052-I3-36eb3a7c14-s42](../ncp-20260915--trial-0052-I3-36eb3a7c14-s42-dd7b51fd/README.md) | 42 | 0.635110 | 218.6 | 225.9 | 38446 | 30,001,452 / 30,001,452 | 656.3 / 688.0 | False |
-| [trial-0053-I3-81772591c9-s42](../ncp-20260915--trial-0053-I3-81772591c9-s42-c8449081/README.md) | 42 | 0.632797 | 210.8 | 216.6 | 39918 | 30,001,452 / 30,001,452 | 670.2 / 694.0 | False |
-| [trial-0054-I3-8fc5ce9693-s42](../ncp-20260915--trial-0054-I3-8fc5ce9693-s42-a8e4c2bf/README.md) | 42 | 0.633706 | 214.8 | 220.4 | 39141 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0055-I3-da7015e3e7-s42](../ncp-20260915--trial-0055-I3-da7015e3e7-s42-802a8bdb/README.md) | 42 | 0.633584 | 219.1 | 224.9 | 38376 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | True |
-| [trial-0056-D6-s45](../ncp-20260915--trial-0056-D6-s45-b6df3f4a/README.md) | 45 | 0.637922 | 169.7 | 176.5 | 49521 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
-| [trial-0057-I2-37a8ad42c0-s45](../ncp-20260915--trial-0057-I2-37a8ad42c0-s45-142a64df/README.md) | 45 | 0.640041 | 217.8 | 223.4 | 38577 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0058-FROZEN-AUX-s45](../ncp-20260915--trial-0058-FROZEN-AUX-s45-b6e43569/README.md) | 45 | 0.638363 | 216.1 | 221.9 | 38905 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
-| [trial-0059-FROZEN-CAP-s45](../ncp-20260915--trial-0059-FROZEN-CAP-s45-3d706092/README.md) | 45 | 0.638105 | 176.9 | 182.2 | 47499 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
-| [trial-0060-FROZEN-NOPRED-s45](../ncp-20260915--trial-0060-FROZEN-NOPRED-s45-45761a66/README.md) | 45 | 0.639167 | 218.1 | 223.8 | 38565 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0061-D6-s46](../ncp-20260915--trial-0061-D6-s46-444edc46/README.md) | 46 | 0.639401 | 165.8 | 171.1 | 50721 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
-| [trial-0062-I2-37a8ad42c0-s46](../ncp-20260915--trial-0062-I2-37a8ad42c0-s46-94257b4a/README.md) | 46 | 0.635421 | 216.1 | 221.9 | 38863 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0063-FROZEN-AUX-s46](../ncp-20260915--trial-0063-FROZEN-AUX-s46-8ca2da5b/README.md) | 46 | 0.637895 | 216.1 | 221.8 | 38871 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
-| [trial-0064-FROZEN-CAP-s46](../ncp-20260915--trial-0064-FROZEN-CAP-s46-a94324a7/README.md) | 46 | 0.635740 | 171.9 | 177.1 | 48866 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
-| [trial-0065-FROZEN-NOPRED-s46](../ncp-20260915--trial-0065-FROZEN-NOPRED-s46-9e4a889f/README.md) | 46 | 0.638454 | 218.1 | 223.8 | 38553 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0066-I2-37a8ad42c0-s43](../ncp-20260915--trial-0066-I2-37a8ad42c0-s43-83d15adb/README.md) | 43 | 0.639233 | 222.5 | 228.2 | 37793 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0067-FROZEN-AUX-s43](../ncp-20260915--trial-0067-FROZEN-AUX-s43-0c6af3a5/README.md) | 43 | 0.637646 | 212.9 | 218.6 | 39421 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
-| [trial-0068-FROZEN-CAP-s43](../ncp-20260915--trial-0068-FROZEN-CAP-s43-4d62a0b4/README.md) | 43 | 0.637069 | 175.5 | 180.8 | 47794 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
-| [trial-0069-FROZEN-NOPRED-s43](../ncp-20260915--trial-0069-FROZEN-NOPRED-s43-c32cec4d/README.md) | 43 | 0.640659 | 219.7 | 225.5 | 38242 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0070-I2-37a8ad42c0-s44](../ncp-20260915--trial-0070-I2-37a8ad42c0-s44-f0eb8e58/README.md) | 44 | 0.634198 | 217.9 | 223.6 | 38578 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
-| [trial-0071-FROZEN-AUX-s44](../ncp-20260915--trial-0071-FROZEN-AUX-s44-c5dc09aa/README.md) | 44 | 0.642949 | 217.0 | 222.7 | 38699 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | True |
-| [trial-0072-FROZEN-CAP-s44](../ncp-20260915--trial-0072-FROZEN-CAP-s44-90db58b4/README.md) | 44 | 0.635063 | 175.0 | 180.2 | 47959 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
-| [trial-0073-FROZEN-NOPRED-s44](../ncp-20260915--trial-0073-FROZEN-NOPRED-s44-bdbd4373/README.md) | 44 | 0.637281 | 219.9 | 225.7 | 38224 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0001-D6-s42](../ncp-20260915--trial-0001-D6-s42-b009c334/README.md) | 42 / 42 | 0.634848 | 177.1 | 184.0 | 47526 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
+| [trial-0002-NCP-s42](../ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | 42 / 42 | failed | unavailable | 80.0 | unavailable | 30,056,748 / 30,056,748 * | 654.4 / 690.0 | unavailable |
+| [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 / 42 | failed | unavailable | 82.4 | unavailable | 30,056,748 / 30,056,748 * | 654.4 / 690.0 | unavailable |
+| [trial-0004-N-prediction_weight0.1-s42](../ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9/README.md) | 42 / 42 | 0.635524 | 202.6 | 210.3 | 41362 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
+| [trial-0005-N-prediction_weight0.03-s42](../ncp-20260915--trial-0005-N-prediction_weight0.03-s42-cd708cd3/README.md) | 42 / 42 | 0.635888 | 203.3 | 211.0 | 41265 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
+| [trial-0006-N-RMS-s42](../ncp-20260915--trial-0006-N-RMS-s42-d3652f3a/README.md) | 42 / 42 | 0.635927 | 214.2 | 221.8 | 39314 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0007-N-RMS-AUX-s42](../ncp-20260915--trial-0007-N-RMS-AUX-s42-d5def34d/README.md) | 42 / 42 | 0.635215 | 204.9 | 212.4 | 41139 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0008-D6-s43](../ncp-20260915--trial-0008-D6-s43-6ae7cb75/README.md) | 43 / 43 | 0.637774 | 163.7 | 170.5 | 51373 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
+| [trial-0009-D12-s43](../ncp-20260915--trial-0009-D12-s43-3e98bde0/README.md) | 43 / 43 | 0.594495 | 308.5 | 316.9 | 27244 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
+| [trial-0010-D6-s44](../ncp-20260915--trial-0010-D6-s44-8211e6c7/README.md) | 44 / 44 | 0.643075 | 158.5 | 165.5 | 52909 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
+| [trial-0011-D12-s44](../ncp-20260915--trial-0011-D12-s44-afbc92ee/README.md) | 44 / 44 | 0.592813 | 323.0 | 331.3 | 26022 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
+| [trial-0012-NCP-s42](../ncp-20260915--trial-0012-NCP-s42-bf446fb5/README.md) | 42 / 42 | 0.649647 | 220.4 | 227.8 | 38159 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
+| [trial-0013-AUX-s42](../ncp-20260915--trial-0013-AUX-s42-bb8c5a76/README.md) | 42 / 42 | 0.652928 | 217.4 | 224.8 | 38680 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
+| [trial-0014-R-prediction_weight0.1-s42](../ncp-20260915--trial-0014-R-prediction_weight0.1-s42-06b4af48/README.md) | 42 / 42 | 0.636121 | 220.2 | 227.7 | 38211 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0015-R-feedback_scale0.1-s42](../ncp-20260915--trial-0015-R-feedback_scale0.1-s42-23081d16/README.md) | 42 / 42 | 0.633732 | 220.0 | 226.0 | 38226 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0016-R-feedback_scale0.3-s42](../ncp-20260915--trial-0016-R-feedback_scale0.3-s42-866e46eb/README.md) | 42 / 42 | 0.634247 | 222.0 | 228.0 | 37882 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0017-R-layers1-s42](../ncp-20260915--trial-0017-R-layers1-s42-341c3f13/README.md) | 42 / 42 | 0.638393 | 207.8 | 214.1 | 40394 | 28,287,276 / 28,287,276 | 625.4 / 664.0 | False |
+| [trial-0018-R-after_layer1-s42](../ncp-20260915--trial-0018-R-after_layer1-s42-93561fc2/README.md) | 42 / 42 | 0.634774 | 221.0 | 226.9 | 38057 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
+| [trial-0019-R-after_layer2-s42](../ncp-20260915--trial-0019-R-after_layer2-s42-bbb25dff/README.md) | 42 / 42 | 0.635594 | 217.0 | 223.7 | 38695 | 30,056,748 / 30,056,748 | 655.8 / 688.0 | False |
+| [trial-0020-R-chunk_size2-s42](../ncp-20260915--trial-0020-R-chunk_size2-s42-94b10b74/README.md) | 42 / 42 | 0.634780 | 219.5 | 226.8 | 38242 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
+| [trial-0021-R-chunk_size8-s42](../ncp-20260915--trial-0021-R-chunk_size8-s42-4e711e4f/README.md) | 42 / 42 | 0.637063 | 218.2 | 224.3 | 38464 | 30,056,748 / 30,056,748 | 652.1 / 686.0 | False |
+| [trial-0022-R-entries16-s42](../ncp-20260915--trial-0022-R-entries16-s42-2bda239a/README.md) | 42 / 42 | 0.633742 | 218.3 | 227.1 | 38544 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0023-R-entries32-s42](../ncp-20260915--trial-0023-R-entries32-s42-0c3fc7ea/README.md) | 42 / 42 | 0.634643 | 220.8 | 226.9 | 38057 | 30,019,884 / 30,019,884 | 653.8 / 690.0 | False |
+| [trial-0024-R-entries128-s42](../ncp-20260915--trial-0024-R-entries128-s42-c922a0b0/README.md) | 42 / 42 | 0.634150 | 220.0 | 226.4 | 38188 | 30,130,476 / 30,130,476 | 656.7 / 694.0 | False |
+| [trial-0025-R-lr0.0003-s42](../ncp-20260915--trial-0025-R-lr0.0003-s42-df807d5a/README.md) | 42 / 42 | 0.634800 | 221.2 | 227.3 | 37996 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0026-R-lr0.003-s42](../ncp-20260915--trial-0026-R-lr0.003-s42-45bd7ff8/README.md) | 42 / 42 | 0.635624 | 222.5 | 228.8 | 37721 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0027-R-vq_weight0.1-s42](../ncp-20260915--trial-0027-R-vq_weight0.1-s42-0864ad97/README.md) | 42 / 42 | 0.635949 | 220.5 | 226.4 | 38137 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0028-R-ce_weight0.1-s42](../ncp-20260915--trial-0028-R-ce_weight0.1-s42-5fc605e8/README.md) | 42 / 42 | 0.633991 | 220.2 | 225.9 | 38171 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0029-R-ce_weight1.0-s42](../ncp-20260915--trial-0029-R-ce_weight1.0-s42-cca8c2df/README.md) | 42 / 42 | 0.642264 | 218.4 | 224.0 | 38489 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0030-R-prediction_weight0.03-s42](../ncp-20260915--trial-0030-R-prediction_weight0.03-s42-40596925/README.md) | 42 / 42 | 0.635307 | 220.7 | 226.6 | 38110 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0031-R-prediction_weight0.3-s42](../ncp-20260915--trial-0031-R-prediction_weight0.3-s42-15ed2fdd/README.md) | 42 / 42 | 0.636698 | 217.8 | 223.6 | 38601 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0032-R-raw-s42](../ncp-20260915--trial-0032-R-raw-s42-d6f49d44/README.md) | 42 / 42 | 0.638488 | 218.4 | 225.6 | 38487 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0033-R-no_prediction-s42](../ncp-20260915--trial-0033-R-no_prediction-s42-6bdf165e/README.md) | 42 / 42 | 0.636180 | 218.6 | 224.3 | 38442 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0034-R-gain4-s42](../ncp-20260915--trial-0034-R-gain4-s42-4dc85cf9/README.md) | 42 / 42 | 0.637500 | 219.4 | 225.2 | 38248 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0035-R-gain8-s42](../ncp-20260915--trial-0035-R-gain8-s42-694ab183/README.md) | 42 / 42 | 0.635120 | 219.6 | 225.4 | 38221 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0036-CAP-L2-K64-s42](../ncp-20260915--trial-0036-CAP-L2-K64-s42-0d439659/README.md) | 42 / 42 | 0.635008 | 176.4 | 181.7 | 47592 | 30,056,748 / 30,056,748 | 683.0 / 716.0 | n/a |
+| [trial-0037-I2-169ef2cc79-s42](../ncp-20260915--trial-0037-I2-169ef2cc79-s42-bd04fe9b/README.md) | 42 / 42 | 0.636130 | 214.6 | 221.8 | 39202 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0038-I2-0f670cafec-s42](../ncp-20260915--trial-0038-I2-0f670cafec-s42-9cd421a4/README.md) | 42 / 42 | 0.639392 | 218.3 | 224.0 | 38534 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0039-I2-37a8ad42c0-s42](../ncp-20260915--trial-0039-I2-37a8ad42c0-s42-ee3d34bd/README.md) | 42 / 42 | 0.631877 | 218.0 | 223.7 | 38576 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0040-I2-1c8a278808-s42](../ncp-20260915--trial-0040-I2-1c8a278808-s42-4e5a0c79/README.md) | 42 / 42 | 0.632987 | 220.7 | 226.5 | 38086 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
+| [trial-0041-I2-253cd0d9c9-s42](../ncp-20260915--trial-0041-I2-253cd0d9c9-s42-811588a4/README.md) | 42 / 42 | 0.633320 | 218.3 | 224.0 | 38509 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
+| [trial-0042-I2-491f8344d3-s42](../ncp-20260915--trial-0042-I2-491f8344d3-s42-0a3774ac/README.md) | 42 / 42 | 0.635269 | 218.4 | 224.1 | 38492 | 30,001,452 / 30,001,452 | 656.3 / 688.0 | False |
+| [trial-0043-I2-2fd4eaacd2-s42](../ncp-20260915--trial-0043-I2-2fd4eaacd2-s42-3aab367f/README.md) | 42 / 42 | 0.634902 | 220.1 | 225.9 | 38201 | 30,001,452 / 30,001,452 | 670.2 / 694.0 | False |
+| [trial-0044-I2-ae91a9e332-s42](../ncp-20260915--trial-0044-I2-ae91a9e332-s42-7f8617c8/README.md) | 42 / 42 | 0.632972 | 218.7 | 224.5 | 38454 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0045-I2-e4d0b728f2-s42](../ncp-20260915--trial-0045-I2-e4d0b728f2-s42-bf33b8c4/README.md) | 42 / 42 | 0.634788 | 214.4 | 220.2 | 39242 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | True |
+| [trial-0046-I2-4919c50f43-s42](../ncp-20260915--trial-0046-I2-4919c50f43-s42-1f63b17c/README.md) | 42 / 42 | 0.632179 | 219.5 | 225.3 | 38285 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
+| [trial-0047-I2-1736a5fa37-s42](../ncp-20260915--trial-0047-I2-1736a5fa37-s42-a4b9cecf/README.md) | 42 / 42 | 0.633942 | 218.8 | 224.6 | 38356 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
+| [trial-0048-I2-b248268b0f-s42](../ncp-20260915--trial-0048-I2-b248268b0f-s42-df31e309/README.md) | 42 / 42 | 0.633824 | 219.4 | 225.2 | 38336 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0049-I2-9178a17b2b-s42](../ncp-20260915--trial-0049-I2-9178a17b2b-s42-a90c14b8/README.md) | 42 / 42 | 0.634048 | 218.5 | 224.2 | 38467 | 30,056,748 / 30,056,748 | 674.8 / 712.0 | False |
+| [trial-0050-I2-8e935c3aca-s42](../ncp-20260915--trial-0050-I2-8e935c3aca-s42-560d02c3/README.md) | 42 / 42 | 0.635248 | 218.6 | 224.3 | 38455 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
+| [trial-0051-I2-2ceac4edb4-s42](../ncp-20260915--trial-0051-I2-2ceac4edb4-s42-1ccc71c7/README.md) | 42 / 42 | 0.635224 | 218.4 | 224.1 | 38497 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
+| [trial-0052-I3-36eb3a7c14-s42](../ncp-20260915--trial-0052-I3-36eb3a7c14-s42-dd7b51fd/README.md) | 42 / 42 | 0.635110 | 218.6 | 225.9 | 38446 | 30,001,452 / 30,001,452 | 656.3 / 688.0 | False |
+| [trial-0053-I3-81772591c9-s42](../ncp-20260915--trial-0053-I3-81772591c9-s42-c8449081/README.md) | 42 / 42 | 0.632797 | 210.8 | 216.6 | 39918 | 30,001,452 / 30,001,452 | 670.2 / 694.0 | False |
+| [trial-0054-I3-8fc5ce9693-s42](../ncp-20260915--trial-0054-I3-8fc5ce9693-s42-a8e4c2bf/README.md) | 42 / 42 | 0.633706 | 214.8 | 220.4 | 39141 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0055-I3-da7015e3e7-s42](../ncp-20260915--trial-0055-I3-da7015e3e7-s42-802a8bdb/README.md) | 42 / 42 | 0.633584 | 219.1 | 224.9 | 38376 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | True |
+| [trial-0056-D6-s45](../ncp-20260915--trial-0056-D6-s45-b6df3f4a/README.md) | 45 / 45 | 0.637922 | 169.7 | 176.5 | 49521 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
+| [trial-0057-I2-37a8ad42c0-s45](../ncp-20260915--trial-0057-I2-37a8ad42c0-s45-142a64df/README.md) | 45 / 45 | 0.640041 | 217.8 | 223.4 | 38577 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0058-FROZEN-AUX-s45](../ncp-20260915--trial-0058-FROZEN-AUX-s45-b6e43569/README.md) | 45 / 45 | 0.638363 | 216.1 | 221.9 | 38905 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
+| [trial-0059-FROZEN-CAP-s45](../ncp-20260915--trial-0059-FROZEN-CAP-s45-3d706092/README.md) | 45 / 45 | 0.638105 | 176.9 | 182.2 | 47499 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
+| [trial-0060-FROZEN-NOPRED-s45](../ncp-20260915--trial-0060-FROZEN-NOPRED-s45-45761a66/README.md) | 45 / 45 | 0.639167 | 218.1 | 223.8 | 38565 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0061-D6-s46](../ncp-20260915--trial-0061-D6-s46-444edc46/README.md) | 46 / 46 | 0.639401 | 165.8 | 171.1 | 50721 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
+| [trial-0062-I2-37a8ad42c0-s46](../ncp-20260915--trial-0062-I2-37a8ad42c0-s46-94257b4a/README.md) | 46 / 46 | 0.635421 | 216.1 | 221.9 | 38863 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0063-FROZEN-AUX-s46](../ncp-20260915--trial-0063-FROZEN-AUX-s46-8ca2da5b/README.md) | 46 / 46 | 0.637895 | 216.1 | 221.8 | 38871 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
+| [trial-0064-FROZEN-CAP-s46](../ncp-20260915--trial-0064-FROZEN-CAP-s46-a94324a7/README.md) | 46 / 46 | 0.635740 | 171.9 | 177.1 | 48866 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
+| [trial-0065-FROZEN-NOPRED-s46](../ncp-20260915--trial-0065-FROZEN-NOPRED-s46-9e4a889f/README.md) | 46 / 46 | 0.638454 | 218.1 | 223.8 | 38553 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0066-I2-37a8ad42c0-s43](../ncp-20260915--trial-0066-I2-37a8ad42c0-s43-83d15adb/README.md) | 43 / 43 | 0.639233 | 222.5 | 228.2 | 37793 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0067-FROZEN-AUX-s43](../ncp-20260915--trial-0067-FROZEN-AUX-s43-0c6af3a5/README.md) | 43 / 43 | 0.637646 | 212.9 | 218.6 | 39421 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | False |
+| [trial-0068-FROZEN-CAP-s43](../ncp-20260915--trial-0068-FROZEN-CAP-s43-4d62a0b4/README.md) | 43 / 43 | 0.637069 | 175.5 | 180.8 | 47794 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
+| [trial-0069-FROZEN-NOPRED-s43](../ncp-20260915--trial-0069-FROZEN-NOPRED-s43-c32cec4d/README.md) | 43 / 43 | 0.640659 | 219.7 | 225.5 | 38242 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0070-I2-37a8ad42c0-s44](../ncp-20260915--trial-0070-I2-37a8ad42c0-s44-f0eb8e58/README.md) | 44 / 44 | 0.634198 | 217.9 | 223.6 | 38578 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0071-FROZEN-AUX-s44](../ncp-20260915--trial-0071-FROZEN-AUX-s44-c5dc09aa/README.md) | 44 / 44 | 0.642949 | 217.0 | 222.7 | 38699 | 30,001,452 / 30,001,452 | 653.3 / 690.0 | True |
+| [trial-0072-FROZEN-CAP-s44](../ncp-20260915--trial-0072-FROZEN-CAP-s44-90db58b4/README.md) | 44 / 44 | 0.635063 | 175.0 | 180.2 | 47959 | 30,001,452 / 30,001,452 | 686.5 / 716.0 | n/a |
+| [trial-0073-FROZEN-NOPRED-s44](../ncp-20260915--trial-0073-FROZEN-NOPRED-s44-bdbd4373/README.md) | 44 / 44 | 0.637281 | 219.9 | 225.7 | 38224 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0074-CROSS-D6-s42](../ncp-20260915--trial-0074-CROSS-D6-s42-4f6c1484/README.md) | 42 / 45 | 0.640354 | 168.1 | 174.8 | 49995 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -148,6 +149,19 @@ FROZEN-AUX: 4/4 pairs; mean delta -0.001990; 2 negative signs. Primary same-sign
 FROZEN-CAP: 4/4 pairs; mean delta +0.000729; 2 negative signs. Primary same-sign improvement: False.
 
 FROZEN-NOPRED: 4/4 pairs; mean delta -0.001667; 3 negative signs. Primary same-sign improvement: False.
+
+Transfer entry status: not_entered. Frozen D6 mechanism did not pass the predeclared primary same-sign rule
+
+## Initializer versus batch-order diagnosis
+
+Two deliberately chosen seed levels diagnose the observed reversal; not four independent replications or held-out evidence. Utilization samples follow order seed.
+
+| Initialization seed | Batch-order seed | Dense BPB | NCP BPB | NCP minus dense | Evidence |
+|---:|---:|---:|---:|---:|---|
+| 42 | 42 | 0.634848 | 0.631877 | -0.002971 | Reused diagonal |
+| 45 | 45 | 0.637922 | 0.640041 | +0.002119 | Reused diagonal |
+
+The optional order-seed field changes only the tape permutation; the architecture and objectives stay frozen. Actual-loop tests verify default compatibility, unchanged initialization when order changes, unchanged order when initialization changes, and complete tape coverage. New runs are excluded from selection and independent-seed confirmation summaries.
 
 ## Attempts, decisions and failures
 
@@ -224,6 +238,7 @@ FROZEN-NOPRED: 4/4 pairs; mean delta -0.001667; 3 negative signs. Primary same-s
 - trial-0071-FROZEN-AUX-s44: Frozen four-seed confirmation: FROZEN-AUX, seed44; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 - trial-0072-FROZEN-CAP-s44: Frozen four-seed confirmation: FROZEN-CAP, seed44; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
 - trial-0073-FROZEN-NOPRED-s44: Frozen four-seed confirmation: FROZEN-NOPRED, seed44; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection
+- trial-0074-CROSS-D6-s42: Separate initialization and training-order sensitivity of the already frozen NCP-minus-dense difference; no reselection; initializer 42, batch order 45
 
 ## Correctness and diagnosis
 
