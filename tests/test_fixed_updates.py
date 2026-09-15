@@ -40,6 +40,30 @@ class Toy(torch.nn.Module):
 
 
 class FixedTests(unittest.TestCase):
+    def test_loss_failure_preserves_partial_state_and_accounting(self):
+        import json
+        class Unstable(Toy):
+            def forward(self,x,y): return self.weight.square().mean()*200
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory);torch.save(torch.zeros(512,2,1,2,dtype=torch.int64),path/'tape.pt')
+            protocol=dict(seed=43,tokens_per_update=2,sequence_length=2,optimizer_updates=512,
+                batch_tape=str(path/'tape.pt'),batch_tape_sha256=digest(path/'tape.pt'),schedule={})
+            train=SimpleNamespace(GPT=Unstable,UNEMBEDDING_LR=.004,EMBEDDING_LR=.6,SCALAR_LR=.5,
+                ADAM_BETAS=(.8,.95),MATRIX_LR=.04,WEIGHT_DECAY=.2)
+            runtime=SimpleNamespace(device='cpu',device_type='cpu',amp_dtype=torch.bfloat16)
+            cwd=Path.cwd()
+            try:
+                os.chdir(path)
+                with patch('torch.cuda.synchronize'),patch.object(torch.Tensor,'pin_memory',lambda self:self),contextlib.redirect_stdout(io.StringIO()):
+                    with self.assertRaisesRegex(RuntimeError,'Invalid training loss'):
+                        fixed_training(train,protocol,runtime,None,None,1,False)
+                self.assertTrue((path/'training-failure.json').exists(),'Missing partial failure receipt')
+                receipt=json.loads((path/'training-failure.json').read_text())
+                self.assertEqual(receipt['optimizer_updates'],1)
+                self.assertEqual(receipt['training_tokens'],2)
+                self.assertTrue((path/'checkpoint_failure.pt').exists())
+            finally: os.chdir(cwd)
+
     def test_actual_loop_stops_at_512_including_warmup(self):
         import json
         with tempfile.TemporaryDirectory() as directory:

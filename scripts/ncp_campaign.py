@@ -67,7 +67,9 @@ def health(path):
         mean_next_concept_mse=sum(s['next_concept_mse'] for s in samples)/len(samples),
         mean_feedback_rms=sum(s['feedback_rms'] for s in samples)/len(samples),
         mean_hidden_rms=sum(s['hidden_rms'] for s in samples)/len(samples),
-        training_loss_means=data['training_loss_means'])
+        training_loss_means=data['training_loss_means'],
+        final_update_gradient_norms=data['final_update_gradient_norms'],
+        final_update_parameter_delta_norms=data['final_update_parameter_delta_norms'])
 
 
 def preflight():
@@ -111,6 +113,7 @@ def trial(label, seed, hypothesis, phase='screen', control='D6'):
     records=sorted(HERE.glob('trial-*/result.json'))
     out=HERE/f'trial-{len(records)+1:04d}-{label}-s{seed}'
     out.mkdir(exist_ok=False)
+    shutil.copy2(Path(__file__),out/'orchestrator.py')
     selection=dict(label=label,seed=seed,phase=phase,hypothesis=hypothesis,control=control,
         selected_at=datetime.now(timezone.utc).isoformat(),remaining_seconds=remaining(),free_disk_bytes=free)
     r.write_json(out/'selection.json',selection)

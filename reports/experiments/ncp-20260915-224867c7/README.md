@@ -12,6 +12,7 @@ Unknown fields remain null. Do not pool different budgets/schedules. Two seeds a
 campaign.log:
 2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')
 2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.
+2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')
 
 controller-red.log:
 Traceback (most recent call last):
@@ -29,11 +30,23 @@ cuda-suite1.log:
 Ran 60 tests in 6.630s
 OK
 
+failure-receipt-red.log:
+FAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)
+Traceback (most recent call last):
+  File "<repo>\tests\test_fixed_updates.py", line 60, in test_loss_failure_preserves_partial_state_and_accounting
+    self.assertTrue((path/'training-failure.json').exists(),'Missing partial failure receipt')
+AssertionError: False is not true : Missing partial failure receipt
+Ran 4 tests in 0.990s
+FAILED (failures=1)
+
 initial-queue.log:
 2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')
 Traceback (most recent call last):
     if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')
 RuntimeError: Preserved failed NCP trial; diagnose before more trials
+
+launch-AUX-s42.log:
+2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')
 
 preflight-cpu-1789473248.log:
 ok
@@ -55,6 +68,16 @@ ok
 Ran 64 tests in 3.911s
 OK
 
+preflight-cpu-1789473887.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 65 tests in 3.871s
+OK
+
 preflight-cuda-1789473254.log:
 ok
 ok
@@ -73,6 +96,16 @@ ok
 ok
 ok
 Ran 64 tests in 5.956s
+OK
+
+preflight-cuda-1789473893.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 65 tests in 5.766s
 OK
 
 report-red.log:
@@ -263,7 +296,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 |---|---:|---:|---:|---:|---:|---|---|---|
 | [trial-0001-D6-s42](../ncp-20260915--trial-0001-D6-s42-b009c334/README.md) | 42 | 0.634848 | 177.1 | 184.0 | 47526 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 | [trial-0002-NCP-s42](../ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | 42 | failed | | | | | | |
-| [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 | running | | | | | | |
+| [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 | failed | | | | | | |
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -281,7 +314,7 @@ No completed pair yet.
 
 - trial-0001-D6-s42: Fresh depth6 matching control before NCP trials
 - trial-0002-NCP-s42: Source-inspired discrete chunk prediction plus causal predicted feedback may improve BPB at equal tokens Failure: RuntimeError('Training child exit 1')
-- trial-0003-AUX-s42: Initial feedback trial exceeded loss100 at update169; same-weight auxiliary-only condition tests whether feedback caused instability
+- trial-0003-AUX-s42: Initial feedback trial exceeded loss100 at update169; same-weight auxiliary-only condition tests whether feedback caused instability Failure: RuntimeError('Training child exit 1')
 
 ## Measurement limits
 

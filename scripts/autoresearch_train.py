@@ -105,6 +105,15 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
         model.zero_grad(set_to_none=True)
         value = loss.item()
         if not math.isfinite(value) or value > 100:
+            failure = dict(status='failed',optimizer_updates=step+1,
+                training_tokens=len(consumed_indices)*device_batch_size*protocol['sequence_length'],
+                last_loss=value if math.isfinite(value) else str(value),
+                batch_hash_chain=consumed.hexdigest(),interpretation='Partial failed training, not a full-budget BPB score')
+            if ncp is not None:
+                failure['ncp_loss_means']=dict(zip(('prediction_mse','vq_mse','concept_ce','weighted_total'),
+                    (ncp._loss_sums/ncp._loss_count.clamp_min(1)).tolist()))
+            write_json(Path('training-failure.json'),failure)
+            torch.save(model.state_dict(),'checkpoint_failure.pt')
             raise RuntimeError(f"Invalid training loss at step {step}: {value}")
         torch.cuda.synchronize()
         elapsed = prefix_elapsed + time.perf_counter() - start

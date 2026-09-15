@@ -54,8 +54,15 @@
       "torch": "2.9.1+cu128",
       "total_vram_bytes": 17094475776
     },
+    "execution.json": {},
+    "gpu-samples.json": {},
     "initialization.json": {
       "seed": 42
+    },
+    "memory.json": {
+      "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+      "peak_allocated_bytes": 686168064,
+      "peak_reserved_bytes": 723517440
     },
     "protocol.json": {
       "activation_checkpointing": false,
@@ -104,6 +111,7 @@
         }
       },
       "condition": "dense",
+      "error": "RuntimeError('Training child exit 1')",
       "kind": "fixed_updates",
       "metrics": null,
       "protocol": {
@@ -133,8 +141,10 @@
         "tokens_per_update": 16384,
         "training_seconds": 300
       },
+      "returncode": 1,
       "seed": 42,
-      "status": "running"
+      "status": "failed",
+      "wall_seconds": 82.39100000000008
     },
     "schedule.json": {},
     "selection.json": {
@@ -161,10 +171,25 @@
       "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/environment.json",
       "sha256": "7162e5b54515cf5f9e6f0f8a9c48887560ffc21ea300b21537c9df31519a2ed6"
     },
+    "execution.json": {
+      "bytes": 2605,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/execution.json",
+      "sha256": "4b4d8a726d1f7b0a41de4c01e9a622df416b72b727f580cb191891408e952b07"
+    },
+    "gpu-samples.json": {
+      "bytes": 1035,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/gpu-samples.json",
+      "sha256": "790b2a9bc850e2171aecd042751f3ff0018940c503d1fbdc4d1afb45b0e9d40c"
+    },
     "initialization.json": {
       "bytes": 6098,
       "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/initialization.json",
       "sha256": "5ea8d1a3cb5f6856baeb4a4fbe41c46237d12bfbd89f0ec754a3bc12b7198f45"
+    },
+    "memory.json": {
+      "bytes": 174,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/memory.json",
+      "sha256": "3f5e53cbaeb14cdfff2b21627fe0c2afa90fdeb113c28788424c43341bb1711c"
     },
     "protocol.json": {
       "bytes": 929,
@@ -172,14 +197,14 @@
       "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
     },
     "result.json": {
-      "bytes": 5729,
+      "bytes": 5839,
       "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/result.json",
-      "sha256": "437e6373cd029f83cba9e32c26ba362525be0ca0a3158f1a620a41ea18fb2689"
+      "sha256": "07c1c860dcd25f8c6ff76bef1d4106e82a99072b11340c260a66c10966e89ea0"
     },
     "run.log": {
-      "bytes": 2621,
+      "bytes": 15577,
       "local_path": "runs/autoresearch/ncp-20260915/trial-0003-AUX-s42/run.log",
-      "sha256": "0f3d0641227b14bb1a3740e6806a1aae1c9101ec93c4e298874a19c0f867fd17"
+      "sha256": "829b955074dd284c3811b4c23a4407d0668987146ab648f2861453b41acdefc7"
     },
     "schedule.json": {
       "bytes": 92894,
@@ -204,7 +229,7 @@
     "Two paired seeds are preliminary; opposite signs do not establish equivalence."
   ],
   "metrics": null,
-  "outcome": "running",
+  "outcome": "failed",
   "protocol": {
     "activation_checkpointing": false,
     "baseline_timeout_seconds": 900,
@@ -267,7 +292,37 @@
         "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
       }
     },
-    "execution_receipt": null,
+    "execution_receipt": {
+      "dependency_scope": "Project/upstream Python sources and configs captured; installed packages remain in the recorded runtime venv",
+      "executed_files": {
+        "source/project/autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+        "source/project/autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+        "source/project/autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      },
+      "files": {
+        "candidate.json": "0349041c37fc01b89712f804f31eef94a86fab19de3e1dbbfb73282f5b15836f",
+        "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
+        "source/project/autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+        "source/project/autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+        "source/project/autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "isolated": true,
+      "python": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\.autoresearch\\upstream\\.venv\\Scripts\\python.exe",
+      "verified": true
+    },
     "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
     "recorded_code_hashes": {
       "adapter_sha256": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",

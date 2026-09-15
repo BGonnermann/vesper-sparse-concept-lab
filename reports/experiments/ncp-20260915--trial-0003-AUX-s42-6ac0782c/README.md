@@ -1,6 +1,6 @@
 # ncp-20260915/trial-0003-AUX-s42
 
-Outcome: **running**. Budget family: **fixed_updates**.
+Outcome: **failed**. Budget family: **fixed_updates**.
 
 Full compact configuration, metrics, seeds, hashes and diagnostics: [report.json](report.json).
 

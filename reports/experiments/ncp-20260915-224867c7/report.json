@@ -12,10 +12,30 @@
         "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
         "autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
         "autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
-        "autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e"
+        "autoresearch_train.py": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e"
       },
       "status": "completed",
-      "wall_seconds": 31.46900000000005
+      "wall_seconds": 30.15599999999995
+    },
+    "archpreview-source-result.json": {
+      "kind": "source_review",
+      "notes": [
+        "Independent read-only reviewer inspected primary full PDF and source, no weights downloaded or code executed.",
+        "Paper Eq8 explicitly uses softmax, Eq21/22 detached target losses, Eq24 weighted joint loss.",
+        "Released HF and vLLM sources still use raw logits times codebook, unlike paper.",
+        "HF token concept index (token_positions+1)//chunk_size-1 agrees with causal alignment.",
+        "Large 16/8/16 architecture and hierarchical residuals omitted; training code remains unavailable."
+      ],
+      "references": {
+        "evaluation_repository": "https://github.com/LUMIA-Group/ncp_olmo_eval/tree/e9e4ff4b443bb3c321030a9a437be216dc7d6722",
+        "paper": "https://arxiv.org/pdf/2609.10715v1",
+        "stage1": "https://huggingface.co/ArchSpace-Collection/NCP_ArchPreview_dolma3_8.9B_Stage1/tree/d642693c0efaca7329e544076397105238bda3bf"
+      },
+      "source_hashes": {
+        "modeling_ncp_olmo3.py": "798b3ae74171384f7948eb5f6579330257b2f284f2f9e93729d3eeedbc696c4d",
+        "vllm_plugin/hlm.py": "d78ba24735f05551e81bcaabde759b5159b2322e688a05305d574a18cb8630cb"
+      },
+      "status": "completed"
     },
     "contract.json": {},
     "fit-result.json": {
@@ -42,7 +62,7 @@
             }
           },
           "checkpoint_sha256": "963934e7e5f3d8f34f0578f2b82ebc7d35a7b55a0b4390e177f58719be1b2932",
-          "conservative_trial_forecast_seconds": 309.1663487998303,
+          "conservative_trial_forecast_seconds": 279.4544255998917,
           "corpus_training_tokens": 0,
           "free_bytes": 14966325248,
           "gradient_norms": {
@@ -106,9 +126,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.5159498999996686,
-            0.4725618999996186,
-            0.48081790000014735
+            0.4391600999997536,
+            0.4136881000003996,
+            0.45791879999978846
           ],
           "model": {
             "activation_checkpointing": false,
@@ -204,8 +224,8 @@
             "feedforward": "dense",
             "matrix_lr": 0.04
           },
-          "checkpoint_sha256": "dc8bca26949d28a542ee6bfbed0c071aa92696c257a5f28c3c8cffd6345222c9",
-          "conservative_trial_forecast_seconds": 361.53749760007486,
+          "checkpoint_sha256": "813e99a8ab5563b971145d1c9ea6f32894e2aeac53873d3012661e48c5019203",
+          "conservative_trial_forecast_seconds": 349.8121344000101,
           "corpus_training_tokens": 0,
           "free_bytes": 13169065984,
           "gradient_norms": {
@@ -300,9 +320,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.6182373000001462,
-            0.6065688999997292,
-            0.609559999999874
+            0.5596635000001697,
+            0.5953362000000197,
+            0.5698080000001937
           ],
           "model": {
             "activation_checkpointing": false,
@@ -415,7 +435,7 @@
             "matrix_lr": 0.04
           },
           "checkpoint_sha256": "7284178bda012fdfc17ff4160252b4a0504b17930a604d0550a4cc94ab0bce3b",
-          "conservative_trial_forecast_seconds": 207.4949248000048,
+          "conservative_trial_forecast_seconds": 218.82691840012558,
           "corpus_training_tokens": 0,
           "free_bytes": 15054405632,
           "gradient_norms": {
@@ -468,9 +488,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.3101311000000351,
-            0.2894405000001825,
-            0.3173729000000094
+            0.33950570000024527,
+            0.33603119999997944,
+            0.33293589999993856
           ],
           "model": {
             "activation_checkpointing": false,
@@ -576,7 +596,7 @@
             }
           },
           "checkpoint_sha256": "4e8edb0414f31c47e477d38e1b762b0b2cf746aa5a9d82083ba35928ee698c69",
-          "conservative_trial_forecast_seconds": 307.9368320000358,
+          "conservative_trial_forecast_seconds": 279.99750400008634,
           "corpus_training_tokens": 0,
           "free_bytes": 14966325248,
           "gradient_norms": {
@@ -640,9 +660,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.4911234000001059,
-            0.5135485000000699,
-            0.5118185000001176
+            0.45395460000008825,
+            0.42519339999989825,
+            0.4589795000001686
           ],
           "model": {
             "activation_checkpointing": false,
@@ -810,6 +830,43 @@
       },
       "wall_seconds": 31.46900000000005
     },
+    "preflight-1789473917-result.json": {
+      "cpu": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cpu-1789473887.log",
+        "sha256": "cb15936eae5ed7d0b7c991875ff5b66a27b61e92015fcc5be9c10690c6a295a7"
+      },
+      "cuda": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cuda-1789473893.log",
+        "sha256": "acbea2150688db923340ff1501c49c509440ecbc412103d6c6af32651cc6ae8c"
+      },
+      "fit_sha256": "b5970b8b86457bc9ccacf0566e72d83a5a456c18052615a79f6d3aabd6345d83",
+      "kind": "ncp_correctness",
+      "passed": true,
+      "source_hashes": {
+        "autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+        "autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+        "autoresearch_train.py": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e"
+      },
+      "status": "completed",
+      "test_hashes": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_campaign_depth_extension.py": "2ac0e71f5a913b39e4b535d67b39f055c9b11827d9d63637460ec2fc571d95ae",
+        "test_campaign_variants.py": "1679fd62f3ccb66b08de83ddabe498c9fd04767f9e15da469e66ee0674a0a70a",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_experiment_reports.py": "97a3e4dd58c06e0e896238127e8766629390268d94ccccc2dc63d6a063420985",
+        "test_fixed_updates.py": "17cdadb9ee2c275008997d5c17bcbcc09677d301e6201df982aa53f64331f094",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ncp.py": "3ce1677b4079d11ddf68c082a68f5ad089cc2b3398b74bcafe6dd388a8228587",
+        "test_ncp_campaign.py": "05665f8cc7c1a80c4defe545e7e3f90553172035fdd7ef2999c011742684265b",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
+      },
+      "wall_seconds": 30.15599999999995
+    },
     "result.json": {
       "kind": "ncp_campaign",
       "rows": [
@@ -912,7 +969,7 @@
               "vq_weight": 1.0
             }
           },
-          "error": null,
+          "error": "RuntimeError('Training child exit 1')",
           "hypothesis": "Initial feedback trial exceeded loss100 at update169; same-weight auxiliary-only condition tests whether feedback caused instability",
           "label": "AUX",
           "phase": "screen",
@@ -928,9 +985,9 @@
             "preflight_sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822",
             "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
           },
-          "status": "running",
+          "status": "failed",
           "trial": "trial-0003-AUX-s42",
-          "wall_seconds": null
+          "wall_seconds": 82.39100000000008
         }
       ],
       "status": "running"
@@ -958,15 +1015,19 @@
     }
   },
   "diagnostics": [
-    "campaign.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\n2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.",
+    "campaign.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\n2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
+    "failure-receipt-red.log:\nFAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 60, in test_loss_failure_preserves_partial_state_and_accounting\n    self.assertTrue((path/'training-failure.json').exists(),'Missing partial failure receipt')\nAssertionError: False is not true : Missing partial failure receipt\nRan 4 tests in 0.990s\nFAILED (failures=1)",
     "initial-queue.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\nTraceback (most recent call last):\n    if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')\nRuntimeError: Preserved failed NCP trial; diagnose before more trials",
+    "launch-AUX-s42.log:\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
     "preflight-cpu-1789473248.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 3.917s\nOK",
     "preflight-cpu-1789473331.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 3.911s\nOK",
+    "preflight-cpu-1789473887.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 3.871s\nOK",
     "preflight-cuda-1789473254.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 6.129s\nOK",
     "preflight-cuda-1789473337.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 5.956s\nOK",
+    "preflight-cuda-1789473893.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 5.766s\nOK",
     "report-red.log:\nERROR: test_ncp_health_and_prospective_hypothesis_are_published (test_experiment_reports.ReportTests.test_ncp_health_and_prospective_hypothesis_are_published)\nTraceback (most recent call last):\nKeyError: 'collapsed'\nRan 8 tests in 0.229s\nFAILED (errors=1)",
     "test-ncp-green1.log:\nok\nRan 6 tests in 1.153s\nOK",
     "test-ncp-red.log:\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nRan 6 tests in 1.272s\nFAILED (failures=5, errors=1)"
@@ -975,12 +1036,17 @@
     "active-preflight.json": {
       "bytes": 2471,
       "local_path": "runs/autoresearch/ncp-20260915/active-preflight.json",
-      "sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822"
+      "sha256": "5910c4aaf69ec426b8430d84ad9193e2fa988ac80f36eb0e6eb9991e8a885bbe"
+    },
+    "archpreview-source-result.json": {
+      "bytes": 1149,
+      "local_path": "runs/autoresearch/ncp-20260915/archpreview-source-result.json",
+      "sha256": "73de9bddf9d8442c54cfe1545ef49e74ce662ee78579cc85bedeff494b1fee12"
     },
     "campaign.log": {
-      "bytes": 2574,
+      "bytes": 3487,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "7cb64f789f47153bef9be9d6045838cd4953a334e63f63997eb96678c96c3de2"
+      "sha256": "9f9f71dd63b2330e70da0dd5603f7721d23c9e51561ef4e247c9e4d2087f4e28"
     },
     "contract.json": {
       "bytes": 286,
@@ -1002,6 +1068,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/cuda-suite1.log",
       "sha256": "10bfb6ff3cc5c6783987d4747c76b32f70767ecb57bbe3f3704c7ebe00a6a3ea"
     },
+    "failure-receipt-red.log": {
+      "bytes": 781,
+      "local_path": "runs/autoresearch/ncp-20260915/failure-receipt-red.log",
+      "sha256": "b31473d58ee227e326a4a145e0e67c4e633f4720306083820556a9283550787f"
+    },
     "fit-1789473262.log": {
       "bytes": 1556,
       "local_path": "runs/autoresearch/ncp-20260915/fit-1789473262.log",
@@ -1012,10 +1083,15 @@
       "local_path": "runs/autoresearch/ncp-20260915/fit-1789473345.log",
       "sha256": "dd2522789db3812f6be4010d0a3e5eafadf86e0e85b0e0cfdac885bf1b24eb09"
     },
+    "fit-1789473901.log": {
+      "bytes": 1556,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789473901.log",
+      "sha256": "460f1372047b48cef08819b5a63ba52f5a2f7731d2926edcc809d7c12fd71100"
+    },
     "fit-result.json": {
-      "bytes": 44652,
+      "bytes": 44659,
       "local_path": "runs/autoresearch/ncp-20260915/fit-result.json",
-      "sha256": "42c52fa305136d0249b1dc4702136cb9b3fbcbcfcec78e034e9ebc1eb0d4a436"
+      "sha256": "b5970b8b86457bc9ccacf0566e72d83a5a456c18052615a79f6d3aabd6345d83"
     },
     "initial-queue.log": {
       "bytes": 953,
@@ -1028,9 +1104,9 @@
       "sha256": "164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853"
     },
     "launch-AUX-s42.log": {
-      "bytes": 305,
+      "bytes": 523,
       "local_path": "runs/autoresearch/ncp-20260915/launch-AUX-s42.log",
-      "sha256": "f7d96f692b8e92b9b2431123bdafa368438d71ecd26978703ea8c17577b5210c"
+      "sha256": "a94bda0b324266ecafee993a6384953f0d68239c38d423447b237e63838dcd78"
     },
     "launch-D6-s42.log": {
       "bytes": 540,
@@ -1052,6 +1128,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-1789473362-result.json",
       "sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822"
     },
+    "preflight-1789473917-result.json": {
+      "bytes": 2471,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-1789473917-result.json",
+      "sha256": "5910c4aaf69ec426b8430d84ad9193e2fa988ac80f36eb0e6eb9991e8a885bbe"
+    },
     "preflight-cpu-1789473248.log": {
       "bytes": 13099,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473248.log",
@@ -1061,6 +1142,11 @@
       "bytes": 13259,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473331.log",
       "sha256": "508d4a2bd87a28e6dfc0d004f6b45c6c86d96ca0d00da73de95a7e9a76cfd9b3"
+    },
+    "preflight-cpu-1789473887.log": {
+      "bytes": 13413,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473887.log",
+      "sha256": "cb15936eae5ed7d0b7c991875ff5b66a27b61e92015fcc5be9c10690c6a295a7"
     },
     "preflight-cuda-1789473254.log": {
       "bytes": 13004,
@@ -1072,6 +1158,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789473337.log",
       "sha256": "789ae4194dbee5165df9824ec9ffc25fdbcf2163d1d5bf75a9d2d90c27a43700"
     },
+    "preflight-cuda-1789473893.log": {
+      "bytes": 13318,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789473893.log",
+      "sha256": "acbea2150688db923340ff1501c49c509440ecbc412103d6c6af32651cc6ae8c"
+    },
     "preflight-launch.log": {
       "bytes": 408,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-launch.log",
@@ -1082,15 +1173,20 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-launch2.log",
       "sha256": "48e12bfb79feef5aade339022e2f6e0a44977be6542e38b26971a9c78c5a7f75"
     },
+    "preflight-launch3.log": {
+      "bytes": 408,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-launch3.log",
+      "sha256": "7c8d77d7ee094703dc664be8573d879615ba6dbf0b91f82494488a7e8c044767"
+    },
     "report-red.log": {
       "bytes": 877,
       "local_path": "runs/autoresearch/ncp-20260915/report-red.log",
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 5365,
+      "bytes": 5412,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "05e9aa2f7a7da9b68796f2e6a236029d22dc8101855f2b9967c94bd7fdc4c5eb"
+      "sha256": "253777cfac71495c350b73e905b8ff43573a46005d22f80e4d41f3a0ae758e8d"
     },
     "sources-result.json": {
       "bytes": 1101,
@@ -1098,9 +1194,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 3102,
+      "bytes": 3148,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "2402346fc90d4fe251002aa2d788c2b393632784d71294948d973d2069c6fe28"
+      "sha256": "ce8f602beba90802065fa43c309aecaee81767b5d5ef5d7b96986651a7df2584"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,

@@ -15,7 +15,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 |---|---:|---:|---:|---:|---:|---|---|---|
 | [trial-0001-D6-s42](../ncp-20260915--trial-0001-D6-s42-b009c334/README.md) | 42 | 0.634848 | 177.1 | 184.0 | 47526 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 | [trial-0002-NCP-s42](../ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | 42 | failed | | | | | | |
-| [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 | running | | | | | | |
+| [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 | failed | | | | | | |
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -33,7 +33,7 @@ No completed pair yet.
 
 - trial-0001-D6-s42: Fresh depth6 matching control before NCP trials
 - trial-0002-NCP-s42: Source-inspired discrete chunk prediction plus causal predicted feedback may improve BPB at equal tokens Failure: RuntimeError('Training child exit 1')
-- trial-0003-AUX-s42: Initial feedback trial exceeded loss100 at update169; same-weight auxiliary-only condition tests whether feedback caused instability
+- trial-0003-AUX-s42: Initial feedback trial exceeded loss100 at update169; same-weight auxiliary-only condition tests whether feedback caused instability Failure: RuntimeError('Training child exit 1')
 
 ## Measurement limits
 
