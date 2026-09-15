@@ -1,40 +1,36 @@
 {
-  "artifact_directory": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42",
+  "artifact_directory": "runs/autoresearch/overnight-20260915/trial-0055-D-s42",
   "budget_family": "fixed_updates",
   "compatibility_fingerprint": "ff531a6ff6ea5afe2f1c3a852a4a0a32e8a8194219107fb0dd7a4f9c8313b653",
   "configuration": {
-    "depth": 12,
+    "depth": 6,
     "feedforward": "dense",
-    "matrix_lr": 0.03
+    "matrix_lr": 0.04
   },
   "details": {
     "analysis.json": {
       "comparison_class": "equal_token_512_updates",
-      "initialization_pairing": {
-        "control_path": "<repo>\\runs\\autoresearch\\overnight-20260915\\trial-0033-D-depth12-s42",
-        "excluded_router_extra_expert_pairing": false,
-        "verified_tensors": 88
-      },
+      "initialization_pairing": null,
       "selection": {
-        "control": "D-depth12",
-        "hypothesis": "After separate depth and LR screens, test LR 0.03 on depth12 against its .04 control; labeled shape-plus-optimizer follow-up",
-        "label": "D12-lr0.03",
+        "control": null,
+        "hypothesis": "Fresh fast dense reference",
+        "label": "D",
         "phase": "replication",
         "reason": "Search space screened; adaptive repeat of a promising tradeoff or its control to estimate execution noise",
-        "remaining_seconds": 13055.870449,
+        "remaining_seconds": 12106.33468,
         "seed": 42,
-        "selected_at": "2026-09-15T07:52:24.129551+00:00"
+        "selected_at": "2026-09-15T08:08:13.665320+00:00"
       },
-      "selection_with_evidence_local_path": "runs\\autoresearch\\overnight-20260915\\trial-0052-D12-lr0.03-s42\\selection.json",
-      "selection_with_evidence_sha256": "e2160a75df71a213bf41e783d69f22a1098131b5dd0eab62a6cc42b672946626"
+      "selection_with_evidence_local_path": "runs\\autoresearch\\overnight-20260915\\trial-0055-D-s42\\selection.json",
+      "selection_with_evidence_sha256": "75a3fba0ca4fbeea83d1cdda4911b9507a74453bc103b574d45dabec669b8d3b"
     },
     "batches.json": {
       "seed": 42
     },
     "candidate.json": {
-      "depth": 12,
+      "depth": 6,
       "feedforward": "dense",
-      "matrix_lr": 0.03
+      "matrix_lr": 0.04
     },
     "environment.json": {
       "bf16_supported": true,
@@ -53,10 +49,10 @@
     },
     "execution.json": {},
     "fixed-training.json": {
-      "all_update_seconds": 311.3669859000365,
+      "all_update_seconds": 173.26784869967378,
       "batch_hash_chain": "e43fc6843aa6f6a1005aabf5cab1f85ddca025aba7eee455c55103b69421257f",
       "optimizer_updates": 512,
-      "schedule_sha256": "891a4b4078c4a1f9bbc8d156178e60ea15520642faa9fac6daaf67b4419c310e",
+      "schedule_sha256": "3b63ceaf7022a693b205fd4055ef89450eb7aacac8311b1fa8f5dcf65ed16afa",
       "seed": 42,
       "stopping_rule": "optimizer_updates"
     },
@@ -65,14 +61,14 @@
     },
     "memory.json": {
       "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
-      "peak_allocated_bytes": 2387791872,
-      "peak_reserved_bytes": 2524971008
+      "peak_allocated_bytes": 609941504,
+      "peak_reserved_bytes": 652214272
     },
     "model.json": {
       "activation_checkpointing": false,
       "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
-      "active_parameters": 135267480,
-      "depth": 12,
+      "active_parameters": 26345772,
+      "depth": 6,
       "expert_dispatch": null,
       "expert_parameters": 0,
       "feedforward": "dense",
@@ -86,8 +82,8 @@
       "num_experts": 0,
       "router_parameters": 0,
       "top_k": 0,
-      "total_parameters": 135267480,
-      "width": 768
+      "total_parameters": 26345772,
+      "width": 384
     },
     "ngram-diagnostics.json": {
       "enabled": false,
@@ -123,23 +119,23 @@
     },
     "result.json": {
       "candidate": {
-        "depth": 12,
+        "depth": 6,
         "feedforward": "dense",
-        "matrix_lr": 0.03
+        "matrix_lr": 0.04
       },
       "condition": "dense",
       "kind": "fixed_updates",
       "metrics": {
-        "depth": 12.0,
+        "depth": 6.0,
         "eval_batch_size": 2.0,
-        "num_params_M": 135.3,
+        "num_params_M": 26.3,
         "num_steps": 512.0,
-        "peak_vram_mb": 2277.2,
-        "total_seconds": 314.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 175.2,
         "total_tokens_M": 8.4,
         "train_batch_size": 2.0,
-        "training_seconds": 304.2,
-        "val_bpb": 0.588836
+        "training_seconds": 169.3,
+        "val_bpb": 0.634848
       },
       "protocol": {
         "activation_checkpointing": false,
@@ -171,7 +167,7 @@
       "returncode": 0,
       "seed": 42,
       "status": "completed",
-      "wall_seconds": 318.1720000000205
+      "wall_seconds": 179.31200000000536
     },
     "routing.json": {
       "aux_loss_weight": 0.0,
@@ -192,7 +188,7 @@
         "tokens": 8388608
       },
       "training_auxiliary_loss": 0.0,
-      "training_cross_entropy": 2.1080459022923606,
+      "training_cross_entropy": 2.218247186698136,
       "weighted_training_auxiliary_loss": 0.0
     },
     "schedule.json": {},
@@ -203,7 +199,7 @@
     "training.json": {
       "activation_checkpointing": false,
       "optimizer_updates": 512,
-      "timed_training_seconds": 304.15239750008914,
+      "timed_training_seconds": 169.3244985997153,
       "timed_training_tokens": 8208384,
       "training_tokens": 8388608,
       "warmup_updates": 11
@@ -212,123 +208,118 @@
   "diagnostics": [],
   "evidence": {
     "analysis.json": {
-      "bytes": 1039,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/analysis.json",
-      "sha256": "2d6f67186cb08bbe133abd141a45787e1a60d64c35c739482716ca5fb8c73355"
+      "bytes": 690,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/analysis.json",
+      "sha256": "1f2250fb2e7557e22b0136615c0ce4c1fd3173fa51c8bc12d29df73a4eeeb542"
     },
     "batches.json": {
       "bytes": 89367,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/batches.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/batches.json",
       "sha256": "fe7c955ac904cd1dc72bc792f69c7de30564891bcb910cb977617935b0e0120d"
     },
     "candidate.json": {
-      "bytes": 70,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/candidate.json",
-      "sha256": "c4935c559ac8c9e8638d95ed75808bdd8888bc2260fcbe4b8222b59cac270402"
+      "bytes": 69,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/candidate.json",
+      "sha256": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7"
     },
     "environment.json": {
       "bytes": 383,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/environment.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/environment.json",
       "sha256": "7162e5b54515cf5f9e6f0f8a9c48887560ffc21ea300b21537c9df31519a2ed6"
     },
     "execution.json": {
       "bytes": 2383,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/execution.json",
-      "sha256": "a4e2793c7d5ec86971d89168a58afbd236289d900ab563c5b9d2376ae058ed19"
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/execution.json",
+      "sha256": "97635078b78641e572009bdd8a6e8f15fc5ba1aa1b03e0d120bc104d5122455d"
     },
     "fixed-training.json": {
-      "bytes": 315,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/fixed-training.json",
-      "sha256": "62a76b8d8e3f24e97eb6b875a63cb780d8af20beeb3f11cba1c779520a865644"
-    },
-    "initialization-pairing.json": {
-      "bytes": 223,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/initialization-pairing.json",
-      "sha256": "4702495b8228cf7922255eaf355772e98ce06701f2033f42d5effd3b860e6458"
+      "bytes": 316,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/fixed-training.json",
+      "sha256": "6c9baa8d21ca18706b409112bf98a266c8e94ed963cd4a84ec4d82a5c9c53fa4"
     },
     "initialization.json": {
-      "bytes": 9575,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/initialization.json",
-      "sha256": "359aec8b8659810f26cc6d6d7f32ffdb6c62ad9d47b7c1af6a6de763fab00587"
+      "bytes": 5013,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/initialization.json",
+      "sha256": "7fcfbdd647f1abec691323f5256b1c12d6c7743d58b899f11728295d2b7dfede"
     },
     "memory.json": {
-      "bytes": 176,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/memory.json",
-      "sha256": "5ac3c392a27619dff66de2c5c4fdc629d7eada8fb80e5f649af24b1cfe853182"
+      "bytes": 174,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/memory.json",
+      "sha256": "baa5d615435eb09295a1f7134118eabbf3fa1685a4e2eb9e39cd8677955fa78b"
     },
     "model.json": {
-      "bytes": 805,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/model.json",
-      "sha256": "6fdfa7091a792ef2850910dba612c7bb4244bbea55901ca1ac2c3809ad1b2c1c"
+      "bytes": 802,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/model.json",
+      "sha256": "f716cec2583ee77a4f6c42d96b1fd9875d5f0e7ae3e8434d3af1cdc1b4df34f9"
     },
     "ngram-diagnostics.json": {
       "bytes": 175,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/ngram-diagnostics.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/ngram-diagnostics.json",
       "sha256": "5ac95dae8c8dd7778c006c871e33e8da96ac0f3c62d8546d437be235f11783a3"
     },
     "optimizer.json": {
-      "bytes": 5528,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/optimizer.json",
-      "sha256": "30fbce148fe1697fbf5d853617dfa8fe35b6198c66f565e7bccf9cb29e72e817"
+      "bytes": 3217,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/optimizer.json",
+      "sha256": "bf7f67d2db68eae55d37236981d5e5e2cf241d58b5d71aaabbb172697ca9d114"
     },
     "protocol.json": {
       "bytes": 929,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/protocol.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/protocol.json",
       "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
     },
     "result.json": {
-      "bytes": 17066,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/result.json",
-      "sha256": "fd20b1b0ba45feae4e8504d2fad758e2fb770da30164f0caa51c04d89c68c82c"
+      "bytes": 14320,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/result.json",
+      "sha256": "90f388643df71755612326b3486a1d6f32b8ce3ee9502ab7be14344c776ebe50"
     },
     "routing.json": {
-      "bytes": 495,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/routing.json",
-      "sha256": "81374accbb655f1a9f53a968a517ff38fcc8d905418985b342276ade959694b3"
+      "bytes": 494,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/routing.json",
+      "sha256": "aefc0dc3edb312e20e0e281730a53e77b68028986bd4224836bf88f2936ebd0e"
     },
     "run.log": {
-      "bytes": 35905,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/run.log",
-      "sha256": "f00deeee2e0d408519c907b5bd7da5bf4f631bba852a306850d0e87510606813"
+      "bytes": 35901,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/run.log",
+      "sha256": "e30f343261a760673dc5a291c8a8dc1a043a174c2f854d1d775750e0decaf6a1"
     },
     "schedule.json": {
-      "bytes": 93516,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/schedule.json",
-      "sha256": "891a4b4078c4a1f9bbc8d156178e60ea15520642faa9fac6daaf67b4419c310e"
+      "bytes": 92702,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/schedule.json",
+      "sha256": "3b63ceaf7022a693b205fd4055ef89450eb7aacac8311b1fa8f5dcf65ed16afa"
     },
     "selection.json": {
-      "bytes": 946,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/selection.json",
-      "sha256": "e2160a75df71a213bf41e783d69f22a1098131b5dd0eab62a6cc42b672946626"
+      "bytes": 818,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/selection.json",
+      "sha256": "75a3fba0ca4fbeea83d1cdda4911b9507a74453bc103b574d45dabec669b8d3b"
     },
     "snapshot.json": {
       "bytes": 1245,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/snapshot.json",
-      "sha256": "3d9e6f742ac04b787ebea7a36efffd5133e89bef9fadb073b2a0d73cb4b266e9"
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/snapshot.json",
+      "sha256": "d1ea7f787a58af49e45fbb16d5b876a06108e2afe584399f41c707e18dfc92a8"
     },
     "training.json": {
-      "bytes": 214,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/training.json",
-      "sha256": "2c26bc8a066b1ea8eea53550bedf5cb2092867e510c2f583ecf8ef92fb06d34b"
+      "bytes": 213,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0055-D-s42/training.json",
+      "sha256": "3f49504dd408a60ce5f67cde1e841f02ebe74825a6f032400cbd8593e8616f7d"
     }
   },
-  "experiment_id": "overnight-20260915--trial-0052-D12-lr0.03-s42-5c100edc",
+  "experiment_id": "overnight-20260915--trial-0055-D-s42-85f1ef06",
   "limitations": [
     "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
     "No missing measurements or provenance were filled from the current working tree.",
     "Two paired seeds are preliminary; opposite signs do not establish equivalence."
   ],
   "metrics": {
-    "depth": 12.0,
+    "depth": 6.0,
     "eval_batch_size": 2.0,
-    "num_params_M": 135.3,
+    "num_params_M": 26.3,
     "num_steps": 512.0,
-    "peak_vram_mb": 2277.2,
-    "total_seconds": 314.0,
+    "peak_vram_mb": 581.7,
+    "total_seconds": 175.2,
     "total_tokens_M": 8.4,
     "train_batch_size": 2.0,
-    "training_seconds": 304.2,
-    "val_bpb": 0.588836
+    "training_seconds": 169.3,
+    "val_bpb": 0.634848
   },
   "outcome": "completed",
   "protocol": {
@@ -401,7 +392,7 @@
         "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
       },
       "files": {
-        "candidate.json": "c4935c559ac8c9e8638d95ed75808bdd8888bc2260fcbe4b8222b59cac270402",
+        "candidate.json": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7",
         "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
         "source/project/autoresearch.py": "025565201333c7ebccf66f6bb32d019f7903533327f480f18dbdcf45ee3f3077",
         "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
@@ -435,7 +426,7 @@
       "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
       "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
     },
-    "recorded_git_commit": "fdd7352932124f4b0a4fc99a16ed024707afa0b9",
+    "recorded_git_commit": "315079698c7a66007a9995bf1efddb1b19013c0e",
     "recorded_git_dirty": true,
     "recorded_upstream": {
       "runtime_files": {
@@ -454,7 +445,7 @@
       }
     },
     "snapshot_manifest": {
-      "candidate.json": "c4935c559ac8c9e8638d95ed75808bdd8888bc2260fcbe4b8222b59cac270402",
+      "candidate.json": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7",
       "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
       "source/project/autoresearch.py": "025565201333c7ebccf66f6bb32d019f7903533327f480f18dbdcf45ee3f3077",
       "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",

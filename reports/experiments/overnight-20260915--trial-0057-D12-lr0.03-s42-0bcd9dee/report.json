@@ -1,5 +1,5 @@
 {
-  "artifact_directory": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42",
+  "artifact_directory": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42",
   "budget_family": "fixed_updates",
   "compatibility_fingerprint": "ff531a6ff6ea5afe2f1c3a852a4a0a32e8a8194219107fb0dd7a4f9c8313b653",
   "configuration": {
@@ -21,12 +21,12 @@
         "label": "D12-lr0.03",
         "phase": "replication",
         "reason": "Search space screened; adaptive repeat of a promising tradeoff or its control to estimate execution noise",
-        "remaining_seconds": 13055.870449,
+        "remaining_seconds": 11683.650413,
         "seed": 42,
-        "selected_at": "2026-09-15T07:52:24.129551+00:00"
+        "selected_at": "2026-09-15T08:15:16.349087+00:00"
       },
-      "selection_with_evidence_local_path": "runs\\autoresearch\\overnight-20260915\\trial-0052-D12-lr0.03-s42\\selection.json",
-      "selection_with_evidence_sha256": "e2160a75df71a213bf41e783d69f22a1098131b5dd0eab62a6cc42b672946626"
+      "selection_with_evidence_local_path": "runs\\autoresearch\\overnight-20260915\\trial-0057-D12-lr0.03-s42\\selection.json",
+      "selection_with_evidence_sha256": "95c5258bff86950d9df1f14e4ed9e9f79af0feeeec6a4f41e843ad8f2da2ceed"
     },
     "batches.json": {
       "seed": 42
@@ -53,7 +53,7 @@
     },
     "execution.json": {},
     "fixed-training.json": {
-      "all_update_seconds": 311.3669859000365,
+      "all_update_seconds": 311.7095792001346,
       "batch_hash_chain": "e43fc6843aa6f6a1005aabf5cab1f85ddca025aba7eee455c55103b69421257f",
       "optimizer_updates": 512,
       "schedule_sha256": "891a4b4078c4a1f9bbc8d156178e60ea15520642faa9fac6daaf67b4419c310e",
@@ -135,11 +135,11 @@
         "num_params_M": 135.3,
         "num_steps": 512.0,
         "peak_vram_mb": 2277.2,
-        "total_seconds": 314.0,
+        "total_seconds": 314.3,
         "total_tokens_M": 8.4,
         "train_batch_size": 2.0,
-        "training_seconds": 304.2,
-        "val_bpb": 0.588836
+        "training_seconds": 304.5,
+        "val_bpb": 0.588123
       },
       "protocol": {
         "activation_checkpointing": false,
@@ -171,7 +171,7 @@
       "returncode": 0,
       "seed": 42,
       "status": "completed",
-      "wall_seconds": 318.1720000000205
+      "wall_seconds": 318.39100000000326
     },
     "routing.json": {
       "aux_loss_weight": 0.0,
@@ -192,7 +192,7 @@
         "tokens": 8388608
       },
       "training_auxiliary_loss": 0.0,
-      "training_cross_entropy": 2.1080459022923606,
+      "training_cross_entropy": 2.108307280795998,
       "weighted_training_auxiliary_loss": 0.0
     },
     "schedule.json": {},
@@ -203,7 +203,7 @@
     "training.json": {
       "activation_checkpointing": false,
       "optimizer_updates": 512,
-      "timed_training_seconds": 304.15239750008914,
+      "timed_training_seconds": 304.54157780014793,
       "timed_training_tokens": 8208384,
       "training_tokens": 8388608,
       "warmup_updates": 11
@@ -213,106 +213,106 @@
   "evidence": {
     "analysis.json": {
       "bytes": 1039,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/analysis.json",
-      "sha256": "2d6f67186cb08bbe133abd141a45787e1a60d64c35c739482716ca5fb8c73355"
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/analysis.json",
+      "sha256": "a1d42f38231ce7f04898a095c50232058ad1e055e6de662c77f35c4df5f39065"
     },
     "batches.json": {
       "bytes": 89367,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/batches.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/batches.json",
       "sha256": "fe7c955ac904cd1dc72bc792f69c7de30564891bcb910cb977617935b0e0120d"
     },
     "candidate.json": {
       "bytes": 70,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/candidate.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/candidate.json",
       "sha256": "c4935c559ac8c9e8638d95ed75808bdd8888bc2260fcbe4b8222b59cac270402"
     },
     "environment.json": {
       "bytes": 383,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/environment.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/environment.json",
       "sha256": "7162e5b54515cf5f9e6f0f8a9c48887560ffc21ea300b21537c9df31519a2ed6"
     },
     "execution.json": {
       "bytes": 2383,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/execution.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/execution.json",
       "sha256": "a4e2793c7d5ec86971d89168a58afbd236289d900ab563c5b9d2376ae058ed19"
     },
     "fixed-training.json": {
       "bytes": 315,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/fixed-training.json",
-      "sha256": "62a76b8d8e3f24e97eb6b875a63cb780d8af20beeb3f11cba1c779520a865644"
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/fixed-training.json",
+      "sha256": "171087531fa3cc5c5626867c622559192ac1ddb59b2f1c67d799663d6a4e710e"
     },
     "initialization-pairing.json": {
       "bytes": 223,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/initialization-pairing.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/initialization-pairing.json",
       "sha256": "4702495b8228cf7922255eaf355772e98ce06701f2033f42d5effd3b860e6458"
     },
     "initialization.json": {
       "bytes": 9575,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/initialization.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/initialization.json",
       "sha256": "359aec8b8659810f26cc6d6d7f32ffdb6c62ad9d47b7c1af6a6de763fab00587"
     },
     "memory.json": {
       "bytes": 176,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/memory.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/memory.json",
       "sha256": "5ac3c392a27619dff66de2c5c4fdc629d7eada8fb80e5f649af24b1cfe853182"
     },
     "model.json": {
       "bytes": 805,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/model.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/model.json",
       "sha256": "6fdfa7091a792ef2850910dba612c7bb4244bbea55901ca1ac2c3809ad1b2c1c"
     },
     "ngram-diagnostics.json": {
       "bytes": 175,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/ngram-diagnostics.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/ngram-diagnostics.json",
       "sha256": "5ac95dae8c8dd7778c006c871e33e8da96ac0f3c62d8546d437be235f11783a3"
     },
     "optimizer.json": {
       "bytes": 5528,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/optimizer.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/optimizer.json",
       "sha256": "30fbce148fe1697fbf5d853617dfa8fe35b6198c66f565e7bccf9cb29e72e817"
     },
     "protocol.json": {
       "bytes": 929,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/protocol.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/protocol.json",
       "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
     },
     "result.json": {
       "bytes": 17066,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/result.json",
-      "sha256": "fd20b1b0ba45feae4e8504d2fad758e2fb770da30164f0caa51c04d89c68c82c"
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/result.json",
+      "sha256": "879b0c63dbc8012156d18a77ffd45a74de3d600fd9021ad2584b5c46ca40e20d"
     },
     "routing.json": {
-      "bytes": 495,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/routing.json",
-      "sha256": "81374accbb655f1a9f53a968a517ff38fcc8d905418985b342276ade959694b3"
+      "bytes": 494,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/routing.json",
+      "sha256": "d196555bcbcf5f5256b75f4d8d28193c1ba038c8a0ace733d0bcd3eb7ddea604"
     },
     "run.log": {
       "bytes": 35905,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/run.log",
-      "sha256": "f00deeee2e0d408519c907b5bd7da5bf4f631bba852a306850d0e87510606813"
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/run.log",
+      "sha256": "a19588c721568dd767996e30e7b126017c597c8fc3e70be3ffb8ba0475276ec2"
     },
     "schedule.json": {
       "bytes": 93516,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/schedule.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/schedule.json",
       "sha256": "891a4b4078c4a1f9bbc8d156178e60ea15520642faa9fac6daaf67b4419c310e"
     },
     "selection.json": {
       "bytes": 946,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/selection.json",
-      "sha256": "e2160a75df71a213bf41e783d69f22a1098131b5dd0eab62a6cc42b672946626"
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/selection.json",
+      "sha256": "95c5258bff86950d9df1f14e4ed9e9f79af0feeeec6a4f41e843ad8f2da2ceed"
     },
     "snapshot.json": {
       "bytes": 1245,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/snapshot.json",
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/snapshot.json",
       "sha256": "3d9e6f742ac04b787ebea7a36efffd5133e89bef9fadb073b2a0d73cb4b266e9"
     },
     "training.json": {
       "bytes": 214,
-      "local_path": "runs/autoresearch/overnight-20260915/trial-0052-D12-lr0.03-s42/training.json",
-      "sha256": "2c26bc8a066b1ea8eea53550bedf5cb2092867e510c2f583ecf8ef92fb06d34b"
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0057-D12-lr0.03-s42/training.json",
+      "sha256": "68440a9e95197275e94e695c9a9c2fefc081145e9c7830c82d3f7fc5873e6b74"
     }
   },
-  "experiment_id": "overnight-20260915--trial-0052-D12-lr0.03-s42-5c100edc",
+  "experiment_id": "overnight-20260915--trial-0057-D12-lr0.03-s42-0bcd9dee",
   "limitations": [
     "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
     "No missing measurements or provenance were filled from the current working tree.",
@@ -324,11 +324,11 @@
     "num_params_M": 135.3,
     "num_steps": 512.0,
     "peak_vram_mb": 2277.2,
-    "total_seconds": 314.0,
+    "total_seconds": 314.3,
     "total_tokens_M": 8.4,
     "train_batch_size": 2.0,
-    "training_seconds": 304.2,
-    "val_bpb": 0.588836
+    "training_seconds": 304.5,
+    "val_bpb": 0.588123
   },
   "outcome": "completed",
   "protocol": {
@@ -435,7 +435,7 @@
       "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
       "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
     },
-    "recorded_git_commit": "fdd7352932124f4b0a4fc99a16ed024707afa0b9",
+    "recorded_git_commit": "315079698c7a66007a9995bf1efddb1b19013c0e",
     "recorded_git_dirty": true,
     "recorded_upstream": {
       "runtime_files": {
