@@ -5068,14 +5068,14 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "227b454003575b0856dcda7be0446b1008d309da",
+      "publication_commit": "79aa8cb568d836774b5c8e3ca68fe4d1b9b89e7d",
       "status": "completed",
       "verified_remote": true
     },
     "publication-watch-result.json": {
       "gpu_work": false,
       "kind": "phase_publication_watch",
-      "publications": 1,
+      "publications": 2,
       "status": "running"
     },
     "sources-result.json": {
@@ -5101,7 +5101,7 @@
     }
   },
   "diagnostics": [
-    "campaign.log:\n2026-09-15T14:04:15.689279+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
+    "campaign.log:\n2026-09-15T14:08:02.338191+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -5109,7 +5109,7 @@
     "failure-receipt-red.log:\nFAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 60, in test_loss_failure_preserves_partial_state_and_accounting\n    self.assertTrue((path/'training-failure.json').exists(),'Missing partial failure receipt')\nAssertionError: False is not true : Missing partial failure receipt\nRan 4 tests in 0.990s\nFAILED (failures=1)",
     "initial-queue.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\nTraceback (most recent call last):\n    if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')\nRuntimeError: Preserved failed NCP trial; diagnose before more trials",
     "launch-AUX-s42.log:\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
-    "mechanism-queue.log:\n2026-09-15T14:04:15.689279+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
+    "mechanism-queue.log:\n2026-09-15T14:08:02.338191+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
     "normalization-green-cpu.log:\nRan 8 tests in 1.461s\nOK",
     "normalization-red.log:\nTraceback (most recent call last):\n    raise error_metas[0].to_error(msg)\nAssertionError: Tensor-likes are not close!\nRan 8 tests in 1.503s\nFAILED (failures=1)",
     "preflight-cpu-1789473248.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 3.917s\nOK",
@@ -5153,9 +5153,9 @@
       "sha256": "584428ee9b9f704f89dc7da28484181e2156eeb17b17576cedbf9087a56d1b97"
     },
     "campaign.log": {
-      "bytes": 40004,
+      "bytes": 43718,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "1a8625fcb00f035e64dde754f88cb2c85ec459024b9416e0050f3e3704734638"
+      "sha256": "afb1e5da0570b97aa58436f987997982b5c243a6c5cb893c2d9136d5c2b9bd4e"
     },
     "contract.json": {
       "bytes": 286,
@@ -5353,9 +5353,9 @@
       "sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14"
     },
     "mechanism-queue.log": {
-      "bytes": 8384,
+      "bytes": 11997,
       "local_path": "runs/autoresearch/ncp-20260915/mechanism-queue.log",
-      "sha256": "12c9bb791d04445528bc6cbd2c44dd8cfae8b443cb297e9aa9c27a1c2e67e6ba"
+      "sha256": "7beda8e48465e5f70bd128ae48e8d964e34b9ca35559b717f0747d8f73e3368c"
     },
     "mechanism-search-space.json": {
       "bytes": 3408,
@@ -5525,17 +5525,17 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "e9a837a7539429e18f65d00c323311f850be7ebe95f6a4bd037800566e0f5f17"
+      "sha256": "2557895105e557ca22e25b0c5a3b90b5e73082bf87f9c8d746db513188c71abf"
     },
     "publication-watch-result.json": {
       "bytes": 111,
       "local_path": "runs/autoresearch/ncp-20260915/publication-watch-result.json",
-      "sha256": "39e476f4cea9036ef9537241b89ffd940c73281e42ab3752443efdad0d7708d2"
+      "sha256": "1fc5dd51bc58f50010a13f1da0dcf3843266679ec8b930e48070e2ba7cf2f4cc"
     },
     "publication-watcher.log": {
-      "bytes": 101,
+      "bytes": 202,
       "local_path": "runs/autoresearch/ncp-20260915/publication-watcher.log",
-      "sha256": "4f6fa9e7cf710e245fce2b7d572cf5913c95564c65535dac8f10b607353872b1"
+      "sha256": "c20164f05dc626cef51306e33f7dd6e2b9becedf9825a4746729ed2fe44bbca1"
     },
     "publication-watcher.py": {
       "bytes": 1803,
@@ -5548,9 +5548,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 328158,
+      "bytes": 339995,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "f0bb0c1cec85db9e2f60d1534dab2b39d26db4f4c6da8afe92d10c882099641c"
+      "sha256": "5b3f03ccfa19692422521025638329c98fe38bd25cd4c8b4feddb5883b0367ca"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -5573,9 +5573,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 16792,
+      "bytes": 17106,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "80433491af54f2d67d26650a2930caad329011f80800a3b666d741c59a5613c0"
+      "sha256": "bb4da815ba9d7312d06632511876dd884365e688340b16e64072778fdd1d59f9"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
