@@ -10,6 +10,24 @@ from autoresearch_memory import CausalNgramMemory
 from autoresearch_ncp import NextConcept
 
 
+class ResidualCapacity(nn.Module):
+    """Parameter-matched non-concept control; dense work at every token."""
+    def __init__(self,width,hidden):
+        super().__init__()
+        self.up=nn.Linear(width,hidden,bias=False)
+        self.down=nn.Linear(hidden,width,bias=False)
+
+    @torch.no_grad()
+    def initialize(self,seed):
+        device=self.up.weight.device
+        with torch.random.fork_rng(devices=[device.index] if device.type=='cuda' else []):
+            torch.manual_seed(seed)
+            for parameter in self.parameters(): nn.init.normal_(parameter,std=.02)
+
+    def forward(self,x):
+        return x+self.down(F.relu(self.up(F.rms_norm(x,(x.shape[-1],)))).square())
+
+
 class Top1FeedForward(nn.Module):
     """Dropless sparse dispatch. Empty expert paths retain zero parameter gradients."""
 
@@ -103,6 +121,7 @@ def model_class(upstream, candidate):
             self.ngram_memory = None if memory is None else CausalNgramMemory(
                 config.n_embd, memory["bos_token_id"], config.vocab_size, upstream.norm)
             self.ncp = None if candidate.get('ncp') is None else NextConcept(config.n_embd,config.n_head,candidate['ncp'])
+            self.capacity = None if candidate.get('capacity') is None else ResidualCapacity(config.n_embd,candidate['capacity']['hidden'])
             for phase in ("train", "eval"):
                 self.register_buffer(f"_stats_{phase}_counts", torch.zeros(config.n_layer, num_experts, dtype=torch.int64), persistent=False)
                 self.register_buffer(f"_stats_{phase}_tokens", torch.zeros((), dtype=torch.int64), persistent=False)
@@ -134,19 +153,24 @@ def model_class(upstream, candidate):
                 self.ngram_memory.initialize(8400 + torch.initial_seed())
             if self.ncp is not None:
                 self.ncp.initialize(12600 + torch.initial_seed())
+            if self.capacity is not None:
+                self.capacity.initialize(12600 + torch.initial_seed())
 
         def setup_optimizer(self, **kwargs):
             # Upstream asserts its fixed backbone parameter partition. Temporarily
             # unregister the independent memory module, restoring even on failure.
             memory = self.ngram_memory
             ncp = self.ncp
+            capacity = self.capacity
             self.ngram_memory = None
             self.ncp = None
+            self.capacity = None
             try:
                 optimizer = super().setup_optimizer(**kwargs)
             finally:
                 self.ngram_memory = memory
                 self.ncp = ncp
+                self.capacity = capacity
             if variant == "moe":
                 routers = [block.mlp.router.weight for block in self.transformer.h]
                 router_ids = {id(p) for p in routers}
@@ -172,6 +196,10 @@ def model_class(upstream, candidate):
                 lr = candidate['ncp']['lr']
                 optimizer.add_param_group(dict(kind='adamw', params=list(ncp.parameters()),
                     lr=lr, initial_lr=lr, betas=(.9,.999), eps=1e-8, weight_decay=0.0))
+            if capacity is not None:
+                lr=candidate['capacity']['lr']
+                optimizer.add_param_group(dict(kind='adamw',params=list(capacity.parameters()),
+                    lr=lr,initial_lr=lr,betas=(.9,.999),eps=1e-8,weight_decay=0.0))
             self.optimizer_report = optimizer_coverage(self, optimizer)
             return optimizer
 
@@ -205,6 +233,7 @@ def model_class(upstream, candidate):
                     "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
                     "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
                     "ncp_parameters": 0 if self.ncp is None else sum(p.numel() for p in self.ncp.parameters()),
+                    "capacity_parameters": 0 if self.capacity is None else sum(p.numel() for p in self.capacity.parameters()),
                     "ncp_segments": 0 if self.ncp is None else self.ncp.segments,
                     "ncp_segment_dimension": 0 if self.ncp is None else self.config.n_embd//self.ncp.segments,
                     "ncp_codebook_parameters": 0 if self.ncp is None else sum(p.numel() for p in self.ncp.codebook.parameters()),
@@ -226,13 +255,16 @@ def model_class(upstream, candidate):
             ncp_added = 0 if self.ncp is None else sum(p.numel() for p in self.ncp.parameters())
             report['ncp'] = ncp_added
             report['total'] += ncp_added
+            capacity_added=0 if self.capacity is None else sum(p.numel() for p in self.capacity.parameters())
+            report['capacity']=capacity_added
+            report['total']+=capacity_added
             return report
 
         def forward(self, idx, targets=None, reduction="mean"):
             counts = None
             auxiliary = None
             concept_losses = {}
-            if variant == "dense" and self.ngram_memory is None and self.ncp is None:
+            if variant == "dense" and self.ngram_memory is None and self.ncp is None and self.capacity is None:
                 value = super().forward(idx, targets, reduction)
             else:
                 _, length = idx.shape
@@ -262,6 +294,8 @@ def model_class(upstream, candidate):
                             x = self.ngram_memory(x, idx)
                     if self.ncp is not None and index == candidate['ncp']['after_layer']:
                         x, concept_losses = self.ncp(x, compute_loss=targets is not None and self.training and reduction=='mean')
+                    if self.capacity is not None and index == candidate['capacity']['after_layer']:
+                        x=self.capacity(x)
                 if losses:
                     auxiliary = torch.stack(losses).mean()
                     counts = torch.stack(layer_counts)

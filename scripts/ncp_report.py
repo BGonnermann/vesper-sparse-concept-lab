@@ -40,6 +40,17 @@ def rows():
                     if settings['mode']=='feedback' else 0.)
                 row['injected_feedback_rms']=injected
                 row['injected_to_hidden_rms_ratio']=injected/row['ncp_health']['mean_hidden_rms']
+                samples=read(path.parent/'ncp-diagnostics.json')['samples']
+                counts=[[sum(sample['prediction_counts'][i][j] for sample in samples)
+                    for j in range(len(samples[0]['prediction_counts'][i]))]
+                    for i in range(len(samples[0]['prediction_counts']))]
+                perplexities=[]
+                for values in counts:
+                    probabilities=[value/sum(values) for value in values if value]
+                    perplexities.append(math.exp(-sum(p*math.log(p) for p in probabilities)))
+                row['prediction_argmax_utilization']=dict(used_entries=[sum(v>0 for v in values) for values in counts],
+                    perplexity=perplexities,counts=counts,
+                    interpretation='Post-training diagnostic of most likely code; does not describe all soft or signed mixing weights and does not change the predeclared target-code collapse gate')
         else:
             model_path=path.parent/'model.json'
             if model_path.exists():
@@ -115,12 +126,12 @@ def write(final=False):
         'Dense encoder pools complete multi-token chunks; causal chunk Transformers predict segmented discrete-codebook weights. '
         'Only predicted concepts feed the token decoder, delayed by k-1 positions. Detached future chunks supervise NCP MSE; '
         'VQ MSE fits a transformed frozen random codebook basis. Token BPB excludes both auxiliary losses.',
-        'This is a simplified ConceptLM-inspired prototype, not a paper reproduction. Softmax feedback differs from the '
-        'official GPT2/Pythia raw-logit multiplication. Native SDPA, initialization, positional features, codebook transforms '
+        'This is a simplified ConceptLM-inspired prototype, not a paper reproduction. Initial softmax feedback differs from the '
+        'official GPT2/Pythia raw-logit multiplication; raw-logit variants are separately labeled. Native SDPA, initialization, positional features, codebook transforms '
         'and the small TinyStories fixed-token experiment also differ. Official revision: a0ab281286f5c0337c35de3181cc992c562eacaa.',
         'See [campaign plan](../../../docs/ncp-campaign.md) and the published source receipt for exact references.','',
         '## Every attempted trial','',
-        '| Trial | Seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | NCP collapse |',
+        '| Trial | Seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | Target-code collapse |',
         '|---|---:|---:|---:|---:|---:|---|---|---|']
     for row in data:
         name=f'[{row["trial"]}](../{row["report_id"]}/README.md)'
@@ -176,6 +187,8 @@ def write(final=False):
         'Trial wall time includes preparation, child execution and verification, excluding reporting/publication. '
         'Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, '
         'source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. '
+        'Active counts describe structural training participation, not amortized per-token compute. NCP runs at chunk rate; '
+        'the capacity-control MLP runs at token rate, and auxiliary-only concepts do not feed token logits. '
         'Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. '
         'For raw-logit mixing, reported entropy describes softmax classification probabilities, not the signed reconstruction weights. '
         'Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.',

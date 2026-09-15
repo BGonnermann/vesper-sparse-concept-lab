@@ -27,8 +27,13 @@ def main():
     runtime = train.detect_runtime(); train._configure_step_kernels(runtime)
     train.MAX_SEQ_LEN = 512; train.WINDOW_PATTERN = 'L'
     results = {}
-    for label in ('D6','NCP','AUX','D12','N-RMS'):
-        candidate = make_candidate(label)
+    conditions={label:make_candidate(label) for label in ('D6','NCP','AUX','D12','N-RMS')}
+    extra=HERE/'fit-candidates.json'
+    if extra.exists():
+        additions=json.loads(extra.read_text())
+        assert not set(additions)&set(conditions),'Fit labels must be distinct'
+        conditions.update({label:r.validate_candidate(value) for label,value in additions.items()})
+    for label,candidate in conditions.items():
         depth=candidate['depth']
         gc.collect(); torch.cuda.empty_cache(); torch.cuda.reset_peak_memory_stats()
         torch.manual_seed(42); torch.cuda.manual_seed_all(42)

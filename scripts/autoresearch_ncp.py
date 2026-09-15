@@ -93,8 +93,8 @@ class NextConcept(nn.Module):
         for block in self.blocks: x = block(x)
         logits = self.head(F.rms_norm(x,(self.width,))).float().reshape(*x.shape[:2],self.segments,self.entries)
         with torch.autocast(x.device.type, enabled=False):
-            probabilities = logits.softmax(-1)
-            prediction = torch.einsum('btsn,snd->btsd', probabilities, codes).flatten(-2)
+            weights = logits if self.settings.get('mixing','softmax')=='raw_logits' else logits.softmax(-1)
+            prediction = torch.einsum('btsn,snd->btsd', weights, codes).flatten(-2)
         return prediction, logits
 
     def quantize(self, pooled, codes):

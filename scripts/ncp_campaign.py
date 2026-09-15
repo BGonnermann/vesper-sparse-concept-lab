@@ -8,11 +8,15 @@ from pathlib import Path
 import shutil
 import subprocess
 import time
+from contextlib import contextmanager
+from functools import wraps
+import msvcrt
 
 import autoresearch as r
 import experiment_reports as reports
 
 ROOT=r.ROOT
+CONTROLLER_SOURCE=Path(__file__).read_bytes()
 HERE=ROOT/'runs/autoresearch/ncp-20260915'
 DEADLINE=datetime.fromisoformat('2026-09-15T19:41:32+00:00')
 
@@ -23,10 +27,40 @@ def can_launch(seconds): return seconds>=2100
 def sources(): return {n:r.digest(ROOT/'scripts'/n) for n in r.PROJECT_FILES}
 
 
+def capture_controller(path):
+    Path(path).write_bytes(CONTROLLER_SOURCE)
+    return r.digest(Path(path))
+
+
 def log(message):
     line=datetime.now(timezone.utc).isoformat()+' '+message
     with (HERE/'campaign.log').open('a',encoding='utf-8') as f: f.write(line+'\n')
     print(line,flush=True)
+
+
+@contextmanager
+def gpu_lock(path=None):
+    """OS-owned byte lock: retained file, automatically released on process exit."""
+    path=HERE/'gpu-run.lock' if path is None else Path(path)
+    with path.open('a+b') as handle:
+        if handle.tell()==0:
+            handle.write(b'0'); handle.flush()
+        handle.seek(0)
+        try:
+            msvcrt.locking(handle.fileno(),msvcrt.LK_NBLCK,1)
+        except OSError as exc:
+            raise RuntimeError('Another campaign GPU owner holds '+str(path)) from exc
+        try: yield
+        finally:
+            handle.seek(0)
+            msvcrt.locking(handle.fileno(),msvcrt.LK_UNLCK,1)
+
+
+def exclusive_gpu(function):
+    @wraps(function)
+    def wrapped(*args,**kwargs):
+        with gpu_lock(): return function(*args,**kwargs)
+    return wrapped
 
 
 def promising(record, control_bpb):
@@ -72,6 +106,7 @@ def health(path):
         final_update_parameter_delta_norms=data['final_update_parameter_delta_norms'])
 
 
+@exclusive_gpu
 def preflight():
     started=time.monotonic()
     receipt=dict(kind='ncp_correctness',status='running')
@@ -103,6 +138,7 @@ def preflight():
         reports.emit(HERE); reports.index()
 
 
+@exclusive_gpu
 def trial(label, seed, hypothesis, phase='screen', control='D6'):
     if not can_launch(remaining()):
         log('Report reserve reached; no new child'); return None
@@ -114,7 +150,7 @@ def trial(label, seed, hypothesis, phase='screen', control='D6'):
     records=sorted(HERE.glob('trial-*/result.json'))
     out=HERE/f'trial-{len(records)+1:04d}-{label}-s{seed}'
     out.mkdir(exist_ok=False)
-    shutil.copy2(Path(__file__),out/'orchestrator.py')
+    controller_hash=capture_controller(out/'orchestrator.py')
     selection=dict(label=label,seed=seed,phase=phase,hypothesis=hypothesis,control=control,
         selected_at=datetime.now(timezone.utc).isoformat(),remaining_seconds=remaining(),free_disk_bytes=free)
     r.write_json(out/'selection.json',selection)
@@ -130,7 +166,7 @@ def trial(label, seed, hypothesis, phase='screen', control='D6'):
         metadata.update(condition='dense',candidate=config,protocol=protocol,upstream=setup,data_seal=seal,
             record_version=7,git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
             git_dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()),
-            orchestrator_sha256=r.digest(Path(__file__)),preflight_sha256=r.digest(HERE/'active-preflight.json'))
+            orchestrator_sha256=controller_hash,preflight_sha256=r.digest(HERE/'active-preflight.json'))
         metadata.update({key:r.digest(ROOT/'scripts'/name) for name,key in r.PROJECT_FILES.items()})
         snapshot=r.capture_run_snapshot(out,metadata); metadata['snapshot_files']=snapshot
         metadata['status']='running'; r.write_json(out/'result.json',metadata)

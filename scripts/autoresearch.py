@@ -47,6 +47,19 @@ def verify_seal(directory, expected):
 
 def validate_candidate(value):
     fields = {"depth", "matrix_lr", "feedforward"}
+    if 'capacity' in value:
+        fields.add('capacity')
+        capacity=value['capacity']
+        if (not isinstance(capacity,dict) or set(capacity)!={'kind','hidden','after_layer','lr'}
+                or capacity['kind']!='residual_mlp_v1' or value.get('feedforward')!='dense'
+                or 'ncp' in value or 'memory' in value):
+            raise ValueError('Capacity control requires dense residual_mlp_v1 alone')
+        if type(capacity['hidden']) is not int or not 1<=capacity['hidden']<=16384:
+            raise ValueError('Invalid capacity hidden dimension')
+        if type(capacity['after_layer']) is not int or type(value.get('depth')) is not int or not 0<=capacity['after_layer']<value['depth']:
+            raise ValueError('Invalid capacity insertion layer')
+        if type(capacity['lr']) not in (int,float) or not math.isfinite(capacity['lr']) or not 0<capacity['lr']<=.003:
+            raise ValueError('Invalid capacity learning rate')
     if 'ncp' in value:
         fields.add('ncp')
         n = value['ncp']
@@ -55,6 +68,10 @@ def validate_candidate(value):
             expected.add('pool_normalization')
             if n['pool_normalization'] not in ('none','rms'):
                 raise ValueError('Invalid NCP pool normalization')
+        if isinstance(n,dict) and 'mixing' in n:
+            expected.add('mixing')
+            if n['mixing'] not in ('softmax','raw_logits'):
+                raise ValueError('Invalid NCP mixing')
         if not isinstance(n,dict) or set(n)!=expected or n['kind']!='ncp_v1':
             raise ValueError('NCP requires the complete ncp_v1 configuration.')
         if value.get('feedforward')!='dense' or 'memory' in value:
@@ -67,7 +84,8 @@ def validate_candidate(value):
         if n['mode'] not in ('feedback','auxiliary'):
             raise ValueError('Invalid NCP mode')
         for key in ('prediction_weight','vq_weight','ce_weight','lr','feedback_scale'):
-            if type(n[key]) not in (int,float) or not math.isfinite(n[key]) or not 0 <= n[key] <= 1:
+            maximum=8 if key=='feedback_scale' else 1
+            if type(n[key]) not in (int,float) or not math.isfinite(n[key]) or not 0 <= n[key] <= maximum:
                 raise ValueError('Invalid NCP '+key)
         if n['lr']<=0 or n['lr']>.003:
             raise ValueError('Invalid NCP learning rate')
