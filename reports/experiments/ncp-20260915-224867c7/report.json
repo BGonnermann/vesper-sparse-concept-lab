@@ -7291,7 +7291,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "504d19cc1cebb51445bdf1d62aed74a0b8cc69ee",
+      "publication_commit": "b8b002df8c760eeecdb5193c1c49cd546ec1f984",
       "status": "completed",
       "verified_remote": true
     },
@@ -7329,6 +7329,7 @@
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
     "dimension-checks-before-implementation.log:\n    raise ValueError(\"Fixed comparison requires seed 42, 43 or 44.\")\nValueError: Fixed comparison requires seed 42, 43 or 44.\nERROR: test_width_override_is_bounded (__main__.DimensionChecks.test_width_override_is_bounded)\nTraceback (most recent call last):\n    raise ValueError(\"Candidate must select dense or moe with exactly its supported settings.\")\nValueError: Candidate must select dense or moe with exactly its supported settings.\nRan 3 tests in 0.002s\nFAILED (errors=3)",
+    "dimension-checks-portable-before-implementation.log:\n    raise ValueError(\"Fixed comparison requires seed 42, 43 or 44.\")\nValueError: Fixed comparison requires seed 42, 43 or 44.\nERROR: test_width_override_is_bounded (__main__.DimensionChecks.test_width_override_is_bounded)\nTraceback (most recent call last):\n    raise ValueError(\"Candidate must select dense or moe with exactly its supported settings.\")\nValueError: Candidate must select dense or moe with exactly its supported settings.\nRan 3 tests in 0.001s\nFAILED (errors=3)",
     "early-metadata-red.log:\nFAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 79, in test_loss_failure_preserves_partial_state_and_accounting\n    self.assertTrue((path/'model.json').exists(),'Missing parameter count for failed training')\nAssertionError: False is not true : Missing parameter count for failed training\nRan 5 tests in 1.375s\nFAILED (failures=1)",
     "failure-receipt-red.log:\nFAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 60, in test_loss_failure_preserves_partial_state_and_accounting\n    self.assertTrue((path/'training-failure.json').exists(),'Missing partial failure receipt')\nAssertionError: False is not true : Missing partial failure receipt\nRan 4 tests in 0.990s\nFAILED (failures=1)",
     "initial-queue.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\nTraceback (most recent call last):\n    if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')\nRuntimeError: Preserved failed NCP trial; diagnose before more trials",
@@ -7394,9 +7395,9 @@
       "sha256": "7fa96961bde39a884067910f42807abcd923b6ae799b7f91ce570ddfcc080074"
     },
     "campaign.log": {
-      "bytes": 64286,
+      "bytes": 65299,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "49d20e4a07198c62db2b6ba552e56d8d4394c246196a44b706f08dc4af57dc1f"
+      "sha256": "ab7e16161e3259b1e3c666d94a5a32c280ece43b7a61342c194f5b49c4b83999"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -7452,6 +7453,16 @@
       "bytes": 2646,
       "local_path": "runs/autoresearch/ncp-20260915/dimension-checks-before-implementation.log",
       "sha256": "8dd81b708670c5fb8d37bac2c6209986a8d8b5237ce5558f4f62913762ec940b"
+    },
+    "dimension-checks-portable-before-implementation.log": {
+      "bytes": 2646,
+      "local_path": "runs/autoresearch/ncp-20260915/dimension-checks-portable-before-implementation.log",
+      "sha256": "25b2e66e1b4d7334ee01a8e243489588627a42ca9862ec90f44237e18eb2aa21"
+    },
+    "dimension-checks-v1.py": {
+      "bytes": 3193,
+      "local_path": "runs/autoresearch/ncp-20260915/dimension-checks-v1.py",
+      "sha256": "b151766a646d2cd3e59b929d73d918d9be4dcef3db847357c88810ee8b4ab296"
     },
     "early-metadata-red.log": {
       "bytes": 795,
@@ -7574,9 +7585,9 @@
       "sha256": "51c9b3f79e66825e104d1caa138286208872645f374d0184032203a144d8a72e"
     },
     "interaction-options.json": {
-      "bytes": 3126,
+      "bytes": 2129,
       "local_path": "runs/autoresearch/ncp-20260915/interaction-options.json",
-      "sha256": "f7a9268fa541da6fce9da7a3d3586e6530e422920c86081933fa236392dc0782"
+      "sha256": "2e85b714fd39c6b9e9d13a8f040beb98e39db84d7a48d752a3074e882c7a11d2"
     },
     "interaction-preflight.log": {
       "bytes": 408,
@@ -7584,9 +7595,9 @@
       "sha256": "f8ed5dee8c1d77b8e3b1d1b2f7235ad79a79a6c9a91e8ff15008536a87ccf51d"
     },
     "interaction-queue.log": {
-      "bytes": 13126,
+      "bytes": 14139,
       "local_path": "runs/autoresearch/ncp-20260915/interaction-queue.log",
-      "sha256": "20f304c6809e075ad33860674c23c219cb9b14ce17bf94f2d86eae92ea605884"
+      "sha256": "91bc17af7d205b41007c1268211014ef30156a243a376ad8bb0adecfe34965df"
     },
     "launch-AUX-s42.log": {
       "bytes": 523,
@@ -7826,7 +7837,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "8bd32b41abc8c8f25d01f176aaad595c7eac18e5a39efa91891ceb0178064292"
+      "sha256": "be4a059318ada1ecf73d83dc596451807bc983e314a866e2e52cca4aff809df6"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -7849,9 +7860,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 471772,
+      "bytes": 483456,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "e27821724506c9614d309b0ea58dab8e615f62fe4d3e788500bf355b65c9c2af"
+      "sha256": "f3138cf7ee1495a52550863dc8a71d861d7fc4361378058a7d603a2bccca41ef"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -7874,9 +7885,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 22732,
+      "bytes": 23129,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "be98f98230d121e1b4b2827609dc5c65fb705dc92029f9d32e9a733e10c73a05"
+      "sha256": "1590fc25b9eb699a4c71c4be1527510743a6d3f76f17d1187182b1193d6ec130"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -7918,6 +7929,10 @@
       "depth-queue.py": {
         "published_path": "reports/source-snapshots/37b387890559604e9f7f27e001d5cef00e39f197799a9d1d425a2510ccc8147d.py",
         "sha256": "37b387890559604e9f7f27e001d5cef00e39f197799a9d1d425a2510ccc8147d"
+      },
+      "dimension-checks-v1.py": {
+        "published_path": "reports/source-snapshots/b151766a646d2cd3e59b929d73d918d9be4dcef3db847357c88810ee8b4ab296.py",
+        "sha256": "b151766a646d2cd3e59b929d73d918d9be4dcef3db847357c88810ee8b4ab296"
       },
       "fit-1789475893567819000.py": {
         "published_path": "reports/source-snapshots/fd6f6149da2ec5ddf5127287163230d225ac6e15624508ecb70ab101943d3cac.py",
