@@ -1,0 +1,526 @@
+{
+  "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43",
+  "budget_family": "fixed_updates",
+  "compatibility_fingerprint": "c3f617e20ac464569173aa6dac46cecc437df86d90876a29e867248899c3ba05",
+  "configuration": {
+    "capacity": {
+      "after_layer": 0,
+      "hidden": 4760,
+      "kind": "residual_mlp_v1",
+      "lr": 0.001
+    },
+    "depth": 6,
+    "feedforward": "dense",
+    "matrix_lr": 0.04
+  },
+  "details": {
+    "batches.json": {
+      "seed": 43
+    },
+    "candidate.json": {
+      "capacity": {
+        "after_layer": 0,
+        "hidden": 4760,
+        "kind": "residual_mlp_v1",
+        "lr": 0.001
+      },
+      "depth": 6,
+      "feedforward": "dense",
+      "matrix_lr": 0.04
+    },
+    "environment.json": {
+      "bf16_supported": true,
+      "capability": [
+        12,
+        0
+      ],
+      "cuda_available": true,
+      "cuda_build": "12.8",
+      "free_vram_bytes": 15767437312,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "os": "Windows-10-10.0.26200-SP0",
+      "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.9.1+cu128",
+      "total_vram_bytes": 17094475776
+    },
+    "evaluation-immutability.json": {
+      "after_sha256": "0f453dbcfc3c6ab46f3735ea838d6793535202078cba13bc9b77a83637fd32a4",
+      "before_sha256": "0f453dbcfc3c6ab46f3735ea838d6793535202078cba13bc9b77a83637fd32a4",
+      "verified": true
+    },
+    "execution.json": {},
+    "fixed-training.json": {
+      "all_update_seconds": 175.49923019997732,
+      "batch_hash_chain": "3ad6730fe41b4b1235cd7ebfd54556f9f6516a9d32daff0e7137ecb6fb492369",
+      "optimizer_updates": 512,
+      "schedule_sha256": "c2aa2771ada9223c050bb5d8dc982a6123593718f3ede4573d60fe491945f256",
+      "seed": 43,
+      "stopping_rule": "optimizer_updates"
+    },
+    "gpu-samples.json": {},
+    "initialization.json": {
+      "seed": 43
+    },
+    "memory.json": {
+      "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+      "peak_allocated_bytes": 719872000,
+      "peak_reserved_bytes": 750780416
+    },
+    "model.json": {
+      "activation_checkpointing": false,
+      "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+      "active_parameters": 30001452,
+      "capacity_parameters": 3655680,
+      "depth": 6,
+      "expert_dispatch": null,
+      "expert_parameters": 0,
+      "feedforward": "dense",
+      "memory": null,
+      "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+      "memory_after_layer": null,
+      "memory_initialization_seed": null,
+      "memory_lr": null,
+      "memory_parameters": 0,
+      "memory_table_bytes": 0,
+      "ncp_codebook_buffer_bytes": 0,
+      "ncp_codebook_parameters": 0,
+      "ncp_effective_codebook_bytes": 0,
+      "ncp_parameters": 0,
+      "ncp_segment_dimension": 0,
+      "ncp_segments": 0,
+      "num_experts": 0,
+      "router_parameters": 0,
+      "top_k": 0,
+      "total_parameters": 30001452,
+      "width": 384
+    },
+    "ncp-diagnostics.json": {
+      "enabled": false,
+      "measurement_scope": "Final update gradients and post-training first32 seeded training microbatches; diagnostics excluded from timed updates"
+    },
+    "ngram-diagnostics.json": {
+      "enabled": false,
+      "measurement_scope": "Final update gradients/deltas and post-training inference on first32 seeded training microbatches; outside timed training"
+    },
+    "optimizer.json": {},
+    "protocol.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "optimizer_updates": 512,
+      "protocol_id": "vesper-tinystories-equal-token-v1",
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "seed": 43,
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "stopping_rule": "optimizer_updates",
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "result.json": {
+      "candidate": {
+        "capacity": {
+          "after_layer": 0,
+          "hidden": 4760,
+          "kind": "residual_mlp_v1",
+          "lr": 0.001
+        },
+        "depth": 6,
+        "feedforward": "dense",
+        "matrix_lr": 0.04
+      },
+      "condition": "dense",
+      "kind": "fixed_updates",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 30.0,
+        "num_steps": 512.0,
+        "peak_vram_mb": 686.5,
+        "total_seconds": 177.5,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 171.7,
+        "val_bpb": 0.637069
+      },
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 43,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "returncode": 0,
+      "seed": 43,
+      "status": "completed",
+      "wall_seconds": 180.75
+    },
+    "routing.json": {
+      "aux_loss_weight": 0.0,
+      "eval": {
+        "counts": [],
+        "dropped_tokens": 0,
+        "fractions": [],
+        "tokens": 65536
+      },
+      "feedforward": "dense",
+      "num_experts": 0,
+      "router_gradient_max_abs": [],
+      "router_gradients_finite": true,
+      "train": {
+        "counts": [],
+        "dropped_tokens": 0,
+        "fractions": [],
+        "tokens": 8388608
+      },
+      "training_auxiliary_loss": 0.0,
+      "training_cross_entropy": 2.2226813581219176,
+      "weighted_training_auxiliary_loss": 0.0
+    },
+    "schedule.json": {},
+    "selection.json": {
+      "control": "D6",
+      "free_disk_bytes": 247491997696,
+      "hypothesis": "Frozen four-seed confirmation: FROZEN-CAP, seed43; selection trial-0039-I2-37a8ad42c0-s42; compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection",
+      "label": "FROZEN-CAP",
+      "phase": "ncp_confirmation",
+      "remaining_seconds": 11392.903938,
+      "seed": 43,
+      "selected_at": "2026-09-15T16:31:39.096062+00:00"
+    },
+    "snapshot.json": {},
+    "training.json": {
+      "activation_checkpointing": false,
+      "optimizer_updates": 512,
+      "timed_training_seconds": 171.7454020999794,
+      "timed_training_tokens": 8208384,
+      "training_tokens": 8388608,
+      "warmup_updates": 11
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "batches.json": {
+      "bytes": 89367,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/batches.json",
+      "sha256": "d204d6e1d11da3a36244deb2bc72675d71f60b3f2e52144b05f36e38c09fc90c"
+    },
+    "candidate.json": {
+      "bytes": 185,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/candidate.json",
+      "sha256": "9c3e36397de95201105b10dc417237cacd47a714d693f254ad67b9f01c685350"
+    },
+    "environment.json": {
+      "bytes": 383,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/environment.json",
+      "sha256": "7162e5b54515cf5f9e6f0f8a9c48887560ffc21ea300b21537c9df31519a2ed6"
+    },
+    "evaluation-immutability.json": {
+      "bytes": 201,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/evaluation-immutability.json",
+      "sha256": "c8e2326b4da54fe4d588594bb4f8eb8bcb3a5cfb6221087ada822d6f39b2e63f"
+    },
+    "execution.json": {
+      "bytes": 2605,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/execution.json",
+      "sha256": "7cf2a5821e0c85a8d368fef72cad5c4e9097a874e6ebc91622ce726b372f3bd7"
+    },
+    "fixed-training.json": {
+      "bytes": 316,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/fixed-training.json",
+      "sha256": "7ed9eb6d4c420037b208586123a495a1b0ece285e995f479a71854e057479199"
+    },
+    "gpu-samples.json": {
+      "bytes": 2063,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/gpu-samples.json",
+      "sha256": "1baa1c11a905c6dba513f661b4a74dc2de269649b0c451abdb631d471a40d285"
+    },
+    "initialization-pairing.json": {
+      "bytes": 155,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/initialization-pairing.json",
+      "sha256": "b53c306fb024d6e5fef15bc7144960cd53a1523f1ec0090efc891a172114556d"
+    },
+    "initialization.json": {
+      "bytes": 5205,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/initialization.json",
+      "sha256": "1c817cecb24069027a09d6a0ee4918ff3e322e3bc40b10bccbba24e5fde7055a"
+    },
+    "memory.json": {
+      "bytes": 174,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/memory.json",
+      "sha256": "f41148831676113e66985ecff908a86d0832da1699b86713254d0f52e6afd885"
+    },
+    "model.json": {
+      "bytes": 1020,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/model.json",
+      "sha256": "a8bbbaf4b107316da5f3690242b67e4e44fe1d46c675531e44bbe38da05ba572"
+    },
+    "ncp-diagnostics.json": {
+      "bytes": 172,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/ncp-diagnostics.json",
+      "sha256": "546b3089f8cbdb1b4223e34ee0f357c5b009f0a6082016d0fca1d4169d1fff5b"
+    },
+    "ngram-diagnostics.json": {
+      "bytes": 175,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/ngram-diagnostics.json",
+      "sha256": "5ac95dae8c8dd7778c006c871e33e8da96ac0f3c62d8546d437be235f11783a3"
+    },
+    "optimizer.json": {
+      "bytes": 3379,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/optimizer.json",
+      "sha256": "bf4e3f30684b4eed7b92779a0416b517f3a68eaf4ad2e8c02bc8c98bc8366298"
+    },
+    "orchestrator.py": {
+      "bytes": 13370,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/orchestrator.py",
+      "sha256": "34f7a382f894b57eb1e0b950d57c5351e2b88e824c0f57a9f49642bd0f9c7275"
+    },
+    "protocol.json": {
+      "bytes": 929,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/protocol.json",
+      "sha256": "dc028113a01996d2030183ebb53dfed924575fdcc2646cb10f0d9a49d71b1c16"
+    },
+    "result.json": {
+      "bytes": 14910,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/result.json",
+      "sha256": "16d9f80cb93d1429efde096a173d3d20d1094b53a380c066de54cbbb5f50c684"
+    },
+    "routing.json": {
+      "bytes": 495,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/routing.json",
+      "sha256": "836bf6c87c2fd0e5c0a11d99240ae9498a98096371b56b36022db092e8883f94"
+    },
+    "run.log": {
+      "bytes": 46653,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/run.log",
+      "sha256": "9e00f178cf8dabffa81ee9719a3f2b4f0e1375bad248417576f19be96eef221b"
+    },
+    "schedule.json": {
+      "bytes": 92894,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/schedule.json",
+      "sha256": "c2aa2771ada9223c050bb5d8dc982a6123593718f3ede4573d60fe491945f256"
+    },
+    "selection.json": {
+      "bytes": 455,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/selection.json",
+      "sha256": "9094aadaab6e99db5c2f92009ab03ea72a996c2225150d484d5745b81f09abfa"
+    },
+    "snapshot.json": {
+      "bytes": 1354,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/snapshot.json",
+      "sha256": "85ef5029be8e21264bd30f616c658006e34b994b1ab110de4de2ea873caf3815"
+    },
+    "training.json": {
+      "bytes": 213,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0068-FROZEN-CAP-s43/training.json",
+      "sha256": "ea7979412b2e70f4f8353018539de2ebf154a987824019ff3d7bdcb62c970202"
+    }
+  },
+  "experiment_id": "ncp-20260915--trial-0068-FROZEN-CAP-s43-4d62a0b4",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": {
+    "depth": 6.0,
+    "eval_batch_size": 2.0,
+    "num_params_M": 30.0,
+    "num_steps": 512.0,
+    "peak_vram_mb": 686.5,
+    "total_seconds": 177.5,
+    "total_tokens_M": 8.4,
+    "train_batch_size": 2.0,
+    "training_seconds": 171.7,
+    "val_bpb": 0.637069
+  },
+  "outcome": "completed",
+  "protocol": {
+    "activation_checkpointing": false,
+    "baseline_timeout_seconds": 900,
+    "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+    "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "optimizer_updates": 512,
+    "protocol_id": "vesper-tinystories-equal-token-v1",
+    "schedule": {
+      "clock": "optimizer_step",
+      "decay_start_step": 256,
+      "final_lr_fraction": 0.0,
+      "lr_warmup_updates": 0,
+      "measurement_warmup_updates": 11,
+      "muon_momentum_warmup_updates": 300,
+      "progress": "zero_based_step / 512"
+    },
+    "seed": 43,
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "stopping_rule": "optimizer_updates",
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {
+      "orchestrator.py": {
+        "published_path": "reports/source-snapshots/34f7a382f894b57eb1e0b950d57c5351e2b88e824c0f57a9f49642bd0f9c7275.py",
+        "sha256": "34f7a382f894b57eb1e0b950d57c5351e2b88e824c0f57a9f49642bd0f9c7275"
+      },
+      "source/project/autoresearch.py": {
+        "published_path": "reports/source-snapshots/58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c.py",
+        "sha256": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c"
+      },
+      "source/project/autoresearch_bootstrap.py": {
+        "published_path": "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py",
+        "sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6"
+      },
+      "source/project/autoresearch_memory.py": {
+        "published_path": "reports/source-snapshots/70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862.py",
+        "sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862"
+      },
+      "source/project/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d.py",
+        "sha256": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d"
+      },
+      "source/project/autoresearch_ncp.py": {
+        "published_path": "reports/source-snapshots/9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c.py",
+        "sha256": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c"
+      },
+      "source/project/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016.py",
+        "sha256": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016"
+      },
+      "source/upstream/prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      },
+      "source/upstream/train.py": {
+        "published_path": "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py",
+        "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      }
+    },
+    "execution_receipt": {
+      "dependency_scope": "Project/upstream Python sources and configs captured; installed packages remain in the recorded runtime venv",
+      "executed_files": {
+        "source/project/autoresearch.py": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "source/project/autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "source/project/autoresearch_train.py": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      },
+      "files": {
+        "candidate.json": "9c3e36397de95201105b10dc417237cacd47a714d693f254ad67b9f01c685350",
+        "protocol.json": "dc028113a01996d2030183ebb53dfed924575fdcc2646cb10f0d9a49d71b1c16",
+        "source/project/autoresearch.py": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "source/project/autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "source/project/autoresearch_train.py": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "isolated": true,
+      "python": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\.autoresearch\\upstream\\.venv\\Scripts\\python.exe",
+      "verified": true
+    },
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {
+      "adapter_sha256": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016",
+      "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+      "checkpoint_sha256": "7f6c44549b7ea3ee780cf0978fddf4d0e937a34906b6bff3d917b3492346f1f5",
+      "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+      "model_sha256": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+      "ncp_sha256": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+      "orchestrator_sha256": "34f7a382f894b57eb1e0b950d57c5351e2b88e824c0f57a9f49642bd0f9c7275",
+      "preflight_sha256": "08060d56c6992d35c18dad93690d2c8ffd975562d5744e0011f76de286e028b2",
+      "runner_sha256": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c"
+    },
+    "recorded_data_hashes": {
+      "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+      "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+      "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+    },
+    "recorded_git_commit": "2d94061ab7be725cf496be1609174870f58fb8bc",
+    "recorded_git_dirty": true,
+    "recorded_upstream": {
+      "runtime_files": {
+        ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "upstream": {
+        "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored.",
+        "original_project": "https://github.com/karpathy/autoresearch",
+        "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+        "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+        "revision": "a4123c6e5c6287f90be04026642ba20b94e424df"
+      }
+    },
+    "snapshot_manifest": {
+      "candidate.json": "9c3e36397de95201105b10dc417237cacd47a714d693f254ad67b9f01c685350",
+      "protocol.json": "dc028113a01996d2030183ebb53dfed924575fdcc2646cb10f0d9a49d71b1c16",
+      "source/project/autoresearch.py": "58a59e8716f296f0cd3620efe7751c3cc34579ef369d1cde434f0d75b174787c",
+      "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+      "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+      "source/project/autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+      "source/project/autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+      "source/project/autoresearch_train.py": "72db83d5d24c4551867d4b7c74ef032530d1876fc42df1e9c04cbbc1391f0016",
+      "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+      "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+      "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+      "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+      "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+    }
+  },
+  "reporter_sha256": "b7fe4f9a73689b14db57fd66dce6059fd3037f238a49833174e7bc0ba7faaad9",
+  "schema_version": 1,
+  "seeds": [
+    43
+  ]
+}
