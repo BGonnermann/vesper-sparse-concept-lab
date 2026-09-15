@@ -551,12 +551,69 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/overnight-20260915/trial-0001-D-s42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "65bc8307cb1ce6f603543d4da113ccaab5dd146311f26dbc076aa0b3e78890a9",
+      "experiment_id": "overnight-20260915--trial-0001-D-s42-23ac8499",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 512.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 183.7,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 161.9,
+        "val_bpb": 0.634848
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/overnight-20260915/trial-0002-M-s42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "2d77041126fdefe35c39e55c84e307af4c08c07959ad2c6e4ecb4beb4fe135b0",
+      "experiment_id": "overnight-20260915--trial-0002-M-s42-e283b658",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 512.0,
+        "peak_vram_mb": 902.2,
+        "total_seconds": 308.4,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 298.6,
+        "val_bpb": 0.637217
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/overnight-20260915/trial-0003-DG-s42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "2d77041126fdefe35c39e55c84e307af4c08c07959ad2c6e4ecb4beb4fe135b0",
+      "experiment_id": "overnight-20260915--trial-0003-DG-s42-268e371a",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 27.4,
+        "num_steps": 512.0,
+        "peak_vram_mb": 599.7,
+        "total_seconds": 193.2,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 186.3,
+        "val_bpb": 0.634178
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/overnight-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,
       "experiment_id": "overnight-20260915-84853326",
       "metrics": null,
-      "outcome": "stage_evidence_only"
+      "outcome": "running"
     },
     {
       "artifact_directory": "runs/autoresearch/packed-20260915T002151Z-dense-baseline",

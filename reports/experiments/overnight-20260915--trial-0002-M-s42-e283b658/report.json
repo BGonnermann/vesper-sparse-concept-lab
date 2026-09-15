@@ -1,0 +1,634 @@
+{
+  "artifact_directory": "runs/autoresearch/overnight-20260915/trial-0002-M-s42",
+  "budget_family": "fixed_updates",
+  "compatibility_fingerprint": "2d77041126fdefe35c39e55c84e307af4c08c07959ad2c6e4ecb4beb4fe135b0",
+  "configuration": {
+    "aux_loss_weight": 0.01,
+    "depth": 6,
+    "feedforward": "moe",
+    "matrix_lr": 0.04,
+    "num_experts": 4,
+    "router_lr": 0.001,
+    "top_k": 1
+  },
+  "details": {
+    "analysis.json": {
+      "comparison_class": "equal_token_512_updates",
+      "initialization_pairing": null,
+      "selection": {
+        "control": null,
+        "hypothesis": "Fresh four-expert packed sparse reference",
+        "label": "M",
+        "phase": "screen",
+        "reason": "Fresh matched controls precede candidate selection",
+        "remaining_seconds": 27543.186336,
+        "seed": 42,
+        "selected_at": "2026-09-15T03:50:56.813163+00:00"
+      },
+      "selection_with_evidence_local_path": "runs\\autoresearch\\overnight-20260915\\trial-0002-M-s42\\selection.json",
+      "selection_with_evidence_sha256": "4dfad93f736c28e67af59d86fd80c2843e0a621961e8c900cd50c9ff218431c2"
+    },
+    "batches.json": {
+      "seed": 42
+    },
+    "candidate.json": {
+      "aux_loss_weight": 0.01,
+      "depth": 6,
+      "feedforward": "moe",
+      "matrix_lr": 0.04,
+      "num_experts": 4,
+      "router_lr": 0.001,
+      "top_k": 1
+    },
+    "environment.json": {
+      "bf16_supported": true,
+      "capability": [
+        12,
+        0
+      ],
+      "cuda_available": true,
+      "cuda_build": "12.8",
+      "free_vram_bytes": 15375331328,
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "os": "Windows-10-10.0.26200-SP0",
+      "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.9.1+cu128",
+      "total_vram_bytes": 17094475776
+    },
+    "execution.json": {},
+    "fixed-training.json": {
+      "all_update_seconds": 305.9527605001058,
+      "batch_hash_chain": "e43fc6843aa6f6a1005aabf5cab1f85ddca025aba7eee455c55103b69421257f",
+      "optimizer_updates": 512,
+      "schedule_sha256": "dc870363f5581d91b841758324bbf3334f87cb8b321df2387eb5df98b9881e8c",
+      "seed": 42,
+      "stopping_rule": "optimizer_updates"
+    },
+    "initialization.json": {
+      "seed": 42
+    },
+    "memory.json": {
+      "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations",
+      "peak_allocated_bytes": 946064896,
+      "peak_reserved_bytes": 1002438656
+    },
+    "model.json": {
+      "activation_checkpointing": false,
+      "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+      "active_parameters": 26354988,
+      "depth": 6,
+      "expert_dispatch": "packed_stable",
+      "expert_parameters": 28311552,
+      "feedforward": "moe",
+      "memory": null,
+      "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+      "memory_after_layer": null,
+      "memory_initialization_seed": null,
+      "memory_lr": null,
+      "memory_parameters": 0,
+      "memory_table_bytes": 0,
+      "num_experts": 4,
+      "router_parameters": 9216,
+      "top_k": 1,
+      "total_parameters": 47588652,
+      "width": 384
+    },
+    "ngram-diagnostics.json": {
+      "enabled": false,
+      "measurement_scope": "Final update gradients/deltas and post-training inference on first32 seeded training microbatches; outside timed training"
+    },
+    "optimizer.json": {},
+    "protocol.json": {
+      "activation_checkpointing": false,
+      "baseline_timeout_seconds": 900,
+      "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+      "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+      "eval_batch_size": 2,
+      "eval_tokens": 65536,
+      "microbatch_size": 2,
+      "optimizer_updates": 512,
+      "protocol_id": "vesper-tinystories-equal-token-v1",
+      "schedule": {
+        "clock": "optimizer_step",
+        "decay_start_step": 256,
+        "final_lr_fraction": 0.0,
+        "lr_warmup_updates": 0,
+        "measurement_warmup_updates": 11,
+        "muon_momentum_warmup_updates": 300,
+        "progress": "zero_based_step / 512"
+      },
+      "seed": 42,
+      "sequence_length": 512,
+      "smoke_eval_tokens": 8192,
+      "smoke_timeout_seconds": 180,
+      "stopping_rule": "optimizer_updates",
+      "tokens_per_update": 16384,
+      "training_seconds": 300
+    },
+    "result.json": {
+      "candidate": {
+        "aux_loss_weight": 0.01,
+        "depth": 6,
+        "feedforward": "moe",
+        "matrix_lr": 0.04,
+        "num_experts": 4,
+        "router_lr": 0.001,
+        "top_k": 1
+      },
+      "condition": "moe",
+      "kind": "fixed_updates",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 47.6,
+        "num_steps": 512.0,
+        "peak_vram_mb": 902.2,
+        "total_seconds": 308.4,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 298.6,
+        "val_bpb": 0.637217
+      },
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 42,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "returncode": 0,
+      "seed": 42,
+      "status": "completed",
+      "wall_seconds": 312.64000000001397
+    },
+    "routing.json": {
+      "aux_loss_weight": 0.01,
+      "eval": {
+        "counts": [
+          [
+            14934,
+            14549,
+            18252,
+            17801
+          ],
+          [
+            16173,
+            15573,
+            17742,
+            16048
+          ],
+          [
+            13673,
+            16797,
+            18976,
+            16090
+          ],
+          [
+            20388,
+            13639,
+            13971,
+            17538
+          ],
+          [
+            18966,
+            11938,
+            18276,
+            16356
+          ],
+          [
+            19370,
+            17272,
+            10516,
+            18378
+          ]
+        ],
+        "dropped_tokens": 0,
+        "fractions": [
+          [
+            0.227874755859375,
+            0.2220001220703125,
+            0.27850341796875,
+            0.2716217041015625
+          ],
+          [
+            0.2467803955078125,
+            0.2376251220703125,
+            0.270721435546875,
+            0.244873046875
+          ],
+          [
+            0.2086334228515625,
+            0.2563018798828125,
+            0.28955078125,
+            0.245513916015625
+          ],
+          [
+            0.31109619140625,
+            0.2081146240234375,
+            0.2131805419921875,
+            0.267608642578125
+          ],
+          [
+            0.289398193359375,
+            0.182159423828125,
+            0.27886962890625,
+            0.24957275390625
+          ],
+          [
+            0.295562744140625,
+            0.2635498046875,
+            0.16046142578125,
+            0.280426025390625
+          ]
+        ],
+        "tokens": 65536
+      },
+      "feedforward": "moe",
+      "num_experts": 4,
+      "router_gradient_max_abs": [
+        0.002268244046717882,
+        0.0019459339091554284,
+        0.0012821732088923454,
+        0.0015030675567686558,
+        0.002127333078533411,
+        0.0019767542835325003
+      ],
+      "router_gradients_finite": true,
+      "train": {
+        "counts": [
+          [
+            1915734,
+            1743987,
+            2752406,
+            1976481
+          ],
+          [
+            2147845,
+            2054435,
+            2292263,
+            1894065
+          ],
+          [
+            2075081,
+            2186354,
+            2090604,
+            2036569
+          ],
+          [
+            1962963,
+            1862323,
+            1984049,
+            2579273
+          ],
+          [
+            2203378,
+            2037364,
+            2386162,
+            1761704
+          ],
+          [
+            2231681,
+            2241579,
+            1416680,
+            2498668
+          ]
+        ],
+        "dropped_tokens": 0,
+        "fractions": [
+          [
+            0.22837328910827637,
+            0.20789945125579834,
+            0.3281123638153076,
+            0.23561489582061768
+          ],
+          [
+            0.25604307651519775,
+            0.24490773677825928,
+            0.2732590436935425,
+            0.2257901430130005
+          ],
+          [
+            0.2473689317703247,
+            0.2606337070465088,
+            0.24921941757202148,
+            0.24277794361114502
+          ],
+          [
+            0.23400342464447021,
+            0.2220062017440796,
+            0.236517071723938,
+            0.3074733018875122
+          ],
+          [
+            0.2626631259918213,
+            0.2428727149963379,
+            0.2844526767730713,
+            0.21001148223876953
+          ],
+          [
+            0.26603710651397705,
+            0.2672170400619507,
+            0.16888141632080078,
+            0.2978644371032715
+          ]
+        ],
+        "tokens": 8388608
+      },
+      "training_auxiliary_loss": 1.039880221534986,
+      "training_cross_entropy": 2.258278697700007,
+      "weighted_training_auxiliary_loss": 0.01039880221534986
+    },
+    "schedule.json": {},
+    "selection.json": {
+      "seed": 42
+    },
+    "snapshot.json": {},
+    "training.json": {
+      "activation_checkpointing": false,
+      "optimizer_updates": 512,
+      "timed_training_seconds": 298.62052060008864,
+      "timed_training_tokens": 8208384,
+      "training_tokens": 8388608,
+      "warmup_updates": 11
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "analysis.json": {
+      "bytes": 646,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/analysis.json",
+      "sha256": "53845653e6262d36b9d53c27d5f060a87fc5cba9561f6b590933d55aff0e2951"
+    },
+    "batches.json": {
+      "bytes": 89367,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/batches.json",
+      "sha256": "fe7c955ac904cd1dc72bc792f69c7de30564891bcb910cb977617935b0e0120d"
+    },
+    "candidate.json": {
+      "bytes": 154,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/candidate.json",
+      "sha256": "b8d912bfc923b1d3ba17d1ddc4bef4b34ed40cc13ee3db5535c91c4db03b1dfd"
+    },
+    "environment.json": {
+      "bytes": 383,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/environment.json",
+      "sha256": "372cbf41ee11c9ffee99a6b17793a810c9f371df51ff2fe5afe2f433c903e1a9"
+    },
+    "execution.json": {
+      "bytes": 2383,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/execution.json",
+      "sha256": "5b581345d95fc340fd6894e115db6224dd9e9364759a84bae3dee4124776966c"
+    },
+    "fixed-training.json": {
+      "bytes": 315,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/fixed-training.json",
+      "sha256": "e45c8b7335d5310769d311d005b3f403c9e7aaa72c542c14cb54e21fe21913c4"
+    },
+    "initialization.json": {
+      "bytes": 10077,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/initialization.json",
+      "sha256": "4cddb0b464331ec928112c2af40e70f1d7844000a6ee740f490761ac902f1375"
+    },
+    "memory.json": {
+      "bytes": 175,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/memory.json",
+      "sha256": "ca2d2bcea900a07709ccae22d85c76a1e6d654c54ff6d8e74649c0c4d76b37cd"
+    },
+    "model.json": {
+      "bytes": 821,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/model.json",
+      "sha256": "4a5bcedb72d3f5fee38d24cf467c43de92ccf9150b2a86e09db5e601d77072fc"
+    },
+    "ngram-diagnostics.json": {
+      "bytes": 175,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/ngram-diagnostics.json",
+      "sha256": "5ac95dae8c8dd7778c006c871e33e8da96ac0f3c62d8546d437be235f11783a3"
+    },
+    "optimizer.json": {
+      "bytes": 6075,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/optimizer.json",
+      "sha256": "77cf9f06eb919b41e4321ae42346586036f835602ce7b8b109f0c5c112b7ad32"
+    },
+    "protocol.json": {
+      "bytes": 929,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/protocol.json",
+      "sha256": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8"
+    },
+    "result.json": {
+      "bytes": 20498,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/result.json",
+      "sha256": "54cb1dae05112dbd356830861ff18808026d9cdd319a4606b13c3483cee2ebeb"
+    },
+    "routing.json": {
+      "bytes": 3332,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/routing.json",
+      "sha256": "f1278d0976d0f65ef97f2641d570c95ae9304adce90b0501f49e97804498da2a"
+    },
+    "run.log": {
+      "bytes": 35899,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/run.log",
+      "sha256": "37fdab68fb4801b0eb209cd4c877116d545bac9f5a076ed67321c9f8ccc2972b"
+    },
+    "schedule.json": {
+      "bytes": 93614,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/schedule.json",
+      "sha256": "dc870363f5581d91b841758324bbf3334f87cb8b321df2387eb5df98b9881e8c"
+    },
+    "selection.json": {
+      "bytes": 321,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/selection.json",
+      "sha256": "4dfad93f736c28e67af59d86fd80c2843e0a621961e8c900cd50c9ff218431c2"
+    },
+    "snapshot.json": {
+      "bytes": 1245,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/snapshot.json",
+      "sha256": "bce87950d077e8823baca2457824f232e8b55995e0c7ef5be2452c821e459f17"
+    },
+    "training.json": {
+      "bytes": 214,
+      "local_path": "runs/autoresearch/overnight-20260915/trial-0002-M-s42/training.json",
+      "sha256": "9804d2750ee59e83b09a3e988fc5e6bfab656a6fb2332fbc255c37a835125b5e"
+    }
+  },
+  "experiment_id": "overnight-20260915--trial-0002-M-s42-e283b658",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": {
+    "depth": 6.0,
+    "eval_batch_size": 2.0,
+    "num_params_M": 47.6,
+    "num_steps": 512.0,
+    "peak_vram_mb": 902.2,
+    "total_seconds": 308.4,
+    "total_tokens_M": 8.4,
+    "train_batch_size": 2.0,
+    "training_seconds": 298.6,
+    "val_bpb": 0.637217
+  },
+  "outcome": "completed",
+  "protocol": {
+    "activation_checkpointing": false,
+    "baseline_timeout_seconds": 900,
+    "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+    "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+    "eval_batch_size": 2,
+    "eval_tokens": 65536,
+    "microbatch_size": 2,
+    "optimizer_updates": 512,
+    "protocol_id": "vesper-tinystories-equal-token-v1",
+    "schedule": {
+      "clock": "optimizer_step",
+      "decay_start_step": 256,
+      "final_lr_fraction": 0.0,
+      "lr_warmup_updates": 0,
+      "measurement_warmup_updates": 11,
+      "muon_momentum_warmup_updates": 300,
+      "progress": "zero_based_step / 512"
+    },
+    "seed": 42,
+    "sequence_length": 512,
+    "smoke_eval_tokens": 8192,
+    "smoke_timeout_seconds": 180,
+    "stopping_rule": "optimizer_updates",
+    "tokens_per_update": 16384,
+    "training_seconds": 300
+  },
+  "provenance": {
+    "archived_source": {
+      "source/project/autoresearch.py": {
+        "published_path": "reports/source-snapshots/fa551f3871f67b85f4e079df9cfeba4cec9eaa2a524d76d63507ab03bbbd3b94.py",
+        "sha256": "fa551f3871f67b85f4e079df9cfeba4cec9eaa2a524d76d63507ab03bbbd3b94"
+      },
+      "source/project/autoresearch_bootstrap.py": {
+        "published_path": "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py",
+        "sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6"
+      },
+      "source/project/autoresearch_memory.py": {
+        "published_path": "reports/source-snapshots/70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862.py",
+        "sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862"
+      },
+      "source/project/autoresearch_model.py": {
+        "published_path": "reports/source-snapshots/65eda337f451c44a06b1bd29026a1105135edcaa2aa8b31836a0b9b18ac7dd1f.py",
+        "sha256": "65eda337f451c44a06b1bd29026a1105135edcaa2aa8b31836a0b9b18ac7dd1f"
+      },
+      "source/project/autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5.py",
+        "sha256": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5"
+      },
+      "source/upstream/prepare.py": {
+        "published_path": "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py",
+        "sha256": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c"
+      },
+      "source/upstream/train.py": {
+        "published_path": "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py",
+        "sha256": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      }
+    },
+    "execution_receipt": {
+      "dependency_scope": "Project/upstream Python sources and configs captured; installed packages remain in the recorded runtime venv",
+      "executed_files": {
+        "source/project/autoresearch.py": "fa551f3871f67b85f4e079df9cfeba4cec9eaa2a524d76d63507ab03bbbd3b94",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "65eda337f451c44a06b1bd29026a1105135edcaa2aa8b31836a0b9b18ac7dd1f",
+        "source/project/autoresearch_train.py": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238"
+      },
+      "files": {
+        "candidate.json": "b8d912bfc923b1d3ba17d1ddc4bef4b34ed40cc13ee3db5535c91c4db03b1dfd",
+        "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
+        "source/project/autoresearch.py": "fa551f3871f67b85f4e079df9cfeba4cec9eaa2a524d76d63507ab03bbbd3b94",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "65eda337f451c44a06b1bd29026a1105135edcaa2aa8b31836a0b9b18ac7dd1f",
+        "source/project/autoresearch_train.py": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "isolated": true,
+      "python": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\.autoresearch\\upstream\\.venv\\Scripts\\python.exe",
+      "verified": true
+    },
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {
+      "adapter_sha256": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5",
+      "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+      "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+      "model_sha256": "65eda337f451c44a06b1bd29026a1105135edcaa2aa8b31836a0b9b18ac7dd1f",
+      "orchestrator_sha256": "676ce60157c544d0969fd2fd78039e206eff5a69a6a816fe8ec55e12cf98065b",
+      "preflight_sha256": "257620d9aff413630b467de432a240e1014ece0c43958b6f673f08bbae66353a",
+      "runner_sha256": "fa551f3871f67b85f4e079df9cfeba4cec9eaa2a524d76d63507ab03bbbd3b94"
+    },
+    "recorded_data_hashes": {
+      "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+      "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+      "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+      "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+    },
+    "recorded_git_commit": "4c8fd292f39e354958e6049de0ef2bd5ab853509",
+    "recorded_git_dirty": true,
+    "recorded_upstream": {
+      "runtime_files": {
+        ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "upstream": {
+        "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored.",
+        "original_project": "https://github.com/karpathy/autoresearch",
+        "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+        "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+        "revision": "a4123c6e5c6287f90be04026642ba20b94e424df"
+      }
+    },
+    "snapshot_manifest": {
+      "candidate.json": "b8d912bfc923b1d3ba17d1ddc4bef4b34ed40cc13ee3db5535c91c4db03b1dfd",
+      "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
+      "source/project/autoresearch.py": "fa551f3871f67b85f4e079df9cfeba4cec9eaa2a524d76d63507ab03bbbd3b94",
+      "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+      "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+      "source/project/autoresearch_model.py": "65eda337f451c44a06b1bd29026a1105135edcaa2aa8b31836a0b9b18ac7dd1f",
+      "source/project/autoresearch_train.py": "46b15525a4faad073d8d04749d520c509a196577ac353f209f2d86a17fcd92f5",
+      "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+      "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+      "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+      "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+      "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+    }
+  },
+  "reporter_sha256": "6589c6a2e0eb8044537e26b6adbfd3953e21a8a8195f0b60bfe1037bcbad2343",
+  "schema_version": 1,
+  "seeds": [
+    42
+  ]
+}

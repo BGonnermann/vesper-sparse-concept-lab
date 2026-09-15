@@ -42,7 +42,10 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [ngram-diagnostics-20260915/M-old-new-source](experiments/ngram-diagnostics-20260915--M-old-new-source-fc1ec60a/README.md) | completed | fixed_updates | 0.6388829438787793 |
 | [ngram-diagnostics-20260915/MG](experiments/ngram-diagnostics-20260915--MG-efab1ca5/README.md) | completed | fixed_updates | 0.6377229156971834 |
 | [ngram-diagnostics-20260915](experiments/ngram-diagnostics-20260915-bd486df7/README.md) | completed | stage_or_unknown | unknown |
-| [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | stage_evidence_only | stage_or_unknown | unknown |
+| [overnight-20260915/trial-0001-D-s42](experiments/overnight-20260915--trial-0001-D-s42-23ac8499/README.md) | completed | fixed_updates | 0.634848 |
+| [overnight-20260915/trial-0002-M-s42](experiments/overnight-20260915--trial-0002-M-s42-e283b658/README.md) | completed | fixed_updates | 0.637217 |
+| [overnight-20260915/trial-0003-DG-s42](experiments/overnight-20260915--trial-0003-DG-s42-268e371a/README.md) | completed | fixed_updates | 0.634178 |
+| [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | running | stage_or_unknown | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |
 | [packed-20260915T002151Z-moe-baseline](experiments/packed-20260915T002151Z-moe-baseline-aa31ead4/README.md) | completed | wall_time_budget | 0.706799 |

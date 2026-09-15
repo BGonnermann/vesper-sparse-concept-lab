@@ -4,6 +4,41 @@
   "compatibility_fingerprint": null,
   "configuration": null,
   "details": {
+    "comparison.json": {
+      "child_wall_seconds": 698.3900000000431,
+      "disk_free_bytes": 280354570240,
+      "failures": [],
+      "frozen_confirmation": null,
+      "gpu_seconds": 678.2323161002132,
+      "in_progress": [
+        {
+          "run": "trial-0004-DG-layer3-s42",
+          "status": "running"
+        }
+      ],
+      "paired_differences": [],
+      "preservation": null,
+      "ranking": [
+        {
+          "control": "D",
+          "delta_bpb": -0.0006699999999999484,
+          "label": "DG",
+          "observed_candidate": {
+            "bpb": 0.634178,
+            "repeats": 1,
+            "seconds": 190.85551990030217
+          },
+          "observed_control": {
+            "bpb": 0.634848,
+            "repeats": 1,
+            "seconds": 181.42403569980524
+          },
+          "qualifies": true,
+          "quality": true,
+          "time_ratio": 1.0519858582360213
+        }
+      ]
+    },
     "contract-v1.json": {},
     "contract.json": {},
     "preflight-result.json": {
@@ -31,12 +66,146 @@
         "test_snapshot.py": "a4ae0a4720218705174c106efcdd5dae056f4e6c0b45758917c27037add96cc7"
       }
     },
+    "result.json": {
+      "kind": "adaptive_equal_token_campaign",
+      "limitations": [
+        "All trial scores are equal-token, not equal-time or equal-compute comparisons.",
+        "Repeated seed42 runs measure execution variability, not independent seeds.",
+        "Adaptive selection reuses validation; selection bias and no untouched test.",
+        "MoE expert-count changes do not fully pair router/extra-expert initialization.",
+        "Historical M divergence remains unexplained; no deterministic-training claim.",
+        "NCP deferred; no combined architecture candidates executed."
+      ],
+      "paired_differences": [],
+      "runs": 3,
+      "seeds": [
+        42
+      ],
+      "settings": {
+        "base_commit": "865e10b4c10ceb3e956ae06abd3c744d94b0a606",
+        "confirmation_reserve_seconds": 5400,
+        "deadline": "2026-09-15T07:30:00-04:00",
+        "max_trials": null,
+        "plan_sha256": "4dd0e0a648ea087f7db5fecf1917ec4771aad70d9baf670fa5154e845b1fff00",
+        "publication_reserve_seconds": 1800,
+        "repair_limit": 3,
+        "revision": 2,
+        "started_at": "2026-09-14T23:30:00-04:00",
+        "timeout_seconds": 900
+      },
+      "status": "running"
+    },
+    "rows-000-result.json": {
+      "rows": [
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 181.42403569980524,
+          "allocated_mib": 581.685546875,
+          "bpb": 0.634848,
+          "expert_utilization": [],
+          "label": "D",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 622.0,
+          "run": "trial-0001-D-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 50706.36136366536,
+          "tokens": 8388608,
+          "total_parameters": 26345772,
+          "wall_seconds": 188.32800000000861,
+          "width": 384
+        },
+        {
+          "active_parameters": 26354988,
+          "all_update_seconds": 305.9527605001058,
+          "allocated_mib": 902.23779296875,
+          "bpb": 0.637217,
+          "expert_utilization": [
+            [
+              0.22837328910827637,
+              0.20789945125579834,
+              0.3281123638153076,
+              0.23561489582061768
+            ],
+            [
+              0.25604307651519775,
+              0.24490773677825928,
+              0.2732590436935425,
+              0.2257901430130005
+            ],
+            [
+              0.2473689317703247,
+              0.2606337070465088,
+              0.24921941757202148,
+              0.24277794361114502
+            ],
+            [
+              0.23400342464447021,
+              0.2220062017440796,
+              0.236517071723938,
+              0.3074733018875122
+            ],
+            [
+              0.2626631259918213,
+              0.2428727149963379,
+              0.2844526767730713,
+              0.21001148223876953
+            ],
+            [
+              0.26603710651397705,
+              0.2672170400619507,
+              0.16888141632080078,
+              0.2978644371032715
+            ]
+          ],
+          "label": "M",
+          "memory_table_bytes": 0,
+          "phase": "screen",
+          "reserved_mib": 956.0,
+          "run": "trial-0002-M-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 27487.675607506673,
+          "tokens": 8388608,
+          "total_parameters": 47588652,
+          "wall_seconds": 312.64000000001397,
+          "width": 384
+        },
+        {
+          "active_parameters": 26395437,
+          "all_update_seconds": 190.85551990030217,
+          "allocated_mib": 599.6875,
+          "bpb": 0.634178,
+          "expert_utilization": [],
+          "label": "DG",
+          "memory_table_bytes": 4194304,
+          "phase": "screen",
+          "reserved_mib": 624.0,
+          "run": "trial-0003-DG-s42",
+          "seed": 42,
+          "timed_tokens_per_second": 44050.25541383693,
+          "tokens": 8388608,
+          "total_parameters": 27443885,
+          "wall_seconds": 197.4220000000205,
+          "width": 384
+        }
+      ]
+    },
     "search-space.json": {}
   },
   "diagnostics": [
     "preflight.log:\nok\nok\nok\nok\nok\nRan 52 tests in 6.444s\nOK\ncuda correctness exit: 0"
   ],
   "evidence": {
+    "campaign-report.md": {
+      "bytes": 1938,
+      "local_path": "runs/autoresearch/overnight-20260915/campaign-report.md",
+      "sha256": "ef578f8a73ff0f2b55701ad64a4cd740ff12f1b97b8b10310c620fcd4c208dc2"
+    },
+    "comparison.json": {
+      "bytes": 807,
+      "local_path": "runs/autoresearch/overnight-20260915/comparison.json",
+      "sha256": "e1a29fdfe9b7515ef52dffe8945c39c843223a4594d43b6ccecf33cdfbdfbf06"
+    },
     "contract-v1.json": {
       "bytes": 353,
       "local_path": "runs/autoresearch/overnight-20260915/contract-v1.json",
@@ -57,6 +226,11 @@
       "local_path": "runs/autoresearch/overnight-20260915/frozen-plan.md",
       "sha256": "15775627697675c16e2a5244fffa7f2cd16a6b145f62d3d946e748f91e9bf7a1"
     },
+    "orchestrator-v1.py": {
+      "bytes": 14937,
+      "local_path": "runs/autoresearch/overnight-20260915/orchestrator-v1.py",
+      "sha256": "f9cd18c6fbb8e1f8f84e5d85c17ba842d29985ddc0d59ab8503550d59206f0ab"
+    },
     "preflight-result.json": {
       "bytes": 1671,
       "local_path": "runs/autoresearch/overnight-20260915/preflight-result.json",
@@ -72,6 +246,36 @@
       "local_path": "runs/autoresearch/overnight-20260915/prior-artifacts.json",
       "sha256": "318473fd4d0e7c090bd00afa082b94f047efa00694746a80e15cce807b138047"
     },
+    "progress-001.log": {
+      "bytes": 124,
+      "local_path": "runs/autoresearch/overnight-20260915/progress-001.log",
+      "sha256": "b58a3b147f74fd6512099606600ce5a2ea70dfbbc0f7c16d97164f0197b03d70"
+    },
+    "progress-002.log": {
+      "bytes": 124,
+      "local_path": "runs/autoresearch/overnight-20260915/progress-002.log",
+      "sha256": "f12729c0d0c77bc372ffc143dd4b08b097afc9c760c08bfaddbd271c14816fe8"
+    },
+    "progress-003.log": {
+      "bytes": 124,
+      "local_path": "runs/autoresearch/overnight-20260915/progress-003.log",
+      "sha256": "fc50edb77b4a95497e68cbfb0957eaad8b3257fdc264a0c214f2038bf316a90d"
+    },
+    "publication-preflight.log": {
+      "bytes": 223,
+      "local_path": "runs/autoresearch/overnight-20260915/publication-preflight.log",
+      "sha256": "5c624e7905e952c5ceb8ed2c85dfb1c463d1c59b67d14264c5db599e0cb5d258"
+    },
+    "result.json": {
+      "bytes": 1115,
+      "local_path": "runs/autoresearch/overnight-20260915/result.json",
+      "sha256": "a124de52a69772cdcbda24f9899dae6a9fc2101c6ca0568f5656e5a47aadd91b"
+    },
+    "rows-000-result.json": {
+      "bytes": 2537,
+      "local_path": "runs/autoresearch/overnight-20260915/rows-000-result.json",
+      "sha256": "662a24db4034962052e555a76751041414e5cdcded8e21b50bd828aa5951c281"
+    },
     "search-space.json": {
       "bytes": 9145,
       "local_path": "runs/autoresearch/overnight-20260915/search-space.json",
@@ -85,10 +289,15 @@
     "Two paired seeds are preliminary; opposite signs do not establish equivalence."
   ],
   "metrics": null,
-  "outcome": "stage_evidence_only",
+  "outcome": "running",
   "protocol": null,
   "provenance": {
-    "archived_source": {},
+    "archived_source": {
+      "orchestrator-v1.py": {
+        "published_path": "reports/source-snapshots/f9cd18c6fbb8e1f8f84e5d85c17ba842d29985ddc0d59ab8503550d59206f0ab.py",
+        "sha256": "f9cd18c6fbb8e1f8f84e5d85c17ba842d29985ddc0d59ab8503550d59206f0ab"
+      }
+    },
     "execution_receipt": null,
     "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
     "recorded_code_hashes": {},
