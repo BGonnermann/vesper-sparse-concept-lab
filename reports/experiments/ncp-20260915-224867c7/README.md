@@ -414,7 +414,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-43 completed of 45 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+44 completed of 46 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -474,6 +474,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0043-I2-2fd4eaacd2-s42](../ncp-20260915--trial-0043-I2-2fd4eaacd2-s42-3aab367f/README.md) | 42 | 0.634902 | 220.1 | 225.9 | 38201 | 30,001,452 / 30,001,452 | 670.2 / 694.0 | False |
 | [trial-0044-I2-ae91a9e332-s42](../ncp-20260915--trial-0044-I2-ae91a9e332-s42-7f8617c8/README.md) | 42 | 0.632972 | 218.7 | 224.5 | 38454 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0045-I2-e4d0b728f2-s42](../ncp-20260915--trial-0045-I2-e4d0b728f2-s42-bf33b8c4/README.md) | 42 | 0.634788 | 214.4 | 220.2 | 39242 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | True |
+| [trial-0046-I2-4919c50f43-s42](../ncp-20260915--trial-0046-I2-4919c50f43-s42-1f63b17c/README.md) | 42 | 0.632179 | 219.5 | 225.3 | 38285 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -550,6 +551,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0043-I2-2fd4eaacd2-s42: Test interaction of chunk_size=2 and entries=16; individual BPB 0.634780 and 0.633742 versus normalized anchor 0.635927; compare against stronger individual R-entries16
 - trial-0044-I2-ae91a9e332-s42: Test interaction of feedback_scale=0.1 and lr=0.0003; individual BPB 0.633732 and 0.634800 versus normalized anchor 0.635927; compare against stronger individual R-feedback_scale0.1
 - trial-0045-I2-e4d0b728f2-s42: Test interaction of entries=16 and lr=0.0003; individual BPB 0.633742 and 0.634800 versus normalized anchor 0.635927; compare against stronger individual R-entries16
+- trial-0046-I2-4919c50f43-s42: Test interaction of after_layer=1 and ce_weight=0.1; individual BPB 0.634774 and 0.633991 versus normalized anchor 0.635927; compare against stronger individual R-ce_weight0.1
 
 ## Correctness and diagnosis
 
