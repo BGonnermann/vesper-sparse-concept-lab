@@ -368,7 +368,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-25 completed of 27 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+26 completed of 28 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -408,6 +408,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0025-R-lr0.0003-s42](../ncp-20260915--trial-0025-R-lr0.0003-s42-df807d5a/README.md) | 42 | 0.634800 | 221.2 | 227.3 | 37996 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0026-R-lr0.003-s42](../ncp-20260915--trial-0026-R-lr0.003-s42-45bd7ff8/README.md) | 42 | 0.635624 | 222.5 | 228.8 | 37721 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0027-R-vq_weight0.1-s42](../ncp-20260915--trial-0027-R-vq_weight0.1-s42-0864ad97/README.md) | 42 | 0.635949 | 220.5 | 226.4 | 38137 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0028-R-ce_weight0.1-s42](../ncp-20260915--trial-0028-R-ce_weight0.1-s42-5fc605e8/README.md) | 42 | 0.633991 | 220.2 | 225.9 | 38171 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -462,6 +463,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0025-R-lr0.0003-s42: Change only lr to 0.0003 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0026-R-lr0.003-s42: Change only lr to 0.003 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0027-R-vq_weight0.1-s42: Change only vq_weight to 0.1 on normalized NCP to test quality versus its stable unit-weight control
+- trial-0028-R-ce_weight0.1-s42: Change only ce_weight to 0.1 on normalized NCP to test quality versus its stable unit-weight control
 
 ## Correctness and diagnosis
 

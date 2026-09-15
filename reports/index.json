@@ -882,6 +882,25 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0028-R-ce_weight0.1-s42",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "78c4eb0fac386034b48095ec7978112a3a082fccb284319d7af4fc46638e8335",
+      "experiment_id": "ncp-20260915--trial-0028-R-ce_weight0.1-s42-5fc605e8",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 30.1,
+        "num_steps": 512.0,
+        "peak_vram_mb": 654.8,
+        "total_seconds": 222.6,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 215.0,
+        "val_bpb": 0.633991
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,
