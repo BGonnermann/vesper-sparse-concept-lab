@@ -3655,6 +3655,28 @@
       }
     },
     "preservation.json": {},
+    "publication-completion-result.json": {
+      "campaign_elapsed_seconds": 26559.646779,
+      "completed_at": "2026-09-15T10:52:39.646779+00:00",
+      "kind": "publication_completion",
+      "note": "This receipt identifies verified publication of the final report; the following receipt commit is not executed training provenance.",
+      "review": {
+        "configurations": 35,
+        "independent_arithmetic_audit": "passed",
+        "prior_artifacts_verified": 1005,
+        "source_archives_verified": 55,
+        "trials": 87
+      },
+      "seconds_before_deadline": 2240.353221,
+      "status": "completed",
+      "stop_reason": "Next trial cannot fit its full900-second timeout plus1800-second report reserve; no candidate-count stop",
+      "verified_publication": {
+        "branch": "research/overnight-20260915",
+        "note": "Publication commit is not retrospective training provenance.",
+        "publication_commit": "b7d3a542bc2afb1e2c0f1101b72bbbe6d6ee8bff",
+        "verified_remote": true
+      }
+    },
     "replication-policy-v1.json": {},
     "replication-policy-v2.json": {},
     "replication-policy.json": {},
@@ -6334,10 +6356,20 @@
       "local_path": "runs/autoresearch/overnight-20260915/publication-081.log",
       "sha256": "75522bbd965f860d0714c075b38bea6c1fb04bd621b56122cccc50378e729196"
     },
+    "publication-completion-result.json": {
+      "bytes": 930,
+      "local_path": "runs/autoresearch/overnight-20260915/publication-completion-result.json",
+      "sha256": "c39fe67821167ecaefacf8ac937000375db3e4cd02931e381f53eae91e41c73d"
+    },
     "publication-controls.log": {
       "bytes": 223,
       "local_path": "runs/autoresearch/overnight-20260915/publication-controls.log",
       "sha256": "1261833d879001eb59ab4b0e74775282515c4e7e1e03f899f7d326e35f3a660d"
+    },
+    "publication-final.log": {
+      "bytes": 223,
+      "local_path": "runs/autoresearch/overnight-20260915/publication-final.log",
+      "sha256": "006465a9528741afda0f867f60841891bd802054eea2f09ef6c0372169b54ee0"
     },
     "publication-preflight.log": {
       "bytes": 223,
