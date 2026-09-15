@@ -105,6 +105,12 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [overnight-20260915/trial-0061-DG-s42](experiments/overnight-20260915--trial-0061-DG-s42-73f1fbee/README.md) | completed | fixed_updates | 0.634178 |
 | [overnight-20260915/trial-0062-D12-lr0.03-s42](experiments/overnight-20260915--trial-0062-D12-lr0.03-s42-30f18b81/README.md) | completed | fixed_updates | 0.588573 |
 | [overnight-20260915/trial-0063-D-depth8-s42](experiments/overnight-20260915--trial-0063-D-depth8-s42-56029b3a/README.md) | completed | fixed_updates | 0.617737 |
+| [overnight-20260915/trial-0064-D-depth12-s42](experiments/overnight-20260915--trial-0064-D-depth12-s42-3c9f2914/README.md) | completed | fixed_updates | 0.589884 |
+| [overnight-20260915/trial-0065-D-s42](experiments/overnight-20260915--trial-0065-D-s42-1f108118/README.md) | completed | fixed_updates | 0.634848 |
+| [overnight-20260915/trial-0066-DG-s42](experiments/overnight-20260915--trial-0066-DG-s42-1d11caee/README.md) | completed | fixed_updates | 0.634178 |
+| [overnight-20260915/trial-0067-D12-lr0.03-s42](experiments/overnight-20260915--trial-0067-D12-lr0.03-s42-6a68b1f7/README.md) | completed | fixed_updates | 0.58946 |
+| [overnight-20260915/trial-0068-D-depth8-s42](experiments/overnight-20260915--trial-0068-D-depth8-s42-73d09eef/README.md) | completed | fixed_updates | 0.617737 |
+| [overnight-20260915/trial-0069-D-depth12-s42](experiments/overnight-20260915--trial-0069-D-depth12-s42-47690e81/README.md) | completed | fixed_updates | 0.59027 |
 | [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | running | stage_or_unknown | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |
