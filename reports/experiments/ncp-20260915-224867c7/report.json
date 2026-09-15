@@ -16671,6 +16671,110 @@
       "status": "completed"
     },
     "next-selection.json": {},
+    "no-future-plan.json": {
+      "candidate": {
+        "depth": 6,
+        "feedforward": "dense",
+        "matrix_lr": 0.04,
+        "ncp": {
+          "after_layer": 0,
+          "ce_weight": 0.0,
+          "chunk_size": 4,
+          "entries": 16,
+          "feedback_scale": 1.0,
+          "kind": "ncp_v1",
+          "layers": 2,
+          "lr": 0.001,
+          "mode": "feedback",
+          "pool_normalization": "rms",
+          "prediction_weight": 0.0,
+          "vq_weight": 0.0
+        }
+      },
+      "interpretation": "Same two previously observed confirmation seeds; mechanistic diagnostic, not new independent replication or held-out evidence. Future-target branches may execute, but their losses have zero training weight. Token CE can still train the predicted latent path and codebook transforms.",
+      "kind": "no_future_plan",
+      "protocol": {
+        "activation_checkpointing": false,
+        "baseline_timeout_seconds": 900,
+        "batch_tape": "<repo>\\runs\\autoresearch\\equal-token-20260915\\batches.pt",
+        "batch_tape_sha256": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689",
+        "eval_batch_size": 2,
+        "eval_tokens": 65536,
+        "microbatch_size": 2,
+        "optimizer_updates": 512,
+        "protocol_id": "vesper-tinystories-equal-token-v1",
+        "schedule": {
+          "clock": "optimizer_step",
+          "decay_start_step": 256,
+          "final_lr_fraction": 0.0,
+          "lr_warmup_updates": 0,
+          "measurement_warmup_updates": 11,
+          "muon_momentum_warmup_updates": 300,
+          "progress": "zero_based_step / 512"
+        },
+        "seed": 42,
+        "sequence_length": 512,
+        "smoke_eval_tokens": 8192,
+        "smoke_timeout_seconds": 180,
+        "stopping_rule": "optimizer_updates",
+        "tokens_per_update": 16384,
+        "training_seconds": 300
+      },
+      "seeds": [
+        45,
+        46
+      ],
+      "source_hashes": {
+        "autoresearch.py": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "autoresearch_ncp.py": "9b0c5361c894b2b0a1495174409424874a7df96dfe02c1a55280961e32992e4c",
+        "autoresearch_train.py": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf"
+      }
+    },
+    "no-future-result.json": {
+      "expected_seeds": [
+        45,
+        46
+      ],
+      "failures": [],
+      "interpretation": "Same two previously observed confirmation seeds; mechanistic diagnostic, not new independent replication or held-out evidence. Future-target branches may execute, but their losses have zero training weight. Token CE can still train the predicted latent path and codebook transforms.",
+      "kind": "no_future_diagnostic",
+      "plan_sha256": "98c87b9b13bd9becd3a0809e1f204f47cca2d172c5f793682227e78b177a278c",
+      "rows": [
+        {
+          "bpb": 0.639124,
+          "collapsed": false,
+          "comparisons": {
+            "D6": {
+              "bpb": 0.637922,
+              "delta_bpb": 0.0012020000000000364,
+              "trial": "trial-0056-D6-s45"
+            },
+            "FROZEN-CAP": {
+              "bpb": 0.638105,
+              "delta_bpb": 0.0010189999999999921,
+              "trial": "trial-0059-FROZEN-CAP-s45"
+            },
+            "FROZEN-NOPRED": {
+              "bpb": 0.639167,
+              "delta_bpb": -4.300000000001525e-05,
+              "trial": "trial-0060-FROZEN-NOPRED-s45"
+            },
+            "NCP": {
+              "bpb": 0.640041,
+              "delta_bpb": -0.0009169999999999456,
+              "trial": "trial-0057-I2-37a8ad42c0-s45"
+            }
+          },
+          "result_sha256": "1495a1c8b8ba65512154b851ff64bf19561df80378239899d96e22645703facb",
+          "seed": 45,
+          "trial": "trial-0084-FROZEN-NOFUTURE-s45"
+        }
+      ],
+      "status": "running"
+    },
     "normalized-search-space.json": {},
     "orchestrator-source-correction-result.json": {
       "archived_file_sha256": "c2cd181b1b6f3d6dff9a55eab6d5b415cae174d522ca87afa2603eb9cea67bbc",
@@ -17232,7 +17336,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "d1ba674def64dcede6fbc4554de68d61652dc715",
+      "publication_commit": "fcbb7f0c1ee02b5108886ba05666726ef4225ab4",
       "status": "completed",
       "verified_remote": true
     },
@@ -17682,9 +17786,9 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 102443,
+      "bytes": 103446,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "51d74fda4610bf251075462c9ebc99b1057ed0f59efe3019a0e71e8bd50dd1b0"
+      "sha256": "4a4942b0742eeb05458552552554eec5f8222fcc5402c81a7a63e71f4a5777f6"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -18196,6 +18300,16 @@
       "local_path": "runs/autoresearch/ncp-20260915/module-seeds-queue.log",
       "sha256": "c84e5d2afb4b2fe13320b304f2ab306c9a061e5b099cc3f7f58badd6f2ff93ad"
     },
+    "ncp_final_checks-original.py": {
+      "bytes": 1814,
+      "local_path": "runs/autoresearch/ncp-20260915/ncp_final_checks-original.py",
+      "sha256": "eec2814c1c02d2a0a06d2408d9ad8dd3beffa4d186bb56e73349c6af68c09c1c"
+    },
+    "ncp_no_future_checks-original.py": {
+      "bytes": 3876,
+      "local_path": "runs/autoresearch/ncp-20260915/ncp_no_future_checks-original.py",
+      "sha256": "f9eeb3902ae072b1b41347d5dc44bdf67686410fdcd3e1dbdde853551959bb1c"
+    },
     "next-selection.json": {
       "bytes": 10418,
       "local_path": "runs/autoresearch/ncp-20260915/next-selection.json",
@@ -18205,6 +18319,26 @@
       "bytes": 848,
       "local_path": "runs/autoresearch/ncp-20260915/no-future-checks-cpu.log",
       "sha256": "978f75a39bd131dc3e8a904ed9a4037337c5206b5c5d57ed94b82a5ad3a92a28"
+    },
+    "no-future-driver.py": {
+      "bytes": 8224,
+      "local_path": "runs/autoresearch/ncp-20260915/no-future-driver.py",
+      "sha256": "bd46369e038860d2e1679d1ac43735ce8da257c48527136b15fa4ceb12649124"
+    },
+    "no-future-plan.json": {
+      "bytes": 27395,
+      "local_path": "runs/autoresearch/ncp-20260915/no-future-plan.json",
+      "sha256": "98c87b9b13bd9becd3a0809e1f204f47cca2d172c5f793682227e78b177a278c"
+    },
+    "no-future-queue.log": {
+      "bytes": 902,
+      "local_path": "runs/autoresearch/ncp-20260915/no-future-queue.log",
+      "sha256": "c82dc6834f0822ae5862b4833b2ae935afaa7742b704cbeee1104aff15f6df13"
+    },
+    "no-future-result.json": {
+      "bytes": 1427,
+      "local_path": "runs/autoresearch/ncp-20260915/no-future-result.json",
+      "sha256": "b1f3517a63ec9acccfcf8ac431e9edae528ba2173edd8a484cf08494272963d2"
     },
     "normalization-green-cpu.log": {
       "bytes": 159,
@@ -18524,7 +18658,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "f36a7e5830a675c67eddc2f5130aa33795e1f2c24d3e9784a22cec178673f932"
+      "sha256": "390a5954aae60fcf7f64378b19809a231a3016bc13fef8cd310e3879529d1214"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -18547,9 +18681,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 719176,
+      "bytes": 727611,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "81c98e2dc5a014102caeb74ae9da37c5c72ee44dce9c3e774c79aa2445b06c22"
+      "sha256": "94e3a17a531b1e9dd491a17faf6296716e4e48ecd84cf11ab17f5759aa0f3adc"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -18572,9 +18706,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 42843,
+      "bytes": 44180,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "8ad216aeadd845cefbd4e35d0d59513198025b8a7c747ea2c8aa69c52ad800e0"
+      "sha256": "2178275784b999c3073ebbdfb90be58d9e51038e84331a349075482f1ccf4f60"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -18732,6 +18866,18 @@
       "module-preview-ncp_campaign.py": {
         "published_path": "reports/source-snapshots/71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7.py",
         "sha256": "71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7"
+      },
+      "ncp_final_checks-original.py": {
+        "published_path": "reports/source-snapshots/eec2814c1c02d2a0a06d2408d9ad8dd3beffa4d186bb56e73349c6af68c09c1c.py",
+        "sha256": "eec2814c1c02d2a0a06d2408d9ad8dd3beffa4d186bb56e73349c6af68c09c1c"
+      },
+      "ncp_no_future_checks-original.py": {
+        "published_path": "reports/source-snapshots/f9eeb3902ae072b1b41347d5dc44bdf67686410fdcd3e1dbdde853551959bb1c.py",
+        "sha256": "f9eeb3902ae072b1b41347d5dc44bdf67686410fdcd3e1dbdde853551959bb1c"
+      },
+      "no-future-driver.py": {
+        "published_path": "reports/source-snapshots/bd46369e038860d2e1679d1ac43735ce8da257c48527136b15fa4ceb12649124.py",
+        "sha256": "bd46369e038860d2e1679d1ac43735ce8da257c48527136b15fa4ceb12649124"
       },
       "normalized-queue.py": {
         "published_path": "reports/source-snapshots/3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002.py",
