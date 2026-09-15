@@ -391,6 +391,14 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/checkpoint-replay",
+      "budget_family": "stage_or_unknown",
+      "compatibility_fingerprint": null,
+      "experiment_id": "ncp-20260915--checkpoint-replay-10f75acf",
+      "metrics": null,
+      "outcome": "stage_evidence_only"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42",
       "budget_family": "fixed_updates",
       "compatibility_fingerprint": "ee2bf7b43e943ce8614d6c61acf1681bccc8cdc800e2d8dcce89bf38e2f186a6",

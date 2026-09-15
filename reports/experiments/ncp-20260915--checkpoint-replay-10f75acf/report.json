@@ -1,0 +1,48 @@
+{
+  "artifact_directory": "runs/autoresearch/ncp-20260915/checkpoint-replay",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {},
+  "diagnostics": [],
+  "evidence": {
+    "driver.py": {
+      "bytes": 15268,
+      "local_path": "runs/autoresearch/ncp-20260915/checkpoint-replay/driver.py",
+      "sha256": "9863cdf81487dcd304c6c7a700f6128966f0bd00d17ab121030d09e1849857fa"
+    },
+    "plan.json": {
+      "bytes": 233953,
+      "local_path": "runs/autoresearch/ncp-20260915/checkpoint-replay/plan.json",
+      "sha256": "1c2baae76468562b3e5c8e78343f9bc15ffd9eac946500202ef0f065af178fb4"
+    }
+  },
+  "experiment_id": "ncp-20260915--checkpoint-replay-10f75acf",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "stage_evidence_only",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {
+      "driver.py": {
+        "published_path": "reports/source-snapshots/9863cdf81487dcd304c6c7a700f6128966f0bd00d17ab121030d09e1849857fa.py",
+        "sha256": "9863cdf81487dcd304c6c7a700f6128966f0bd00d17ab121030d09e1849857fa"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "05c81021a7d64e7a9d14a84902b5168d57f611fc65f832a1ac564b08f7a9023b",
+  "schema_version": 1,
+  "seeds": null
+}
