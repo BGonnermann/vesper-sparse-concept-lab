@@ -388,22 +388,24 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-29 completed of 31 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+30 completed of 32 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
+
+Strongest eligible selection-seed NCP: R-feedback_scale0.1, 0.633732 BPB, delta -0.001116 versus D6. Adds 3,710,976 parameters; measured update-time ratio 1.24. This is a search result; independent confirmation is reported separately.
 
 ## Implementation
 
 Dense encoder pools complete multi-token chunks; causal chunk Transformers predict segmented discrete-codebook weights. Only predicted concepts feed the token decoder, delayed by k-1 positions. Detached future chunks supervise NCP MSE; VQ MSE fits a transformed frozen random codebook basis. Token BPB excludes both auxiliary losses.
-This is a simplified ConceptLM-inspired prototype, not a paper reproduction. Softmax feedback differs from the official GPT2/Pythia raw-logit multiplication. Native SDPA, initialization, positional features, codebook transforms and the small TinyStories fixed-token experiment also differ. Official revision: a0ab281286f5c0337c35de3181cc992c562eacaa.
+This is a simplified ConceptLM-inspired prototype, not a paper reproduction. Initial softmax feedback differs from the official GPT2/Pythia raw-logit multiplication; raw-logit variants are separately labeled. Native SDPA, initialization, positional features, codebook transforms and the small TinyStories fixed-token experiment also differ. Official revision: a0ab281286f5c0337c35de3181cc992c562eacaa.
 See [campaign plan](../../../docs/ncp-campaign.md) and the published source receipt for exact references.
 
 ## Every attempted trial
 
-| Trial | Seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | NCP collapse |
+| Trial | Seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | Target-code collapse |
 |---|---:|---:|---:|---:|---:|---|---|---|
 | [trial-0001-D6-s42](../ncp-20260915--trial-0001-D6-s42-b009c334/README.md) | 42 | 0.634848 | 177.1 | 184.0 | 47526 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
-| [trial-0002-NCP-s42](../ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | 42 | failed | unavailable | 80.0 | unavailable | unavailable | 654.4 / 690.0 | unavailable |
-| [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 | failed | unavailable | 82.4 | unavailable | unavailable | 654.4 / 690.0 | unavailable |
+| [trial-0002-NCP-s42](../ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | 42 | failed | unavailable | 80.0 | unavailable | 30,056,748 / 30,056,748 * | 654.4 / 690.0 | unavailable |
+| [trial-0003-AUX-s42](../ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | 42 | failed | unavailable | 82.4 | unavailable | 30,056,748 / 30,056,748 * | 654.4 / 690.0 | unavailable |
 | [trial-0004-N-prediction_weight0.1-s42](../ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9/README.md) | 42 | 0.635524 | 202.6 | 210.3 | 41362 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
 | [trial-0005-N-prediction_weight0.03-s42](../ncp-20260915--trial-0005-N-prediction_weight0.03-s42-cd708cd3/README.md) | 42 | 0.635888 | 203.3 | 211.0 | 41265 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
 | [trial-0006-N-RMS-s42](../ncp-20260915--trial-0006-N-RMS-s42-d3652f3a/README.md) | 42 | 0.635927 | 214.2 | 221.8 | 39314 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
@@ -432,6 +434,11 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0029-R-ce_weight1.0-s42](../ncp-20260915--trial-0029-R-ce_weight1.0-s42-cca8c2df/README.md) | 42 | 0.642264 | 218.4 | 224.0 | 38489 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0030-R-prediction_weight0.03-s42](../ncp-20260915--trial-0030-R-prediction_weight0.03-s42-40596925/README.md) | 42 | 0.635307 | 220.7 | 226.6 | 38110 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0031-R-prediction_weight0.3-s42](../ncp-20260915--trial-0031-R-prediction_weight0.3-s42-15ed2fdd/README.md) | 42 | 0.636698 | 217.8 | 223.6 | 38601 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0032-R-raw-s42](../ncp-20260915--trial-0032-R-raw-s42-d6f49d44/README.md) | 42 | 0.638488 | 218.4 | 225.6 | 38487 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+
+* Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
+
+Depth6 uses width 384 and 26,345,772 parameters; depth12 uses width 768 and 135,267,480 parameters (5.13 times as many). This comparison changes both depth and width.
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -490,13 +497,15 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0029-R-ce_weight1.0-s42: Change only ce_weight to 1.0 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0030-R-prediction_weight0.03-s42: Change only prediction_weight to 0.03 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0031-R-prediction_weight0.3-s42: Change only prediction_weight to 0.3 on normalized NCP to test quality versus its stable unit-weight control
+- trial-0032-R-raw-s42: Test the pinned official implementation raw-logit codebook reconstruction against paper-inspired softmax; all other N-RMS settings fixed
 
 ## Correctness and diagnosis
 
 The first two unit-weight attempts hit an inherited finite total-loss100 guard. A source-verified CPU checkpoint probe found dense hidden RMS12.54 too, so those stops do not establish NCP-specific divergence. The corrected guard checks token CE separately and still rejects nonfinite total loss. Initial failed attempts remain preserved, and their historical hypotheses using the word divergence are superseded by this diagnosis. Completed BPB runs never hit that gate.
+Trial25 copied a newer controller file while its long-running parent retained an earlier imported controller. Both versions and a correction receipt are retained. Their trial, preflight, candidate and health function bodies are identical; the difference is a GPU lock wrapper. The loaded-controller reference is reconstructed from the same-process import history, not direct process-memory inspection. Captured training-child sources and data are independently verified. The next controller archives immutable startup source bytes to prevent recurrence.
 CPU/CUDA tests cover prefix causality, future-label isolation, VQ/encoder gradients, optimizer coverage, save/load, codebook learning and evaluation immutability. Every completed training child executes captured sources; the final evidence audit also verifies saved checkpoints and committed source-archive bytes.
 
 ## Measurement limits
 
-Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. Depth changes width too. Timed throughput excludes the first11 updates; all-update time includes them. Trial wall time includes preparation, child execution and verification, excluding reporting/publication. Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.
+Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. Depth changes width too. Timed throughput excludes the first11 updates; all-update time includes them. Trial wall time includes preparation, child execution and verification, excluding reporting/publication. Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. Active counts describe structural training participation, not amortized per-token compute. NCP runs at chunk rate; the capacity-control MLP runs at token rate, and auxiliary-only concepts do not feed token logits. Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. For raw-logit mixing, reported entropy describes softmax classification probabilities, not the signed reconstruction weights. Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.
 All artifacts are retained locally. No cloud, dependency upgrades, paid services or deletion.

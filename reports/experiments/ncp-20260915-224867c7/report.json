@@ -4,6 +4,14 @@
   "compatibility_fingerprint": null,
   "configuration": null,
   "details": {
+    "active-gpu-exclusion-result.json": {
+      "active_trial": "trial-0032-R-raw-s42",
+      "competing_owner_rejected": true,
+      "controller_sha256": "feb10a80e37642a159d9f6e01dcc1b033a40eb456d7fb67adc787cf48b8e4279",
+      "gpu_work_in_check": false,
+      "kind": "active_gpu_exclusion",
+      "status": "completed"
+    },
     "active-preflight.json": {
       "kind": "ncp_correctness",
       "source_hashes": {
@@ -5060,7 +5068,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "9c3832e83022d07259249cd58a80c417fc3bb119",
+      "publication_commit": "fcf3e264a0ea748f043fbef0506a72f453ea8372",
       "status": "completed",
       "verified_remote": true
     },
@@ -5116,6 +5124,11 @@
     "token-gate-red.log:\nFAIL: test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure (test_fixed_updates.FixedTests.test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 45, in test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure\nAssertionError: False is not true : Missing separate token-CE gate\nRan 5 tests in 1.335s\nFAILED (failures=1)"
   ],
   "evidence": {
+    "active-gpu-exclusion-result.json": {
+      "bytes": 269,
+      "local_path": "runs/autoresearch/ncp-20260915/active-gpu-exclusion-result.json",
+      "sha256": "ff3697a6a9d8798b71e7c7dbd5a6551d3faa84bc58ab42386bbaee2b001a6913"
+    },
     "active-preflight.json": {
       "bytes": 2624,
       "local_path": "runs/autoresearch/ncp-20260915/active-preflight.json",
@@ -5132,9 +5145,9 @@
       "sha256": "584428ee9b9f704f89dc7da28484181e2156eeb17b17576cedbf9087a56d1b97"
     },
     "campaign.log": {
-      "bytes": 31725,
+      "bytes": 32655,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "3adeea8aa04dfc2131b3adea727a11a60bd128f58c227dac60cdd407f33537aa"
+      "sha256": "ad9acc75231ad5aac8295e8f2fdbfb95da1360cf5010f0844b4c291036f33aa6"
     },
     "contract.json": {
       "bytes": 286,
@@ -5332,9 +5345,9 @@
       "sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14"
     },
     "mechanism-queue.log": {
-      "bytes": 408,
+      "bytes": 1237,
       "local_path": "runs/autoresearch/ncp-20260915/mechanism-queue.log",
-      "sha256": "a80331e3c8ddd474f2e83bd5ca58c221c11e00a7e767f9dbb0c10bb2f088c2da"
+      "sha256": "20718411754dd039a8e20a8d98d1cd66b59c0e2f29f7992b2df8e4e0f77a2941"
     },
     "mechanism-search-space.json": {
       "bytes": 3408,
@@ -5504,7 +5517,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "c3af8b79b4b4978b0c021582421b257f3d5d598a8b7815f32d25d94c29e3ff12"
+      "sha256": "152c4916f0947db08af7422aa9fe51e4bc6658c57452dfbd60d7cc1cc08d4419"
     },
     "report-red.log": {
       "bytes": 877,
@@ -5512,9 +5525,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 203028,
+      "bytes": 304637,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "08263d38df7b9603db23b77182b9695fbf2c6f9538891466dd97ae0b110267b8"
+      "sha256": "e6e6fbb998c560f63e4ba00163e4d5d1010b2c786a7fc102f1d1c5255da5bfb1"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -5537,9 +5550,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 14131,
+      "bytes": 16046,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "008e1760539409aa6ddd3477d363a6c04628e6a80cab4577d826fdc36e893eca"
+      "sha256": "37b7af59e184ad28fec1bc89fe480c001e81dd4da3f556e7614ef2af9387d3e2"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
