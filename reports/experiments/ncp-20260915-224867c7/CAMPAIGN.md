@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-33 completed of 35 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+34 completed of 36 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: R-feedback_scale0.1, 0.633732 BPB, delta -0.001116 versus D6. Adds 3,710,976 parameters; measured update-time ratio 1.24. This is a search result; independent confirmation is reported separately.
@@ -50,6 +50,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0033-R-no_prediction-s42](../ncp-20260915--trial-0033-R-no_prediction-s42-6bdf165e/README.md) | 42 | 0.636180 | 218.6 | 224.3 | 38442 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0034-R-gain4-s42](../ncp-20260915--trial-0034-R-gain4-s42-4dc85cf9/README.md) | 42 | 0.637500 | 219.4 | 225.2 | 38248 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0035-R-gain8-s42](../ncp-20260915--trial-0035-R-gain8-s42-694ab183/README.md) | 42 | 0.635120 | 219.6 | 225.4 | 38221 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0036-CAP-L2-K64-s42](../ncp-20260915--trial-0036-CAP-L2-K64-s42-0d439659/README.md) | 42 | 0.635008 | 176.4 | 181.7 | 47592 | 30,056,748 / 30,056,748 | 683.0 / 716.0 | n/a |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -116,6 +117,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0033-R-no_prediction-s42: Remove next-concept MSE while retaining VQ fitting and predicted latent feedback; test whether next-concept supervision contributes beyond the added latent path
 - trial-0034-R-gain4-s42: Test stronger normalized feedback, gain4, because anchor predicted RMS is only6.2% of hidden RMS; stronger feedback remains an unproven hypothesis
 - trial-0035-R-gain8-s42: Test the upper bounded feedback gain8; compare with gain1 anchor and gain4 to assess amplitude sensitivity
+- trial-0036-CAP-L2-K64-s42: Parameter-matched token-level residual MLP adds exactly 3710976 parameters at the same insertion and AdamW LR as N-RMS; test added-capacity effects without concept prediction; compute is not matched
 
 ## Correctness and diagnosis
 
