@@ -58,9 +58,6 @@ def space():
     for depth in [4, 8, 2, 3, 5, 7]:
         c = copy.deepcopy(dense); c['depth'] = depth
         add('D-depth' + str(depth), c, 'D', f'Depth {depth} and coupled width may improve the quality/time frontier', 'dense')
-    for depth in [10, 12]:
-        c = copy.deepcopy(dense); c['depth'] = depth
-        add('D-depth' + str(depth), c, 'D-depth8', f'Prospective depth {depth} scaling after reproduced depth-8 improvement; unequal compute and parameters', 'dense')
     c = copy.deepcopy(moe); c['num_experts'] = 2
     add('M-experts2', c, 'M', 'Fewer experts may reduce dispatch and all-expert optimizer cost', 'moe')
     for key, values in [('router_lr', [.0003, .003]), ('aux_loss_weight', [.003, .03])]:
@@ -174,11 +171,11 @@ def select(records, choices):
     return label, 42, 'replication', 'Search space screened; adaptive repeat of a promising tradeoff or its control to estimate execution noise', target
 
 
-def preflight(label='preflight'):
+def preflight():
     assert remaining() > 6300
     r.write_json(HERE / 'search-space.json', space())
     r.verify_runtime(); r.verify_seal(ROOT / '.autoresearch/cache', read(ROOT / '.autoresearch/data-seal.json'))
-    logpath = HERE / (label + '.log')
+    logpath = HERE / 'preflight.log'
     result = dict(kind='correctness_preflight', status='running', passed=False)
     try:
         with announce(logpath) as log:
@@ -188,26 +185,14 @@ def preflight(label='preflight'):
                 log.write(f'\n{device} correctness exit: {child.returncode}\n'); log.flush()
                 if child.returncode:
                     raise RuntimeError(device + ' correctness failed')
-            if label != 'preflight':
-                child = subprocess.run([str(r.runtime_python()), '-B', '-u', str(ROOT / 'scripts/campaign_depth_gate.py')],
-                    cwd=ROOT, env=r.environment(), stdout=log, stderr=subprocess.STDOUT, timeout=300)
-                log.write(f'\ndepth fit correctness exit: {child.returncode}\n'); log.flush()
-                if child.returncode:
-                    raise RuntimeError('Depth fit correctness failed')
         result.update(status='completed', passed=True, source_hashes=source_hashes(),
                       test_hashes={p.name:r.digest(p) for p in (ROOT / 'tests').glob('test_*.py')},
-                      log_file=logpath.name, log_sha256=r.digest(logpath), search_sha256=r.digest(HERE / 'search-space.json'))
-        if label != 'preflight':
-            result.update(depth_fit_sha256=r.digest(HERE / 'depth-fit-result.json'),
-                          depth_gate_sha256=r.digest(ROOT / 'scripts/campaign_depth_gate.py'),
-                          extension_plan_sha256=r.digest(HERE / 'shape-extension-plan.md'))
+                      log_sha256=r.digest(logpath), search_sha256=r.digest(HERE / 'search-space.json'))
     except BaseException as exc:
         result.update(status='failed', error=f'{type(exc).__name__}: {exc}')
         raise
     finally:
-        r.write_json(HERE / (label + '-result.json'), result)
-        if result['passed']:
-            r.write_json(HERE / 'active-preflight.json', dict(result_file=label + '-result.json'))
+        r.write_json(HERE / 'preflight-result.json', result)
         reports.emit(HERE); reports.index()
     print('ALL CPU/CUDA CORRECTNESS GATES PASSED', flush=True)
 
@@ -216,11 +201,9 @@ def trial():
     if remaining() < 2700:
         print('REPORT RESERVE REACHED; no further trial started', flush=True)
         return
-    pointer = HERE / 'active-preflight.json'
-    gatepath = HERE / (read(pointer)['result_file'] if pointer.exists() else 'preflight-result.json')
-    gate = read(gatepath)
+    gate = read(HERE / 'preflight-result.json')
     assert gate['passed'] and gate['source_hashes'] == source_hashes()
-    assert gate['log_sha256'] == r.digest(HERE / gate.get('log_file', 'preflight.log'))
+    assert gate['log_sha256'] == r.digest(HERE / 'preflight.log')
     assert gate['search_sha256'] == r.digest(HERE / 'search-space.json')
     assert gate['test_hashes'] == {p.name:r.digest(p) for p in (ROOT / 'tests').glob('test_*.py')}
     choices = read(HERE / 'search-space.json'); records = completed()
@@ -242,7 +225,7 @@ def trial():
                     git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                     git_dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()),
                     provenance_note='Executed captured hashes identify this run; publishing commit is not retroactive provenance',
-                    orchestrator_sha256=r.digest(Path(__file__)), preflight_sha256=r.digest(gatepath),
+                    orchestrator_sha256=r.digest(Path(__file__)), preflight_sha256=r.digest(HERE / 'preflight-result.json'),
                     status='prepared', metrics=None)
     metadata.update({key:r.digest(ROOT / 'scripts' / name) for name,key in r.PROJECT_FILES.items()})
     snapshot = r.capture_run_snapshot(out, metadata); metadata['snapshot_files'] = snapshot
@@ -302,8 +285,8 @@ def trial():
 
 
 if __name__ == '__main__':
-    if sys.argv[1].startswith('preflight'):
-        preflight(sys.argv[1])
+    if sys.argv[1] == 'preflight':
+        preflight()
     elif sys.argv[1] == 'next':
         try:
             trial()

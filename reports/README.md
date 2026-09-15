@@ -72,6 +72,9 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [overnight-20260915/trial-0028-DG-lr0.0003-s42](experiments/overnight-20260915--trial-0028-DG-lr0.0003-s42-25367b9a/README.md) | completed | fixed_updates | 0.635031 |
 | [overnight-20260915/trial-0029-DG-lr0.01-s42](experiments/overnight-20260915--trial-0029-DG-lr0.01-s42-45860f3c/README.md) | completed | fixed_updates | 0.634524 |
 | [overnight-20260915/trial-0030-DG-s42](experiments/overnight-20260915--trial-0030-DG-s42-bcc4a290/README.md) | completed | fixed_updates | 0.634178 |
+| [overnight-20260915/trial-0031-D-depth8-s42](experiments/overnight-20260915--trial-0031-D-depth8-s42-412cbf05/README.md) | completed | fixed_updates | 0.617737 |
+| [overnight-20260915/trial-0032-D-depth10-s42](experiments/overnight-20260915--trial-0032-D-depth10-s42-5b4135cd/README.md) | completed | fixed_updates | 0.609964 |
+| [overnight-20260915/trial-0033-D-depth12-s42](experiments/overnight-20260915--trial-0033-D-depth12-s42-20b309e9/README.md) | completed | fixed_updates | 0.590324 |
 | [overnight-20260915](experiments/overnight-20260915-84853326/README.md) | running | stage_or_unknown | unknown |
 | [packed-20260915T002151Z-dense-baseline](experiments/packed-20260915T002151Z-dense-baseline-0fa9c907/README.md) | completed | wall_time_budget | 0.630091 |
 | [packed-20260915T002151Z-dense-smoke](experiments/packed-20260915T002151Z-dense-smoke-0ad94d98/README.md) | completed | wall_time_budget | 2.672052 |

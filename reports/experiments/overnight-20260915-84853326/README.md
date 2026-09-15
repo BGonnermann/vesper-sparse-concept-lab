@@ -9,6 +9,16 @@ Unknown fields remain null. Do not pool different budgets/schedules. Two seeds a
 
 ## Diagnostics
 ```text
+preflight-v2.log:
+ok
+ok
+ok
+ok
+Ran 54 tests in 5.420s
+OK
+cuda correctness exit: 0
+depth fit correctness exit: 0
+
 preflight.log:
 ok
 ok
@@ -24,7 +34,7 @@ cuda correctness exit: 0
 
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 30. No candidate-count cap.
+Status: running. Completed full trials: 33. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
@@ -60,6 +70,9 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0028-DG-lr0.0003-s42 | screen / 42 | 0.635031 | 45520.0 | 184.9 | 191.4 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
 | trial-0029-DG-lr0.01-s42 | screen / 42 | 0.634524 | 44118.0 | 190.4 | 196.8 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
 | trial-0030-DG-s42 | replication / 42 | 0.634178 | 44653.1 | 188.2 | 194.6 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0031-D-depth8-s42 | replication / 42 | 0.617737 | 37752.4 | 222.6 | 228.8 | 943.1 / 964.0 | 50,332,176 / 50,332,176 |
+| trial-0032-D-depth10-s42 | screen / 42 | 0.609964 | 31103.6 | 270.3 | 276.8 | 1511.2 / 1602.0 | 85,852,980 / 85,852,980 |
+| trial-0033-D-depth12-s42 | screen / 42 | 0.590324 | 26799.0 | 313.4 | 320.1 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 
 Timed throughput excludes the first11 updates; all-update GPU time includes them. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 
@@ -309,3 +322,45 @@ step schedule, parameter reports and finite metrics before selecting another.
 Publish compact results/index using experiment_reports.py, retaining failed runs,
 configuration hashes and original source snapshots. Exclude weights/data/logs
 and traces from Git. Publishing commits never replace executed-source provenance.
+
+
+## Retained narrative: shape-extension-plan.md
+
+# Prospective shape extension after the first screen
+
+The 29-condition screen and the first depth8 repeat are complete. Both depth8
+runs scored .617737 BPB, versus dense6 .634848. The original depth8 all-update
+GPU cost was 1.2253 times dense6; its allocated peak was 988,913,664 bytes.
+These observations motivate two additional standalone shape probes rather than
+only repeating tiny learning-rate or memory gains for the remaining budget.
+
+This is an adaptive post-screen amendment, not an originally preregistered study.
+No seeds43/44 have run. The original search, preflight and controller versions
+remain preserved. No previous result or executed source is rewritten.
+
+- Add dense depths10 and12, matrix LR.04, no memory/MoE/NCP. Compare against
+  depth8 under the same 512 updates / 8,388,608 tokens, data tape/order, step
+  schedule, checkpointing-off, full-attention and validation protocol.
+- Existing shape construction yields widths640/768 and exact parameter counts
+  85,852,980 / 135,267,480. Changing shape retains the optimizer's existing
+  width-dependent scaling policy; record the resolved optimizer groups.
+- Change only the candidate depth validation ceiling from8 to12. Transformer,
+  attention, tokenizer, training loop and evaluation implementation are unchanged.
+- Before either trial, run the complete CPU/CUDA suites plus full-context GPU
+  causal-prefix, finite-gradient, optimizer-coverage, CE-only-evaluation and
+  save/load checks. Randomize zero-initialized output projections in synthetic
+  fixtures so causal checks exercise attention rather than an inactive path.
+- Fit probes use synthetic data, three warmup and three measured optimizer
+  updates at the real accumulation/context settings. They are correctness/fit
+  evidence, not TinyStories scores or campaign training-throughput claims.
+- Require at least2GiB free VRAM, reserved peak below75% of device memory, and
+  a conservative 512-update forecast plus45seconds below900seconds. Preserve
+  diagnostics and stop on a failed gate; do not increase the timeout.
+- Keep the original 03:30-11:30UTC eight-hour envelope, no trial-count cap, and
+  the existing confirmation/reporting reserves. No upgrades, cloud, deletion,
+  new data, NCP or combined mechanisms.
+
+After these screens, prospectively update the recorded replication target list
+to include the best-BPB measured frontier point and its matching control, plus
+the lower-cost alternatives. Freeze final candidate/control before seeds43/44.
+Equal tokens do not mean equal parameters, compute, wall time or efficiency.
