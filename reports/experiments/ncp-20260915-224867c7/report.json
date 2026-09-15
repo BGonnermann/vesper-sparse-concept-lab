@@ -5068,7 +5068,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "fcf3e264a0ea748f043fbef0506a72f453ea8372",
+      "publication_commit": "5cc3f5d4441b280c6c1fdc9fff4cc52d9b0c9b2b",
       "status": "completed",
       "verified_remote": true
     },
@@ -5095,6 +5095,7 @@
     }
   },
   "diagnostics": [
+    "campaign.log:\n2026-09-15T14:00:29.969869+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -5102,6 +5103,7 @@
     "failure-receipt-red.log:\nFAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 60, in test_loss_failure_preserves_partial_state_and_accounting\n    self.assertTrue((path/'training-failure.json').exists(),'Missing partial failure receipt')\nAssertionError: False is not true : Missing partial failure receipt\nRan 4 tests in 0.990s\nFAILED (failures=1)",
     "initial-queue.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\nTraceback (most recent call last):\n    if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')\nRuntimeError: Preserved failed NCP trial; diagnose before more trials",
     "launch-AUX-s42.log:\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
+    "mechanism-queue.log:\n2026-09-15T14:00:29.969869+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
     "normalization-green-cpu.log:\nRan 8 tests in 1.461s\nOK",
     "normalization-red.log:\nTraceback (most recent call last):\n    raise error_metas[0].to_error(msg)\nAssertionError: Tensor-likes are not close!\nRan 8 tests in 1.503s\nFAILED (failures=1)",
     "preflight-cpu-1789473248.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 3.917s\nOK",
@@ -5145,9 +5147,9 @@
       "sha256": "584428ee9b9f704f89dc7da28484181e2156eeb17b17576cedbf9087a56d1b97"
     },
     "campaign.log": {
-      "bytes": 32655,
+      "bytes": 36321,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "ad9acc75231ad5aac8295e8f2fdbfb95da1360cf5010f0844b4c291036f33aa6"
+      "sha256": "db002f45c5c9e5bcd552dfb8d3f231701bc8f59a8000ad49e05143aa213a4404"
     },
     "contract.json": {
       "bytes": 286,
@@ -5345,9 +5347,9 @@
       "sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14"
     },
     "mechanism-queue.log": {
-      "bytes": 1237,
+      "bytes": 4802,
       "local_path": "runs/autoresearch/ncp-20260915/mechanism-queue.log",
-      "sha256": "20718411754dd039a8e20a8d98d1cd66b59c0e2f29f7992b2df8e4e0f77a2941"
+      "sha256": "579ad0131cf1630c4d14113578d61f26a036eb8d465b23053a548d1f55c22eda"
     },
     "mechanism-search-space.json": {
       "bytes": 3408,
@@ -5517,7 +5519,17 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "152c4916f0947db08af7422aa9fe51e4bc6658c57452dfbd60d7cc1cc08d4419"
+      "sha256": "b3960848fae5abb1364d35928e5172675b8746d3057afcda41afbf554936bcc9"
+    },
+    "publication-watcher.log": {
+      "bytes": 0,
+      "local_path": "runs/autoresearch/ncp-20260915/publication-watcher.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "publication-watcher.py": {
+      "bytes": 1803,
+      "local_path": "runs/autoresearch/ncp-20260915/publication-watcher.py",
+      "sha256": "0ab45267e47897ffce18ec0628087ca3572b8d2834b765600412d8271bb0cdd6"
     },
     "report-red.log": {
       "bytes": 877,
@@ -5525,9 +5537,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 304637,
+      "bytes": 316356,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "e6e6fbb998c560f63e4ba00163e4d5d1010b2c786a7fc102f1d1c5255da5bfb1"
+      "sha256": "356594bdee06a022427c785b48f6f9e86e636d8043d342077e57e0aa19061443"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -5550,9 +5562,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 16046,
+      "bytes": 16438,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "37b7af59e184ad28fec1bc89fe480c001e81dd4da3f556e7614ef2af9387d3e2"
+      "sha256": "4525b77cddd9bbede0e1ca725212923ba96c8fc40c094086262a923f495ff2a0"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -5630,6 +5642,10 @@
       "normalized-queue.py": {
         "published_path": "reports/source-snapshots/3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002.py",
         "sha256": "3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002"
+      },
+      "publication-watcher.py": {
+        "published_path": "reports/source-snapshots/0ab45267e47897ffce18ec0628087ca3572b8d2834b765600412d8271bb0cdd6.py",
+        "sha256": "0ab45267e47897ffce18ec0628087ca3572b8d2834b765600412d8271bb0cdd6"
       },
       "scale-probe.py": {
         "published_path": "reports/source-snapshots/2a2936285bc19bafdb2914c23837a5d56dfc8a198080c9f85d9a22e5749491eb.py",

@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-30 completed of 32 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+31 completed of 33 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: R-feedback_scale0.1, 0.633732 BPB, delta -0.001116 versus D6. Adds 3,710,976 parameters; measured update-time ratio 1.24. This is a search result; independent confirmation is reported separately.
@@ -47,6 +47,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0030-R-prediction_weight0.03-s42](../ncp-20260915--trial-0030-R-prediction_weight0.03-s42-40596925/README.md) | 42 | 0.635307 | 220.7 | 226.6 | 38110 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0031-R-prediction_weight0.3-s42](../ncp-20260915--trial-0031-R-prediction_weight0.3-s42-15ed2fdd/README.md) | 42 | 0.636698 | 217.8 | 223.6 | 38601 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0032-R-raw-s42](../ncp-20260915--trial-0032-R-raw-s42-d6f49d44/README.md) | 42 | 0.638488 | 218.4 | 225.6 | 38487 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0033-R-no_prediction-s42](../ncp-20260915--trial-0033-R-no_prediction-s42-6bdf165e/README.md) | 42 | 0.636180 | 218.6 | 224.3 | 38442 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -110,6 +111,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0030-R-prediction_weight0.03-s42: Change only prediction_weight to 0.03 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0031-R-prediction_weight0.3-s42: Change only prediction_weight to 0.3 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0032-R-raw-s42: Test the pinned official implementation raw-logit codebook reconstruction against paper-inspired softmax; all other N-RMS settings fixed
+- trial-0033-R-no_prediction-s42: Remove next-concept MSE while retaining VQ fitting and predicted latent feedback; test whether next-concept supervision contributes beyond the added latent path
 
 ## Correctness and diagnosis
 
