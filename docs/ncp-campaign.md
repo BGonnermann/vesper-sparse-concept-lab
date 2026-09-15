@@ -281,3 +281,17 @@ widths, using the pinned backbone's existing configuration builder. Verify
 actual width/head shapes, parameter counts, optimizer coverage and captured
 execution. Pairing/audit keys must include width. Do not apply this harness
 extension until the current interaction process exits and fresh gates pass.
+
+## Prospective third-factor rule, 15:01 UTC
+
+After the declared pair screen finishes, permit one bounded third-factor stage
+only if a healthy pair improves its stronger individual constituent by at
+least .001 BPB. Freeze the strongest such pair using seed42 alone. Add each
+distinct remaining single-factor setting that independently improved fixed
+N-RMS by at least .001, excluding tried configurations. Compare every result
+with the frozen pair. Do not recursively move the anchor or add a fourth factor.
+The measured gain of entries16 plus concept-CE .1 currently motivates this
+conditional rule; later pair results may determine the frozen anchor instead.
+Any new collapse remains disqualifying. Previously collapsed related pairs
+remain negative evidence; the gate tests the actual new configuration. Confirmation
+seeds are excluded from all selection decisions.
