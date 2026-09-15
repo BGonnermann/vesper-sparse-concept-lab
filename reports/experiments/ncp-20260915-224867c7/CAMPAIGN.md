@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-82 completed of 84 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+83 completed of 85 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -99,6 +99,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0082-MODULE-NCP-s42](../ncp-20260915--trial-0082-MODULE-NCP-s42-246292ab/README.md) | 42 / 42 | 0.635104 | 216.1 | 223.3 | 38909 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 | [trial-0083-MODULE-NCP-s45](../ncp-20260915--trial-0083-MODULE-NCP-s45-8c343fb0/README.md) | 45 / 42 | 0.634929 | 216.4 | 222.3 | 38845 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 | [trial-0084-FROZEN-NOFUTURE-s45](../ncp-20260915--trial-0084-FROZEN-NOFUTURE-s45-0c47bdef/README.md) | 45 / 45 | 0.639124 | 214.0 | 221.2 | 39257 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
+| [trial-0085-FROZEN-NOFUTURE-s46](../ncp-20260915--trial-0085-FROZEN-NOFUTURE-s46-127b5495/README.md) | 46 / 46 | 0.638114 | 219.3 | 225.1 | 38327 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -188,6 +189,10 @@ Same two previously observed confirmation seeds; mechanistic diagnostic, not new
 | 45 | 0.639124 | FROZEN-NOPRED | 0.639167 | -0.000043 |
 | 45 | 0.639124 | FROZEN-CAP | 0.638105 | +0.001019 |
 | 45 | 0.639124 | D6 | 0.637922 | +0.001202 |
+| 46 | 0.638114 | NCP | 0.635421 | +0.002693 |
+| 46 | 0.638114 | FROZEN-NOPRED | 0.638454 | -0.000340 |
+| 46 | 0.638114 | FROZEN-CAP | 0.635740 | +0.002374 |
+| 46 | 0.638114 | D6 | 0.639401 | -0.001287 |
 
 NOPRED retains future-derived VQ learning; this condition removes it too. Actual token-loss and parameter-gradient checks show independence from future targets with all three weights zero. Target-code utilization remains descriptive and is not a validity gate for this token-only objective.
 
@@ -319,6 +324,7 @@ The optional order-seed field changes only the tape permutation; the architectur
 - trial-0082-MODULE-NCP-s42: Swap only the NCP module initializer to separate module from backbone initialization at fixed order42; frozen architecture/objectives; no seed selection; backbone42, module45
 - trial-0083-MODULE-NCP-s45: Swap only the NCP module initializer to separate module from backbone initialization at fixed order42; frozen architecture/objectives; no seed selection; backbone45, module42
 - trial-0084-FROZEN-NOFUTURE-s45: Remove VQ supervision remaining in frozen NOPRED: all three future-target loss weights zero, predicted feedback and token CE retained; no reselection
+- trial-0085-FROZEN-NOFUTURE-s46: Remove VQ supervision remaining in frozen NOPRED: all three future-target loss weights zero, predicted feedback and token CE retained; no reselection
 
 ## Correctness and diagnosis
 
