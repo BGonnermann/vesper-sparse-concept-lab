@@ -214,3 +214,12 @@ while the concept Transformer runs at chunk rate. Derive the hidden size from
 the selected NCP parameter count if a differently sized candidate is frozen.
 Gate causality, optimizer coverage, save/load, finite gradients, and exact counts
 before using this control. Record every actual hypothesis before its trial.
+
+For the next interaction stage, combine two distinct one-factor settings only
+when each improves fixed N-RMS by at least .001 BPB on seed42 and passes the
+utilization gate. Retain the strongest measured setting per axis, rank pairs
+by summed individual effects, and compare each pair with its stronger measured
+constituent. This ranking is a hypothesis about additivity, not an estimated
+result. Exclude confirmation seeds, objective-off ablations and all previously
+attempted configurations. Exhaustion of this bounded space returns control for
+a new evidence-backed decision; it does not end the eight-hour campaign.
