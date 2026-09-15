@@ -28,6 +28,10 @@ cuda-suite1.log:
 Ran 60 tests in 6.630s
 OK
 
+dimension-checks-after-implementation.log:
+Ran 3 tests in 0.917s
+OK
+
 dimension-checks-before-implementation.log:
     raise ValueError("Fixed comparison requires seed 42, 43 or 44.")
 ValueError: Fixed comparison requires seed 42, 43 or 44.
@@ -159,6 +163,16 @@ ok
 Ran 72 tests in 4.348s
 OK
 
+preflight-cpu-1789485871.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 75 tests in 4.331s
+OK
+
 preflight-cuda-1789473254.log:
 ok
 ok
@@ -227,6 +241,16 @@ ok
 ok
 ok
 Ran 72 tests in 6.644s
+OK
+
+preflight-cuda-1789485878.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 75 tests in 6.621s
 OK
 
 report-red.log:
@@ -434,7 +458,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-49 completed of 51 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+50 completed of 52 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -500,6 +524,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0049-I2-9178a17b2b-s42](../ncp-20260915--trial-0049-I2-9178a17b2b-s42-a90c14b8/README.md) | 42 | 0.634048 | 218.5 | 224.2 | 38467 | 30,056,748 / 30,056,748 | 674.8 / 712.0 | False |
 | [trial-0050-I2-8e935c3aca-s42](../ncp-20260915--trial-0050-I2-8e935c3aca-s42-560d02c3/README.md) | 42 | 0.635248 | 218.6 | 224.3 | 38455 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
 | [trial-0051-I2-2ceac4edb4-s42](../ncp-20260915--trial-0051-I2-2ceac4edb4-s42-1ccc71c7/README.md) | 42 | 0.635224 | 218.4 | 224.1 | 38497 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
+| [trial-0052-I3-36eb3a7c14-s42](../ncp-20260915--trial-0052-I3-36eb3a7c14-s42-dd7b51fd/README.md) | 42 | 0.635110 | 218.6 | 225.9 | 38446 | 30,001,452 / 30,001,452 | 656.3 / 688.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -582,10 +607,12 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0049-I2-9178a17b2b-s42: Test interaction of after_layer=1 and chunk_size=2; individual BPB 0.634774 and 0.634780 versus normalized anchor 0.635927; compare against stronger individual R-after_layer1
 - trial-0050-I2-8e935c3aca-s42: Test interaction of after_layer=1 and lr=0.0003; individual BPB 0.634774 and 0.634800 versus normalized anchor 0.635927; compare against stronger individual R-after_layer1
 - trial-0051-I2-2ceac4edb4-s42: Test interaction of chunk_size=2 and lr=0.0003; individual BPB 0.634780 and 0.634800 versus normalized anchor 0.635927; compare against stronger individual R-chunk_size2
+- trial-0052-I3-36eb3a7c14-s42: Frozen third-factor stage: add after_layer=1 from healthy individual R-after_layer1 (0.634774 BPB) to qualifying pair I2-37a8ad42c0 (0.631877); test incremental benefit, not assumed additivity; enforce utilization gate
 
 ## Correctness and diagnosis
 
 The first two unit-weight attempts hit an inherited finite total-loss100 guard. A source-verified CPU checkpoint probe found dense hidden RMS12.54 too, so those stops do not establish NCP-specific divergence. The corrected guard checks token CE separately and still rejects nonfinite total loss. Initial failed attempts remain preserved, and their historical hypotheses using the word divergence are superseded by this diagnosis. Completed BPB runs never hit that gate.
+Trials1-3 initially retained controller hashes without controller files. The exact bytes were later recovered from Git revision26d471ba734dcce5aebd843aacb7b95f73170a61 and match every original recorded SHA256. The recovery receipt distinguishes these recovered files from trial-time archives; training-child sources were originally captured.
 Trial25 copied a newer controller file while its long-running parent retained an earlier imported controller. Both versions and a correction receipt are retained. Their trial, preflight, candidate and health function bodies are identical; the difference is a GPU lock wrapper. The loaded-controller reference is reconstructed from the same-process import history, not direct process-memory inspection. Captured training-child sources and data are independently verified. The next controller archives immutable startup source bytes to prevent recurrence.
 CPU/CUDA tests cover prefix causality, future-label isolation, VQ/encoder gradients, optimizer coverage, save/load, codebook learning and evaluation immutability. Every completed training child executes captured sources; the final evidence audit also verifies saved checkpoints and committed source-archive bytes.
 
