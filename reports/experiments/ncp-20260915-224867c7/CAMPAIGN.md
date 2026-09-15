@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-46 completed of 48 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+47 completed of 49 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
@@ -63,6 +63,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0046-I2-4919c50f43-s42](../ncp-20260915--trial-0046-I2-4919c50f43-s42-1f63b17c/README.md) | 42 | 0.632179 | 219.5 | 225.3 | 38285 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
 | [trial-0047-I2-1736a5fa37-s42](../ncp-20260915--trial-0047-I2-1736a5fa37-s42-a4b9cecf/README.md) | 42 | 0.633942 | 218.8 | 224.6 | 38356 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
 | [trial-0048-I2-b248268b0f-s42](../ncp-20260915--trial-0048-I2-b248268b0f-s42-df31e309/README.md) | 42 | 0.633824 | 219.4 | 225.2 | 38336 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0049-I2-9178a17b2b-s42](../ncp-20260915--trial-0049-I2-9178a17b2b-s42-a90c14b8/README.md) | 42 | 0.634048 | 218.5 | 224.2 | 38467 | 30,056,748 / 30,056,748 | 674.8 / 712.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -142,6 +143,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0046-I2-4919c50f43-s42: Test interaction of after_layer=1 and ce_weight=0.1; individual BPB 0.634774 and 0.633991 versus normalized anchor 0.635927; compare against stronger individual R-ce_weight0.1
 - trial-0047-I2-1736a5fa37-s42: Test interaction of ce_weight=0.1 and chunk_size=2; individual BPB 0.633991 and 0.634780 versus normalized anchor 0.635927; compare against stronger individual R-ce_weight0.1
 - trial-0048-I2-b248268b0f-s42: Test interaction of ce_weight=0.1 and lr=0.0003; individual BPB 0.633991 and 0.634800 versus normalized anchor 0.635927; compare against stronger individual R-ce_weight0.1
+- trial-0049-I2-9178a17b2b-s42: Test interaction of after_layer=1 and chunk_size=2; individual BPB 0.634774 and 0.634780 versus normalized anchor 0.635927; compare against stronger individual R-after_layer1
 
 ## Correctness and diagnosis
 
