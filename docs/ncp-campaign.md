@@ -184,3 +184,33 @@ New failure receipts also retain initial parameter/optimizer reports, partial
 checkpoint, consumed-token count and loss-component means. Synthetic save/load
 checks now use in-memory checkpoints and immutable fit receipts, preserving
 the existing on-disk artifacts without adding redundant checkpoint copies.
+
+## Prospective mechanism ablations, 12:53 UTC
+
+Prepare these isolated changes while the initial normalized one-factor screen
+runs; integrate and pass fresh CPU/CUDA gates before any new variant trains.
+Use N-RMS as the fixed anchor for each new axis, not a moving winner.
+
+- Mixing `{softmax,raw_logits}`: the pinned official GPT2/Pythia code multiplies
+  raw concept-head logits by the codebook. Test that source discrepancy directly.
+  Raw weights can be negative and need not sum to one; both reconstructed-concept
+  MSE and feedback use that reconstruction. This does not make our remaining
+  architecture or training recipe a faithful reproduction.
+- Feedback gain `{4,8}` in addition to the original range: N-RMS unscaled
+  prediction RMS .857 versus hidden RMS13.829 gives only6.2% injected amplitude.
+  Gains4/8 would initially target roughly25/50%, but retraining can change those
+  ratios. Its weaker result than AUX does not establish that more gain will help.
+- Prediction objective off: alpha0, concept-CE0, beta1, feedback enabled.
+  This isolates supervised next-concept prediction from the added latent path
+  learned through token CE and codebook fitting. Label it an ablation, not NCP
+  evidence in its own right.
+
+A feasible non-NCP capacity control is a pointwise residual MLP at the same
+insertion, RMS-normalized input, two bias-free matrices and squared ReLU.
+Width384 with hidden4832 adds exactly3,710,976 parameters, matching N-RMS.
+Use the same added-module AdamW LR and backbone initialization. This matches
+parameter capacity, not architecture or compute: the MLP runs at token rate,
+while the concept Transformer runs at chunk rate. Derive the hidden size from
+the selected NCP parameter count if a differently sized candidate is frozen.
+Gate causality, optimizer coverage, save/load, finite gradients, and exact counts
+before using this control. Record every actual hypothesis before its trial.
