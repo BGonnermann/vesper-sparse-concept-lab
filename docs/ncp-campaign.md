@@ -319,3 +319,27 @@ then AUX45/46 and NOPRED45/46. Require conservative fit forecasts for the first
 three conditions to fit before the90-minute reserve. The last two are optional
 paired controls admitted by remaining time alone, never by transfer scores.
 All D6 ablations remain mandatory. Report any transfer controls omitted for time.
+
+## Frozen-checkpoint feedback interventions
+
+After the four-seed confirmation, evaluate each frozen NCP checkpoint with
+its original settings, feedback gain zero, and a deterministic one-row rotation
+of each segment's codebook basis. These are inference interventions on an
+in-memory copy, not retrained candidates. They test reliance on feedback and
+the learned head-to-code mapping; they do not establish semantic concepts.
+
+Reproduce the original BPB first, using captured source, the same tokenizer,
+validation order and65536-token accounting. Record input/target batch hashes,
+target bytes, checkpoint/source hashes and zero training updates. Keep
+trainable weights fixed, check state immutability during each evaluation,
+record the intentional buffer/settings change before it, and restore/verify
+the original state afterward. Check prefix causality for every intervention.
+Run under the same sequential GPU lock and per-child timeout. These results
+cannot change the frozen configuration or the predeclared confirmation rule.
+## Prospective initializer versus batch-order diagnosis
+
+Planned after the seed45 sign reversal, before any crossed-order training. The frozen NCP is unchanged and cannot be reselected. Current runs couple parameter initialization and batch permutation under one seed. Cross initialization seeds42/45 with order seeds42/45, reuse the two existing diagonal dense/NCP pairs, and train only four off-diagonal runs: dense and frozen NCP at init42/order45 and init45/order42. Each consumes the same complete tape once, 512 updates and 8,388,608 tokens, with the existing schedule and validation accounting.
+
+Add an optional explicit batch-order seed only after the active four-seed confirmation driver exits. Omission must preserve historical behavior. Validate that order changes leave every initial parameter hash unchanged, initializer changes leave a fixed order unchanged, and both permutations cover every microbatch exactly once. Freeze new source/config/protocol/data identities and reused diagonal trial/result/checkpoint/source hashes before training. Run fresh CPU/CUDA gates. Keep these runs outside selection and independent-seed confirmation tables.
+
+Report NCP-minus-dense BPB in the 2x2 table, then descriptive initialization, order, and interaction contrasts. Two deliberately chosen seed levels diagnose this observed reversal; they are not four independent replications or held-out evidence. Diagnostic utilization samples follow the order seed and therefore are not identical across order levels. Launch only if all four forecast runs fit before the final90-minute reserve; preserve failures without automatic reselection.
