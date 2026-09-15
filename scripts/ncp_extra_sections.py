@@ -8,13 +8,30 @@ def gather(result):
                       ('crossed-order-entry-result.json', 'initializer_order_entry'),
                       ('module-initialization-result.json', 'module_initialization_diagnostic'),
                       ('module-initialization-entry-result.json', 'module_initialization_entry'),
-                      ('module-initialization-budget-result.json', 'module_initialization_budget')]:
+                      ('module-initialization-budget-result.json', 'module_initialization_budget'),
+                      ('no-future-result.json','no_future_diagnostic'),
+                      ('no-future-budget-result.json','no_future_budget')]:
         path = c.HERE / name
         if path.exists():
             result[key] = c.read(path)
 
 
 def append(text, result):
+    if 'no_future_diagnostic' in result:
+        evidence=result['no_future_diagnostic']
+        text.extend(['', '## Token-only latent feedback: all future losses off', '', evidence['interpretation'], '',
+            '| Seed | Token-only BPB | Control | Control BPB | Token-only minus control |',
+            '|---:|---:|---|---:|---:|'])
+        for row in evidence['rows']:
+            for label,control in row['comparisons'].items():
+                text.append(f'| {row["seed"]} | {row["bpb"]:.6f} | {label} | {control["bpb"]:.6f} | {control["delta_bpb"]:+.6f} |')
+        text.append('\nNOPRED retains future-derived VQ learning; this condition removes it too. '
+            'Actual token-loss and parameter-gradient checks show independence from future targets with all three weights zero. '
+            'Target-code utilization remains descriptive and is not a validity gate for this token-only objective.')
+        for failure in evidence['failures']:
+            text.append('\nPreserved token-only failure: '+str(failure))
+    if 'no_future_budget' in result:
+        text.append('\nToken-only stage: '+result['no_future_budget']['status']+'. '+result['no_future_budget']['reason'])
     if 'module_initialization_diagnostic' in result:
         evidence=result['module_initialization_diagnostic']
         text.extend(['', '## Backbone versus NCP module initialization', '', evidence['interpretation'], '',

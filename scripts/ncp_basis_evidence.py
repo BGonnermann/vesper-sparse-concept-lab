@@ -24,7 +24,7 @@ def main():
         anchors[seed] = (path.name, state['ncp.codebook.basis'].clone())
         del state
     for path, record in records:
-        if record['status']!='completed' or record['label'] not in ('FROZEN-AUX','FROZEN-NOPRED','CROSS-NCP','MODULE-NCP'):
+        if record['status']!='completed' or record['label'] not in ('FROZEN-AUX','FROZEN-NOPRED','CROSS-NCP','MODULE-NCP','FROZEN-NOFUTURE'):
             continue
         seed = record['protocol'].get('ncp_initialization_seed',record['seed'])
         checkpoint = path / 'checkpoint_pre_eval.pt'

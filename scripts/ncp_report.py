@@ -87,10 +87,15 @@ def pairs(data,a,b,seeds):
 
 def write(final=False):
     data=rows(); complete=[x for x in data if x['status']=='completed']
+    final_evidence=None
+    if final:
+        from ncp_final_gate import ready
+        final_evidence=ready(data)
     result=dict(kind='ncp_campaign',status='completed' if final else 'running',rows=data,
         depth_confirmation=pairs(data,'D12','D6',[43,44]),remaining_seconds=remaining())
+    if final_evidence is not None: result['final_evidence']=final_evidence
     controls=[x for x in complete if x['label']=='D6' and x['seed']==42]
-    eligible=[x for x in complete if x['seed']==42 and x['phase'] not in ('initializer_order_diagnostic','module_initialization_diagnostic') and x['configuration'].get('ncp',{}).get('mode')=='feedback'
+    eligible=[x for x in complete if x['seed']==42 and x['phase'] not in ('initializer_order_diagnostic','module_initialization_diagnostic','future_supervision_diagnostic') and x['configuration'].get('ncp',{}).get('mode')=='feedback'
         and not x['ncp_health']['collapsed']
         and (x['configuration']['ncp']['prediction_weight']>0 or x['configuration']['ncp']['ce_weight']>0)]
     if controls and eligible:

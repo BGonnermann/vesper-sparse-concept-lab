@@ -104,6 +104,7 @@ def audit():
             assert ast.dump(ast.Module(body=left[name].body,type_ignores=[]))==ast.dump(ast.Module(body=right[name].body,type_ignores=[]))
         controller_correction=dict(verified=True,trial=correction['trial'],scope=correction['loaded_version_evidence'])
     result=dict(kind='campaign_evidence_audit',status='completed',verified_trials=verified,
+        trial_result_hashes={p.parent.name:r.digest(p) for p in HERE.glob('trial-*/result.json')},
         measured_at_utc=datetime.now(timezone.utc).isoformat(),free_disk_bytes=shutil.disk_usage(r.ROOT).free,
         controller_archive_correction=controller_correction,controller_archives=controllers,
         preserved_noncompleted=failures,committed_source_snapshots=archive_hashes,
