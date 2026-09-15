@@ -113,6 +113,16 @@ ok
 Ran 67 tests in 4.140s
 OK
 
+preflight-cpu-1789480557.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 71 tests in 4.117s
+OK
+
 preflight-cuda-1789473254.log:
 ok
 ok
@@ -161,6 +171,16 @@ ok
 ok
 ok
 Ran 67 tests in 6.128s
+OK
+
+preflight-cuda-1789480563.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 71 tests in 6.262s
 OK
 
 report-red.log:
