@@ -7,6 +7,7 @@ from torch.nn import functional as F
 from torch.utils.checkpoint import checkpoint
 
 from autoresearch_memory import CausalNgramMemory
+from autoresearch_ncp import NextConcept
 
 
 class Top1FeedForward(nn.Module):
@@ -101,6 +102,7 @@ def model_class(upstream, candidate):
             memory = candidate.get("memory")
             self.ngram_memory = None if memory is None else CausalNgramMemory(
                 config.n_embd, memory["bos_token_id"], config.vocab_size, upstream.norm)
+            self.ncp = None if candidate.get('ncp') is None else NextConcept(config.n_embd,config.n_head,candidate['ncp'])
             for phase in ("train", "eval"):
                 self.register_buffer(f"_stats_{phase}_counts", torch.zeros(config.n_layer, num_experts, dtype=torch.int64), persistent=False)
                 self.register_buffer(f"_stats_{phase}_tokens", torch.zeros((), dtype=torch.int64), persistent=False)
@@ -130,16 +132,21 @@ def model_class(upstream, candidate):
                             nn.init.zeros_(expert.c_proj.weight)
             if self.ngram_memory is not None:
                 self.ngram_memory.initialize(8400 + torch.initial_seed())
+            if self.ncp is not None:
+                self.ncp.initialize(12600 + torch.initial_seed())
 
         def setup_optimizer(self, **kwargs):
             # Upstream asserts its fixed backbone parameter partition. Temporarily
             # unregister the independent memory module, restoring even on failure.
             memory = self.ngram_memory
+            ncp = self.ncp
             self.ngram_memory = None
+            self.ncp = None
             try:
                 optimizer = super().setup_optimizer(**kwargs)
             finally:
                 self.ngram_memory = memory
+                self.ncp = ncp
             if variant == "moe":
                 routers = [block.mlp.router.weight for block in self.transformer.h]
                 router_ids = {id(p) for p in routers}
@@ -161,6 +168,10 @@ def model_class(upstream, candidate):
                 optimizer.add_param_group(dict(kind="adamw", params=list(memory.parameters()),
                                                lr=memory_lr, initial_lr=memory_lr, betas=(.9, .999),
                                                eps=1e-8, weight_decay=0.0))
+            if ncp is not None:
+                lr = candidate['ncp']['lr']
+                optimizer.add_param_group(dict(kind='adamw', params=list(ncp.parameters()),
+                    lr=lr, initial_lr=lr, betas=(.9,.999), eps=1e-8, weight_decay=0.0))
             self.optimizer_report = optimizer_coverage(self, optimizer)
             return optimizer
 
@@ -193,6 +204,10 @@ def model_class(upstream, candidate):
                     "memory_initialization_seed": None if self.ngram_memory is None else self.ngram_memory.initialization_seed,
                     "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
                     "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+                    "ncp_parameters": 0 if self.ncp is None else sum(p.numel() for p in self.ncp.parameters()),
+                    "ncp_codebook_parameters": 0 if self.ncp is None else sum(p.numel() for p in self.ncp.codebook.parameters()),
+                    "ncp_codebook_buffer_bytes": 0 if self.ncp is None else self.ncp.codebook.basis.numel()*4,
+                    "ncp_effective_codebook_bytes": 0 if self.ncp is None else self.ncp.entries*self.config.n_embd*4,
                     "memory_table_bytes": memory_table_bytes, "num_experts": num_experts, "top_k": 1 if num_experts else 0}
 
         def estimate_flops(self):
@@ -206,12 +221,16 @@ def model_class(upstream, candidate):
             added = 0 if self.ngram_memory is None else sum(p.numel() for p in self.ngram_memory.parameters())
             report["ngram_memory"] = added
             report["total"] += added
+            ncp_added = 0 if self.ncp is None else sum(p.numel() for p in self.ncp.parameters())
+            report['ncp'] = ncp_added
+            report['total'] += ncp_added
             return report
 
         def forward(self, idx, targets=None, reduction="mean"):
             counts = None
             auxiliary = None
-            if variant == "dense" and self.ngram_memory is None:
+            concept_losses = {}
+            if variant == "dense" and self.ngram_memory is None and self.ncp is None:
                 value = super().forward(idx, targets, reduction)
             else:
                 _, length = idx.shape
@@ -239,6 +258,8 @@ def model_class(upstream, candidate):
                             x = checkpoint(self.ngram_memory, x, idx, use_reentrant=False)
                         else:
                             x = self.ngram_memory(x, idx)
+                    if self.ncp is not None and index == candidate['ncp']['after_layer']:
+                        x, concept_losses = self.ncp(x, compute_loss=targets is not None and self.training and reduction=='mean')
                 if losses:
                     auxiliary = torch.stack(losses).mean()
                     counts = torch.stack(layer_counts)
@@ -259,7 +280,9 @@ def model_class(upstream, candidate):
                             self._stats_aux_sum.add_(auxiliary.detach().double() * tokens)
                 # The validation API uses reduction='none'; never mix routing loss into it.
                 if self.training and reduction == "mean" and auxiliary is not None:
-                    return value + self.aux_loss_weight * auxiliary
+                    return value + self.aux_loss_weight * auxiliary + concept_losses.get("total", 0)
+                if self.training and reduction == 'mean' and concept_losses:
+                    return value + concept_losses['total']
             return value
 
         def routing_report(self):

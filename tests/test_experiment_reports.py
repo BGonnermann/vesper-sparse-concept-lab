@@ -12,6 +12,15 @@ reports=importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(reports)
 
 
 class ReportTests(unittest.TestCase):
+    def test_ncp_health_and_prospective_hypothesis_are_published(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); source=self.fixture(root)
+            (source/'ncp-health.json').write_text(json.dumps(dict(collapsed=True,target_perplexity=[1.],used_entries=[1])))
+            (source/'selection.json').write_text(json.dumps(dict(hypothesis='Test delayed predicted feedback',phase='screen',control='D6')))
+            result=reports.emit(source,root)
+            self.assertTrue(result['details']['ncp-health.json']['collapsed'])
+            self.assertEqual(result['details']['selection.json']['hypothesis'],'Test delayed predicted feedback')
+
     def test_runner_calls_reporting_after_success_and_failure(self):
         import sys
         spec=importlib.util.spec_from_file_location('report_runner',Path(__file__).resolve().parents[1]/'scripts/autoresearch.py')

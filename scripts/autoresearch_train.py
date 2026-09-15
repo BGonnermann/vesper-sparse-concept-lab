@@ -37,6 +37,7 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
     model.to_empty(device=runtime.device)
     model.init_weights(embed_dtype=runtime.amp_dtype)
     memory = getattr(model, "ngram_memory", None)
+    ncp = getattr(model, 'ncp', None)
     if memory is not None and memory.bos_token_id != tokenizer.get_bos_token_id():
         raise ValueError("Captured memory BOS differs from the sealed tokenizer.")
     initial = {name: hashlib.sha256(p.detach().cpu().contiguous().reshape(-1).view(torch.uint8).numpy().tobytes()).hexdigest()
@@ -69,6 +70,7 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
     all_seconds = 0.0
     consumed_indices = []
     diagnostic = {"enabled": memory is not None, "measurement_scope": "Final update gradients/deltas and post-training inference on first32 seeded training microbatches; outside timed training"}
+    ncp_diagnostic = {'enabled':ncp is not None, 'measurement_scope':'Final update gradients and post-training first32 seeded training microbatches; diagnostics excluded from timed updates'}
     t_start_training = time.time()
     for item in schedule:
         step = item["step"]
@@ -90,11 +92,13 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
                 group["momentum"] = item["muon_momentum"]
                 group["weight_decay"] = item["muon_weight_decay"]
         prefix_elapsed = 0.0
-        if memory is not None and step == 511:
+        if (memory is not None or ncp is not None) and step == 511:
             torch.cuda.synchronize()
             prefix_elapsed = time.perf_counter() - start
-            old_parameters = {n:p.detach().clone() for n,p in memory.named_parameters()}
-            diagnostic["final_update_gradient_norms"] = {n:float(p.grad.float().norm()) for n,p in memory.named_parameters()}
+            module = memory if memory is not None else ncp
+            old_parameters = {n:p.detach().clone() for n,p in module.named_parameters()}
+            current_diagnostic = diagnostic if memory is not None else ncp_diagnostic
+            current_diagnostic["final_update_gradient_norms"] = {n:float(p.grad.float().norm()) for n,p in module.named_parameters()}
             torch.cuda.synchronize()
             start = time.perf_counter()
         optimizer.step()
@@ -104,8 +108,8 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
             raise RuntimeError(f"Invalid training loss at step {step}: {value}")
         torch.cuda.synchronize()
         elapsed = prefix_elapsed + time.perf_counter() - start
-        if memory is not None and step == 511:
-            diagnostic["final_update_parameter_delta_norms"] = {n:float((p.detach()-old_parameters[n]).float().norm()) for n,p in memory.named_parameters()}
+        if (memory is not None or ncp is not None) and step == 511:
+            current_diagnostic["final_update_parameter_delta_norms"] = {n:float((p.detach()-old_parameters[n]).float().norm()) for n,p in module.named_parameters()}
         all_seconds += elapsed
         if step >= 11:
             timed += elapsed
@@ -134,6 +138,22 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
         diagnostic["samples"] = samples
         model.train()
     write_json(Path("ngram-diagnostics.json"), diagnostic)
+    if ncp is not None:
+        samples = []
+        def observe_ncp(module, args):
+            samples.append(module.diagnostics(args[0]))
+        hook = ncp.register_forward_pre_hook(observe_ncp)
+        model.eval()
+        with torch.no_grad():
+            for index in order[:32]:
+                device_buffer.copy_(tape[index],non_blocking=True)
+                with torch.autocast(runtime.device_type,dtype=runtime.amp_dtype):
+                    model(device_buffer[0])
+        hook.remove()
+        ncp_diagnostic['samples'] = samples
+        ncp_diagnostic['training_loss_means'] = dict(zip(('prediction_mse','vq_mse','concept_ce','weighted_total'),(ncp._loss_sums / ncp._loss_count.clamp_min(1)).tolist()))
+        model.train()
+    write_json(Path('ncp-diagnostics.json'), ncp_diagnostic)
     return dict(model=model, num_params=model.num_scaling_params()["total"],
                 num_flops_per_token=model.estimate_flops(), total_training_time=timed,
                 step=len(schedule), t_start=t_start, t_start_training=t_start_training)
@@ -232,11 +252,22 @@ def main():
     original_evaluate = prepare.evaluate_bpb
 
     def evaluate(model, tokenizer, batch_size, **kwargs):
+        import hashlib
+        def state_hash():
+            h = hashlib.sha256()
+            for name,tensor in model.state_dict().items():
+                h.update(name.encode()); h.update(tensor.detach().cpu().contiguous().reshape(-1).view(torch.uint8).numpy().tobytes())
+            return h.hexdigest()
+        before = state_hash()
         value = original_evaluate(model, tokenizer, protocol["eval_batch_size"],
                                   device=kwargs["device"], dataset=kwargs["dataset"],
                                   eval_tokens=protocol["smoke_eval_tokens"] if args.smoke_test else protocol["eval_tokens"])
         if not math.isfinite(value):
             raise RuntimeError("Nonfinite validation BPB.")
+        after = state_hash()
+        write_json(Path('evaluation-immutability.json'),dict(before_sha256=before,after_sha256=after,verified=before==after))
+        if before != after:
+            raise RuntimeError('Evaluation changed persistent model state')
         write_json(Path("routing.json"), model.routing_report())
         return value
 

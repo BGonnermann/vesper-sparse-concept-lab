@@ -21,7 +21,7 @@ CONFIG = ROOT / "experiments" / "autoresearch"
 RUNTIME_FILES = ("train.py", "prepare.py", "pyproject.toml", ".python-version", "uv.lock")
 PROJECT_FILES = {"autoresearch.py": "runner_sha256", "autoresearch_train.py": "adapter_sha256",
                  "autoresearch_model.py": "model_sha256", "autoresearch_bootstrap.py": "bootstrap_sha256",
-                 "autoresearch_memory.py": "memory_sha256"}
+                 "autoresearch_memory.py": "memory_sha256", "autoresearch_ncp.py": "ncp_sha256"}
 
 
 def write_json(path, value):
@@ -47,6 +47,26 @@ def verify_seal(directory, expected):
 
 def validate_candidate(value):
     fields = {"depth", "matrix_lr", "feedforward"}
+    if 'ncp' in value:
+        fields.add('ncp')
+        n = value['ncp']
+        expected = {'kind','chunk_size','layers','entries','after_layer','prediction_weight','vq_weight','ce_weight','lr','feedback_scale','mode'}
+        if not isinstance(n,dict) or set(n)!=expected or n['kind']!='ncp_v1':
+            raise ValueError('NCP requires the complete ncp_v1 configuration.')
+        if value.get('feedforward')!='dense' or 'memory' in value:
+            raise ValueError('NCP campaign initially permits dense alone.')
+        for key, allowed in [('chunk_size',(2,4,8)),('layers',(1,2)),('entries',(16,32,64,128))]:
+            if type(n[key]) is not int or n[key] not in allowed:
+                raise ValueError('Invalid NCP '+key)
+        if type(n['after_layer']) is not int or type(value.get('depth')) is not int or not 0 <= n['after_layer'] < value['depth']:
+            raise ValueError('Invalid NCP insertion layer')
+        if n['mode'] not in ('feedback','auxiliary'):
+            raise ValueError('Invalid NCP mode')
+        for key in ('prediction_weight','vq_weight','ce_weight','lr','feedback_scale'):
+            if type(n[key]) not in (int,float) or not math.isfinite(n[key]) or not 0 <= n[key] <= 1:
+                raise ValueError('Invalid NCP '+key)
+        if n['lr']<=0 or n['lr']>.003:
+            raise ValueError('Invalid NCP learning rate')
     if "memory" in value:
         fields.add("memory")
         memory = value["memory"]
