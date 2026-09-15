@@ -1,9 +1,9 @@
 # NCP campaign progress
 
-36 completed of 38 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+37 completed of 39 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
-Strongest eligible selection-seed NCP: R-feedback_scale0.1, 0.633732 BPB, delta -0.001116 versus D6. Adds 3,710,976 parameters; measured update-time ratio 1.24. This is a search result; independent confirmation is reported separately.
+Strongest eligible selection-seed NCP: I2-37a8ad42c0, 0.631877 BPB, delta -0.002971 versus D6. Adds 3,655,680 parameters; measured update-time ratio 1.23. This is a search result; independent confirmation is reported separately.
 
 ## Implementation
 
@@ -53,6 +53,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0036-CAP-L2-K64-s42](../ncp-20260915--trial-0036-CAP-L2-K64-s42-0d439659/README.md) | 42 | 0.635008 | 176.4 | 181.7 | 47592 | 30,056,748 / 30,056,748 | 683.0 / 716.0 | n/a |
 | [trial-0037-I2-169ef2cc79-s42](../ncp-20260915--trial-0037-I2-169ef2cc79-s42-bd04fe9b/README.md) | 42 | 0.636130 | 214.6 | 221.8 | 39202 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 | [trial-0038-I2-0f670cafec-s42](../ncp-20260915--trial-0038-I2-0f670cafec-s42-9cd421a4/README.md) | 42 | 0.639392 | 218.3 | 224.0 | 38534 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0039-I2-37a8ad42c0-s42](../ncp-20260915--trial-0039-I2-37a8ad42c0-s42-ee3d34bd/README.md) | 42 | 0.631877 | 218.0 | 223.7 | 38576 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -122,6 +123,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0036-CAP-L2-K64-s42: Parameter-matched token-level residual MLP adds exactly 3710976 parameters at the same insertion and AdamW LR as N-RMS; test added-capacity effects without concept prediction; compute is not matched
 - trial-0037-I2-169ef2cc79-s42: Test interaction of entries=16 and feedback_scale=0.1; individual BPB 0.633742 and 0.633732 versus normalized anchor 0.635927; compare against stronger individual R-feedback_scale0.1
 - trial-0038-I2-0f670cafec-s42: Test interaction of ce_weight=0.1 and feedback_scale=0.1; individual BPB 0.633991 and 0.633732 versus normalized anchor 0.635927; compare against stronger individual R-feedback_scale0.1
+- trial-0039-I2-37a8ad42c0-s42: Test interaction of ce_weight=0.1 and entries=16; individual BPB 0.633991 and 0.633742 versus normalized anchor 0.635927; compare against stronger individual R-entries16
 
 ## Correctness and diagnosis
 

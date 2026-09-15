@@ -7096,7 +7096,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "b92a0c88837fc56226b843d1c6f96f5a12fd5f4e",
+      "publication_commit": "3d99f53902f519fb8a5aa86027618585468959b7",
       "status": "completed",
       "verified_remote": true
     },
@@ -7129,7 +7129,6 @@
     }
   },
   "diagnostics": [
-    "campaign.log:\n2026-09-15T14:14:52.246985+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -7188,9 +7187,9 @@
       "sha256": "0b8daa224745d8f2eff39d4176fbaa42f5ef7b0a5f03962e945a5cd91ac40c93"
     },
     "campaign.log": {
-      "bytes": 52956,
+      "bytes": 53967,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "fe06ec5e159e95a434e8b0a8bbb1095ab538c0efaa0be019dc575f7abb07be5b"
+      "sha256": "87bc8f8b4d0956fbb78d435f4789196cab879bc2c42adc516baa540249fe2d78"
     },
     "contract.json": {
       "bytes": 286,
@@ -7353,9 +7352,9 @@
       "sha256": "51c9b3f79e66825e104d1caa138286208872645f374d0184032203a144d8a72e"
     },
     "interaction-options.json": {
-      "bytes": 14080,
+      "bytes": 13060,
       "local_path": "runs/autoresearch/ncp-20260915/interaction-options.json",
-      "sha256": "599e1667ad70f509b5ad65c5f3aab5f00798119d35ffacdcf3fbf17ca9644a4f"
+      "sha256": "4a14f8d93d97e8f8b360a5b5da3fba64edd012c8b3fb10aa1af1e3effb08cf14"
     },
     "interaction-preflight.log": {
       "bytes": 408,
@@ -7363,9 +7362,9 @@
       "sha256": "f8ed5dee8c1d77b8e3b1d1b2f7235ad79a79a6c9a91e8ff15008536a87ccf51d"
     },
     "interaction-queue.log": {
-      "bytes": 1950,
+      "bytes": 2961,
       "local_path": "runs/autoresearch/ncp-20260915/interaction-queue.log",
-      "sha256": "3d697af45c820d9670c8f180024c7b16fe8af1d25ed74f1117859f243ab462dd"
+      "sha256": "cf428309578ac005d9e4cf9b76d4b6bb1314b7f353aa5839d8bd80c8e5fa355e"
     },
     "launch-AUX-s42.log": {
       "bytes": 523,
@@ -7605,7 +7604,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "4442b90ff727cc7a9c4543796b47685e8cfe7c9bc6501d3093b0af3216cbc27c"
+      "sha256": "59cc99115d3a66aa8b3bfcf8ff9cd9cd0f6922d3e11ab00943e0756f7a460d4a"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -7628,9 +7627,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 360974,
+      "bytes": 367947,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "baec559de4396360cd7dbc50aba3858221129dc62b65a5caa2048d2e384b2c93"
+      "sha256": "3cff7a4eb9406a759cdb51d20ec856c705f830900f563ca6b82682567bb669b9"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -7653,9 +7652,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 18338,
+      "bytes": 18727,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "6411bc577ac3ac5208e3e456b9b83a4bb3d731c7c77b642c44f62a79507a2d2c"
+      "sha256": "5317087fdb4e7f64cbee9d5beeb07e1a60a886a0e3aaf1aaf05fd27687e05f12"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
