@@ -99,6 +99,13 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 | NCP | AUX | 42 | 0.649647 | 0.652928 | -0.003281 |
 | N-RMS | N-RMS-AUX | 42 | 0.635927 | 0.635215 | +0.000712 |
 
+## Frozen mechanism ablations
+
+Seeds45/46 are the predeclared primary pairs;43/44 are sensitivity pairs. Each row binds exact trial IDs, configurations, executed sources, protocol, batch order, schedule, optimizer settings and shared initialization. AUX changes only mode; NOPRED removes both prediction objectives; CAP matches the selected added parameter count. Negative delta favors frozen NCP. No confirmation outcome selects a replacement.
+
+| Seed | Role | Control | NCP BPB | Control BPB | Delta |
+|---:|---|---|---:|---:|---:|
+
 ## Attempts, decisions and failures
 
 - trial-0001-D6-s42: Fresh depth6 matching control before NCP trials

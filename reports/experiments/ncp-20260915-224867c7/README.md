@@ -173,6 +173,16 @@ ok
 Ran 75 tests in 4.331s
 OK
 
+preflight-cpu-1789487177.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 75 tests in 4.309s
+OK
+
 preflight-cuda-1789473254.log:
 ok
 ok
@@ -251,6 +261,16 @@ ok
 ok
 ok
 Ran 75 tests in 6.621s
+OK
+
+preflight-cuda-1789487184.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 75 tests in 6.673s
 OK
 
 report-red.log:
@@ -556,6 +576,13 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 |---|---|---:|---:|---:|---:|
 | NCP | AUX | 42 | 0.649647 | 0.652928 | -0.003281 |
 | N-RMS | N-RMS-AUX | 42 | 0.635927 | 0.635215 | +0.000712 |
+
+## Frozen mechanism ablations
+
+Seeds45/46 are the predeclared primary pairs;43/44 are sensitivity pairs. Each row binds exact trial IDs, configurations, executed sources, protocol, batch order, schedule, optimizer settings and shared initialization. AUX changes only mode; NOPRED removes both prediction objectives; CAP matches the selected added parameter count. Negative delta favors frozen NCP. No confirmation outcome selects a replacement.
+
+| Seed | Role | Control | NCP BPB | Control BPB | Delta |
+|---:|---|---|---:|---:|---:|
 
 ## Attempts, decisions and failures
 
