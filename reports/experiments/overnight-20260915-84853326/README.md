@@ -34,7 +34,7 @@ cuda correctness exit: 0
 
 # Overnight adaptive campaign
 
-Status: running. Completed full trials: 39. No candidate-count cap.
+Status: running. Completed full trials: 45. No candidate-count cap.
 
 All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, microbatch2, fixed validation and the same step schedule. These are equal-token comparisons; time is a separate cost axis, not an equal-time leaderboard.
 
@@ -79,6 +79,12 @@ All rows use 512 updates / 8,388,608 tokens, checkpointing off, context512, micr
 | trial-0037-D-depth10-s42 | replication / 42 | 0.610642 | 30826.4 | 272.5 | 279.0 | 1511.2 / 1602.0 | 85,852,980 / 85,852,980 |
 | trial-0038-D-s42 | replication / 42 | 0.634848 | 48748.3 | 172.4 | 178.4 | 581.7 / 622.0 | 26,345,772 / 26,345,772 |
 | trial-0039-DG-s42 | replication / 42 | 0.634178 | 44092.4 | 190.7 | 197.3 | 599.7 / 624.0 | 27,443,885 / 26,395,437 |
+| trial-0040-D-depth8-s42 | replication / 42 | 0.617737 | 37669.3 | 223.2 | 229.4 | 943.1 / 964.0 | 50,332,176 / 50,332,176 |
+| trial-0041-D-depth12-s42 | replication / 42 | 0.591172 | 26792.2 | 313.6 | 320.3 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0042-D-depth10-s42 | replication / 42 | 0.608865 | 30891.5 | 271.9 | 278.4 | 1511.2 / 1602.0 | 85,852,980 / 85,852,980 |
+| trial-0043-D12-lr0.03-s42 | screen / 42 | 0.588734 | 26948.8 | 311.8 | 318.5 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0044-D12-lr0.05-s42 | screen / 42 | 0.593565 | 26957.8 | 311.6 | 318.3 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
+| trial-0045-D12-lr0.02-s42 | screen / 42 | 0.595419 | 26733.5 | 314.4 | 321.2 | 2277.2 / 2408.0 | 135,267,480 / 135,267,480 |
 
 Timed throughput excludes the first11 updates; all-update GPU time includes them. Child wall includes startup, diagnostics, checkpoint saving and evaluation. PyTorch allocator memory excludes other processes/driver allocations. Exact widths, memory-table bytes, expert utilization and per-trial selection reasons are in compact JSON and child receipts.
 

@@ -61,9 +61,6 @@ def space():
     for depth in [10, 12]:
         c = copy.deepcopy(dense); c['depth'] = depth
         add('D-depth' + str(depth), c, 'D-depth8', f'Prospective depth {depth} scaling after reproduced depth-8 improvement; unequal compute and parameters', 'dense')
-    for lr in [.03, .05, .02, .06]:
-        c = copy.deepcopy(dense); c['depth'] = 12; c['matrix_lr'] = lr
-        add('D12-lr' + str(lr), c, 'D-depth12', f'After separate depth and LR screens, test LR {lr} on depth12 against its .04 control; labeled shape-plus-optimizer follow-up', 'dense')
     c = copy.deepcopy(moe); c['num_experts'] = 2
     add('M-experts2', c, 'M', 'Fewer experts may reduce dispatch and all-expert optimizer cost', 'moe')
     for key, values in [('router_lr', [.0003, .003]), ('aux_loss_weight', [.003, .03])]:
