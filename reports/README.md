@@ -29,7 +29,7 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [equal-token-20260915](experiments/equal-token-20260915-87990217/README.md) | completed | stage_or_unknown | unknown |
 | [moe-feasibility-20260914T224538Z](experiments/moe-feasibility-20260914T224538Z-d3d2dbbe/README.md) | stopped | stage_or_unknown | unknown |
 | [moe-resume-20260914T231300Z](experiments/moe-resume-20260914T231300Z-62aecf08/README.md) | completed | stage_or_unknown | unknown |
-| [ncp-20260915/checkpoint-replay](experiments/ncp-20260915--checkpoint-replay-10f75acf/README.md) | stage_evidence_only | stage_or_unknown | unknown |
+| [ncp-20260915/checkpoint-replay](experiments/ncp-20260915--checkpoint-replay-10f75acf/README.md) | completed | stage_or_unknown | unknown |
 | [ncp-20260915/trial-0001-D6-s42](experiments/ncp-20260915--trial-0001-D6-s42-b009c334/README.md) | completed | fixed_updates | 0.634848 |
 | [ncp-20260915/trial-0002-NCP-s42](experiments/ncp-20260915--trial-0002-NCP-s42-22537f23/README.md) | failed | fixed_updates | unknown |
 | [ncp-20260915/trial-0003-AUX-s42](experiments/ncp-20260915--trial-0003-AUX-s42-6ac0782c/README.md) | failed | fixed_updates | unknown |

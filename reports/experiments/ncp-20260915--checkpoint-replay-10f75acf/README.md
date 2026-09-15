@@ -1,6 +1,6 @@
 # ncp-20260915/checkpoint-replay
 
-Outcome: **stage_evidence_only**. Budget family: **stage_or_unknown**.
+Outcome: **completed**. Budget family: **stage_or_unknown**.
 
 Full compact configuration, metrics, seeds, hashes and diagnostics: [report.json](report.json).
 

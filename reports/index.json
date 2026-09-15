@@ -396,7 +396,7 @@
       "compatibility_fingerprint": null,
       "experiment_id": "ncp-20260915--checkpoint-replay-10f75acf",
       "metrics": null,
-      "outcome": "stage_evidence_only"
+      "outcome": "completed"
     },
     {
       "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42",
