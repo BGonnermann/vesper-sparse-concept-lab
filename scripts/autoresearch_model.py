@@ -277,6 +277,8 @@ def model_class(upstream, candidate):
                     if counts is not None:
                         getattr(self, f"_stats_{phase}_counts").add_(counts)
                     if self.training:
+                        if self.ncp is not None:
+                            self.ncp._last_token_ce.copy_(value.detach().float().mean())
                         self._stats_ce_sum.add_(value.detach().double().mean() * tokens)
                         if auxiliary is not None:
                             self._stats_aux_sum.add_(auxiliary.detach().double() * tokens)

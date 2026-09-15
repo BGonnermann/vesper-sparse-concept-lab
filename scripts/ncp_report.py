@@ -75,7 +75,7 @@ def write(final=False):
         'and the small TinyStories fixed-token experiment also differ. Official revision: a0ab281286f5c0337c35de3181cc992c562eacaa.',
         'See [campaign plan](../../../docs/ncp-campaign.md) and the published source receipt for exact references.','',
         '## Every attempted trial','',
-        '| Trial | Seed | BPB | Update s | Child s | Timed tok/s | Total / active params | Alloc / reserved MiB | NCP collapse |',
+        '| Trial | Seed | BPB | Update s | Trial s | Timed tok/s | Total / active params | Alloc / reserved MiB | NCP collapse |',
         '|---|---:|---:|---:|---:|---:|---|---|---|']
     for row in data:
         name=f'[{row["trial"]}](../{row["report_id"]}/README.md)'
@@ -95,9 +95,18 @@ def write(final=False):
     text.extend(['','## Attempts, decisions and failures',''])
     for row in data:
         text.append(f'- {row["trial"]}: {row["hypothesis"]}'+(f' Failure: {row["error"]}' if row.get('error') else ''))
-    text.extend(['','## Measurement limits','',
+    text.extend(['','## Correctness and diagnosis','',
+        'The first two unit-weight attempts hit an inherited finite total-loss100 guard. A source-verified CPU checkpoint probe '
+        'found dense hidden RMS12.54 too, so those stops do not establish NCP-specific divergence. The corrected guard checks '
+        'token CE separately and still rejects nonfinite total loss. Initial failed attempts remain preserved, and their '
+        'historical hypotheses using the word divergence are superseded by this diagnosis. Completed BPB runs never hit that gate.',
+        'CPU/CUDA tests cover prefix causality, future-label isolation, VQ/encoder gradients, optimizer coverage, '
+        'save/load, codebook learning and evaluation immutability. Every completed training child executes captured sources; '
+        'the final evidence audit also verifies saved checkpoints and committed source-archive bytes.',
+        '', '## Measurement limits','',
         'Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. '
         'Depth changes width too. Timed throughput excludes the first11 updates; all-update time includes them. '
+        'Trial wall time includes preparation, child execution and verification, excluding reporting/publication. '
         'Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, '
         'source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. '
         'Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.',

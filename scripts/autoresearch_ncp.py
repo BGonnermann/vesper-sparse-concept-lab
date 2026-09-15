@@ -50,6 +50,7 @@ class NextConcept(nn.Module):
         self.codebook = SegmentCodebook(heads, self.entries, width // heads)
         self.register_buffer('_loss_sums',torch.zeros(4,dtype=torch.float64),persistent=False)
         self.register_buffer('_loss_count',torch.zeros((),dtype=torch.int64),persistent=False)
+        self.register_buffer('_last_token_ce',torch.zeros(()),persistent=False)
 
     @torch.no_grad()
     def initialize(self, seed):
@@ -65,6 +66,7 @@ class NextConcept(nn.Module):
             nn.init.normal_(self.codebook.first,std=1/math.sqrt(d))
             nn.init.normal_(self.codebook.second,std=.5/math.sqrt(d))
         self._loss_sums.zero_(); self._loss_count.zero_()
+        self._last_token_ce.zero_()
 
     def pool(self, hidden):
         b,t,d = hidden.shape

@@ -120,7 +120,13 @@ class NCPTests(unittest.TestCase):
         self.assertTrue(model.optimizer_report['verified'])
         ids = torch.randint(0,32,(2,20),device=self.device)
         with self.context():
-            model(ids, ids.roll(-1,1)).backward()
+            total=model(ids, ids.roll(-1,1))
+            self.assertTrue(hasattr(model.ncp,'_last_token_ce'),'Missing exact token CE diagnostic')
+            with torch.no_grad():
+                logits=model(ids)
+                token_ce=F.cross_entropy(logits.flatten(0,1),ids.roll(-1,1).flatten())
+            torch.testing.assert_close(model.ncp._last_token_ce,token_ce)
+            total.backward()
         for name,p in model.ncp.named_parameters():
             self.assertIsNotNone(p.grad, name)
             self.assertTrue(torch.isfinite(p.grad).all(),name)

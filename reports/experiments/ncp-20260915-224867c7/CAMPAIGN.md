@@ -1,6 +1,6 @@
 # NCP campaign progress
 
-7 completed of 9 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+9 completed of 11 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -22,12 +22,15 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0007-N-RMS-AUX-s42](../ncp-20260915--trial-0007-N-RMS-AUX-s42-d5def34d/README.md) | 42 | 0.635215 | 204.9 | 212.4 | 41139 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0008-D6-s43](../ncp-20260915--trial-0008-D6-s43-6ae7cb75/README.md) | 43 | 0.637774 | 163.7 | 170.5 | 51373 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 | [trial-0009-D12-s43](../ncp-20260915--trial-0009-D12-s43-3e98bde0/README.md) | 43 | 0.594495 | 308.5 | 316.9 | 27244 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
+| [trial-0010-D6-s44](../ncp-20260915--trial-0010-D6-s44-8211e6c7/README.md) | 44 | 0.643075 | 158.5 | 165.5 | 52909 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
+| [trial-0011-D12-s44](../ncp-20260915--trial-0011-D12-s44-afbc92ee/README.md) | 44 | 0.592813 | 323.0 | 331.3 | 26022 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
 
 ## Depth6 versus depth12, reference LR .04
 
 | Seed | Candidate | Control | Candidate BPB | Control BPB | Delta BPB | Update-time ratio |
 |---:|---|---|---:|---:|---:|---:|
 | 43 | D12 | D6 | 0.594495 | 0.637774 | -0.043279 | 1.88 |
+| 44 | D12 | D6 | 0.592813 | 0.643075 | -0.050262 | 2.04 |
 
 ## Frozen NCP confirmation
 
@@ -46,6 +49,8 @@ No completed pair yet.
 - trial-0007-N-RMS-AUX-s42: Normalized-state auxiliary-only ablation isolates concept supervision from predicted feedback
 - trial-0008-D6-s43: Fresh seed43 control for mandatory independent depth comparison at reference LR0.04
 - trial-0009-D12-s43: Independent seed43 depth12 versus depth6; fixed tokens and LR0.04, report extra width/parameters/time
+- trial-0010-D6-s44: Fresh seed44 control for mandatory independent depth comparison at reference LR0.04
+- trial-0011-D12-s44: Independent seed44 depth12 versus depth6; fixed tokens and LR0.04, report extra width/parameters/time
 
 ## Measurement limits
 

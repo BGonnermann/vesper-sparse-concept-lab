@@ -20,6 +20,11 @@ def batch_order(count, seed):
     return torch.randperm(count, generator=torch.Generator().manual_seed(seed)).tolist()
 
 
+def invalid_training_loss(total, token_ce):
+    """MSE has representation-dependent units; the inherited100 bound is for CE."""
+    return not math.isfinite(total) or not math.isfinite(token_ce) or not 0 <= token_ce <= 100
+
+
 def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_size, smoke_test):
     import hashlib
     import time
@@ -48,6 +53,8 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
     optimizer = model.setup_optimizer(unembedding_lr=train.UNEMBEDDING_LR,
         embedding_lr=train.EMBEDDING_LR, scalar_lr=train.SCALAR_LR, adam_betas=train.ADAM_BETAS,
         matrix_lr=train.MATRIX_LR, weight_decay=train.WEIGHT_DECAY)
+    write_json(Path('model.json'),model.parameter_report())
+    write_json(Path('optimizer.json'),model.optimizer_report)
     tape_path = Path(protocol["batch_tape"])
     if digest(tape_path) != protocol["batch_tape_sha256"]:
         raise ValueError("Batch tape hash changed.")
@@ -104,14 +111,17 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
         optimizer.step()
         model.zero_grad(set_to_none=True)
         value = loss.item()
-        if not math.isfinite(value) or value > 100:
+        token_ce=value if ncp is None else ncp._last_token_ce.item()
+        if invalid_training_loss(value,token_ce):
             failure = dict(status='failed',optimizer_updates=step+1,
                 training_tokens=len(consumed_indices)*device_batch_size*protocol['sequence_length'],
                 last_loss=value if math.isfinite(value) else str(value),
+                token_ce=token_ce if math.isfinite(token_ce) else str(token_ce),
                 batch_hash_chain=consumed.hexdigest(),interpretation='Partial failed training, not a full-budget BPB score')
             if ncp is not None:
+                means=(ncp._loss_sums/ncp._loss_count.clamp_min(1)).tolist()
                 failure['ncp_loss_means']=dict(zip(('prediction_mse','vq_mse','concept_ce','weighted_total'),
-                    (ncp._loss_sums/ncp._loss_count.clamp_min(1)).tolist()))
+                    [x if math.isfinite(x) else str(x) for x in means]))
             write_json(Path('training-failure.json'),failure)
             torch.save(model.state_dict(),'checkpoint_failure.pt')
             raise RuntimeError(f"Invalid training loss at step {step}: {value}")
@@ -122,7 +132,7 @@ def fixed_training(train, protocol, runtime, tokenizer, config, device_batch_siz
         all_seconds += elapsed
         if step >= 11:
             timed += elapsed
-        print(f"step {step + 1}/512 | loss: {value:.6f} | lr_mult: {item['lr_multiplier']:.8f} | dt: {elapsed:.4f}s", flush=True)
+        print(f"step {step + 1}/512 | loss: {value:.6f} | token_ce: {token_ce:.6f} | lr_mult: {item['lr_multiplier']:.8f} | dt: {elapsed:.4f}s", flush=True)
     if len(consumed_indices) != count or len(set(consumed_indices)) != count:
         raise RuntimeError("Fixed-update batch coverage failed.")
     write_json(Path("batches.json"), {"seed": seed, "policy": "seeded permutation of fixed prepacked microbatches",

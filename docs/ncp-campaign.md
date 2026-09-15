@@ -166,3 +166,21 @@ of earlier results. New causality/scale checks must pass before this variant run
 The runtime uses3 attention heads at width384, hence S=3 segments of128 values.
 The initial prose incorrectly said S=6; executable code always used the pinned
 backbone's head count. This correction changes no prior trial.
+
+## Loss-gate correction, before unit-weight retries
+
+A captured-source CPU BF16 checkpoint probe on the same samples found dense
+block0 RMS12.54 and chunk4 RMS10.24. Large hidden-state scale is therefore not
+NCP-specific. The initial two runs crossed a finite total-loss100 guard; their
+divergence was not established. Historical hypotheses using that word are kept
+as the original decision record, with this correction.
+
+Apply the100 bound to measured token CE, while rejecting nonfinite total or
+token loss. Record auxiliary MSE separately rather than interpreting its scale
+as token loss. This changes termination/diagnostics, not training objectives or
+updates. Retry the two incomplete configurations after new CPU/CUDA gates.
+Completed trials are unaffected by a guard that never fired in them.
+New failure receipts also retain initial parameter/optimizer reports, partial
+checkpoint, consumed-token count and loss-component means. Synthetic save/load
+checks now use in-memory checkpoints and immutable fit receipts, preserving
+the existing on-disk artifacts without adding redundant checkpoint copies.

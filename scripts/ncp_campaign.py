@@ -92,6 +92,7 @@ def preflight():
         if result.returncode: raise RuntimeError('Synthetic fit failed: '+str(path))
         receipt.update(status='completed',passed=True,source_hashes=sources(),
             test_hashes={p.name:r.digest(p) for p in (ROOT/'tests').glob('test_*.py')},fit_sha256=r.digest(HERE/'fit-result.json'))
+        receipt['fit_file']=read(HERE/'fit-result.json')['artifact_file']
         log('CPU/CUDA correctness and synthetic fit passed')
     except BaseException as exc:
         receipt.update(status='failed',passed=False,error=repr(exc)); raise

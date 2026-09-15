@@ -10,12 +10,12 @@
         "autoresearch.py": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222",
         "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
         "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
-        "autoresearch_model.py": "278723b78b5838e04d6040929b2165bc19ab7e5b139834c94f7a114bf780d495",
-        "autoresearch_ncp.py": "6dd730991d0f42bb90fb088450f808af8c6b3be6c962702b43cfc7ed1f37651e",
-        "autoresearch_train.py": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e"
+        "autoresearch_model.py": "8fd983d0c03da40ec16d9e1c78df2fec08b1d9dfc5d26e32cabb03995c3cae15",
+        "autoresearch_ncp.py": "8de45dc3cbd38e73f3ff2acaf66972be6744d9c2d4e8869748aca6413b8e8f1d",
+        "autoresearch_train.py": "4b28bbef40a5bd2132dcac27e3f8559a5a47b36b80a940c44c09079874349f9d"
       },
       "status": "completed",
-      "wall_seconds": 33.96799999999985
+      "wall_seconds": 35.0
     },
     "archpreview-source-result.json": {
       "kind": "source_review",
@@ -280,7 +280,8 @@
       },
       "status": "completed"
     },
-    "fit-result.json": {
+    "fit-1789475893567819000-result.json": {
+      "artifact_file": "fit-1789475893567819000-result.json",
       "gpu": "NVIDIA GeForce RTX 5070 Ti",
       "kind": "synthetic_correctness_fit",
       "results": {
@@ -303,8 +304,9 @@
               "vq_weight": 1.0
             }
           },
-          "checkpoint_sha256": "963934e7e5f3d8f34f0578f2b82ebc7d35a7b55a0b4390e177f58719be1b2932",
-          "conservative_trial_forecast_seconds": 296.777126400033,
+          "checkpoint_sha256": "4a20351994b75b8ddec6ca63ad675426e87cae97272b56491b8fad10fb4761e9",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 290.27682559983805,
           "corpus_training_tokens": 0,
           "free_bytes": 14966325248,
           "gradient_norms": {
@@ -368,9 +370,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.4735011999996459,
-            0.4453037999996923,
-            0.4917522000000645
+            0.41947760000039125,
+            0.41564349999953265,
+            0.4790562999996837
           ],
           "model": {
             "activation_checkpointing": false,
@@ -457,7 +459,7 @@
             "verified": true
           },
           "passed": true,
-          "peak_allocated_bytes": 689248256,
+          "peak_allocated_bytes": 689248768,
           "peak_reserved_bytes": 727711744,
           "synthetic_optimizer_updates": 6,
           "synthetic_update_tokens": 98304
@@ -468,8 +470,9 @@
             "feedforward": "dense",
             "matrix_lr": 0.04
           },
-          "checkpoint_sha256": "b866271b0c2e73cae9406bbcff847f6d2b889ac3270332cd3ea724b9fa34f6ac",
-          "conservative_trial_forecast_seconds": 352.3096704001073,
+          "checkpoint_sha256": "704e1d6b3c54dc3da850c468a4fd1add5c3f306287b7a548b68821d3fae0db66",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 391.28403200022876,
           "corpus_training_tokens": 0,
           "free_bytes": 13169065984,
           "gradient_norms": {
@@ -564,9 +567,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.6002142000002095,
-            0.5762712000000647,
-            0.5740134000002399
+            0.6763360000004468,
+            0.6345330999993166,
+            0.6209505999995599
           ],
           "model": {
             "activation_checkpointing": false,
@@ -680,8 +683,9 @@
             "feedforward": "dense",
             "matrix_lr": 0.04
           },
-          "checkpoint_sha256": "7284178bda012fdfc17ff4160252b4a0504b17930a604d0550a4cc94ab0bce3b",
-          "conservative_trial_forecast_seconds": 228.8975488001015,
+          "checkpoint_sha256": "ec35957c5fcb42b359e537bdf87e100f98b5f3d61cbf13ec73ebbebbc3c98178",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 232.27086080005392,
           "corpus_training_tokens": 0,
           "free_bytes": 15054405632,
           "gradient_norms": {
@@ -734,9 +738,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.35917490000019825,
-            0.3317268000000695,
-            0.35465190000013536
+            0.3443639000006442,
+            0.3606531999994331,
+            0.3657634000001053
           ],
           "model": {
             "activation_checkpointing": false,
@@ -844,8 +848,9 @@
               "vq_weight": 1.0
             }
           },
-          "checkpoint_sha256": "1880b8eef70681fc49ce23e6e84720b3cb1b5570ab8c0486035462632bfc1a4b",
-          "conservative_trial_forecast_seconds": 218.3680127998814,
+          "checkpoint_sha256": "32dbe02af28842fef377c295c6d1daf6f52081d0fc7a33adb5b5fe1f53faa796",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 268.2550400001928,
           "corpus_training_tokens": 0,
           "free_bytes": 14983102464,
           "gradient_norms": {
@@ -909,9 +914,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.33456070000011096,
-            0.33860939999976836,
-            0.3313031000002411
+            0.4360450000003766,
+            0.4246368000003713,
+            0.3975798000001305
           ],
           "model": {
             "activation_checkpointing": false,
@@ -998,7 +1003,7 @@
             "verified": true
           },
           "passed": true,
-          "peak_allocated_bytes": 690560000,
+          "peak_allocated_bytes": 690560512,
           "peak_reserved_bytes": 710934528,
           "synthetic_optimizer_updates": 6,
           "synthetic_update_tokens": 98304
@@ -1022,8 +1027,9 @@
               "vq_weight": 1.0
             }
           },
-          "checkpoint_sha256": "4e8edb0414f31c47e477d38e1b762b0b2cf746aa5a9d82083ba35928ee698c69",
-          "conservative_trial_forecast_seconds": 299.6958847998176,
+          "checkpoint_sha256": "e71ef22790fc9a9f45556a05361b3911633c8c6550c106f58c4f6f13bc62366c",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 301.5343232001178,
           "corpus_training_tokens": 0,
           "free_bytes": 14966325248,
           "gradient_norms": {
@@ -1087,9 +1093,9 @@
           },
           "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
           "measured_update_seconds": [
-            0.48714590000008684,
-            0.4974528999996437,
-            0.466059999999743
+            0.47714749999977357,
+            0.5010436000002301,
+            0.4466000000002168
           ],
           "model": {
             "activation_checkpointing": false,
@@ -1176,13 +1182,926 @@
             "verified": true
           },
           "passed": true,
-          "peak_allocated_bytes": 689182720,
+          "peak_allocated_bytes": 689183232,
           "peak_reserved_bytes": 727711744,
           "synthetic_optimizer_updates": 6,
           "synthetic_update_tokens": 98304
         }
       },
-      "source_sha256": "43936a1ec2730ff567488a93f0fed5d58c9336c813e7e90c2e8b3d08fbaee480",
+      "source_file": "fit-1789475893567819000.py",
+      "source_sha256": "fd6f6149da2ec5ddf5127287163230d225ac6e15624508ecb70ab101943d3cac",
+      "status": "completed"
+    },
+    "fit-result.json": {
+      "artifact_file": "fit-1789475893567819000-result.json",
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "kind": "synthetic_correctness_fit",
+      "results": {
+        "AUX": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "auxiliary",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "4a20351994b75b8ddec6ca63ad675426e87cae97272b56491b8fad10fb4761e9",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 290.27682559983805,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14966325248,
+          "gradient_norms": {
+            "lm_head.weight": 0.6123936176300049,
+            "ncp.blocks.0.down.weight": 0.002881406107917428,
+            "ncp.blocks.0.fc.weight": 0.0015608333051204681,
+            "ncp.blocks.0.proj.weight": 0.001967246411368251,
+            "ncp.blocks.0.qkv.weight": 0.0019785806071013212,
+            "ncp.blocks.1.down.weight": 0.0027663621585816145,
+            "ncp.blocks.1.fc.weight": 0.0016680769622325897,
+            "ncp.blocks.1.proj.weight": 0.002020142739638686,
+            "ncp.blocks.1.qkv.weight": 0.0019295437959954143,
+            "ncp.codebook.first": 0.05442912504076958,
+            "ncp.codebook.second": 0.2311711609363556,
+            "ncp.head.weight": 0.009592236950993538,
+            "resid_lambdas": 0.0009372100466862321,
+            "transformer.h.0.attn.c_k.weight": 0.0002453731431160122,
+            "transformer.h.0.attn.c_proj.weight": 0.0017346005188301206,
+            "transformer.h.0.attn.c_q.weight": 0.0002493956417310983,
+            "transformer.h.0.attn.c_v.weight": 0.00033368615549989045,
+            "transformer.h.0.mlp.c_fc.weight": 0.0045226216316223145,
+            "transformer.h.0.mlp.c_proj.weight": 0.025840817019343376,
+            "transformer.h.1.attn.c_k.weight": 0.00021642928186338395,
+            "transformer.h.1.attn.c_proj.weight": 0.0017644723411649466,
+            "transformer.h.1.attn.c_q.weight": 0.00021494011161848903,
+            "transformer.h.1.attn.c_v.weight": 0.0003554504655767232,
+            "transformer.h.1.attn.ve_gate.weight": 2.047844418484601e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004113662056624889,
+            "transformer.h.1.mlp.c_proj.weight": 0.018186450004577637,
+            "transformer.h.2.attn.c_k.weight": 0.00019331116345711052,
+            "transformer.h.2.attn.c_proj.weight": 0.0018260397482663393,
+            "transformer.h.2.attn.c_q.weight": 0.0001936635235324502,
+            "transformer.h.2.attn.c_v.weight": 0.0003495095297694206,
+            "transformer.h.2.mlp.c_fc.weight": 0.003879830939695239,
+            "transformer.h.2.mlp.c_proj.weight": 0.017177289351820946,
+            "transformer.h.3.attn.c_k.weight": 0.0001837919990066439,
+            "transformer.h.3.attn.c_proj.weight": 0.0017583364387974143,
+            "transformer.h.3.attn.c_q.weight": 0.00018319758237339556,
+            "transformer.h.3.attn.c_v.weight": 0.00033901023562066257,
+            "transformer.h.3.attn.ve_gate.weight": 1.8833300146070542e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036513658706098795,
+            "transformer.h.3.mlp.c_proj.weight": 0.016103582456707954,
+            "transformer.h.4.attn.c_k.weight": 0.0001708737836452201,
+            "transformer.h.4.attn.c_proj.weight": 0.0018730669980868697,
+            "transformer.h.4.attn.c_q.weight": 0.0001697209954727441,
+            "transformer.h.4.attn.c_v.weight": 0.00036769959842786193,
+            "transformer.h.4.mlp.c_fc.weight": 0.003489541355520487,
+            "transformer.h.4.mlp.c_proj.weight": 0.015367320738732815,
+            "transformer.h.5.attn.c_k.weight": 0.00016291624342557043,
+            "transformer.h.5.attn.c_proj.weight": 0.0018353681080043316,
+            "transformer.h.5.attn.c_q.weight": 0.00016325658361893147,
+            "transformer.h.5.attn.c_v.weight": 0.00032676479895599186,
+            "transformer.h.5.attn.ve_gate.weight": 1.396996822222718e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.003328906139358878,
+            "transformer.h.5.mlp.c_proj.weight": 0.0146317845210433,
+            "transformer.wte.weight": 0.0006618315237574279,
+            "value_embeds.1.weight": 1.3333785318536684e-05,
+            "value_embeds.3.weight": 1.1107126738352235e-05,
+            "value_embeds.5.weight": 9.761963156051934e-06,
+            "x0_lambdas": 0.0008686695946380496
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.41947760000039125,
+            0.41564349999953265,
+            0.4790562999996837
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 689248768,
+          "peak_reserved_bytes": 727711744,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "D12": {
+          "candidate": {
+            "depth": 12,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "checkpoint_sha256": "704e1d6b3c54dc3da850c468a4fd1add5c3f306287b7a548b68821d3fae0db66",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 391.28403200022876,
+          "corpus_training_tokens": 0,
+          "free_bytes": 13169065984,
+          "gradient_norms": {
+            "lm_head.weight": 0.8653446435928345,
+            "resid_lambdas": 0.0009674134198576212,
+            "transformer.h.0.attn.c_k.weight": 0.0007132752216421068,
+            "transformer.h.0.attn.c_proj.weight": 0.0031704590655863285,
+            "transformer.h.0.attn.c_q.weight": 0.0007116423803381622,
+            "transformer.h.0.attn.c_v.weight": 0.0008884651469998062,
+            "transformer.h.0.mlp.c_fc.weight": 0.011724094860255718,
+            "transformer.h.0.mlp.c_proj.weight": 0.03680147975683212,
+            "transformer.h.1.attn.c_k.weight": 0.0005547857144847512,
+            "transformer.h.1.attn.c_proj.weight": 0.003984494600445032,
+            "transformer.h.1.attn.c_q.weight": 0.0005549501511268318,
+            "transformer.h.1.attn.c_v.weight": 0.0011294538853690028,
+            "transformer.h.1.attn.ve_gate.weight": 2.32074421546713e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.010187847539782524,
+            "transformer.h.1.mlp.c_proj.weight": 0.03191191703081131,
+            "transformer.h.10.attn.c_k.weight": 0.00027574319392442703,
+            "transformer.h.10.attn.c_proj.weight": 0.0029583722352981567,
+            "transformer.h.10.attn.c_q.weight": 0.0002757485199254006,
+            "transformer.h.10.attn.c_v.weight": 0.000764010997954756,
+            "transformer.h.10.mlp.c_fc.weight": 0.006059193518012762,
+            "transformer.h.10.mlp.c_proj.weight": 0.019014373421669006,
+            "transformer.h.11.attn.c_k.weight": 0.0002690450637601316,
+            "transformer.h.11.attn.c_proj.weight": 0.0027366741560399532,
+            "transformer.h.11.attn.c_q.weight": 0.00027113122632727027,
+            "transformer.h.11.attn.c_v.weight": 0.000788143661338836,
+            "transformer.h.11.attn.ve_gate.weight": 1.2928807109346963e-06,
+            "transformer.h.11.mlp.c_fc.weight": 0.005811877083033323,
+            "transformer.h.11.mlp.c_proj.weight": 0.018234170973300934,
+            "transformer.h.2.attn.c_k.weight": 0.0004668551846407354,
+            "transformer.h.2.attn.c_proj.weight": 0.003884817473590374,
+            "transformer.h.2.attn.c_q.weight": 0.00046920342720113695,
+            "transformer.h.2.attn.c_v.weight": 0.0011129607446491718,
+            "transformer.h.2.mlp.c_fc.weight": 0.009173322468996048,
+            "transformer.h.2.mlp.c_proj.weight": 0.028640110045671463,
+            "transformer.h.3.attn.c_k.weight": 0.00041082038660533726,
+            "transformer.h.3.attn.c_proj.weight": 0.0039241863414645195,
+            "transformer.h.3.attn.c_q.weight": 0.0004088821297045797,
+            "transformer.h.3.attn.c_v.weight": 0.0010525245452299714,
+            "transformer.h.3.attn.ve_gate.weight": 1.992173565668054e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.008408053778111935,
+            "transformer.h.3.mlp.c_proj.weight": 0.026157502084970474,
+            "transformer.h.4.attn.c_k.weight": 0.0003759007959160954,
+            "transformer.h.4.attn.c_proj.weight": 0.003612420056015253,
+            "transformer.h.4.attn.c_q.weight": 0.0003742067201528698,
+            "transformer.h.4.attn.c_v.weight": 0.0009493661345914006,
+            "transformer.h.4.mlp.c_fc.weight": 0.007840844802558422,
+            "transformer.h.4.mlp.c_proj.weight": 0.024355225265026093,
+            "transformer.h.5.attn.c_k.weight": 0.00035000802017748356,
+            "transformer.h.5.attn.c_proj.weight": 0.003431124147027731,
+            "transformer.h.5.attn.c_q.weight": 0.00034631992457434535,
+            "transformer.h.5.attn.c_v.weight": 0.0009292490431107581,
+            "transformer.h.5.attn.ve_gate.weight": 1.5417097074532649e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.007409461308270693,
+            "transformer.h.5.mlp.c_proj.weight": 0.023168344050645828,
+            "transformer.h.6.attn.c_k.weight": 0.00032504985574632883,
+            "transformer.h.6.attn.c_proj.weight": 0.0034085537772625685,
+            "transformer.h.6.attn.c_q.weight": 0.00032366582308895886,
+            "transformer.h.6.attn.c_v.weight": 0.0009156755986623466,
+            "transformer.h.6.mlp.c_fc.weight": 0.0070090387016534805,
+            "transformer.h.6.mlp.c_proj.weight": 0.021892786026000977,
+            "transformer.h.7.attn.c_k.weight": 0.0003125427174381912,
+            "transformer.h.7.attn.c_proj.weight": 0.002948986366391182,
+            "transformer.h.7.attn.c_q.weight": 0.00031299726106226444,
+            "transformer.h.7.attn.c_v.weight": 0.0008494273060932755,
+            "transformer.h.7.attn.ve_gate.weight": 1.3154932503312011e-06,
+            "transformer.h.7.mlp.c_fc.weight": 0.006746034603565931,
+            "transformer.h.7.mlp.c_proj.weight": 0.021006066352128983,
+            "transformer.h.8.attn.c_k.weight": 0.0003001773729920387,
+            "transformer.h.8.attn.c_proj.weight": 0.002934536896646023,
+            "transformer.h.8.attn.c_q.weight": 0.0003021506709046662,
+            "transformer.h.8.attn.c_v.weight": 0.0008144929888658226,
+            "transformer.h.8.mlp.c_fc.weight": 0.00652371346950531,
+            "transformer.h.8.mlp.c_proj.weight": 0.020529720932245255,
+            "transformer.h.9.attn.c_k.weight": 0.0002836073108483106,
+            "transformer.h.9.attn.c_proj.weight": 0.0029274127446115017,
+            "transformer.h.9.attn.c_q.weight": 0.0002856814244296402,
+            "transformer.h.9.attn.c_v.weight": 0.0008108486072160304,
+            "transformer.h.9.attn.ve_gate.weight": 1.2191015912321745e-06,
+            "transformer.h.9.mlp.c_fc.weight": 0.0061646136455237865,
+            "transformer.h.9.mlp.c_proj.weight": 0.019151095300912857,
+            "transformer.wte.weight": 0.0010017643216997385,
+            "value_embeds.1.weight": 2.5080140403588302e-05,
+            "value_embeds.11.weight": 1.202490966534242e-05,
+            "value_embeds.3.weight": 1.9205896023777314e-05,
+            "value_embeds.5.weight": 1.61297430167906e-05,
+            "value_embeds.7.weight": 1.4209906112228055e-05,
+            "value_embeds.9.weight": 1.308546052314341e-05,
+            "x0_lambdas": 0.0022974456660449505
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.6763360000004468,
+            0.6345330999993166,
+            0.6209505999995599
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 135267480,
+            "depth": 12,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 135267480,
+            "width": 768
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.004,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.6,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.6,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 88,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 2386219008,
+          "peak_reserved_bytes": 2524971008,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "D6": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "checkpoint_sha256": "ec35957c5fcb42b359e537bdf87e100f98b5f3d61cbf13ec73ebbebbc3c98178",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 232.27086080005392,
+          "corpus_training_tokens": 0,
+          "free_bytes": 15054405632,
+          "gradient_norms": {
+            "lm_head.weight": 0.6123936176300049,
+            "resid_lambdas": 0.0008732876740396023,
+            "transformer.h.0.attn.c_k.weight": 0.00024316951748915017,
+            "transformer.h.0.attn.c_proj.weight": 0.0015171313425526023,
+            "transformer.h.0.attn.c_q.weight": 0.0002468849706929177,
+            "transformer.h.0.attn.c_v.weight": 0.0002930074115283787,
+            "transformer.h.0.mlp.c_fc.weight": 0.004471353720873594,
+            "transformer.h.0.mlp.c_proj.weight": 0.01992177404463291,
+            "transformer.h.1.attn.c_k.weight": 0.00021642928186338395,
+            "transformer.h.1.attn.c_proj.weight": 0.0017644723411649466,
+            "transformer.h.1.attn.c_q.weight": 0.00021494011161848903,
+            "transformer.h.1.attn.c_v.weight": 0.0003554504655767232,
+            "transformer.h.1.attn.ve_gate.weight": 2.047844418484601e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004113662056624889,
+            "transformer.h.1.mlp.c_proj.weight": 0.018186450004577637,
+            "transformer.h.2.attn.c_k.weight": 0.00019331116345711052,
+            "transformer.h.2.attn.c_proj.weight": 0.0018260397482663393,
+            "transformer.h.2.attn.c_q.weight": 0.0001936635235324502,
+            "transformer.h.2.attn.c_v.weight": 0.0003495095297694206,
+            "transformer.h.2.mlp.c_fc.weight": 0.003879830939695239,
+            "transformer.h.2.mlp.c_proj.weight": 0.017177289351820946,
+            "transformer.h.3.attn.c_k.weight": 0.0001837919990066439,
+            "transformer.h.3.attn.c_proj.weight": 0.0017583364387974143,
+            "transformer.h.3.attn.c_q.weight": 0.00018319758237339556,
+            "transformer.h.3.attn.c_v.weight": 0.00033901023562066257,
+            "transformer.h.3.attn.ve_gate.weight": 1.8833300146070542e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036513658706098795,
+            "transformer.h.3.mlp.c_proj.weight": 0.016103582456707954,
+            "transformer.h.4.attn.c_k.weight": 0.0001708737836452201,
+            "transformer.h.4.attn.c_proj.weight": 0.0018730669980868697,
+            "transformer.h.4.attn.c_q.weight": 0.0001697209954727441,
+            "transformer.h.4.attn.c_v.weight": 0.00036769959842786193,
+            "transformer.h.4.mlp.c_fc.weight": 0.003489541355520487,
+            "transformer.h.4.mlp.c_proj.weight": 0.015367320738732815,
+            "transformer.h.5.attn.c_k.weight": 0.00016291624342557043,
+            "transformer.h.5.attn.c_proj.weight": 0.0018353681080043316,
+            "transformer.h.5.attn.c_q.weight": 0.00016325658361893147,
+            "transformer.h.5.attn.c_v.weight": 0.00032676479895599186,
+            "transformer.h.5.attn.ve_gate.weight": 1.396996822222718e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.003328906139358878,
+            "transformer.h.5.mlp.c_proj.weight": 0.0146317845210433,
+            "transformer.wte.weight": 0.0006583956419490278,
+            "value_embeds.1.weight": 1.3333785318536684e-05,
+            "value_embeds.3.weight": 1.1107126738352235e-05,
+            "value_embeds.5.weight": 9.761963156051934e-06,
+            "x0_lambdas": 0.000799284316599369
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.3443639000006442,
+            0.3606531999994331,
+            0.3657634000001053
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 26345772,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "ncp_segment_dimension": 0,
+            "ncp_segments": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 26345772,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 46,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 610072576,
+          "peak_reserved_bytes": 641728512,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "N-RMS": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "pool_normalization": "rms",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "32dbe02af28842fef377c295c6d1daf6f52081d0fc7a33adb5b5fe1f53faa796",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 268.2550400001928,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14983102464,
+          "gradient_norms": {
+            "lm_head.weight": 0.6124578714370728,
+            "ncp.blocks.0.down.weight": 0.002211898099631071,
+            "ncp.blocks.0.fc.weight": 0.0012597404420375824,
+            "ncp.blocks.0.proj.weight": 0.0014492523623630404,
+            "ncp.blocks.0.qkv.weight": 0.0014494454953819513,
+            "ncp.blocks.1.down.weight": 0.0021492312662303448,
+            "ncp.blocks.1.fc.weight": 0.0013315164251253009,
+            "ncp.blocks.1.proj.weight": 0.0015133859124034643,
+            "ncp.blocks.1.qkv.weight": 0.0014460919192060828,
+            "ncp.codebook.first": 0.054965682327747345,
+            "ncp.codebook.second": 0.31980928778648376,
+            "ncp.head.weight": 0.010842975229024887,
+            "resid_lambdas": 0.0008198454743251204,
+            "transformer.h.0.attn.c_k.weight": 0.00024518914869986475,
+            "transformer.h.0.attn.c_proj.weight": 0.0018028655322268605,
+            "transformer.h.0.attn.c_q.weight": 0.000249604694545269,
+            "transformer.h.0.attn.c_v.weight": 0.00034677411895245314,
+            "transformer.h.0.mlp.c_fc.weight": 0.004523701500147581,
+            "transformer.h.0.mlp.c_proj.weight": 0.027840498834848404,
+            "transformer.h.1.attn.c_k.weight": 0.00021101869060657918,
+            "transformer.h.1.attn.c_proj.weight": 0.002208095509558916,
+            "transformer.h.1.attn.c_q.weight": 0.00020982229034416378,
+            "transformer.h.1.attn.c_v.weight": 0.0004266116884537041,
+            "transformer.h.1.attn.ve_gate.weight": 1.995362936213496e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004075502045452595,
+            "transformer.h.1.mlp.c_proj.weight": 0.018039178103208542,
+            "transformer.h.2.attn.c_k.weight": 0.0001888442930066958,
+            "transformer.h.2.attn.c_proj.weight": 0.001988509437069297,
+            "transformer.h.2.attn.c_q.weight": 0.00018870887288358063,
+            "transformer.h.2.attn.c_v.weight": 0.0003884279867634177,
+            "transformer.h.2.mlp.c_fc.weight": 0.003856286872178316,
+            "transformer.h.2.mlp.c_proj.weight": 0.017103055492043495,
+            "transformer.h.3.attn.c_k.weight": 0.0001805932552088052,
+            "transformer.h.3.attn.c_proj.weight": 0.0018785488791763783,
+            "transformer.h.3.attn.c_q.weight": 0.00018065344193018973,
+            "transformer.h.3.attn.c_v.weight": 0.0003652030136436224,
+            "transformer.h.3.attn.ve_gate.weight": 1.8431051103107166e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036300825886428356,
+            "transformer.h.3.mlp.c_proj.weight": 0.01601126231253147,
+            "transformer.h.4.attn.c_k.weight": 0.00016811792738735676,
+            "transformer.h.4.attn.c_proj.weight": 0.001961199101060629,
+            "transformer.h.4.attn.c_q.weight": 0.00016746505571063608,
+            "transformer.h.4.attn.c_v.weight": 0.0003837983531411737,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034678338561207056,
+            "transformer.h.4.mlp.c_proj.weight": 0.01528921164572239,
+            "transformer.h.5.attn.c_k.weight": 0.00015934320981614292,
+            "transformer.h.5.attn.c_proj.weight": 0.0018729249713942409,
+            "transformer.h.5.attn.c_q.weight": 0.0001599522802280262,
+            "transformer.h.5.attn.c_v.weight": 0.0003432547382544726,
+            "transformer.h.5.attn.ve_gate.weight": 1.38417692596704e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.00330570456571877,
+            "transformer.h.5.mlp.c_proj.weight": 0.014535483904182911,
+            "transformer.wte.weight": 0.000659439479932189,
+            "value_embeds.1.weight": 1.3160873095330317e-05,
+            "value_embeds.3.weight": 1.1046710824302863e-05,
+            "value_embeds.5.weight": 9.699705515231472e-06,
+            "x0_lambdas": 0.0007386396755464375
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.4360450000003766,
+            0.4246368000003713,
+            0.3975798000001305
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 690560512,
+          "peak_reserved_bytes": 710934528,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "NCP": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "e71ef22790fc9a9f45556a05361b3911633c8c6550c106f58c4f6f13bc62366c",
+          "checkpoint_storage": "In-memory synthetic roundtrip; full research checkpoints are retained on disk",
+          "conservative_trial_forecast_seconds": 301.5343232001178,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14966325248,
+          "gradient_norms": {
+            "lm_head.weight": 0.6124461889266968,
+            "ncp.blocks.0.down.weight": 0.0028813492972403765,
+            "ncp.blocks.0.fc.weight": 0.0015620087506249547,
+            "ncp.blocks.0.proj.weight": 0.001967152114957571,
+            "ncp.blocks.0.qkv.weight": 0.001979059772565961,
+            "ncp.blocks.1.down.weight": 0.0027672576252371073,
+            "ncp.blocks.1.fc.weight": 0.00166968978010118,
+            "ncp.blocks.1.proj.weight": 0.002020275453105569,
+            "ncp.blocks.1.qkv.weight": 0.001929537276737392,
+            "ncp.codebook.first": 0.05443279817700386,
+            "ncp.codebook.second": 0.23118944466114044,
+            "ncp.head.weight": 0.009597172029316425,
+            "resid_lambdas": 0.0008372836746275425,
+            "transformer.h.0.attn.c_k.weight": 0.000242724665440619,
+            "transformer.h.0.attn.c_proj.weight": 0.0017249586526304483,
+            "transformer.h.0.attn.c_q.weight": 0.00024691494763828814,
+            "transformer.h.0.attn.c_v.weight": 0.00033222229103557765,
+            "transformer.h.0.mlp.c_fc.weight": 0.00447313254699111,
+            "transformer.h.0.mlp.c_proj.weight": 0.025662655010819435,
+            "transformer.h.1.attn.c_k.weight": 0.00021098405704833567,
+            "transformer.h.1.attn.c_proj.weight": 0.0022094575688242912,
+            "transformer.h.1.attn.c_q.weight": 0.00020981175475753844,
+            "transformer.h.1.attn.c_v.weight": 0.00042688348912633955,
+            "transformer.h.1.attn.ve_gate.weight": 1.9956858068326255e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004075183533132076,
+            "transformer.h.1.mlp.c_proj.weight": 0.018039969727396965,
+            "transformer.h.2.attn.c_k.weight": 0.0001888440892798826,
+            "transformer.h.2.attn.c_proj.weight": 0.0019890093244612217,
+            "transformer.h.2.attn.c_q.weight": 0.0001887232210719958,
+            "transformer.h.2.attn.c_v.weight": 0.0003886559570673853,
+            "transformer.h.2.mlp.c_fc.weight": 0.0038560281973332167,
+            "transformer.h.2.mlp.c_proj.weight": 0.017102986574172974,
+            "transformer.h.3.attn.c_k.weight": 0.0001805919164326042,
+            "transformer.h.3.attn.c_proj.weight": 0.0018792898626998067,
+            "transformer.h.3.attn.c_q.weight": 0.00018064577307086438,
+            "transformer.h.3.attn.c_v.weight": 0.0003654528991319239,
+            "transformer.h.3.attn.ve_gate.weight": 1.8408238702249946e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.003630012972280383,
+            "transformer.h.3.mlp.c_proj.weight": 0.016011981293559074,
+            "transformer.h.4.attn.c_k.weight": 0.00016817495634313673,
+            "transformer.h.4.attn.c_proj.weight": 0.0019623171538114548,
+            "transformer.h.4.attn.c_q.weight": 0.0001675076491665095,
+            "transformer.h.4.attn.c_v.weight": 0.00038404896622523665,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034676576033234596,
+            "transformer.h.4.mlp.c_proj.weight": 0.015288479626178741,
+            "transformer.h.5.attn.c_k.weight": 0.0001592901098774746,
+            "transformer.h.5.attn.c_proj.weight": 0.0018737473292276263,
+            "transformer.h.5.attn.c_q.weight": 0.00015993215492926538,
+            "transformer.h.5.attn.c_v.weight": 0.00034334452357143164,
+            "transformer.h.5.attn.ve_gate.weight": 1.3870231896362384e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.0033055408857762814,
+            "transformer.h.5.mlp.c_proj.weight": 0.014534170739352703,
+            "transformer.wte.weight": 0.000655180134344846,
+            "value_embeds.1.weight": 1.315811459789984e-05,
+            "value_embeds.3.weight": 1.1049305612687021e-05,
+            "value_embeds.5.weight": 9.696802408143412e-06,
+            "x0_lambdas": 0.0007589887827634811
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.47714749999977357,
+            0.5010436000002301,
+            0.4466000000002168
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "ncp_segment_dimension": 128,
+            "ncp_segments": 3,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 689183232,
+          "peak_reserved_bytes": 727711744,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        }
+      },
+      "source_file": "fit-1789475893567819000.py",
+      "source_sha256": "fd6f6149da2ec5ddf5127287163230d225ac6e15624508ecb70ab101943d3cac",
       "status": "completed"
     },
     "preflight-1789473279-result.json": {
@@ -1332,6 +2251,52 @@
         "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
       },
       "wall_seconds": 33.96799999999985
+    },
+    "preflight-1789475911-result.json": {
+      "cpu": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cpu-1789475877.log",
+        "sha256": "7c5158f76ea2ba547ee17af7b4e15219da8dc89c43d89ee2c2f3c757e964bcac"
+      },
+      "cuda": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cuda-1789475883.log",
+        "sha256": "a7e8d0f0e901f7ba760fc655aae7c81836e879c5c6eb3ebdaf347cccbf8ba9e0"
+      },
+      "fit_file": "fit-1789475893567819000-result.json",
+      "fit_sha256": "298dc06c7d92c8669fe2384d1807f51efdca7924cfc78c8cdaf290db71672ce5",
+      "kind": "ncp_correctness",
+      "passed": true,
+      "source_hashes": {
+        "autoresearch.py": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "8fd983d0c03da40ec16d9e1c78df2fec08b1d9dfc5d26e32cabb03995c3cae15",
+        "autoresearch_ncp.py": "8de45dc3cbd38e73f3ff2acaf66972be6744d9c2d4e8869748aca6413b8e8f1d",
+        "autoresearch_train.py": "4b28bbef40a5bd2132dcac27e3f8559a5a47b36b80a940c44c09079874349f9d"
+      },
+      "status": "completed",
+      "test_hashes": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_campaign_depth_extension.py": "2ac0e71f5a913b39e4b535d67b39f055c9b11827d9d63637460ec2fc571d95ae",
+        "test_campaign_variants.py": "1679fd62f3ccb66b08de83ddabe498c9fd04767f9e15da469e66ee0674a0a70a",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_experiment_reports.py": "97a3e4dd58c06e0e896238127e8766629390268d94ccccc2dc63d6a063420985",
+        "test_fixed_updates.py": "03f5ac1c746d44a3eee3de9b5e2d4b33a1f16ab2306fcbc34d6c162e3ba6aea6",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ncp.py": "f32d983aa819a4bdfaa329a036b75ea481ba169d0a17999d7d7e2f76a0ebab3e",
+        "test_ncp_campaign.py": "05665f8cc7c1a80c4defe545e7e3f90553172035fdd7ef2999c011742684265b",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
+      },
+      "wall_seconds": 35.0
+    },
+    "publication-result.json": {
+      "branch": "research/overnight-20260915",
+      "kind": "publication",
+      "note": "Publication commit is not retrospective training provenance.",
+      "publication_commit": "13efcf513a5b4a25a5646578451bf2b93e139dcb",
+      "status": "completed",
+      "verified_remote": true
     },
     "result.json": {
       "kind": "ncp_campaign",
@@ -2750,6 +3715,88 @@
           "trial": "trial-0009-D12-s43",
           "wall_seconds": 316.9369999999999,
           "width": 768
+        },
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 158.54738760001328,
+          "allocated_mib": 581.685546875,
+          "board_sampled_peak_mib": 2267.0,
+          "bpb": 0.643075,
+          "codebook_buffer_bytes": 0,
+          "codebook_effective_bytes": 0,
+          "configuration": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "error": null,
+          "hypothesis": "Fresh seed44 control for mandatory independent depth comparison at reference LR0.04",
+          "label": "D6",
+          "memory_table_bytes": 0,
+          "ncp_health": null,
+          "ncp_parameters": 0,
+          "phase": "depth-confirmation",
+          "report_id": "ncp-20260915--trial-0010-D6-s44-8211e6c7",
+          "reserved_mib": 622.0,
+          "seed": 44,
+          "source_hashes": {
+            "adapter_sha256": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "checkpoint_sha256": "43857324935543f6fd099a5239552edcb06347db69c412edc4370e87ee60875f",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "278723b78b5838e04d6040929b2165bc19ab7e5b139834c94f7a114bf780d495",
+            "ncp_sha256": "6dd730991d0f42bb90fb088450f808af8c6b3be6c962702b43cfc7ed1f37651e",
+            "orchestrator_sha256": "fbbc948026ae5d99fe9b3fbc729a5a554aa4ff7f6547e729b4560f09a9774598",
+            "preflight_sha256": "c7e6b3e0e5eda7af10b40104b312f8ad7784596174042029e59cce1dca68a1bd",
+            "runner_sha256": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222"
+          },
+          "status": "completed",
+          "timed_tokens_per_second": 52908.92429561057,
+          "total_parameters": 26345772,
+          "trial": "trial-0010-D6-s44",
+          "wall_seconds": 165.51500000000033,
+          "width": 384
+        },
+        {
+          "active_parameters": 135267480,
+          "all_update_seconds": 323.02315159998943,
+          "allocated_mib": 2277.17578125,
+          "board_sampled_peak_mib": 3777.0,
+          "bpb": 0.592813,
+          "codebook_buffer_bytes": 0,
+          "codebook_effective_bytes": 0,
+          "configuration": {
+            "depth": 12,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "error": null,
+          "hypothesis": "Independent seed44 depth12 versus depth6; fixed tokens and LR0.04, report extra width/parameters/time",
+          "label": "D12",
+          "memory_table_bytes": 0,
+          "ncp_health": null,
+          "ncp_parameters": 0,
+          "phase": "depth-confirmation",
+          "report_id": "ncp-20260915--trial-0011-D12-s44-afbc92ee",
+          "reserved_mib": 2408.0,
+          "seed": 44,
+          "source_hashes": {
+            "adapter_sha256": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "checkpoint_sha256": "7da0aa171805d726e0c1bb984480b0bbe9f2424af077f2b8b1dc06c190a9884b",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "278723b78b5838e04d6040929b2165bc19ab7e5b139834c94f7a114bf780d495",
+            "ncp_sha256": "6dd730991d0f42bb90fb088450f808af8c6b3be6c962702b43cfc7ed1f37651e",
+            "orchestrator_sha256": "fbbc948026ae5d99fe9b3fbc729a5a554aa4ff7f6547e729b4560f09a9774598",
+            "preflight_sha256": "c7e6b3e0e5eda7af10b40104b312f8ad7784596174042029e59cce1dca68a1bd",
+            "runner_sha256": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222"
+          },
+          "status": "completed",
+          "timed_tokens_per_second": 26021.615748560525,
+          "total_parameters": 135267480,
+          "trial": "trial-0011-D12-s44",
+          "wall_seconds": 331.34400000000005,
+          "width": 768
         }
       ],
       "status": "running"
@@ -2777,10 +3824,10 @@
     }
   },
   "diagnostics": [
-    "campaign.log:\n2026-09-15T12:12:21.662576+00:00 PROSPECTIVE AMENDMENT: add pool_normalization={none,rms} after unit-weight failures and alpha0.1 hidden RMS11.38. RMS trial starts from alpha=beta=1; check scale and causality before launching. Full rationale docs/ncp-campaign.md.",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
+    "early-metadata-red.log:\nFAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 79, in test_loss_failure_preserves_partial_state_and_accounting\n    self.assertTrue((path/'model.json').exists(),'Missing parameter count for failed training')\nAssertionError: False is not true : Missing parameter count for failed training\nRan 5 tests in 1.375s\nFAILED (failures=1)",
     "failure-receipt-red.log:\nFAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 60, in test_loss_failure_preserves_partial_state_and_accounting\n    self.assertTrue((path/'training-failure.json').exists(),'Missing partial failure receipt')\nAssertionError: False is not true : Missing partial failure receipt\nRan 4 tests in 0.990s\nFAILED (failures=1)",
     "initial-queue.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\nTraceback (most recent call last):\n    if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')\nRuntimeError: Preserved failed NCP trial; diagnose before more trials",
     "launch-AUX-s42.log:\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
@@ -2790,19 +3837,24 @@
     "preflight-cpu-1789473331.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 3.911s\nOK",
     "preflight-cpu-1789473887.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 3.871s\nOK",
     "preflight-cpu-1789474401.log:\nok\nok\nok\nok\nok\nok\nRan 66 tests in 4.144s\nOK",
+    "preflight-cpu-1789475877.log:\nok\nok\nok\nok\nok\nok\nRan 67 tests in 4.140s\nOK",
     "preflight-cuda-1789473254.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 6.129s\nOK",
     "preflight-cuda-1789473337.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 5.956s\nOK",
     "preflight-cuda-1789473893.log:\nok\nok\nok\nok\nok\nok\nRan 65 tests in 5.766s\nOK",
     "preflight-cuda-1789474407.log:\nok\nok\nok\nok\nok\nok\nRan 66 tests in 6.033s\nOK",
+    "preflight-cuda-1789475883.log:\nok\nok\nok\nok\nok\nok\nRan 67 tests in 6.128s\nOK",
     "report-red.log:\nERROR: test_ncp_health_and_prospective_hypothesis_are_published (test_experiment_reports.ReportTests.test_ncp_health_and_prospective_hypothesis_are_published)\nTraceback (most recent call last):\nKeyError: 'collapsed'\nRan 8 tests in 0.229s\nFAILED (errors=1)",
     "test-ncp-green1.log:\nok\nRan 6 tests in 1.153s\nOK",
-    "test-ncp-red.log:\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nRan 6 tests in 1.272s\nFAILED (failures=5, errors=1)"
+    "test-ncp-red.log:\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nRan 6 tests in 1.272s\nFAILED (failures=5, errors=1)",
+    "token-gate-full-cpu.log:\nRan 67 tests in 4.938s\nOK",
+    "token-gate-ncp-cpu.log:\nRan 8 tests in 1.419s\nOK",
+    "token-gate-red.log:\nFAIL: test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure (test_fixed_updates.FixedTests.test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure)\nTraceback (most recent call last):\n  File \"<repo>\\tests\\test_fixed_updates.py\", line 45, in test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure\nAssertionError: False is not true : Missing separate token-CE gate\nRan 5 tests in 1.335s\nFAILED (failures=1)"
   ],
   "evidence": {
     "active-preflight.json": {
-      "bytes": 2471,
+      "bytes": 2512,
       "local_path": "runs/autoresearch/ncp-20260915/active-preflight.json",
-      "sha256": "c7e6b3e0e5eda7af10b40104b312f8ad7784596174042029e59cce1dca68a1bd"
+      "sha256": "8c7895cf680c9abd1ee3b933e780ab38c38bbcfd268944757bdaece8058f8a8b"
     },
     "archpreview-source-result.json": {
       "bytes": 1149,
@@ -2815,9 +3867,9 @@
       "sha256": "33e16cbdf0fb62bcf610b553dbe0caf06685585dbda81319f9bc168114a762f6"
     },
     "campaign.log": {
-      "bytes": 9194,
+      "bytes": 11671,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "37e962b1a295e10db5ef8174f55e909f73ce41731f9c4db385ad9b435a43279b"
+      "sha256": "47b41790be82f5d7e2b575a2606beeda9af081bf59e77f915a1158ee82c42afc"
     },
     "contract.json": {
       "bytes": 286,
@@ -2850,14 +3902,19 @@
       "sha256": "30e9f0cebce843fe3c9c9282131ab809b46d0d64bf7291a6de100d42cd9a5446"
     },
     "depth-queue.log": {
-      "bytes": 2278,
+      "bytes": 3809,
       "local_path": "runs/autoresearch/ncp-20260915/depth-queue.log",
-      "sha256": "5894df319e5610e3406263b533808f119b1730114c6f6c6b66eaa1a446ebe184"
+      "sha256": "1a5c20f61f7c4b279c6b1f01f7ba57ab320332f64a509614baa815fbebd5688a"
     },
     "depth-queue.py": {
       "bytes": 1618,
       "local_path": "runs/autoresearch/ncp-20260915/depth-queue.py",
       "sha256": "37b387890559604e9f7f27e001d5cef00e39f197799a9d1d425a2510ccc8147d"
+    },
+    "early-metadata-red.log": {
+      "bytes": 795,
+      "local_path": "runs/autoresearch/ncp-20260915/early-metadata-red.log",
+      "sha256": "eff9cc504ca588788f96ad9cab825dde1b663dfa9178f4e9643780069d19657a"
     },
     "failure-receipt-red.log": {
       "bytes": 781,
@@ -2884,10 +3941,35 @@
       "local_path": "runs/autoresearch/ncp-20260915/fit-1789474416.log",
       "sha256": "70208f2886c92e406f406a892ab9b95e6e357c16ee4349997741e44efda917a7"
     },
+    "fit-1789475891.log": {
+      "bytes": 1906,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789475891.log",
+      "sha256": "1549c6c7002570ca74e752c68904a6790de92572f4cbeefb364504c3372042da"
+    },
+    "fit-1789475893567819000-result.json": {
+      "bytes": 56186,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789475893567819000-result.json",
+      "sha256": "298dc06c7d92c8669fe2384d1807f51efdca7924cfc78c8cdaf290db71672ce5"
+    },
+    "fit-1789475893567819000.py": {
+      "bytes": 6351,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789475893567819000.py",
+      "sha256": "fd6f6149da2ec5ddf5127287163230d225ac6e15624508ecb70ab101943d3cac"
+    },
     "fit-result.json": {
-      "bytes": 55526,
+      "bytes": 56186,
       "local_path": "runs/autoresearch/ncp-20260915/fit-result.json",
-      "sha256": "0fe7d002444151998a636f9282ae019ba4dad4b2d3c06065b56891115b4b0a6d"
+      "sha256": "298dc06c7d92c8669fe2384d1807f51efdca7924cfc78c8cdaf290db71672ce5"
+    },
+    "guard-retry-queue.log": {
+      "bytes": 408,
+      "local_path": "runs/autoresearch/ncp-20260915/guard-retry-queue.log",
+      "sha256": "5669d78bf7ad4bcaffb75a7e77f185df19d502f03bcce7d2ad1a3e11c14d8637"
+    },
+    "guard-retry-queue.py": {
+      "bytes": 1304,
+      "local_path": "runs/autoresearch/ncp-20260915/guard-retry-queue.py",
+      "sha256": "4f89a9624e1d6119b4c1fd3d03e41ed8b8770e3e40c3d8d27034821add494c22"
     },
     "initial-queue.log": {
       "bytes": 953,
@@ -2920,9 +4002,9 @@
       "sha256": "6377702d83742ed2c8b29ea5c85160cb766aab5ae742d356b1574ff9d344b09e"
     },
     "method-notes.md": {
-      "bytes": 1367,
+      "bytes": 2127,
       "local_path": "runs/autoresearch/ncp-20260915/method-notes.md",
-      "sha256": "6728d69ab18a181dec9d0d4817bae72b3da2a827da0fa42bc520484c587e6343"
+      "sha256": "0b5d38542a591f81c259a4cae09dc79d72478f510c91bf70dd0f0a85d39e69f2"
     },
     "normalization-green-cpu.log": {
       "bytes": 159,
@@ -2969,6 +4051,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-1789474435-result.json",
       "sha256": "c7e6b3e0e5eda7af10b40104b312f8ad7784596174042029e59cce1dca68a1bd"
     },
+    "preflight-1789475911-result.json": {
+      "bytes": 2512,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-1789475911-result.json",
+      "sha256": "8c7895cf680c9abd1ee3b933e780ab38c38bbcfd268944757bdaece8058f8a8b"
+    },
     "preflight-cpu-1789473248.log": {
       "bytes": 13099,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473248.log",
@@ -2988,6 +4075,11 @@
       "bytes": 13563,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789474401.log",
       "sha256": "f16f2e003abec34439e2a4fc3f4cf614094a21796ea52a3771a99f1293e53715"
+    },
+    "preflight-cpu-1789475877.log": {
+      "bytes": 13727,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789475877.log",
+      "sha256": "7c5158f76ea2ba547ee17af7b4e15219da8dc89c43d89ee2c2f3c757e964bcac"
     },
     "preflight-cuda-1789473254.log": {
       "bytes": 13004,
@@ -3009,6 +4101,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789474407.log",
       "sha256": "43e565bb50569c7316ff50e86120d26ff1de995122a2bb1dc8c568126af68bb3"
     },
+    "preflight-cuda-1789475883.log": {
+      "bytes": 13632,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789475883.log",
+      "sha256": "a7e8d0f0e901f7ba760fc655aae7c81836e879c5c6eb3ebdaf347cccbf8ba9e0"
+    },
     "preflight-launch.log": {
       "bytes": 408,
       "local_path": "runs/autoresearch/ncp-20260915/preflight-launch.log",
@@ -3024,15 +4121,20 @@
       "local_path": "runs/autoresearch/ncp-20260915/preflight-launch3.log",
       "sha256": "7c8d77d7ee094703dc664be8573d879615ba6dbf0b91f82494488a7e8c044767"
     },
+    "publication-result.json": {
+      "bytes": 273,
+      "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
+      "sha256": "2129d3f6e2647b57b8c3c296b6da6956d2e8e2d1c92c533503fc8f3214c2ab4b"
+    },
     "report-red.log": {
       "bytes": 877,
       "local_path": "runs/autoresearch/ncp-20260915/report-red.log",
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 40941,
+      "bytes": 45066,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "df0655d6087b6ef51997c3d640c583262a91fed827aeead54fe98f19f8cf778a"
+      "sha256": "739a9b775fd560b07a9e128a69849d125e758e2533652492d238c59b6bb154af"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -3045,9 +4147,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 5301,
+      "bytes": 5935,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "7db58262a423d62144b8ea22e3089d1f10e09f1bab0d68904767e7de999e6d56"
+      "sha256": "d52120dd2260900685a7a7b123c6a225b2e5645e64b4bcb490f3fb4f00245ca0"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -3058,6 +4160,21 @@
       "bytes": 4755,
       "local_path": "runs/autoresearch/ncp-20260915/test-ncp-red.log",
       "sha256": "dc6b054e65c59d5f5c92a6127b16a4cd3c29edcd1b8af76dd2b2619c3febd32f"
+    },
+    "token-gate-full-cpu.log": {
+      "bytes": 13727,
+      "local_path": "runs/autoresearch/ncp-20260915/token-gate-full-cpu.log",
+      "sha256": "e1ca9e702208354bcb39fdd83a948eaa2dee8d0a224903730680e5cd59bcd480"
+    },
+    "token-gate-ncp-cpu.log": {
+      "bytes": 159,
+      "local_path": "runs/autoresearch/ncp-20260915/token-gate-ncp-cpu.log",
+      "sha256": "63b67ccb0a7a65bd3b261d6ad1594f5187da6b503732e63681cf0895a63e735d"
+    },
+    "token-gate-red.log": {
+      "bytes": 796,
+      "local_path": "runs/autoresearch/ncp-20260915/token-gate-red.log",
+      "sha256": "3580e4cb00e0b5b0d82cb11c821b3a8d197dcea8de3da30383fa81c5fdf23dd3"
     }
   },
   "experiment_id": "ncp-20260915-224867c7",
@@ -3074,6 +4191,14 @@
       "depth-queue.py": {
         "published_path": "reports/source-snapshots/37b387890559604e9f7f27e001d5cef00e39f197799a9d1d425a2510ccc8147d.py",
         "sha256": "37b387890559604e9f7f27e001d5cef00e39f197799a9d1d425a2510ccc8147d"
+      },
+      "fit-1789475893567819000.py": {
+        "published_path": "reports/source-snapshots/fd6f6149da2ec5ddf5127287163230d225ac6e15624508ecb70ab101943d3cac.py",
+        "sha256": "fd6f6149da2ec5ddf5127287163230d225ac6e15624508ecb70ab101943d3cac"
+      },
+      "guard-retry-queue.py": {
+        "published_path": "reports/source-snapshots/4f89a9624e1d6119b4c1fd3d03e41ed8b8770e3e40c3d8d27034821add494c22.py",
+        "sha256": "4f89a9624e1d6119b4c1fd3d03e41ed8b8770e3e40c3d8d27034821add494c22"
       },
       "initial-queue.py": {
         "published_path": "reports/source-snapshots/164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853.py",
@@ -3101,6 +4226,7 @@
   "schema_version": 1,
   "seeds": [
     42,
-    43
+    43,
+    44
   ]
 }

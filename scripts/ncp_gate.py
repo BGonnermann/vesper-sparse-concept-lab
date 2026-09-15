@@ -1,5 +1,7 @@
 """Synthetic full-context correctness and fit gates; no corpus training."""
 import gc
+import hashlib
+import io
 import json
 from pathlib import Path
 import sys
@@ -18,6 +20,9 @@ import train
 
 
 def main():
+    stamp=str(time.time_ns())
+    source_path=HERE/f'fit-{stamp}.py'
+    source_path.write_bytes(Path(__file__).read_bytes())
     torch.set_num_threads(2); torch.set_float32_matmul_precision('high')
     runtime = train.detect_runtime(); train._configure_step_kernels(runtime)
     train.MAX_SEQ_LEN = 512; train.WINDOW_PATTERN = 'L'
@@ -80,12 +85,13 @@ def main():
         assert free >= 2*2**30 and reserved < .75*total, 'Insufficient comfortable VRAM margin'
         assert forecast < 900, 'Conservative runtime forecast exceeds existing timeout'
         model.eval()
-        checkpoint = HERE / f'synthetic-fit-{label}.pt'
+        checkpoint = io.BytesIO()
         with torch.no_grad(), torch.autocast('cuda', dtype=runtime.amp_dtype):
             expected = model(x).clone()
             torch.save(model.state_dict(), checkpoint)
             parameter = next(model.parameters()); parameter.add_(1)
             assert not torch.equal(model(x), expected), 'Roundtrip mutation did not affect output'
+            checkpoint.seek(0)
             model.load_state_dict(torch.load(checkpoint,map_location='cpu',weights_only=True),strict=True)
             torch.testing.assert_close(model(x), expected, atol=1e-6, rtol=1e-5)
         results[label] = dict(passed=True, candidate=candidate, model=model.parameter_report(),
@@ -93,12 +99,15 @@ def main():
             measured_update_seconds=timings, conservative_trial_forecast_seconds=forecast,
             peak_allocated_bytes=allocated, peak_reserved_bytes=reserved, free_bytes=free,
             synthetic_optimizer_updates=6, synthetic_update_tokens=98304,
-            corpus_training_tokens=0, checkpoint_sha256=r.digest(checkpoint),
+            corpus_training_tokens=0, checkpoint_sha256=hashlib.sha256(checkpoint.getvalue()).hexdigest(),
+            checkpoint_storage='In-memory synthetic roundtrip; full research checkpoints are retained on disk',
             interpretation='Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score')
         print(f'PASS depth {depth}: params={model.parameter_report()["total_parameters"]}, forecast={forecast:.1f}s, reserved={reserved/2**20:.1f}MiB',flush=True)
         del model, optimizer, expected, x, y, loss, parameter
-    r.write_json(HERE/'fit-result.json', dict(kind='synthetic_correctness_fit',status='completed',
-        results=results, source_sha256=r.digest(Path(__file__)), gpu=torch.cuda.get_device_name(0)))
+    receipt=dict(kind='synthetic_correctness_fit',status='completed',artifact_file=f'fit-{stamp}-result.json',
+        results=results,source_file=source_path.name,source_sha256=r.digest(source_path),gpu=torch.cuda.get_device_name(0))
+    r.write_json(HERE/receipt['artifact_file'],receipt)
+    r.write_json(HERE/'fit-result.json',receipt)
 
 
 if __name__ == '__main__':

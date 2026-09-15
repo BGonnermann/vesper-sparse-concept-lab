@@ -9,9 +9,6 @@ Unknown fields remain null. Do not pool different budgets/schedules. Two seeds a
 
 ## Diagnostics
 ```text
-campaign.log:
-2026-09-15T12:12:21.662576+00:00 PROSPECTIVE AMENDMENT: add pool_normalization={none,rms} after unit-weight failures and alpha0.1 hidden RMS11.38. RMS trial starts from alpha=beta=1; check scale and causality before launching. Full rationale docs/ncp-campaign.md.
-
 controller-red.log:
 Traceback (most recent call last):
 AssertionError: False is not true : Missing campaign controller
@@ -27,6 +24,15 @@ OK
 cuda-suite1.log:
 Ran 60 tests in 6.630s
 OK
+
+early-metadata-red.log:
+FAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)
+Traceback (most recent call last):
+  File "<repo>\tests\test_fixed_updates.py", line 79, in test_loss_failure_preserves_partial_state_and_accounting
+    self.assertTrue((path/'model.json').exists(),'Missing parameter count for failed training')
+AssertionError: False is not true : Missing parameter count for failed training
+Ran 5 tests in 1.375s
+FAILED (failures=1)
 
 failure-receipt-red.log:
 FAIL: test_loss_failure_preserves_partial_state_and_accounting (test_fixed_updates.FixedTests.test_loss_failure_preserves_partial_state_and_accounting)
@@ -97,6 +103,16 @@ ok
 Ran 66 tests in 4.144s
 OK
 
+preflight-cpu-1789475877.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 67 tests in 4.140s
+OK
+
 preflight-cuda-1789473254.log:
 ok
 ok
@@ -137,6 +153,16 @@ ok
 Ran 66 tests in 6.033s
 OK
 
+preflight-cuda-1789475883.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 67 tests in 6.128s
+OK
+
 report-red.log:
 ERROR: test_ncp_health_and_prospective_hypothesis_are_published (test_experiment_reports.ReportTests.test_ncp_health_and_prospective_hypothesis_are_published)
 Traceback (most recent call last):
@@ -158,6 +184,22 @@ Traceback (most recent call last):
 AssertionError: unexpectedly None : Missing concept mechanism
 Ran 6 tests in 1.272s
 FAILED (failures=5, errors=1)
+
+token-gate-full-cpu.log:
+Ran 67 tests in 4.938s
+OK
+
+token-gate-ncp-cpu.log:
+Ran 8 tests in 1.419s
+OK
+
+token-gate-red.log:
+FAIL: test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure (test_fixed_updates.FixedTests.test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure)
+Traceback (most recent call last):
+  File "<repo>\tests\test_fixed_updates.py", line 45, in test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure
+AssertionError: False is not true : Missing separate token-CE gate
+Ran 5 tests in 1.335s
+FAILED (failures=1)
 ```
 
 ## Retained narrative: method-notes.md
@@ -170,6 +212,10 @@ FAILED (failures=5, errors=1)
 - Before trial4, failure handling was extended to retain partial model state, consumed-token accounting and NCP loss-component means on subsequent loss-limit failures. This changes failure reporting only; all successful training math and evaluation remain unchanged. Source hashes distinguish versions.
 - Primary and newer source reviews are separate JSON receipts. Softmax mixing is supported explicitly by ArchPreview Eq8, but released official inference code still multiplies raw logits by codebooks. This discrepancy remains a reproduction limitation.
 - Synthetic fit checkpoints are test artifacts, not training scores. Repeated preflight fit checks used the same named synthetic checkpoint files; all full research trial directories are unique and retained.
+
+##12:29 UTC diagnosis correction
+
+Dense saved-checkpoint probe on the same first32 seeded microbatches gives block0 hidden RMS12.5442 and raw chunk4 RMS10.2389. Source and checkpoint bytes were verified; probe uses CPU BF16 SDPA, so it is diagnostic rather than a GPU quality score. Thus high encoder-state scale is not NCP-specific. The first two failed runs crossed an inherited total-loss100 guard, which combines token CE with scale-dependent MSE. This does not establish divergence. Planned correction: keep nonfinite-total rejection and apply the100 bound to actual token CE, with separate auxiliary diagnostics. Retry only the two incomplete configurations after CPU/CUDA checks. Completed runs remain valid because no stopping gate fired in them.
 
 
 ## Retained narrative: plan.md
@@ -322,7 +368,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-7 completed of 9 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+9 completed of 11 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -344,12 +390,15 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0007-N-RMS-AUX-s42](../ncp-20260915--trial-0007-N-RMS-AUX-s42-d5def34d/README.md) | 42 | 0.635215 | 204.9 | 212.4 | 41139 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0008-D6-s43](../ncp-20260915--trial-0008-D6-s43-6ae7cb75/README.md) | 43 | 0.637774 | 163.7 | 170.5 | 51373 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
 | [trial-0009-D12-s43](../ncp-20260915--trial-0009-D12-s43-3e98bde0/README.md) | 43 | 0.594495 | 308.5 | 316.9 | 27244 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
+| [trial-0010-D6-s44](../ncp-20260915--trial-0010-D6-s44-8211e6c7/README.md) | 44 | 0.643075 | 158.5 | 165.5 | 52909 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
+| [trial-0011-D12-s44](../ncp-20260915--trial-0011-D12-s44-afbc92ee/README.md) | 44 | 0.592813 | 323.0 | 331.3 | 26022 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
 
 ## Depth6 versus depth12, reference LR .04
 
 | Seed | Candidate | Control | Candidate BPB | Control BPB | Delta BPB | Update-time ratio |
 |---:|---|---|---:|---:|---:|---:|
 | 43 | D12 | D6 | 0.594495 | 0.637774 | -0.043279 | 1.88 |
+| 44 | D12 | D6 | 0.592813 | 0.643075 | -0.050262 | 2.04 |
 
 ## Frozen NCP confirmation
 
@@ -368,6 +417,8 @@ No completed pair yet.
 - trial-0007-N-RMS-AUX-s42: Normalized-state auxiliary-only ablation isolates concept supervision from predicted feedback
 - trial-0008-D6-s43: Fresh seed43 control for mandatory independent depth comparison at reference LR0.04
 - trial-0009-D12-s43: Independent seed43 depth12 versus depth6; fixed tokens and LR0.04, report extra width/parameters/time
+- trial-0010-D6-s44: Fresh seed44 control for mandatory independent depth comparison at reference LR0.04
+- trial-0011-D12-s44: Independent seed44 depth12 versus depth6; fixed tokens and LR0.04, report extra width/parameters/time
 
 ## Measurement limits
 

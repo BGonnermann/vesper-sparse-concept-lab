@@ -37,9 +37,23 @@ class Toy(torch.nn.Module):
 
     def num_scaling_params(self): return {'total':2}
     def estimate_flops(self): return 12
+    def parameter_report(self): return {'total_parameters':2,'active_parameters':2}
+
+    @property
+    def optimizer_report(self):
+        from autoresearch_model import optimizer_coverage
+        return optimizer_coverage(self,self.optimizer)
 
 
 class FixedTests(unittest.TestCase):
+    def test_scale_dependent_auxiliary_loss_is_not_a_token_ce_failure(self):
+        import autoresearch_train as adapter
+        self.assertTrue(hasattr(adapter,'invalid_training_loss'),'Missing separate token-CE gate')
+        self.assertFalse(adapter.invalid_training_loss(200.,2.))
+        self.assertTrue(adapter.invalid_training_loss(200.,200.))
+        self.assertTrue(adapter.invalid_training_loss(float('nan'),2.))
+        self.assertTrue(adapter.invalid_training_loss(200.,float('inf')))
+
     def test_loss_failure_preserves_partial_state_and_accounting(self):
         import json
         class Unstable(Toy):
@@ -62,6 +76,7 @@ class FixedTests(unittest.TestCase):
                 self.assertEqual(receipt['optimizer_updates'],1)
                 self.assertEqual(receipt['training_tokens'],2)
                 self.assertTrue((path/'checkpoint_failure.pt').exists())
+                self.assertTrue((path/'model.json').exists(),'Missing parameter count for failed training')
             finally: os.chdir(cwd)
 
     def test_actual_loop_stops_at_512_including_warmup(self):
