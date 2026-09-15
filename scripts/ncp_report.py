@@ -57,6 +57,9 @@ def write(final=False):
     data=rows(); complete=[x for x in data if x['status']=='completed']
     result=dict(kind='ncp_campaign',status='completed' if final else 'running',rows=data,
         depth_confirmation=pairs(data,'D12','D6',[43,44]),remaining_seconds=remaining())
+    result['ncp_ablations'] = []
+    for feedback, auxiliary in [('NCP','AUX'),('N-RMS','N-RMS-AUX')]:
+        result['ncp_ablations'].extend(pairs(data,feedback,auxiliary,[42]))
     freeze=HERE/'confirmation-selection.json'
     if freeze.exists():
         chosen=read(freeze)
@@ -92,6 +95,15 @@ def write(final=False):
         text.extend(['','## '+heading,'','| Seed | Candidate | Control | Candidate BPB | Control BPB | Delta BPB | Update-time ratio |','|---:|---|---|---:|---:|---:|---:|'])
         for x in items: text.append(f'| {x["seed"]} | {x["candidate"]} | {x["control"]} | {x["candidate_bpb"]:.6f} | {x["control_bpb"]:.6f} | {x["delta_bpb"]:+.6f} | {x["update_time_ratio"]:.2f} |')
         if not items: text.append('No completed pair yet.')
+        else:
+            text.append(f'\nMean paired delta: {statistics.mean(x["delta_bpb"] for x in items):+.6f} BPB. '
+                f'Mean update-time ratio: {statistics.mean(x["update_time_ratio"] for x in items):.2f}.')
+    text.extend(['','## Feedback versus auxiliary-only ablations','',
+        'Negative delta favors predicted-concept feedback. These selection-seed comparisons are exploratory.','',
+        '| Feedback configuration | Auxiliary-only configuration | Seed | Feedback BPB | Auxiliary BPB | Delta |',
+        '|---|---|---:|---:|---:|---:|'])
+    for x in result['ncp_ablations']:
+        text.append(f'| {x["candidate"]} | {x["control"]} | {x["seed"]} | {x["candidate_bpb"]:.6f} | {x["control_bpb"]:.6f} | {x["delta_bpb"]:+.6f} |')
     text.extend(['','## Attempts, decisions and failures',''])
     for row in data:
         text.append(f'- {row["trial"]}: {row["hypothesis"]}'+(f' Failure: {row["error"]}' if row.get('error') else ''))
