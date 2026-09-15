@@ -7291,7 +7291,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "b8b002df8c760eeecdb5193c1c49cd546ec1f984",
+      "publication_commit": "6d462a45521aa7a737994d280bb84ab37baf230f",
       "status": "completed",
       "verified_remote": true
     },
@@ -7395,9 +7395,9 @@
       "sha256": "7fa96961bde39a884067910f42807abcd923b6ae799b7f91ce570ddfcc080074"
     },
     "campaign.log": {
-      "bytes": 65299,
+      "bytes": 66310,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "ab7e16161e3259b1e3c666d94a5a32c280ece43b7a61342c194f5b49c4b83999"
+      "sha256": "e9848db4fe51446d7ec5b6912764d4dbe9d83bb1608585637bc4b6f5bcf70d33"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -7585,9 +7585,9 @@
       "sha256": "51c9b3f79e66825e104d1caa138286208872645f374d0184032203a144d8a72e"
     },
     "interaction-options.json": {
-      "bytes": 2129,
+      "bytes": 1145,
       "local_path": "runs/autoresearch/ncp-20260915/interaction-options.json",
-      "sha256": "2e85b714fd39c6b9e9d13a8f040beb98e39db84d7a48d752a3074e882c7a11d2"
+      "sha256": "071bf08359048f636e8d500b03381513e6263ead969a3473a0a0864078566b65"
     },
     "interaction-preflight.log": {
       "bytes": 408,
@@ -7595,9 +7595,9 @@
       "sha256": "f8ed5dee8c1d77b8e3b1d1b2f7235ad79a79a6c9a91e8ff15008536a87ccf51d"
     },
     "interaction-queue.log": {
-      "bytes": 14139,
+      "bytes": 15150,
       "local_path": "runs/autoresearch/ncp-20260915/interaction-queue.log",
-      "sha256": "91bc17af7d205b41007c1268211014ef30156a243a376ad8bb0adecfe34965df"
+      "sha256": "ac1386ebebc617373e6fc0549e3a096a1711d1ed0ca7723d61842eca51c43415"
     },
     "launch-AUX-s42.log": {
       "bytes": 523,
@@ -7837,7 +7837,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "be4a059318ada1ecf73d83dc596451807bc983e314a866e2e52cca4aff809df6"
+      "sha256": "f30e29152f3e32da4656a326a940e100d2a619ec0303fdd6a5580929a79baeee"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -7860,9 +7860,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 483456,
+      "bytes": 495176,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "f3138cf7ee1495a52550863dc8a71d861d7fc4361378058a7d603a2bccca41ef"
+      "sha256": "5252c1c63e34db97440d05a6c159eec46582359fdc44ea643f0ccfce03555476"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -7885,9 +7885,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 23129,
+      "bytes": 23524,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "1590fc25b9eb699a4c71c4be1527510743a6d3f76f17d1187182b1193d6ec130"
+      "sha256": "05bfb857804817e903b53739692b6abb670065b939e1383982d5796f1b558799"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
