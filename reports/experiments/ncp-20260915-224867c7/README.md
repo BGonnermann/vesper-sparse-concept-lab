@@ -368,7 +368,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-17 completed of 19 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+18 completed of 20 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -400,6 +400,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0017-R-layers1-s42](../ncp-20260915--trial-0017-R-layers1-s42-341c3f13/README.md) | 42 | 0.638393 | 207.8 | 214.1 | 40394 | 28,287,276 / 28,287,276 | 625.4 / 664.0 | False |
 | [trial-0018-R-after_layer1-s42](../ncp-20260915--trial-0018-R-after_layer1-s42-93561fc2/README.md) | 42 | 0.634774 | 221.0 | 226.9 | 38057 | 30,056,748 / 30,056,748 | 657.8 / 690.0 | False |
 | [trial-0019-R-after_layer2-s42](../ncp-20260915--trial-0019-R-after_layer2-s42-bbb25dff/README.md) | 42 | 0.635594 | 217.0 | 223.7 | 38695 | 30,056,748 / 30,056,748 | 655.8 / 688.0 | False |
+| [trial-0020-R-chunk_size2-s42](../ncp-20260915--trial-0020-R-chunk_size2-s42-94b10b74/README.md) | 42 | 0.634780 | 219.5 | 226.8 | 38242 | 30,056,748 / 30,056,748 | 671.9 / 698.0 | False |
 
 ## Depth6 versus depth12, reference LR .04
 
@@ -446,6 +447,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0017-R-layers1-s42: Change only layers to 1 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0018-R-after_layer1-s42: Change only after_layer to 1 on normalized NCP to test quality versus its stable unit-weight control
 - trial-0019-R-after_layer2-s42: Change only after_layer to 2 on normalized NCP to test quality versus its stable unit-weight control
+- trial-0020-R-chunk_size2-s42: Change only chunk_size to 2 on normalized NCP to test quality versus its stable unit-weight control
 
 ## Correctness and diagnosis
 
