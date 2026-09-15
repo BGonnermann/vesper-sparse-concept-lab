@@ -10,7 +10,7 @@ Unknown fields remain null. Do not pool different budgets/schedules. Two seeds a
 ## Diagnostics
 ```text
 campaign.log:
-2026-09-15T14:11:49.187877+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\experiments\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\experiments\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\experiments\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\experiments\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\experiments\\ncp-20260915--t
+2026-09-15T14:14:52.246985+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\experiments\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\experiments\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\experiments\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\experiments\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\experiments\\ncp-20260915--t
 
 controller-red.log:
 Traceback (most recent call last):
@@ -56,7 +56,7 @@ launch-AUX-s42.log:
 2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')
 
 mechanism-queue.log:
-2026-09-15T14:11:49.187877+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\experiments\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\experiments\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\experiments\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\experiments\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\experiments\\ncp-20260915--t
+2026-09-15T14:14:52.246985+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\experiments\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\experiments\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\experiments\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\experiments\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\experiments\\ncp-20260915--t
 
 normalization-green-cpu.log:
 Ran 8 tests in 1.461s
@@ -129,6 +129,16 @@ ok
 Ran 71 tests in 4.117s
 OK
 
+preflight-cpu-1789481853.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 72 tests in 4.348s
+OK
+
 preflight-cuda-1789473254.log:
 ok
 ok
@@ -187,6 +197,16 @@ ok
 ok
 ok
 Ran 71 tests in 6.262s
+OK
+
+preflight-cuda-1789481860.log:
+ok
+ok
+ok
+ok
+ok
+ok
+Ran 72 tests in 6.644s
 OK
 
 report-red.log:
@@ -394,7 +414,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-34 completed of 36 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+35 completed of 37 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 Strongest eligible selection-seed NCP: R-feedback_scale0.1, 0.633732 BPB, delta -0.001116 versus D6. Adds 3,710,976 parameters; measured update-time ratio 1.24. This is a search result; independent confirmation is reported separately.
@@ -445,6 +465,7 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0034-R-gain4-s42](../ncp-20260915--trial-0034-R-gain4-s42-4dc85cf9/README.md) | 42 | 0.637500 | 219.4 | 225.2 | 38248 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0035-R-gain8-s42](../ncp-20260915--trial-0035-R-gain8-s42-694ab183/README.md) | 42 | 0.635120 | 219.6 | 225.4 | 38221 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0036-CAP-L2-K64-s42](../ncp-20260915--trial-0036-CAP-L2-K64-s42-0d439659/README.md) | 42 | 0.635008 | 176.4 | 181.7 | 47592 | 30,056,748 / 30,056,748 | 683.0 / 716.0 | n/a |
+| [trial-0037-I2-169ef2cc79-s42](../ncp-20260915--trial-0037-I2-169ef2cc79-s42-bd04fe9b/README.md) | 42 | 0.636130 | 214.6 | 221.8 | 39202 | 30,001,452 / 30,001,452 | 653.3 / 688.0 | False |
 
 * Early-failure parameter counts were reconstructed exactly on a meta device from captured source and logged model configuration. No missing performance measurement was reconstructed.
 
@@ -512,6 +533,7 @@ Negative delta favors predicted-concept feedback. These selection-seed compariso
 - trial-0034-R-gain4-s42: Test stronger normalized feedback, gain4, because anchor predicted RMS is only6.2% of hidden RMS; stronger feedback remains an unproven hypothesis
 - trial-0035-R-gain8-s42: Test the upper bounded feedback gain8; compare with gain1 anchor and gain4 to assess amplitude sensitivity
 - trial-0036-CAP-L2-K64-s42: Parameter-matched token-level residual MLP adds exactly 3710976 parameters at the same insertion and AdamW LR as N-RMS; test added-capacity effects without concept prediction; compute is not matched
+- trial-0037-I2-169ef2cc79-s42: Test interaction of entries=16 and feedback_scale=0.1; individual BPB 0.633742 and 0.633732 versus normalized anchor 0.635927; compare against stronger individual R-feedback_scale0.1
 
 ## Correctness and diagnosis
 
