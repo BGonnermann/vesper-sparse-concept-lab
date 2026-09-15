@@ -126,11 +126,10 @@ def select(records, choices):
     freeze = HERE / 'confirmation-selection.json'
     if remaining() <= 6300 or freeze.exists():
         if not freeze.exists():
-            frontier = [x for x in ranked if x['on_measured_quality_time_frontier']]
-            winner = min(frontier or ranked, key=lambda x: x['observed_candidate']['bpb'])
+            winner = ranked[0]
             r.write_json(freeze, dict(selected_at=datetime.now(timezone.utc).isoformat(),
                                      winner=winner, evidence=ranked,
-                                     note='Frozen before confirmation seeds: best BPB on measured frontier. Report its extra GPU cost and parameter budget; not a cost-neutral efficiency claim.'))
+                                     note='Frozen before confirmation seeds; if no option qualifies, exploratory replication only'))
         winner = read(freeze)['winner']
         plan = [(winner['control'], 43), (winner['label'], 43), (winner['control'], 44), (winner['label'], 44)]
         confirmations = [x for x in records if x['phase'] == 'confirmation']
@@ -164,8 +163,7 @@ def select(records, choices):
         label = min(pending, key=lambda x: family_order.index(choices[x]['family']))
         return label, 42, 'screen', f'After {last["label"]} BPB {last["metrics"]["val_bpb"]}, prefer {favored}; next available family is {choices[label]["family"]}. Continue improvement or explore a less-tested family; no combined winners', dict(D=d, M=m, DG=dg, ranking=ranked)
     # No count stop: acquire repeatability evidence on the strongest candidates.
-    # Post-screen targets and allocation were recorded before further outcomes.
-    top = read(HERE / 'replication-policy.json')['targets']
+    top = [x for x in ranked if x['qualifies'] and x['on_measured_quality_time_frontier']][:3] or ranked[:1]
     target = min(top, key=lambda x: aggregate(records, x['label'])['repeats'])
     label = target['control'] if aggregate(records, target['control'])['repeats'] < aggregate(records, target['label'])['repeats'] else target['label']
     return label, 42, 'replication', 'Search space screened; adaptive repeat of a promising tradeoff or its control to estimate execution noise', target

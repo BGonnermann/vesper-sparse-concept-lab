@@ -116,6 +116,17 @@ frontier. A large gain against a weak matching control does not outrank an
 alternative that is already both faster and better. Frontier membership is
 provisional and computed from seed-42 means, not from confirmation outcomes.
 
+Prospective amendment after the 29-condition screen, before any seed43/44:
+the initial 10%-extra-time qualifier remains a cheap-alternative label, not a
+veto on confirming a substantial quality improvement. Replicate the lowest-BPB
+frontier point plus up to two qualifying lower-cost alternatives and their
+controls. At the reserved confirmation phase, freeze the lowest seed-42-mean BPB
+frontier candidate against its matching control. Depth8 motivates this amendment:
+its large BPB improvement would otherwise lose priority to tiny cheap effects.
+Additional GPU time and parameters must be reported; this is not evidence of
+equal-time or cost-neutral superiority. The adaptive selection and amendment are
+disclosed, and independent confirmation seeds are not used to select the winner.
+
 These are **equal-token** comparisons with measured time as a second axis. Do
 not divide BPB by seconds, rank different training budgets on one leaderboard,
 or claim an equal-time quality gain. No equal-time runs are planned. Selection

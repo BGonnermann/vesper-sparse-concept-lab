@@ -164,8 +164,10 @@ def select(records, choices):
         label = min(pending, key=lambda x: family_order.index(choices[x]['family']))
         return label, 42, 'screen', f'After {last["label"]} BPB {last["metrics"]["val_bpb"]}, prefer {favored}; next available family is {choices[label]["family"]}. Continue improvement or explore a less-tested family; no combined winners', dict(D=d, M=m, DG=dg, ranking=ranked)
     # No count stop: acquire repeatability evidence on the strongest candidates.
-    # Post-screen targets and allocation were recorded before further outcomes.
-    top = read(HERE / 'replication-policy.json')['targets']
+    frontier = [x for x in ranked if x['on_measured_quality_time_frontier']]
+    quality_best = min(frontier or ranked, key=lambda x: x['observed_candidate']['bpb'])
+    cheap = [x for x in frontier if x['qualifies'] and x['label'] != quality_best['label']][:2]
+    top = [quality_best] + cheap
     target = min(top, key=lambda x: aggregate(records, x['label'])['repeats'])
     label = target['control'] if aggregate(records, target['control'])['repeats'] < aggregate(records, target['label'])['repeats'] else target['label']
     return label, 42, 'replication', 'Search space screened; adaptive repeat of a promising tradeoff or its control to estimate execution noise', target

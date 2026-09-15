@@ -76,6 +76,7 @@ def main(final=False):
             'NCP deferred; no combined architecture candidates executed.'])
     r.write_json(HERE/'result.json',result)
     r.write_json(HERE/'comparison.json',dict(ranking=ranking, frozen_confirmation=freeze,
+        replication_policy=read(HERE/'replication-policy.json') if (HERE/'replication-policy.json').exists() else None,
         paired_differences=paired, failures=failed, in_progress=in_progress, preservation=preservation,
         gpu_seconds=sum(x['all_update_seconds'] for x in rows),
         child_wall_seconds=sum(x['wall_seconds'] for x in rows),
