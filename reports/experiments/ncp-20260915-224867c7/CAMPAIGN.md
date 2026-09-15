@@ -185,6 +185,24 @@ Predeclared depth6/12 by width384/768, seeds43/44, matrixLR .04, fixed tokens; n
 
 Transfer entry status: not_entered. Frozen D6 mechanism did not pass the predeclared primary same-sign rule
 
+## Next-concept prediction baselines
+
+The majority code is fixed from each checkpoint's saved training diagnostic counts; it is never fitted on validation. Persistence predicts the current chunk's quantized code for the next chunk. Future codes are labels only, computed after ordinary causal token prediction. Original token BPB and persistent state reproduce unchanged.
+
+| Seed | Learned accuracy | Persistence accuracy | Training-majority accuracy | Comparisons per segment |
+|---:|---:|---:|---:|---:|
+| 45 | 0.6483 | 0.4594 | 0.3264 | 16,256 |
+| 46 | 0.5636 | 0.2254 | 0.1443 | 16,256 |
+| 43 | 0.5565 | 0.2630 | 0.1674 | 16,256 |
+| 44 | 0.5702 | 0.2848 | 0.1793 | 16,256 |
+
+These are code-label prediction accuracies on the same validation corpus, not semantic-concept evidence or additional independent seeds. Better auxiliary prediction does not establish better token modeling.
+
+## Independent saved-checkpoint evaluation replay
+
+Status: completed; 83/83 checkpoints reproduced. Maximum absolute BPB difference: 4.845415693122135e-07. No training updates.
+Each replay loads its own captured source and saved checkpoint, verifies the original persistent-state hash, and reconstructs evaluation order and byte accounting from the sealed data. Historical evaluation-batch hashes were not recorded; this is independent execution of the same protocol, not independent data or training.
+
 ## Token-only latent feedback: all future losses off
 
 Same two previously observed confirmation seeds; mechanistic diagnostic, not new independent replication or held-out evidence. Future-target branches may execute, but their losses have zero training weight. Token CE can still train the predicted latent path and codebook transforms.
@@ -357,6 +375,23 @@ CPU/CUDA tests cover prefix causality, future-label isolation, VQ/encoder gradie
 Equal-token quality comparisons; measured runtime is a separate cost axis. No equal-time quality claim. The mandatory native-depth comparison also changes width; the separate grid isolates each axis. Timed throughput excludes the first11 updates; all-update time includes them. Trial wall time includes preparation, child execution and verification, excluding reporting/publication. Allocator peaks exclude driver/desktop use. Whole-board sampled VRAM, dictionary bytes, exact configurations, source/data/checkpoint hashes, auxiliary losses and utilization are in the JSON receipts. Active counts describe structural training participation, not amortized per-token compute. NCP runs at chunk rate; the capacity-control MLP runs at token rate, and auxiliary-only concepts do not feed token logits. Diagnostic feedback_rms is the unscaled prediction; injected_feedback_rms applies the configured gain and is zero for auxiliary-only runs. For raw-logit mixing, reported entropy describes softmax classification probabilities, not the signed reconstruction weights. Codebook assignments do not prove semantic concepts. Repeated validation selection is exploratory, not held-out generalization.
 All artifacts are retained locally. No cloud, dependency upgrades, paid services or deletion.
 
+## Sources and precise mechanism scope
+
+[ConceptLM paper v1](https://arxiv.org/html/2602.08984v1) and [official implementation at a0ab281](https://github.com/LUMIA-Group/ConceptLM/tree/a0ab281286f5c0337c35de3181cc992c562eacaa) were inspected before implementation. The later [ArchPreview paper v1](https://arxiv.org/pdf/2609.10715v1), [evaluation repository at e9e4ff4](https://github.com/LUMIA-Group/ncp_olmo_eval/tree/e9e4ff4b443bb3c321030a9a437be216dc7d6722), and [released source at d642693](https://huggingface.co/ArchSpace-Collection/NCP_ArchPreview_dolma3_8.9B_Stage1/tree/d642693c0efaca7329e544076397105238bda3bf) were also checked. Exact revisions and inspected-file SHA256 values are in sources-result.json and archpreview-source-result.json.
+
+| Design element | This prototype |
+|---|---|
+| Multi-token target | Complete nonoverlapping chunks; detached encoder means. Selected chunk length4. |
+| Discrete concepts | Nearest transformed code per segment gives the training label. Selected3 segments,16 entries each. |
+| Predictor | Two causal concept Transformer blocks after dense block0; predicts the next chunk's pooled features and code identity. |
+| Feedback | Softmax-weighted predicted codes, never ground-truth future codes. Raw-logit mixing was a separately reported unsuccessful screen. |
+| Codebook learning | Frozen random basis plus trainable two-layer transforms; VQ fitting and permitted prediction/token gradients update transforms through the optimizer. No forward-time codebook update. |
+| Inference | Only complete known chunks are pooled. Chunkj first affects token logit(j+1)k−1, which predicts the first token of the next chunk. No future inputs or labels are needed. |
+| Reproduction limits | Small dense backbone, native SDPA, distinct initialization/normalization/position features and TinyStories protocol. Large ArchPreview16/8/16 hierarchy and hierarchical residuals are omitted. Official training code was unavailable. |
+
+The paper describes probability-weighted codes, while the inspected released model sources use raw logits. That source discrepancy is preserved explicitly; this campaign tests a simplified inspired mechanism, not a faithful paper reproduction. No official model weights were downloaded. Official NCP model code was inspected rather than copied or imported; the separately pinned autoresearch backbone was reused.
+The original source-review hashes identify inspected Windows checkout bytes. official-source-byte-audit-result.json separately records raw pinned Git-blob hashes: all four reviewed files match exactly after CRLF-to-LF normalization. This newline distinction does not affect the separately captured, byte-verified training-source archives.
+
 ## Frozen codebook and gradient diagnostics
 
 | Seed | Target entries used per segment | Target perplexity | Argmax entries used | Concept accuracy | Injected / hidden RMS | Weighted auxiliary loss |
@@ -385,12 +420,16 @@ Compare dense D6-width768 with D12-width768 over longer fixed-token budgets on n
 
 ## Saved-evidence audit and storage
 
-Audit measured 2026-09-15T15:49:27.058488+00:00: 53 completed trials checked; 3 noncompleted attempts retained. Committed source archives byte-verified: True.
-Campaign logical files: 6.16 GiB; new trial checkpoints: 5.31 GiB; free disk at audit: 231.75 GiB. Initial free disk was237GiB; the initial forecast was15–40GiB of new storage. Existing roughly20GiB of checkpoints remain preserved. No checkpoint copies were made solely for inference probes.
+Audit measured 2026-09-15T18:02:34.710423+00:00: 83 completed trials checked; 2 noncompleted attempts retained. Committed source archives byte-verified: True.
+Campaign logical files: 9.15 GiB; new trial checkpoints: 8.28 GiB; free disk at audit: 228.52 GiB. Initial free disk was237GiB; the initial forecast was15–40GiB of new storage. Existing roughly20GiB of checkpoints remain preserved. No checkpoint copies were made solely for inference probes.
 
-batch-evidence-result.json: completed; 69 checks. CPU recomputation from the actual sealed tape, not GPU training or a new quality measurement
+batch-evidence-result.json: completed; 83 checks. CPU recomputation from the actual sealed tape, not GPU training or a new quality measurement
 
-basis-evidence-result.json: completed; 8 checks. Actual saved frozen basis buffers match initializer-matched NCP anchors; trainable codebook transforms are expected to differ after different training. Complements named-parameter initialization receipts.
+basis-evidence-result.json: completed; 14 checks. Actual saved frozen basis buffers match initializer-matched NCP anchors; trainable codebook transforms are expected to differ after different training. Complements named-parameter initialization receipts.
+
+Train-tape origin: completed; 8,192/8,192 saved microbatches match a fresh execution of the captured train loader, with no duplicate tape saved.
+
+The sealed split audit compares 10,000 validation documents with 2,712,634 training documents. Exact overlap: 0 validation rows; whitespace-normalized overlap: 0. Test rows were excluded. This does not rule out near-duplicates, shared phrases or dataset-generation leakage.
 
 Latest shared gate: completed. CPU/CUDA logs, exact test/source hashes and full-context fit receipts are published in report.json.
 

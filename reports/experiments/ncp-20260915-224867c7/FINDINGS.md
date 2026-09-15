@@ -67,6 +67,10 @@ Removing all future-target objectives, including VQ, changes mean BPB by -0.0001
 
 Every original checkpoint score reproduced within1e-6 BPB. Zeroing feedback worsens BPB by 0.000174 to 0.000440; code-identity rotations have smaller effects. Reliance on feedback does not establish an advantage over a separately trained dense or capacity control.
 
+On the same validation batches, learned next-code accuracy is 55.7%–64.8%, versus 22.5%–45.9% for repeating the current code and 14.4%–32.6% for a training-derived majority code. Learned predictions beat both baselines on every checkpoint. This supports code-label prediction learning, not semantic concepts or a reliable token-quality benefit.
+
+All 83 completed checkpoints independently replayed their original BPB within1e-6 (largest difference 4.85e-07), using captured source and unchanged saved weights. This confirms reproducibility of these scores, not generalization.
+
 ## Next best experiment
 
 Compare dense D6-width768 and D12-width768 at longer fixed-token budgets on new paired seeds, with one final evaluation on an untouched test split. Measure whether the depth gain persists and warrants roughly twice the update time. Keep quality-versus-time analysis separate. Do not combine NCP with other mechanisms on the strength of these mixed results. No next campaign is launched automatically.
