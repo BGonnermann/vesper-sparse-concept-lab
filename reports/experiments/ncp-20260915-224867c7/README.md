@@ -13,7 +13,7 @@ audit-recovered.log:
 SyntaxError: '(' was never closed
 
 campaign.log:
-2026-09-15T16:56:40.286744+00:00 Conditional depth12 transfer not entered: D6 primary replication rule failed
+tered: D6 primary replication rule failed
 2026-09-15T17:07:05.699998+00:00 PREDECLARED conditional module-seed diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.
 
 controller-red.log:
@@ -85,6 +85,10 @@ launch-AUX-s42.log:
 
 mechanism-queue.log:
 2026-09-15T14:14:52.246985+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\experiments\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\experiments\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\experiments\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\experiments\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\experiments\\ncp-20260915--t
+
+module-preview-green.log:
+Ran 4 tests in 0.618s
+OK
 
 normalization-green-cpu.log:
 Ran 8 tests in 1.461s

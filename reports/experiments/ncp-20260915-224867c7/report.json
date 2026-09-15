@@ -1586,6 +1586,38 @@
           "update_time_ratio": 1.93995367593412
         },
         {
+          "axis": "depth_at_width768",
+          "candidate": "D12",
+          "candidate_bpb": 0.594495,
+          "candidate_parameters": 135267480,
+          "candidate_result_sha256": "40515694b02dad2122a67c0148de488c32a12272b3680e56484bcc1c8e32c692",
+          "candidate_trial": "trial-0009-D12-s43",
+          "control": "D6-W768",
+          "control_bpb": 0.607993,
+          "control_parameters": 73925196,
+          "control_result_sha256": "b955a741c1855185617e6272aea94bb7b025aa6718d71b217f22e2dd093804ba",
+          "control_trial": "trial-0079-D6-W768-s43",
+          "delta_bpb": -0.01349800000000001,
+          "seed": 43,
+          "update_time_ratio": 1.8783469881405
+        },
+        {
+          "axis": "width_at_depth6",
+          "candidate": "D6-W768",
+          "candidate_bpb": 0.607993,
+          "candidate_parameters": 73925196,
+          "candidate_result_sha256": "b955a741c1855185617e6272aea94bb7b025aa6718d71b217f22e2dd093804ba",
+          "candidate_trial": "trial-0079-D6-W768-s43",
+          "control": "D6",
+          "control_bpb": 0.637774,
+          "control_parameters": 26345772,
+          "control_result_sha256": "d13e8c8b00606ec8dbf62e65f72f4a8c47e3bdcbbcaa3644aef2f09e4c0d1603",
+          "control_trial": "trial-0008-D6-s43",
+          "delta_bpb": -0.029780999999999946,
+          "seed": 43,
+          "update_time_ratio": 1.0034506449048788
+        },
+        {
           "axis": "width_at_depth12",
           "candidate": "D12",
           "candidate_bpb": 0.594495,
@@ -1602,12 +1634,14 @@
           "update_time_ratio": 0.9715842805870841
         }
       ],
-      "complete_conditions": 5,
+      "complete_conditions": 6,
       "expected_conditions": 8,
       "kind": "dense_depth_width_grid",
       "mean_deltas": {
         "depth_at_width384": -0.015437999999999952,
-        "width_at_depth12": -0.027841000000000005
+        "depth_at_width768": -0.01349800000000001,
+        "width_at_depth12": -0.027841000000000005,
+        "width_at_depth6": -0.029780999999999946
       },
       "scope": "Predeclared depth6/12 by width384/768, seeds43/44, matrixLR .04, fixed tokens; no configuration selection",
       "status": "running"
@@ -12361,6 +12395,74 @@
       "rule": "Init45 less favorable under both orders and mean initializer contrast>0.002; predeclared commit13d0225",
       "status": "qualified"
     },
+    "module-preview-result.json": {
+      "archived_files": {
+        "module-preview-autoresearch.py": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b",
+        "module-preview-autoresearch_train.py": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf",
+        "module-preview-checks.py": "5b01891bc5bd21682cd5460112e9b26bd01bdb0bace1ea2c7ec3a63df1d576b1",
+        "module-preview-green.log": "f4a628109febf61ce3e9b5bc0a02d844aca789b9665c2bdb9530508de503ac87",
+        "module-preview-ncp_audit.py": "0c01a92fd476be75c81ce5cf366ee13cd7b8e0b3aff7e969b4bf61fd8d96c9cc",
+        "module-preview-ncp_campaign.py": "71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7"
+      },
+      "kind": "isolated_module_preview",
+      "receipt": {
+        "files": {
+          "autoresearch.py": {
+            "diff_file": "autoresearch.py.aligned.diff",
+            "diff_sha256": "ca0f1dad0460b95b259256e64353c68b45174b54f613c35767b2994a4067e863",
+            "modified_sha256": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b",
+            "original_sha256": "b97fda3e32a53909f7b730382e7f7ad02c8579e0b705b32eee6fdd3ef408d3ce"
+          },
+          "autoresearch_train.py": {
+            "diff_file": "autoresearch_train.py.aligned.diff",
+            "diff_sha256": "03dff5c956bbe1aca0505d4df92752817e462f6ae82ef2e154f8d33b472241c3",
+            "modified_sha256": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf",
+            "original_sha256": "28df670cb518c0ecdb88c70cf1d054149e8c4b09490b478044ad471807dcacab"
+          },
+          "ncp_audit.py": {
+            "diff_file": "ncp_audit.py.aligned.diff",
+            "diff_sha256": "c4ed76a05270b4e6373c39b5eced30c65979608d44f50a76796cba98913ce0d7",
+            "modified_sha256": "0c01a92fd476be75c81ce5cf366ee13cd7b8e0b3aff7e969b4bf61fd8d96c9cc",
+            "original_sha256": "88db3553b9f0be523f824f4f4a350d6d39a15be4714882dad0153d632823754f"
+          },
+          "ncp_campaign.py": {
+            "diff_file": "ncp_campaign.py.aligned.diff",
+            "diff_sha256": "b17a8a11283653641057e2eae8afa9dc02f622cc789adf28017eea3b0d19b0cc",
+            "modified_sha256": "71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7",
+            "original_sha256": "d63af2d375fca486d1ab7791c1da52f60fe0deb6c091320a1a160d631e0b05e4"
+          }
+        },
+        "pending": "Primary integration after active driver exits, complete CPU/CUDA gates, captured-source/driver/audit/report integration",
+        "prior_evidence": "before-driver-key-alignment/",
+        "scope": "Isolated module-seed preview only; no live edits, no GPU jobs, no Git",
+        "sidecar_keys": [
+          "ncp_initialization_seed",
+          "effective_seed",
+          "backbone_initialization_seed",
+          "basis_sha256"
+        ],
+        "status": "completed",
+        "tests": {
+          "green": "4/4passed; real NextConcept initialization through actual adapter before optimizer, stopping at first forward without optimizer steps",
+          "green_log": "green-aligned.log",
+          "green_sha256": "f4a628109febf61ce3e9b5bc0a02d844aca789b9665c2bdb9530508de503ac87",
+          "python": "<repo>\\.autoresearch\\upstream\\.venv\\Scripts\\python.exe",
+          "red": "4tests:1failure,2errors before implementation",
+          "red_sha256": "aae6b1bc7653ddbbf44d21c8c20645a714364d461f723c5dac2ad3fbdd4a1e3e",
+          "test_sha256": "5b01891bc5bd21682cd5460112e9b26bd01bdb0bace1ea2c7ec3a63df1d576b1"
+        },
+        "verified": [
+          "Default initial parameter receipts/state/RNG unchanged",
+          "Backbone weights/RNG unchanged when only module seed changes",
+          "Every NCP state tensor including frozen basis matches module-seed anchor",
+          "Actual order function remains512microbatches/order42 and first optimizer-input batch unchanged",
+          "Dense override rejected before optimizer",
+          "Bounded protocol validation",
+          "Four modified sources syntax compiled; model/NCP/memory/bootstrap unchanged"
+        ]
+      },
+      "status": "completed"
+    },
     "next-selection.json": {},
     "normalized-search-space.json": {},
     "orchestrator-source-correction-result.json": {
@@ -12837,7 +12939,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "8e7649453f0a48b61b2f64294a94c52948a63cc9",
+      "publication_commit": "93dd92b962234ed0e0aad009f8b9fae05db34d08",
       "status": "completed",
       "verified_remote": true
     },
@@ -13172,7 +13274,7 @@
   },
   "diagnostics": [
     "audit-recovered.log:\nSyntaxError: '(' was never closed",
-    "campaign.log:\n2026-09-15T16:56:40.286744+00:00 Conditional depth12 transfer not entered: D6 primary replication rule failed\n2026-09-15T17:07:05.699998+00:00 PREDECLARED conditional module-seed diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.",
+    "campaign.log:\ntered: D6 primary replication rule failed\n2026-09-15T17:07:05.699998+00:00 PREDECLARED conditional module-seed diagnosis in docs/ncp-campaign.md commit13d0225 before final crossed NCP outcome: require init45 less favorable than42 in both order columns and mean initializer contrast>0.002; then two module/backbone seed swaps at fixedorder42 only if full timeout forecast fits before90-minute reserve. No candidate reselection.",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -13184,6 +13286,7 @@
     "initial-queue.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\nTraceback (most recent call last):\n    if result.returncode: raise RuntimeError('Preserved failed '+label+' trial; diagnose before more trials')\nRuntimeError: Preserved failed NCP trial; diagnose before more trials",
     "launch-AUX-s42.log:\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')",
     "mechanism-queue.log:\n2026-09-15T14:14:52.246985+00:00 Publication deferred; local mechanism result retained: CalledProcessError(128, ['git', 'add', '--', 'reports/README.md', 'reports/index.json', 'reports\\\\experiments\\\\ncp-20260915--trial-0001-D6-s42-b009c334', 'reports\\\\experiments\\\\ncp-20260915--trial-0002-NCP-s42-22537f23', 'reports\\\\experiments\\\\ncp-20260915--trial-0003-AUX-s42-6ac0782c', 'reports\\\\experiments\\\\ncp-20260915--trial-0004-N-prediction_weight0.1-s42-d0ad5ff9', 'reports\\\\experiments\\\\ncp-20260915--t",
+    "module-preview-green.log:\nRan 4 tests in 0.618s\nOK",
     "normalization-green-cpu.log:\nRan 8 tests in 1.461s\nOK",
     "normalization-red.log:\nTraceback (most recent call last):\n    raise error_metas[0].to_error(msg)\nAssertionError: Tensor-likes are not close!\nRan 8 tests in 1.503s\nFAILED (failures=1)",
     "order-identity-red.log:\n    raise ValueError(\"Protocol fields are missing or unknown.\")\nValueError: Protocol fields are missing or unknown.\nTraceback (most recent call last):\nAssertionError: [102, 486, 438, 2, 458, 172, 372, 221, 246, 123, 100, 462, 222, 290, 299, 101, 51, 6, 111, 57, 321, 474, 505, 397, 467, 346, 361, 236, 251, 1, 190, 147, 267, 367, 181, 21, 243, 188, 504, 114, 378, 461, 399, 412, 227, 247, 279, 456, 509, 226, 338, 446, 162, 395, 328, 408, 159, 76, 454, 59, 174, 481, 352, 331, 230, 241, 349, 362, 255, 41, 14, 89, 136, 192, 180, 443, 403, 39, 434, 288, 374, 382, 54, 302, 430, 234, 357, 265, 91, 495, 7, 115, 317, 30, 275, 496, 425, 371, 427, 343, 286\nRan 2 tests in 1.818s\nFAILED (failures=1, errors=1)",
@@ -13280,9 +13383,9 @@
       "sha256": "a6f4b04ca3f797141280fbefdac84855134983170907ac286b80798eefe5219d"
     },
     "campaign.log": {
-      "bytes": 96166,
+      "bytes": 96948,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "a9782a42f524c247f10671381ed5a47fe9c243dbabf99faa4c48854c72ee4312"
+      "sha256": "53a15c374d64f2b5efa39c2b8ad8358805e1796d53a2fe2512e6577cdc03033c"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -13385,14 +13488,14 @@
       "sha256": "3dc49a54cf9e97305fbfd3bce71709898246b0f9f806694bbf8f605710179f9a"
     },
     "depth-grid-queue.log": {
-      "bytes": 1120,
+      "bytes": 1902,
       "local_path": "runs/autoresearch/ncp-20260915/depth-grid-queue.log",
-      "sha256": "f16b69b9cab9e3a5340c8c9219f5d28d145f916c44d7f49cde5dc6c659790606"
+      "sha256": "5b75dc5279cc90db5902d3061e01169cfb614030572060a37ad92366282473e8"
     },
     "depth-grid-result.json": {
-      "bytes": 1716,
+      "bytes": 3128,
       "local_path": "runs/autoresearch/ncp-20260915/depth-grid-result.json",
-      "sha256": "29376f52ee81d669b312ad6ff64f5226cfe9967446798c8af942192e49056f44"
+      "sha256": "21db4925ace1e9040313f4fdcc246ff7f31d52fc3a8746300e4c787f6b76d38f"
     },
     "depth-queue.log": {
       "bytes": 3809,
@@ -13689,6 +13792,41 @@
       "local_path": "runs/autoresearch/ncp-20260915/module-initialization-entry-result.json",
       "sha256": "5cba8c3e6ce9ce91d478f34ab34c0469e0bf0a612fba22faca8d90d41b50b22c"
     },
+    "module-preview-autoresearch.py": {
+      "bytes": 29361,
+      "local_path": "runs/autoresearch/ncp-20260915/module-preview-autoresearch.py",
+      "sha256": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b"
+    },
+    "module-preview-autoresearch_train.py": {
+      "bytes": 17850,
+      "local_path": "runs/autoresearch/ncp-20260915/module-preview-autoresearch_train.py",
+      "sha256": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf"
+    },
+    "module-preview-checks.py": {
+      "bytes": 5906,
+      "local_path": "runs/autoresearch/ncp-20260915/module-preview-checks.py",
+      "sha256": "5b01891bc5bd21682cd5460112e9b26bd01bdb0bace1ea2c7ec3a63df1d576b1"
+    },
+    "module-preview-green.log": {
+      "bytes": 573,
+      "local_path": "runs/autoresearch/ncp-20260915/module-preview-green.log",
+      "sha256": "f4a628109febf61ce3e9b5bc0a02d844aca789b9665c2bdb9530508de503ac87"
+    },
+    "module-preview-ncp_audit.py": {
+      "bytes": 8025,
+      "local_path": "runs/autoresearch/ncp-20260915/module-preview-ncp_audit.py",
+      "sha256": "0c01a92fd476be75c81ce5cf366ee13cd7b8e0b3aff7e969b4bf61fd8d96c9cc"
+    },
+    "module-preview-ncp_campaign.py": {
+      "bytes": 14270,
+      "local_path": "runs/autoresearch/ncp-20260915/module-preview-ncp_campaign.py",
+      "sha256": "71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7"
+    },
+    "module-preview-result.json": {
+      "bytes": 3941,
+      "local_path": "runs/autoresearch/ncp-20260915/module-preview-result.json",
+      "sha256": "9c9d39c14fcebd44bbab5187fc6f9ab85f5f35898b434dea888af44329b9b783"
+    },
     "next-selection.json": {
       "bytes": 10418,
       "local_path": "runs/autoresearch/ncp-20260915/next-selection.json",
@@ -13982,7 +14120,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "2695b433ad01514762e3c32d3f202a31aa8fe4db0b3d3db2207749488a4fd4b8"
+      "sha256": "48258e1be73636b8166a6fc5012e89cffbdcdeb9ace805cd80b1d9db4fabfbbd"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -14005,9 +14143,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 685366,
+      "bytes": 688868,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "0f769a7a5b16011a2b2eb3394af0b353f5068f4d655fb4cd36724c6a7241bfc9"
+      "sha256": "1a903e7d0c04f70c5680bf29fcfe9d9a66a1abfe344d9c63277f46fbd5572b8c"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -14030,9 +14168,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 39404,
+      "bytes": 39888,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "fcefa75436dad01f60e6cdd74de60d64cfe25d86c2ee56af0e437a05cff7e1a5"
+      "sha256": "d2d08287d75749fc8c73cdae281e3c974f3e3a5ddc09ddc0b380238dd4766d20"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -14154,6 +14292,26 @@
       "lock-tested-controller-8632.py": {
         "published_path": "reports/source-snapshots/8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14.py",
         "sha256": "8632cb32913b6ae382a30e9c332c4211bd1eec9695d82de56f2e12843f50fc14"
+      },
+      "module-preview-autoresearch.py": {
+        "published_path": "reports/source-snapshots/bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b.py",
+        "sha256": "bb692ef069511e33ddfb8d8c5aa0518ae1982931d6c9c4b981de9527ae0a5b8b"
+      },
+      "module-preview-autoresearch_train.py": {
+        "published_path": "reports/source-snapshots/30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf.py",
+        "sha256": "30f9f09d65a053a453882c2d7f2532efb7b411454524df012ad8b6deb10bd4bf"
+      },
+      "module-preview-checks.py": {
+        "published_path": "reports/source-snapshots/5b01891bc5bd21682cd5460112e9b26bd01bdb0bace1ea2c7ec3a63df1d576b1.py",
+        "sha256": "5b01891bc5bd21682cd5460112e9b26bd01bdb0bace1ea2c7ec3a63df1d576b1"
+      },
+      "module-preview-ncp_audit.py": {
+        "published_path": "reports/source-snapshots/0c01a92fd476be75c81ce5cf366ee13cd7b8e0b3aff7e969b4bf61fd8d96c9cc.py",
+        "sha256": "0c01a92fd476be75c81ce5cf366ee13cd7b8e0b3aff7e969b4bf61fd8d96c9cc"
+      },
+      "module-preview-ncp_campaign.py": {
+        "published_path": "reports/source-snapshots/71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7.py",
+        "sha256": "71315ecefce0159a053bdaf2398223d09dc3b9bf5f3afc97016c09eb433debe7"
       },
       "normalized-queue.py": {
         "published_path": "reports/source-snapshots/3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002.py",
