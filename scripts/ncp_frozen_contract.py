@@ -18,6 +18,7 @@ def validate(directory,frozen,label,seed):
     assert record['candidate']==expected,('Frozen configuration mismatch',directory)
     assert record['protocol']==protocol(frozen,seed),('Frozen protocol mismatch',directory)
     assert record['data_seal']==frozen['confirmation_data_seal'],('Frozen data identity mismatch',directory)
+    assert record['upstream']==frozen['confirmation_upstream'],('Frozen upstream identity mismatch',directory)
     reused=frozen['reused_controls'].get(str(seed)) if label=='D6' else None
     if reused:
         assert directory.name==reused['trial'] and r.digest(directory/'result.json')==reused['result_sha256']

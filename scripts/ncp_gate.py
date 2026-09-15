@@ -11,7 +11,7 @@ import torch
 from torch.nn import functional as F
 
 import autoresearch as r
-from autoresearch_model import model_class
+from autoresearch_model import model_class, with_model_width
 
 HERE = r.ROOT / 'runs/autoresearch/ncp-20260915'
 from ncp_campaign import candidate as make_candidate
@@ -37,7 +37,7 @@ def main():
         depth=candidate['depth']
         gc.collect(); torch.cuda.empty_cache(); torch.cuda.reset_peak_memory_stats()
         torch.manual_seed(42); torch.cuda.manual_seed_all(42)
-        config = train.build_model_config(depth, 8192, runtime, False)
+        config = with_model_width(train.build_model_config(depth, 8192, runtime, False),candidate)
         with torch.device('meta'):
             model = model_class(train, candidate)(config)
         model.to_empty(device=runtime.device); model.init_weights(embed_dtype=runtime.amp_dtype)

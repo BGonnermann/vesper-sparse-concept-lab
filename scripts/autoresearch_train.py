@@ -226,7 +226,11 @@ def main():
     prepare.TIME_BUDGET = protocol["training_seconds"]
     import train
     from autoresearch import validate_candidate, validate_protocol, write_json
-    from autoresearch_model import model_class
+    from autoresearch_model import model_class, with_model_width
+    original_build_config=train.build_model_config
+    def build_config(*args,**kwargs):
+        return with_model_width(original_build_config(*args,**kwargs),candidate)
+    train.build_model_config=build_config
     validate_candidate(candidate)
     validate_protocol(protocol)
     train.GPT = model_class(train, candidate)

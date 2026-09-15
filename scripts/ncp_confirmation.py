@@ -33,7 +33,10 @@ def freeze():
         receipt=c.read(destination)
         assert (c.HERE/'confirmation-driver.py').read_bytes()==DRIVER_SOURCE
         assert r.digest(c.HERE/'confirmation-driver.py')==receipt['driver_sha256']
+        assert r.digest(c.HERE/receipt['selection_trial']/'result.json')==receipt['selection_result_sha256']
         return receipt
+    protocol_template=c.read(r.ROOT/'runs/autoresearch/equal-token-20260915/protocol-42.json')
+    for seed in SEEDS: r.validate_protocol(dict(protocol_template,seed=seed))
     history=search.records()
     assert not any(x['phase']=='ncp_confirmation' for x in history)
     baseline=next(x for x in history if x['label']=='D6' and x['seed']==42 and x['status']=='completed')
@@ -46,6 +49,9 @@ def freeze():
     matches=[p for p in c.HERE.glob('trial-*/result.json') if c.read(p)==selected]
     assert len(matches)==1
     trial=matches[0].parent; model=c.read(trial/'model.json')
+    r.validate_execution(trial,selected['snapshot_files'])
+    r.validate_run_artifacts(trial,selected)
+    assert r.digest(trial/'checkpoint_pre_eval.pt')==selected['checkpoint_sha256']
     variants=conditions(selected,model)
     variant_hashes={}
     for label,candidate in variants.items():
@@ -74,7 +80,8 @@ def freeze():
         expected_parameters=model['total_parameters'],expected_added_parameters=model['ncp_parameters'],
         driver_sha256=r.digest(driver),
         confirmation_source_hashes=c.sources(),confirmation_data_seal=c.read(r.ROOT/'.autoresearch/data-seal.json'),
-        confirmation_protocol=c.read(r.ROOT/'runs/autoresearch/equal-token-20260915/protocol-42.json'),
+        confirmation_upstream=r.verify_runtime(),
+        confirmation_protocol=protocol_template,
         reused_controls=reused,dense_parameters=c.read(c.HERE/'trial-0001-D6-s42/model.json')['total_parameters'],
         frozen_at=c.datetime.now(c.timezone.utc).isoformat(),
         success_rule='Valid noncollapsed NCP beats D6 on both primary seeds45/46; report all four seeds and all mixed signs; no reselection')
@@ -96,7 +103,10 @@ def run(publish=False):
                 contract.validate(peers[0],chosen,label,seed)
                 continue
             assert c.sources()==chosen['confirmation_source_hashes'],'Confirmation source contract changed'
-            contract.protocol(chosen,seed)
+            live_protocol=c.read(r.ROOT/'runs/autoresearch/equal-token-20260915/protocol-42.json');live_protocol['seed']=seed
+            assert live_protocol==contract.protocol(chosen,seed),'Live protocol differs from frozen confirmation contract'
+            assert c.read(r.ROOT/'.autoresearch/data-seal.json')==chosen['confirmation_data_seal']
+            assert r.verify_runtime()==chosen['confirmation_upstream']
             hypothesis=(f'Frozen four-seed confirmation: {label}, seed{seed}; selection {chosen["selection_trial"]}; '
                 'compare token BPB with dense, mode-only AUX, exact parameter-matched MLP and prediction-objective-off; no reselection')
             result=c.trial(label,seed,hypothesis,'ncp_confirmation','D6')

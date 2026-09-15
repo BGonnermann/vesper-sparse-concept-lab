@@ -15,6 +15,7 @@ def main():
     frozen=dict(label=record['label'],variants=f.conditions(record,c.read(directory/'model.json')),
         seeds=[42],primary_seeds=[42],variant_file_hashes={record['label']:r.digest(directory/'candidate.json')},
         confirmation_protocol=record['protocol'],confirmation_data_seal=record['data_seal'],
+        confirmation_upstream=record['upstream'],
         confirmation_source_hashes=source(record),expected_parameters=c.read(directory/'model.json')['total_parameters'],
         dense_parameters=c.read(dense/'model.json')['total_parameters'],
         reused_controls={'42':dict(trial=dense.name,result_sha256=r.digest(dense/'result.json'),source_hashes=source(control))})
@@ -25,6 +26,7 @@ def main():
     bad=copy.deepcopy(frozen);bad['confirmation_protocol']['eval_tokens']*=2;cases.append(bad)
     bad=copy.deepcopy(frozen);bad['confirmation_source_hashes']['autoresearch_ncp.py']='0'*64;cases.append(bad)
     bad=copy.deepcopy(frozen);bad['expected_parameters']+=1;cases.append(bad)
+    bad=copy.deepcopy(frozen);bad['confirmation_upstream']['unexpected_revision']='invalid';cases.append(bad)
     for bad in cases:
         rejected=False
         try: p.collect(bad)
@@ -33,7 +35,7 @@ def main():
     assert frozen['variants']['FROZEN-CAP']['capacity']['hidden']==4832
     assert frozen['variants']['FROZEN-AUX']['ncp']['mode']=='auxiliary'
     assert frozen['variants']['FROZEN-NOPRED']['ncp']['prediction_weight']==0
-    print('PASS: saved pair; exact configuration, protocol, data, execution, counts, schedule, optimizer and initialization; four altered contracts rejected')
+    print('PASS: saved pair; exact configuration, protocol, data, upstream, execution, counts, schedule, optimizer and initialization; five altered contracts rejected')
 
 
 if __name__=='__main__': main()

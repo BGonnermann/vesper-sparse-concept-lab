@@ -1,5 +1,6 @@
 """Local dense/MoE extension of the sealed upstream GPT; no data or runtime edits."""
 import math
+from dataclasses import replace
 
 import torch
 from torch import nn
@@ -8,6 +9,15 @@ from torch.utils.checkpoint import checkpoint
 
 from autoresearch_memory import CausalNgramMemory
 from autoresearch_ncp import NextConcept
+
+
+def with_model_width(config,candidate):
+    """Preserve the pinned builder's defaults; explicitly vary dense width only."""
+    if 'model_width' not in candidate: return config
+    head_dimension=config.n_embd//config.n_head
+    width=candidate['model_width']
+    assert config.n_head==config.n_kv_head and width%head_dimension==0
+    return replace(config,n_embd=width,n_head=width//head_dimension,n_kv_head=width//head_dimension)
 
 
 class ResidualCapacity(nn.Module):

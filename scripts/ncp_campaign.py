@@ -208,6 +208,7 @@ def trial(label, seed, hypothesis, phase='screen', control='D6'):
             assert batches==read(p.parent/'batches.json'),'Paired data order mismatch'
             assert protocol==peer['protocol'],'Paired protocol mismatch'
             if peer['label']==control and peer['candidate']['depth']==config['depth']:
+                if read(p.parent/'model.json')['width']!=read(out/'model.json')['width']: continue
                 old=read(p.parent/'initialization.json')['parameters']; new=read(out/'initialization.json')['parameters']
                 common={n:h for n,h in old.items() if n in new and not n.startswith('ncp.')}
                 assert common and all(new[n]==h for n,h in common.items()),'Shared initialization mismatch'

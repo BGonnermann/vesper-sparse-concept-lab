@@ -47,6 +47,12 @@ def verify_seal(directory, expected):
 
 def validate_candidate(value):
     fields = {"depth", "matrix_lr", "feedforward"}
+    if 'model_width' in value:
+        fields.add('model_width')
+        if (type(value['model_width']) is not int or value['model_width'] not in (384,768)
+                or type(value.get('depth')) is not int or value['depth'] not in (6,12)
+                or value.get('feedforward')!='dense' or any(k in value for k in ('ncp','capacity','memory'))):
+            raise ValueError('Explicit width permits only plain dense depth6/12 and width384/768')
     if 'capacity' in value:
         fields.add('capacity')
         capacity=value['capacity']
@@ -186,6 +192,8 @@ def validate_run_artifacts(directory, record):
             raise ValueError("Invalid exact parameter count.")
     if model["active_parameters"] > model["total_parameters"] or model["depth"] != candidate["depth"]:
         raise ValueError("Invalid model dimensions/counts.")
+    if 'model_width' in candidate and model['width']!=candidate['model_width']:
+        raise ValueError('Executed width differs from captured candidate')
     if not optimizer["verified"] or optimizer["missing"] or optimizer["duplicate_count"] or optimizer["unexpected_count"]:
         raise ValueError("Optimizer coverage is incomplete.")
     expected_tokens = int(record["metrics"]["num_steps"]) * protocol["tokens_per_update"]
@@ -238,8 +246,8 @@ def validate_protocol(value):
     if fixed:
         if type(value["optimizer_updates"]) is not int or value["optimizer_updates"] != 512:
             raise ValueError("Fixed comparison requires exactly 512 updates.")
-        if type(value["seed"]) is not int or value["seed"] not in (42, 43, 44):
-            raise ValueError("Fixed comparison requires seed 42, 43 or 44.")
+        if type(value["seed"]) is not int or value["seed"] not in (42, 43, 44, 45, 46):
+            raise ValueError("Fixed comparison requires a declared seed from42 through46.")
         if value["schedule"] != {"clock": "optimizer_step", "progress": "zero_based_step / 512", "lr_warmup_updates": 0, "decay_start_step": 256, "final_lr_fraction": 0.0, "measurement_warmup_updates": 11, "muon_momentum_warmup_updates": 300}:
             raise ValueError("Unexpected fixed-step schedule.")
         if value["activation_checkpointing"] or value["tokens_per_update"] != 16384:

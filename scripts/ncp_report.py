@@ -73,6 +73,7 @@ def pairs(data,a,b,seeds):
         left=[x for x in data if x['label']==a and x['seed']==seed and x['status']=='completed']
         right=[x for x in data if x['label']==b and x['seed']==seed and x['status']=='completed']
         if not left or not right: continue
+        assert len(left)==len(right)==1,('Ambiguous repeated comparison',a,b,seed)
         # Independent unit is seed; repetitions never count as additional seeds.
         result.append(dict(seed=seed,candidate=a,control=b,candidate_bpb=statistics.mean(x['bpb'] for x in left),
             control_bpb=statistics.mean(x['bpb'] for x in right),
@@ -111,7 +112,9 @@ def write(final=False):
     if freeze.exists():
         chosen=read(freeze)
         result['frozen_selection']=chosen
-        result['ncp_confirmation']=pairs(data,chosen['label'],'D6',chosen['seeds'])
+        from ncp_frozen_pairs import collect
+        result['frozen_comparisons']=collect(chosen)
+        result['ncp_confirmation']=[x for x in result['frozen_comparisons']['pairs'] if x['control']=='D6']
     r.write_json(HERE/'result.json',result)
     text=['# NCP campaign '+('final report' if final else 'progress'),'',
         f'{len(complete)} completed of {len(data)} attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.',
@@ -165,6 +168,21 @@ def write(final=False):
         '|---|---|---:|---:|---:|---:|'])
     for x in result['ncp_ablations']:
         text.append(f'| {x["candidate"]} | {x["control"]} | {x["seed"]} | {x["candidate_bpb"]:.6f} | {x["control_bpb"]:.6f} | {x["delta_bpb"]:+.6f} |')
+    if 'frozen_comparisons' in result:
+        text.extend(['','## Frozen mechanism ablations','',
+            'Seeds45/46 are the predeclared primary pairs;43/44 are sensitivity pairs. Each row binds exact trial IDs, '
+            'configurations, executed sources, protocol, batch order, schedule, optimizer settings and shared initialization. '
+            'AUX changes only mode; NOPRED removes both prediction objectives; CAP matches the selected added parameter count. '
+            'Negative delta favors frozen NCP. No confirmation outcome selects a replacement.','',
+            '| Seed | Role | Control | NCP BPB | Control BPB | Delta |','|---:|---|---|---:|---:|---:|'])
+        for x in result['frozen_comparisons']['pairs']:
+            if x['control']=='D6': continue
+            text.append(f'| {x["seed"]} | {x["role"]} | {x["control"]} | {x["candidate_bpb"]:.6f} | {x["control_bpb"]:.6f} | {x["delta_bpb"]:+.6f} |')
+        for control,summary in result['frozen_comparisons']['summaries'].items():
+            if summary['mean_delta_bpb'] is not None:
+                text.append(f'\n{control}: {summary["completed_pairs"]}/{summary["expected_pairs"]} pairs; '
+                    f'mean delta {summary["mean_delta_bpb"]:+.6f}; {summary["negative_signs"]} negative signs. '
+                    f'Primary same-sign improvement: {summary["primary_same_sign_improvement"]}.')
     text.extend(['','## Attempts, decisions and failures',''])
     for row in data:
         text.append(f'- {row["trial"]}: {row["hypothesis"]}'+(f' Failure: {row["error"]}' if row.get('error') else ''))
@@ -173,6 +191,9 @@ def write(final=False):
         'found dense hidden RMS12.54 too, so those stops do not establish NCP-specific divergence. The corrected guard checks '
         'token CE separately and still rejects nonfinite total loss. Initial failed attempts remain preserved, and their '
         'historical hypotheses using the word divergence are superseded by this diagnosis. Completed BPB runs never hit that gate.',
+        'Trials1-3 initially retained controller hashes without controller files. The exact bytes were later recovered from '
+        'Git revision26d471ba734dcce5aebd843aacb7b95f73170a61 and match every original recorded SHA256. '
+        'The recovery receipt distinguishes these recovered files from trial-time archives; training-child sources were originally captured.',
         'Trial25 copied a newer controller file while its long-running parent retained an earlier imported controller. '
         'Both versions and a correction receipt are retained. Their trial, preflight, candidate and health function bodies '
         'are identical; the difference is a GPU lock wrapper. The loaded-controller reference is reconstructed from the '

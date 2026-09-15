@@ -52,7 +52,7 @@ def audit():
         else: by_seed[seed]=batches
         parameters=read(directory/'initialization.json')['parameters']
         backbone={name:value for name,value in parameters.items() if not name.startswith(('ncp.','capacity.'))}
-        backbone_key=(seed,record['candidate']['depth'])
+        backbone_key=(seed,record['candidate']['depth'],read(directory/'model.json')['width'])
         if backbone_key in initializations:
             assert backbone==initializations[backbone_key],(directory,'backbone initialization differs')
         else: initializations[backbone_key]=backbone
