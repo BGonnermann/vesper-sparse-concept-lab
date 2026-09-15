@@ -44,6 +44,17 @@ def append(text,result):
         'official-source-byte-audit-result.json separately records raw pinned Git-blob hashes: all four reviewed files '
         'match exactly after CRLF-to-LF normalization. This newline distinction does not affect the separately captured, '
         'byte-verified training-source archives.'])
+    timing=c.HERE/'plan-publication-audit-result.json'
+    if timing.exists():
+        receipt=c.read(timing)
+        text.extend(['', '### Plan freezing and publication timing', '',
+            'The primary frozen selection hash was published before confirmation outcomes. Some later diagnostic '
+            'plans were frozen locally before execution, but their exact hashes first appeared in Git reports after results. '
+            'Earlier progress messages describing every freeze-only/publish-only call as publication of the new plan were too strong. '
+            'The publisher now refreshes campaign evidence before staging. No result or local frozen plan was changed.', '',
+            '| Plan | First matching report commit | Commit time with offset |', '|---|---|---|'])
+        for name,item in receipt['plans'].items():
+            text.append(f'| {name} | {item["first_matching_publication_commit"]} | {item["commit_time"]} |')
     frozen=result.get('frozen_selection')
     if frozen:
         rows=[x for x in result['rows'] if x['status']=='completed' and x['label']==frozen['label'] and x['seed'] in frozen['seeds']]

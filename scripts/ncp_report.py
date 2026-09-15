@@ -148,7 +148,7 @@ def write(final=False):
         '## Implementation','',
         'Dense encoder pools complete multi-token chunks; causal chunk Transformers predict segmented discrete-codebook weights. '
         'Only predicted concepts feed the token decoder, delayed by k-1 positions. Detached future chunks supervise NCP MSE; '
-        'VQ MSE fits a transformed frozen random codebook basis. Token BPB excludes both auxiliary losses.',
+        'VQ MSE fits a transformed frozen random codebook basis. Token BPB excludes all auxiliary losses.',
         'This is a simplified ConceptLM-inspired prototype, not a paper reproduction. Initial softmax feedback differs from the '
         'official GPT2/Pythia raw-logit multiplication; raw-logit variants are separately labeled. Native SDPA, initialization, positional features, codebook transforms '
         'and the small TinyStories fixed-token experiment also differ. Official revision: a0ab281286f5c0337c35de3181cc992c562eacaa.',
