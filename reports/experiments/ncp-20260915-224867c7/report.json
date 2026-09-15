@@ -1,0 +1,1100 @@
+{
+  "artifact_directory": "runs/autoresearch/ncp-20260915",
+  "budget_family": "stage_or_unknown",
+  "compatibility_fingerprint": null,
+  "configuration": null,
+  "details": {
+    "active-preflight.json": {
+      "kind": "ncp_correctness",
+      "source_hashes": {
+        "autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+        "autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+        "autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e"
+      },
+      "status": "completed",
+      "wall_seconds": 31.46900000000005
+    },
+    "contract.json": {},
+    "fit-result.json": {
+      "gpu": "NVIDIA GeForce RTX 5070 Ti",
+      "kind": "synthetic_correctness_fit",
+      "results": {
+        "AUX": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "auxiliary",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "963934e7e5f3d8f34f0578f2b82ebc7d35a7b55a0b4390e177f58719be1b2932",
+          "conservative_trial_forecast_seconds": 309.1663487998303,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14966325248,
+          "gradient_norms": {
+            "lm_head.weight": 0.6123936176300049,
+            "ncp.blocks.0.down.weight": 0.002881406107917428,
+            "ncp.blocks.0.fc.weight": 0.0015608333051204681,
+            "ncp.blocks.0.proj.weight": 0.001967246411368251,
+            "ncp.blocks.0.qkv.weight": 0.0019785806071013212,
+            "ncp.blocks.1.down.weight": 0.0027663621585816145,
+            "ncp.blocks.1.fc.weight": 0.0016680769622325897,
+            "ncp.blocks.1.proj.weight": 0.002020142739638686,
+            "ncp.blocks.1.qkv.weight": 0.0019295437959954143,
+            "ncp.codebook.first": 0.05442912504076958,
+            "ncp.codebook.second": 0.2311711609363556,
+            "ncp.head.weight": 0.009592236950993538,
+            "resid_lambdas": 0.0009372100466862321,
+            "transformer.h.0.attn.c_k.weight": 0.0002453731431160122,
+            "transformer.h.0.attn.c_proj.weight": 0.0017346005188301206,
+            "transformer.h.0.attn.c_q.weight": 0.0002493956417310983,
+            "transformer.h.0.attn.c_v.weight": 0.00033368615549989045,
+            "transformer.h.0.mlp.c_fc.weight": 0.0045226216316223145,
+            "transformer.h.0.mlp.c_proj.weight": 0.025840817019343376,
+            "transformer.h.1.attn.c_k.weight": 0.00021642928186338395,
+            "transformer.h.1.attn.c_proj.weight": 0.0017644723411649466,
+            "transformer.h.1.attn.c_q.weight": 0.00021494011161848903,
+            "transformer.h.1.attn.c_v.weight": 0.0003554504655767232,
+            "transformer.h.1.attn.ve_gate.weight": 2.047844418484601e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004113662056624889,
+            "transformer.h.1.mlp.c_proj.weight": 0.018186450004577637,
+            "transformer.h.2.attn.c_k.weight": 0.00019331116345711052,
+            "transformer.h.2.attn.c_proj.weight": 0.0018260397482663393,
+            "transformer.h.2.attn.c_q.weight": 0.0001936635235324502,
+            "transformer.h.2.attn.c_v.weight": 0.0003495095297694206,
+            "transformer.h.2.mlp.c_fc.weight": 0.003879830939695239,
+            "transformer.h.2.mlp.c_proj.weight": 0.017177289351820946,
+            "transformer.h.3.attn.c_k.weight": 0.0001837919990066439,
+            "transformer.h.3.attn.c_proj.weight": 0.0017583364387974143,
+            "transformer.h.3.attn.c_q.weight": 0.00018319758237339556,
+            "transformer.h.3.attn.c_v.weight": 0.00033901023562066257,
+            "transformer.h.3.attn.ve_gate.weight": 1.8833300146070542e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036513658706098795,
+            "transformer.h.3.mlp.c_proj.weight": 0.016103582456707954,
+            "transformer.h.4.attn.c_k.weight": 0.0001708737836452201,
+            "transformer.h.4.attn.c_proj.weight": 0.0018730669980868697,
+            "transformer.h.4.attn.c_q.weight": 0.0001697209954727441,
+            "transformer.h.4.attn.c_v.weight": 0.00036769959842786193,
+            "transformer.h.4.mlp.c_fc.weight": 0.003489541355520487,
+            "transformer.h.4.mlp.c_proj.weight": 0.015367320738732815,
+            "transformer.h.5.attn.c_k.weight": 0.00016291624342557043,
+            "transformer.h.5.attn.c_proj.weight": 0.0018353681080043316,
+            "transformer.h.5.attn.c_q.weight": 0.00016325658361893147,
+            "transformer.h.5.attn.c_v.weight": 0.00032676479895599186,
+            "transformer.h.5.attn.ve_gate.weight": 1.396996822222718e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.003328906139358878,
+            "transformer.h.5.mlp.c_proj.weight": 0.0146317845210433,
+            "transformer.wte.weight": 0.0006618315237574279,
+            "value_embeds.1.weight": 1.3333785318536684e-05,
+            "value_embeds.3.weight": 1.1107126738352235e-05,
+            "value_embeds.5.weight": 9.761963156051934e-06,
+            "x0_lambdas": 0.0008686695946380496
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.5159498999996686,
+            0.4725618999996186,
+            0.48081790000014735
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 689248256,
+          "peak_reserved_bytes": 727711744,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "D12": {
+          "candidate": {
+            "depth": 12,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "checkpoint_sha256": "dc8bca26949d28a542ee6bfbed0c071aa92696c257a5f28c3c8cffd6345222c9",
+          "conservative_trial_forecast_seconds": 361.53749760007486,
+          "corpus_training_tokens": 0,
+          "free_bytes": 13169065984,
+          "gradient_norms": {
+            "lm_head.weight": 0.8653446435928345,
+            "resid_lambdas": 0.0009674134198576212,
+            "transformer.h.0.attn.c_k.weight": 0.0007132752216421068,
+            "transformer.h.0.attn.c_proj.weight": 0.0031704590655863285,
+            "transformer.h.0.attn.c_q.weight": 0.0007116423803381622,
+            "transformer.h.0.attn.c_v.weight": 0.0008884651469998062,
+            "transformer.h.0.mlp.c_fc.weight": 0.011724094860255718,
+            "transformer.h.0.mlp.c_proj.weight": 0.03680147975683212,
+            "transformer.h.1.attn.c_k.weight": 0.0005547857144847512,
+            "transformer.h.1.attn.c_proj.weight": 0.003984494600445032,
+            "transformer.h.1.attn.c_q.weight": 0.0005549501511268318,
+            "transformer.h.1.attn.c_v.weight": 0.0011294538853690028,
+            "transformer.h.1.attn.ve_gate.weight": 2.32074421546713e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.010187847539782524,
+            "transformer.h.1.mlp.c_proj.weight": 0.03191191703081131,
+            "transformer.h.10.attn.c_k.weight": 0.00027574319392442703,
+            "transformer.h.10.attn.c_proj.weight": 0.0029583722352981567,
+            "transformer.h.10.attn.c_q.weight": 0.0002757485199254006,
+            "transformer.h.10.attn.c_v.weight": 0.000764010997954756,
+            "transformer.h.10.mlp.c_fc.weight": 0.006059193518012762,
+            "transformer.h.10.mlp.c_proj.weight": 0.019014373421669006,
+            "transformer.h.11.attn.c_k.weight": 0.0002690450637601316,
+            "transformer.h.11.attn.c_proj.weight": 0.0027366741560399532,
+            "transformer.h.11.attn.c_q.weight": 0.00027113122632727027,
+            "transformer.h.11.attn.c_v.weight": 0.000788143661338836,
+            "transformer.h.11.attn.ve_gate.weight": 1.2928807109346963e-06,
+            "transformer.h.11.mlp.c_fc.weight": 0.005811877083033323,
+            "transformer.h.11.mlp.c_proj.weight": 0.018234170973300934,
+            "transformer.h.2.attn.c_k.weight": 0.0004668551846407354,
+            "transformer.h.2.attn.c_proj.weight": 0.003884817473590374,
+            "transformer.h.2.attn.c_q.weight": 0.00046920342720113695,
+            "transformer.h.2.attn.c_v.weight": 0.0011129607446491718,
+            "transformer.h.2.mlp.c_fc.weight": 0.009173322468996048,
+            "transformer.h.2.mlp.c_proj.weight": 0.028640110045671463,
+            "transformer.h.3.attn.c_k.weight": 0.00041082038660533726,
+            "transformer.h.3.attn.c_proj.weight": 0.0039241863414645195,
+            "transformer.h.3.attn.c_q.weight": 0.0004088821297045797,
+            "transformer.h.3.attn.c_v.weight": 0.0010525245452299714,
+            "transformer.h.3.attn.ve_gate.weight": 1.992173565668054e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.008408053778111935,
+            "transformer.h.3.mlp.c_proj.weight": 0.026157502084970474,
+            "transformer.h.4.attn.c_k.weight": 0.0003759007959160954,
+            "transformer.h.4.attn.c_proj.weight": 0.003612420056015253,
+            "transformer.h.4.attn.c_q.weight": 0.0003742067201528698,
+            "transformer.h.4.attn.c_v.weight": 0.0009493661345914006,
+            "transformer.h.4.mlp.c_fc.weight": 0.007840844802558422,
+            "transformer.h.4.mlp.c_proj.weight": 0.024355225265026093,
+            "transformer.h.5.attn.c_k.weight": 0.00035000802017748356,
+            "transformer.h.5.attn.c_proj.weight": 0.003431124147027731,
+            "transformer.h.5.attn.c_q.weight": 0.00034631992457434535,
+            "transformer.h.5.attn.c_v.weight": 0.0009292490431107581,
+            "transformer.h.5.attn.ve_gate.weight": 1.5417097074532649e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.007409461308270693,
+            "transformer.h.5.mlp.c_proj.weight": 0.023168344050645828,
+            "transformer.h.6.attn.c_k.weight": 0.00032504985574632883,
+            "transformer.h.6.attn.c_proj.weight": 0.0034085537772625685,
+            "transformer.h.6.attn.c_q.weight": 0.00032366582308895886,
+            "transformer.h.6.attn.c_v.weight": 0.0009156755986623466,
+            "transformer.h.6.mlp.c_fc.weight": 0.0070090387016534805,
+            "transformer.h.6.mlp.c_proj.weight": 0.021892786026000977,
+            "transformer.h.7.attn.c_k.weight": 0.0003125427174381912,
+            "transformer.h.7.attn.c_proj.weight": 0.002948986366391182,
+            "transformer.h.7.attn.c_q.weight": 0.00031299726106226444,
+            "transformer.h.7.attn.c_v.weight": 0.0008494273060932755,
+            "transformer.h.7.attn.ve_gate.weight": 1.3154932503312011e-06,
+            "transformer.h.7.mlp.c_fc.weight": 0.006746034603565931,
+            "transformer.h.7.mlp.c_proj.weight": 0.021006066352128983,
+            "transformer.h.8.attn.c_k.weight": 0.0003001773729920387,
+            "transformer.h.8.attn.c_proj.weight": 0.002934536896646023,
+            "transformer.h.8.attn.c_q.weight": 0.0003021506709046662,
+            "transformer.h.8.attn.c_v.weight": 0.0008144929888658226,
+            "transformer.h.8.mlp.c_fc.weight": 0.00652371346950531,
+            "transformer.h.8.mlp.c_proj.weight": 0.020529720932245255,
+            "transformer.h.9.attn.c_k.weight": 0.0002836073108483106,
+            "transformer.h.9.attn.c_proj.weight": 0.0029274127446115017,
+            "transformer.h.9.attn.c_q.weight": 0.0002856814244296402,
+            "transformer.h.9.attn.c_v.weight": 0.0008108486072160304,
+            "transformer.h.9.attn.ve_gate.weight": 1.2191015912321745e-06,
+            "transformer.h.9.mlp.c_fc.weight": 0.0061646136455237865,
+            "transformer.h.9.mlp.c_proj.weight": 0.019151095300912857,
+            "transformer.wte.weight": 0.0010017643216997385,
+            "value_embeds.1.weight": 2.5080140403588302e-05,
+            "value_embeds.11.weight": 1.202490966534242e-05,
+            "value_embeds.3.weight": 1.9205896023777314e-05,
+            "value_embeds.5.weight": 1.61297430167906e-05,
+            "value_embeds.7.weight": 1.4209906112228055e-05,
+            "value_embeds.9.weight": 1.308546052314341e-05,
+            "x0_lambdas": 0.0022974456660449505
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.6182373000001462,
+            0.6065688999997292,
+            0.609559999999874
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 135267480,
+            "depth": 12,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 135267480,
+            "width": 768
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.004,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.6,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.6,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 88,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 2386219008,
+          "peak_reserved_bytes": 2524971008,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "D6": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "checkpoint_sha256": "7284178bda012fdfc17ff4160252b4a0504b17930a604d0550a4cc94ab0bce3b",
+          "conservative_trial_forecast_seconds": 207.4949248000048,
+          "corpus_training_tokens": 0,
+          "free_bytes": 15054405632,
+          "gradient_norms": {
+            "lm_head.weight": 0.6123936176300049,
+            "resid_lambdas": 0.0008732876740396023,
+            "transformer.h.0.attn.c_k.weight": 0.00024316951748915017,
+            "transformer.h.0.attn.c_proj.weight": 0.0015171313425526023,
+            "transformer.h.0.attn.c_q.weight": 0.0002468849706929177,
+            "transformer.h.0.attn.c_v.weight": 0.0002930074115283787,
+            "transformer.h.0.mlp.c_fc.weight": 0.004471353720873594,
+            "transformer.h.0.mlp.c_proj.weight": 0.01992177404463291,
+            "transformer.h.1.attn.c_k.weight": 0.00021642928186338395,
+            "transformer.h.1.attn.c_proj.weight": 0.0017644723411649466,
+            "transformer.h.1.attn.c_q.weight": 0.00021494011161848903,
+            "transformer.h.1.attn.c_v.weight": 0.0003554504655767232,
+            "transformer.h.1.attn.ve_gate.weight": 2.047844418484601e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004113662056624889,
+            "transformer.h.1.mlp.c_proj.weight": 0.018186450004577637,
+            "transformer.h.2.attn.c_k.weight": 0.00019331116345711052,
+            "transformer.h.2.attn.c_proj.weight": 0.0018260397482663393,
+            "transformer.h.2.attn.c_q.weight": 0.0001936635235324502,
+            "transformer.h.2.attn.c_v.weight": 0.0003495095297694206,
+            "transformer.h.2.mlp.c_fc.weight": 0.003879830939695239,
+            "transformer.h.2.mlp.c_proj.weight": 0.017177289351820946,
+            "transformer.h.3.attn.c_k.weight": 0.0001837919990066439,
+            "transformer.h.3.attn.c_proj.weight": 0.0017583364387974143,
+            "transformer.h.3.attn.c_q.weight": 0.00018319758237339556,
+            "transformer.h.3.attn.c_v.weight": 0.00033901023562066257,
+            "transformer.h.3.attn.ve_gate.weight": 1.8833300146070542e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.0036513658706098795,
+            "transformer.h.3.mlp.c_proj.weight": 0.016103582456707954,
+            "transformer.h.4.attn.c_k.weight": 0.0001708737836452201,
+            "transformer.h.4.attn.c_proj.weight": 0.0018730669980868697,
+            "transformer.h.4.attn.c_q.weight": 0.0001697209954727441,
+            "transformer.h.4.attn.c_v.weight": 0.00036769959842786193,
+            "transformer.h.4.mlp.c_fc.weight": 0.003489541355520487,
+            "transformer.h.4.mlp.c_proj.weight": 0.015367320738732815,
+            "transformer.h.5.attn.c_k.weight": 0.00016291624342557043,
+            "transformer.h.5.attn.c_proj.weight": 0.0018353681080043316,
+            "transformer.h.5.attn.c_q.weight": 0.00016325658361893147,
+            "transformer.h.5.attn.c_v.weight": 0.00032676479895599186,
+            "transformer.h.5.attn.ve_gate.weight": 1.396996822222718e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.003328906139358878,
+            "transformer.h.5.mlp.c_proj.weight": 0.0146317845210433,
+            "transformer.wte.weight": 0.0006583956419490278,
+            "value_embeds.1.weight": 1.3333785318536684e-05,
+            "value_embeds.3.weight": 1.1107126738352235e-05,
+            "value_embeds.5.weight": 9.761963156051934e-06,
+            "x0_lambdas": 0.000799284316599369
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.3101311000000351,
+            0.2894405000001825,
+            0.3173729000000094
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 26345772,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 0,
+            "ncp_codebook_parameters": 0,
+            "ncp_effective_codebook_bytes": 0,
+            "ncp_parameters": 0,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 26345772,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 46,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 610072576,
+          "peak_reserved_bytes": 641728512,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        },
+        "NCP": {
+          "candidate": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "checkpoint_sha256": "4e8edb0414f31c47e477d38e1b762b0b2cf746aa5a9d82083ba35928ee698c69",
+          "conservative_trial_forecast_seconds": 307.9368320000358,
+          "corpus_training_tokens": 0,
+          "free_bytes": 14966325248,
+          "gradient_norms": {
+            "lm_head.weight": 0.6124461889266968,
+            "ncp.blocks.0.down.weight": 0.0028813492972403765,
+            "ncp.blocks.0.fc.weight": 0.0015620087506249547,
+            "ncp.blocks.0.proj.weight": 0.001967152114957571,
+            "ncp.blocks.0.qkv.weight": 0.001979059772565961,
+            "ncp.blocks.1.down.weight": 0.0027672576252371073,
+            "ncp.blocks.1.fc.weight": 0.00166968978010118,
+            "ncp.blocks.1.proj.weight": 0.002020275453105569,
+            "ncp.blocks.1.qkv.weight": 0.001929537276737392,
+            "ncp.codebook.first": 0.05443279817700386,
+            "ncp.codebook.second": 0.23118944466114044,
+            "ncp.head.weight": 0.009597172029316425,
+            "resid_lambdas": 0.0008372836746275425,
+            "transformer.h.0.attn.c_k.weight": 0.000242724665440619,
+            "transformer.h.0.attn.c_proj.weight": 0.0017249586526304483,
+            "transformer.h.0.attn.c_q.weight": 0.00024691494763828814,
+            "transformer.h.0.attn.c_v.weight": 0.00033222229103557765,
+            "transformer.h.0.mlp.c_fc.weight": 0.00447313254699111,
+            "transformer.h.0.mlp.c_proj.weight": 0.025662655010819435,
+            "transformer.h.1.attn.c_k.weight": 0.00021098405704833567,
+            "transformer.h.1.attn.c_proj.weight": 0.0022094575688242912,
+            "transformer.h.1.attn.c_q.weight": 0.00020981175475753844,
+            "transformer.h.1.attn.c_v.weight": 0.00042688348912633955,
+            "transformer.h.1.attn.ve_gate.weight": 1.9956858068326255e-06,
+            "transformer.h.1.mlp.c_fc.weight": 0.004075183533132076,
+            "transformer.h.1.mlp.c_proj.weight": 0.018039969727396965,
+            "transformer.h.2.attn.c_k.weight": 0.0001888440892798826,
+            "transformer.h.2.attn.c_proj.weight": 0.0019890093244612217,
+            "transformer.h.2.attn.c_q.weight": 0.0001887232210719958,
+            "transformer.h.2.attn.c_v.weight": 0.0003886559570673853,
+            "transformer.h.2.mlp.c_fc.weight": 0.0038560281973332167,
+            "transformer.h.2.mlp.c_proj.weight": 0.017102986574172974,
+            "transformer.h.3.attn.c_k.weight": 0.0001805919164326042,
+            "transformer.h.3.attn.c_proj.weight": 0.0018792898626998067,
+            "transformer.h.3.attn.c_q.weight": 0.00018064577307086438,
+            "transformer.h.3.attn.c_v.weight": 0.0003654528991319239,
+            "transformer.h.3.attn.ve_gate.weight": 1.8408238702249946e-06,
+            "transformer.h.3.mlp.c_fc.weight": 0.003630012972280383,
+            "transformer.h.3.mlp.c_proj.weight": 0.016011981293559074,
+            "transformer.h.4.attn.c_k.weight": 0.00016817495634313673,
+            "transformer.h.4.attn.c_proj.weight": 0.0019623171538114548,
+            "transformer.h.4.attn.c_q.weight": 0.0001675076491665095,
+            "transformer.h.4.attn.c_v.weight": 0.00038404896622523665,
+            "transformer.h.4.mlp.c_fc.weight": 0.0034676576033234596,
+            "transformer.h.4.mlp.c_proj.weight": 0.015288479626178741,
+            "transformer.h.5.attn.c_k.weight": 0.0001592901098774746,
+            "transformer.h.5.attn.c_proj.weight": 0.0018737473292276263,
+            "transformer.h.5.attn.c_q.weight": 0.00015993215492926538,
+            "transformer.h.5.attn.c_v.weight": 0.00034334452357143164,
+            "transformer.h.5.attn.ve_gate.weight": 1.3870231896362384e-06,
+            "transformer.h.5.mlp.c_fc.weight": 0.0033055408857762814,
+            "transformer.h.5.mlp.c_proj.weight": 0.014534170739352703,
+            "transformer.wte.weight": 0.000655180134344846,
+            "value_embeds.1.weight": 1.315811459789984e-05,
+            "value_embeds.3.weight": 1.1049305612687021e-05,
+            "value_embeds.5.weight": 9.696802408143412e-06,
+            "x0_lambdas": 0.0007589887827634811
+          },
+          "interpretation": "Randomized synthetic correctness/fit fixture; not a trained research candidate or quality score",
+          "measured_update_seconds": [
+            0.4911234000001059,
+            0.5135485000000699,
+            0.5118185000001176
+          ],
+          "model": {
+            "activation_checkpointing": false,
+            "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+            "active_parameters": 30056748,
+            "depth": 6,
+            "expert_dispatch": null,
+            "expert_parameters": 0,
+            "feedforward": "dense",
+            "memory": null,
+            "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+            "memory_after_layer": null,
+            "memory_initialization_seed": null,
+            "memory_lr": null,
+            "memory_parameters": 0,
+            "memory_table_bytes": 0,
+            "ncp_codebook_buffer_bytes": 98304,
+            "ncp_codebook_parameters": 98304,
+            "ncp_effective_codebook_bytes": 98304,
+            "ncp_parameters": 3710976,
+            "num_experts": 0,
+            "router_parameters": 0,
+            "top_k": 0,
+            "total_parameters": 30056748,
+            "width": 384
+          },
+          "optimizer_coverage": {
+            "duplicate_count": 0,
+            "groups": [
+              {
+                "initial_lr": 0.005656854249492381,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.848528137423857,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.005,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.5,
+                "kind": "adamw"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.04,
+                "kind": "muon"
+              },
+              {
+                "initial_lr": 0.001,
+                "kind": "adamw"
+              }
+            ],
+            "missing": [],
+            "parameter_tensors": 57,
+            "unexpected_count": 0,
+            "verified": true
+          },
+          "passed": true,
+          "peak_allocated_bytes": 689182720,
+          "peak_reserved_bytes": 727711744,
+          "synthetic_optimizer_updates": 6,
+          "synthetic_update_tokens": 98304
+        }
+      },
+      "source_sha256": "6533981522bfa71237950e73d12daf42066331c9b14df1fb79565d356aba895a",
+      "status": "completed"
+    },
+    "preflight-1789473279-result.json": {
+      "cpu": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cpu-1789473248.log",
+        "sha256": "5fe726dbeb456345210d31645e9433c78c68515a3636e3b9f8b8db6a8eba5c61"
+      },
+      "cuda": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cuda-1789473254.log",
+        "sha256": "cb63c4841954a0d3024378dbc55f44b3f7f8d43809e198a4a989163d1b9fa6cf"
+      },
+      "fit_sha256": "96b1ab447608485051f96789f140d9249a227111676de8f59308704c301665dc",
+      "kind": "ncp_correctness",
+      "passed": true,
+      "source_hashes": {
+        "autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+        "autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+        "autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e"
+      },
+      "status": "completed",
+      "test_hashes": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_campaign_depth_extension.py": "2ac0e71f5a913b39e4b535d67b39f055c9b11827d9d63637460ec2fc571d95ae",
+        "test_campaign_variants.py": "1679fd62f3ccb66b08de83ddabe498c9fd04767f9e15da469e66ee0674a0a70a",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_experiment_reports.py": "bb36a0ecfc832b124807d3650cd657c16b49209a68789bd66cbba2cf6cbee69d",
+        "test_fixed_updates.py": "ba7d2ae7b106747edc4ff6452a9d730d4fb36c5e3059db68807e528d8135fe7f",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ncp.py": "3ce1677b4079d11ddf68c082a68f5ad089cc2b3398b74bcafe6dd388a8228587",
+        "test_ncp_campaign.py": "05665f8cc7c1a80c4defe545e7e3f90553172035fdd7ef2999c011742684265b",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
+      },
+      "wall_seconds": 31.922000000000025
+    },
+    "preflight-1789473362-result.json": {
+      "cpu": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cpu-1789473331.log",
+        "sha256": "508d4a2bd87a28e6dfc0d004f6b45c6c86d96ca0d00da73de95a7e9a76cfd9b3"
+      },
+      "cuda": {
+        "log": "<repo>\\runs\\autoresearch\\ncp-20260915\\preflight-cuda-1789473337.log",
+        "sha256": "789ae4194dbee5165df9824ec9ffc25fdbcf2163d1d5bf75a9d2d90c27a43700"
+      },
+      "fit_sha256": "42c52fa305136d0249b1dc4702136cb9b3fbcbcfcec78e034e9ebc1eb0d4a436",
+      "kind": "ncp_correctness",
+      "passed": true,
+      "source_hashes": {
+        "autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+        "autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+        "autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+        "autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e"
+      },
+      "status": "completed",
+      "test_hashes": {
+        "test_autoresearch.py": "995db26a189cad1253df7318c61601cfc49626ba82738fa9529fe4cecc77d8a5",
+        "test_campaign_depth_extension.py": "2ac0e71f5a913b39e4b535d67b39f055c9b11827d9d63637460ec2fc571d95ae",
+        "test_campaign_variants.py": "1679fd62f3ccb66b08de83ddabe498c9fd04767f9e15da469e66ee0674a0a70a",
+        "test_checkpointing.py": "b6662f21e3294bd8e4486582eb16dad41e82205dd63cab1b99a657f61694d37a",
+        "test_experiment_reports.py": "97a3e4dd58c06e0e896238127e8766629390268d94ccccc2dc63d6a063420985",
+        "test_fixed_updates.py": "ba7d2ae7b106747edc4ff6452a9d730d4fb36c5e3059db68807e528d8135fe7f",
+        "test_moe.py": "976d3d683b8d4d4e9ce78733a38a6e19cead73b9e830aacbc79040ec912103ad",
+        "test_ncp.py": "3ce1677b4079d11ddf68c082a68f5ad089cc2b3398b74bcafe6dd388a8228587",
+        "test_ncp_campaign.py": "05665f8cc7c1a80c4defe545e7e3f90553172035fdd7ef2999c011742684265b",
+        "test_ngram_memory.py": "1681e92ddff4cfe5c77291388bf71a7a1edd5a06e780b38006a7c4ebbc23659f",
+        "test_packed_moe.py": "1934d4a186c91594fdf79a23f12b7e211b44bba620248b7835123628cb53dc10",
+        "test_snapshot.py": "99e8b845c3420061e7d3f3c5d3d8bbb3b15ebb4968f2711153c251187b220bb3"
+      },
+      "wall_seconds": 31.46900000000005
+    },
+    "result.json": {
+      "kind": "ncp_campaign",
+      "rows": [
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 177.1385357999984,
+          "allocated_mib": 581.685546875,
+          "board_sampled_peak_mib": 2022.0,
+          "bpb": 0.634848,
+          "codebook_buffer_bytes": 0,
+          "codebook_effective_bytes": 0,
+          "configuration": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "error": null,
+          "hypothesis": "Fresh depth6 matching control before NCP trials",
+          "label": "D6",
+          "memory_table_bytes": 0,
+          "ncp_health": null,
+          "ncp_parameters": 0,
+          "phase": "screen",
+          "report_id": "ncp-20260915--trial-0001-D6-s42-b009c334",
+          "reserved_mib": 622.0,
+          "seed": 42,
+          "source_hashes": {
+            "adapter_sha256": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "checkpoint_sha256": "3a9f8857ba88c8d21792400d535ac67df8685b47ceb6c05a7b9ddc1899052cd5",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+            "ncp_sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+            "orchestrator_sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9",
+            "preflight_sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822",
+            "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
+          },
+          "status": "completed",
+          "timed_tokens_per_second": 47526.36993622887,
+          "total_parameters": 26345772,
+          "trial": "trial-0001-D6-s42",
+          "wall_seconds": 184.0,
+          "width": 384
+        },
+        {
+          "configuration": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04,
+            "ncp": {
+              "after_layer": 0,
+              "ce_weight": 0.0,
+              "chunk_size": 4,
+              "entries": 64,
+              "feedback_scale": 1.0,
+              "kind": "ncp_v1",
+              "layers": 2,
+              "lr": 0.001,
+              "mode": "feedback",
+              "prediction_weight": 1.0,
+              "vq_weight": 1.0
+            }
+          },
+          "error": null,
+          "hypothesis": "Source-inspired discrete chunk prediction plus causal predicted feedback may improve BPB at equal tokens",
+          "label": "NCP",
+          "phase": "screen",
+          "report_id": "ncp-20260915--trial-0002-NCP-s42-22537f23",
+          "seed": 42,
+          "source_hashes": {
+            "adapter_sha256": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+            "ncp_sha256": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+            "orchestrator_sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9",
+            "preflight_sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822",
+            "runner_sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"
+          },
+          "status": "running",
+          "trial": "trial-0002-NCP-s42",
+          "wall_seconds": null
+        }
+      ],
+      "status": "running"
+    },
+    "sources-result.json": {
+      "accessed": "2026-09-15",
+      "kind": "source_review",
+      "notes": [
+        "Official code inspected only; no third-party code imported/copied.",
+        "Pythia/GPT2 use raw logits as weights; prototype softmax is explicit divergence.",
+        "Unreleased training driver and unpinned SimVQ preclude faithful training reproduction."
+      ],
+      "references": {
+        "official": "https://github.com/LUMIA-Group/ConceptLM/tree/a0ab281286f5c0337c35de3181cc992c562eacaa",
+        "paper": "https://arxiv.org/html/2602.08984v1"
+      },
+      "revision": "a0ab281286f5c0337c35de3181cc992c562eacaa",
+      "source_hashes": {
+        "README.md": "81b25f856693c74b196d1e5a520013f015d17c49f039e86e2ca3a15abf8a10d7",
+        "lm_eval/lm_eval/model_arc/ConceptLM_GPT2model.py": "97809c48a73e2e2f0e49fb17f8d73701dfaf322ac4b9699f90d3e617553866f3",
+        "lm_eval/lm_eval/model_arc/ConceptLM_Llama3model.py": "600a8fb3e507dce751e9a1ce526370a7940ace21329769edec0067f7f8371060",
+        "lm_eval/lm_eval/model_arc/ConceptLM_Pythiamodel.py": "313c1ca0f512747240389df1fdb381c17dea369414d4c1cab6386ada55d384b6"
+      },
+      "status": "completed"
+    }
+  },
+  "diagnostics": [
+    "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
+    "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
+    "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
+    "preflight-cpu-1789473248.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 3.917s\nOK",
+    "preflight-cpu-1789473331.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 3.911s\nOK",
+    "preflight-cuda-1789473254.log:\nok\nok\nok\nok\nok\nok\nRan 63 tests in 6.129s\nOK",
+    "preflight-cuda-1789473337.log:\nok\nok\nok\nok\nok\nok\nRan 64 tests in 5.956s\nOK",
+    "report-red.log:\nERROR: test_ncp_health_and_prospective_hypothesis_are_published (test_experiment_reports.ReportTests.test_ncp_health_and_prospective_hypothesis_are_published)\nTraceback (most recent call last):\nKeyError: 'collapsed'\nRan 8 tests in 0.229s\nFAILED (errors=1)",
+    "test-ncp-green1.log:\nok\nRan 6 tests in 1.153s\nOK",
+    "test-ncp-red.log:\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nTraceback (most recent call last):\nAssertionError: unexpectedly None : Missing concept mechanism\nRan 6 tests in 1.272s\nFAILED (failures=5, errors=1)"
+  ],
+  "evidence": {
+    "active-preflight.json": {
+      "bytes": 2471,
+      "local_path": "runs/autoresearch/ncp-20260915/active-preflight.json",
+      "sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822"
+    },
+    "campaign.log": {
+      "bytes": 1736,
+      "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
+      "sha256": "ba49a0fc2f91764918f30ba2f7332ecf66152f9b94cf52462335d7aecb98a6bf"
+    },
+    "contract.json": {
+      "bytes": 286,
+      "local_path": "runs/autoresearch/ncp-20260915/contract.json",
+      "sha256": "4c41d6ad5c69de6e223b56d7665052061ab6a2a70b80c0d59b52a8e74891dbe5"
+    },
+    "controller-red.log": {
+      "bytes": 1540,
+      "local_path": "runs/autoresearch/ncp-20260915/controller-red.log",
+      "sha256": "e4cbee9be24ed876f3eed96ac5f44d7eb47b2e4720a761fb7cf80ceda40c1a1a"
+    },
+    "cpu-suite1.log": {
+      "bytes": 12711,
+      "local_path": "runs/autoresearch/ncp-20260915/cpu-suite1.log",
+      "sha256": "ea3e4f18efb86599c47d935c133d4b00617bc047388acf4f2bc68b411acc499b"
+    },
+    "cuda-suite1.log": {
+      "bytes": 12616,
+      "local_path": "runs/autoresearch/ncp-20260915/cuda-suite1.log",
+      "sha256": "10bfb6ff3cc5c6783987d4747c76b32f70767ecb57bbe3f3704c7ebe00a6a3ea"
+    },
+    "fit-1789473262.log": {
+      "bytes": 1556,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789473262.log",
+      "sha256": "13053b654efc454a1fc93d74ad5adc38e5806cde2db8b20b7abcc906828ccb20"
+    },
+    "fit-1789473345.log": {
+      "bytes": 1556,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-1789473345.log",
+      "sha256": "dd2522789db3812f6be4010d0a3e5eafadf86e0e85b0e0cfdac885bf1b24eb09"
+    },
+    "fit-result.json": {
+      "bytes": 44652,
+      "local_path": "runs/autoresearch/ncp-20260915/fit-result.json",
+      "sha256": "42c52fa305136d0249b1dc4702136cb9b3fbcbcfcec78e034e9ebc1eb0d4a436"
+    },
+    "initial-queue.log": {
+      "bytes": 277,
+      "local_path": "runs/autoresearch/ncp-20260915/initial-queue.log",
+      "sha256": "5c19345cc0cebcce835b0eb68fddf49a8c5d31ee671558416b72691ec4064e81"
+    },
+    "initial-queue.py": {
+      "bytes": 964,
+      "local_path": "runs/autoresearch/ncp-20260915/initial-queue.py",
+      "sha256": "164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853"
+    },
+    "launch-D6-s42.log": {
+      "bytes": 540,
+      "local_path": "runs/autoresearch/ncp-20260915/launch-D6-s42.log",
+      "sha256": "adbfcdde7199241a394fb3fd2c83b7931c44e6cc1316c5ed446eca9ac5af7b3e"
+    },
+    "plan.md": {
+      "bytes": 8589,
+      "local_path": "runs/autoresearch/ncp-20260915/plan.md",
+      "sha256": "3a909258a478c99cc3c4caa015ddff8bfff1d9d30890fc090bea6a6dfa79b222"
+    },
+    "preflight-1789473279-result.json": {
+      "bytes": 2472,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-1789473279-result.json",
+      "sha256": "0c0a70983c8e6bed146247d0337ee3b95aafb9bca3de2ceac110b163ff7a7023"
+    },
+    "preflight-1789473362-result.json": {
+      "bytes": 2471,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-1789473362-result.json",
+      "sha256": "252714f49ec00c6a6423d69a770846b1c92adc76dbc9548042aa5309dfbde822"
+    },
+    "preflight-cpu-1789473248.log": {
+      "bytes": 13099,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473248.log",
+      "sha256": "5fe726dbeb456345210d31645e9433c78c68515a3636e3b9f8b8db6a8eba5c61"
+    },
+    "preflight-cpu-1789473331.log": {
+      "bytes": 13259,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cpu-1789473331.log",
+      "sha256": "508d4a2bd87a28e6dfc0d004f6b45c6c86d96ca0d00da73de95a7e9a76cfd9b3"
+    },
+    "preflight-cuda-1789473254.log": {
+      "bytes": 13004,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789473254.log",
+      "sha256": "cb63c4841954a0d3024378dbc55f44b3f7f8d43809e198a4a989163d1b9fa6cf"
+    },
+    "preflight-cuda-1789473337.log": {
+      "bytes": 13164,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-cuda-1789473337.log",
+      "sha256": "789ae4194dbee5165df9824ec9ffc25fdbcf2163d1d5bf75a9d2d90c27a43700"
+    },
+    "preflight-launch.log": {
+      "bytes": 408,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-launch.log",
+      "sha256": "409127ebc0c0ec710ae36a3935d969ab35d259ba817d7cbc4b3c0dea507fe90a"
+    },
+    "preflight-launch2.log": {
+      "bytes": 408,
+      "local_path": "runs/autoresearch/ncp-20260915/preflight-launch2.log",
+      "sha256": "48e12bfb79feef5aade339022e2f6e0a44977be6542e38b26971a9c78c5a7f75"
+    },
+    "report-red.log": {
+      "bytes": 877,
+      "local_path": "runs/autoresearch/ncp-20260915/report-red.log",
+      "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
+    },
+    "result.json": {
+      "bytes": 3634,
+      "local_path": "runs/autoresearch/ncp-20260915/result.json",
+      "sha256": "42d0924cb0a72585549acc66c4c337872542360e6d232a8a83e4997c99e831be"
+    },
+    "sources-result.json": {
+      "bytes": 1101,
+      "local_path": "runs/autoresearch/ncp-20260915/sources-result.json",
+      "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
+    },
+    "summary.md": {
+      "bytes": 2791,
+      "local_path": "runs/autoresearch/ncp-20260915/summary.md",
+      "sha256": "445fcaeb2091405e56e442eed8e28fb469564e00b5c8a2b148a02bf70d1ed142"
+    },
+    "test-ncp-green1.log": {
+      "bytes": 1343,
+      "local_path": "runs/autoresearch/ncp-20260915/test-ncp-green1.log",
+      "sha256": "729418b31578c52a9ed310b1982a85bd6b5bb7e138212a5e2c286e971039ba61"
+    },
+    "test-ncp-red.log": {
+      "bytes": 4755,
+      "local_path": "runs/autoresearch/ncp-20260915/test-ncp-red.log",
+      "sha256": "dc6b054e65c59d5f5c92a6127b16a4cd3c29edcd1b8af76dd2b2619c3febd32f"
+    }
+  },
+  "experiment_id": "ncp-20260915-224867c7",
+  "limitations": [
+    "Different budgets, schedules, checkpointing and source versions are separate comparisons.",
+    "No missing measurements or provenance were filled from the current working tree.",
+    "Two paired seeds are preliminary; opposite signs do not establish equivalence."
+  ],
+  "metrics": null,
+  "outcome": "running",
+  "protocol": null,
+  "provenance": {
+    "archived_source": {
+      "initial-queue.py": {
+        "published_path": "reports/source-snapshots/164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853.py",
+        "sha256": "164678e20a3d23769125a586b70311ff71ceb5a3e1b49b638da301a321cd6853"
+      }
+    },
+    "execution_receipt": null,
+    "qualification": "Execution receipt is historical evidence, not re-execution. Missing fields are unknown. Publishing commit is NOT the training commit.",
+    "recorded_code_hashes": {},
+    "recorded_data_hashes": null,
+    "recorded_git_commit": null,
+    "recorded_git_dirty": null,
+    "recorded_upstream": null,
+    "snapshot_manifest": null
+  },
+  "reporter_sha256": "75ee5e564174ece88083051158ec3e972ace7d478d892bc0230073defcedd805",
+  "schema_version": 1,
+  "seeds": [
+    42
+  ]
+}
