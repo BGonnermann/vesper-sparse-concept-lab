@@ -29,6 +29,10 @@ def log(message):
 def records(): return [read(p) for p in sorted(HERE.glob('trial-*/result.json'))]
 def candidate(depth): return r.validate_candidate(dict(depth=depth,model_width=768,matrix_lr=.04,feedforward='dense'))
 def protocol(seed,budget):
+    if (HERE/'matrix-plan.json').exists():
+        p=read(HERE/'matrix-plan.json')['protocols'][str(budget)]
+        p['seed']=seed
+        return r.validate_protocol(p)
     p=read(r.ROOT/'runs/autoresearch/equal-token-20260915/protocol-42.json')
     n=512*budget
     p.update(protocol_id='vesper-tinystories-depth-long-v1',seed=seed,optimizer_updates=n,
@@ -101,6 +105,7 @@ def freeze():
         protocols={str(b):protocol(101,b) for b in (1,2,4)},source_hashes=sources(),
         data_seal=read(r.STATE/'data-seal.json'),upstream=r.verify_runtime(),
         controller_sha256=r.digest(HERE/'controller.py'),plan_sha256=r.digest(HERE/'PLAN.md'),
+        decision_source_sha256=r.digest(r.ROOT/'scripts/depth_report.py'),
         preflight_sha256=r.digest(HERE/'preflight-result.json'),stream_sha256=r.digest(HERE/'stream-result.json'),
         initial_free_disk_bytes=shutil.disk_usage(r.ROOT).free,frozen_at=datetime.now(timezone.utc).isoformat())
     r.write_json(HERE/'matrix-plan.json',plan)
@@ -142,13 +147,18 @@ def validate(out,row,plan):
 
 def trial(depth,budget,seed):
     plan=read(HERE/'matrix-plan.json');assert sources()==plan['source_hashes']
+    assert hashlib.sha256(SOURCE).hexdigest()==plan['controller_sha256'],'Loaded controller differs from freeze'
+    assert r.digest(r.ROOT/'scripts/depth_report.py')==plan['decision_source_sha256'],'Decision source changed'
+    assert r.digest(HERE/'stream-result.json')==plan['stream_sha256'],'Stream receipt changed'
+    assert r.digest(HERE/'batch-hashes.json')==read(HERE/'stream-result.json')['batch_hashes_sha256']
     assert r.digest(HERE/'preflight-result.json')==plan['preflight_sha256']
+    assert read(HERE/'preflight-result.json')['tests']=={p.name:r.digest(p) for p in (r.ROOT/'tests').glob('test_*.py')}
     assert shutil.disk_usage(r.ROOT).free>20*2**30,'Disk floor'
     assert remaining()>RESERVE+60
     out=HERE/f'trial-{len(records())+1:04d}-D{depth}-b{budget}-s{seed}';out.mkdir()
     (out/'orchestrator.py').write_bytes(SOURCE)
     row=dict(kind='fixed_updates',status='prepared',condition='dense',label=f'D{depth}-W768',depth=depth,budget=budget,seed=seed,
-        candidate=candidate(depth),protocol=protocol(seed,budget),data_seal=plan['data_seal'],upstream=plan['upstream'],
+        candidate=plan['candidates'][str(depth)],protocol=protocol(seed,budget),data_seal=plan['data_seal'],upstream=plan['upstream'],
         orchestrator_sha256=r.digest(out/'orchestrator.py'),plan_sha256=r.digest(HERE/'matrix-plan.json'),
         git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=r.ROOT,text=True).strip())
     row.update({key:r.digest(r.ROOT/'scripts'/name) for name,key in r.PROJECT_FILES.items()})
@@ -157,7 +167,8 @@ def trial(depth,budget,seed):
     log('START '+out.name+' log='+str(out/'run.log'))
     with gpu_lock():
         try:
-            r.verify_runtime();r.verify_seal(r.STATE/'cache',plan['data_seal'])
+            assert r.verify_runtime()==plan['upstream'],'Upstream identity changed'
+            r.verify_seal(r.STATE/'cache',plan['data_seal'])
             row['snapshot_files']=r.capture_run_snapshot(out,row);row['status']='running';r.write_json(out/'result.json',row)
             with (out/'run.log').open('x',encoding='utf-8') as f:
                 process=subprocess.Popen(r.snapshot_command(r.runtime_python(),out),cwd=out,env=r.environment(),
