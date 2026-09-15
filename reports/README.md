@@ -88,6 +88,7 @@ Publication revision is distinct from executed training provenance. [Reporting a
 | [ncp-20260915/trial-0057-I2-37a8ad42c0-s45](experiments/ncp-20260915--trial-0057-I2-37a8ad42c0-s45-142a64df/README.md) | completed | fixed_updates | 0.640041 |
 | [ncp-20260915/trial-0058-FROZEN-AUX-s45](experiments/ncp-20260915--trial-0058-FROZEN-AUX-s45-b6e43569/README.md) | completed | fixed_updates | 0.638363 |
 | [ncp-20260915/trial-0059-FROZEN-CAP-s45](experiments/ncp-20260915--trial-0059-FROZEN-CAP-s45-3d706092/README.md) | completed | fixed_updates | 0.638105 |
+| [ncp-20260915/trial-0060-FROZEN-NOPRED-s45](experiments/ncp-20260915--trial-0060-FROZEN-NOPRED-s45-45761a66/README.md) | completed | fixed_updates | 0.639167 |
 | [ncp-20260915](experiments/ncp-20260915-224867c7/README.md) | running | stage_or_unknown | unknown |
 | [ngram-20260915/D](experiments/ngram-20260915--D-ba004b1c/README.md) | completed | fixed_updates | 0.634848 |
 | [ngram-20260915/DG](experiments/ngram-20260915--DG-29c4025f/README.md) | completed | fixed_updates | 0.634178 |

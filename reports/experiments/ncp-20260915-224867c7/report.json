@@ -10020,7 +10020,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "55274c9479e389fa57ac222fc1d6d24b29cfdc80",
+      "publication_commit": "09f807fdcf45ec674d39216e0c0d7efe98a2f448",
       "status": "completed",
       "verified_remote": true
     },
@@ -10135,9 +10135,9 @@
       "sha256": "21d3865e69220d3891ed1e431c831fe9f79edeed48ca4b23c2293848a3a3a240"
     },
     "campaign.log": {
-      "bytes": 75638,
+      "bytes": 76691,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "bf1c6a5b556f948c0027a388b19dfb4c4351c349b9a99bfeeb8438d949e42e4b"
+      "sha256": "485653b1613c6518fa72ec0df6fe84b415cc1208b177a3e7e1e2efebd1c06a15"
     },
     "confirmation-contract-check.log": {
       "bytes": 147,
@@ -10165,9 +10165,9 @@
       "sha256": "06ff16bf72e6de93eb086c2a5614c7829a0e2f7c42bbf0ddec6a74e77d4a499f"
     },
     "confirmation-queue.log": {
-      "bytes": 3704,
+      "bytes": 4757,
       "local_path": "runs/autoresearch/ncp-20260915/confirmation-queue.log",
-      "sha256": "a62f1180f6bf2e02acf8dc871cc27c228fc226d1699c4197a769166903d192a5"
+      "sha256": "7000ab6e3d7e59623a426c0d457c9a287413f7926812408bd611ac519777725d"
     },
     "confirmation-selection.json": {
       "bytes": 9231,
@@ -10682,7 +10682,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "9c3ebf7817480eb709ec37218646de57fa7c37e64fa155adc26a588ae6b816ee"
+      "sha256": "b18af2c558df94bc7ecd46c19706787fbd2422dea97b0adffe9b2111a935affc"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -10705,9 +10705,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 555110,
+      "bytes": 562756,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "bc9b1ba96adb11e5d80433e3828f1bdaf3f5465ecd1517330734748f6fa2f6f0"
+      "sha256": "9dc4ad94bb589a7646d5f33c816bddcea4054f773d9dc3575ea49305bba5e0be"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -10730,9 +10730,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 28404,
+      "bytes": 29015,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "76240ebddec07851f50ed36c2c9f6ff5dd024050cd69e9bd3416a3ce3b85b778"
+      "sha256": "56e00a0d4b67983a60ff7cb2f192a38165b57e4db5a4e9ae24c68444e56c0030"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
