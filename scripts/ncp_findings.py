@@ -40,6 +40,10 @@ def main():
         f'The four-seed mean NCP-minus-dense difference is {mean:+.6f} BPB; lower is better. '
         f'{sum(x["delta_bpb"] < 0 for x in pairs)} of four paired seeds favor NCP. '
         'These are equal-token validation results, not held-out or equal-time results.', '',
+        f'The exactly parameter-matched residual MLP averaged {costs["FROZEN-CAP"]["mean_bpb"]:.6f} BPB '
+        f'versus NCP at {costs[frozen["label"]]["mean_bpb"]:.6f}, with '
+        f'{costs["FROZEN-CAP"]["mean_update_seconds"]:.1f} versus {costs[frozen["label"]]["mean_update_seconds"]:.1f} '
+        'seconds of training updates. NCP did not show an advantage over this added-capacity control.', '',
         '## Frozen confirmation and ablations', '',
         '| Seed | Role | Dense BPB | NCP BPB | NCP minus dense |',
         '|---:|---|---:|---:|---:|']
