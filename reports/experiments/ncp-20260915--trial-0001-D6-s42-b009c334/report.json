@@ -277,6 +277,11 @@
       "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/optimizer.json",
       "sha256": "bf7f67d2db68eae55d37236981d5e5e2cf241d58b5d71aaabbb172697ca9d114"
     },
+    "orchestrator-recovered-from-git.py": {
+      "bytes": 11578,
+      "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/orchestrator-recovered-from-git.py",
+      "sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9"
+    },
     "protocol.json": {
       "bytes": 929,
       "local_path": "runs/autoresearch/ncp-20260915/trial-0001-D6-s42/protocol.json",
@@ -366,6 +371,10 @@
   },
   "provenance": {
     "archived_source": {
+      "orchestrator-recovered-from-git.py": {
+        "published_path": "reports/source-snapshots/20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9.py",
+        "sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9"
+      },
       "source/project/autoresearch.py": {
         "published_path": "reports/source-snapshots/180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac.py",
         "sha256": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac"

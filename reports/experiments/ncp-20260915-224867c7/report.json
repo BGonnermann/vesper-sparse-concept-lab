@@ -637,6 +637,35 @@
       ]
     },
     "contract.json": {},
+    "controller-recovery-result.json": {
+      "kind": "controller_source_recovery",
+      "recovered": [
+        {
+          "git_path": "scripts/ncp_campaign.py",
+          "git_revision": "26d471ba734dcce5aebd843aacb7b95f73170a61",
+          "recovered_file": "orchestrator-recovered-from-git.py",
+          "sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9",
+          "trial": "trial-0001-D6-s42"
+        },
+        {
+          "git_path": "scripts/ncp_campaign.py",
+          "git_revision": "26d471ba734dcce5aebd843aacb7b95f73170a61",
+          "recovered_file": "orchestrator-recovered-from-git.py",
+          "sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9",
+          "trial": "trial-0002-NCP-s42"
+        },
+        {
+          "git_path": "scripts/ncp_campaign.py",
+          "git_revision": "26d471ba734dcce5aebd843aacb7b95f73170a61",
+          "recovered_file": "orchestrator-recovered-from-git.py",
+          "sha256": "20ff28a258ebdcbaef0e01a7e7d4bc6febb07c1adca7de0c065591dc8ad531a9",
+          "trial": "trial-0003-AUX-s42"
+        }
+      ],
+      "recovered_at": "2026-09-15T14:51:53.607796+00:00",
+      "scope": "Git blob bytes exactly match each original recorded controller SHA256; recovered after execution, not an original trial-time archive or process-memory inspection",
+      "status": "completed"
+    },
     "dense-scale-result.json": {
       "checkpoint_sha256": "3a9f8857ba88c8d21792400d535ac67df8685b47ceb6c05a7b9ddc1899052cd5",
       "data_hashes": {
@@ -7096,7 +7125,7 @@
       "branch": "research/overnight-20260915",
       "kind": "publication",
       "note": "Publication commit is not retrospective training provenance.",
-      "publication_commit": "b1f2a804d188c791dda37b9a1e1a5352badd5f9a",
+      "publication_commit": "77c017a0412f42a43fdf77e47fcfdfabae9837d2",
       "status": "completed",
       "verified_remote": true
     },
@@ -7187,14 +7216,19 @@
       "sha256": "0b8daa224745d8f2eff39d4176fbaa42f5ef7b0a5f03962e945a5cd91ac40c93"
     },
     "campaign.log": {
-      "bytes": 58041,
+      "bytes": 59218,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "ca25a3b1e4837af3461b29fc3060fecfe0598ac0b52e361286a6c38cc167c779"
+      "sha256": "4b6c57c695add5d2ed1e5fcc9c02f1563280849376cbf768eb0fb9471e8bd257"
     },
     "contract.json": {
       "bytes": 286,
       "local_path": "runs/autoresearch/ncp-20260915/contract.json",
       "sha256": "4c41d6ad5c69de6e223b56d7665052061ab6a2a70b80c0d59b52a8e74891dbe5"
+    },
+    "controller-recovery-result.json": {
+      "bytes": 1265,
+      "local_path": "runs/autoresearch/ncp-20260915/controller-recovery-result.json",
+      "sha256": "4f6f8a280da05f0d339697e85729daa7137de4467cf36237bda663951caf5830"
     },
     "controller-red.log": {
       "bytes": 1540,
@@ -7352,9 +7386,9 @@
       "sha256": "51c9b3f79e66825e104d1caa138286208872645f374d0184032203a144d8a72e"
     },
     "interaction-options.json": {
-      "bytes": 9054,
+      "bytes": 8073,
       "local_path": "runs/autoresearch/ncp-20260915/interaction-options.json",
-      "sha256": "bbcceb59753db3750e1fb50a149860c780ea853323bb8537cdcb9fd1423a6c03"
+      "sha256": "c17c3adce3efcd620daac20ae9af9a1edda3121f41f0a790f634e8c44fa3b18d"
     },
     "interaction-preflight.log": {
       "bytes": 408,
@@ -7362,9 +7396,9 @@
       "sha256": "f8ed5dee8c1d77b8e3b1d1b2f7235ad79a79a6c9a91e8ff15008536a87ccf51d"
     },
     "interaction-queue.log": {
-      "bytes": 7035,
+      "bytes": 8058,
       "local_path": "runs/autoresearch/ncp-20260915/interaction-queue.log",
-      "sha256": "3e8884d79a1b24adad38334d3417b62d12f43beca0b11fdb44453c7f2cdd4f05"
+      "sha256": "361a3cc76efdd06ec85f25e0a793b22c6a612faf97f7793e9f2e8869403076f9"
     },
     "launch-AUX-s42.log": {
       "bytes": 523,
@@ -7604,7 +7638,7 @@
     "publication-result.json": {
       "bytes": 273,
       "local_path": "runs/autoresearch/ncp-20260915/publication-result.json",
-      "sha256": "8ee7c33b209985524cf7402a09680d33c0f4e7dc453d3c3fc7e057c6e250ef69"
+      "sha256": "64983298f0425a38488eebfc974092f0fca717dc081c79bc512baadcec8b613f"
     },
     "publication-watch-result.json": {
       "bytes": 113,
@@ -7627,9 +7661,9 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 405798,
+      "bytes": 417310,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "47f6cc9de971c27086f5f7aecd838cda2cbf16a37a4d708150dd623dc5574cc9"
+      "sha256": "ce1ac8f0a7cad59e5331b8463800178eaa6a7a208c4255942924146a21c19563"
     },
     "scale-probe.py": {
       "bytes": 3439,
@@ -7652,9 +7686,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 20337,
+      "bytes": 20744,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "c0a625ffa63933bd739e19276351d7db0aca06d925bc75225f9a9b9b979054ea"
+      "sha256": "0cec76505c4e65d99c3cc5b3938359800abb1786a75de1c1d729138cda5b922c"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
