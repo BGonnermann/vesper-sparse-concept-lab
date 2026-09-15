@@ -10,9 +10,6 @@ Unknown fields remain null. Do not pool different budgets/schedules. Two seeds a
 ## Diagnostics
 ```text
 campaign.log:
-2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')
-2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.
-2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')
 2026-09-15T12:12:21.662576+00:00 PROSPECTIVE AMENDMENT: add pool_normalization={none,rms} after unit-weight failures and alpha0.1 hidden RMS11.38. RMS trial starts from alpha=beta=1; check scale and causality before launching. Full rationale docs/ncp-campaign.md.
 
 controller-red.log:
@@ -325,7 +322,7 @@ and push relevant code/tests/reports, verify remote HEAD. Do not start a new cam
 
 # NCP campaign progress
 
-5 completed of 7 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
+7 completed of 9 attempted full trials. Budget: 11:41:32 to 19:41:32 UTC, 2026-09-15.
 512 updates and 8,388,608 tokens per full trial. Seed42 screens are exploratory. Lower BPB is better.
 
 ## Implementation
@@ -345,12 +342,14 @@ See [campaign plan](../../../docs/ncp-campaign.md) and the published source rece
 | [trial-0005-N-prediction_weight0.03-s42](../ncp-20260915--trial-0005-N-prediction_weight0.03-s42-cd708cd3/README.md) | 42 | 0.635888 | 203.3 | 211.0 | 41265 | 30,056,748 / 30,056,748 | 654.4 / 690.0 | False |
 | [trial-0006-N-RMS-s42](../ncp-20260915--trial-0006-N-RMS-s42-d3652f3a/README.md) | 42 | 0.635927 | 214.2 | 221.8 | 39314 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
 | [trial-0007-N-RMS-AUX-s42](../ncp-20260915--trial-0007-N-RMS-AUX-s42-d5def34d/README.md) | 42 | 0.635215 | 204.9 | 212.4 | 41139 | 30,056,748 / 30,056,748 | 654.8 / 690.0 | False |
+| [trial-0008-D6-s43](../ncp-20260915--trial-0008-D6-s43-6ae7cb75/README.md) | 43 | 0.637774 | 163.7 | 170.5 | 51373 | 26,345,772 / 26,345,772 | 581.7 / 622.0 | n/a |
+| [trial-0009-D12-s43](../ncp-20260915--trial-0009-D12-s43-3e98bde0/README.md) | 43 | 0.594495 | 308.5 | 316.9 | 27244 | 135,267,480 / 135,267,480 | 2277.2 / 2408.0 | n/a |
 
 ## Depth6 versus depth12, reference LR .04
 
 | Seed | Candidate | Control | Candidate BPB | Control BPB | Delta BPB | Update-time ratio |
 |---:|---|---|---:|---:|---:|---:|
-No completed pair yet.
+| 43 | D12 | D6 | 0.594495 | 0.637774 | -0.043279 | 1.88 |
 
 ## Frozen NCP confirmation
 
@@ -367,6 +366,8 @@ No completed pair yet.
 - trial-0005-N-prediction_weight0.03-s42: Alpha0.1 completed without codebook collapse but was worse than D6 by0.000676 BPB; reduce alpha to0.03 to limit auxiliary interference
 - trial-0006-N-RMS-s42: After raw-latent scale growth, normalize pooled concept states at original alpha=beta=1 to test stability and token quality
 - trial-0007-N-RMS-AUX-s42: Normalized-state auxiliary-only ablation isolates concept supervision from predicted feedback
+- trial-0008-D6-s43: Fresh seed43 control for mandatory independent depth comparison at reference LR0.04
+- trial-0009-D12-s43: Independent seed43 depth12 versus depth6; fixed tokens and LR0.04, report extra width/parameters/time
 
 ## Measurement limits
 

@@ -502,6 +502,44 @@
       "outcome": "completed"
     },
     {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0008-D6-s43",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "38c84999346e10bcd5b8ac4825325d6bda59aadb099d7a6205f6305d8da7aced",
+      "experiment_id": "ncp-20260915--trial-0008-D6-s43-6ae7cb75",
+      "metrics": {
+        "depth": 6.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 26.3,
+        "num_steps": 512.0,
+        "peak_vram_mb": 581.7,
+        "total_seconds": 165.7,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 159.8,
+        "val_bpb": 0.637774
+      },
+      "outcome": "completed"
+    },
+    {
+      "artifact_directory": "runs/autoresearch/ncp-20260915/trial-0009-D12-s43",
+      "budget_family": "fixed_updates",
+      "compatibility_fingerprint": "fd776f4f8d2216f2d085030280f05467591db3d663ee22a043a8c828151edb54",
+      "experiment_id": "ncp-20260915--trial-0009-D12-s43-3e98bde0",
+      "metrics": {
+        "depth": 12.0,
+        "eval_batch_size": 2.0,
+        "num_params_M": 135.3,
+        "num_steps": 512.0,
+        "peak_vram_mb": 2277.2,
+        "total_seconds": 311.7,
+        "total_tokens_M": 8.4,
+        "train_batch_size": 2.0,
+        "training_seconds": 301.3,
+        "val_bpb": 0.594495
+      },
+      "outcome": "completed"
+    },
+    {
       "artifact_directory": "runs/autoresearch/ncp-20260915",
       "budget_family": "stage_or_unknown",
       "compatibility_fingerprint": null,

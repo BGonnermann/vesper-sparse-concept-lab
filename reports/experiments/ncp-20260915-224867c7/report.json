@@ -37,7 +37,249 @@
       },
       "status": "completed"
     },
+    "audit-result.json": {
+      "all_sources_committed_and_byte_verified": true,
+      "committed_source_snapshots": {
+        "reports/source-snapshots/180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac.py": true,
+        "reports/source-snapshots/278723b78b5838e04d6040929b2165bc19ab7e5b139834c94f7a114bf780d495.py": true,
+        "reports/source-snapshots/27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde.py": true,
+        "reports/source-snapshots/38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834.py": true,
+        "reports/source-snapshots/64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c.py": true,
+        "reports/source-snapshots/6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238.py": true,
+        "reports/source-snapshots/6dd730991d0f42bb90fb088450f808af8c6b3be6c962702b43cfc7ed1f37651e.py": true,
+        "reports/source-snapshots/6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222.py": true,
+        "reports/source-snapshots/70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862.py": true,
+        "reports/source-snapshots/72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e.py": true,
+        "reports/source-snapshots/cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e.py": true,
+        "reports/source-snapshots/d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6.py": true
+      },
+      "kind": "campaign_evidence_audit",
+      "measured_campaign_logical_bytes": 1300653972,
+      "measured_checkpoint_bytes": 460968221,
+      "preserved_noncompleted": [
+        {
+          "error": "RuntimeError('Training child exit 1')",
+          "partial_checkpoint_verified": null,
+          "status": "failed",
+          "trial": "trial-0002-NCP-s42"
+        },
+        {
+          "error": "RuntimeError('Training child exit 1')",
+          "partial_checkpoint_verified": null,
+          "status": "failed",
+          "trial": "trial-0003-AUX-s42"
+        },
+        {
+          "error": null,
+          "partial_checkpoint_verified": null,
+          "status": "running",
+          "trial": "trial-0008-D6-s43"
+        }
+      ],
+      "status": "completed",
+      "verified_trials": [
+        {
+          "checkpoint": true,
+          "evaluation_immutable": true,
+          "paired_batch_order": true,
+          "source_execution": true,
+          "token_budget": true,
+          "trial": "trial-0001-D6-s42"
+        },
+        {
+          "checkpoint": true,
+          "evaluation_immutable": true,
+          "paired_batch_order": true,
+          "source_execution": true,
+          "token_budget": true,
+          "trial": "trial-0004-N-prediction_weight0.1-s42"
+        },
+        {
+          "checkpoint": true,
+          "evaluation_immutable": true,
+          "paired_batch_order": true,
+          "source_execution": true,
+          "token_budget": true,
+          "trial": "trial-0005-N-prediction_weight0.03-s42"
+        },
+        {
+          "checkpoint": true,
+          "evaluation_immutable": true,
+          "paired_batch_order": true,
+          "source_execution": true,
+          "token_budget": true,
+          "trial": "trial-0006-N-RMS-s42"
+        },
+        {
+          "checkpoint": true,
+          "evaluation_immutable": true,
+          "paired_batch_order": true,
+          "source_execution": true,
+          "token_budget": true,
+          "trial": "trial-0007-N-RMS-AUX-s42"
+        }
+      ]
+    },
     "contract.json": {},
+    "dense-scale-result.json": {
+      "checkpoint_sha256": "3a9f8857ba88c8d21792400d535ac67df8685b47ceb6c05a7b9ddc1899052cd5",
+      "data_hashes": {
+        "batch_tape": "07e33edbaa75fd2b06e8478436c55a0ab83382035a15e3dd4648026f7a8fb689"
+      },
+      "interpretation": "Same first32 seeded training microbatches; CPU BF16 SDPA checkpoint probe, not a GPU quality score or timed training experiment",
+      "kind": "read_only_cpu_checkpoint_scale",
+      "label": "D6",
+      "mean_hidden_rms": 12.544186264276505,
+      "mean_raw_chunk4_rms": 10.238941729068756,
+      "samples": [
+        {
+          "hidden_rms": 12.84878921508789,
+          "raw_chunk4_rms": 10.37562370300293
+        },
+        {
+          "hidden_rms": 12.581524848937988,
+          "raw_chunk4_rms": 10.240300178527832
+        },
+        {
+          "hidden_rms": 12.732378959655762,
+          "raw_chunk4_rms": 10.304306983947754
+        },
+        {
+          "hidden_rms": 12.544713973999023,
+          "raw_chunk4_rms": 10.132866859436035
+        },
+        {
+          "hidden_rms": 12.412941932678223,
+          "raw_chunk4_rms": 10.183266639709473
+        },
+        {
+          "hidden_rms": 12.479485511779785,
+          "raw_chunk4_rms": 10.178983688354492
+        },
+        {
+          "hidden_rms": 12.349658012390137,
+          "raw_chunk4_rms": 10.057666778564453
+        },
+        {
+          "hidden_rms": 12.577485084533691,
+          "raw_chunk4_rms": 10.283598899841309
+        },
+        {
+          "hidden_rms": 12.828600883483887,
+          "raw_chunk4_rms": 10.43368148803711
+        },
+        {
+          "hidden_rms": 12.119150161743164,
+          "raw_chunk4_rms": 9.961136817932129
+        },
+        {
+          "hidden_rms": 12.495170593261719,
+          "raw_chunk4_rms": 10.218994140625
+        },
+        {
+          "hidden_rms": 12.659076690673828,
+          "raw_chunk4_rms": 10.25151252746582
+        },
+        {
+          "hidden_rms": 12.716409683227539,
+          "raw_chunk4_rms": 10.32539176940918
+        },
+        {
+          "hidden_rms": 12.637089729309082,
+          "raw_chunk4_rms": 10.298245429992676
+        },
+        {
+          "hidden_rms": 12.40692138671875,
+          "raw_chunk4_rms": 10.228837013244629
+        },
+        {
+          "hidden_rms": 12.680073738098145,
+          "raw_chunk4_rms": 10.25783634185791
+        },
+        {
+          "hidden_rms": 12.539093971252441,
+          "raw_chunk4_rms": 10.250750541687012
+        },
+        {
+          "hidden_rms": 12.432721138000488,
+          "raw_chunk4_rms": 10.188884735107422
+        },
+        {
+          "hidden_rms": 12.71561050415039,
+          "raw_chunk4_rms": 10.339715003967285
+        },
+        {
+          "hidden_rms": 12.319055557250977,
+          "raw_chunk4_rms": 10.105713844299316
+        },
+        {
+          "hidden_rms": 12.749841690063477,
+          "raw_chunk4_rms": 10.366836547851562
+        },
+        {
+          "hidden_rms": 12.566513061523438,
+          "raw_chunk4_rms": 10.314044952392578
+        },
+        {
+          "hidden_rms": 12.654632568359375,
+          "raw_chunk4_rms": 10.360630989074707
+        },
+        {
+          "hidden_rms": 12.74277400970459,
+          "raw_chunk4_rms": 10.348424911499023
+        },
+        {
+          "hidden_rms": 12.360177040100098,
+          "raw_chunk4_rms": 10.176861763000488
+        },
+        {
+          "hidden_rms": 12.331221580505371,
+          "raw_chunk4_rms": 10.20448112487793
+        },
+        {
+          "hidden_rms": 12.614398002624512,
+          "raw_chunk4_rms": 10.27734375
+        },
+        {
+          "hidden_rms": 12.466212272644043,
+          "raw_chunk4_rms": 10.172708511352539
+        },
+        {
+          "hidden_rms": 12.611260414123535,
+          "raw_chunk4_rms": 10.250873565673828
+        },
+        {
+          "hidden_rms": 12.527435302734375,
+          "raw_chunk4_rms": 10.270193099975586
+        },
+        {
+          "hidden_rms": 12.426874160766602,
+          "raw_chunk4_rms": 10.133438110351562
+        },
+        {
+          "hidden_rms": 12.28666877746582,
+          "raw_chunk4_rms": 10.152984619140625
+        }
+      ],
+      "script_sha256": "2a2936285bc19bafdb2914c23837a5d56dfc8a198080c9f85d9a22e5749491eb",
+      "seed": 42,
+      "source_hashes": {
+        "candidate.json": "cb6847cd6c415d6f862b74597537201b1adfff01b373d728f4188584c208cdc7",
+        "protocol.json": "a7674c233aac8f9434423b2cdc6e6418e40bafb8599a4698e0be0426c7d160c8",
+        "source/project/autoresearch.py": "180955e840c6f2c32dd8ae6c6f978416a70319b565cd5f5deaf30e1edef0e8ac",
+        "source/project/autoresearch_bootstrap.py": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+        "source/project/autoresearch_memory.py": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+        "source/project/autoresearch_model.py": "27c68fb878fd54fce3d376c450804e4caeacfccd1bbb70e388ca211d1ff07bde",
+        "source/project/autoresearch_ncp.py": "38c718c689415acaad6f7129ab181a0f3bd83d2446c1edf835be13a28126e834",
+        "source/project/autoresearch_train.py": "72b02c3a95276d79ba4160a1c889b31e6021d2c7e8796c280f7a0ddbee113d0e",
+        "source/upstream/.python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+        "source/upstream/prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+        "source/upstream/pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+        "source/upstream/train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+        "source/upstream/uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+      },
+      "status": "completed"
+    },
     "fit-result.json": {
       "gpu": "NVIDIA GeForce RTX 5070 Ti",
       "kind": "synthetic_correctness_fit",
@@ -2426,6 +2668,88 @@
           "trial": "trial-0007-N-RMS-AUX-s42",
           "wall_seconds": 212.39100000000008,
           "width": 384
+        },
+        {
+          "active_parameters": 26345772,
+          "all_update_seconds": 163.65795830000434,
+          "allocated_mib": 581.685546875,
+          "board_sampled_peak_mib": 2430.0,
+          "bpb": 0.637774,
+          "codebook_buffer_bytes": 0,
+          "codebook_effective_bytes": 0,
+          "configuration": {
+            "depth": 6,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "error": null,
+          "hypothesis": "Fresh seed43 control for mandatory independent depth comparison at reference LR0.04",
+          "label": "D6",
+          "memory_table_bytes": 0,
+          "ncp_health": null,
+          "ncp_parameters": 0,
+          "phase": "depth-confirmation",
+          "report_id": "ncp-20260915--trial-0008-D6-s43-6ae7cb75",
+          "reserved_mib": 622.0,
+          "seed": 43,
+          "source_hashes": {
+            "adapter_sha256": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "checkpoint_sha256": "da5ae57e978613820c5d135eb298fe339439de2cb897ef0a43d844714b24fc08",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "278723b78b5838e04d6040929b2165bc19ab7e5b139834c94f7a114bf780d495",
+            "ncp_sha256": "6dd730991d0f42bb90fb088450f808af8c6b3be6c962702b43cfc7ed1f37651e",
+            "orchestrator_sha256": "fbbc948026ae5d99fe9b3fbc729a5a554aa4ff7f6547e729b4560f09a9774598",
+            "preflight_sha256": "c7e6b3e0e5eda7af10b40104b312f8ad7784596174042029e59cce1dca68a1bd",
+            "runner_sha256": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222"
+          },
+          "status": "completed",
+          "timed_tokens_per_second": 51373.48632784959,
+          "total_parameters": 26345772,
+          "trial": "trial-0008-D6-s43",
+          "wall_seconds": 170.5310000000004,
+          "width": 384
+        },
+        {
+          "active_parameters": 135267480,
+          "all_update_seconds": 308.4671834999954,
+          "allocated_mib": 2277.17578125,
+          "board_sampled_peak_mib": 4255.0,
+          "bpb": 0.594495,
+          "codebook_buffer_bytes": 0,
+          "codebook_effective_bytes": 0,
+          "configuration": {
+            "depth": 12,
+            "feedforward": "dense",
+            "matrix_lr": 0.04
+          },
+          "error": null,
+          "hypothesis": "Independent seed43 depth12 versus depth6; fixed tokens and LR0.04, report extra width/parameters/time",
+          "label": "D12",
+          "memory_table_bytes": 0,
+          "ncp_health": null,
+          "ncp_parameters": 0,
+          "phase": "depth-confirmation",
+          "report_id": "ncp-20260915--trial-0009-D12-s43-3e98bde0",
+          "reserved_mib": 2408.0,
+          "seed": 43,
+          "source_hashes": {
+            "adapter_sha256": "cf5a36f981c7232662478b03cc58371f3dd1339333c6d4e5ac9390cd8b19026e",
+            "bootstrap_sha256": "d76ab49a79132e5d4123a3bc748c9ba734a5ec5d3cea01f46fc9eb98ac925eb6",
+            "checkpoint_sha256": "f695ef6bb632b58c2368b9b2db6be9428c31d3d1eb67d4b0738eae34c1ec46ac",
+            "memory_sha256": "70f2c6b73417fcf5bcab6283bd5012d960960368cee6b10a8e5a426d0ccc7862",
+            "model_sha256": "278723b78b5838e04d6040929b2165bc19ab7e5b139834c94f7a114bf780d495",
+            "ncp_sha256": "6dd730991d0f42bb90fb088450f808af8c6b3be6c962702b43cfc7ed1f37651e",
+            "orchestrator_sha256": "fbbc948026ae5d99fe9b3fbc729a5a554aa4ff7f6547e729b4560f09a9774598",
+            "preflight_sha256": "c7e6b3e0e5eda7af10b40104b312f8ad7784596174042029e59cce1dca68a1bd",
+            "runner_sha256": "6e9d86a2e49e54202326383a3326e9f22361ddfc0edab752761999bc34615222"
+          },
+          "status": "completed",
+          "timed_tokens_per_second": 27243.630615166705,
+          "total_parameters": 135267480,
+          "trial": "trial-0009-D12-s43",
+          "wall_seconds": 316.9369999999999,
+          "width": 768
         }
       ],
       "status": "running"
@@ -2453,7 +2777,7 @@
     }
   },
   "diagnostics": [
-    "campaign.log:\n2026-09-15T12:00:33.731574+00:00 FAILED trial-0002-NCP-s42 RuntimeError('Training child exit 1')\n2026-09-15T12:02:13.093679+00:00 DIAGNOSIS trial-0002: finite but growing total loss crossed existing100 threshold at update169. Treat alpha=beta=1 feedback configuration as invalid; no quality score. Run same-weight AUX, then lower alpha within predeclared search. No shared causal/provenance failure identified.\n2026-09-15T12:03:24.714710+00:00 FAILED trial-0003-AUX-s42 RuntimeError('Training child exit 1')\n2026-09-15T12:12:21.662576+00:00 PROSPECTIVE AMENDMENT: add pool_normalization={none,rms} after unit-weight failures and alpha0.1 hidden RMS11.38. RMS trial starts from alpha=beta=1; check scale and causality before launching. Full rationale docs/ncp-campaign.md.",
+    "campaign.log:\n2026-09-15T12:12:21.662576+00:00 PROSPECTIVE AMENDMENT: add pool_normalization={none,rms} after unit-weight failures and alpha0.1 hidden RMS11.38. RMS trial starts from alpha=beta=1; check scale and causality before launching. Full rationale docs/ncp-campaign.md.",
     "controller-red.log:\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nTraceback (most recent call last):\nAssertionError: False is not true : Missing campaign controller\nRan 2 tests in 0.001s\nFAILED (failures=2)",
     "cpu-suite1.log:\nRan 60 tests in 3.949s\nOK",
     "cuda-suite1.log:\nRan 60 tests in 6.630s\nOK",
@@ -2485,10 +2809,15 @@
       "local_path": "runs/autoresearch/ncp-20260915/archpreview-source-result.json",
       "sha256": "73de9bddf9d8442c54cfe1545ef49e74ce662ee78579cc85bedeff494b1fee12"
     },
+    "audit-result.json": {
+      "bytes": 3219,
+      "local_path": "runs/autoresearch/ncp-20260915/audit-result.json",
+      "sha256": "33e16cbdf0fb62bcf610b553dbe0caf06685585dbda81319f9bc168114a762f6"
+    },
     "campaign.log": {
-      "bytes": 7663,
+      "bytes": 9194,
       "local_path": "runs/autoresearch/ncp-20260915/campaign.log",
-      "sha256": "c693e261a416b7ad1a0b277244fbd8c0748eabac99f990bf372b2f51444bb9a6"
+      "sha256": "37e962b1a295e10db5ef8174f55e909f73ce41731f9c4db385ad9b435a43279b"
     },
     "contract.json": {
       "bytes": 286,
@@ -2510,10 +2839,20 @@
       "local_path": "runs/autoresearch/ncp-20260915/cuda-suite1.log",
       "sha256": "10bfb6ff3cc5c6783987d4747c76b32f70767ecb57bbe3f3704c7ebe00a6a3ea"
     },
+    "dense-scale-result.json": {
+      "bytes": 5242,
+      "local_path": "runs/autoresearch/ncp-20260915/dense-scale-result.json",
+      "sha256": "2c4b42ef7bc2f895bef1e0d8ca79818a1768dae3e782906fa35e95b010083760"
+    },
+    "dense-scale.log": {
+      "bytes": 641,
+      "local_path": "runs/autoresearch/ncp-20260915/dense-scale.log",
+      "sha256": "30e9f0cebce843fe3c9c9282131ab809b46d0d64bf7291a6de100d42cd9a5446"
+    },
     "depth-queue.log": {
-      "bytes": 747,
+      "bytes": 2278,
       "local_path": "runs/autoresearch/ncp-20260915/depth-queue.log",
-      "sha256": "acb354be93abd1e3933783466c441ab3ef85913c870073d014ffaecdc992f8fb"
+      "sha256": "5894df319e5610e3406263b533808f119b1730114c6f6c6b66eaa1a446ebe184"
     },
     "depth-queue.py": {
       "bytes": 1618,
@@ -2691,9 +3030,14 @@
       "sha256": "5666f645e81115bf5d92582736ee2fcfc56d19a58e4712369a5e93672d2f4b2e"
     },
     "result.json": {
-      "bytes": 36814,
+      "bytes": 40941,
       "local_path": "runs/autoresearch/ncp-20260915/result.json",
-      "sha256": "4e4b4e83d500538d76a527a095115b85c4a15d5e8610054ab65a2c3a9ad7f7c4"
+      "sha256": "df0655d6087b6ef51997c3d640c583262a91fed827aeead54fe98f19f8cf778a"
+    },
+    "scale-probe.py": {
+      "bytes": 3439,
+      "local_path": "runs/autoresearch/ncp-20260915/scale-probe.py",
+      "sha256": "2a2936285bc19bafdb2914c23837a5d56dfc8a198080c9f85d9a22e5749491eb"
     },
     "sources-result.json": {
       "bytes": 1101,
@@ -2701,9 +3045,9 @@
       "sha256": "14067ab0c3190d6f6acb23a16f4eadc6207ccbc7ff8dbb5c81b65b0f5384a4c8"
     },
     "summary.md": {
-      "bytes": 4692,
+      "bytes": 5301,
       "local_path": "runs/autoresearch/ncp-20260915/summary.md",
-      "sha256": "ec78f0931ff4996c8edf881a4b76be1727bb8303417dcbdd52dcd2f46ad8da71"
+      "sha256": "7db58262a423d62144b8ea22e3089d1f10e09f1bab0d68904767e7de999e6d56"
     },
     "test-ncp-green1.log": {
       "bytes": 1343,
@@ -2738,6 +3082,10 @@
       "normalized-queue.py": {
         "published_path": "reports/source-snapshots/3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002.py",
         "sha256": "3ab3001e37695610668e3616fddd85875a9ee4c7a9ea1254dcba8417780b3002"
+      },
+      "scale-probe.py": {
+        "published_path": "reports/source-snapshots/2a2936285bc19bafdb2914c23837a5d56dfc8a198080c9f85d9a22e5749491eb.py",
+        "sha256": "2a2936285bc19bafdb2914c23837a5d56dfc8a198080c9f85d9a22e5749491eb"
       }
     },
     "execution_receipt": null,
@@ -2752,6 +3100,7 @@
   "reporter_sha256": "b7fe4f9a73689b14db57fd66dce6059fd3037f238a49833174e7bc0ba7faaad9",
   "schema_version": 1,
   "seeds": [
-    42
+    42,
+    43
   ]
 }
