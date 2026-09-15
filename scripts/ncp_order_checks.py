@@ -36,6 +36,8 @@ class OrderIdentityTests(unittest.TestCase):
         for seed in (True, 0, 41, 43, 46, '45'):
             with self.assertRaises(ValueError):
                 validate_protocol(dict(protocol, batch_order_seed=seed))
+        with self.assertRaises(ValueError):
+            validate_protocol(dict(protocol, seed=43, batch_order_seed=45))
 
     def test_actual_loop_separates_initialization_and_order(self):
         receipts = {}
