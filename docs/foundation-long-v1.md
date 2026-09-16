@@ -44,9 +44,8 @@ On interruption use the last validated checkpoint, same config and source bytes.
 $py = '.autoresearch/upstream/.venv/Scripts/python.exe'
 & $py scripts/long_baseline_campaign.py train --config experiments/mainline/foundation-long-v1.json
 # If explicitly resuming after diagnosis (same original configuration):
-$latest = Get-Content runs/foundation_long_20260916/reference/latest.json | ConvertFrom-Json
-& $py scripts/long_baseline.py --config experiments/mainline/foundation-long-v1.json --output runs/foundation_long_20260916/reference --resume $latest.path
+& $py scripts/supervise_long_resume.py --config experiments/mainline/foundation-long-v1.json --run runs/foundation_long_20260916/reference --deadline "2026-09-16T12:46:33.205990-04:00"
 Get-Content -Path "C:\Users\bgonn\Desktop\vesper-sparse-concept-lab\runs\foundation_long_20260916\progress.log" -Tail 30 -Wait
 ```
 
-The direct resume command retains model/data safeguards; use supervised execution for thermal/deadline monitoring. Final evaluation, chart and inference commands will be recorded with their delivered tools. Never restart a completed run or overwrite earlier attempts.
+The resume command retains model/data safeguards and thermal/deadline monitoring. It refuses an expired deadline; do not extend the original campaign silently. Final evaluation, chart and inference commands will be recorded with their delivered tools. Never restart a completed run or overwrite earlier attempts.
