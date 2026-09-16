@@ -1,80 +1,77 @@
-# Dense foundation campaign: verified pilot results
+# Dense foundation campaign: final report
 
-**Keep the frozen dense architecture and original mainline tokenizer.** The new data/evaluation foundation is operational. The comparisons below are small-corpus pilots, not evidence of general reasoning or coding capability. No architecture, mixture or tokenizer is automatically promoted.
+**Use the pilot BPE candidate and expanded general-data pool for the next local general/technical phase.** Dense architecture and the original TinyStories regression baseline are preserved. This is a foundation-profile decision, not a useful-assistant or production-weight claim.
 
 ## Verified facts
 
-- Frozen dense D12/width768, LR.04, BF16, context512, microbatch2, batch16,384, checkpointing off. Total/active parameters135,267,480; memory table0.
-- Pinned WikiText-2 raw and CPython documentation:37,263,470downloaded bytes;1,049accepted documents; corpus fingerprint `debe7de4f51d9487e316aedf1a7dc828350d7a77f20d99a913a0143e456b121f`.
-- Current tokenizer SHA256 `4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c`; candidate `736bb1a35ce3b2a3143095bfc1390858d67dd7f606fda25137b83095bace0102`. Both8192tokens; candidate retraining was byte-identical.
-- Every paired run passed parameter, initialization, token-budget, schedule, data, evaluator-input and checkpoint checks; every validation checkpoint was independently replayed. Exact code/runtime/hardware/source hashes and per-domain losses are in [results.json](results.json).
+- Native Windows execution on the observed RTX5070Ti. Frozen D12/width768,135,267,480total and structurally active parameters, memory table0, BF16 AMP, context512, microbatch2,16,384tokens/update, checkpointing off.
+- Fifteen full pilot runs, six fresh seeds (201–203 and211–213),8,388,608tokens/run;125,829,120pilot training tokens. A separate seed101baseline reproduction and two successful two-update smokes are recorded separately.
+- Original corpus:1,049documents. Expanded corpus:2,439documents, with unchanged held-out files and unchanged264-document technical training pool. Total retained source-download payload:351,340,048bytes; no cloud, paid services or dependency upgrades.
+- V1 dataset fingerprint: `debe7de4f51d9487e316aedf1a7dc828350d7a77f20d99a913a0143e456b121f`; expanded: `f783433992d354c5887f5130f3f9f7892f171916b4e9ce5294fda2ed87a5b6eb`.
+- Both tokenizers have8192entries and50,331,648vocabulary-dependent parameters including the existing six value-embedding tables. Original SHA256: `4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c`; candidate: `736bb1a35ce3b2a3143095bfc1390858d67dd7f606fda25137b83095bace0102`.
+- Every pilot checkpoint reproduced its validation score within1e-6 before one frozen test stage. All15test outcomes and unchanged-weight checks are reported. Exact run/source/runtime identities are in the linked JSON receipts.
 
-## Baseline reproduction
+## Experimental results
 
-Seed101,8,388,608tokens: legacy TinyStories BPB **0.589531**, reference.589157, absolute difference0.000374. Timed throughput25798tok/s; wall334.9s; peak allocated/reserved2277.2/2408.0MiB. The wrapper's missing-metadata failure is retained separately from the successful artifact verification.
+Negative deltas favor the candidate. Each comparison changes one factor; do not treat equal tokens as equal raw-byte exposure.
 
-## Controlled results
+| Change vs its matched control | Validation BPB delta (paired SD) | Test BPB delta (paired SD) | Both conservative gates |
+|---|---:|---:|---|
+| mixture | -0.050469 (0.010605) | -0.048537 (0.012128) | False |
+| tokenizer | -0.112029 (0.010801) | -0.105836 (0.012606) | True |
+| expanded_data | -0.024891 (0.005830) | -0.025950 (0.009452) | True |
 
-Each row:512updates,8,388,608tokens, independent initialization. Same-token comparisons are not same-byte exposure or equal compute. Primary metric is aggregate exact-byte BPB; lower is better. Allocator memory excludes desktop/driver use.
+Per-domain paired mean BPB deltas (positive means regression):
 
-| Arm | Seed | Aggregate BPB | General BPB | Technical BPB | Timed tok/s | Update s | Wall s | Alloc/reserved MiB |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| control | 201 | 1.429069 | 1.496914 | 1.358454 | 25407 | 330.2 | 344.3 | 2277.2/2408.0 |
-| mixture | 201 | 1.367413 | 1.564995 | 1.161759 | 26033 | 322.3 | 336.2 | 2277.2/2408.0 |
-| tokenizer | 201 | 1.305620 | 1.422883 | 1.183566 | 25412 | 330.1 | 341.8 | 2277.2/2408.0 |
-| control | 202 | 1.397499 | 1.478392 | 1.313302 | 25474 | 329.3 | 342.7 | 2277.2/2408.0 |
-| mixture | 202 | 1.356937 | 1.547788 | 1.158289 | 25619 | 327.5 | 341.2 | 2277.2/2408.0 |
-| tokenizer | 202 | 1.295521 | 1.416601 | 1.169495 | 25552 | 328.4 | 339.7 | 2277.2/2408.0 |
-| control | 203 | 1.412444 | 1.482412 | 1.339619 | 25499 | 329.2 | 342.6 | 2277.2/2408.0 |
-| mixture | 203 | 1.363257 | 1.551891 | 1.166917 | 25341 | 331.0 | 344.3 | 2277.2/2408.0 |
-| tokenizer | 203 | 1.301785 | 1.423551 | 1.175046 | 25371 | 330.9 | 342.3 | 2277.2/2408.0 |
+| Change | Validation general | Validation technical | Test general | Test technical |
+|---|---:|---:|---:|---:|
+| mixture | +0.068986 | -0.174803 | +0.052963 | -0.180253 |
+| tokenizer | -0.064894 | -0.161089 | -0.056200 | -0.170249 |
+| expanded_data | -0.037058 | -0.012226 | -0.036671 | -0.012037 |
 
-Control=current tokenizer80/20general/technical source token mass. Mixture=current50/50. Tokenizer=candidate80/20. Actual sampled masses and repeated corpus passes are in each stream receipt.
+The50/50mixture remains rejected: its validation general-domain regression failed the predeclared guard. The additional test gate also requires improvement >2paired SD, all3paired aggregate signs favorable, mean gain >=.01BPB, domain mean regressions <=.02BPB, and acceptable costs.
 
-**mixture vs control:** mean paired BPB delta-0.050469, paired SD0.010605; deltas[-0.061656, -0.040562, -0.049188]. Domain mean deltas{'general': 0.0689857591554613, 'technical': -0.17480312030128653}. Predeclared screen passed: **False**. No promotion.
+All per-domain and individual results: [initial9-run pilot](PILOT.md), [fresh-seed data-only comparison](EXPANDED-DATA.md), [all15test models](TEST.md). Aggregate results must not hide the domain tables.
 
-**tokenizer vs control:** mean paired BPB delta-0.112029, paired SD0.010801; deltas[-0.12345, -0.101978, -0.110659]. Domain mean deltas{'general': -0.06489414212987255, 'technical': -0.1610889409268085}. Predeclared screen passed: **True**. No promotion.
+Measured training throughput: 25,205–26,033tok/s; full per-run wall time: 336.2–346.2s. Peak training allocator memory: 2277.2MiB allocated / 2408.0MiB reserved. Whole-board samples and full cost breakdowns are retained separately.
 
-## Inferences and limitations
+Baseline reproduction: seed101,8,388,608tokens, legacy TinyStories BPB.589531 versus recorded.589157;25,798timed tok/s,334.9s wall,2,277.2/2,408.0MiB allocator peak. Its wrapper metadata failure and separate successful verification are both retained.
 
-- Data ingestion trains cleanly. There is no fair TinyStories-only versus new-corpus training comparison, so these results do **not** establish that more data helped.
-- Tokenizer compression, raw-byte exposure, context in bytes and repeated passes differ. Only the recorded paired results establish improvement or regression on this held-out pilot; no wider capability claim follows.
-- The legacy per-token decoded Unicode byte table overcounts split UTF-8 pieces. New evaluation uses exact document bytes. Historical BPB is preserved, not pooled with the new series.
-- RST/Wikipedia markup, small topic coverage, coarse language filtering and lexical rather than semantic dedup remain limitations. Test corpus model scores remain unopened.
+## Inferences
 
-## Failures
+- The tokenizer improvement is measured model quality, not compression alone, and is conditional on these general/technical corpora and short-context protocol.
+- The expanded pool comparison changes article/topic coverage and repeated exposure together: only33general documents overlap exactly. It is **not** a nested data-size-only ablation. Report the measured pool-replacement result, not a universal claim that more data helps.
+- Exact-byte evaluation fixes a Unicode accounting problem in the legacy evaluator. Historical packed TinyStories BPB is preserved and must not be pooled with the new document-aligned series.
 
-- Baseline wrapper omitted condition metadata after successful training; original failed result retained, independent correction receipt verifies the artifacts.
-- First new-path smoke hit noncontiguous target tensors in the pinned model before completing an update; contiguous copies fixed it; a new smoke completed.
-- Initial Git commit failed because author identity was unset. Command-local campaign assistant identity was used; no global Git configuration changed.
+## Generated-sample inspection
+
+Fixed prompts/seed20260915/top-k40/temperature.8/64tokens expose major limitations. The candidate on the original corpus emits constant returns for `count_words` and inconsistent arithmetic. The expanded-pool seed211model emits `x + y` repetitions for word counting and does not explain why the sky is blue. These are base-LM continuations, not an instruction-following test, but they provide no support for useful coding, mathematics, reasoning or factual-reliability claims. All fixed samples are retained; none were used to select a lucky seed.
 
 ## Decisions made
 
-- Dense mainline; experimental NCP/MoE/n-grams preserved and excluded.
-- Preserve original tokenizer and baseline; use paired pilot evidence to decide the next confirmation, not automatic promotion.
-- No cloud, paid services, dependency upgrades, destructive cleanup or push. Unrelated user files remain untouched.
+- Dense remains mainline. Frozen NCP is a negative result under its tested conditions; MoE/n-grams remain experimental and untouched.
+- Tokenizer eligible for the versioned general/technical profile: **True**. Expanded pool eligible with that tokenizer: **True**. Preserve regression-v1 and every earlier artifact.
+- No production checkpoint replacement, weight upload, automatic push or history rewrite. No further training after the final-test freeze.
 
-## Unresolved / not completed
+## Failures
 
-- No broad science, mathematics or standalone code corpus; no general-capability benchmark claims.
-- No depth/width search or checkpointing re-sweep on the new data.
-- No optimizer/RNG-resumable training checkpoints (retained weights are evaluation checkpoints).
-- No untouched final-test promotion stage, external benchmark contamination certification, or distributed/off-machine reproduction.
+- Baseline training succeeded but its wrapper omitted condition metadata; original failure receipt retained, independent verification repaired only the metadata interpretation.
+- First new-path smoke hit noncontiguous targets before completing an update. Contiguous copies fixed it; new smoke attempts passed.
+- Initial commit failed because Git author identity was unset; command-local campaign assistant identity was used without global configuration changes.
+
+## Unresolved questions / work not completed
+
+- No frontier/general-reasoning claim; no broad science, math or standalone code corpus; no production-quality assistant.
+- No new depth/width search, checkpointing re-sweep, optimizer/RNG-resumable checkpoints or8GB-device deployment measurement.
+- Lexical dedup is not semantic or external-benchmark decontamination. The now-opened test split is a regression set for future work, not an untouched selection set.
+- This is a bounded pilot campaign within the8-hour ceiling, not an8-hour-duration training run. Actual clock, test counts, health, disk, file and commit inventory are in [closeout](CLOSEOUT.md).
 
 ## Next three highest-value actions
 
-1. Review per-domain paired results and fixed samples; freeze one follow-up hypothesis before opening any test scores.
-2. Add a small explicitly licensed science/math/code source with the same provenance, dedup and held-out controls; improve markup handling independently.
-3. Run fresh-seed confirmation at a larger unique-data/token budget, then one frozen test stage before considering tokenizer or mixture promotion.
+1. Use the gated foundation profile in a new predeclared study with longer learning curves and fresh held-out data; do not retune against this now-opened test.
+2. Add bounded, explicitly licensed science/math/code sources; independently ablate markup cleanup and data quality rather than architecture mechanisms.
+3. Add small task-level evaluations and broaden tokenizer/domain audits before making any useful-capability claim.
 
 ## Reproduce / continue
 
-See [campaign protocol](../../docs/foundation-campaign.md) and [tokenizer audit](../../docs/tokenizer-foundation-v1.md). Example validation replay (native PowerShell):
-
-```powershell
-$py = '.autoresearch/upstream/.venv/Scripts/python.exe'
-& $py scripts/evaluate_foundation.py runs/foundation_campaign/pilot-control-s201 --output runs/foundation_campaign/manual-replay.json
-& $py scripts/report_foundation.py
-```
-
-Local artifacts, logs, weights, candidate tokenizer and evaluation text remain under `runs/foundation_campaign/`; corpus under `data/foundation-v1/`. Compact manifests and receipts only are published here.
+See [main protocol](../../docs/foundation-campaign.md), [data extension](../../docs/foundation-data-extension.md), [test freeze](../../docs/foundation-final-test.md), and [tokenizer audit](../../docs/tokenizer-foundation-v1.md). Native Windows commands and artifact locations are in [closeout](CLOSEOUT.md). All weights/corpora/tokenizer artifacts remain outside Git.

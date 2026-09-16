@@ -11,6 +11,7 @@ Dense is the mainline architecture. Frozen NCP failed its tested confirmation ru
 - **[Dense foundation protocol and research decision](docs/foundation-campaign.md)** — frozen baseline, capability target, data pipeline, evaluation and reproduction commands.
 - **[Verified foundation pilot report](reports/foundation-v1/REPORT.md)** — paired results, costs, limitations and next actions.
 - [Tokenizer audit](docs/tokenizer-foundation-v1.md)
+- [Gated general/technical profile v2](experiments/mainline/foundation-general-v2.json) — same dense architecture; tokenizer and data-pool improvements passed three-seed validation and frozen test gates. TinyStories regression v1 is preserved.
 - **[Run the Windows training tests](docs/autoresearch.md)** — setup, GPU probe, smoke test, and dense baseline.
 - [Bounded instructions for your local coding agent](program.md)
 - [Research findings and primary sources](docs/research.md)

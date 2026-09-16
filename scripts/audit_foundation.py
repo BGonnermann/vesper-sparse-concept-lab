@@ -9,8 +9,10 @@ from foundation_data import ROOT,sha,digest,write,verify
 from foundation_tokenizer import current,load_candidate
 
 
-def audit():
-    start=time.perf_counter();root=ROOT/'data/foundation-v1';manifest=verify(root)
+def audit(root,output):
+    root=Path(root);output=Path(output)
+    if output.exists():raise ValueError('Preserve prior audit receipt; choose a new output path')
+    start=time.perf_counter();manifest=verify(root)
     assert manifest['fingerprint']==sha(json.dumps(manifest['outputs'],sort_keys=True).encode())
     docs=[];seen=set();paragraph_owner={};counts=Counter()
     for split in ('train','validation','test'):
@@ -44,5 +46,8 @@ def audit():
         tokenizer_byte_fallback_coverage=coverage,dataset_fingerprint=manifest['fingerprint'],manifest_sha256=digest(root/'manifest.json'),
         script_sha256=digest(__file__),wall_seconds=time.perf_counter()-start,
         limitations='Lexical thresholds only; does not establish absence of semantic overlap or benchmark contamination')
-    write(ROOT/'runs/foundation_campaign/independent-pairwise-audit.json',result);print(json.dumps(result,indent=2))
-if __name__=='__main__':audit()
+    write(output,result);print(json.dumps(result,indent=2))
+if __name__=='__main__':
+    import argparse
+    p=argparse.ArgumentParser();p.add_argument('--data',type=Path,default=ROOT/'data/foundation-v1');p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+    audit(a.data,a.output)

@@ -55,6 +55,6 @@ def main():
         checked([str(r.runtime_python()),'-B',str(r.ROOT/'scripts/evaluate_foundation.py'),str(HOME/name),'--output',str(receipt)],HOME/(name+'-replay.log'))
         log('Verified immutable checkpoint replay + exact-byte TinyStories regression: '+name)
     checked([str(r.runtime_python()),'-B',str(r.ROOT/'scripts/report_foundation.py')],HOME/'final-report.log')
-    log('Verified paired report written: reports/foundation-v1/REPORT.md; no promotion and no test split model scores opened.')
+    log('Verified validation-stage paired report written: reports/foundation-v1/PILOT.md; no promotion from validation alone.')
 
 if __name__=='__main__':main()

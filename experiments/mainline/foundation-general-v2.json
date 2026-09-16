@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "profile_id": "foundation-general-technical-v2",
+  "scope": "Small base-model local research profile; no reasoning/coding capability claim",
+  "architecture_config": "experiments/mainline/dense-v1.json",
+  "total_parameters": 135267480,
+  "active_parameters": 135267480,
+  "memory_table_bytes": 0,
+  "tokenizer": {
+    "path": "runs/foundation_campaign/tokenizer/candidate.json",
+    "sha256": "736bb1a35ce3b2a3143095bfc1390858d67dd7f606fda25137b83095bace0102",
+    "vocabulary": 8192
+  },
+  "data": {
+    "path": "data/foundation-expanded-v1",
+    "fingerprint": "f783433992d354c5887f5130f3f9f7892f171916b4e9ce5294fda2ed87a5b6eb",
+    "general_weight": 0.8,
+    "technical_weight": 0.2
+  },
+  "training": {
+    "sequence_length": 512,
+    "microbatch_size": 2,
+    "tokens_per_update": 16384,
+    "optimizer_updates": 512,
+    "activation_checkpointing": false,
+    "matrix_lr": 0.04,
+    "amp": "bfloat16"
+  },
+  "evidence": {
+    "final_test_freeze_sha256": "b321f757d516ad44d9a13d441ace67c952c4de3a429f0ac3fc8f6f6337cc2654",
+    "final_test_receipts_sha256": {
+      "pilot-control-s201": "d935d329c5d5b5177a19b97e5b0f69fabd49ad25862ebf81274ad3113ea6dd02",
+      "pilot-mixture-s201": "3b3d9f138f680706604f7b8b992620578d9ff37b0b14050d1aae4f66498386f2",
+      "pilot-tokenizer-s201": "97a14924cb01d90b38c235cc5f5a458bf8e38cdef1b9f7b1e78c954824c276ec",
+      "pilot-control-s202": "5ca3f1277c52a6e6a143635c6c3a4e13b6f58df2df703c4c13bbc5b2e493171e",
+      "pilot-mixture-s202": "b7371567012807c2ec65de39aee4ce1d2a65a594b1f848b16219cc6d780e9124",
+      "pilot-tokenizer-s202": "193086e36a916f7f43b5fcbef610e034253d0a3fd037dc90066811c783e92f99",
+      "pilot-control-s203": "9d6ff563caa77536c9914d68e8b2ccf34479d5d3ca4e7a307cd04fdfdf6f0292",
+      "pilot-mixture-s203": "ad6d67a0824b79aaa19ba8ff3a9987189082d7d40d498eac259038330f6feee1",
+      "pilot-tokenizer-s203": "1eb4b4aa9bf70116f073c7e471b7b88d7e9254e54f428d7492730e572ca86034",
+      "data-old-s211": "a7abb9985038f7809fec3dd26fa47ee1d5279cbccdbca8a876a5a2329781b151",
+      "data-expanded-s211": "61cb7f4a5afc22400b9614cc1906e54b73baf8aac88ff0c45ba27d59f0a7d109",
+      "data-old-s212": "d1b4eaa8c3e91dd2dd8d926fb543dafb36f3ca37605f9b9812649aa9f1d57961",
+      "data-expanded-s212": "e5a457f998a46cad75f83b6e36ca969b2069b330551eec97bca48cdbbc8bb146",
+      "data-old-s213": "050ae5509a2c362465115d3cb958824cdbe197df6a7e8e0a87fceea6f37af245",
+      "data-expanded-s213": "4e373f949a3f27228db809d28316fe1209a9a8741c72502a5456259cf4c559ed"
+    }
+  },
+  "regression_profile": "experiments/mainline/tinystories-regression-v1.json"
+}

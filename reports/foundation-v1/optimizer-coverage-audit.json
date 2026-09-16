@@ -1,0 +1,66 @@
+{
+  "status": "verified",
+  "all15_optimizer_receipts_identical": true,
+  "checks": [
+    {
+      "run": "pilot-control-s201",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "pilot-mixture-s201",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "pilot-tokenizer-s201",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "pilot-control-s202",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "pilot-mixture-s202",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "pilot-tokenizer-s202",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "pilot-control-s203",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "pilot-mixture-s203",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "pilot-tokenizer-s203",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "data-old-s211",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "data-expanded-s211",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "data-old-s212",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "data-expanded-s212",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "data-old-s213",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    },
+    {
+      "run": "data-expanded-s213",
+      "optimizer_sha256": "2004ab23442acab1f72e81ab0f0ccd1d970bdb6228cee87c2d09e3e72bfd4643"
+    }
+  ]
+}

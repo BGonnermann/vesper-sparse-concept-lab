@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "pipeline_sha256": "31997ec3cf7fb3540b73ce409911d1c0f664d1f6d47ffbf82c6d3a94f1334c72",
+  "ingestor_sha256": "fdbf0ca07e60505042b3741991df5f7b034ba132aab43e3a6542273c72f98a05",
+  "policy": {
+    "version": 1,
+    "normalization": "NFC; CRLF/CR to LF; preserve indentation",
+    "min_chars": 200,
+    "max_chars": 300000,
+    "near_jaccard": 0.8,
+    "long_shared_paragraph_chars": 200,
+    "split_priority": [
+      "test",
+      "validation",
+      "train"
+    ]
+  },
+  "parent_manifest_sha256": "88f9e4b036cac78550fddc24aaa0cf496f6b32134f642191d1232b966d3932d1",
+  "parent_fingerprint": "debe7de4f51d9487e316aedf1a7dc828350d7a77f20d99a913a0143e456b121f",
+  "outputs": {
+    "train.jsonl": "71953edb6d1c3f4ea97bddc7a9bb21fd00dbc37f8668f9520d1b3e79623039c4",
+    "validation.jsonl": "263423c04d526e8af743865635026b06817aa9b04ecd2e3ded945564b2973d94",
+    "test.jsonl": "b342e8ecb70473b39eb5194d20a9bcd3936cc5b7604969cb241d209db872fb86"
+  },
+  "fingerprint": "f783433992d354c5887f5130f3f9f7892f171916b4e9ce5294fda2ed87a5b6eb",
+  "sources": [
+    {
+      "id": "wikitext",
+      "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "subset": "wikitext-103-raw-v1 train: lowest-hash <=2000 articles, <=64MiB; original v1 wikitext-2-raw-v1 held-out files unchanged",
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext",
+      "license": "CC-BY-SA-3.0 / GFDL (dataset card)",
+      "sampling_weight": 0.8,
+      "risks": "Small curated Wikipedia sample; markup, old facts, attribution/share-alike obligations; not broad web coverage; additional topics and unique bytes do not establish improved learning"
+    },
+    {
+      "id": "cpython",
+      "revision": "de54cf5be371a6f5e2e9f208c38def5f81d3ef02",
+      "subset": "Doc/tutorial/*.rst and Doc/library/*.rst, whole files",
+      "url": "https://github.com/python/cpython",
+      "license": "PSF-2.0; documentation examples additionally 0BSD; see retained LICENSE and Doc/license.rst",
+      "sampling_weight": 0.2,
+      "risks": "Documentation markup; boilerplate; narrow Python-only technical domain; not a clean code benchmark"
+    }
+  ],
+  "statistics": {
+    "cpython:test:bytes": 440255,
+    "cpython:test:documents": 34,
+    "cpython:train:bytes": 5230783,
+    "cpython:train:documents": 264,
+    "cpython:validation:bytes": 388416,
+    "cpython:validation:documents": 21,
+    "wikitext:exact_rejected": 1,
+    "wikitext:test:bytes": 1287358,
+    "wikitext:test:documents": 61,
+    "wikitext:train:bytes": 36367702,
+    "wikitext:train:documents": 1999,
+    "wikitext:validation:bytes": 1144068,
+    "wikitext:validation:documents": 60
+  },
+  "raw_general_articles": 29437,
+  "selected_general_articles": 2000,
+  "selected_general_bytes": 36480635,
+  "accepted_documents": 2439,
+  "downloads": [
+    {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1/train-00000-of-00002.parquet",
+      "bytes": 156987808,
+      "sha256": "74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1/train-00001-of-00002.parquet",
+      "bytes": 157088770,
+      "sha256": "ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720"
+    }
+  ],
+  "downloaded_bytes": 314076578,
+  "inherited_download_bytes": 37263470,
+  "inherited_sources": [
+    {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/test-00000-of-00001.parquet",
+      "bytes": 732610,
+      "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/validation-00000-of-00001.parquet",
+      "bytes": 657209,
+      "sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+      "bytes": 6357543,
+      "sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/raw/b08601e04326c79dfdd32d625aee71d232d685c3/README.md",
+      "bytes": 10464,
+      "sha256": "d5aabf145d341366745ac703b5844c442c143943b6c77929481395c822b1c28c"
+    },
+    {
+      "url": "https://codeload.github.com/python/cpython/zip/de54cf5be371a6f5e2e9f208c38def5f81d3ef02",
+      "bytes": 29505644,
+      "sha256": "dd1284691cd485460afc9ef523ea44868e4714dbac16b1308febc9ae0831aa80"
+    }
+  ],
+  "selected_id_fingerprint": "53791874af053f7e7a264f4562433ff772e1e4db0f8022464fd59347ab2c030b",
+  "heldout_unchanged": true,
+  "technical_training_unchanged": true,
+  "wall_seconds": 116.61926220000169,
+  "limitations": [
+    "No science/math source selected yet",
+    "Script filter is not a language classifier",
+    "Near dedup uses exact 5-word shingle Jaccard >= .8 and shared long paragraphs, not semantic equivalence",
+    "Evaluation scores must not be used to alter these splits",
+    "No external benchmark contamination guarantee",
+    "Only general-domain training pool changed; tokenizer is not retrained on expanded corpus"
+  ]
+}

@@ -123,7 +123,7 @@ def main():
         '& $py scripts/evaluate_foundation.py runs/foundation_campaign/pilot-control-s201 --output runs/foundation_campaign/manual-replay.json',
         '& $py scripts/report_foundation.py','```','',
         'Local artifacts, logs, weights, candidate tokenizer and evaluation text remain under `runs/foundation_campaign/`; corpus under `data/foundation-v1/`. Compact manifests and receipts only are published here.']
-    (DEST/'REPORT.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+    (DEST/'PILOT.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print(json.dumps(pairs,indent=2))
 
 if __name__=='__main__':main()

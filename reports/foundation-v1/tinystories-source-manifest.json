@@ -1,0 +1,20 @@
+{
+  "source": "karpathy/tinystories-gpt4-clean",
+  "revision": "0397e27157956705a0260709da3095bb9c43d6a7",
+  "url": "https://huggingface.co/datasets/karpathy/tinystories-gpt4-clean/resolve/0397e27157956705a0260709da3095bb9c43d6a7/tinystories_gpt4_clean.parquet",
+  "license": "cdla-sharing-1.0",
+  "parquet_sha256": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+  "parquet_bytes": 672825299,
+  "total_documents": 2732634,
+  "total_tokens": null,
+  "whole_corpus_tokens_measured": false,
+  "preexisting_cache": true,
+  "new_parquet_download_bytes": 0,
+  "source_card": {
+    "url": "https://huggingface.co/datasets/karpathy/tinystories-gpt4-clean/raw/0397e27157956705a0260709da3095bb9c43d6a7/README.md",
+    "bytes": 3303,
+    "sha256": "d0cc15e0be2063a7bfca98eec25fb11a2868f019fe7401a5cfcda6070a55e02f"
+  },
+  "role": "Infrastructure regression only; not mixed into new pilot training",
+  "revision_resolution": "Resolved after reproduction by matching pinned repository LFS SHA256 to the preexisting sealed file; original launcher URL used main"
+}

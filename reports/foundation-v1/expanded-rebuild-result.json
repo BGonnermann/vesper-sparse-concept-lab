@@ -1,0 +1,8 @@
+{
+  "status": "verified",
+  "fingerprint": "f783433992d354c5887f5130f3f9f7892f171916b4e9ce5294fda2ed87a5b6eb",
+  "all_content_and_provenance_fields_identical": true,
+  "excluded_measurement_field": "wall_seconds",
+  "new_network_bytes": 0,
+  "method": "Cold ingest from copied sealed raw shards; no prepared outputs reused"
+}

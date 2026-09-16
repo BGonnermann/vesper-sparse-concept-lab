@@ -1,0 +1,56 @@
+{
+  "status": "verified",
+  "schedule": {
+    "start": "2026-09-15T21:57:06.690291-04:00",
+    "experiment_cutoff": "2026-09-16T04:57:06.690291-04:00",
+    "planned_stop": "2026-09-16T05:57:06.690291-04:00"
+  },
+  "closeout_at": "2026-09-16T00:38:16.637513-04:00",
+  "elapsed_seconds": 9669.947222,
+  "training_frozen_at": "2026-09-15T23:53:08.791418-04:00",
+  "verification_minutes_since_training_freeze": 45.130768249999996,
+  "tests": {
+    "cpu": {
+      "tests": 130,
+      "seconds": 5.502,
+      "log_sha256": "af24487334d5d31530a448aea79585d2394e0c5dbfc53e10418fbf68c3861b82"
+    },
+    "cuda": {
+      "tests": 130,
+      "seconds": 7.837,
+      "log_sha256": "4147fea42f03621c138c38a4e81f4dd789385c16977626fca1dd818506358cbd"
+    }
+  },
+  "max_training_gpu_temperature_c": 63.0,
+  "max_sampled_whole_board_memory_mib": 4094.0,
+  "free_disk_bytes": 227022675968,
+  "source_download_payload_bytes": 351340048,
+  "source_card_and_api_metadata_additional": true,
+  "no_cloud": true,
+  "no_dependency_upgrades": true,
+  "no_push": true,
+  "baseline_code_revision": "e1c55b36f14d5213f43d50d6455a74738f8e6682",
+  "baseline_data_seal": {
+    "active_dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+    "datasets/tinystories/data/tinystories_gpt4_clean.parquet": "8bacd849e57784e06ebaaab3ef7b01077ca2d9d27ce7d95f2fbe465f1483548b",
+    "datasets/tinystories/tokenizer/dataset.txt": "da474ae3c6e73227321dff39329f58ce6692b2f1d956991a45d7fdea19498778",
+    "datasets/tinystories/tokenizer/token_bytes.pt": "c0780d9c9d36d57ee571b209a9fca2a83a81c57c209f4740036aa2887155b265",
+    "datasets/tinystories/tokenizer/tokenizer.pkl": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c"
+  },
+  "training_code_revisions": [
+    "1b999a1d3479d3345a49843ca310d306368654b0",
+    "687907c3b9926d97d05bc418fb35d7550711ec81",
+    "81e1be2c7e447825718232d5ef3bf6f05a3e97ee",
+    "8b505a45e568a1e5be1d64c5dd1fca156d96f4f8",
+    "c816e9627791e095f766953f8fea9dc9f0dd9d01"
+  ],
+  "shared_training_source_sha256": "0887ac9b5789a4c4dfd9ce862b2815e6d9344abadd7434689b778b7050ac5b91",
+  "initial_untracked_preserved": [
+    "scripts/depth_split_audit.py"
+  ],
+  "additional_unrelated_untracked_preserved": [
+    "docs/project-monitor.md",
+    "scripts/monitor_checks.py",
+    "scripts/project_monitor.py"
+  ]
+}

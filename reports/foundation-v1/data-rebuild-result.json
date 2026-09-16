@@ -1,0 +1,7 @@
+{
+  "status": "verified",
+  "manifest_identical": true,
+  "fingerprint": "debe7de4f51d9487e316aedf1a7dc828350d7a77f20d99a913a0143e456b121f",
+  "new_network_bytes": 0,
+  "method": "Cold reprocessing from copied sealed raw downloads; original outputs not reused"
+}

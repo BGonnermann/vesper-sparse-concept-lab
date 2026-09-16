@@ -1,0 +1,18 @@
+{
+  "status": "verified",
+  "documents": 1049,
+  "all_document_pairs": 549676,
+  "cross_split_pairs": 161343,
+  "exact_duplicate_pairs": 0,
+  "near_duplicate_pairs_at_point8": 0,
+  "shared_long_paragraphs_between_documents": 0,
+  "tokenizer_byte_fallback_coverage": {
+    "current": 256,
+    "candidate": 256
+  },
+  "dataset_fingerprint": "debe7de4f51d9487e316aedf1a7dc828350d7a77f20d99a913a0143e456b121f",
+  "manifest_sha256": "88f9e4b036cac78550fddc24aaa0cf496f6b32134f642191d1232b966d3932d1",
+  "script_sha256": "0e3ce4ceb725b3cf021530cb4fedc6a019b88ed6e9950c772c9ff63865c1f7d7",
+  "wall_seconds": 7.962755100001232,
+  "limitations": "Lexical thresholds only; does not establish absence of semantic overlap or benchmark contamination"
+}

@@ -26,4 +26,8 @@ Encoding throughput is CPU throughput, not GPU training throughput. Fewer tokens
 
 ## Recommendation before model comparison
 
-Keep the original tokenizer as mainline while testing the candidate. Compression is clearly better matched to this pilot, especially Python RST documentation, but the pilot is small and not a general web/science/math/code distribution. Any model-based recommendation must cite the paired fixed-token results, per-domain regressions, parameter equality and untouched confirmation status. Code/math/Unicode/whitespace/long-identifier probes are diagnostics, not capability benchmarks.
+The pre-comparison recommendation was to keep the original tokenizer as mainline while testing the candidate. Compression is clearly better matched to this pilot, especially Python RST documentation, but the pilot is small and not a general web/science/math/code distribution. Any model-based recommendation must cite the paired fixed-token results, per-domain regressions, parameter equality and untouched confirmation status. Code/math/Unicode/whitespace/long-identifier probes are diagnostics, not capability benchmarks.
+
+## Final measured recommendation
+
+The candidate improved aggregate validation BPB by0.112029 and frozen test BPB by0.105836 across paired seeds201/202/203, with both domains improving. Parameter count and token budgets matched, and throughput remained comparable. It passed the predeclared gates, including improvement greater than twice the paired sample SD on both splits. Use it in the separately versioned general/technical foundation profile v2; keep the old tokenizer for the original TinyStories regression baseline. See the [final report](../reports/foundation-v1/REPORT.md) for domain results, costs, caveats and the subsequent data-only comparison.

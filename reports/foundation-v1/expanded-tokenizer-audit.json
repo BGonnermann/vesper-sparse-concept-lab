@@ -1,0 +1,46 @@
+{
+  "status": "verified",
+  "expanded_manifest_sha256": "eede19e216b7d81d64b953fb9850f4839939575f1804c8464343e6e72c2e241c",
+  "tokenizers": {
+    "current": {
+      "cpython": {
+        "documents": 264,
+        "tokens": 2534796,
+        "bytes": 5230783,
+        "roundtrip": true,
+        "bytes_per_token": 2.0635913107011374,
+        "mean_tokens_per_document": 9601.5
+      },
+      "wikitext": {
+        "documents": 1999,
+        "tokens": 12966258,
+        "bytes": 36367702,
+        "roundtrip": true,
+        "bytes_per_token": 2.8047954930404746,
+        "mean_tokens_per_document": 6486.372186093046
+      }
+    },
+    "candidate": {
+      "cpython": {
+        "documents": 264,
+        "tokens": 1381981,
+        "bytes": 5230783,
+        "roundtrip": true,
+        "bytes_per_token": 3.784989084509845,
+        "mean_tokens_per_document": 5234.776515151515
+      },
+      "wikitext": {
+        "documents": 1999,
+        "tokens": 9993911,
+        "bytes": 36367702,
+        "roundtrip": true,
+        "bytes_per_token": 3.6389859785623466,
+        "mean_tokens_per_document": 4999.4552276138065
+      }
+    }
+  },
+  "general_pool_exact_document_overlap": 33,
+  "old_general_documents": 609,
+  "new_general_documents": 1999,
+  "interpretation": "Pool replacement is not a nested data-size-only ablation. Article/topic coverage and repeated exposure change together; technical pool and held-out text do not."
+}

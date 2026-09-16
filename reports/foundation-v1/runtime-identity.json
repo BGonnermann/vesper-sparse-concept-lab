@@ -1,0 +1,63 @@
+{
+  "upstream": {
+    "upstream": {
+      "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+      "revision": "a4123c6e5c6287f90be04026642ba20b94e424df",
+      "original_project": "https://github.com/karpathy/autoresearch",
+      "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+      "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored."
+    },
+    "runtime_files": {
+      "train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+      "prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+      "pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+      ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+      "uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+    }
+  },
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "installed_packages": {
+    "certifi": "2026.2.25",
+    "charset-normalizer": "3.4.4",
+    "contourpy": "1.3.3",
+    "cycler": "0.12.1",
+    "filelock": "3.24.3",
+    "fonttools": "4.61.1",
+    "fsspec": "2026.2.0",
+    "idna": "3.11",
+    "Jinja2": "3.1.6",
+    "kiwisolver": "1.4.9",
+    "MarkupSafe": "3.0.3",
+    "matplotlib": "3.10.8",
+    "mpmath": "1.3.0",
+    "networkx": "3.6.1",
+    "numpy": "2.4.2",
+    "packaging": "26.0",
+    "pandas": "3.0.1",
+    "pillow": "12.1.1",
+    "pyarrow": "23.0.1",
+    "pyparsing": "3.3.2",
+    "python-dateutil": "2.9.0.post0",
+    "regex": "2026.2.19",
+    "requests": "2.32.5",
+    "rustbpe": "0.1.0",
+    "six": "1.17.0",
+    "sympy": "1.14.0",
+    "tiktoken": "0.12.0",
+    "torch": "2.9.1+cu128",
+    "typing_extensions": "4.15.0",
+    "tzdata": "2025.3",
+    "urllib3": "2.6.3"
+  },
+  "retained_runtime_inputs": {
+    "uv.lock": {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_campaign\\runtime-inputs\\uv.lock",
+      "sha256": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+    },
+    "pyproject.toml": {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_campaign\\runtime-inputs\\pyproject.toml",
+      "sha256": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5"
+    }
+  },
+  "note": "Existing environment retained; no dependency installation or upgrade during this campaign. Original resolved lock remains available locally."
+}
