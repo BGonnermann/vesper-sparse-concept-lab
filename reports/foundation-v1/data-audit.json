@@ -1,0 +1,28 @@
+{
+  "status": "verified",
+  "accepted_documents": 1049,
+  "postclean_statistics": {
+    "cpython:test:bytes": 440255,
+    "cpython:test:documents": 34,
+    "cpython:train:bytes": 5230783,
+    "cpython:train:documents": 264,
+    "cpython:validation:bytes": 388416,
+    "cpython:validation:documents": 21,
+    "wikitext:test:bytes": 1287358,
+    "wikitext:test:documents": 61,
+    "wikitext:train:bytes": 10890601,
+    "wikitext:train:documents": 609,
+    "wikitext:validation:bytes": 1144068,
+    "wikitext:validation:documents": 60
+  },
+  "manifest_sha256": "88f9e4b036cac78550fddc24aaa0cf496f6b32134f642191d1232b966d3932d1",
+  "dataset_fingerprint": "debe7de4f51d9487e316aedf1a7dc828350d7a77f20d99a913a0143e456b121f",
+  "candidate_retraining_identical": true,
+  "packages": {
+    "torch": "2.9.1+cu128",
+    "numpy": "2.4.2",
+    "pyarrow": "23.0.1",
+    "tiktoken": "0.12.0",
+    "rustbpe": "0.1.0"
+  }
+}

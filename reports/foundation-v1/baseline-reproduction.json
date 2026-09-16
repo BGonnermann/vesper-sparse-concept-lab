@@ -1,0 +1,61 @@
+{
+  "status": "verified",
+  "original_result_sha256": "c465517a6d9bede77c28b872f696a3afdd3074ab860d395feff6067ec9943cd8",
+  "repair": "Add missing orchestrator condition=dense for artifact validation only; original failure result retained",
+  "metrics": {
+    "val_bpb": 0.589531,
+    "training_seconds": 318.2,
+    "total_seconds": 331.1,
+    "peak_vram_mb": 2277.2,
+    "total_tokens_M": 8.4,
+    "num_steps": 512.0,
+    "num_params_M": 135.3,
+    "depth": 12.0,
+    "train_batch_size": 2.0,
+    "eval_batch_size": 2.0
+  },
+  "absolute_reference_bpb_difference": 0.00037399999999998546,
+  "checkpoint_sha256": "c975ae1478d822364c925efa8f3e9f8e31d74dead71639cd5240cc9d6b37e5c2",
+  "model": {
+    "feedforward": "dense",
+    "depth": 12,
+    "width": 768,
+    "expert_dispatch": null,
+    "activation_checkpointing": false,
+    "total_parameters": 135267480,
+    "active_parameters": 135267480,
+    "expert_parameters": 0,
+    "router_parameters": 0,
+    "memory": null,
+    "memory_parameters": 0,
+    "memory_after_layer": null,
+    "memory_lr": null,
+    "memory_initialization_seed": null,
+    "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+    "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+    "ncp_parameters": 0,
+    "capacity_parameters": 0,
+    "ncp_segments": 0,
+    "ncp_segment_dimension": 0,
+    "ncp_codebook_parameters": 0,
+    "ncp_codebook_buffer_bytes": 0,
+    "ncp_effective_codebook_bytes": 0,
+    "memory_table_bytes": 0,
+    "num_experts": 0,
+    "top_k": 0
+  },
+  "training": {
+    "activation_checkpointing": false,
+    "optimizer_updates": 512,
+    "training_tokens": 8388608,
+    "warmup_updates": 11,
+    "timed_training_seconds": 318.1783570000116,
+    "timed_training_tokens": 8208384
+  },
+  "memory": {
+    "peak_allocated_bytes": 2387791872,
+    "peak_reserved_bytes": 2524971008,
+    "measurement_scope": "PyTorch allocator; excludes other processes and driver allocations"
+  },
+  "wall_seconds": 334.85899999999674
+}

@@ -1,13 +1,16 @@
 # Vesper Sparse Concept Lab
 
-Research started: 2026-09-14. Status: research plus a runnable dense autoresearch integration; custom MoE/NCP/n-gram modules and local GPU results are still pending.
+Research started: 2026-09-14. Current mainline: a validated dense Transformer, with native Windows training and a pinned pilot data/tokenizer/evaluation foundation. Experimental MoE/NCP/n-gram implementations and their results are preserved separately from mainline selection.
 
 Goal: build a skilled model for coding, Python, research, and tool workflows that can eventually run on GPUs with 8–16GB VRAM. Start architecture experiments on an RTX 5070 Ti; use cloud GPUs when measured resource needs justify them.
 
-The working hypothesis is that sparse experts, next-concept prediction, and conditional n-gram memory can improve useful capability per unit of memory and compute. Their combination is unproven here. Each component must earn its cost against a simpler baseline.
+Dense is the mainline architecture. Frozen NCP failed its tested confirmation rule; MoE has not earned adoption. N-grams and other mechanisms must be evaluated independently. No experimental mechanism enters mainline without a controlled, reproducible improvement. Earlier architecture documents remain historical proposals, not the current development plan.
 
 ## Start here
 
+- **[Dense foundation protocol and research decision](docs/foundation-campaign.md)** — frozen baseline, capability target, data pipeline, evaluation and reproduction commands.
+- **[Verified foundation pilot report](reports/foundation-v1/REPORT.md)** — paired results, costs, limitations and next actions.
+- [Tokenizer audit](docs/tokenizer-foundation-v1.md)
 - **[Run the Windows training tests](docs/autoresearch.md)** — setup, GPU probe, smoke test, and dense baseline.
 - [Bounded instructions for your local coding agent](program.md)
 - [Research findings and primary sources](docs/research.md)
@@ -27,11 +30,11 @@ git status
 git log -1 --oneline
 ```
 
-This repository holds the research documents, experiment plans, and a pinned Windows autoresearch integration. The runner has CPU-only tests; GPU compatibility and training outcomes must be measured on your PC. GitHub access allows collaborative changes and review, but does not provide access to the desktop GPU.
+This repository holds the research documents, experiment plans, and a pinned Windows autoresearch integration. The runner has CPU and CUDA correctness tests; hardware compatibility and training outcomes remain specific to the recorded runtime. GitHub access allows collaborative changes and review, but does not provide access to the desktop GPU.
 
 ## First milestone
 
-Measure the actual desktop environment and run the smaller dense TinyStories profile in the autoresearch integration. The earlier 100–300M custom prototype remains a later proposal. Establish correctness, memory use, and training throughput before adding the research modules or committing to a larger training budget.
+The frozen quality baseline is dense D12/width768 with135,267,480total/structurally active parameters and activation checkpointing off. TinyStories is an infrastructure regression dataset, not a useful-general-model capability claim. The next milestone is reproducible improvement on clean general and technical held-out data, with per-domain quality, exact-byte BPB, wall time and memory reported separately. No new architectural mechanism is needed for that milestone.
 
 Architecture training and deployment are different budgets: few active experts reduce some computation, while stored weights, optimizer states, caches, and memory tables still occupy space. Fitting a quantized model for inference does not establish that it can be trained from scratch on the same GPU.
 

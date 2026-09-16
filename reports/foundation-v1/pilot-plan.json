@@ -1,0 +1,32 @@
+{
+  "seeds": [
+    201,
+    202,
+    203
+  ],
+  "updates": 512,
+  "arms": {
+    "control": [
+      0.8,
+      "current"
+    ],
+    "mixture": [
+      0.5,
+      "current"
+    ],
+    "tokenizer": [
+      0.8,
+      "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_campaign\\tokenizer\\candidate.json"
+    ]
+  },
+  "candidate_sha256": "736bb1a35ce3b2a3143095bfc1390858d67dd7f606fda25137b83095bace0102",
+  "selection_rule": "See docs/foundation-campaign.md; no promotion from pilot alone",
+  "source_hashes": {
+    "foundation_baseline.py": "d2dab7678ff0e3084cec5bb510749183f1b4f002dbe45575c055cfd439abca6b",
+    "foundation_campaign.py": "7d406ecd8b5063aa88590d985fed5eb40cba5e7c0c1564aba9ab97e5250a9070",
+    "foundation_data.py": "31997ec3cf7fb3540b73ce409911d1c0f664d1f6d47ffbf82c6d3a94f1334c72",
+    "foundation_eval.py": "d01b63d4ccf069e3429d8d5929528b395beb637ac301ff2415bc1875358495e4",
+    "foundation_tokenizer.py": "f6bccbb2b43e34db0a56d898040815181e85956d5af41606adb47d630eabf82f",
+    "foundation_train.py": "0887ac9b5789a4c4dfd9ce862b2815e6d9344abadd7434689b778b7050ac5b91"
+  }
+}

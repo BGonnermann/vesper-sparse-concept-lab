@@ -1,0 +1,69 @@
+{
+  "counts": {
+    "current": {
+      "cpython:train": {
+        "documents": 264,
+        "tokens": 2534796,
+        "bytes": 5230783
+      },
+      "wikitext:train": {
+        "documents": 609,
+        "tokens": 3874972,
+        "bytes": 10890601
+      },
+      "cpython:validation": {
+        "documents": 21,
+        "tokens": 180663,
+        "bytes": 388416
+      },
+      "wikitext:validation": {
+        "documents": 60,
+        "tokens": 409682,
+        "bytes": 1144068
+      },
+      "cpython:test": {
+        "documents": 34,
+        "tokens": 210252,
+        "bytes": 440255
+      },
+      "wikitext:test": {
+        "documents": 61,
+        "tokens": 463227,
+        "bytes": 1287358
+      }
+    },
+    "candidate": {
+      "cpython:train": {
+        "documents": 264,
+        "tokens": 1381981,
+        "bytes": 5230783
+      },
+      "wikitext:train": {
+        "documents": 609,
+        "tokens": 2950260,
+        "bytes": 10890601
+      },
+      "cpython:validation": {
+        "documents": 21,
+        "tokens": 102929,
+        "bytes": 388416
+      },
+      "wikitext:validation": {
+        "documents": 60,
+        "tokens": 310082,
+        "bytes": 1144068
+      },
+      "cpython:test": {
+        "documents": 34,
+        "tokens": 120851,
+        "bytes": 440255
+      },
+      "wikitext:test": {
+        "documents": 61,
+        "tokens": 353250,
+        "bytes": 1287358
+      }
+    }
+  },
+  "note": "Test token counts only; no model has scored these test documents. Counts exclude BOS separators."
+}

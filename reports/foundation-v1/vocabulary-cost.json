@@ -1,0 +1,16 @@
+{
+  "vocabulary_dependent_parameters": {
+    "transformer.wte.weight": 6291456,
+    "lm_head.weight": 6291456,
+    "value_embeds.1.weight": 6291456,
+    "value_embeds.3.weight": 6291456,
+    "value_embeds.5.weight": 6291456,
+    "value_embeds.7.weight": 6291456,
+    "value_embeds.9.weight": 6291456,
+    "value_embeds.11.weight": 6291456
+  },
+  "total_vocabulary_dependent_parameters": 50331648,
+  "vocabulary": 8192,
+  "width": 768,
+  "note": "Input and output embeddings alone omit six value-embedding tables in this existing dense backbone. Both tokenizer arms keep all these costs equal."
+}

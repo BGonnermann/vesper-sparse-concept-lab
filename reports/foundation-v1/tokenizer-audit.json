@@ -1,0 +1,374 @@
+{
+  "dataset_fingerprint": "debe7de4f51d9487e316aedf1a7dc828350d7a77f20d99a913a0143e456b121f",
+  "script_sha256": "f6bccbb2b43e34db0a56d898040815181e85956d5af41606adb47d630eabf82f",
+  "candidate_training_seconds": 0.45350470000266796,
+  "candidate_training_characters": {
+    "general": 4000000,
+    "technical": 4000000
+  },
+  "candidate_training_text_sha256": "33472ccf2b91885718f9aed71171a0cc464662378ae5d1d9e2ec703b567cb6f6",
+  "results": [
+    {
+      "name": "current",
+      "identity": {
+        "kind": "sealed-tinystories",
+        "sha256": "4d1991faca1391dbc13ba13ef7ed19a3ae77dde50d4a6927fd068090b80cda5c",
+        "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\.autoresearch\\cache\\datasets\\tinystories\\tokenizer\\tokenizer.pkl"
+      },
+      "vocabulary": 8192,
+      "embedding_parameters": 6291456,
+      "embedding_plus_unembedding_parameters": 12582912,
+      "domains": {
+        "general": {
+          "documents": 60,
+          "tokens": 409682,
+          "bytes": 1144068,
+          "bytes_per_token": 2.7925757050590456,
+          "tokens_per_document": [
+            3298,
+            2527,
+            4598,
+            2683,
+            6606,
+            6464,
+            2787,
+            2208,
+            4616,
+            1635,
+            6901,
+            5707,
+            2350,
+            5249,
+            10434,
+            12639,
+            2737,
+            10599,
+            19823,
+            2280,
+            3138,
+            15335,
+            1901,
+            6962,
+            2923,
+            6707,
+            11988,
+            3751,
+            6985,
+            5571,
+            5653,
+            2726,
+            7931,
+            3225,
+            7924,
+            3604,
+            9029,
+            11665,
+            3560,
+            8193,
+            2885,
+            39049,
+            15392,
+            3255,
+            22809,
+            1443,
+            3328,
+            7767,
+            2067,
+            5542,
+            8652,
+            5090,
+            10376,
+            8669,
+            6581,
+            6195,
+            4746,
+            3348,
+            5029,
+            2547
+          ],
+          "vocabulary_used": 5246,
+          "vocabulary_fraction": 0.640380859375,
+          "unknown_tokens": 0,
+          "roundtrip": true,
+          "encode_seconds": 0.13623529999313178,
+          "encode_tokens_per_second": 3007164.8098595142
+        },
+        "technical": {
+          "documents": 21,
+          "tokens": 180663,
+          "bytes": 388416,
+          "bytes_per_token": 2.149947692665349,
+          "tokens_per_document": [
+            2824,
+            1755,
+            6283,
+            9678,
+            10132,
+            8237,
+            16729,
+            13359,
+            1247,
+            9336,
+            15478,
+            2331,
+            2326,
+            4348,
+            12020,
+            4092,
+            29899,
+            11012,
+            1706,
+            2685,
+            15186
+          ],
+          "vocabulary_used": 2595,
+          "vocabulary_fraction": 0.3167724609375,
+          "unknown_tokens": 0,
+          "roundtrip": true,
+          "encode_seconds": 0.06431139999767765,
+          "encode_tokens_per_second": 2809190.905601867
+        }
+      },
+      "probes": {
+        "code": {
+          "tokens": 40,
+          "bytes": 73,
+          "roundtrip": true,
+          "raw_token_bytes": 73,
+          "legacy_decoded_token_bytes": 73
+        },
+        "math": {
+          "tokens": 69,
+          "bytes": 76,
+          "roundtrip": true,
+          "raw_token_bytes": 76,
+          "legacy_decoded_token_bytes": 118
+        },
+        "unicode": {
+          "tokens": 49,
+          "bytes": 53,
+          "roundtrip": true,
+          "raw_token_bytes": 53,
+          "legacy_decoded_token_bytes": 135
+        },
+        "whitespace": {
+          "tokens": 13,
+          "bytes": 27,
+          "roundtrip": true,
+          "raw_token_bytes": 27,
+          "legacy_decoded_token_bytes": 27
+        },
+        "long_identifier": {
+          "tokens": 915,
+          "bytes": 1031,
+          "roundtrip": true,
+          "raw_token_bytes": 1031,
+          "legacy_decoded_token_bytes": 1031
+        }
+      },
+      "source_counts": {
+        "cpython:train": {
+          "documents": 264,
+          "tokens": 2534796,
+          "bytes": 5230783
+        },
+        "wikitext:train": {
+          "documents": 609,
+          "tokens": 3874972,
+          "bytes": 10890601
+        },
+        "cpython:validation": {
+          "documents": 21,
+          "tokens": 180663,
+          "bytes": 388416
+        },
+        "wikitext:validation": {
+          "documents": 60,
+          "tokens": 409682,
+          "bytes": 1144068
+        }
+      }
+    },
+    {
+      "name": "candidate",
+      "identity": {
+        "sha256": "736bb1a35ce3b2a3143095bfc1390858d67dd7f606fda25137b83095bace0102"
+      },
+      "vocabulary": 8192,
+      "embedding_parameters": 6291456,
+      "embedding_plus_unembedding_parameters": 12582912,
+      "domains": {
+        "general": {
+          "documents": 60,
+          "tokens": 310082,
+          "bytes": 1144068,
+          "bytes_per_token": 3.6895659857715057,
+          "tokens_per_document": [
+            2525,
+            2081,
+            3683,
+            1934,
+            5242,
+            5091,
+            2180,
+            1771,
+            3279,
+            1312,
+            5468,
+            3910,
+            1825,
+            3525,
+            8094,
+            9365,
+            1918,
+            7988,
+            15720,
+            1611,
+            2360,
+            11077,
+            1305,
+            5011,
+            2305,
+            5023,
+            8904,
+            2892,
+            5292,
+            4480,
+            4475,
+            2069,
+            5610,
+            2706,
+            6243,
+            2877,
+            7528,
+            8622,
+            2803,
+            6667,
+            2373,
+            26419,
+            10991,
+            2614,
+            16567,
+            1106,
+            2502,
+            6231,
+            1807,
+            4278,
+            7095,
+            3734,
+            8341,
+            6688,
+            5214,
+            5229,
+            3891,
+            2666,
+            3772,
+            1793
+          ],
+          "vocabulary_used": 6042,
+          "vocabulary_fraction": 0.737548828125,
+          "unknown_tokens": 0,
+          "roundtrip": true,
+          "encode_seconds": 0.11441020000347635,
+          "encode_tokens_per_second": 2710265.343392269
+        },
+        "technical": {
+          "documents": 21,
+          "tokens": 102929,
+          "bytes": 388416,
+          "bytes_per_token": 3.773630366563359,
+          "tokens_per_document": [
+            1438,
+            1030,
+            3695,
+            6212,
+            4359,
+            4520,
+            9316,
+            7462,
+            549,
+            5149,
+            10752,
+            1257,
+            1540,
+            2279,
+            4840,
+            2455,
+            16958,
+            7144,
+            971,
+            1386,
+            9617
+          ],
+          "vocabulary_used": 4657,
+          "vocabulary_fraction": 0.5684814453125,
+          "unknown_tokens": 0,
+          "roundtrip": true,
+          "encode_seconds": 0.04247200000099838,
+          "encode_tokens_per_second": 2423455.4529473647
+        }
+      },
+      "probes": {
+        "code": {
+          "tokens": 27,
+          "bytes": 73,
+          "roundtrip": true,
+          "raw_token_bytes": 73,
+          "legacy_decoded_token_bytes": 73
+        },
+        "math": {
+          "tokens": 54,
+          "bytes": 76,
+          "roundtrip": true,
+          "raw_token_bytes": 76,
+          "legacy_decoded_token_bytes": 115
+        },
+        "unicode": {
+          "tokens": 47,
+          "bytes": 53,
+          "roundtrip": true,
+          "raw_token_bytes": 53,
+          "legacy_decoded_token_bytes": 131
+        },
+        "whitespace": {
+          "tokens": 10,
+          "bytes": 27,
+          "roundtrip": true,
+          "raw_token_bytes": 27,
+          "legacy_decoded_token_bytes": 27
+        },
+        "long_identifier": {
+          "tokens": 713,
+          "bytes": 1031,
+          "roundtrip": true,
+          "raw_token_bytes": 1031,
+          "legacy_decoded_token_bytes": 1031
+        }
+      },
+      "source_counts": {
+        "cpython:train": {
+          "documents": 264,
+          "tokens": 1381981,
+          "bytes": 5230783
+        },
+        "wikitext:train": {
+          "documents": 609,
+          "tokens": 2950260,
+          "bytes": 10890601
+        },
+        "cpython:validation": {
+          "documents": 21,
+          "tokens": 102929,
+          "bytes": 388416
+        },
+        "wikitext:validation": {
+          "documents": 60,
+          "tokens": 310082,
+          "bytes": 1144068
+        }
+      }
+    }
+  ],
+  "recommendation": "Keep current mainline tokenizer pending fair fresh-seed model comparison. Candidate compression alone is not model quality.",
+  "byte_accounting": "Use exact UTF-8 document bytes; legacy single-token decoded Unicode lengths can overcount. Do not pool new and legacy BPB."
+}

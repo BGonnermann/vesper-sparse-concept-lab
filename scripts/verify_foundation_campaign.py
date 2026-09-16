@@ -11,7 +11,7 @@ from ncp_campaign import gpu_lock
 
 
 def checked(command,path,timeout=240,env=None):
-    samples=[];hot=0;start=time.monotonic();process=None
+    samples=[];hot=0;start=time.monotonic();process=None;heartbeat=start+60
     with Path(path).open('x',encoding='utf-8') as f:
         try:
             process=subprocess.Popen(command,cwd=r.ROOT,env=env or r.environment(),stdout=f,stderr=subprocess.STDOUT,creationflags=subprocess.CREATE_NEW_PROCESS_GROUP)
@@ -20,6 +20,11 @@ def checked(command,path,timeout=240,env=None):
                 samples.append(sample);hot=hot+1 if int(sample.split(',')[0])>=85 else 0
                 if hot>=3:raise RuntimeError('Verification thermal limit')
                 if time.monotonic()-start>timeout:raise TimeoutError('Verification subprocess deadline')
+                if time.monotonic()>=heartbeat:
+                    lines=Path(path).read_text(errors='replace').splitlines()
+                    log(Path(path).stem+' '+next((x for x in reversed(lines) if x.startswith('step ')),'working'))
+                    heartbeat=time.monotonic()+60
+                    write(str(path)+'.health.json',dict(samples=samples,wall_seconds=time.monotonic()-start))
                 try:process.wait(timeout=5)
                 except subprocess.TimeoutExpired:pass
             if process.returncode:raise RuntimeError(f'Verification failed: {path}')
