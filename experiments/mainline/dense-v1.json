@@ -1,0 +1,6 @@
+{
+  "depth": 12,
+  "model_width": 768,
+  "matrix_lr": 0.04,
+  "feedforward": "dense"
+}

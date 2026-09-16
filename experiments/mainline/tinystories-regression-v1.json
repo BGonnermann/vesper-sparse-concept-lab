@@ -1,0 +1,28 @@
+{
+  "protocol_id": "vesper-tinystories-depth-long-v1",
+  "activation_checkpointing": false,
+  "sequence_length": 512,
+  "tokens_per_update": 16384,
+  "microbatch_size": 2,
+  "eval_batch_size": 2,
+  "eval_tokens": 65536,
+  "smoke_eval_tokens": 8192,
+  "training_seconds": 300,
+  "smoke_timeout_seconds": 180,
+  "baseline_timeout_seconds": 2400,
+  "stopping_rule": "optimizer_updates",
+  "optimizer_updates": 512,
+  "seed": 101,
+  "batch_tape": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\autoresearch\\depth-long-20260915\\batches.pt",
+  "batch_tape_sha256": "372180711c544cd8be19d8a8ff59d2f8f030174b8ef9519f9e8a7ee02246c954",
+  "schedule": {
+    "clock": "optimizer_step",
+    "progress": "zero_based_step / 512",
+    "lr_warmup_updates": 0,
+    "decay_start_step": 256,
+    "final_lr_fraction": 0.0,
+    "measurement_warmup_updates": 11,
+    "muon_momentum_warmup_updates": 300
+  },
+  "tape_microbatches": 32768
+}
