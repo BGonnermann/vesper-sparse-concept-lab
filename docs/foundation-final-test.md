@@ -1,0 +1,13 @@
+# Final test freeze and promotion gate
+
+Declared2026-09-15 **before any pilot test model scores**. Initial pilot validation is complete; the predeclared data extension is still running. No test results informed this plan.
+
+After the six-run data extension completes and all15pilot checkpoints have passed independent validation replay, stop all campaign training. Freeze checkpoint/result/source identities for **every** completed pilot arm: control, mixture and tokenizer on seeds201/202/203; old and expanded data on seeds211/212/213. Failed smoke and baseline-wrapper attempts are not candidate models. Open one final test stage; do not subsequently train, retune, change tokenizer, change evaluation inputs or reselect from test results.
+
+Use the original pilot `test.jsonl`, identical in the expanded corpus. Select16documents per domain by SHA256(document id), truncate to8192Unicode characters before tokenization, and use the exact same byte-accounting/context policy as validation. Record full split hash, selected text hashes, tokenizer revision, seed, training/source revisions, checkpoint identity, parameter count, finite losses, throughput and allocator peaks. Verify model weights unchanged. All15models use the same selected test text; all outcomes are reported, including failed-selection arms.
+
+The50/50mixture remains ineligible because it failed the predeclared validation domain guard; good test results cannot rescue it. Tokenizer comparison: candidate-vs-current at original data on seeds201/202/203. Data comparison: expanded-vs-original with candidate tokenizer fixed on seeds211/212/213. Each compares one factor at a time and equal parameter/token budgets.
+
+A foundation configuration may be recommended for the next local general/technical training phase only if **both validation and test** satisfy the original gate: all three paired aggregate deltas negative; mean improvement >=.01BPB; no domain mean regression >.02BPB; no throughput degradation >20%; peak allocator memory <16GiB. Additionally require the mean paired improvement to exceed twice the paired sample SD on both splits, to avoid promoting effects readily reversed by observed seed variation. This additional conservative gate is declared before test scores. A failure means keep the previous configuration; never choose a different arm from test scores.
+
+Even if these gates pass, preserve TinyStories regression baseline v1, its tokenizer and all experimental paths. A separately versioned general/technical foundation profile is not a claim of useful reasoning, coding, mathematics or factual reliability. Generated samples and dataset scope must accompany any recommendation. No production model is replaced and no weights are uploaded.
