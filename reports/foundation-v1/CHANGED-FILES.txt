@@ -27,6 +27,7 @@ reports/foundation-v1/expanded-tokenizer-audit.json
 reports/foundation-v1/final-test-freeze.json
 reports/foundation-v1/final-test-results.json
 reports/foundation-v1/independent-pairwise-audit.json
+reports/foundation-v1/optimizer-coverage-audit.json
 reports/foundation-v1/pilot-plan.json
 reports/foundation-v1/results.json
 reports/foundation-v1/runtime-identity.json

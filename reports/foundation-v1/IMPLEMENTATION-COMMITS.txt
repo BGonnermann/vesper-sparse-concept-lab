@@ -3,3 +3,4 @@ c816e96 Freeze dense mainline and add pinned pilot data tokenizer and byte evalu
 8b505a4 Guard paired evidence and automate bounded independent verification
 81e1be2 Publish verified dense foundation pilot and predeclare bounded unique-data comparison
 1b999a1 Predeclare immutable final test stage for all foundation checkpoints
+b406a15 Promote gated dense foundation profile and publish complete test evidence

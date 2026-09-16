@@ -1,6 +1,6 @@
 # Verification, provenance and continuation
 
-Campaign start: **2026-09-15T21:57:06.690291-04:00**. Original experiment cutoff: **2026-09-16T04:57:06.690291-04:00**; eight-hour ceiling: **2026-09-16T05:57:06.690291-04:00**. Closeout audit: **2026-09-16T00:38:16.637513-04:00** (2.69hours elapsed). All experiment training stopped before the final-test freeze at **2026-09-15T23:53:08.791418-04:00**.
+Campaign start: **2026-09-15T21:57:06.690291-04:00**. Original experiment cutoff: **2026-09-16T04:57:06.690291-04:00**; eight-hour ceiling: **2026-09-16T05:57:06.690291-04:00**. Closeout audit: **2026-09-16T00:53:11.448593-04:00** (2.93hours elapsed). All experiment training stopped before the final-test freeze at **2026-09-15T23:53:08.791418-04:00**.
 
 The predeclared experiments and final test stage completed early. Do not describe this as eight hours of training or eight elapsed hours. No extra training was launched merely to consume the remaining budget after opening test results.
 

@@ -5,10 +5,10 @@
     "experiment_cutoff": "2026-09-16T04:57:06.690291-04:00",
     "planned_stop": "2026-09-16T05:57:06.690291-04:00"
   },
-  "closeout_at": "2026-09-16T00:38:16.637513-04:00",
-  "elapsed_seconds": 9669.947222,
+  "closeout_at": "2026-09-16T00:53:11.448593-04:00",
+  "elapsed_seconds": 10564.758302,
   "training_frozen_at": "2026-09-15T23:53:08.791418-04:00",
-  "verification_minutes_since_training_freeze": 45.130768249999996,
+  "verification_minutes_since_training_freeze": 60.04428625,
   "tests": {
     "cpu": {
       "tests": 130,
@@ -23,7 +23,7 @@
   },
   "max_training_gpu_temperature_c": 63.0,
   "max_sampled_whole_board_memory_mib": 4094.0,
-  "free_disk_bytes": 227022675968,
+  "free_disk_bytes": 227022036992,
   "source_download_payload_bytes": 351340048,
   "source_card_and_api_metadata_additional": true,
   "no_cloud": true,
