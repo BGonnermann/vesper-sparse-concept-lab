@@ -1,0 +1,18 @@
+{
+  "status": "verified",
+  "mode": "finalize",
+  "step": 28672,
+  "tokens": 469762048,
+  "checkpoint": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-028672.pt",
+  "checkpoint_sha256": "3f21b3932fbb30f731f0c3a13a7e1f390302729664a008a99e6f49e86da80cec",
+  "config_sha256": "553641d3e04f3e75568fd38003064566c84a3f4ea9e23b2c9339a54b1e8fd852",
+  "dataset_fingerprint": "f783433992d354c5887f5130f3f9f7892f171916b4e9ce5294fda2ed87a5b6eb",
+  "tokenizer_sha256": "736bb1a35ce3b2a3143095bfc1390858d67dd7f606fda25137b83095bace0102",
+  "evaluator_sha256": "17da8f4f82cd398ffa32b523e5bdacab20cbd10a12b3e635338a09d237ddab9b",
+  "weights_before": "2847b7f9169d6111fd3a9652791a09d5089e7d48e92ac1aa2be6a5385f57d915",
+  "validation_absolute_difference": 0.0,
+  "test_sha256": "f5b903da10e766c66fbbbfb2a00587a82c34898f875aa42474703c5417ac94b9",
+  "weights_after": "2847b7f9169d6111fd3a9652791a09d5089e7d48e92ac1aa2be6a5385f57d915",
+  "validation_sha256": "4553b593bbcf164cee4698c29774fb1ef8afb250aa5a93b4d15334bb280a3770",
+  "samples_sha256": "7140975eb60ca13a850bcd4066f3b01daab34f990c95c1ee0974085618ef6b52"
+}

@@ -48,4 +48,10 @@ $py = '.autoresearch/upstream/.venv/Scripts/python.exe'
 Get-Content -Path "C:\Users\bgonn\Desktop\vesper-sparse-concept-lab\runs\foundation_long_20260916\progress.log" -Tail 30 -Wait
 ```
 
-The resume command retains model/data safeguards and thermal/deadline monitoring. It refuses an expired deadline; do not extend the original campaign silently. Final evaluation, chart and inference commands will be recorded with their delivered tools. Never restart a completed run or overwrite earlier attempts.
+The resume command retains model/data safeguards and thermal/deadline monitoring. It refuses an expired deadline, a completed run or an opened test marker; do not extend the original campaign silently. Never restart a completed run or overwrite earlier attempts.
+
+## Completed measurement
+
+The fixed budget completed without a reference interruption. It strongly overfit the fixed validation set; the endpoint is not a stronger replacement for the accepted short pilot. See the [final report](../reports/foundation-long-v1/REPORT.md), [sample inspection](../reports/foundation-long-v1/SAMPLES.md) and [closeout](../reports/foundation-long-v1/CLOSEOUT.md) for measured results, all seven charts, inference commands and verification.
+
+Keep the exact captured bytes in `runs/foundation_long_20260916/reference/source` as well as the pinned runtime/data artifacts. Git newline conversion can change provenance hashes; an existing model source has mixed line endings. Restore the recorded bytes only into an isolated replication checkout when necessary, rather than weakening hash checks or modifying active user files.

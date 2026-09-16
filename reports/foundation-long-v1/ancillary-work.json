@@ -1,0 +1,62 @@
+{
+  "full_model_runs": [
+    {
+      "name": "calibration",
+      "status": "completed",
+      "tokens": 1572864,
+      "wall_seconds": 82.78767395019531,
+      "result_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\calibration\\result.json",
+      "result_sha256": "a924a401572a108d179171df93002746f9a425be540557179d80a4d17a41d56b"
+    },
+    {
+      "name": "resume-split",
+      "status": "completed",
+      "tokens": 65536,
+      "wall_seconds": 23.988606214523315,
+      "result_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\resume-split\\result.json",
+      "result_sha256": "ac224f24450cfe9cc8838eedede3a6d0fb1d1b13afc31d0f4326173083a1d5ae"
+    },
+    {
+      "name": "resume-split-v2",
+      "status": "completed",
+      "tokens": 65536,
+      "wall_seconds": 23.806063890457153,
+      "result_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\resume-split-v2\\result.json",
+      "result_sha256": "8f43b4deb28aa877c19fef84c012b9cc2865b5f19e148437074df5727b98f5fe"
+    },
+    {
+      "name": "resume-straight",
+      "status": "completed",
+      "tokens": 65536,
+      "wall_seconds": 12.969438791275024,
+      "result_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\resume-straight\\result.json",
+      "result_sha256": "d56a3fefcb3a033d033eb37e6f822ab7c211ca945bf911bd415d1ab594048f1c"
+    },
+    {
+      "name": "resume-straight-repeat",
+      "status": "completed",
+      "tokens": 65536,
+      "wall_seconds": 12.6811683177948,
+      "result_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\resume-straight-repeat\\result.json",
+      "result_sha256": "15756bf9f0378010e1035a4b837070151e0583e4618c9751ced3f1428c5fa14b"
+    },
+    {
+      "name": "resume-straight-v2",
+      "status": "completed",
+      "tokens": 65536,
+      "wall_seconds": 12.224985837936401,
+      "result_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\resume-straight-v2\\result.json",
+      "result_sha256": "a0fafbcb5f6ebdf829bbf67854e32dc3ae052f8508afca85804bda2094bef674"
+    },
+    {
+      "name": "retention-preflight",
+      "status": "completed",
+      "tokens": 196608,
+      "wall_seconds": 24.709225177764893,
+      "result_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\retention-preflight\\result.json",
+      "result_sha256": "9d9ef21a3eb7cf540eeed9cffe96be70a77230166e7ef78d238cb4f01e552f9e"
+    }
+  ],
+  "total_training_tokens": 2097152,
+  "note": "Full-model preflight/calibration only; excludes tiny correctness fixtures and inference"
+}

@@ -1,0 +1,27 @@
+{
+  "executed_generated_code": false,
+  "limitations": "Length-limited samples; syntax checks are not functional benchmarks",
+  "results": [
+    {
+      "step": 512,
+      "valid_python_syntax": false,
+      "error": "unterminated string literal (detected at line 2)",
+      "line": 2,
+      "column": 12
+    },
+    {
+      "step": 14336,
+      "valid_python_syntax": false,
+      "error": "invalid syntax",
+      "line": 2,
+      "column": 18
+    },
+    {
+      "step": 28672,
+      "valid_python_syntax": false,
+      "error": "unterminated string literal (detected at line 5)",
+      "line": 5,
+      "column": 61
+    }
+  ]
+}

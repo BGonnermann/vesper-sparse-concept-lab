@@ -1,0 +1,28 @@
+{
+  "status": "verified",
+  "updates": 28672,
+  "training_tokens": 469762048,
+  "independently_reconstructed_source_tokens": {
+    "general": 376039424,
+    "technical": 93722624
+  },
+  "sampler_rng_and_offsets_verified": true,
+  "optimizer_group_receipt_identical_to_accepted_pilot": true,
+  "evaluation_aggregates_recomputed": 34,
+  "fixed_sample_prompts_and_decoder_verified": true,
+  "final_generation_byte_identical_in_fresh_process": true,
+  "profile_sha256": "2ef98276f8d2f209493bfa9e6aadd064f5d19cc56561a9c269ee2cac08b2210c",
+  "config_sha256": "553641d3e04f3e75568fd38003064566c84a3f4ea9e23b2c9339a54b1e8fd852",
+  "final_checkpoint_sha256": "3f21b3932fbb30f731f0c3a13a7e1f390302729664a008a99e6f49e86da80cec",
+  "source_hashes": {
+    "long_baseline_runtime.py": "ada79c024266b1a411a29a5fa19e73524463505d23cacee60a8aa24796f0b19b",
+    "long_baseline.py": "d274896f5c7c0c73ea379f1051747351b3ee81e386010fc4a2bb2575a4c0e86a",
+    "foundation_train.py": "0887ac9b5789a4c4dfd9ce862b2815e6d9344abadd7434689b778b7050ac5b91",
+    "foundation_eval.py": "d01b63d4ccf069e3429d8d5929528b395beb637ac301ff2415bc1875358495e4",
+    "foundation_tokenizer.py": "f6bccbb2b43e34db0a56d898040815181e85956d5af41606adb47d630eabf82f",
+    "foundation_data.py": "31997ec3cf7fb3540b73ce409911d1c0f664d1f6d47ffbf82c6d3a94f1334c72",
+    "autoresearch.py": "392dfbfd39cbe20ba68d51a2efbdae0fea7edbbc868c42d116fc83ccd234d69e",
+    "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+    "autoresearch_train.py": "a0529a84eb1cdcdb9288c80c4edf980c385ed2bcab522370cf6200d760310e5f"
+  }
+}

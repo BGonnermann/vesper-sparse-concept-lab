@@ -1,0 +1,42 @@
+{
+  "final": {
+    "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-028672.pt",
+    "sha256": "3f21b3932fbb30f731f0c3a13a7e1f390302729664a008a99e6f49e86da80cec",
+    "bytes": 1028239323,
+    "step": 28672
+  },
+  "retained": [
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-000512.pt",
+      "sha256": "988fa51c3ce22ab8b3eea6a71a562741825c91af88db9afc6cfb518da266cdb4",
+      "bytes": 1019895131,
+      "step": 512
+    },
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-001024.pt",
+      "sha256": "9aea4c51bf56f6c9870c1d06136ebda770850ed423f5c79eba01ff121a24d2ec",
+      "bytes": 1020047963,
+      "step": 1024
+    },
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-014336.pt",
+      "sha256": "b94ae0f0dd8e95d58aa575515d956d2dd681054b4fa1c017b61b38dbe7d3c249",
+      "bytes": 1023991963,
+      "step": 14336
+    },
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-027648.pt",
+      "sha256": "e72e853045e4b170a0cc16b2a03fcfe09ebd5bfebfa5052c4bb9c03caaf75774",
+      "bytes": 1027935899,
+      "step": 27648
+    },
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-028672.pt",
+      "sha256": "3f21b3932fbb30f731f0c3a13a7e1f390302729664a008a99e6f49e86da80cec",
+      "bytes": 1028239323,
+      "step": 28672
+    }
+  ],
+  "pruned_hash_receipts_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference",
+  "policy": "Latest+predecessor+three milestones+best validation; old campaign artifacts untouched"
+}

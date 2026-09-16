@@ -1,0 +1,259 @@
+{
+  "domains": {
+    "general": {
+      "nats": 201803.43072198387,
+      "bytes": 126656,
+      "tokens": 34329,
+      "documents": [
+        {
+          "id": "wikitext:validation:49",
+          "sha256": "6c106dd2233ef151978e6ab70e5d15a1e579237a3c60d4da5b9733db958b2f5e",
+          "bytes": 8204,
+          "tokens": 2270,
+          "bpb": 2.290252025853205
+        },
+        {
+          "id": "wikitext:validation:57",
+          "sha256": "3aced5bd6bc4ba80b76a11c4f8154ab68a6ad91693fea5343c95a92339c63e37",
+          "bytes": 8199,
+          "tokens": 2316,
+          "bpb": 2.622413494758436
+        },
+        {
+          "id": "wikitext:validation:9",
+          "sha256": "e65d20735134f96ba9e9e6eb64c747c8efffa5c0051b5a1a40333a2b78dc5fd4",
+          "bytes": 6945,
+          "tokens": 1793,
+          "bpb": 1.7885173539361705
+        },
+        {
+          "id": "wikitext:validation:26",
+          "sha256": "296b25262e830670409c93b8af55a65636c7f95c5a5eadd485ca96824e270f92",
+          "bytes": 8209,
+          "tokens": 2302,
+          "bpb": 2.4095043024705696
+        },
+        {
+          "id": "wikitext:validation:24",
+          "sha256": "4985a7a9c62ad723c74b12326610dcf619df6b2eb12648fcbb377e4c2a997204",
+          "bytes": 7006,
+          "tokens": 1918,
+          "bpb": 1.7426216870781948
+        },
+        {
+          "id": "wikitext:validation:32",
+          "sha256": "7ab21c03ce7511e4fe7281370e31229da8af9861151b9c230ec69241d3d929c2",
+          "bytes": 8194,
+          "tokens": 2212,
+          "bpb": 2.0932594028019986
+        },
+        {
+          "id": "wikitext:validation:11",
+          "sha256": "531cc49a4eeb69f6065c35531906904163e7457012eb3b3cd429182f62de7be4",
+          "bytes": 8216,
+          "tokens": 2245,
+          "bpb": 2.206696127290462
+        },
+        {
+          "id": "wikitext:validation:22",
+          "sha256": "c89ff2974766ebdb67e06ea0293017a114cb0c70fef950789773a416c0c08716",
+          "bytes": 8281,
+          "tokens": 2471,
+          "bpb": 2.715656186089975
+        },
+        {
+          "id": "wikitext:validation:25",
+          "sha256": "4253647df6e21f62aeac20cc10bf147680e0746658a86b36aa829beac6472066",
+          "bytes": 8199,
+          "tokens": 2127,
+          "bpb": 2.278527072118603
+        },
+        {
+          "id": "wikitext:validation:33",
+          "sha256": "b4c00f65d820a73506e17727b3957e9fa9a5801b27d90a97fd339b6c9f30ea48",
+          "bytes": 8243,
+          "tokens": 2092,
+          "bpb": 2.3023513041767507
+        },
+        {
+          "id": "wikitext:validation:44",
+          "sha256": "5e633d97e8f8690f2683c075a0feb23ab19080c6a4608e133641aa260bb57bc7",
+          "bytes": 8194,
+          "tokens": 2106,
+          "bpb": 2.3159376448513993
+        },
+        {
+          "id": "wikitext:validation:52",
+          "sha256": "5ffbb89212ade6c27ae4e6af78d0e57543dbb2527ac970652c08b57c361d47e3",
+          "bytes": 8199,
+          "tokens": 2313,
+          "bpb": 2.439141285182284
+        },
+        {
+          "id": "wikitext:validation:35",
+          "sha256": "43c6736e0eb1b937aa3a3c741a47aac56fbcdce644b290dbfe0a3ecfe1a4f214",
+          "bytes": 8192,
+          "tokens": 2043,
+          "bpb": 2.1347004805161105
+        },
+        {
+          "id": "wikitext:validation:12",
+          "sha256": "c930fd506aedd7349026e17eb956a1f6328f46f43bf31cf4e29b46597099a3e3",
+          "bytes": 7588,
+          "tokens": 1934,
+          "bpb": 2.3919723151774632
+        },
+        {
+          "id": "wikitext:validation:59",
+          "sha256": "6348d7edce5b09f5dca940d02456c76373602813aa2935bf0dbd771602ad485e",
+          "bytes": 8201,
+          "tokens": 2416,
+          "bpb": 2.692116570358126
+        },
+        {
+          "id": "wikitext:validation:16",
+          "sha256": "8a4662640d723dea2229c39f5b1713bdbf78442e3f1531c36577844dad096d73",
+          "bytes": 6586,
+          "tokens": 1771,
+          "bpb": 2.1741514887674014
+        }
+      ],
+      "bpb": 2.2986736414933806,
+      "document_bpb_min": 1.7426216870781948,
+      "document_bpb_max": 2.715656186089975,
+      "document_bpb_sd": 0.266392719102722
+    },
+    "technical": {
+      "nats": 189995.45258218603,
+      "bytes": 121685,
+      "tokens": 31862,
+      "documents": [
+        {
+          "id": "cpython:Doc/library/functools.rst",
+          "sha256": "275975584aaab56c1204fb6d786d877fd8225bdf56be9e291a22a873363f6498",
+          "bytes": 8193,
+          "tokens": 2136,
+          "bpb": 2.2651948861727784
+        },
+        {
+          "id": "cpython:Doc/library/bz2.rst",
+          "sha256": "9bbff50381f7339c97e6e2a45dd369415621c001ea3f71a213456ad53dc5f11c",
+          "bytes": 8192,
+          "tokens": 2214,
+          "bpb": 1.4916775760395433
+        },
+        {
+          "id": "cpython:Doc/library/email.headerregistry.rst",
+          "sha256": "74486b45a08eea14ca135b9f3757dadd5d3bd2953b5ec9aab40fa1ad4e92764e",
+          "bytes": 8192,
+          "tokens": 1998,
+          "bpb": 2.172675170000556
+        },
+        {
+          "id": "cpython:Doc/tutorial/classes.rst",
+          "sha256": "8411d8e27686f7eaf9722c93a3da51de21f4b443cd06731a9bf4c65f917b8dda",
+          "bytes": 8192,
+          "tokens": 2039,
+          "bpb": 2.6925923107748346
+        },
+        {
+          "id": "cpython:Doc/library/operator.rst",
+          "sha256": "6f049f257ca00d502903db8e2b695d7fd2922a5e1672877a14e2798dc6dbadbf",
+          "bytes": 8192,
+          "tokens": 2287,
+          "bpb": 2.164106070659629
+        },
+        {
+          "id": "cpython:Doc/library/tkinter.tix.rst",
+          "sha256": "77b93c260165161d7ee71bf2de69cb88a3eeb202ba0844dd2bcdae49a1a4504e",
+          "bytes": 8192,
+          "tokens": 2623,
+          "bpb": 3.1125184188224817
+        },
+        {
+          "id": "cpython:Doc/library/atexit.rst",
+          "sha256": "875a83d02cf93077ffb838b68ca0859d4a82f7c0e9a8a052f70d10e7127f3738",
+          "bytes": 4065,
+          "tokens": 1030,
+          "bpb": 2.199051769838045
+        },
+        {
+          "id": "cpython:Doc/library/collections.abc.rst",
+          "sha256": "b5ec0326f00d37e8204f6cf4c55826221d9365e76e283bdc984ba82f06a16172",
+          "bytes": 8192,
+          "tokens": 1899,
+          "bpb": 1.9525094084927317
+        },
+        {
+          "id": "cpython:Doc/library/exceptions.rst",
+          "sha256": "00a42ea917f4b856f5309760ff50f010a8205c6d33f9be681820fc2a7745d655",
+          "bytes": 8192,
+          "tokens": 1894,
+          "bpb": 2.004824588159379
+        },
+        {
+          "id": "cpython:Doc/library/intro.rst",
+          "sha256": "47a3453d70c5570879c671310358b39c01769810aac017987224060a995e8d37",
+          "bytes": 5973,
+          "tokens": 1540,
+          "bpb": 2.8545691824848483
+        },
+        {
+          "id": "cpython:Doc/library/subprocess.rst",
+          "sha256": "ec8851f51a75940189f744ff7891f3e0b959206ad99db4ab4924b4036e1b7ab2",
+          "bytes": 8194,
+          "tokens": 2164,
+          "bpb": 2.1113907582092373
+        },
+        {
+          "id": "cpython:Doc/library/http.server.rst",
+          "sha256": "d81fffbd57d232f4e0e9f64df96a1c417ab43bf6e4fd7d0bd989224194aa991a",
+          "bytes": 8192,
+          "tokens": 1998,
+          "bpb": 1.9945760332913292
+        },
+        {
+          "id": "cpython:Doc/library/numbers.rst",
+          "sha256": "4c8892cefa6dd637e5ce54cc97bbde4ea27def69a23f0677ab4052d8f89e4e9e",
+          "bytes": 8192,
+          "tokens": 2254,
+          "bpb": 2.4867375586312943
+        },
+        {
+          "id": "cpython:Doc/library/cgi.rst",
+          "sha256": "34b986967a59f1536529b8fc7d809f7d81ebc7d8ff47480491b348436c606055",
+          "bytes": 8192,
+          "tokens": 2169,
+          "bpb": 2.5486458748082774
+        },
+        {
+          "id": "cpython:Doc/library/shelve.rst",
+          "sha256": "b5dca009698b3dd228d3181da39d14773779ec321b8cd379c2227e67d186e91c",
+          "bytes": 8192,
+          "tokens": 2179,
+          "bpb": 2.3138627339737594
+        },
+        {
+          "id": "cpython:Doc/library/asyncio-api-index.rst",
+          "sha256": "6c3411efd47c8106482cc29c9d0e01d4d9db5bd4af8c8bd9b5d9f96ae0d40f49",
+          "bytes": 5148,
+          "tokens": 1438,
+          "bpb": 1.5523036505843433
+        }
+      ],
+      "bpb": 2.2525824648212516,
+      "document_bpb_min": 1.4916775760395433,
+      "document_bpb_max": 3.1125184188224817,
+      "document_bpb_sd": 0.4157295087634524
+    }
+  },
+  "aggregate_bpb": 2.276089352820354,
+  "macro_domain_bpb": 2.275628053157316,
+  "tokens": 66191,
+  "seconds": 2.259609899992938,
+  "tokens_per_second": 29293.109399196233,
+  "peak_allocated_bytes": 749388800,
+  "peak_reserved_bytes": 805306368,
+  "accounting": "All selected UTF-8 bytes exactly once; BOS predicts first token; disjoint target windows of 512 tokens, no cross-document context; no BOS loss",
+  "input_fingerprint": "b22865bf0176c0a9f492ad0926e3f48d1697b91b029ecabc69dfc4668ec6d3b9"
+}

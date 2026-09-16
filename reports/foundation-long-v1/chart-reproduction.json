@@ -1,0 +1,20 @@
+{
+  "status": "verified",
+  "source": "Committed chart-data only, fresh process",
+  "byte_identical_files": {
+    "01-training-loss.png": "942de8c46b00648366161464a9f80c088018fdfda1ff2a359703635fb3dc4cf4",
+    "01-training-loss.svg": "9929214ba3ec9546f742123bce74ef5a0cc3c770bbcab4492bb54ce84c00e6e3",
+    "02-validation-tokens.png": "cfe379610fd8268133cf581e32aadb39d6f54497433fdf6d7ef04972e5e52bf3",
+    "02-validation-tokens.svg": "98b564a695f5b3aa4749c3a04d944c01f91099ba0891d5b82805440cc7d03bb5",
+    "03-domain-validation.png": "bb5bc0aae446da2f40cbd208fb6dc82ce61fd5f76d3211a8153dd809b6d3d9d9",
+    "03-domain-validation.svg": "5eab516e06b457f99b629a9f7fbf86499756e12dc068354e2e976f04b158e64c",
+    "04-validation-wall-time.png": "0b34cf23b327b6ba0f9ebc79d4491cbd27cfa6a4a45f03a3f5cf2b6e11b840bb",
+    "04-validation-wall-time.svg": "cc6abab3fe10b095a48d02e70c3ea8482a3985a7d9fbe94098c77f2bd4641110",
+    "05-throughput-vram.png": "d64ccf937accf7cbcd689438ab9e22f75e068593b9d236114d5ab3b5e821ff8f",
+    "05-throughput-vram.svg": "b73b72c48e759d3bfc14e2e8e2d7b1a68a7b957b9487c0fd298b543efb5dfba2",
+    "06-learning-rate.png": "5ddd24a8b5a50e2dd80cb3d37e7d1c2bf01a1daddd9979ce8251ddf9eaa83f27",
+    "06-learning-rate.svg": "3cd046c5740cd5bc83e457cc9f15a59963fd067d7416d80ca85b7d18f4146982",
+    "07-validation-frontier.png": "424282de8a398632b81512fa342c335cf0e0d53f3824a8aba7a929b2b7afe368",
+    "07-validation-frontier.svg": "b97eca53e2bf38d9d87f45e066f41e2308c3f980cb199d815f3347d4a95b3c59"
+  }
+}

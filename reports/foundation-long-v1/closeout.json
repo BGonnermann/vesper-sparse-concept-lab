@@ -1,0 +1,30 @@
+{
+  "status": "verification_complete_pending_publication",
+  "as_of": "2026-09-16T12:12:35.261266-04:00",
+  "campaign_start": "2026-09-16T06:16:33.205990-04:00",
+  "training_finished_at": "2026-09-16T11:47:07.969701-04:00",
+  "training_cutoff": "2026-09-16T12:46:33.205990-04:00",
+  "eight_hour_ceiling": "2026-09-16T14:16:33.205990-04:00",
+  "elapsed_campaign_hours": 5.933904243333333,
+  "post_training_verification_minutes": 25.454859416666668,
+  "owned_training_or_evaluation_processes": [],
+  "free_disk_bytes": 208531951616,
+  "focused_tests": {
+    "tests-final-cpu.log": {
+      "tests": 17,
+      "sha256": "63a70c015c4fdde8c9235fcffac22b6f234b948db69cf2809271e02259f07747"
+    },
+    "tests-closeout-cuda.log": {
+      "tests": 8,
+      "sha256": "cbd936d3d488920a218b045cb4ba4d6e83f18f7894e4a65ae750dba65ff3c2ec"
+    }
+  },
+  "source_snapshot_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\source",
+  "reporting_snapshot_path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reporting-source",
+  "checkpoint_sha256": "3f21b3932fbb30f731f0c3a13a7e1f390302729664a008a99e6f49e86da80cec",
+  "new_source_download_bytes": 0,
+  "dependency_upgrades": false,
+  "cloud_training": false,
+  "interpretation": "Completed fixed budget; substantial overfitting, not a stronger mainline model",
+  "stop_reason": "Fixed preregistered budget and final verification complete; no extra training to consume the ceiling"
+}

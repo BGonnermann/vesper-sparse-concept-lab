@@ -1,0 +1,13 @@
+{
+  "status": "verified",
+  "native_cuda_full_model": true,
+  "restored_model_optimizer_rng_bit_identical": true,
+  "continued_trajectory_bit_identical": false,
+  "sampler_and_scheduler_identical": true,
+  "steps": 4,
+  "interrupted_after": 2,
+  "validation_absolute_difference": 9.665553649895742e-06,
+  "maximum_loss_difference": 2.5272369384765625e-05,
+  "numerical_tolerance": 0.0001,
+  "limitation": "Independent uninterrupted BF16 repeats also differ; exact checkpoint restoration does not imply a bitwise deterministic future trajectory. Initial failed strict test retained."
+}

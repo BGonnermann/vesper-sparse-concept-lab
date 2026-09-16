@@ -1,0 +1,91 @@
+{
+  "config": {
+    "schema": 1,
+    "purpose": "long_reference",
+    "foundation_commit": "4c5b255",
+    "profile": "experiments/mainline/foundation-general-v2.json",
+    "profile_sha256": "2ef98276f8d2f209493bfa9e6aadd064f5d19cc56561a9c269ee2cac08b2210c",
+    "seed": 301,
+    "updates": 28672,
+    "training_tokens": 469762048,
+    "tokens_per_parameter": 3.472838024335191,
+    "evaluation_steps": [
+      0,
+      32,
+      128,
+      512,
+      1024,
+      2048,
+      3072,
+      4096,
+      5120,
+      6144,
+      7168,
+      8192,
+      9216,
+      10240,
+      11264,
+      12288,
+      13312,
+      14336,
+      15360,
+      16384,
+      17408,
+      18432,
+      19456,
+      20480,
+      21504,
+      22528,
+      23552,
+      24576,
+      25600,
+      26624,
+      27648,
+      28672
+    ],
+    "sample_steps": [
+      512,
+      14336,
+      28672
+    ],
+    "milestone_steps": [
+      512,
+      14336,
+      28672
+    ],
+    "checkpoint_every": 1024,
+    "estimated_total_seconds": 21519.810308969023,
+    "nominal_total_seconds": 18454.897150130277,
+    "plan_created_at": "2026-09-16T06:41:06.963983-04:00",
+    "estimated_completion": "2026-09-16T12:39:46.774292-04:00",
+    "nominal_completion": "2026-09-16T11:48:41.861133-04:00",
+    "calibration": {
+      "result_sha256": "a924a401572a108d179171df93002746f9a425be540557179d80a4d17a41d56b",
+      "steady_tokens_per_second": 25678.175790111854,
+      "mean_update_seconds": 0.6380515552942491,
+      "p95_update_seconds": 0.698667699994985,
+      "evaluation_seconds": 2.058266633335734,
+      "checkpoint_seconds": 1.6734713000041666,
+      "sample_seconds": 4.999693600009778
+    },
+    "expected_domain_passes": {
+      "general": 37.59634074336404,
+      "technical": 67.97088041555585
+    },
+    "budget_selection": "Largest1024-update multiple fitting remaining time after180s admission allowance, using p95 update time*1.05 plus6s per checkpoint/evaluation and300s fixed overhead; selected solely from measured costs, not quality.",
+    "optimizer_schedule": "Unchanged autoresearch_train.fixed_schedule(total_updates): lr multiplier min(1,2*(1-i/N)), momentum .85+.1*min(i/300,1), muon weight decay .2*(1-i/N). Only N extended; formula/family/coefficient values unchanged.",
+    "differences": [
+      "Extended total token/update budget and resulting horizon of original budget-relative optimizer schedule",
+      "Incremental exact-equivalent cyclic microbatch materialization instead of a full in-memory tape",
+      "Fixed validation/sample/checkpoint cadence and logging including unclipped gradient norm",
+      "Full-state resumable checkpoints, latest+predecessor+3milestones+best-validation retention; no test-based selection"
+    ],
+    "frozen_test_policy": "Once after training, final fixed-budget checkpoint only; previous campaign already opened this test set, so it is not pristine external evidence",
+    "interpretation": "Deliberately repeated closed-pool baseline. One corpus pass has11378155positions including2263BOS; these are token positions in deduplicated documents, not distinct vocabulary types. No new data or reshuffle policy. Repetition and overfitting must be measured, not hidden."
+  },
+  "lower_bpb_is_better": true,
+  "loss_smoothing_updates": 128,
+  "throughput_smoothing_updates": 128,
+  "raw_metrics_not_smoothed": true,
+  "scope": "Single fixed-seed closed-pool reference; no statistical superiority claim"
+}

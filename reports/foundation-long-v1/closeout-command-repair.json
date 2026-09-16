@@ -1,0 +1,5 @@
+{
+  "status": "repaired_before_any_test_execution",
+  "error": "TypeError: checked() got an unexpected keyword argument 'env'",
+  "resolution": "Use process-local MOE_TEST_DEVICE environment; no training/evaluation source change"
+}

@@ -1,0 +1,16 @@
+2026-09-16T06:28:18.901058-04:00 Focused cpu tests passed
+2026-09-16T06:28:22.233259-04:00 Focused cuda tests passed
+Traceback (most recent call last):
+  File "C:\Users\bgonn\Desktop\vesper-sparse-concept-lab\scripts\long_baseline_campaign.py", line 60, in <module>
+    if a.action=='preflight':preflight()
+                             ^^^^^^^^^^^
+  File "C:\Users\bgonn\Desktop\vesper-sparse-concept-lab\scripts\long_baseline_campaign.py", line 49, in preflight
+    compare(a['model'],b['model']);compare(a['optimizer'],b['optimizer']);compare(a['rng'],b['rng'])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bgonn\Desktop\vesper-sparse-concept-lab\scripts\long_baseline_campaign.py", line 44, in compare
+    for k in a:compare(a[k],b[k])
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bgonn\Desktop\vesper-sparse-concept-lab\scripts\long_baseline_campaign.py", line 41, in compare
+    if isinstance(a,torch.Tensor):assert a.dtype==b.dtype and torch.equal(a,b),'Tensor resume divergence'
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tensor resume divergence

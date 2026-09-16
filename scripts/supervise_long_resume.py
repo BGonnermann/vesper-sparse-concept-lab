@@ -8,12 +8,17 @@ from long_baseline_campaign import checked
 import autoresearch as r
 from foundation_data import write
 
+def validate_recovery(run):
+    if (run/'test-opened.json').exists():raise ValueError('Test already opened; this campaign is closed to further training')
+    if (run/'result.json').exists() and read(run/'result.json')['status']=='completed':raise ValueError('Fixed budget already completed; do not restart the closed campaign')
+
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--run',type=Path,required=True);p.add_argument('--checkpoint',type=Path);p.add_argument('--deadline',required=True);a=p.parse_args()
     deadline=datetime.fromisoformat(a.deadline)
     if deadline.tzinfo is None:raise ValueError('Deadline needs explicit timezone offset')
     remaining=(deadline-datetime.now().astimezone()).total_seconds()
     if remaining<=0:raise ValueError('Recovery deadline expired; no training launched')
+    validate_recovery(a.run)
     assert digest(a.config)==digest(a.run/'config.json'),'Do not change configuration on recovery'
     checkpoint=a.checkpoint or Path(read(a.run/'latest.json')['path'])
     assert digest(checkpoint)==read(str(checkpoint)+'.json')['sha256'],'Checkpoint corruption'

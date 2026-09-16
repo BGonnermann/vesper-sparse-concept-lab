@@ -1,0 +1,866 @@
+{
+  "schema": 1,
+  "status": "verified",
+  "reporter_sha256": "ebca6bf62af8c5079ec435ce95f7ae21546d81eeb11027ffccbbe96616f4ca2d",
+  "chart_code_sha256": "32c76c376cf12783f441551839164c4aeaed3d64a44f6f9148caaed9d99da873",
+  "training_code_revision": "fd5dfd607900c32a4e65f1f58e8ba011e741a99f",
+  "config": {
+    "schema": 1,
+    "purpose": "long_reference",
+    "foundation_commit": "4c5b255",
+    "profile": "experiments/mainline/foundation-general-v2.json",
+    "profile_sha256": "2ef98276f8d2f209493bfa9e6aadd064f5d19cc56561a9c269ee2cac08b2210c",
+    "seed": 301,
+    "updates": 28672,
+    "training_tokens": 469762048,
+    "tokens_per_parameter": 3.472838024335191,
+    "evaluation_steps": [
+      0,
+      32,
+      128,
+      512,
+      1024,
+      2048,
+      3072,
+      4096,
+      5120,
+      6144,
+      7168,
+      8192,
+      9216,
+      10240,
+      11264,
+      12288,
+      13312,
+      14336,
+      15360,
+      16384,
+      17408,
+      18432,
+      19456,
+      20480,
+      21504,
+      22528,
+      23552,
+      24576,
+      25600,
+      26624,
+      27648,
+      28672
+    ],
+    "sample_steps": [
+      512,
+      14336,
+      28672
+    ],
+    "milestone_steps": [
+      512,
+      14336,
+      28672
+    ],
+    "checkpoint_every": 1024,
+    "estimated_total_seconds": 21519.810308969023,
+    "nominal_total_seconds": 18454.897150130277,
+    "plan_created_at": "2026-09-16T06:41:06.963983-04:00",
+    "estimated_completion": "2026-09-16T12:39:46.774292-04:00",
+    "nominal_completion": "2026-09-16T11:48:41.861133-04:00",
+    "calibration": {
+      "result_sha256": "a924a401572a108d179171df93002746f9a425be540557179d80a4d17a41d56b",
+      "steady_tokens_per_second": 25678.175790111854,
+      "mean_update_seconds": 0.6380515552942491,
+      "p95_update_seconds": 0.698667699994985,
+      "evaluation_seconds": 2.058266633335734,
+      "checkpoint_seconds": 1.6734713000041666,
+      "sample_seconds": 4.999693600009778
+    },
+    "expected_domain_passes": {
+      "general": 37.59634074336404,
+      "technical": 67.97088041555585
+    },
+    "budget_selection": "Largest1024-update multiple fitting remaining time after180s admission allowance, using p95 update time*1.05 plus6s per checkpoint/evaluation and300s fixed overhead; selected solely from measured costs, not quality.",
+    "optimizer_schedule": "Unchanged autoresearch_train.fixed_schedule(total_updates): lr multiplier min(1,2*(1-i/N)), momentum .85+.1*min(i/300,1), muon weight decay .2*(1-i/N). Only N extended; formula/family/coefficient values unchanged.",
+    "differences": [
+      "Extended total token/update budget and resulting horizon of original budget-relative optimizer schedule",
+      "Incremental exact-equivalent cyclic microbatch materialization instead of a full in-memory tape",
+      "Fixed validation/sample/checkpoint cadence and logging including unclipped gradient norm",
+      "Full-state resumable checkpoints, latest+predecessor+3milestones+best-validation retention; no test-based selection"
+    ],
+    "frozen_test_policy": "Once after training, final fixed-budget checkpoint only; previous campaign already opened this test set, so it is not pristine external evidence",
+    "interpretation": "Deliberately repeated closed-pool baseline. One corpus pass has11378155positions including2263BOS; these are token positions in deduplicated documents, not distinct vocabulary types. No new data or reshuffle policy. Repetition and overfitting must be measured, not hidden."
+  },
+  "config_sha256": "553641d3e04f3e75568fd38003064566c84a3f4ea9e23b2c9339a54b1e8fd852",
+  "dataset_fingerprint": "f783433992d354c5887f5130f3f9f7892f171916b4e9ce5294fda2ed87a5b6eb",
+  "tokenizer_sha256": "736bb1a35ce3b2a3143095bfc1390858d67dd7f606fda25137b83095bace0102",
+  "result": {
+    "status": "completed",
+    "step": 28672,
+    "tokens": 469762048,
+    "tokens_per_parameter": 3.472838024335191,
+    "wall_seconds": 18278.596765995026,
+    "update_seconds": 18090.0737634994,
+    "checkpoint_seconds": 58.03928970004199,
+    "evaluation_seconds": 64.1718167999934,
+    "sample_seconds": 14.938577700013411,
+    "tokens_per_second": 25967.94541257458,
+    "steady_tokens_per_second": 25968.09796174778,
+    "peak_allocated_bytes": 2416642560,
+    "peak_reserved_bytes": 2554331136,
+    "latest": {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-028672.pt",
+      "sha256": "3f21b3932fbb30f731f0c3a13a7e1f390302729664a008a99e6f49e86da80cec",
+      "bytes": 1028239323,
+      "step": 28672
+    },
+    "data_progress": {
+      "general": {
+        "tokens": 376039424,
+        "stream_tokens": 9995910,
+        "passes": 37.61932870544052
+      },
+      "technical": {
+        "tokens": 93722624,
+        "stream_tokens": 1382245,
+        "passes": 67.8046395537694
+      }
+    },
+    "parameters": {
+      "feedforward": "dense",
+      "depth": 12,
+      "width": 768,
+      "expert_dispatch": null,
+      "activation_checkpointing": false,
+      "total_parameters": 135267480,
+      "active_parameters": 135267480,
+      "expert_parameters": 0,
+      "router_parameters": 0,
+      "memory": null,
+      "memory_parameters": 0,
+      "memory_after_layer": null,
+      "memory_lr": null,
+      "memory_initialization_seed": null,
+      "active_parameter_convention": "All shared tensors including full embedding tables, all router weights, and one expert per layer; structural per-token count, not measured FLOPs",
+      "memory_active_parameter_convention": "At most two selected 64-value rows plus all projection/gate parameters; excludes unselected table rows, not optimizer work",
+      "ncp_parameters": 0,
+      "capacity_parameters": 0,
+      "ncp_segments": 0,
+      "ncp_segment_dimension": 0,
+      "ncp_codebook_parameters": 0,
+      "ncp_codebook_buffer_bytes": 0,
+      "ncp_effective_codebook_bytes": 0,
+      "memory_table_bytes": 0,
+      "num_experts": 0,
+      "top_k": 0
+    },
+    "config_sha256": "553641d3e04f3e75568fd38003064566c84a3f4ea9e23b2c9339a54b1e8fd852",
+    "source_hashes": {
+      "long_baseline_runtime.py": "ada79c024266b1a411a29a5fa19e73524463505d23cacee60a8aa24796f0b19b",
+      "long_baseline.py": "d274896f5c7c0c73ea379f1051747351b3ee81e386010fc4a2bb2575a4c0e86a",
+      "foundation_train.py": "0887ac9b5789a4c4dfd9ce862b2815e6d9344abadd7434689b778b7050ac5b91",
+      "foundation_eval.py": "d01b63d4ccf069e3429d8d5929528b395beb637ac301ff2415bc1875358495e4",
+      "foundation_tokenizer.py": "f6bccbb2b43e34db0a56d898040815181e85956d5af41606adb47d630eabf82f",
+      "foundation_data.py": "31997ec3cf7fb3540b73ce409911d1c0f664d1f6d47ffbf82c6d3a94f1334c72",
+      "autoresearch.py": "392dfbfd39cbe20ba68d51a2efbdae0fea7edbbc868c42d116fc83ccd234d69e",
+      "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+      "autoresearch_train.py": "a0529a84eb1cdcdb9288c80c4edf980c385ed2bcab522370cf6200d760310e5f"
+    }
+  },
+  "final_validation": {
+    "domains": {
+      "general": {
+        "nats": 201803.43072198387,
+        "bytes": 126656,
+        "tokens": 34329,
+        "documents": [
+          {
+            "id": "wikitext:validation:49",
+            "sha256": "6c106dd2233ef151978e6ab70e5d15a1e579237a3c60d4da5b9733db958b2f5e",
+            "bytes": 8204,
+            "tokens": 2270,
+            "bpb": 2.290252025853205
+          },
+          {
+            "id": "wikitext:validation:57",
+            "sha256": "3aced5bd6bc4ba80b76a11c4f8154ab68a6ad91693fea5343c95a92339c63e37",
+            "bytes": 8199,
+            "tokens": 2316,
+            "bpb": 2.622413494758436
+          },
+          {
+            "id": "wikitext:validation:9",
+            "sha256": "e65d20735134f96ba9e9e6eb64c747c8efffa5c0051b5a1a40333a2b78dc5fd4",
+            "bytes": 6945,
+            "tokens": 1793,
+            "bpb": 1.7885173539361705
+          },
+          {
+            "id": "wikitext:validation:26",
+            "sha256": "296b25262e830670409c93b8af55a65636c7f95c5a5eadd485ca96824e270f92",
+            "bytes": 8209,
+            "tokens": 2302,
+            "bpb": 2.4095043024705696
+          },
+          {
+            "id": "wikitext:validation:24",
+            "sha256": "4985a7a9c62ad723c74b12326610dcf619df6b2eb12648fcbb377e4c2a997204",
+            "bytes": 7006,
+            "tokens": 1918,
+            "bpb": 1.7426216870781948
+          },
+          {
+            "id": "wikitext:validation:32",
+            "sha256": "7ab21c03ce7511e4fe7281370e31229da8af9861151b9c230ec69241d3d929c2",
+            "bytes": 8194,
+            "tokens": 2212,
+            "bpb": 2.0932594028019986
+          },
+          {
+            "id": "wikitext:validation:11",
+            "sha256": "531cc49a4eeb69f6065c35531906904163e7457012eb3b3cd429182f62de7be4",
+            "bytes": 8216,
+            "tokens": 2245,
+            "bpb": 2.206696127290462
+          },
+          {
+            "id": "wikitext:validation:22",
+            "sha256": "c89ff2974766ebdb67e06ea0293017a114cb0c70fef950789773a416c0c08716",
+            "bytes": 8281,
+            "tokens": 2471,
+            "bpb": 2.715656186089975
+          },
+          {
+            "id": "wikitext:validation:25",
+            "sha256": "4253647df6e21f62aeac20cc10bf147680e0746658a86b36aa829beac6472066",
+            "bytes": 8199,
+            "tokens": 2127,
+            "bpb": 2.278527072118603
+          },
+          {
+            "id": "wikitext:validation:33",
+            "sha256": "b4c00f65d820a73506e17727b3957e9fa9a5801b27d90a97fd339b6c9f30ea48",
+            "bytes": 8243,
+            "tokens": 2092,
+            "bpb": 2.3023513041767507
+          },
+          {
+            "id": "wikitext:validation:44",
+            "sha256": "5e633d97e8f8690f2683c075a0feb23ab19080c6a4608e133641aa260bb57bc7",
+            "bytes": 8194,
+            "tokens": 2106,
+            "bpb": 2.3159376448513993
+          },
+          {
+            "id": "wikitext:validation:52",
+            "sha256": "5ffbb89212ade6c27ae4e6af78d0e57543dbb2527ac970652c08b57c361d47e3",
+            "bytes": 8199,
+            "tokens": 2313,
+            "bpb": 2.439141285182284
+          },
+          {
+            "id": "wikitext:validation:35",
+            "sha256": "43c6736e0eb1b937aa3a3c741a47aac56fbcdce644b290dbfe0a3ecfe1a4f214",
+            "bytes": 8192,
+            "tokens": 2043,
+            "bpb": 2.1347004805161105
+          },
+          {
+            "id": "wikitext:validation:12",
+            "sha256": "c930fd506aedd7349026e17eb956a1f6328f46f43bf31cf4e29b46597099a3e3",
+            "bytes": 7588,
+            "tokens": 1934,
+            "bpb": 2.3919723151774632
+          },
+          {
+            "id": "wikitext:validation:59",
+            "sha256": "6348d7edce5b09f5dca940d02456c76373602813aa2935bf0dbd771602ad485e",
+            "bytes": 8201,
+            "tokens": 2416,
+            "bpb": 2.692116570358126
+          },
+          {
+            "id": "wikitext:validation:16",
+            "sha256": "8a4662640d723dea2229c39f5b1713bdbf78442e3f1531c36577844dad096d73",
+            "bytes": 6586,
+            "tokens": 1771,
+            "bpb": 2.1741514887674014
+          }
+        ],
+        "bpb": 2.2986736414933806,
+        "document_bpb_min": 1.7426216870781948,
+        "document_bpb_max": 2.715656186089975,
+        "document_bpb_sd": 0.266392719102722
+      },
+      "technical": {
+        "nats": 189995.45258218603,
+        "bytes": 121685,
+        "tokens": 31862,
+        "documents": [
+          {
+            "id": "cpython:Doc/library/functools.rst",
+            "sha256": "275975584aaab56c1204fb6d786d877fd8225bdf56be9e291a22a873363f6498",
+            "bytes": 8193,
+            "tokens": 2136,
+            "bpb": 2.2651948861727784
+          },
+          {
+            "id": "cpython:Doc/library/bz2.rst",
+            "sha256": "9bbff50381f7339c97e6e2a45dd369415621c001ea3f71a213456ad53dc5f11c",
+            "bytes": 8192,
+            "tokens": 2214,
+            "bpb": 1.4916775760395433
+          },
+          {
+            "id": "cpython:Doc/library/email.headerregistry.rst",
+            "sha256": "74486b45a08eea14ca135b9f3757dadd5d3bd2953b5ec9aab40fa1ad4e92764e",
+            "bytes": 8192,
+            "tokens": 1998,
+            "bpb": 2.172675170000556
+          },
+          {
+            "id": "cpython:Doc/tutorial/classes.rst",
+            "sha256": "8411d8e27686f7eaf9722c93a3da51de21f4b443cd06731a9bf4c65f917b8dda",
+            "bytes": 8192,
+            "tokens": 2039,
+            "bpb": 2.6925923107748346
+          },
+          {
+            "id": "cpython:Doc/library/operator.rst",
+            "sha256": "6f049f257ca00d502903db8e2b695d7fd2922a5e1672877a14e2798dc6dbadbf",
+            "bytes": 8192,
+            "tokens": 2287,
+            "bpb": 2.164106070659629
+          },
+          {
+            "id": "cpython:Doc/library/tkinter.tix.rst",
+            "sha256": "77b93c260165161d7ee71bf2de69cb88a3eeb202ba0844dd2bcdae49a1a4504e",
+            "bytes": 8192,
+            "tokens": 2623,
+            "bpb": 3.1125184188224817
+          },
+          {
+            "id": "cpython:Doc/library/atexit.rst",
+            "sha256": "875a83d02cf93077ffb838b68ca0859d4a82f7c0e9a8a052f70d10e7127f3738",
+            "bytes": 4065,
+            "tokens": 1030,
+            "bpb": 2.199051769838045
+          },
+          {
+            "id": "cpython:Doc/library/collections.abc.rst",
+            "sha256": "b5ec0326f00d37e8204f6cf4c55826221d9365e76e283bdc984ba82f06a16172",
+            "bytes": 8192,
+            "tokens": 1899,
+            "bpb": 1.9525094084927317
+          },
+          {
+            "id": "cpython:Doc/library/exceptions.rst",
+            "sha256": "00a42ea917f4b856f5309760ff50f010a8205c6d33f9be681820fc2a7745d655",
+            "bytes": 8192,
+            "tokens": 1894,
+            "bpb": 2.004824588159379
+          },
+          {
+            "id": "cpython:Doc/library/intro.rst",
+            "sha256": "47a3453d70c5570879c671310358b39c01769810aac017987224060a995e8d37",
+            "bytes": 5973,
+            "tokens": 1540,
+            "bpb": 2.8545691824848483
+          },
+          {
+            "id": "cpython:Doc/library/subprocess.rst",
+            "sha256": "ec8851f51a75940189f744ff7891f3e0b959206ad99db4ab4924b4036e1b7ab2",
+            "bytes": 8194,
+            "tokens": 2164,
+            "bpb": 2.1113907582092373
+          },
+          {
+            "id": "cpython:Doc/library/http.server.rst",
+            "sha256": "d81fffbd57d232f4e0e9f64df96a1c417ab43bf6e4fd7d0bd989224194aa991a",
+            "bytes": 8192,
+            "tokens": 1998,
+            "bpb": 1.9945760332913292
+          },
+          {
+            "id": "cpython:Doc/library/numbers.rst",
+            "sha256": "4c8892cefa6dd637e5ce54cc97bbde4ea27def69a23f0677ab4052d8f89e4e9e",
+            "bytes": 8192,
+            "tokens": 2254,
+            "bpb": 2.4867375586312943
+          },
+          {
+            "id": "cpython:Doc/library/cgi.rst",
+            "sha256": "34b986967a59f1536529b8fc7d809f7d81ebc7d8ff47480491b348436c606055",
+            "bytes": 8192,
+            "tokens": 2169,
+            "bpb": 2.5486458748082774
+          },
+          {
+            "id": "cpython:Doc/library/shelve.rst",
+            "sha256": "b5dca009698b3dd228d3181da39d14773779ec321b8cd379c2227e67d186e91c",
+            "bytes": 8192,
+            "tokens": 2179,
+            "bpb": 2.3138627339737594
+          },
+          {
+            "id": "cpython:Doc/library/asyncio-api-index.rst",
+            "sha256": "6c3411efd47c8106482cc29c9d0e01d4d9db5bd4af8c8bd9b5d9f96ae0d40f49",
+            "bytes": 5148,
+            "tokens": 1438,
+            "bpb": 1.5523036505843433
+          }
+        ],
+        "bpb": 2.2525824648212516,
+        "document_bpb_min": 1.4916775760395433,
+        "document_bpb_max": 3.1125184188224817,
+        "document_bpb_sd": 0.4157295087634524
+      }
+    },
+    "aggregate_bpb": 2.276089352820354,
+    "macro_domain_bpb": 2.275628053157316,
+    "tokens": 66191,
+    "seconds": 2.259609899992938,
+    "tokens_per_second": 29293.109399196233,
+    "peak_allocated_bytes": 749388800,
+    "peak_reserved_bytes": 805306368,
+    "accounting": "All selected UTF-8 bytes exactly once; BOS predicts first token; disjoint target windows of 512 tokens, no cross-document context; no BOS loss",
+    "input_fingerprint": "b22865bf0176c0a9f492ad0926e3f48d1697b91b029ecabc69dfc4668ec6d3b9"
+  },
+  "final_test": {
+    "domains": {
+      "general": {
+        "nats": 212371.4295949026,
+        "bytes": 124486,
+        "tokens": 33776,
+        "documents": [
+          {
+            "id": "wikitext:test:10",
+            "sha256": "c767b3151c8c58751bcfacc2d52c6d1b8f039d745ea18d76bf56a578246fa395",
+            "bytes": 8192,
+            "tokens": 2103,
+            "bpb": 2.5329628607721655
+          },
+          {
+            "id": "wikitext:test:37",
+            "sha256": "b7ba62fa3d377236cb726beaf8355a627b9f610b0e5e7fc61c639abbc4bb2ad2",
+            "bytes": 8208,
+            "tokens": 2125,
+            "bpb": 2.6039972686159163
+          },
+          {
+            "id": "wikitext:test:8",
+            "sha256": "5722fc3330cfb3bb61398fc9ab7151c30638098143ea0612e27cccf1da78061b",
+            "bytes": 8203,
+            "tokens": 2356,
+            "bpb": 2.5249745952290854
+          },
+          {
+            "id": "wikitext:test:45",
+            "sha256": "9893c042e5f984dfb15ab12a1ff83b1def12034ac7ef1085d0120bdf2d10ebe5",
+            "bytes": 8193,
+            "tokens": 2152,
+            "bpb": 2.1596675489457153
+          },
+          {
+            "id": "wikitext:test:59",
+            "sha256": "eeb274f159ee302f69e300530c17c12c813b11db9a1cf30b56c3acb08be2f5cc",
+            "bytes": 8212,
+            "tokens": 2351,
+            "bpb": 2.2525309786913237
+          },
+          {
+            "id": "wikitext:test:44",
+            "sha256": "9acc5823755cf182d0d4899468c61d456e4b09a5aa72805a26550649109ee3da",
+            "bytes": 8199,
+            "tokens": 2135,
+            "bpb": 2.5832687666487746
+          },
+          {
+            "id": "wikitext:test:21",
+            "sha256": "f35583419dcbe12a45009dd04e5b9e91f8d1fbfd21e78892c580341ddcdb9be5",
+            "bytes": 8209,
+            "tokens": 2108,
+            "bpb": 2.4183091515490203
+          },
+          {
+            "id": "wikitext:test:20",
+            "sha256": "87333449cf7bee365f98576e92dff12cc929f0e1adf0d3fed6ae7cc1c77c205f",
+            "bytes": 8198,
+            "tokens": 2218,
+            "bpb": 2.7557227012026564
+          },
+          {
+            "id": "wikitext:test:12",
+            "sha256": "df9988b103da225fba4deb09e4e29974000071b167347b72f1af35644f6a0342",
+            "bytes": 8212,
+            "tokens": 2315,
+            "bpb": 2.796385765529812
+          },
+          {
+            "id": "wikitext:test:36",
+            "sha256": "a765f4120175458a6a96d30bbcf3f58196af3d3efe0c0bf0e146a2bdf9f6dc2e",
+            "bytes": 8216,
+            "tokens": 2189,
+            "bpb": 2.326215262793438
+          },
+          {
+            "id": "wikitext:test:11",
+            "sha256": "6047dc8912c70965a558dac226a61efe580e31244cf5770a326f6ac95c2df88d",
+            "bytes": 8212,
+            "tokens": 2325,
+            "bpb": 2.7389442499595056
+          },
+          {
+            "id": "wikitext:test:53",
+            "sha256": "bda21305579c5da6d9fcb3e15e10b8c943ce489b6c4cb04621439bfbe0857a35",
+            "bytes": 5500,
+            "tokens": 1653,
+            "bpb": 2.659632856634181
+          },
+          {
+            "id": "wikitext:test:49",
+            "sha256": "4685db4381c9da5606c334c9cd96e608c3022e76701479be8ae7d5897d78c9ea",
+            "bytes": 6900,
+            "tokens": 1954,
+            "bpb": 2.1637858212633527
+          },
+          {
+            "id": "wikitext:test:38",
+            "sha256": "e41099deaf1769ab68304d42fc8813a55a8014eb0bd541778236f3ea67790b51",
+            "bytes": 8192,
+            "tokens": 2295,
+            "bpb": 2.548154928451864
+          },
+          {
+            "id": "wikitext:test:57",
+            "sha256": "43363c49d038f9d759d1cff70e1ed80f829b57d2e1a975224651c3dfa57eadf1",
+            "bytes": 8192,
+            "tokens": 1944,
+            "bpb": 2.083658704534825
+          },
+          {
+            "id": "wikitext:test:46",
+            "sha256": "2d3233987c1eecd20e6fba2ab5333109c97c8090956d501741ed3773f4fed603",
+            "bytes": 5448,
+            "tokens": 1553,
+            "bpb": 2.141242610758296
+          }
+        ],
+        "bpb": 2.461218195645017,
+        "document_bpb_min": 2.083658704534825,
+        "document_bpb_max": 2.796385765529812,
+        "document_bpb_sd": 0.23117468215937953
+      },
+      "technical": {
+        "nats": 153890.22092663433,
+        "bytes": 95928,
+        "tokens": 25891,
+        "documents": [
+          {
+            "id": "cpython:Doc/library/contextvars.rst",
+            "sha256": "b764cf14807425502193f8fce0f082ec9dc1cb8cfbc0b493bff8958de6b471b8",
+            "bytes": 8192,
+            "tokens": 2040,
+            "bpb": 2.13766003301702
+          },
+          {
+            "id": "cpython:Doc/library/i18n.rst",
+            "sha256": "c58527ea8b6aad9684d9eb31fab0b97aa41d2c4c7610d5a5ac24366c6d16c50a",
+            "bytes": 407,
+            "tokens": 95,
+            "bpb": 2.0117828255854384
+          },
+          {
+            "id": "cpython:Doc/library/bisect.rst",
+            "sha256": "ff0f602ac04b511708df328a4cf33f687a38e77d7fc2a389b7a20f4aae86e4a1",
+            "bytes": 8192,
+            "tokens": 2420,
+            "bpb": 2.631527045099598
+          },
+          {
+            "id": "cpython:Doc/library/xdrlib.rst",
+            "sha256": "09da48a8fa279a5bd006d6835e522e59a3dca6ac54396bc4761051a5005472de",
+            "bytes": 8192,
+            "tokens": 2276,
+            "bpb": 2.0676253879915696
+          },
+          {
+            "id": "cpython:Doc/library/re.rst",
+            "sha256": "110d2731ab47acf27d03dabc298fd1b657aa98cc6e31eb14f2db0c5e0baaa8a9",
+            "bytes": 8192,
+            "tokens": 2212,
+            "bpb": 2.8035712041882497
+          },
+          {
+            "id": "cpython:Doc/library/fileinput.rst",
+            "sha256": "0aea8f0ac389b9fc82b94c2dafd0204c57370e9c39cbcd791ede4320cad38bfc",
+            "bytes": 8192,
+            "tokens": 2099,
+            "bpb": 2.0605922818182485
+          },
+          {
+            "id": "cpython:Doc/library/ipc.rst",
+            "sha256": "c9add7a058c65c9ae4980398c8bbd39b274e2aac78f5775d288e7a2d8106987a",
+            "bytes": 642,
+            "tokens": 151,
+            "bpb": 1.628420314815523
+          },
+          {
+            "id": "cpython:Doc/library/plistlib.rst",
+            "sha256": "11290692b6fc1902ead13c96ae25d9f872aa875170a78d72fdfe7770d697fd97",
+            "bytes": 5442,
+            "tokens": 1564,
+            "bpb": 2.4458675229796842
+          },
+          {
+            "id": "cpython:Doc/library/xml.dom.pulldom.rst",
+            "sha256": "1472614d57a62b7efc926184318c06688afd26f4531cf54f00e9e6c8ffca9650",
+            "bytes": 5283,
+            "tokens": 1513,
+            "bpb": 2.3283379995782956
+          },
+          {
+            "id": "cpython:Doc/library/faulthandler.rst",
+            "sha256": "9edcb6e1694af7783f0cbf58f3f1b5e056aa1a89372013f605afae3d5d6c925f",
+            "bytes": 6664,
+            "tokens": 1735,
+            "bpb": 2.073714555292459
+          },
+          {
+            "id": "cpython:Doc/library/zoneinfo.rst",
+            "sha256": "2213ea8111c6dbf4cb655915bc69159057a49c145275a3de75e7c497eaecff02",
+            "bytes": 8192,
+            "tokens": 2255,
+            "bpb": 2.5974966487426396
+          },
+          {
+            "id": "cpython:Doc/library/select.rst",
+            "sha256": "b5d7fba4fd7a9680222f5388e2d715d66e3314c00d1bee401f6128b506698e50",
+            "bytes": 8192,
+            "tokens": 2156,
+            "bpb": 1.998600213626931
+          },
+          {
+            "id": "cpython:Doc/library/dbm.rst",
+            "sha256": "707d975536c6cdaf205c21563b846cf13d7ff4508566fe443a984d78a0ca44b3",
+            "bytes": 8192,
+            "tokens": 2236,
+            "bpb": 2.4655318571751437
+          },
+          {
+            "id": "cpython:Doc/library/colorsys.rst",
+            "sha256": "10576eca4a22c5f9ef459fd82a6ef6b936840cdb637680651853368ffbddbb6c",
+            "bytes": 1815,
+            "tokens": 608,
+            "bpb": 2.7278647116224612
+          },
+          {
+            "id": "cpython:Doc/tutorial/appetite.rst",
+            "sha256": "ad4c153076b7f298be2eac21ddca941c3ee644040699244d9393f9219e0fa288",
+            "bytes": 4504,
+            "tokens": 1077,
+            "bpb": 2.822014508491043
+          },
+          {
+            "id": "cpython:Doc/library/asyncio-queue.rst",
+            "sha256": "728468dea314d6e6914dc57bcba4e0db515a0612b596267727f7dc4fac69ea2e",
+            "bytes": 5635,
+            "tokens": 1454,
+            "bpb": 1.6605993511390849
+          }
+        ],
+        "bpb": 2.3144093337937033,
+        "document_bpb_min": 1.628420314815523,
+        "document_bpb_max": 2.822014508491043,
+        "document_bpb_sd": 0.3684859162060171
+      }
+    },
+    "aggregate_bpb": 2.3973244298240037,
+    "macro_domain_bpb": 2.3878137647193602,
+    "tokens": 59667,
+    "seconds": 1.7058315000031143,
+    "tokens_per_second": 34978.24961017021,
+    "peak_allocated_bytes": 769710080,
+    "peak_reserved_bytes": 824180736,
+    "accounting": "All selected UTF-8 bytes exactly once; BOS predicts first token; disjoint target windows of 512 tokens, no cross-document context; no BOS loss",
+    "input_fingerprint": "51a9f1dbb983780bddc0329a64bec1fc87619e745501c22fe076e7a9bb9d29a6"
+  },
+  "pilot_joint_validation": {
+    "aggregate_bpb": 1.2771849055034392,
+    "domains": {
+      "general": 1.3818562899936528,
+      "technical": 1.1682375506610803
+    }
+  },
+  "pilot_joint_test": {
+    "aggregate_bpb": 1.3352460751103123,
+    "domains": {
+      "general": 1.436780262158566,
+      "technical": 1.2034849124790794
+    }
+  },
+  "comparisons": {
+    "matched_tokens_validation": {
+      "aggregate": {
+        "delta": 0.11301111216830284,
+        "percent": 8.848453476182938
+      },
+      "domains": {
+        "general": {
+          "delta": 0.0983397878867085,
+          "percent": 7.116498915177366
+        },
+        "technical": {
+          "delta": 0.12828178027209214,
+          "percent": 10.980795832106258
+        }
+      }
+    },
+    "final_validation": {
+      "aggregate": {
+        "delta": 0.9989044473169149,
+        "percent": 78.21141974138568
+      },
+      "domains": {
+        "general": {
+          "delta": 0.9168173514997278,
+          "percent": 66.34679439089422
+        },
+        "technical": {
+          "delta": 1.0843449141601713,
+          "percent": 92.81887177368712
+        }
+      }
+    },
+    "final_test": {
+      "aggregate": {
+        "delta": 1.0620783547136914,
+        "percent": 79.5417694544391
+      },
+      "domains": {
+        "general": {
+          "delta": 1.0244379334864513,
+          "percent": 71.30094701797847
+        },
+        "technical": {
+          "delta": 1.1109244213146239,
+          "percent": 92.3089612337733
+        }
+      }
+    }
+  },
+  "best_validation": {
+    "step": 1024,
+    "tokens": 16777216,
+    "bpb": 1.316540796363493
+  },
+  "assessment": "The long run overfit this fixed validation set: endpoint BPB regressed more than 0.02 from its best despite continued optimization.",
+  "last_quarter_gain": -0.1488579934863461,
+  "endpoint_gap_from_best": 0.9595485564568611,
+  "domain_endpoint_gaps": {
+    "general": 0.91495725918822,
+    "technical": 1.0177771395832476
+  },
+  "first_three_small_gain_intervals_start_tokens": 33554432,
+  "numerical_resume": {
+    "status": "verified",
+    "native_cuda_full_model": true,
+    "restored_model_optimizer_rng_bit_identical": true,
+    "continued_trajectory_bit_identical": false,
+    "sampler_and_scheduler_identical": true,
+    "steps": 4,
+    "interrupted_after": 2,
+    "validation_absolute_difference": 9.665553649895742e-06,
+    "maximum_loss_difference": 2.5272369384765625e-05,
+    "numerical_tolerance": 0.0001,
+    "limitation": "Independent uninterrupted BF16 repeats also differ; exact checkpoint restoration does not imply a bitwise deterministic future trajectory. Initial failed strict test retained."
+  },
+  "attempts": [
+    {
+      "status": "completed",
+      "config_sha256": "553641d3e04f3e75568fd38003064566c84a3f4ea9e23b2c9339a54b1e8fd852",
+      "started_at": "2026-09-16T06:42:29.289392-04:00",
+      "resume": "None",
+      "source_hashes": {
+        "long_baseline_runtime.py": "ada79c024266b1a411a29a5fa19e73524463505d23cacee60a8aa24796f0b19b",
+        "long_baseline.py": "d274896f5c7c0c73ea379f1051747351b3ee81e386010fc4a2bb2575a4c0e86a",
+        "foundation_train.py": "0887ac9b5789a4c4dfd9ce862b2815e6d9344abadd7434689b778b7050ac5b91",
+        "foundation_eval.py": "d01b63d4ccf069e3429d8d5929528b395beb637ac301ff2415bc1875358495e4",
+        "foundation_tokenizer.py": "f6bccbb2b43e34db0a56d898040815181e85956d5af41606adb47d630eabf82f",
+        "foundation_data.py": "31997ec3cf7fb3540b73ce409911d1c0f664d1f6d47ffbf82c6d3a94f1334c72",
+        "autoresearch.py": "392dfbfd39cbe20ba68d51a2efbdae0fea7edbbc868c42d116fc83ccd234d69e",
+        "autoresearch_model.py": "2b274b2f69735238a7cb148a674e9c56c7d78659ddad6c6e5eed2398407b544d",
+        "autoresearch_train.py": "a0529a84eb1cdcdb9288c80c4edf980c385ed2bcab522370cf6200d760310e5f"
+      },
+      "upstream": {
+        "upstream": {
+          "repository": "https://github.com/jsegov/autoresearch-win-rtx.git",
+          "revision": "a4123c6e5c6287f90be04026642ba20b94e424df",
+          "original_project": "https://github.com/karpathy/autoresearch",
+          "original_reviewed_revision": "228791fb499afffb54b46200aca536f79142f117",
+          "license_note": "Both upstream READMEs state MIT. Source is fetched as its own Git checkout; no upstream source is vendored."
+        },
+        "runtime_files": {
+          "train.py": "6cf61121e164e12d700c5e6eb3d5c1db6d96d33598d5cfcbd7d1f48d4912d238",
+          "prepare.py": "64b976659c5b9b1258caae0944ac0da68ef5fe231f8da55c435d1f497f21cf7c",
+          "pyproject.toml": "9cc6d7ac62b50e8e48295cd5f86a22d474300508c80a1c87ea49e2f6b49978f5",
+          ".python-version": "2c6bb7b4a0cc70e45e866dc579bec9f0b5c843c42fd6ed7391df7f5cd7859f14",
+          "uv.lock": "1dd5783675dde330aa8519d726165e4e77e33b60e08491ac2b7aba9bd040b4d3"
+        }
+      },
+      "git_revision": "fd5dfd607900c32a4e65f1f58e8ba011e741a99f",
+      "step": 28672,
+      "finished_at": "2026-09-16T11:47:07.969701-04:00"
+    }
+  ],
+  "actual_completed_update_work_tokens": 469762048,
+  "discarded_update_tokens": 0,
+  "supervised_wall_seconds": 18280.906999999992,
+  "max_sampled_gpu_temperature_c": 63.0,
+  "max_sampled_whole_board_memory_mib": 4209.0,
+  "mean_sampled_gpu_utilization_percent": 60.68346325167038,
+  "retained_checkpoints": [
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-000512.pt",
+      "sha256": "988fa51c3ce22ab8b3eea6a71a562741825c91af88db9afc6cfb518da266cdb4",
+      "bytes": 1019895131,
+      "step": 512
+    },
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-001024.pt",
+      "sha256": "9aea4c51bf56f6c9870c1d06136ebda770850ed423f5c79eba01ff121a24d2ec",
+      "bytes": 1020047963,
+      "step": 1024
+    },
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-014336.pt",
+      "sha256": "b94ae0f0dd8e95d58aa575515d956d2dd681054b4fa1c017b61b38dbe7d3c249",
+      "bytes": 1023991963,
+      "step": 14336
+    },
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-027648.pt",
+      "sha256": "e72e853045e4b170a0cc16b2a03fcfe09ebd5bfebfa5052c4bb9c03caaf75774",
+      "bytes": 1027935899,
+      "step": 27648
+    },
+    {
+      "path": "C:\\Users\\bgonn\\Desktop\\vesper-sparse-concept-lab\\runs\\foundation_long_20260916\\reference\\checkpoint-028672.pt",
+      "sha256": "3f21b3932fbb30f731f0c3a13a7e1f390302729664a008a99e6f49e86da80cec",
+      "bytes": 1028239323,
+      "step": 28672
+    }
+  ],
+  "runtime": {
+    "hardware": "NVIDIA GeForce RTX 5070 Ti, 610.88, 16303 MiB",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.9.1+cu128",
+    "torch_cuda": "12.8",
+    "free_disk_bytes": 212431814656
+  },
+  "limitations": [
+    "One seed, no superiority confidence interval",
+    "Frozen test was already opened by the prior campaign",
+    "Extensive repeated data; no unique-token or general-capability claim",
+    "Matched pilot token checkpoint uses different seed and LR/schedule history",
+    "Native BF16 training trajectories are not bitwise deterministic; restored state is exact"
+  ]
+}
