@@ -1,0 +1,4 @@
+fd5dfd607900c32a4e65f1f58e8ba011e741a99f Predeclare fixed long-run dense reference with verified full-state resume
+5bc9eee08c5484082c85a740c6ba7ce9a22cef78 Add immutable final evaluation and reproducible long-run charts and reports
+1dd65ca93c3efc0b06f1d72daa9c98300514d7ee Publish fixed 469M-token dense reference and verified overfitting evidence
+Final inventory/closure is the following commit in this branch.
