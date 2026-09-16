@@ -25,6 +25,9 @@ def verify_pairs():
             assert r['parameters']['total_parameters']==r['parameters']['active_parameters']==135267480
             assert r['parameters']['memory_table_bytes']==r['parameters']['ncp_parameters']==r['parameters']['expert_parameters']==0
             assert r['checkpointing'] is False
+            assert math.isfinite(r['validation']['aggregate_bpb']) and r['validation']['aggregate_bpb']>0
+            assert all(math.isfinite(d['bpb']) and d['bytes']>0 and d['tokens']>0 for d in r['validation']['domains'].values())
+            assert r['training']['peak_allocated_bytes']<16*2**30
             assert digest(folder/'checkpoint.pt')==r['checkpoint_sha256']
             losses=read(folder/'losses.json');assert len(losses)==512 and [x['step'] for x in losses]==list(range(1,513))
             assert all(math.isfinite(x['mean_loss']) and math.isfinite(x['min_loss']) and math.isfinite(x['max_loss']) for x in losses)

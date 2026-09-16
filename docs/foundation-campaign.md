@@ -52,10 +52,25 @@ The new loop deliberately makes data construction explicit (cyclic packed domain
 $py = '.autoresearch/upstream/.venv/Scripts/python.exe'
 & $py -m unittest discover -s tests -v
 $env:MOE_TEST_DEVICE = 'cuda'; & $py -m unittest discover -s tests -v
+& $py scripts/reproduce_dense_baseline.py --output runs/foundation-baseline-repeat-01
 & $py scripts/foundation_data.py build
 & $py scripts/foundation_data.py verify
 & $py scripts/foundation_tokenizer.py --output runs/foundation_campaign/tokenizer-new
 & $py scripts/foundation_train.py --output runs/foundation_campaign/manual-smoke --updates 2 --seed 201
 ```
+
+For the predeclared sequential pilot queue (only within its recorded deadline):
+
+```powershell
+& $py scripts/foundation_campaign.py run
+```
+
+It resumes only completed attempts, verifies the frozen plan, and refuses to overwrite failed attempts. For independent checkpoint verification:
+
+```powershell
+& $py scripts/evaluate_foundation.py runs/foundation_campaign/pilot-control-s201 --output runs/foundation_campaign/manual-replay.json
+```
+
+Replay also evaluates the same first16 sealed TinyStories validation documents with each tokenizer using exact document bytes, separately from legacy packed regression BPB. Source/runtime/data identities and unchanged model weights are checked. No pilot test split model scores are opened.
 
 Output directories are immutable per attempt; choose new names when repeating. Use the monitored campaign supervisor for longer jobs, not the unmonitored train child directly. Existing untracked `scripts/depth_split_audit.py` was present at startup and must remain untouched. Local commits only: initial tree was dirty, so automatic push is not authorized by this campaign's safety rule.
